@@ -1,0 +1,103 @@
+###############################################################################
+#                                                                             #
+#     IAR Assembler V9.32.1.338/W64 for ARM 12/Jul/2026  03:33:47             #
+#     Copyright 1999-2022 IAR Systems AB.                                     #
+#                                                                             #
+#           Source file   =  E:\Project\GitHub\BCM_S32K344\_SourceCode\StartUp\init_tables.s#
+#           List file     =  E:\Project\GitHub\BCM_S32K344\Debug\List\Device\init_tables.lst#
+#           Object file   =  E:\Project\GitHub\BCM_S32K344\Debug\Obj\Device\init_tables.o#
+#           Command line  =  -f                                               #
+#                            E:\Project\GitHub\BCM_S32K344\Debug\Obj\Device\init_tables.o.rsp #
+#                            (E:\Project\GitHub\BCM_S32K344\_SourceCode\StartUp\init_tables.s #
+#                            -OE:\Project\GitHub\BCM_S32K344\Debug\Obj\Device #
+#                            -s+ -M<> -w+ -r -DARMCM7_DP -DSTART_FROM_FLASH   #
+#                            -LE:\Project\GitHub\BCM_S32K344\Debug\List\Device #
+#                            -t8 --cpu Cortex-M7 --fpu VFPv5_sp)              #
+#                                                                             #
+###############################################################################
+
+    1                           /* Copyright 2020-2023 NXP
+    2                            *
+    3                            * SPDX-License-Identifier: Apache-2.0
+    4                            *
+    5                            *********************************************
+                                *******************************/
+    6                           
+    7                                   EXTERN  .data_init$$Base
+    8                                   EXTERN  DATA$$Base
+    9                                   EXTERN  DATA$$Length
+   10                                   EXTERN  .bss$$Base
+   11                                   EXTERN  .bss$$Length
+   12                                   EXTERN  CSTACK$$Base
+   13                                   EXTERN  CSTACK$$Length
+   14                                   EXTERN  HEAP$$Base
+   15                                   EXTERN  HEAP$$Length
+   16                           #if defined (__ITCM_PRESENT) && (__ITCM_PRESEN
+                                T == 1U) && (__ITCM_INIT)
+   19                           #endif
+   20                           #if defined (__DTCM_PRESENT) && (__DTCM_PRESEN
+                                T == 1U) && (__DTCM_INIT)
+   23                           #endif
+   24                                   PUBLIC  __ecc_table_start__
+   25                                   PUBLIC  __ecc_table_end__
+   26                                   PUBLIC  __copy_table_start__
+   27                                   PUBLIC  __copy_table_end__
+   28                                   PUBLIC  __zero_table_start__
+   29                                   PUBLIC  __zero_table_end__
+   30                           
+   31                           ;; ECC table
+   32                                   SECTION  .ecc_tables:CONST(4)
+   33                           
+   34                           __ecc_table_start__
+   35                           #ifdef START_FROM_FLASH
+   36    00000000 ........              DCD DATA$$Base
+   37    00000004 00000000              DCD 0
+   38    00000008 ........              DCD DATA$$Length
+   39    0000000C 00000000              DCD 0
+   40                           #endif
+   41    00000010 ........              DCD .bss$$Base
+   42    00000014 00000000              DCD 0
+   43    00000018 ........              DCD .bss$$Length
+   44    0000001C 00000000              DCD 0
+   45    00000020 ........              DCD CSTACK$$Base
+   46    00000024 00000000              DCD 0
+   47    00000028 ........              DCD CSTACK$$Length
+   48    0000002C 00000000              DCD 0
+   49    00000030 ........              DCD HEAP$$Base
+   50    00000034 00000000              DCD 0
+   51    00000038 ........              DCD HEAP$$Length
+   52    0000003C 00000000              DCD 0
+   53                           #if defined (__ITCM_PRESENT) && (__ITCM_PRESEN
+                                T == 1U) && (__ITCM_INIT)
+   58                           #endif
+   59                           #if defined (__DTCM_PRESENT) && (__DTCM_PRESEN
+                                T == 1U) && (__DTCM_INIT)
+   64                           #endif
+   65                           __ecc_table_end__
+   66                           
+   67                           ;; Zero table (initialized in IAR startup)
+   68                                   SECTION .zero_tables:CONST(4)
+   69                           __zero_table_start__
+   70                                   ;DCD .bss$$Base
+   71                                   ;DCD .bss$$Length
+   72                           __zero_table_end__
+   73                           
+   74                           ;; Copy table  (initialized in IAR startup)
+   75                                   SECTION .copy_tables:CONST(4)
+   76                           __copy_table_start__
+   77                                   ;DCD .data_init$$Base
+   78                                   ;DCD DATA$$Base
+   79                                   ;DCD DATA$$Length
+   80                           __copy_table_end__
+   81                           
+   82                                   END
+##############################
+#           CRC:0            #
+#        Errors:   0         #
+#        Warnings: 0         #
+#         Bytes: 64          #
+##############################
+
+
+
+

@@ -1,0 +1,215 @@
+VERSION "1.0"
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: ECU VCU DiagTool
+
+
+BO_ 417 ECU_Status2: 8 ECU
+ SG_ Flash_Counter : 16|8@1+ (1,0) [0|65535] "times"  VCU
+ SG_ Roll_Counter_0x1A1 : 8|4@1+ (1,0) [0|15] ""  VCU
+ SG_ Checksum_0x1A1 : 0|8@1+ (1,0) [0|255] ""  VCU
+ SG_ ADC1 : 24|32@1- (1,0) [0|5] ""  VCU
+
+BO_ 1280 VCU_NM_0x500: 8 VCU
+ SG_ NM_CBV : 8|8@1+ (1,0) [0|0] ""  ECU
+ SG_ NM_NID : 0|8@1+ (1,0) [0|255] ""  ECU
+ SG_ NM_SleepInd : 18|1@1+ (1,0) [0|1] ""  ECU
+ SG_ NM_ActiveWakeup : 17|1@1+ (1,0) [0|1] ""  ECU
+ SG_ NM_RepeatMsgReq : 16|1@1+ (1,0) [0|1] ""  ECU
+ SG_ NM_Wakeup_Reason : 24|8@1+ (1,0) [0|255] ""  ECU
+
+BO_ 416 ECU_Status1: 8 ECU
+ SG_ KEY3_Status : 20|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Roll_Counter_0x1A0 : 8|4@1+ (1,0) [0|15] ""  VCU
+ SG_ Checksum_0x1A0 : 0|8@1+ (1,0) [0|255] ""  VCU
+ SG_ KEY1_Status : 16|2@1+ (1,0) [0|3] ""  VCU
+ SG_ KEY2_Status : 18|2@1+ (1,0) [0|3] ""  VCU
+ SG_ Sys_Voltage : 24|8@1+ (0.1,0) [0|25.5] "V"  VCU
+ SG_ ECU_Temperature : 32|16@1- (0.0625,0) [-55|125] "C"  VCU
+ SG_ LED_PWM_Duty : 48|8@1+ (1,0) [0|100] "%"  VCU
+
+BO_ 928 ECU_Debug_Info: 8 ECU
+ SG_ Reset_Reason : 0|8@1+ (1,0) [0|256] ""  VCU
+ SG_ ECU_Error_Code_4 : 20|4@1+ (1,0) [0|255] ""  VCU
+ SG_ ECU_Error_Code_3 : 16|4@1+ (1,0) [0|255] ""  VCU
+ SG_ ECU_Error_Code_2 : 12|4@1+ (1,0) [0|255] ""  VCU
+ SG_ ECU_Error_Code_1 : 8|4@1+ (1,0) [0|255] ""  VCU
+
+BO_ 528 VCU_Vehicle_Ctrl: 8 VCU
+ SG_ Roll_Counter_0x210 : 8|4@1+ (1,0) [0|15] ""  ECU
+ SG_ Checksum_0x210 : 0|8@1+ (1,0) [0|255] ""  ECU
+ SG_ LED_Brightness_Level : 16|4@1+ (1,0) [0|10] ""  ECU
+ SG_ IGN_Status : 20|2@1+ (1,0) [0|3] ""  ECU
+ SG_ Veh_Speed : 24|13@1+ (0.01,0) [0|500] "km/h"  ECU
+ SG_ Engine_Speed : 40|16@1+ (0.25,0) [0|16383.75] "rpm"  ECU
+ SG_ Motor_Switch_Cmd : 56|2@1+ (1,0) [0|3] ""  ECU
+ SG_ LED_Switch_Cmd : 58|2@1+ (1,0) [0|3] ""  ECU
+
+BO_ 1045 ECU_NM_0x415: 8 ECU
+ SG_ NM_CBV : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ NM_NID : 0|8@1+ (1,0) [0|255] ""  VCU
+ SG_ NM_SleepInd : 18|1@1+ (1,0) [0|1] ""  VCU
+ SG_ NM_ActiveWakeup : 17|1@1+ (1,0) [0|1] ""  VCU
+ SG_ NM_RepeatMsgReq : 16|1@1+ (1,0) [0|1] ""  VCU
+ SG_ NM_Wakeup_Reason : 24|8@1+ (1,0) [0|255] ""  VCU
+
+BO_ 1952 Diag_Req_ECU: 8 DiagTool
+ SG_ Diag_Req_Data : 7|64@0+ (1,0) [0|0] ""  ECU
+
+BO_ 1960 Diag_Resp_ECU: 8 ECU
+ SG_ Diag_Resp_Data : 7|64@0+ (1,0) [0|0] ""  DiagTool
+
+BO_ 2015 Diag_Functional_Req: 8 DiagTool
+ SG_ Diag_Func_Data : 7|64@0+ (1,0) [0|0] ""  ECU
+
+
+
+CM_ "Fixed DBC based on ECU.xlsx – IGN_Status moved to Vehicle_Ctrl (0x210) for RX wakeup";
+CM_ BO_ 417 "ECU status feedback, 50ms";
+CM_ BO_ 1280 "Network management, 100ms";
+CM_ BO_ 416 "ECU status feedback, 50ms";
+CM_ BO_ 928 "ECU life cycle data, 100ms";
+CM_ BO_ 528 "Vehicle control command, 50ms cycle IGN_Status added for local wakeup";
+CM_ BO_ 1045 "Network management, 100ms";
+CM_ BO_ 1952 "UDS physical request";
+CM_ BO_ 1960 "UDS physical response";
+CM_ BO_ 2015 "UDS functional request";
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+BA_DEF_ SG_  "GenSigStartValue" FLOAT 0 100000000000;
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType";
+BA_DEF_ BO_  "GenMsgFastOnStart" INT 0 0;
+BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 999999;
+BA_DEF_ BO_  "GenMsgDelayTime" INT 0 1000;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 50000;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "cyclic","spontaneous","not-used","not-used","not-used","cyclicAndSpontaneous","not-used","cyclicIfActive","NoMsgSendType";
+BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 100000;
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 100000;
+BA_DEF_ BO_  "NmAsrMessage" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagRequest" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagResponse" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagState" ENUM  "No","Yes";
+BA_DEF_ BU_  "CANoeStartDelay" INT 0 0;
+BA_DEF_ BU_  "CANoeDrift" INT 0 0;
+BA_DEF_ BU_  "CANoeJitterMin" INT 0 0;
+BA_DEF_ BU_  "CANoeJitterMax" INT 0 0;
+BA_DEF_ BU_  "ECU" STRING ;
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BU_  "ILUsed" ENUM  "Yes","No";
+BA_DEF_ BU_  "NmAsrNodeIdentifier" INT 0 255;
+BA_DEF_ BU_  "NmAsrNode" ENUM  "No","Yes";
+BA_DEF_  "BusType" STRING ;
+BA_DEF_  "NmAsrBaseAddress" HEX 0 536870911;
+BA_DEF_  "NmAsrMessageCount" INT 0 255;
+BA_DEF_  "ProtocolType" STRING ;
+BA_DEF_  "Baudrate" INT 1000 1000000;
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "GenSigSendType" "Cyclic";
+BA_DEF_DEF_  "GenMsgFastOnStart" 0;
+BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
+BA_DEF_DEF_  "GenMsgDelayTime" 0;
+BA_DEF_DEF_  "GenMsgCycleTime" 10;
+BA_DEF_DEF_  "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_  "GenMsgILSupport" "Yes";
+BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_  "NmAsrMessage" "No";
+BA_DEF_DEF_  "DiagRequest" "No";
+BA_DEF_DEF_  "DiagResponse" "No";
+BA_DEF_DEF_  "DiagState" "No";
+BA_DEF_DEF_  "CANoeStartDelay" 0;
+BA_DEF_DEF_  "CANoeDrift" 0;
+BA_DEF_DEF_  "CANoeJitterMin" 0;
+BA_DEF_DEF_  "CANoeJitterMax" 0;
+BA_DEF_DEF_  "ECU" "";
+BA_DEF_DEF_  "NodeLayerModules" "";
+BA_DEF_DEF_  "ILUsed" "Yes";
+BA_DEF_DEF_  "NmAsrNodeIdentifier" 0;
+BA_DEF_DEF_  "NmAsrNode" "No";
+BA_DEF_DEF_  "BusType" "";
+BA_DEF_DEF_  "NmAsrBaseAddress" 1280;
+BA_DEF_DEF_  "NmAsrMessageCount" 64;
+BA_DEF_DEF_  "ProtocolType" "";
+BA_DEF_DEF_  "Baudrate" 1000;
+BA_ "GenMsgSendType" BO_ 417 0;
+BA_ "GenMsgCycleTime" BO_ 417 50;
+BA_ "GenMsgILSupport" BO_ 1280 0;
+BA_ "NmAsrMessage" BO_ 1280 1;
+BA_ "GenMsgSendType" BO_ 1280 0;
+BA_ "GenMsgCycleTime" BO_ 1280 500;
+BA_ "GenMsgCycleTimeFast" BO_ 416 20;
+BA_ "GenMsgNrOfRepetition" BO_ 416 3;
+BA_ "GenMsgSendType" BO_ 416 5;
+BA_ "GenMsgCycleTime" BO_ 416 100;
+BA_ "GenMsgDelayTime" BO_ 928 200;
+BA_ "GenMsgNrOfRepetition" BO_ 928 1;
+BA_ "GenMsgFastOnStart" BO_ 928 1;
+BA_ "GenMsgCycleTime" BO_ 928 0;
+BA_ "GenMsgSendType" BO_ 928 1;
+BA_ "GenMsgSendType" BO_ 528 0;
+BA_ "GenMsgCycleTime" BO_ 528 100;
+BA_ "GenMsgILSupport" BO_ 1045 0;
+BA_ "NmAsrMessage" BO_ 1045 1;
+BA_ "GenMsgSendType" BO_ 1045 0;
+BA_ "GenMsgCycleTime" BO_ 1045 500;
+BA_ "GenMsgILSupport" BO_ 1952 0;
+BA_ "DiagRequest" BO_ 1952 1;
+BA_ "GenMsgSendType" BO_ 1952 1;
+BA_ "GenMsgCycleTime" BO_ 1952 0;
+BA_ "GenMsgILSupport" BO_ 1960 0;
+BA_ "DiagResponse" BO_ 1960 1;
+BA_ "GenMsgSendType" BO_ 1960 1;
+BA_ "GenMsgCycleTime" BO_ 1960 0;
+BA_ "GenMsgILSupport" BO_ 2015 0;
+BA_ "DiagState" BO_ 2015 1;
+BA_ "GenMsgSendType" BO_ 2015 1;
+BA_ "GenMsgCycleTime" BO_ 2015 0;
+VAL_ 417 ADC1 3 "Invalid" 0 "Default" 1 "Not Pressd" 2 "Pressed" ;
+VAL_ 1280 NM_Wakeup_Reason 0 "Invalid" 1 "NM" 2 "IGN" 3 "Button" ;
+VAL_ 416 KEY3_Status 3 "Invalid" 0 "Default" 1 "Not Pressd" 2 "Pressed" ;
+VAL_ 416 KEY1_Status 3 "Invalid" 0 "Default" 1 "Not Pressd" 2 "Pressed" ;
+VAL_ 416 KEY2_Status 3 "Invalid" 0 "Default" 1 "Not Pressd" 2 "Pressed" ;
+VAL_ 928 Reset_Reason 3 "Invalid" 0 "Default" 1 "Not Pressd" 2 "Pressed" ;
+VAL_ 928 ECU_Error_Code_4 5 "KEY3_Stuck" 4 "KEY2_Stuck" 3 "KEY1_Stuck" 0 "Normal" 1 "Bussoff" 2 "OverTemp" ;
+VAL_ 928 ECU_Error_Code_3 5 "KEY3_Stuck" 4 "KEY2_Stuck" 3 "KEY1_Stuck" 0 "Normal" 1 "Bussoff" 2 "OverTemp" ;
+VAL_ 928 ECU_Error_Code_2 5 "KEY3_Stuck" 4 "KEY2_Stuck" 3 "KEY1_Stuck" 0 "Normal" 1 "Bussoff" 2 "OverTemp" ;
+VAL_ 928 ECU_Error_Code_1 5 "KEY3_Stuck" 4 "KEY2_Stuck" 3 "KEY1_Stuck" 0 "Normal" 1 "Bussoff" 2 "OverTemp" ;
+VAL_ 528 IGN_Status 0 "OFF" 1 "ACC" 2 "ON" 3 "CRANK" ;
+VAL_ 528 Motor_Switch_Cmd 0 "OFF" 1 "ON" 2 "Brake" ;
+VAL_ 528 LED_Switch_Cmd 0 "OFF" 1 "ON" ;
+VAL_ 1045 NM_Wakeup_Reason 0 "Invalid" 1 "NM" 2 "IGN" 3 "Button" ;
+SIG_VALTYPE_ 417 ADC1 : 1;
+

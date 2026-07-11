@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>第11章 模数转换器（Adc）</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1e9f0 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            padding: 20px;
+        }
+        /* 双边框设计：外边框 + 内阴影 */
+        .double-border {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 2px solid #f1c40f;
+            border-radius: 24px;
+            box-shadow: 0 20px 30px -15px rgba(0,0,0,0.2), inset 0 1px 0 0 #fff8e0;
+            overflow: hidden;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 0;
+        }
+        .sidebar {
+            background: #fefcf5;
+            border-right: 2px solid #fdebb3;
+            padding: 24px 16px;
+        }
+        .sidebar h3 {
+            font-size: 1.4rem;
+            color: #b45f06;
+            border-left: 5px solid #f39c12;
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+        .chapter-list {
+            list-style: none;
+        }
+        .chapter-list li {
+            margin-bottom: 6px;
+        }
+        .chapter-list a {
+            display: block;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: #2c3e50;
+            border-radius: 12px;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .chapter-list a:hover {
+            background: #fdebd0;
+            transform: translateX(3px);
+        }
+        .chapter-list .active {
+            background: #3b82f6;
+            color: white;
+            box-shadow: 0 2px 5px rgba(59,130,246,0.3);
+        }
+        .main-content {
+            padding: 30px 35px;
+            background: white;
+        }
+        .footer-nav {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 2px solid #f0e6d2;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-nav a {
+            padding: 8px 24px;
+            background: #f1f5f9;
+            text-decoration: none;
+            color: #1e40af;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .footer-nav a:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            color: #64748b;
+            border-top: 1px dashed #e2e8f0;
+            font-size: 0.9rem;
+        }
+        h2 { color: #1e3a8a; border-left: 6px solid #f59e0b; padding-left: 15px; margin: 20px 0 15px; }
+        h3 { color: #2c3e50; margin: 20px 0 10px; }
+        pre {
+            background: #2d2f36; color: #f8f8f2; padding: 15px; border-radius: 12px;
+            overflow-x: auto; font-family: 'JetBrains Mono', monospace; margin: 15px 0;
+        }
+        table {
+            width: 100%; border-collapse: collapse; margin: 15px 0; background: #fefce8;
+        }
+        th, td {
+            border: 1px solid #fcd34d; padding: 10px; text-align: left;
+        }
+        th { background: #fffbeb; }
+        .tip, .warning, .highlight {
+            padding: 12px 18px; border-radius: 16px; margin: 15px 0;
+        }
+        .tip { background: #e0f2fe; border-left: 6px solid #0ea5e9; }
+        .warning { background: #fee2e2; border-left: 6px solid #ef4444; }
+        .highlight { background: #fef9c3; border: 1px solid #facc15; }
+    </style>
+</head>
+<body>
+<div class="double-border">
+<div class="container">
+    <div class="sidebar">
+        <h3>📚 课程目录</h3>
+        <ul class="chapter-list">
+            <li><a href="01.html" class="">第1章 EB Tresos入门</a></li>
+<li><a href="02.html" class="">第2章 工作区与项目创建</a></li>
+<li><a href="03.html" class="">第3章 基础配置流程</a></li>
+<li><a href="04.html" class="">第4章 通用配置模块（Base）</a></li>
+<li><a href="05.html" class="">第5章 微控制器单元（MCU）</a></li>
+<li><a href="06.html" class="">第6章 端口与引脚（Port）</a></li>
+<li><a href="07.html" class="">第7章 数字输入输出（Dio）</a></li>
+<li><a href="08.html" class="">第8章 通用输入输出（Gpt）</a></li>
+<li><a href="09.html" class="">第9章 中断控制器（Icu）</a></li>
+<li><a href="10.html" class="">第10章 脉宽调制（Pwm）</a></li>
+<li><a href="11.html" class="active">第11章 模数转换器（Adc）</a></li>
+<li><a href="12.html" class="">第12章 串行外设接口（Spi）</a></li>
+<li><a href="13.html" class="">第13章 内部集成电路（I2c）</a></li>
+<li><a href="14.html" class="">第14章 控制器局域网（Can）</a></li>
+<li><a href="15.html" class="">第15章 本地互联网络（Lin）</a></li>
+<li><a href="16.html" class="">第16章 以太网（Eth）</a></li>
+<li><a href="17.html" class="">第17章 直接内存访问（Dma）</a></li>
+<li><a href="18.html" class="">第18章 内存映射（MemMap）</a></li>
+<li><a href="19.html" class="">第19章 Flash驱动（Fls）</a></li>
+<li><a href="20.html" class="">第20章 EEPROM模拟（Eep）</a></li>
+<li><a href="21.html" class="">第21章 看门狗（Wdg）</a></li>
+<li><a href="22.html" class="">第22章 CRC校验（Crc）</a></li>
+<li><a href="23.html" class="">第23章 错误检测与报告（Det）</a></li>
+<li><a href="24.html" class="">第24章 开发错误追踪（Dem）</a></li>
+<li><a href="25.html" class="">第25章 功能抑制管理器（BswM）</a></li>
+<li><a href="26.html" class="">第26章 通信栈配置（Com）</a></li>
+<li><a href="27.html" class="">第27章 操作系统接口（Os）</a></li>
+<li><a href="28.html" class="">第28章 安全模块（Crypto）</a></li>
+<li><a href="29.html" class="">第29章 调试与验证</a></li>
+<li><a href="30.html" class="">第30章 综合实战项目</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h2>第11章 模数转换器（Adc）：从原理到实战配置</h2>
+
+<p>各位同学，今天我们来聊聊ADC模块。说实话，ADC在嵌入式系统里太常见了——采集传感器信号、监测电池电压、读取电位器位置，哪哪都离不开它。但真正把AUTOSAR架构下的ADC配置明白，我当年也是踩了不少坑才摸透的。</p>
+
+<p>EB Tresos里的Adc模块，说白了就是一套标准化的配置框架。它把硬件ADC的各种特性抽象成了几个核心概念：转换组、通道、触发源、结果读取。咱们一个一个来拆解。</p>
+
+<h3>11.1 Adc模块架构：分层设计的思想</h3>
+
+<p>AUTOSAR的Adc模块分三层：上层是应用层调用的Adc API，中间是MCAL的Adc驱动，底层才是具体的硬件寄存器。为什么要这么分层？我个人的理解是——为了可移植性。你想想看，今天用英飞凌TC3xx，明天换NXP S32K，只要MCAL层配置好，上层代码几乎不用改。</p>
+
+<p>在EB Tresos里，Adc模块的配置项主要分这几块：</p>
+
+<ul>
+  <li><strong>AdcConfigSet</strong>：全局配置，包含时钟分频、精度、转换模式等</li>
+  <li><strong>AdcHwUnit</strong>：硬件单元配置，对应芯片上的ADC外设实例</li>
+  <li><strong>AdcGroup</strong>：转换组，这是核心概念，后面细讲</li>
+  <li><strong>AdcChannel</strong>：物理通道，对应芯片引脚</li>
+</ul>
+
+<p>我记得第一次配置时，光看这些层级关系就晕了。后来总结了一个口诀：「先配全局，再选单元，分组管理，通道归位」。嗯，这样思路就清晰多了。</p>
+
+<h3>11.2 转换组与通道配置：核心中的核心</h3>
+
+<p>转换组（AdcGroup）是AUTOSAR ADC里最重要的概念。为什么要有组？因为实际项目中，我们经常需要同时采集多个通道的数据——比如三相电流、多路温度传感器。如果一个个通道单独触发，效率太低了。</p>
+
+<p>转换组就是把多个通道打包成一个批次，统一触发、统一读取。每个组可以配置：</p>
+
+<ul>
+  <li><strong>转换模式</strong>：单次转换还是连续转换</li>
+  <li><strong>转换优先级</strong>：多个组同时请求时谁先谁后</li>
+  <li><strong>通道列表</strong>：组里包含哪些通道，转换顺序如何</li>
+  <li><strong>触发源</strong>：谁来启动这个组的转换</li>
+</ul>
+
+<p>我在一个电机控制项目里遇到过这样的问题：需要同时采集U、V、W三相电流，但硬件ADC只有一个。怎么办？我把三个通道放在同一个转换组里，配置成连续扫描模式。这样一次触发就能把三相电流都采回来，时序完全同步。效果非常好。</p>
+
+<p>通道配置相对简单，主要就是指定：</p>
+<ul>
+  <li>通道对应的物理引脚</li>
+  <li>采样时间（这个很关键，后面讲避坑）</li>
+  <li>结果对齐方式（左对齐还是右对齐）</li>
+</ul>
+
+<div class="highlight">
+  <p><strong>重点提醒</strong>：采样时间不是越长越好。采样时间太长会降低转换速率，太短又会导致采样不准。我一般根据信号源阻抗来估算，高阻抗信号需要更长的采样时间。</p>
+</div>
+
+<h3>11.3 触发源选择：谁来叫醒ADC</h3>
+
+<p>ADC不会自己主动干活，得有人触发它。触发源的选择直接影响系统的实时性和效率。AUTOSAR支持多种触发方式：</p>
+
+<table>
+  <tr>
+    <th>触发类型</th>
+    <th>说明</th>
+    <th>典型应用场景</th>
+  </tr>
+  <tr>
+    <td>软件触发</td>
+    <td>调用Adc_StartGroupConversion() API</td>
+    <td>非周期性采集，如按键检测</td>
+  </tr>
+  <tr>
+    <td>硬件触发</td>
+    <td>由PWM、定时器等硬件事件触发</td>
+    <td>电机控制中与PWM同步采样</td>
+  </tr>
+  <tr>
+    <td>周期触发</td>
+    <td>内部定时器自动触发</td>
+    <td>温度监测等周期性任务</td>
+  </tr>
+</table>
+
+<p>我个人习惯是：能用硬件触发就别用软件触发。为什么？因为软件触发有延迟，而且受任务调度影响。我曾经在一个项目中用软件触发采集电流波形，结果发现采样点总是抖动，后来换成PWM硬件触发，波形瞬间就稳了。</p>
+
+<p>在EB Tresos里配置触发源时，要注意：</p>
+<ul>
+  <li>硬件触发需要配置触发信号源和触发边沿（上升沿/下降沿）</li>
+  <li>多个组可以共用同一个触发源，但要注意优先级</li>
+  <li>触发源配置错误，ADC可能根本不工作——我吃过这个亏</li>
+</ul>
+
+<h3>11.4 结果读取：数据怎么拿回来</h3>
+
+<p>转换完成后的数据怎么读取？AUTOSAR提供了两种方式：轮询和中断。轮询就是不断检查转换状态，中断就是转换完成时触发回调函数。</p>
+
+<p>轮询方式简单，但浪费CPU。中断方式高效，但要注意中断频率。我一般这样选：</p>
+<ul>
+  <li>低速采集（< 1kHz）：轮询就够了，代码简单</li>
+  <li>中速采集（1kHz ~ 100kHz）：中断方式，配合DMA更佳</li>
+  <li>高速采集（> 100kHz）：必须用DMA，否则CPU会被中断淹没</li>
+</ul>
+
+<p>读取结果的API是Adc_ReadGroup()，它会返回一个组里所有通道的转换结果。注意：结果数据是按通道在组里的顺序排列的，不是按通道号。这个顺序在配置时就要规划好，否则数据会张冠李戴。</p>
+
+<div class="tip">
+  <p><strong>小技巧</strong>：我习惯在配置时把通道顺序和实际物理意义对应起来，比如通道0放电流A，通道1放电流B，通道2放电流C。这样读取结果时，result[0]就是A相电流，一目了然。</p>
+</div>
+
+<h3>11.5 DMA传输：解放CPU的终极方案</h3>
+
+<p>DMA（直接存储器访问）是ADC数据搬运的利器。它可以在不占用CPU的情况下，把ADC转换结果自动搬运到内存缓冲区。配置DMA传输时，需要关注几个关键参数：</p>
+
+<ul>
+  <li><strong>DMA通道</strong>：哪个DMA通道负责搬运</li>
+  <li><strong>传输宽度</strong>：8位、16位还是32位，要和ADC结果宽度匹配</li>
+  <li><strong>传输模式</strong>：单次传输还是循环传输</li>
+  <li><strong>地址增量</strong>：源地址和目的地址是否自动递增</li>
+</ul>
+
+<p>在EB Tresos里配置DMA时，通常需要和Dma模块配合。Adc模块负责产生DMA请求，Dma模块负责执行数据传输。我曾经在一个项目中需要采集8路模拟信号，每路1kHz采样率。如果不用DMA，CPU每秒钟要处理8000次中断。用了DMA后，CPU只需要在缓冲区满时处理一次，效率提升了10倍不止。</p>
+
+<div class="warning">
+  <p><strong>避坑指南</strong>：我曾经犯过一个低级错误——DMA传输宽度配置错了。ADC结果是12位，我配成了8位传输，结果高4位数据全丢了。后来花了半天才排查出来。所以，传输宽度一定要和ADC结果寄存器宽度一致。</p>
+</div>
+
+<h3>11.6 实战配置步骤总结</h3>
+
+<p>好了，理论讲完了，咱们来捋一遍实际配置的步骤：</p>
+
+<ol>
+  <li><strong>创建AdcConfigSet</strong>：设置全局参数，如时钟分频、精度（8/10/12位）</li>
+  <li><strong>添加AdcHwUnit</strong>：选择使用的ADC硬件单元，配置参考电压</li>
+  <li><strong>配置AdcChannel</strong>：添加需要的物理通道，设置采样时间</li>
+  <li><strong>创建AdcGroup</strong>：把通道加入组，设置转换模式和优先级</li>
+  <li><strong>选择触发源</strong>：根据需求选择软件触发或硬件触发</li>
+  <li><strong>配置结果读取方式</strong>：轮询、中断还是DMA</li>
+  <li><strong>生成代码</strong>：点击生成，然后集成到工程中</li>
+</ol>
+
+<p>每一步都有细节要注意。比如采样时间，我建议先查芯片手册，找到最小采样时间要求，然后留20%~30%的余量。再比如触发源，如果用了硬件触发，一定要确认触发信号已经配置好并且使能了。</p>
+
+<p>最后说一句：ADC配置看似简单，但实际项目中往往是最容易出问题的模块之一。信号噪声、采样抖动、触发延迟、DMA溢出——这些问题我都遇到过。但只要理解了架构原理，掌握了配置方法，这些坑都是可以避免的。</p>
+
+<p>下一章我们讲PWM模块，到时候再聊。</p>
+        <div class="footer-nav">
+            <a href="10.html">← 上一章</a>
+            <a href="index.html">📖 返回目录</a>
+            <a href="12.html">下一章 →</a>
+        </div>
+        <footer>公众号:蓝海资料掘金营，微信deep3321</footer>
+    </div>
+</div>
+</div>
+</body>
+</html>

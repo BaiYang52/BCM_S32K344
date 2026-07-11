@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>第16章 以太网（Eth）</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1e9f0 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            padding: 20px;
+        }
+        /* 双边框设计：外边框 + 内阴影 */
+        .double-border {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 2px solid #f1c40f;
+            border-radius: 24px;
+            box-shadow: 0 20px 30px -15px rgba(0,0,0,0.2), inset 0 1px 0 0 #fff8e0;
+            overflow: hidden;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 0;
+        }
+        .sidebar {
+            background: #fefcf5;
+            border-right: 2px solid #fdebb3;
+            padding: 24px 16px;
+        }
+        .sidebar h3 {
+            font-size: 1.4rem;
+            color: #b45f06;
+            border-left: 5px solid #f39c12;
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+        .chapter-list {
+            list-style: none;
+        }
+        .chapter-list li {
+            margin-bottom: 6px;
+        }
+        .chapter-list a {
+            display: block;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: #2c3e50;
+            border-radius: 12px;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .chapter-list a:hover {
+            background: #fdebd0;
+            transform: translateX(3px);
+        }
+        .chapter-list .active {
+            background: #3b82f6;
+            color: white;
+            box-shadow: 0 2px 5px rgba(59,130,246,0.3);
+        }
+        .main-content {
+            padding: 30px 35px;
+            background: white;
+        }
+        .footer-nav {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 2px solid #f0e6d2;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-nav a {
+            padding: 8px 24px;
+            background: #f1f5f9;
+            text-decoration: none;
+            color: #1e40af;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .footer-nav a:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            color: #64748b;
+            border-top: 1px dashed #e2e8f0;
+            font-size: 0.9rem;
+        }
+        h2 { color: #1e3a8a; border-left: 6px solid #f59e0b; padding-left: 15px; margin: 20px 0 15px; }
+        h3 { color: #2c3e50; margin: 20px 0 10px; }
+        pre {
+            background: #2d2f36; color: #f8f8f2; padding: 15px; border-radius: 12px;
+            overflow-x: auto; font-family: 'JetBrains Mono', monospace; margin: 15px 0;
+        }
+        table {
+            width: 100%; border-collapse: collapse; margin: 15px 0; background: #fefce8;
+        }
+        th, td {
+            border: 1px solid #fcd34d; padding: 10px; text-align: left;
+        }
+        th { background: #fffbeb; }
+        .tip, .warning, .highlight {
+            padding: 12px 18px; border-radius: 16px; margin: 15px 0;
+        }
+        .tip { background: #e0f2fe; border-left: 6px solid #0ea5e9; }
+        .warning { background: #fee2e2; border-left: 6px solid #ef4444; }
+        .highlight { background: #fef9c3; border: 1px solid #facc15; }
+    </style>
+</head>
+<body>
+<div class="double-border">
+<div class="container">
+    <div class="sidebar">
+        <h3>📚 课程目录</h3>
+        <ul class="chapter-list">
+            <li><a href="01.html" class="">第1章 EB Tresos入门</a></li>
+<li><a href="02.html" class="">第2章 工作区与项目创建</a></li>
+<li><a href="03.html" class="">第3章 基础配置流程</a></li>
+<li><a href="04.html" class="">第4章 通用配置模块（Base）</a></li>
+<li><a href="05.html" class="">第5章 微控制器单元（MCU）</a></li>
+<li><a href="06.html" class="">第6章 端口与引脚（Port）</a></li>
+<li><a href="07.html" class="">第7章 数字输入输出（Dio）</a></li>
+<li><a href="08.html" class="">第8章 通用输入输出（Gpt）</a></li>
+<li><a href="09.html" class="">第9章 中断控制器（Icu）</a></li>
+<li><a href="10.html" class="">第10章 脉宽调制（Pwm）</a></li>
+<li><a href="11.html" class="">第11章 模数转换器（Adc）</a></li>
+<li><a href="12.html" class="">第12章 串行外设接口（Spi）</a></li>
+<li><a href="13.html" class="">第13章 内部集成电路（I2c）</a></li>
+<li><a href="14.html" class="">第14章 控制器局域网（Can）</a></li>
+<li><a href="15.html" class="">第15章 本地互联网络（Lin）</a></li>
+<li><a href="16.html" class="active">第16章 以太网（Eth）</a></li>
+<li><a href="17.html" class="">第17章 直接内存访问（Dma）</a></li>
+<li><a href="18.html" class="">第18章 内存映射（MemMap）</a></li>
+<li><a href="19.html" class="">第19章 Flash驱动（Fls）</a></li>
+<li><a href="20.html" class="">第20章 EEPROM模拟（Eep）</a></li>
+<li><a href="21.html" class="">第21章 看门狗（Wdg）</a></li>
+<li><a href="22.html" class="">第22章 CRC校验（Crc）</a></li>
+<li><a href="23.html" class="">第23章 错误检测与报告（Det）</a></li>
+<li><a href="24.html" class="">第24章 开发错误追踪（Dem）</a></li>
+<li><a href="25.html" class="">第25章 功能抑制管理器（BswM）</a></li>
+<li><a href="26.html" class="">第26章 通信栈配置（Com）</a></li>
+<li><a href="27.html" class="">第27章 操作系统接口（Os）</a></li>
+<li><a href="28.html" class="">第28章 安全模块（Crypto）</a></li>
+<li><a href="29.html" class="">第29章 调试与验证</a></li>
+<li><a href="30.html" class="">第30章 综合实战项目</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h2>第16章 以太网（Eth）：Eth模块概述、MAC与PHY配置、DMA描述符链、中断与轮询模式</h2>
+
+<p>以太网模块，在AUTOSAR架构里算是个「大块头」。为什么这么说？因为它既要处理高速数据流，又要兼顾实时性。我最早接触Eth模块时，是在一个车载摄像头项目上，那时候对DMA描述符链的理解还不够深，结果数据丢包丢得我头皮发麻。今天咱们就把这块硬骨头啃下来。</p>
+
+<h3>16.1 Eth模块概述</h3>
+
+<p>Eth模块，说白了就是MCU和外部以太网物理层之间的「翻译官」。它负责把上层协议栈的数据包，转换成能在网线上传输的电信号。反过来也一样。</p>
+
+<p>在AUTOSAR分层里，Eth模块属于MCAL层。它直接操作硬件寄存器，不依赖任何操作系统。嗯，这里要注意：Eth模块的配置，直接影响整个车载网络的通信质量。</p>
+
+<p>我个人的习惯是，在开始配置之前，先搞清楚三个关键角色：</p>
+<ul>
+  <li><strong>MAC层</strong>：媒体访问控制，负责数据帧的封装和解封装</li>
+  <li><strong>PHY层</strong>：物理层，负责信号的编码解码和传输</li>
+  <li><strong>MII/RMII接口</strong>：MAC和PHY之间的桥梁</li>
+</ul>
+
+<p>你想想看，如果MAC和PHY的配置不匹配，那数据根本传不出去。我曾经在一个项目里，就因为MII接口的时钟极性配反了，整整排查了两天。</p>
+
+<h3>16.2 MAC与PHY配置</h3>
+
+<p>MAC配置，核心是设置工作模式。EB Tresos里，你需要关注这几个参数：</p>
+
+<table>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>我的建议</th>
+  </tr>
+  <tr>
+    <td>EthMacController</td>
+    <td>MAC控制器实例</td>
+    <td>一般选Eth_0</td>
+  </tr>
+  <tr>
+    <td>EthMacDuplex</td>
+    <td>全双工/半双工</td>
+    <td>车载场景建议全双工</td>
+  </tr>
+  <tr>
+    <td>EthMacSpeed</td>
+    <td>10M/100M/1000M</td>
+    <td>根据PHY能力选</td>
+  </tr>
+  <tr>
+    <td>EthMacAddress</td>
+    <td>MAC地址</td>
+    <td>注意唯一性</td>
+  </tr>
+</table>
+
+<p>PHY配置相对复杂一些。因为不同厂家的PHY芯片，寄存器地址和功能都不一样。EB Tresos提供了通用的PHY抽象层，但底层驱动还是要自己适配。</p>
+
+<p>我记得有一次，项目里用了博通的PHY，结果EB Tresos默认的PHY驱动不兼容。最后我不得不手动修改PHY的初始化序列，把自动协商关掉，强制设置成100M全双工。嗯，这种坑，踩过一次就记住了。</p>
+
+<div class="highlight">
+  <p><strong>关键点</strong>：MAC和PHY的配置，一定要保证速度、双工模式、接口类型完全一致。否则链路起不来。</p>
+</div>
+
+<h3>16.3 DMA描述符链</h3>
+
+<p>DMA描述符链，是Eth模块性能的关键。说白了，它就是一个环形缓冲区，用来管理数据包的收发。</p>
+
+<p>每个描述符包含：</p>
+<ul>
+  <li>数据缓冲区的地址</li>
+  <li>数据长度</li>
+  <li>控制标志（如：是否最后一个描述符）</li>
+  <li>状态信息（如：传输完成标志）</li>
+</ul>
+
+<p>在EB Tresos里，你需要配置描述符的数量和大小。我个人习惯，接收描述符至少配16个，发送描述符8个。为什么？因为接收方向的数据流通常更大，描述符少了容易丢包。</p>
+
+<p>来看一个典型的描述符链配置代码：</p>
+
+<pre><code>/* 描述符链配置示例 */
+#define ETH_RX_DESC_NUM    16
+#define ETH_TX_DESC_NUM    8
+
+/* 接收描述符数组 */
+Eth_DescType RxDesc[ETH_RX_DESC_NUM];
+/* 发送描述符数组 */
+Eth_DescType TxDesc[ETH_TX_DESC_NUM];
+
+/* 初始化描述符链 */
+void Eth_InitDescChain(void)
+{
+    uint32 i;
+    
+    for(i = 0; i &lt; ETH_RX_DESC_NUM; i++)
+    {
+        RxDesc[i].BufferAddr = (uint32)RxBuffer[i];
+        RxDesc[i].Length = ETH_BUFFER_SIZE;
+        RxDesc[i].Control = ETH_DESC_OWN_BIT;  /* 交给DMA控制 */
+        RxDesc[i].NextDesc = &amp;RxDesc[(i+1) % ETH_RX_DESC_NUM];
+    }
+    
+    /* 发送描述符类似，但初始时归CPU控制 */
+    for(i = 0; i &lt; ETH_TX_DESC_NUM; i++)
+    {
+        TxDesc[i].Control = 0;  /* CPU控制 */
+    }
+}</code></pre>
+
+<p>这里有个容易踩的坑：描述符的<code>NextDesc</code>指针，一定要形成闭环。我曾经见过一个同事，把最后一个描述符的NextDesc指向了NULL，结果DMA跑到最后一个描述符就停了，再也收不到新数据。</p>
+
+<div class="warning">
+  <p><strong>警告</strong>：描述符链的缓冲区地址，必须是物理地址。如果你用了MMU，记得做地址转换。否则DMA会访问到错误的内存区域。</p>
+</div>
+
+<h3>16.4 中断与轮询模式</h3>
+
+<p>Eth模块支持两种数据收发模式：中断模式和轮询模式。怎么选？看应用场景。</p>
+
+<p><strong>中断模式</strong>：</p>
+<ul>
+  <li>适合实时性要求高的场景</li>
+  <li>每个数据包到达都会触发中断</li>
+  <li>CPU利用率低，但中断频繁</li>
+  <li>配置时要注意中断优先级</li>
+</ul>
+
+<p><strong>轮询模式</strong>：</p>
+<ul>
+  <li>适合大数据量、低延迟要求的场景</li>
+  <li>CPU不断查询描述符状态</li>
+  <li>没有中断开销，但CPU占用高</li>
+  <li>常用于诊断或刷写场景</li>
+</ul>
+
+<p>我个人的经验是：正常通信用中断模式，刷写或大数据传输时切换到轮询模式。为什么？因为刷写时数据量巨大，中断频繁会导致CPU频繁进出中断上下文，反而降低效率。</p>
+
+<p>来看中断模式的处理流程：</p>
+
+<pre><code>/* 中断服务函数 */
+void Eth_IrqHandler(void)
+{
+    uint32 status;
+    
+    status = Eth_GetInterruptStatus();
+    
+    if(status &amp; ETH_INT_RX)
+    {
+        /* 处理接收数据 */
+        Eth_ProcessRxDescriptor();
+    }
+    
+    if(status &amp; ETH_INT_TX)
+    {
+        /* 处理发送完成 */
+        Eth_ProcessTxDescriptor();
+    }
+    
+    /* 清除中断标志 */
+    Eth_ClearInterrupt(status);
+}</code></pre>
+
+<p>轮询模式就简单多了：</p>
+
+<pre><code>/* 轮询模式主循环 */
+void Eth_PollingLoop(void)
+{
+    while(1)
+    {
+        /* 检查接收描述符 */
+        if(RxDesc[RxIndex].Control &amp; ETH_DESC_OWN_BIT == 0)
+        {
+            /* 处理接收到的数据包 */
+            ProcessRxPacket(&amp;RxDesc[RxIndex]);
+            /* 重新初始化描述符 */
+            RxDesc[RxIndex].Control = ETH_DESC_OWN_BIT;
+            RxIndex = (RxIndex + 1) % ETH_RX_DESC_NUM;
+        }
+        
+        /* 检查发送描述符 */
+        if(TxDesc[TxIndex].Control &amp; ETH_DESC_OWN_BIT == 0)
+        {
+            /* 发送完成，可以发送下一个包 */
+            TxIndex = (TxIndex + 1) % ETH_TX_DESC_NUM;
+        }
+    }
+}</code></pre>
+
+<div class="tip">
+  <p><strong>小技巧</strong>：在EB Tresos里，你可以同时使能中断模式和轮询模式。平时用中断，需要刷写时通过Eth_SetControllerMode切换到轮询。这样既保证了实时性，又兼顾了大数据传输的效率。</p>
+</div>
+
+<p>最后说一句：Eth模块的调试，最好用逻辑分析仪抓MII接口的波形。光靠软件调试，很多问题根本看不出来。我曾经有一个PHY链路不稳定的问题，软件查了三天没结果，最后用逻辑分析仪一看，原来是PHY的复位时序不对。嗯，硬件问题，软件背锅，这种事在嵌入式开发里太常见了。</p>
+        <div class="footer-nav">
+            <a href="15.html">← 上一章</a>
+            <a href="index.html">📖 返回目录</a>
+            <a href="17.html">下一章 →</a>
+        </div>
+        <footer>公众号:蓝海资料掘金营，微信deep3321</footer>
+    </div>
+</div>
+</div>
+</body>
+</html>

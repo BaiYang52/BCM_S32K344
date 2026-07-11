@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>第14章 控制器局域网（Can）</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1e9f0 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            padding: 20px;
+        }
+        /* 双边框设计：外边框 + 内阴影 */
+        .double-border {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 2px solid #f1c40f;
+            border-radius: 24px;
+            box-shadow: 0 20px 30px -15px rgba(0,0,0,0.2), inset 0 1px 0 0 #fff8e0;
+            overflow: hidden;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 0;
+        }
+        .sidebar {
+            background: #fefcf5;
+            border-right: 2px solid #fdebb3;
+            padding: 24px 16px;
+        }
+        .sidebar h3 {
+            font-size: 1.4rem;
+            color: #b45f06;
+            border-left: 5px solid #f39c12;
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+        .chapter-list {
+            list-style: none;
+        }
+        .chapter-list li {
+            margin-bottom: 6px;
+        }
+        .chapter-list a {
+            display: block;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: #2c3e50;
+            border-radius: 12px;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .chapter-list a:hover {
+            background: #fdebd0;
+            transform: translateX(3px);
+        }
+        .chapter-list .active {
+            background: #3b82f6;
+            color: white;
+            box-shadow: 0 2px 5px rgba(59,130,246,0.3);
+        }
+        .main-content {
+            padding: 30px 35px;
+            background: white;
+        }
+        .footer-nav {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 2px solid #f0e6d2;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-nav a {
+            padding: 8px 24px;
+            background: #f1f5f9;
+            text-decoration: none;
+            color: #1e40af;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .footer-nav a:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            color: #64748b;
+            border-top: 1px dashed #e2e8f0;
+            font-size: 0.9rem;
+        }
+        h2 { color: #1e3a8a; border-left: 6px solid #f59e0b; padding-left: 15px; margin: 20px 0 15px; }
+        h3 { color: #2c3e50; margin: 20px 0 10px; }
+        pre {
+            background: #2d2f36; color: #f8f8f2; padding: 15px; border-radius: 12px;
+            overflow-x: auto; font-family: 'JetBrains Mono', monospace; margin: 15px 0;
+        }
+        table {
+            width: 100%; border-collapse: collapse; margin: 15px 0; background: #fefce8;
+        }
+        th, td {
+            border: 1px solid #fcd34d; padding: 10px; text-align: left;
+        }
+        th { background: #fffbeb; }
+        .tip, .warning, .highlight {
+            padding: 12px 18px; border-radius: 16px; margin: 15px 0;
+        }
+        .tip { background: #e0f2fe; border-left: 6px solid #0ea5e9; }
+        .warning { background: #fee2e2; border-left: 6px solid #ef4444; }
+        .highlight { background: #fef9c3; border: 1px solid #facc15; }
+    </style>
+</head>
+<body>
+<div class="double-border">
+<div class="container">
+    <div class="sidebar">
+        <h3>📚 课程目录</h3>
+        <ul class="chapter-list">
+            <li><a href="01.html" class="">第1章 EB Tresos入门</a></li>
+<li><a href="02.html" class="">第2章 工作区与项目创建</a></li>
+<li><a href="03.html" class="">第3章 基础配置流程</a></li>
+<li><a href="04.html" class="">第4章 通用配置模块（Base）</a></li>
+<li><a href="05.html" class="">第5章 微控制器单元（MCU）</a></li>
+<li><a href="06.html" class="">第6章 端口与引脚（Port）</a></li>
+<li><a href="07.html" class="">第7章 数字输入输出（Dio）</a></li>
+<li><a href="08.html" class="">第8章 通用输入输出（Gpt）</a></li>
+<li><a href="09.html" class="">第9章 中断控制器（Icu）</a></li>
+<li><a href="10.html" class="">第10章 脉宽调制（Pwm）</a></li>
+<li><a href="11.html" class="">第11章 模数转换器（Adc）</a></li>
+<li><a href="12.html" class="">第12章 串行外设接口（Spi）</a></li>
+<li><a href="13.html" class="">第13章 内部集成电路（I2c）</a></li>
+<li><a href="14.html" class="active">第14章 控制器局域网（Can）</a></li>
+<li><a href="15.html" class="">第15章 本地互联网络（Lin）</a></li>
+<li><a href="16.html" class="">第16章 以太网（Eth）</a></li>
+<li><a href="17.html" class="">第17章 直接内存访问（Dma）</a></li>
+<li><a href="18.html" class="">第18章 内存映射（MemMap）</a></li>
+<li><a href="19.html" class="">第19章 Flash驱动（Fls）</a></li>
+<li><a href="20.html" class="">第20章 EEPROM模拟（Eep）</a></li>
+<li><a href="21.html" class="">第21章 看门狗（Wdg）</a></li>
+<li><a href="22.html" class="">第22章 CRC校验（Crc）</a></li>
+<li><a href="23.html" class="">第23章 错误检测与报告（Det）</a></li>
+<li><a href="24.html" class="">第24章 开发错误追踪（Dem）</a></li>
+<li><a href="25.html" class="">第25章 功能抑制管理器（BswM）</a></li>
+<li><a href="26.html" class="">第26章 通信栈配置（Com）</a></li>
+<li><a href="27.html" class="">第27章 操作系统接口（Os）</a></li>
+<li><a href="28.html" class="">第28章 安全模块（Crypto）</a></li>
+<li><a href="29.html" class="">第29章 调试与验证</a></li>
+<li><a href="30.html" class="">第30章 综合实战项目</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h2>第十四章：控制器局域网（CAN）：CAN模块概述、位时序配置、消息对象配置、硬件过滤与FIFO</h2>
+
+<p>好，咱们今天聊聊CAN。说实话，在汽车电子这个圈子里混，CAN总线是绕不开的坎。我最早接触CAN是在一个车身控制项目上，那时候刚入行，被位时序折腾得够呛。后来慢慢摸透了，才发现这东西其实挺有意思的。</p>
+
+<p>CAN模块在AUTOSAR架构里属于MCAL层，说白了就是直接跟硬件寄存器打交道的部分。EB Tresos里配置CAN，核心就三件事：<strong>时序要对、消息要准、过滤要狠</strong>。咱们一个一个说。</p>
+
+<h3>14.1 CAN模块概述</h3>
+
+<p>CAN控制器在芯片内部，负责把CPU要发的数据打包成CAN帧，或者把收到的CAN帧解析成数据。我习惯把CAN模块想象成一个<strong>智能邮局</strong>——你只管把信（数据）交给它，它自己会处理地址、校验、重传这些破事。</p>
+
+<p>在EB Tresos里，CAN模块的配置项很多，但别慌。核心配置就这几个：</p>
+
+<ul>
+  <li><strong>CanController</strong>：每个CAN控制器实例，比如Can0、Can1</li>
+  <li><strong>CanHardwareObject</strong>：硬件对象，对应消息对象或FIFO</li>
+  <li><strong>CanFilterMask</strong>：过滤掩码，决定哪些报文能进来</li>
+</ul>
+
+<p>嗯，这里要注意：<strong>一个CAN控制器可以配多个硬件对象</strong>。每个硬件对象要么是消息对象（Message Object），要么是FIFO。这个后面细说。</p>
+
+<div class="highlight">
+  <p><strong>核心要点：</strong>CAN模块的配置，本质上是告诉硬件：你该用多快的速度跑，哪些报文你要收，收完了放哪里。</p>
+</div>
+
+<h3>14.2 位时序配置</h3>
+
+<p>位时序，说白了就是<strong>决定CAN总线跑多快</strong>。CAN 2.0标准下，速率最高1Mbps。但实际项目中，125kbps、250kbps、500kbps更常见。为什么？因为线束长了、节点多了，速率太高容易出错。</p>
+
+<p>位时序由几个参数决定：</p>
+
+<table>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>我的经验</th>
+  </tr>
+  <tr>
+    <td>Baudrate</td>
+    <td>波特率，比如500kbps</td>
+    <td>别超过1M，除非你线缆质量极好</td>
+  </tr>
+  <tr>
+    <td>Sync_Seg</td>
+    <td>同步段，固定1个Tq</td>
+    <td>这个不用动，硬件自己处理</td>
+  </tr>
+  <tr>
+    <td>Prop_Seg</td>
+    <td>传播段，补偿物理延迟</td>
+    <td>线越长，这个值越大</td>
+  </tr>
+  <tr>
+    <td>Phase_Seg1</td>
+    <td>相位段1</td>
+    <td>跟采样点位置有关</td>
+  </tr>
+  <tr>
+    <td>Phase_Seg2</td>
+    <td>相位段2</td>
+    <td>决定了采样点靠前还是靠后</td>
+  </tr>
+  <tr>
+    <td>SJW</td>
+    <td>同步跳转宽度</td>
+    <td>一般设1~2，太大容易误同步</td>
+  </tr>
+</table>
+
+<p>你想想看，这些参数组合起来，就决定了<strong>采样点</strong>的位置。我个人习惯把采样点设在<strong>75%~85%</strong>之间。太靠前，容易采到信号抖动；太靠后，又可能错过有效电平。</p>
+
+<div class="tip">
+  <p><strong>小技巧：</strong>EB Tresos里有个位时序计算器，你输入目标波特率和时钟频率，它会自动算出推荐值。但我建议你算完后，手动验证一下采样点位置。我曾经在一个项目上直接用了工具推荐值，结果总线在高温下频繁出错——后来发现采样点偏了。</p>
+</div>
+
+<p>举个例子，假设系统时钟40MHz，目标500kbps，我通常会这样配：</p>
+
+<pre><code>// 伪代码示例
+CanControllerConfig.Baudrate = 500000;
+CanControllerConfig.PropSeg = 2;   // 2 Tq
+CanControllerConfig.PhaseSeg1 = 3; // 3 Tq
+CanControllerConfig.PhaseSeg2 = 2; // 2 Tq
+CanControllerConfig.SJW = 1;       // 1 Tq
+// 总Tq数 = 1 + 2 + 3 + 2 = 8 Tq
+// 采样点 = (1+2+3)/8 = 75%</code></pre>
+
+<p>嗯，75%的采样点，对于大多数场景都够用了。</p>
+
+<h3>14.3 消息对象（Message Object）配置</h3>
+
+<p>消息对象，是CAN模块里最灵活的部分。每个消息对象可以独立配置：</p>
+
+<ul>
+  <li><strong>方向</strong>：发送还是接收</li>
+  <li><strong>ID</strong>：标准帧11位，扩展帧29位</li>
+  <li><strong>数据长度</strong>：DLC，0~8字节</li>
+  <li><strong>中断使能</strong>：收完或发完要不要进中断</li>
+</ul>
+
+<p>我记得第一次配消息对象时，犯了个低级错误——把两个接收对象配成了同一个ID。结果总线上一有那个ID的报文，两个对象同时触发，中断处理乱成一锅粥。后来我养成了习惯：<strong>每个消息对象的ID必须唯一</strong>，除非你故意用FIFO。</p>
+
+<p>在EB Tresos里，消息对象的配置界面长这样：</p>
+
+<pre><code>CanHardwareObject_0:
+  - Type: MessageObject
+  - Direction: Receive
+  - CanId: 0x123
+  - IdType: STANDARD
+  - Dlc: 8
+  - Interrupt: ENABLED</code></pre>
+
+<p>这里有个坑：<strong>DLC配错了，数据可能被截断</strong>。比如你配了DLC=4，但对方发了8字节，你只能收到前4个。我曾经排查过一个故障，对方发了8字节，我这边只收到4个，查了半天才发现是DLC没改。</p>
+
+<div class="warning">
+  <p><strong>警告：</strong>消息对象的数量是有限的！不同芯片不一样，有的只有16个，有的64个。别一股脑全配成消息对象，省着点用。不够了就用FIFO。</p>
+</div>
+
+<h3>14.4 硬件过滤与FIFO</h3>
+
+<p>硬件过滤，是CAN模块的<strong>看门神</strong>。它决定了哪些报文能进到你的消息对象里。过滤靠两个东西：</p>
+
+<ul>
+  <li><strong>过滤码（Filter Code）</strong>：你想收的ID</li>
+  <li><strong>掩码（Mask）</strong>：哪些位必须匹配，哪些位无所谓</li>
+</ul>
+
+<p>举个例子，你想收ID=0x100~0x10F的报文，可以这样配：</p>
+
+<pre><code>FilterCode = 0x100;
+Mask = 0x7F0;  // 高7位必须匹配，低4位无所谓</code></pre>
+
+<p>这样，0x100、0x101、0x102...0x10F都能进来。0x110就进不来，因为高7位变了。</p>
+
+<p>我建议你<strong>尽量用掩码来批量过滤</strong>，而不是每个ID单独配一个消息对象。这样能省下宝贵的硬件资源。</p>
+
+<p>再说FIFO。FIFO是个好东西，它像一个<strong>自动排队机</strong>。你配一个FIFO，设置好深度（比如8个槽位），然后所有匹配的报文按顺序往里塞。你只管从FIFO里读就行，不用管哪个报文对应哪个对象。</p>
+
+<p>FIFO适合什么场景？</p>
+
+<ul>
+  <li><strong>多ID接收</strong>：比如你要收10个不同ID的报文，用FIFO一个对象就够了</li>
+  <li><strong>高频率报文</strong>：比如CAN FD，数据量大，FIFO能防止丢帧</li>
+  <li><strong>调试阶段</strong>：不确定哪些ID会来，FIFO全收了再说</li>
+</ul>
+
+<p>但FIFO也有缺点：<strong>你没法给每个报文单独配中断</strong>。FIFO满了才触发中断，或者每收到一个报文都触发。前者可能丢帧，后者中断太频繁。我一般折中：<strong>FIFO深度设4~8，中断在水印（比如半满）时触发</strong>。</p>
+
+<div class="highlight">
+  <p><strong>实战建议：</strong>关键报文（比如刹车、转向）用消息对象，单独配中断。非关键报文（比如车窗、灯光）用FIFO，批量处理。这样既保证了实时性，又节省了资源。</p>
+</div>
+
+<p>最后说一句，硬件过滤和FIFO是配合使用的。你配了FIFO，也得配过滤掩码，否则所有报文都往FIFO里塞，CPU会被撑死。我曾经见过一个同事，FIFO没配掩码，结果总线上一堆诊断报文全进来了，CPU负载直接飙到90%...嗯，后来他学乖了。</p>
+
+<p>好了，CAN模块的核心配置就这些。下一章咱们聊聊CAN的唤醒和错误处理，那又是另一番天地了。</p>
+        <div class="footer-nav">
+            <a href="13.html">← 上一章</a>
+            <a href="index.html">📖 返回目录</a>
+            <a href="15.html">下一章 →</a>
+        </div>
+        <footer>公众号:蓝海资料掘金营，微信deep3321</footer>
+    </div>
+</div>
+</div>
+</body>
+</html>

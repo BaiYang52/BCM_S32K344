@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>第24章 开发错误追踪（Dem）</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1e9f0 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            padding: 20px;
+        }
+        /* 双边框设计：外边框 + 内阴影 */
+        .double-border {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 2px solid #f1c40f;
+            border-radius: 24px;
+            box-shadow: 0 20px 30px -15px rgba(0,0,0,0.2), inset 0 1px 0 0 #fff8e0;
+            overflow: hidden;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 0;
+        }
+        .sidebar {
+            background: #fefcf5;
+            border-right: 2px solid #fdebb3;
+            padding: 24px 16px;
+        }
+        .sidebar h3 {
+            font-size: 1.4rem;
+            color: #b45f06;
+            border-left: 5px solid #f39c12;
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+        .chapter-list {
+            list-style: none;
+        }
+        .chapter-list li {
+            margin-bottom: 6px;
+        }
+        .chapter-list a {
+            display: block;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: #2c3e50;
+            border-radius: 12px;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .chapter-list a:hover {
+            background: #fdebd0;
+            transform: translateX(3px);
+        }
+        .chapter-list .active {
+            background: #3b82f6;
+            color: white;
+            box-shadow: 0 2px 5px rgba(59,130,246,0.3);
+        }
+        .main-content {
+            padding: 30px 35px;
+            background: white;
+        }
+        .footer-nav {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 2px solid #f0e6d2;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-nav a {
+            padding: 8px 24px;
+            background: #f1f5f9;
+            text-decoration: none;
+            color: #1e40af;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .footer-nav a:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            color: #64748b;
+            border-top: 1px dashed #e2e8f0;
+            font-size: 0.9rem;
+        }
+        h2 { color: #1e3a8a; border-left: 6px solid #f59e0b; padding-left: 15px; margin: 20px 0 15px; }
+        h3 { color: #2c3e50; margin: 20px 0 10px; }
+        pre {
+            background: #2d2f36; color: #f8f8f2; padding: 15px; border-radius: 12px;
+            overflow-x: auto; font-family: 'JetBrains Mono', monospace; margin: 15px 0;
+        }
+        table {
+            width: 100%; border-collapse: collapse; margin: 15px 0; background: #fefce8;
+        }
+        th, td {
+            border: 1px solid #fcd34d; padding: 10px; text-align: left;
+        }
+        th { background: #fffbeb; }
+        .tip, .warning, .highlight {
+            padding: 12px 18px; border-radius: 16px; margin: 15px 0;
+        }
+        .tip { background: #e0f2fe; border-left: 6px solid #0ea5e9; }
+        .warning { background: #fee2e2; border-left: 6px solid #ef4444; }
+        .highlight { background: #fef9c3; border: 1px solid #facc15; }
+    </style>
+</head>
+<body>
+<div class="double-border">
+<div class="container">
+    <div class="sidebar">
+        <h3>📚 课程目录</h3>
+        <ul class="chapter-list">
+            <li><a href="01.html" class="">第1章 EB Tresos入门</a></li>
+<li><a href="02.html" class="">第2章 工作区与项目创建</a></li>
+<li><a href="03.html" class="">第3章 基础配置流程</a></li>
+<li><a href="04.html" class="">第4章 通用配置模块（Base）</a></li>
+<li><a href="05.html" class="">第5章 微控制器单元（MCU）</a></li>
+<li><a href="06.html" class="">第6章 端口与引脚（Port）</a></li>
+<li><a href="07.html" class="">第7章 数字输入输出（Dio）</a></li>
+<li><a href="08.html" class="">第8章 通用输入输出（Gpt）</a></li>
+<li><a href="09.html" class="">第9章 中断控制器（Icu）</a></li>
+<li><a href="10.html" class="">第10章 脉宽调制（Pwm）</a></li>
+<li><a href="11.html" class="">第11章 模数转换器（Adc）</a></li>
+<li><a href="12.html" class="">第12章 串行外设接口（Spi）</a></li>
+<li><a href="13.html" class="">第13章 内部集成电路（I2c）</a></li>
+<li><a href="14.html" class="">第14章 控制器局域网（Can）</a></li>
+<li><a href="15.html" class="">第15章 本地互联网络（Lin）</a></li>
+<li><a href="16.html" class="">第16章 以太网（Eth）</a></li>
+<li><a href="17.html" class="">第17章 直接内存访问（Dma）</a></li>
+<li><a href="18.html" class="">第18章 内存映射（MemMap）</a></li>
+<li><a href="19.html" class="">第19章 Flash驱动（Fls）</a></li>
+<li><a href="20.html" class="">第20章 EEPROM模拟（Eep）</a></li>
+<li><a href="21.html" class="">第21章 看门狗（Wdg）</a></li>
+<li><a href="22.html" class="">第22章 CRC校验（Crc）</a></li>
+<li><a href="23.html" class="">第23章 错误检测与报告（Det）</a></li>
+<li><a href="24.html" class="active">第24章 开发错误追踪（Dem）</a></li>
+<li><a href="25.html" class="">第25章 功能抑制管理器（BswM）</a></li>
+<li><a href="26.html" class="">第26章 通信栈配置（Com）</a></li>
+<li><a href="27.html" class="">第27章 操作系统接口（Os）</a></li>
+<li><a href="28.html" class="">第28章 安全模块（Crypto）</a></li>
+<li><a href="29.html" class="">第29章 调试与验证</a></li>
+<li><a href="30.html" class="">第30章 综合实战项目</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h2>第二十四章：开发错误追踪（Dem）——Dem模块功能、事件ID配置、故障存储与冻结帧、UDS诊断支持</h2>
+
+<p>各位同学，今天我们来聊聊Dem模块。说实话，Dem在AUTOSAR里是个「闷声干大事」的角色。你平时可能感觉不到它，但一旦车出故障了，它就是你第一个要找的「目击证人」。我个人习惯把Dem比作车载黑匣子——它记录故障、存储上下文、配合UDS诊断，是ECU开发中绕不开的核心模块。</p>
+
+<h3>一、Dem模块到底在干什么？</h3>
+
+<p>Dem的全称是Diagnostic Event Manager，翻译过来就是「诊断事件管理器」。它的核心任务很简单：<strong>接收故障事件，管理故障状态，存储故障信息</strong>。</p>
+
+<p>你想想看，一个ECU里可能有上百个故障源——传感器短路、通信超时、电压异常……每个故障什么时候发生、什么时候恢复、发生了多少次，这些信息总得有个地方管吧？Dem就是干这个的。</p>
+
+<p>我在项目中遇到过一件事：某次台架测试时，一个偶发故障总是抓不到。后来发现是Dem的事件优先级配置不对，导致低优先级事件把高优先级事件覆盖了。嗯，这里要注意——Dem的事件管理是有优先级的，不是谁先来谁先记。</p>
+
+<h3>二、事件ID配置——给每个故障一个「身份证」</h3>
+
+<p>在Dem里，每个故障事件都有一个唯一的ID，我们叫它Event ID。这个ID不是随便编的，它需要和DTC（诊断故障码）一一对应。说白了，Event ID就是DTC在软件层面的映射。</p>
+
+<p>配置Event ID时，我建议你重点关注这几个参数：</p>
+
+<table>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>我的建议</th>
+    </tr>
+    <tr>
+        <td>Event ID</td>
+        <td>唯一标识符，范围0-65535</td>
+        <td>建议按功能模块分段，比如0x1000-0x1FFF给动力域</td>
+    </tr>
+    <tr>
+        <td>DTC映射</td>
+        <td>关联的UDS DTC码</td>
+        <td>确保与OEM的诊断规范一致，别自己瞎编</td>
+    </tr>
+    <tr>
+        <td>故障类型</td>
+        <td>比如硬件故障、软件故障、通信故障</td>
+        <td>分类清晰，后期排查会省很多事</td>
+    </tr>
+    <tr>
+        <td>存储属性</td>
+        <td>是否存储到NVM、是否生成冻结帧</td>
+        <td>关键故障建议开启，非关键故障可以关掉节省空间</td>
+    </tr>
+</table>
+
+<p>举个例子，我在EB Tresos里配置一个传感器短路事件：</p>
+
+<pre><code>// 伪代码示例：Dem事件配置
+DemEventParameterGroup {
+    DemEventId = 0x1234;
+    DemDtc = 0xC12345;  // 对应UDS DTC
+    DemEventType = DEM_EVENT_TYPE_HARDWARE;
+    DemStorageCondition = DEM_STORE_ON_FAILED;
+    DemFreezeFrameSupport = TRUE;
+    DemAgingAllowed = TRUE;
+}</code></pre>
+
+<p>为什么会这样配置？因为传感器短路属于硬件故障，一旦发生就需要立即存储，并且要记录冻结帧以便分析故障时的环境条件。</p>
+
+<h3>三、故障存储与冻结帧——黑匣子的核心数据</h3>
+
+<p>故障存储是Dem的看家本领。它把故障事件的状态、发生次数、老化信息等保存到非易失性存储器（NVM）中。这样即使ECU断电，故障信息也不会丢失。</p>
+
+<p>我个人习惯把故障存储分为三个层级：</p>
+
+<ul>
+    <li><strong>第一层：事件状态</strong>——当前故障是激活还是已恢复，这个存在RAM里，掉电就丢</li>
+    <li><strong>第二层：故障计数器</strong>——发生了多少次，这个存在NVM里，掉电不丢</li>
+    <li><strong>第三层：冻结帧</strong>——故障发生时的快照数据，比如车速、转速、电压等</li>
+</ul>
+
+<p>冻结帧这块，我曾经踩过一个坑。有一次客户反馈说某个故障的冻结帧数据全是0，查了半天才发现是冻结帧的触发条件配错了。默认是在故障发生时刻采集数据，但我配成了故障恢复时刻。你想想看，故障都恢复了，数据当然正常了，那还要冻结帧干嘛？</p>
+
+<div class="warning">
+    <strong>避坑指南：</strong>冻结帧的采集时机一定要和诊断需求对齐。通常建议在故障首次发生时采集一次，后续如果故障状态变化（比如从激活到恢复），可以再采集一次。但不要每次状态变化都采，否则NVM很快就会被写满。
+</div>
+
+<h3>四、UDS诊断支持——Dem和UDS怎么配合？</h3>
+
+<p>UDS（统一诊断服务）是汽车诊断的通用协议，而Dem是UDS在ECU内部的「数据提供方」。UDS的很多诊断服务，比如读取DTC信息（0x19服务）、清除DTC信息（0x14服务），背后都是Dem在干活。</p>
+
+<p>我简单列一下Dem和UDS的交互关系：</p>
+
+<table>
+    <tr>
+        <th>UDS服务</th>
+        <th>Dem响应</th>
+        <th>说明</th>
+    </tr>
+    <tr>
+        <td>0x19 01（读取DTC数量）</td>
+        <td>返回当前存储的DTC数量</td>
+        <td>Dem会统计所有激活和历史的DTC</td>
+    </tr>
+    <tr>
+        <td>0x19 02（读取DTC列表）</td>
+        <td>返回DTC列表及状态掩码</td>
+        <td>状态掩码表示故障是激活、已恢复还是已老化</td>
+    </tr>
+    <tr>
+        <td>0x19 04（读取冻结帧）</td>
+        <td>返回指定DTC的冻结帧数据</td>
+        <td>需要Dem提前配置好冻结帧的数据记录</td>
+    </tr>
+    <tr>
+        <td>0x14（清除DTC）</td>
+        <td>清除所有或指定DTC的存储信息</td>
+        <td>注意：清除操作会同时清除冻结帧和故障计数器</td>
+    </tr>
+</table>
+
+<p>这里有个细节我想提醒大家：UDS的0x19服务有很多子功能，不是所有子功能Dem都默认支持。你需要根据OEM的诊断需求，在EB Tresos里勾选对应的子功能。我见过不少项目因为漏配了某个子功能，导致诊断仪读不到数据，最后被客户投诉。</p>
+
+<div class="tip">
+    <strong>小技巧：</strong>在EB Tresos配置Dem时，建议把「DemDevErrorDetect」这个开关打开。它可以在开发阶段帮你检测Dem模块内部的配置错误，比如事件ID重复、DTC映射冲突等。等产品量产前再关掉，能省去很多调试时间。
+</div>
+
+<h3>五、总结一下</h3>
+
+<p>Dem模块说白了就是ECU的「病历本」。它记录故障、管理状态、配合UDS诊断，是AUTOSAR架构里不可或缺的一环。配置时我建议你重点关注三点：</p>
+
+<ul>
+    <li><strong>事件ID的规划</strong>——分段管理，别乱编</li>
+    <li><strong>冻结帧的配置</strong>——采集时机要对，数据要全</li>
+    <li><strong>UDS服务的匹配</strong>——客户要什么，你就配什么</li>
+</ul>
+
+<p>好了，这一章的内容就到这里。下一章我们会聊到通信栈的配置，那是另一个让人头大的模块。咱们下期见。</p>
+        <div class="footer-nav">
+            <a href="23.html">← 上一章</a>
+            <a href="index.html">📖 返回目录</a>
+            <a href="25.html">下一章 →</a>
+        </div>
+        <footer>公众号:蓝海资料掘金营，微信deep3321</footer>
+    </div>
+</div>
+</div>
+</body>
+</html>

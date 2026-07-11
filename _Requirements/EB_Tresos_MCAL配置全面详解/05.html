@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>第5章 微控制器单元（MCU）</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1e9f0 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            padding: 20px;
+        }
+        /* 双边框设计：外边框 + 内阴影 */
+        .double-border {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 2px solid #f1c40f;
+            border-radius: 24px;
+            box-shadow: 0 20px 30px -15px rgba(0,0,0,0.2), inset 0 1px 0 0 #fff8e0;
+            overflow: hidden;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 0;
+        }
+        .sidebar {
+            background: #fefcf5;
+            border-right: 2px solid #fdebb3;
+            padding: 24px 16px;
+        }
+        .sidebar h3 {
+            font-size: 1.4rem;
+            color: #b45f06;
+            border-left: 5px solid #f39c12;
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+        .chapter-list {
+            list-style: none;
+        }
+        .chapter-list li {
+            margin-bottom: 6px;
+        }
+        .chapter-list a {
+            display: block;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: #2c3e50;
+            border-radius: 12px;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .chapter-list a:hover {
+            background: #fdebd0;
+            transform: translateX(3px);
+        }
+        .chapter-list .active {
+            background: #3b82f6;
+            color: white;
+            box-shadow: 0 2px 5px rgba(59,130,246,0.3);
+        }
+        .main-content {
+            padding: 30px 35px;
+            background: white;
+        }
+        .footer-nav {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 2px solid #f0e6d2;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-nav a {
+            padding: 8px 24px;
+            background: #f1f5f9;
+            text-decoration: none;
+            color: #1e40af;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .footer-nav a:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            color: #64748b;
+            border-top: 1px dashed #e2e8f0;
+            font-size: 0.9rem;
+        }
+        h2 { color: #1e3a8a; border-left: 6px solid #f59e0b; padding-left: 15px; margin: 20px 0 15px; }
+        h3 { color: #2c3e50; margin: 20px 0 10px; }
+        pre {
+            background: #2d2f36; color: #f8f8f2; padding: 15px; border-radius: 12px;
+            overflow-x: auto; font-family: 'JetBrains Mono', monospace; margin: 15px 0;
+        }
+        table {
+            width: 100%; border-collapse: collapse; margin: 15px 0; background: #fefce8;
+        }
+        th, td {
+            border: 1px solid #fcd34d; padding: 10px; text-align: left;
+        }
+        th { background: #fffbeb; }
+        .tip, .warning, .highlight {
+            padding: 12px 18px; border-radius: 16px; margin: 15px 0;
+        }
+        .tip { background: #e0f2fe; border-left: 6px solid #0ea5e9; }
+        .warning { background: #fee2e2; border-left: 6px solid #ef4444; }
+        .highlight { background: #fef9c3; border: 1px solid #facc15; }
+    </style>
+</head>
+<body>
+<div class="double-border">
+<div class="container">
+    <div class="sidebar">
+        <h3>📚 课程目录</h3>
+        <ul class="chapter-list">
+            <li><a href="01.html" class="">第1章 EB Tresos入门</a></li>
+<li><a href="02.html" class="">第2章 工作区与项目创建</a></li>
+<li><a href="03.html" class="">第3章 基础配置流程</a></li>
+<li><a href="04.html" class="">第4章 通用配置模块（Base）</a></li>
+<li><a href="05.html" class="active">第5章 微控制器单元（MCU）</a></li>
+<li><a href="06.html" class="">第6章 端口与引脚（Port）</a></li>
+<li><a href="07.html" class="">第7章 数字输入输出（Dio）</a></li>
+<li><a href="08.html" class="">第8章 通用输入输出（Gpt）</a></li>
+<li><a href="09.html" class="">第9章 中断控制器（Icu）</a></li>
+<li><a href="10.html" class="">第10章 脉宽调制（Pwm）</a></li>
+<li><a href="11.html" class="">第11章 模数转换器（Adc）</a></li>
+<li><a href="12.html" class="">第12章 串行外设接口（Spi）</a></li>
+<li><a href="13.html" class="">第13章 内部集成电路（I2c）</a></li>
+<li><a href="14.html" class="">第14章 控制器局域网（Can）</a></li>
+<li><a href="15.html" class="">第15章 本地互联网络（Lin）</a></li>
+<li><a href="16.html" class="">第16章 以太网（Eth）</a></li>
+<li><a href="17.html" class="">第17章 直接内存访问（Dma）</a></li>
+<li><a href="18.html" class="">第18章 内存映射（MemMap）</a></li>
+<li><a href="19.html" class="">第19章 Flash驱动（Fls）</a></li>
+<li><a href="20.html" class="">第20章 EEPROM模拟（Eep）</a></li>
+<li><a href="21.html" class="">第21章 看门狗（Wdg）</a></li>
+<li><a href="22.html" class="">第22章 CRC校验（Crc）</a></li>
+<li><a href="23.html" class="">第23章 错误检测与报告（Det）</a></li>
+<li><a href="24.html" class="">第24章 开发错误追踪（Dem）</a></li>
+<li><a href="25.html" class="">第25章 功能抑制管理器（BswM）</a></li>
+<li><a href="26.html" class="">第26章 通信栈配置（Com）</a></li>
+<li><a href="27.html" class="">第27章 操作系统接口（Os）</a></li>
+<li><a href="28.html" class="">第28章 安全模块（Crypto）</a></li>
+<li><a href="29.html" class="">第29章 调试与验证</a></li>
+<li><a href="30.html" class="">第30章 综合实战项目</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h2>第5章：微控制器单元（MCU）——MCU模块概述、时钟配置、功耗管理与存储分区</h2>
+
+<p>各位同学，欢迎来到MCU模块的专题。说实话，MCU模块在AUTOSAR MCAL里是个“大管家”。它不直接控制外设，但所有外设的时钟、功耗、复位都归它管。我刚开始接触EB Tresos时，觉得MCU配置很简单，不就是设几个寄存器嘛。后来发现，这里面的坑，一个比一个深。</p>
+
+<h3>5.1 MCU模块概述</h3>
+
+<p>MCU模块的核心职责，说白了就三件事：<strong>时钟管理、功耗管理、复位管理</strong>。它不像DIO那样直接操作引脚，也不像SPI那样收发数据。但它决定了整个芯片能不能跑起来，跑多快，以及什么时候睡觉。</p>
+
+<p>在EB Tresos里，MCU模块的配置项非常多。我个人习惯，先看<strong>McuGeneralConfiguration</strong>这个组。这里面有个关键参数——<strong>McuClockReferencePoint</strong>。嗯，这个参数定义了系统时钟的基准点。你配置的所有PLL、分频器，最终都要追溯到它。</p>
+
+<div class="highlight">
+  <p><strong>核心要点：</strong>MCU模块是所有其他MCAL模块的“电源开关”和“节拍器”。配置错误，轻则外设不工作，重则芯片直接“死机”。</p>
+</div>
+
+<h3>5.2 时钟配置——PLL、OSC、FMPLL</h3>
+
+<p>时钟配置是MCU模块里最复杂、也最容易出错的部分。我见过太多工程师，在时钟树上栽跟头。</p>
+
+<h4>5.2.1 振荡器（OSC）配置</h4>
+
+<p>OSC是时钟的源头。通常有两种：外部晶振和内部RC振荡器。在EB Tresos里，你需要配置<strong>McuOscillator</strong>容器。</p>
+
+<p>关键参数包括：</p>
+<ul>
+  <li><strong>McuOscillatorFrequency</strong>：晶振频率。比如8MHz、16MHz。</li>
+  <li><strong>McuOscillatorStartupTime</strong>：起振时间。这个值设小了，晶振可能起不来；设大了，系统启动慢。</li>
+</ul>
+
+<p>我曾经在一个项目中，把起振时间设成了0。结果芯片上电后，时钟一直不稳定，外设乱跑。查了两天才发现，是OSC还没稳定，CPU就开始工作了。嗯，这个坑我替你们踩过了。</p>
+
+<h4>5.2.2 PLL与FMPLL配置</h4>
+
+<p>PLL（锁相环）用来倍频。FMPLL是带频率调制功能的PLL，主要用于降低EMI。</p>
+
+<p>配置PLL时，你需要关注三个参数：</p>
+<ul>
+  <li><strong>McuPllInputDivider</strong>：输入分频</li>
+  <li><strong>McuPllMultiplier</strong>：倍频系数</li>
+  <li><strong>McuPllOutputDivider</strong>：输出分频</li>
+</ul>
+
+<p>公式很简单：<code>输出频率 = 输入频率 / 输入分频 × 倍频系数 / 输出分频</code></p>
+
+<p>举个例子，假设外部晶振8MHz，你想跑到120MHz：</p>
+<pre><code>输入分频 = 2  →  8MHz / 2 = 4MHz
+倍频系数 = 60 →  4MHz × 60 = 240MHz
+输出分频 = 2  →  240MHz / 2 = 120MHz</code></pre>
+
+<p>在EB Tresos里，配置界面是这样的：</p>
+<pre><code>McuPllConfiguration:
+  - McuPllInputDivider: 2
+  - McuPllMultiplier: 60
+  - McuPllOutputDivider: 2
+  - McuPllLockTime: 100  // PLL锁定时间，单位us</code></pre>
+
+<div class="warning">
+  <p><strong>警告：</strong>PLL的倍频系数和分频系数不是随便设的。每个芯片都有频率上限。比如，输入到PLL的参考频率通常要求在4-16MHz之间。超出范围，PLL可能无法锁定。</p>
+</div>
+
+<h4>5.2.3 时钟树与时钟门控</h4>
+
+<p>配置好PLL后，还要把时钟分配到各个外设。这就是时钟树的作用。在EB Tresos里，通过<strong>McuClockSettingConfig</strong>来配置。</p>
+
+<p>每个外设都可以独立选择时钟源和分频系数。比如：</p>
+<ul>
+  <li>CAN模块：80MHz</li>
+  <li>SPI模块：40MHz</li>
+  <li>定时器：20MHz</li>
+</ul>
+
+<p>你想想看，如果所有外设都用同一个高频时钟，功耗会很高。所以，<strong>时钟门控</strong>就很重要了。不用的外设，直接把时钟关掉。</p>
+
+<h3>5.3 功耗模式管理</h3>
+
+<p>功耗管理是MCU模块的另一个重头戏。现在的车规芯片，都支持多种功耗模式：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>模式</th>
+      <th>CPU状态</th>
+      <th>外设状态</th>
+      <th>唤醒源</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>RUN</td>
+      <td>运行</td>
+      <td>全开</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>SLEEP</td>
+      <td>暂停</td>
+      <td>可选</td>
+      <td>中断、事件</td>
+    </tr>
+    <tr>
+      <td>STOP</td>
+      <td>停止</td>
+      <td>关闭</td>
+      <td>特定唤醒引脚</td>
+    </tr>
+    <tr>
+      <td>STANDBY</td>
+      <td>掉电</td>
+      <td>全部关闭</td>
+      <td>复位、RTC</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>在EB Tresos里，你需要配置<strong>McuPowerMode</strong>容器。每个模式都要定义：</p>
+<ul>
+  <li>进入条件</li>
+  <li>退出条件</li>
+  <li>唤醒源</li>
+  <li>唤醒时间</li>
+</ul>
+
+<p>我记得有个项目，客户要求待机功耗低于10uA。我们用了STANDBY模式，但发现唤醒后系统不稳定。查了很久，原来是唤醒后PLL重新锁定需要时间，而代码没有等待锁定完成就直接访问外设了。</p>
+
+<div class="tip">
+  <p><strong>技巧：</strong>在进入低功耗模式前，一定要保存关键寄存器的值。尤其是那些掉电后会丢失的寄存器。我习惯在进入STOP模式前，把GPIO状态、DMA配置都存到RAM里。</p>
+</div>
+
+<h3>5.4 RAM与Flash分区</h3>
+
+<p>最后，我们聊聊存储分区。这部分看似简单，但配置错了，程序可能跑飞。</p>
+
+<h4>5.4.1 RAM分区</h4>
+
+<p>在EB Tresos里，RAM分区通过<strong>McuRamSector</strong>来配置。每个RAM扇区可以独立设置：</p>
+<ul>
+  <li><strong>起始地址</strong></li>
+  <li><strong>大小</strong></li>
+  <li><strong>掉电保持属性</strong>（是否在低功耗模式下保持数据）</li>
+</ul>
+
+<p>举个例子，假设芯片有256KB RAM，你可以分成两个区：</p>
+<pre><code>McuRamSector_0:
+  - McuRamSectorBaseAddress: 0x1FFF0000
+  - McuRamSectorSize: 0x20000  // 128KB
+  - McuRamSectorPowerMode: MCU_POWER_MODE_RUN
+
+McuRamSector_1:
+  - McuRamSectorBaseAddress: 0x1FFF8000
+  - McuRamSectorSize: 0x20000  // 128KB
+  - McuRamSectorPowerMode: MCU_POWER_MODE_STANDBY</code></pre>
+
+<p>这样，在STANDBY模式下，只有扇区1的数据会保留。扇区0的数据会丢失。嗯，这里要注意：<strong>全局变量、堆栈、RTOS的任务栈</strong>，一定要放在掉电保持的扇区里。否则，唤醒后数据全没了，系统直接崩溃。</p>
+
+<h4>5.4.2 Flash分区</h4>
+
+<p>Flash分区主要用于<strong>OTA升级</strong>和<strong>数据存储</strong>。在EB Tresos里，通过<strong>McuFlashSector</strong>配置。</p>
+
+<p>关键参数：</p>
+<ul>
+  <li><strong>McuFlashSectorBaseAddress</strong>：扇区起始地址</li>
+  <li><strong>McuFlashSectorSize</strong>：扇区大小</li>
+  <li><strong>McuFlashSectorProtection</strong>：写保护</li>
+</ul>
+
+<p>我曾经在一个项目中，把Bootloader和应用程序放在同一个Flash扇区里。结果升级时，不小心把Bootloader也擦除了。嗯，从那以后，我坚持把Bootloader放在独立的、写保护的扇区里。</p>
+
+<div class="highlight">
+  <p><strong>最佳实践：</strong>Flash分区建议至少分三块：</p>
+  <ol>
+    <li><strong>Bootloader区</strong>：写保护，只读</li>
+    <li><strong>应用程序区</strong>：可擦写，用于主程序</li>
+    <li><strong>数据存储区</strong>：用于存储标定参数、故障码等</li>
+  </ol>
+</div>
+
+<h3>小结</h3>
+
+<p>MCU模块的配置，说白了就是管好三件事：时钟、功耗、存储。时钟配置要算好PLL的倍频分频，功耗管理要选对模式并处理好唤醒，存储分区要规划好RAM和Flash的用途。</p>
+
+<p>我个人觉得，MCU模块是MCAL里最需要“全局观”的模块。你配置DIO、SPI、CAN时，都要回头看看MCU的时钟有没有给对。所以，我建议大家在配置其他模块之前，先把MCU模块的时钟树画出来。画清楚了，后面就顺了。</p>
+
+<p>好，这一章就到这里。下一章，我们聊聊<strong>端口（PORT）模块</strong>——怎么把MCU的引脚配置成GPIO、复用功能，以及怎么避免引脚冲突。到时候见。</p>
+        <div class="footer-nav">
+            <a href="04.html">← 上一章</a>
+            <a href="index.html">📖 返回目录</a>
+            <a href="06.html">下一章 →</a>
+        </div>
+        <footer>公众号:蓝海资料掘金营，微信deep3321</footer>
+    </div>
+</div>
+</div>
+</body>
+</html>

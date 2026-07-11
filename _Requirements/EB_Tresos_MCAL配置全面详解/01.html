@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>第1章 EB Tresos入门</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1e9f0 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            padding: 20px;
+        }
+        /* 双边框设计：外边框 + 内阴影 */
+        .double-border {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 2px solid #f1c40f;
+            border-radius: 24px;
+            box-shadow: 0 20px 30px -15px rgba(0,0,0,0.2), inset 0 1px 0 0 #fff8e0;
+            overflow: hidden;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 0;
+        }
+        .sidebar {
+            background: #fefcf5;
+            border-right: 2px solid #fdebb3;
+            padding: 24px 16px;
+        }
+        .sidebar h3 {
+            font-size: 1.4rem;
+            color: #b45f06;
+            border-left: 5px solid #f39c12;
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+        .chapter-list {
+            list-style: none;
+        }
+        .chapter-list li {
+            margin-bottom: 6px;
+        }
+        .chapter-list a {
+            display: block;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: #2c3e50;
+            border-radius: 12px;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .chapter-list a:hover {
+            background: #fdebd0;
+            transform: translateX(3px);
+        }
+        .chapter-list .active {
+            background: #3b82f6;
+            color: white;
+            box-shadow: 0 2px 5px rgba(59,130,246,0.3);
+        }
+        .main-content {
+            padding: 30px 35px;
+            background: white;
+        }
+        .footer-nav {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 2px solid #f0e6d2;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-nav a {
+            padding: 8px 24px;
+            background: #f1f5f9;
+            text-decoration: none;
+            color: #1e40af;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .footer-nav a:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            color: #64748b;
+            border-top: 1px dashed #e2e8f0;
+            font-size: 0.9rem;
+        }
+        h2 { color: #1e3a8a; border-left: 6px solid #f59e0b; padding-left: 15px; margin: 20px 0 15px; }
+        h3 { color: #2c3e50; margin: 20px 0 10px; }
+        pre {
+            background: #2d2f36; color: #f8f8f2; padding: 15px; border-radius: 12px;
+            overflow-x: auto; font-family: 'JetBrains Mono', monospace; margin: 15px 0;
+        }
+        table {
+            width: 100%; border-collapse: collapse; margin: 15px 0; background: #fefce8;
+        }
+        th, td {
+            border: 1px solid #fcd34d; padding: 10px; text-align: left;
+        }
+        th { background: #fffbeb; }
+        .tip, .warning, .highlight {
+            padding: 12px 18px; border-radius: 16px; margin: 15px 0;
+        }
+        .tip { background: #e0f2fe; border-left: 6px solid #0ea5e9; }
+        .warning { background: #fee2e2; border-left: 6px solid #ef4444; }
+        .highlight { background: #fef9c3; border: 1px solid #facc15; }
+    </style>
+</head>
+<body>
+<div class="double-border">
+<div class="container">
+    <div class="sidebar">
+        <h3>📚 课程目录</h3>
+        <ul class="chapter-list">
+            <li><a href="01.html" class="active">第1章 EB Tresos入门</a></li>
+<li><a href="02.html" class="">第2章 工作区与项目创建</a></li>
+<li><a href="03.html" class="">第3章 基础配置流程</a></li>
+<li><a href="04.html" class="">第4章 通用配置模块（Base）</a></li>
+<li><a href="05.html" class="">第5章 微控制器单元（MCU）</a></li>
+<li><a href="06.html" class="">第6章 端口与引脚（Port）</a></li>
+<li><a href="07.html" class="">第7章 数字输入输出（Dio）</a></li>
+<li><a href="08.html" class="">第8章 通用输入输出（Gpt）</a></li>
+<li><a href="09.html" class="">第9章 中断控制器（Icu）</a></li>
+<li><a href="10.html" class="">第10章 脉宽调制（Pwm）</a></li>
+<li><a href="11.html" class="">第11章 模数转换器（Adc）</a></li>
+<li><a href="12.html" class="">第12章 串行外设接口（Spi）</a></li>
+<li><a href="13.html" class="">第13章 内部集成电路（I2c）</a></li>
+<li><a href="14.html" class="">第14章 控制器局域网（Can）</a></li>
+<li><a href="15.html" class="">第15章 本地互联网络（Lin）</a></li>
+<li><a href="16.html" class="">第16章 以太网（Eth）</a></li>
+<li><a href="17.html" class="">第17章 直接内存访问（Dma）</a></li>
+<li><a href="18.html" class="">第18章 内存映射（MemMap）</a></li>
+<li><a href="19.html" class="">第19章 Flash驱动（Fls）</a></li>
+<li><a href="20.html" class="">第20章 EEPROM模拟（Eep）</a></li>
+<li><a href="21.html" class="">第21章 看门狗（Wdg）</a></li>
+<li><a href="22.html" class="">第22章 CRC校验（Crc）</a></li>
+<li><a href="23.html" class="">第23章 错误检测与报告（Det）</a></li>
+<li><a href="24.html" class="">第24章 开发错误追踪（Dem）</a></li>
+<li><a href="25.html" class="">第25章 功能抑制管理器（BswM）</a></li>
+<li><a href="26.html" class="">第26章 通信栈配置（Com）</a></li>
+<li><a href="27.html" class="">第27章 操作系统接口（Os）</a></li>
+<li><a href="28.html" class="">第28章 安全模块（Crypto）</a></li>
+<li><a href="29.html" class="">第29章 调试与验证</a></li>
+<li><a href="30.html" class="">第30章 综合实战项目</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h2>第一章 EB Tresos入门：AUTOSAR简介、MCAL在AUTOSAR中的角色、EB Tresos Studio概述与安装</h2>
+
+<h3>1.1 为什么我们要聊AUTOSAR？</h3>
+
+<p>说实话，我刚入行那会儿，AUTOSAR还没现在这么普及。那时候做汽车嵌入式开发，基本是「一个项目一套代码」，换个芯片平台，底层驱动几乎要重写。痛苦吗？非常痛苦。</p>
+
+<p>后来AUTOSAR来了。它想解决什么问题？说白了，就是让软件和硬件解耦。你想想看，如果今天用英飞凌的TC3xx，明天换成NXP的S32K，底层驱动能直接复用，那开发效率能提升多少？</p>
+
+<p>AUTOSAR（AUTomotive Open System ARchitecture）是一个全球性的汽车软件架构标准。它定义了一套统一的接口和分层方法。我个人习惯把它理解成「汽车软件的乐高积木」——每个模块都有标准接口，拼在一起就能跑。</p>
+
+<div class="highlight">
+    <p><strong>核心要点：</strong>AUTOSAR不是代码，是一套规范。它规定了「怎么做」，而不是「做什么」。</p>
+</div>
+
+<h3>1.2 MCAL在AUTOSAR中的角色</h3>
+
+<p>好，我们聊到分层。AUTOSAR经典平台分三层：应用层、运行时环境（RTE）和基础软件层（BSW）。BSW下面还有一层，就是MCAL。</p>
+
+<p>MCAL的全称是Microcontroller Abstraction Layer，微控制器抽象层。它直接跟硬件打交道。我经常跟团队里的新人说：「MCAL就是芯片的『翻译官』。」</p>
+
+<p>为什么这么讲？因为上层软件（比如操作系统、通信栈）不关心你用的是哪款芯片。它只调用标准API。MCAL负责把这些API翻译成具体的寄存器操作。</p>
+
+<p>举个例子：上层要设置一个GPIO输出高电平。MCAL的Dio模块会帮你找到对应的端口寄存器，然后写1。换芯片了？没关系，MCAL重新配置一下，上层代码不用动。</p>
+
+<div class="tip">
+    <p><strong>我的经验：</strong>我在项目中遇到过最头疼的事，就是MCAL配置错了导致CAN通信死活不通。查了两天，最后发现是波特率分频因子算错了。嗯，MCAL的每个参数都值得你认真对待。</p>
+</div>
+
+<p>MCAL包含哪些模块？我列个表给你看：</p>
+
+<table>
+    <tr>
+        <th>模块缩写</th>
+        <th>全称</th>
+        <th>功能简述</th>
+    </tr>
+    <tr>
+        <td>Dio</td>
+        <td>Digital Input/Output</td>
+        <td>数字IO控制</td>
+    </tr>
+    <tr>
+        <td>Port</td>
+        <td>Port</td>
+        <td>端口引脚配置</td>
+    </tr>
+    <tr>
+        <td>Adc</td>
+        <td>Analog to Digital Converter</td>
+        <td>模数转换</td>
+    </tr>
+    <tr>
+        <td>Can</td>
+        <td>Controller Area Network</td>
+        <td>CAN通信驱动</td>
+    </tr>
+    <tr>
+        <td>Spi</td>
+        <td>Serial Peripheral Interface</td>
+        <td>SPI通信驱动</td>
+    </tr>
+    <tr>
+        <td>Mcu</td>
+        <td>Microcontroller Unit</td>
+        <td>MCU基础配置（时钟、复位等）</td>
+    </tr>
+</table>
+
+<p>每个模块都有对应的配置项。你想想看，一个MCAL配置工程，少则几百个参数，多则上千。手动配？不现实。这时候就需要工具了。</p>
+
+<h3>1.3 EB Tresos Studio 概述</h3>
+
+<p>EB Tresos Studio，简称EB Tresos，是Elektrobit公司出品的AUTOSAR配置工具。它专门用来配置MCAL和BSW。我个人觉得，它是目前市面上最成熟的MCAL配置工具之一。</p>
+
+<p>它能做什么？简单说三点：</p>
+
+<ul>
+    <li><strong>图形化配置：</strong>不用手写XML，点点鼠标就能配参数</li>
+    <li><strong>代码生成：</strong>配置完，一键生成C代码和配置文件</li>
+    <li><strong>校验检查：</strong>帮你检查配置有没有矛盾，比如时钟树配错了它会报错</li>
+</ul>
+
+<p>我记得第一次用EB Tresos时，感觉界面有点复杂。但用顺手之后，你会发现它的设计逻辑很清晰——左侧是模块树，中间是配置区域，右侧是属性面板。</p>
+
+<div class="warning">
+    <p><strong>避坑指南：</strong>我曾经因为EB Tresos版本和MCAL包版本不匹配，导致生成的代码编译报错。折腾了一下午才发现是版本问题。所以，安装前一定确认好版本兼容性。</p>
+</div>
+
+<h3>1.4 EB Tresos Studio 安装步骤</h3>
+
+<p>安装其实不复杂，但有几个细节要注意。我一步步说：</p>
+
+<ol>
+    <li><strong>下载安装包：</strong>从Elektrobit官网或供应商处获取。注意，EB Tresos是商业软件，需要license。</li>
+    <li><strong>检查系统要求：</strong>建议Windows 10 64位以上，内存至少8GB（我建议16GB，因为配复杂项目时挺吃内存的）。</li>
+    <li><strong>运行安装程序：</strong>一路Next，但安装路径不要有中文和空格。嗯，这是老生常谈了，但总有人踩坑。</li>
+    <li><strong>配置License：</strong>安装完成后，启动EB Tresos，会提示你导入license文件。把供应商给你的.lic文件导入即可。</li>
+    <li><strong>安装MCAL包：</strong>EB Tresos本身只是个框架，真正的MCAL配置插件需要单独安装。一般芯片厂商会提供对应的MCAL包，比如英飞凌的iLLD或EB的tresos插件。</li>
+</ol>
+
+<div class="tip">
+    <p><strong>小技巧：</strong>安装完成后，建议先打开一个示例工程试试。EB Tresos自带了一些demo配置，可以帮你快速验证工具是否正常工作。</p>
+</div>
+
+<h3>1.5 第一个MCAL配置工程</h3>
+
+<p>安装好了，我们来创建一个最简单的工程。目的是让你感受一下EB Tresos的工作流程。</p>
+
+<p>打开EB Tresos，点击File -> New -> Project。选择「Empty Project」，输入项目名称。然后右键点击项目，选择「Import Modules」，把你需要的MCAL模块加进来。</p>
+
+<p>举个例子，我们只加Dio和Port两个模块。配置Port模块，设置一个引脚为输出模式。再配置Dio模块，设置初始电平为高。然后点击生成代码按钮（那个齿轮图标）。</p>
+
+<p>你会看到工程目录下生成了几个文件：</p>
+
+<ul>
+    <li><code>Dio.c</code> 和 <code>Dio.h</code></li>
+    <li><code>Port.c</code> 和 <code>Port.h</code></li>
+    <li><code>Mcal.c</code> 和 <code>Mcal.h</code>（主配置入口）</li>
+</ul>
+
+<p>把这些文件加到你的IDE工程里，编译，下载到开发板。如果LED亮了，恭喜你，第一个MCAL配置成功了。</p>
+
+<div class="highlight">
+    <p><strong>关键点：</strong>EB Tresos生成的代码是「配置代码」，不是「业务逻辑代码」。你不需要修改它，只需要在应用层调用它提供的API。</p>
+</div>
+
+<h3>1.6 本章小结</h3>
+
+<p>这一章我们聊了AUTOSAR的背景、MCAL的角色，以及EB Tresos的安装和基本使用。说白了，就是让你知道：</p>
+
+<ul>
+    <li>AUTOSAR是标准，MCAL是硬件抽象层</li>
+    <li>EB Tresos是配置MCAL的工具</li>
+    <li>安装时注意版本匹配，配置时细心检查参数</li>
+</ul>
+
+<p>下一章，我们会深入EB Tresos的界面，聊聊每个面板是干什么用的。到时候我会分享一些我平时用的小技巧，保证让你少走弯路。</p>
+
+<p>嗯，今天就到这里。有问题欢迎交流。</p>
+        <div class="footer-nav">
+            <a href="javascript:void(0)">← 上一章</a>
+            <a href="index.html">📖 返回目录</a>
+            <a href="02.html">下一章 →</a>
+        </div>
+        <footer>公众号:蓝海资料掘金营，微信deep3321</footer>
+    </div>
+</div>
+</div>
+</body>
+</html>

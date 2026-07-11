@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>第7章 数字输入输出（Dio）</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1e9f0 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            padding: 20px;
+        }
+        /* 双边框设计：外边框 + 内阴影 */
+        .double-border {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 2px solid #f1c40f;
+            border-radius: 24px;
+            box-shadow: 0 20px 30px -15px rgba(0,0,0,0.2), inset 0 1px 0 0 #fff8e0;
+            overflow: hidden;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 0;
+        }
+        .sidebar {
+            background: #fefcf5;
+            border-right: 2px solid #fdebb3;
+            padding: 24px 16px;
+        }
+        .sidebar h3 {
+            font-size: 1.4rem;
+            color: #b45f06;
+            border-left: 5px solid #f39c12;
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+        .chapter-list {
+            list-style: none;
+        }
+        .chapter-list li {
+            margin-bottom: 6px;
+        }
+        .chapter-list a {
+            display: block;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: #2c3e50;
+            border-radius: 12px;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .chapter-list a:hover {
+            background: #fdebd0;
+            transform: translateX(3px);
+        }
+        .chapter-list .active {
+            background: #3b82f6;
+            color: white;
+            box-shadow: 0 2px 5px rgba(59,130,246,0.3);
+        }
+        .main-content {
+            padding: 30px 35px;
+            background: white;
+        }
+        .footer-nav {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 2px solid #f0e6d2;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-nav a {
+            padding: 8px 24px;
+            background: #f1f5f9;
+            text-decoration: none;
+            color: #1e40af;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .footer-nav a:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            color: #64748b;
+            border-top: 1px dashed #e2e8f0;
+            font-size: 0.9rem;
+        }
+        h2 { color: #1e3a8a; border-left: 6px solid #f59e0b; padding-left: 15px; margin: 20px 0 15px; }
+        h3 { color: #2c3e50; margin: 20px 0 10px; }
+        pre {
+            background: #2d2f36; color: #f8f8f2; padding: 15px; border-radius: 12px;
+            overflow-x: auto; font-family: 'JetBrains Mono', monospace; margin: 15px 0;
+        }
+        table {
+            width: 100%; border-collapse: collapse; margin: 15px 0; background: #fefce8;
+        }
+        th, td {
+            border: 1px solid #fcd34d; padding: 10px; text-align: left;
+        }
+        th { background: #fffbeb; }
+        .tip, .warning, .highlight {
+            padding: 12px 18px; border-radius: 16px; margin: 15px 0;
+        }
+        .tip { background: #e0f2fe; border-left: 6px solid #0ea5e9; }
+        .warning { background: #fee2e2; border-left: 6px solid #ef4444; }
+        .highlight { background: #fef9c3; border: 1px solid #facc15; }
+    </style>
+</head>
+<body>
+<div class="double-border">
+<div class="container">
+    <div class="sidebar">
+        <h3>📚 课程目录</h3>
+        <ul class="chapter-list">
+            <li><a href="01.html" class="">第1章 EB Tresos入门</a></li>
+<li><a href="02.html" class="">第2章 工作区与项目创建</a></li>
+<li><a href="03.html" class="">第3章 基础配置流程</a></li>
+<li><a href="04.html" class="">第4章 通用配置模块（Base）</a></li>
+<li><a href="05.html" class="">第5章 微控制器单元（MCU）</a></li>
+<li><a href="06.html" class="">第6章 端口与引脚（Port）</a></li>
+<li><a href="07.html" class="active">第7章 数字输入输出（Dio）</a></li>
+<li><a href="08.html" class="">第8章 通用输入输出（Gpt）</a></li>
+<li><a href="09.html" class="">第9章 中断控制器（Icu）</a></li>
+<li><a href="10.html" class="">第10章 脉宽调制（Pwm）</a></li>
+<li><a href="11.html" class="">第11章 模数转换器（Adc）</a></li>
+<li><a href="12.html" class="">第12章 串行外设接口（Spi）</a></li>
+<li><a href="13.html" class="">第13章 内部集成电路（I2c）</a></li>
+<li><a href="14.html" class="">第14章 控制器局域网（Can）</a></li>
+<li><a href="15.html" class="">第15章 本地互联网络（Lin）</a></li>
+<li><a href="16.html" class="">第16章 以太网（Eth）</a></li>
+<li><a href="17.html" class="">第17章 直接内存访问（Dma）</a></li>
+<li><a href="18.html" class="">第18章 内存映射（MemMap）</a></li>
+<li><a href="19.html" class="">第19章 Flash驱动（Fls）</a></li>
+<li><a href="20.html" class="">第20章 EEPROM模拟（Eep）</a></li>
+<li><a href="21.html" class="">第21章 看门狗（Wdg）</a></li>
+<li><a href="22.html" class="">第22章 CRC校验（Crc）</a></li>
+<li><a href="23.html" class="">第23章 错误检测与报告（Det）</a></li>
+<li><a href="24.html" class="">第24章 开发错误追踪（Dem）</a></li>
+<li><a href="25.html" class="">第25章 功能抑制管理器（BswM）</a></li>
+<li><a href="26.html" class="">第26章 通信栈配置（Com）</a></li>
+<li><a href="27.html" class="">第27章 操作系统接口（Os）</a></li>
+<li><a href="28.html" class="">第28章 安全模块（Crypto）</a></li>
+<li><a href="29.html" class="">第29章 调试与验证</a></li>
+<li><a href="30.html" class="">第30章 综合实战项目</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h2>第七章 数字输入输出（Dio）：Dio模块架构、通道与端口组配置、电平反转与中断支持、实战：点亮一颗LED</h2>
+
+<p>各位同学，欢迎来到Dio模块的专题。说实话，Dio是MCAL里最基础、也最容易被轻视的模块。很多人觉得不就是点个灯、读个按键嘛，有什么好讲的？但我在项目里见过太多因为Dio配置不当导致的“灵异现象”——比如LED微亮、引脚电平冲突、甚至烧毁IO口。今天我们就把它彻底讲透。</p>
+
+<h3>7.1 Dio模块架构：你看到的只是冰山一角</h3>
+
+<p>Dio模块的全称是Digital Input/Output，说白了就是数字IO控制。但AUTOSAR架构下的Dio，远不止“写1输出高、写0输出低”这么简单。</p>
+
+<p>它的内部架构分为三层：</p>
+<ul>
+  <li><strong>应用层接口</strong>：你调用的Dio_WriteChannel、Dio_ReadChannel等API</li>
+  <li><strong>配置层</strong>：EB Tresos里你填的那些表格参数</li>
+  <li><strong>硬件抽象层</strong>：直接操作寄存器的那部分，EB工具帮你生成了</li>
+</ul>
+
+<p>我个人习惯把Dio模块想象成一个“开关矩阵”。每个通道就是一个开关，端口组就是一组开关的集合。你通过配置告诉MCU：哪些开关是输入、哪些是输出、初始状态是什么。</p>
+
+<div class="highlight">
+  <p><strong>核心要点</strong>：Dio模块不负责中断处理，它只做电平读写。中断是交给ICU（Input Capture Unit）模块的。这个很多人搞混，我刚开始也犯过这个错。</p>
+</div>
+
+<h3>7.2 通道与端口组配置：别小看这些参数</h3>
+
+<p>在EB Tresos里配置Dio，你会看到一堆参数。我挑几个容易踩坑的讲：</p>
+
+<table>
+  <tr>
+    <th>参数名</th>
+    <th>说明</th>
+    <th>我的建议</th>
+  </tr>
+  <tr>
+    <td>DioPortId</td>
+    <td>端口编号，比如PORTA、PORTB</td>
+    <td>别搞混芯片手册的命名，有些厂商从0开始编号</td>
+  </tr>
+  <tr>
+    <td>DioChannelId</td>
+    <td>通道编号，0~15对应引脚0~15</td>
+    <td>注意有些芯片的通道不是连续的</td>
+  </tr>
+  <tr>
+    <td>DioPortGroup</td>
+    <td>端口组，可以一次操作多个通道</td>
+    <td>批量操作时效率高，但要注意对齐</td>
+  </tr>
+  <tr>
+    <td>DioLevelType</td>
+    <td>电平类型，HIGH或LOW</td>
+    <td>默认值别乱设，我曾经设反导致上电瞬间LED闪了一下</td>
+  </tr>
+</table>
+
+<p>端口组配置是个好东西。比如你要同时控制8个LED，用端口组一次写入，比逐个通道操作快8倍。但要注意：端口组必须连续，且起始通道要对齐到字节边界。嗯，这个限制很多新手不知道。</p>
+
+<h3>7.3 电平反转与中断支持：Dio的“隐藏技能”</h3>
+
+<p>电平反转，说白了就是让输出电平取反。你写1它变0，写0它变1。这个功能在什么场景下有用？</p>
+
+<ul>
+  <li>你要闪烁LED，不用每次都去读当前状态再取反</li>
+  <li>你要控制一个双向电平的器件，比如某些传感器的数据线</li>
+  <li>你要实现一个简单的PWM效果（虽然不推荐用Dio做）</li>
+</ul>
+
+<p>EB Tresos里配置电平反转很简单，在DioChannel配置里有个<code>DioChannelLevelInversion</code>参数，设为TRUE即可。但注意：这个反转是在硬件层面做的，你调用Dio_WriteChannel时传入的电平值会被自动取反。</p>
+
+<div class="warning">
+  <p><strong>警告</strong>：电平反转会影响所有读写操作。如果你在多个地方操作同一个通道，很容易搞混。我曾经在一个项目里，因为某个通道开了反转，结果调试了两天才发现是配置问题。建议只在明确需要的通道上使用。</p>
+</div>
+
+<p>至于中断支持，我再强调一遍：Dio模块本身不处理中断。但你可以通过配置Dio的“中断触发”属性，让硬件在电平变化时产生一个事件，然后由ICU模块去捕获这个事件。EB Tresos里Dio的配置项里有个<code>DioChannelInterrupt</code>，它其实是在告诉硬件：“这个引脚的变化需要通知ICU”。</p>
+
+<h3>7.4 实战：点亮一颗LED</h3>
+
+<p>好了，理论讲完了，我们来点实际的。点亮一颗LED，这是嵌入式工程师的“Hello World”。</p>
+
+<p>假设我们用的是某款32位MCU，LED接在PORTA的第5脚，高电平点亮。在EB Tresos里，你需要：</p>
+
+<ol>
+  <li>新建一个Dio配置模块</li>
+  <li>添加一个DioPort，选择PORTA</li>
+  <li>添加一个DioChannel，通道号设为5</li>
+  <li>方向设为输出（DioChannelDirection = OUTPUT）</li>
+  <li>初始电平设为LOW（防止上电瞬间点亮）</li>
+  <li>生成代码</li>
+</ol>
+
+<p>生成的代码里，你会看到类似这样的初始化函数：</p>
+
+<pre><code>/* Dio初始化代码（由EB工具生成） */
+void Dio_Init(const Dio_ConfigType *ConfigPtr)
+{
+    /* 配置PORTA第5脚为输出，初始低电平 */
+    /* 具体寄存器操作由工具生成 */
+}</code></pre>
+
+<p>然后在你的应用代码里：</p>
+
+<pre><code>/* 点亮LED */
+Dio_WriteChannel(DioConf_DioChannel_LED1, STD_HIGH);
+
+/* 延时一会儿 */
+for(uint32_t i = 0; i &lt; 1000000; i++);
+
+/* 熄灭LED */
+Dio_WriteChannel(DioConf_DioChannel_LED1, STD_LOW);</code></pre>
+
+<p>这里有个小技巧：<code>DioConf_DioChannel_LED1</code>这个宏是EB工具自动生成的，你不需要手动记通道号。我见过有人硬编码通道号，结果换了板子就出问题。用宏定义，移植性会好很多。</p>
+
+<div class="tip">
+  <p><strong>经验之谈</strong>：第一次点亮LED时，建议先用万用表量一下引脚电平。我遇到过因为焊接问题导致LED不亮，还以为是代码写错了。硬件问题先排除，再怀疑软件。</p>
+</div>
+
+<p>如果你想用端口组同时控制多个LED，配置会稍微复杂一点。你需要定义一个DioPortGroup，指定起始通道和宽度。比如你要控制PORTA的0~3脚：</p>
+
+<pre><code>/* 端口组配置示例 */
+Dio_WritePortGroup(DioConf_DioPortGroup_LEDGroup, 0x0F); /* 同时点亮4个LED */</code></pre>
+
+<p>嗯，这里要注意：端口组的写入值必须和通道宽度匹配。4个通道就用4位数据，别多写也别少写。</p>
+
+<p>最后说一句，点亮LED看似简单，但它是你验证整个MCAL配置链是否正确的第一步。如果LED不亮，别急着怀疑Dio模块，先检查时钟配置、引脚复用功能、甚至板子的供电。我当年第一次调Dio，折腾了半天发现是板子没上电...你说尴尬不尴尬。</p>
+
+<p>好了，Dio模块的核心内容就这些。下一章我们讲Port模块，它会告诉你如何配置引脚的功能复用和上下拉。到时候你会发现，Dio和Port是密不可分的两兄弟。</p>
+        <div class="footer-nav">
+            <a href="06.html">← 上一章</a>
+            <a href="index.html">📖 返回目录</a>
+            <a href="08.html">下一章 →</a>
+        </div>
+        <footer>公众号:蓝海资料掘金营，微信deep3321</footer>
+    </div>
+</div>
+</div>
+</body>
+</html>

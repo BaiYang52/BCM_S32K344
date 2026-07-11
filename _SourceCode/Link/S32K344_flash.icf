@@ -1,0 +1,99 @@
+/*****************************************************************************
+ *
+ * Copyright 2020-2023 NXP
+ * All Rights Reserved
+ *
+ *****************************************************************************
+ *
+ * THIS SOFTWARE IS PROVIDED BY NXP "AS IS" AND ANY EXPRESSED OR
+ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ * IN NO EVENT SHALL NXP OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+ * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+ * THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ ****************************************************************************/
+/*-Sizes-*/
+define symbol __size_sram__        = 0x48000;  /* 288KB - restore full 0x48000 for APP debug (no FBL yet) */
+define symbol __size_pflash__      = 0x3F4000; /* 4MB - 48KB reserved for sBAF/HSE (debug/standalone build, no FBL) */
+define symbol __size_pflash_baf__  = 0xC000;   /* Secure flash memory. Do not use in applications! */
+define symbol __size_dflash__      = 0x20000;
+define symbol __size_sram0_stdby__ = 0x8000;
+define symbol __size_cstack__      = 0x1000;
+define symbol __size_heap__        = 0x1000;
+define symbol __size_itcm__        = 0x10000;
+define symbol __size_dtcm__        = 0x20000;
+
+/*-Memory Regions-*/
+/* APP base = 0x400000 (chip physical start) for standalone build & debug.
+ * When FBL is ready: right-click boot_header.c -> Exclude from Build,
+ * and change __region_PFLASH_start__ to 0x440000, __region_SRAM_start__ to 0x20418000
+ * (and __size_pflash__/__size_sram__ accordingly) to slot this APP behind FBL. */
+define symbol __region_PFLASH_start__      = 0x400000;
+define symbol __region_PFLASH_app_start__  = __region_PFLASH_start__ + 0x400;
+define symbol __region_PFLASH_end__        = __region_PFLASH_start__+__size_pflash__-1;
+define symbol __region_PFLASH_BAF_start__  = 0x7F4000;
+define symbol __region_PFLASH_BAF_end__    = __region_PFLASH_BAF_start__+__size_pflash_baf__;
+define symbol __region_DFLASH_start__      = 0x10000000;
+define symbol __region_DFLASH_end__        = __region_DFLASH_start__+__size_dflash__;
+define symbol __region_SRAM0_STDBY_start__ = 0x20400000;
+define symbol __region_SRAM0_STDBY_end__   = __region_SRAM0_STDBY_start__+__size_sram0_stdby__;
+define symbol __region_SRAM_start__        = 0x20408000;
+define symbol __region_SRAM_end__          = __region_SRAM_start__+__size_sram__;
+define symbol __region_ITCM_start__        = 0x00000000;
+define symbol __region_ITCM_end__          = __region_ITCM_start__+__size_itcm__;
+define symbol __region_DTCM_start__        = 0x20000000;
+define symbol __region_DTCM_end__          = __region_DTCM_start__+__size_dtcm__;
+
+define memory mem with size = 4G;
+define region PFLASH_region      = mem:[from __region_PFLASH_app_start__ to __region_PFLASH_end__];
+define region BOOT_HEADER_region = mem:[from __region_PFLASH_start__ to __region_PFLASH_app_start__-1];
+define region PFLASH_BAF_region  = mem:[from __region_PFLASH_BAF_start__ to __region_PFLASH_BAF_end__];
+define region DFLASH_region      = mem:[from __region_DFLASH_start__ to __region_DFLASH_end__];
+define region SRAM0_STDBY_region = mem:[from __region_SRAM0_STDBY_start__ to __region_SRAM0_STDBY_end__];
+define region SRAM_region        = mem:[from __region_SRAM_start__ to __region_SRAM_end__];
+define region ITCM_region        = mem:[from __region_ITCM_start__ to __region_ITCM_end__];
+define region DTCM_region        = mem:[from __region_DTCM_start__ to __region_DTCM_end__];
+
+define exported symbol CM7_START_ADDRESS = __region_PFLASH_app_start__;
+define exported symbol __STDBYRAM_START  = __region_SRAM0_STDBY_start__;
+define exported symbol __STDBYRAM_SIZE   = __size_sram0_stdby__;
+
+define block CSTACK       with alignment = 8, size = __size_cstack__ { };
+define block HEAP         with alignment = 8, size = __size_heap__ { };
+define block BSS          with alignment = 8 { section .bss };
+define block ITCM         with alignment = 8, size = __size_itcm__ { };
+define block DTCM         with alignment = 8, size = __size_dtcm__ { };
+define block ECC_TABLES   with alignment = 4 { section .ecc_tables };
+define block ZERO_TABLES  with alignment = 4 { section .zero_tables };
+define block COPY_TABLES  with alignment = 4 { section .copy_tables };
+define block BOOT_HEADER  { section .boot_header };
+define block DATA         with alignment = 8 { section .data, section .preinit_array, section .init_array };
+define block RW           { readwrite };
+define block ZI           { zi };
+
+do not initialize  { section .noinit };
+initialize by copy { section .bss }; 
+initialize by copy { section .data };
+initialize by copy { section .preinit_array };
+initialize by copy { section .init_array };
+
+keep { section .boot_header };
+
+place at start of BOOT_HEADER_region { block BOOT_HEADER };
+place at start of PFLASH_region    { section .intvec };
+place in PFLASH_region             { readonly }; /* Place constants and initializers in ROM: .rodata and .data_init */
+place in PFLASH_region             { block ECC_TABLES };
+place in PFLASH_region             { block ZERO_TABLES };
+place in PFLASH_region             { block COPY_TABLES };
+place in PFLASH_region             { block RW };
+place in PFLASH_region             { block ZI };
+place in SRAM_region               { block DATA, block BSS, block HEAP, block CSTACK };
+place in SRAM0_STDBY_region        { section .standby_ram };
+place in ITCM_region               { block ITCM };
+place in DTCM_region               { block DTCM };

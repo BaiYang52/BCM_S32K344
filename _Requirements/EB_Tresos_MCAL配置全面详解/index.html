@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>EB Tresos MCAL 配置全面详解 · 课程目录</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f9f3e8 0%, #fff7ef 100%);
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            padding: 2rem 1.5rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #2e241f;
+        }
+
+        .container {
+            max-width: 1400px;
+            width: 100%;
+            background: rgba(255, 250, 240, 0.6);
+            backdrop-filter: blur(2px);
+            border-radius: 48px 48px 32px 32px;
+            padding: 2rem 2rem 1.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 8px 20px rgba(255, 215, 150, 0.2);
+            border: 1px solid rgba(255, 235, 200, 0.5);
+        }
+
+        /* 标题区 — 中小学生风格：明快、圆润、活泼 */
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 2.2rem;
+            border-bottom: 4px solid #ffb882;
+            padding-bottom: 0.8rem;
+        }
+
+        .header h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #f78b3f, #febc6b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 8px rgba(255, 150, 50, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .header h1::before {
+            content: "📘";
+            font-size: 2.2rem;
+            background: none;
+            color: #f78b3f;
+        }
+
+        .header-badge {
+            background: #ffe1b3;
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #7a4d2a;
+            box-shadow: inset 0 -2px 0 #dba16a;
+            border: 1px solid #fcd29e;
+            backdrop-filter: blur(2px);
+            white-space: nowrap;
+        }
+
+        .header-badge span {
+            background: #f78b3f;
+            color: white;
+            border-radius: 30px;
+            padding: 0.1rem 0.7rem;
+            margin-left: 0.4rem;
+            font-size: 0.8rem;
+        }
+
+        /* 目录网格 — 卡片风格，紧凑且清晰 */
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 0.9rem 1.2rem 0.9rem 1.2rem;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(255, 180, 80, 0.08);
+            transition: all 0.2s ease;
+            border: 1px solid #f7e3cf;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            backdrop-filter: blur(2px);
+            background: rgba(255, 252, 245, 0.9);
+            cursor: default;
+        }
+
+        .card:hover {
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: 0 12px 24px rgba(255, 150, 50, 0.15);
+            border-color: #fdb07a;
+            background: #fffcf5;
+        }
+
+        .card-number {
+            font-weight: 700;
+            font-size: 1.2rem;
+            min-width: 2.6rem;
+            height: 2.6rem;
+            background: #ffdbb5;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b3f1f;
+            box-shadow: inset 0 -2px 0 #e3b282;
+            flex-shrink: 0;
+            padding: 0 0.2rem;
+        }
+
+        .card-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #3d2b1f;
+            line-height: 1.3;
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.2rem 0.4rem;
+        }
+
+        .card-sub {
+            font-size: 0.75rem;
+            color: #7f5f44;
+            opacity: 0.85;
+            display: block;
+            margin-top: 0.15rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            width: 100%;
+        }
+
+        .card-link:hover .card-number {
+            background: #fec28a;
+            color: #3d2412;
+        }
+
+        .card-arrow {
+            font-size: 1.2rem;
+            color: #d9995a;
+            margin-left: auto;
+            padding-left: 0.3rem;
+            opacity: 0.6;
+            transition: 0.2s;
+            flex-shrink: 0;
+        }
+
+        .card:hover .card-arrow {
+            opacity: 1;
+            transform: translateX(4px);
+            color: #c5722e;
+        }
+
+        /* 特殊点缀：一些课程标签 */
+        .tag {
+            background: #fdebd0;
+            border-radius: 40px;
+            padding: 0.1rem 0.6rem;
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: #8f5f36;
+            letter-spacing: 0.02em;
+            border: 1px solid #fad2a8;
+            display: inline-block;
+            margin-left: 0.2rem;
+        }
+
+        /* footer */
+        .footer {
+            margin-top: 2.5rem;
+            padding: 1.2rem 0 0.2rem;
+            border-top: 3px dashed #fbc99d;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5f3f28;
+            background: transparent;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.8rem 1.5rem;
+        }
+
+        .footer .highlight {
+            background: #fdebd0;
+            padding: 0.2rem 1rem;
+            border-radius: 60px;
+            display: inline-block;
+            box-shadow: 0 2px 6px rgba(255, 180, 80, 0.2);
+            font-weight: 600;
+        }
+
+        .footer .wechat {
+            background: #fadbc0;
+            padding: 0.2rem 1rem;
+            border-radius: 60px;
+            color: #4d2f1a;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 700px) {
+            body { padding: 1rem 0.8rem; }
+            .container { padding: 1.2rem 1rem; }
+            .header h1 { font-size: 1.8rem; }
+            .catalog-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+            .card { padding: 0.7rem 0.9rem; }
+            .card-number { min-width: 2.2rem; height: 2.2rem; font-size: 1rem; }
+            .card-title { font-size: 0.9rem; }
+            .card-sub { font-size: 0.7rem; white-space: normal; }
+            .footer { flex-direction: column; gap: 0.3rem; }
+        }
+
+        @media (min-width: 1200px) {
+            .catalog-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* 小装饰 */
+        .highlight-dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: #f78b3f;
+            border-radius: 50%;
+            margin-right: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>EB Tresos MCAL 配置详解</h1>
+        <div class="header-badge">
+            📚 30 章完整版 <span>v2.0</span>
+        </div>
+    </div>
+
+    <!-- 目录卡片网格 30个 -->
+    <div class="catalog-grid">
+        <!-- 1 -->
+        <div class="card"><a class="card-link" href="01.html"><span class="card-number">01</span><div class="card-content"><div class="card-title">EB Tresos入门 <span class="tag">入门</span></div><span class="card-sub">AUTOSAR简介 · MCAL角色 · Studio安装</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 2 -->
+        <div class="card"><a class="card-link" href="02.html"><span class="card-number">02</span><div class="card-content"><div class="card-title">工作区与项目创建</div><span class="card-sub">工作区概念 · 新建/导入项目 · 结构解析</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 3 -->
+        <div class="card"><a class="card-link" href="03.html"><span class="card-number">03</span><div class="card-content"><div class="card-title">基础配置流程</div><span class="card-sub">编辑器界面 · 模块引用 · 搜索过滤 · 生成代码</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 4 -->
+        <div class="card"><a class="card-link" href="04.html"><span class="card-number">04</span><div class="card-content"><div class="card-title">通用配置模块 (Base)</div><span class="card-sub">Base功能 · 时钟树 · 复位管理 · 寄存器默认值</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 5 -->
+        <div class="card"><a class="card-link" href="05.html"><span class="card-number">05</span><div class="card-content"><div class="card-title">微控制器单元 (MCU)</div><span class="card-sub">时钟配置 · PLL/OSC · 功耗模式 · RAM/Flash分区</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 6 -->
+        <div class="card"><a class="card-link" href="06.html"><span class="card-number">06</span><div class="card-content"><div class="card-title">端口与引脚 (Port)</div><span class="card-sub">复用功能 · 电平驱动 · 安全配置 · ADC共享</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 7 -->
+        <div class="card"><a class="card-link" href="07.html"><span class="card-number">07</span><div class="card-content"><div class="card-title">数字输入输出 (Dio)</div><span class="card-sub">通道与端口组 · 电平反转 · 中断 · 点亮LED</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 8 -->
+        <div class="card"><a class="card-link" href="08.html"><span class="card-number">08</span><div class="card-content"><div class="card-title">通用输入输出 (Gpt)</div><span class="card-sub">定时器通道 · 中断回调 · 单次/周期模式</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 9 -->
+        <div class="card"><a class="card-link" href="09.html"><span class="card-number">09</span><div class="card-content"><div class="card-title">中断控制器 (Icu)</div><span class="card-sub">边沿检测 · 中断优先级 · 按键中断实战</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 10 -->
+        <div class="card"><a class="card-link" href="10.html"><span class="card-number">10</span><div class="card-content"><div class="card-title">脉宽调制 (Pwm)</div><span class="card-sub">通道配置 · 占空比/频率 · 与Gpt协同</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 11 -->
+        <div class="card"><a class="card-link" href="11.html"><span class="card-number">11</span><div class="card-content"><div class="card-title">模数转换器 (Adc)</div><span class="card-sub">转换组 · 触发源 · 结果读取 · DMA传输</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 12 -->
+        <div class="card"><a class="card-link" href="12.html"><span class="card-number">12</span><div class="card-content"><div class="card-title">串行外设接口 (Spi)</div><span class="card-sub">主从模式 · 数据帧 · Job与Sequence</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 13 -->
+        <div class="card"><a class="card-link" href="13.html"><span class="card-number">13</span><div class="card-content"><div class="card-title">内部集成电路 (I2c)</div><span class="card-sub">总线时序 · 主从模式 · 多主机仲裁</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 14 -->
+        <div class="card"><a class="card-link" href="14.html"><span class="card-number">14</span><div class="card-content"><div class="card-title">控制器局域网 (Can)</div><span class="card-sub">位时序 · 消息对象 · 硬件过滤 · FIFO</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 15 -->
+        <div class="card"><a class="card-link" href="15.html"><span class="card-number">15</span><div class="card-content"><div class="card-title">本地互联网络 (Lin)</div><span class="card-sub">帧格式 · 调度表 · 从机/主机模式</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 16 -->
+        <div class="card"><a class="card-link" href="16.html"><span class="card-number">16</span><div class="card-content"><div class="card-title">以太网 (Eth)</div><span class="card-sub">MAC/PHY · DMA描述符链 · 中断/轮询</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 17 -->
+        <div class="card"><a class="card-link" href="17.html"><span class="card-number">17</span><div class="card-content"><div class="card-title">直接内存访问 (Dma)</div><span class="card-sub">通道配置 · 单次/循环/链表 · 外设联动</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 18 -->
+        <div class="card"><a class="card-link" href="18.html"><span class="card-number">18</span><div class="card-content"><div class="card-title">内存映射 (MemMap)</div><span class="card-sub">内存段定义 · 链接脚本 · 地址对齐</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 19 -->
+        <div class="card"><a class="card-link" href="19.html"><span class="card-number">19</span><div class="card-content"><div class="card-title">Flash驱动 (Fls)</div><span class="card-sub">擦写读取 · 扇区/页 · ECC纠错</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 20 -->
+        <div class="card"><a class="card-link" href="20.html"><span class="card-number">20</span><div class="card-content"><div class="card-title">EEPROM模拟 (Eep)</div><span class="card-sub">虚拟EEPROM · 磨损均衡 · 数据保存</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 21 -->
+        <div class="card"><a class="card-link" href="21.html"><span class="card-number">21</span><div class="card-content"><div class="card-title">看门狗 (Wdg)</div><span class="card-sub">内外部看门狗 · 触发模式 · 安全机制</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 22 -->
+        <div class="card"><a class="card-link" href="22.html"><span class="card-number">22</span><div class="card-content"><div class="card-title">CRC校验 (Crc)</div><span class="card-sub">多项式选择 · 8/16/32位 · 硬件加速</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 23 -->
+        <div class="card"><a class="card-link" href="23.html"><span class="card-number">23</span><div class="card-content"><div class="card-title">错误检测与报告 (Det)</div><span class="card-sub">错误ID · 开发/生产模式 · 日志输出</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 24 -->
+        <div class="card"><a class="card-link" href="24.html"><span class="card-number">24</span><div class="card-content"><div class="card-title">开发错误追踪 (Dem)</div><span class="card-sub">事件ID · 故障存储 · 冻结帧 · UDS</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 25 -->
+        <div class="card"><a class="card-link" href="25.html"><span class="card-number">25</span><div class="card-content"><div class="card-title">功能抑制管理器 (BswM)</div><span class="card-sub">规则引擎 · 动作列表 · 模式切换</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 26 -->
+        <div class="card"><a class="card-link" href="26.html"><span class="card-number">26</span><div class="card-content"><div class="card-title">通信栈配置 (Com)</div><span class="card-sub">信号/PDU映射 · IPDU复用 · 周期/事件</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 27 -->
+        <div class="card"><a class="card-link" href="27.html"><span class="card-number">27</span><div class="card-content"><div class="card-title">操作系统接口 (Os)</div><span class="card-sub">任务/中断配置 · 资源事件 · MCAL交互</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 28 -->
+        <div class="card"><a class="card-link" href="28.html"><span class="card-number">28</span><div class="card-content"><div class="card-title">安全模块 (Crypto)</div><span class="card-sub">密钥管理 · 加密解密 · HSM集成</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 29 -->
+        <div class="card"><a class="card-link" href="29.html"><span class="card-number">29</span><div class="card-content"><div class="card-title">调试与验证</div><span class="card-sub">EB Tresos调试 · Trace32 · 错误排查</span></div><span class="card-arrow">→</span></a></div>
+        <!-- 30 -->
+        <div class="card"><a class="card-link" href="30.html"><span class="card-number">30</span><div class="card-content"><div class="card-title">综合实战项目</div><span class="card-sub">从零配置MCAL · 集成 · 烧录 · 性能优化</span></div><span class="card-arrow">→</span></a></div>
+    </div>
+
+    <!-- footer 公众号信息 -->
+    <div class="footer">
+        <span class="highlight">📖 公众号：蓝海资料掘金营</span>
+        <span class="wechat">📱 微信 deep3321</span>
+        <span style="font-size:0.8rem; opacity:0.6;">· 专注AUTOSAR & MCAL 深度解析 ·</span>
+    </div>
+</div>
+</body>
+</html>

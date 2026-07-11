@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>5</fileVersion>
+    <fileChecksum>1100580611</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\_SourceCode\StartUp\ARMCM7.h</file>
+            <file>$PROJ_DIR$\_SourceCode\StartUp\cmsis_version.h</file>
+            <file>$PROJ_DIR$\_SourceCode\StartUp\core_cm7.h</file>
+            <file>$PROJ_DIR$\_SourceCode\StartUp\cmsis_iccarm.h</file>
+            <file>$PROJ_DIR$\_SourceCode\StartUp\boot_header.c</file>
+            <file>$PROJ_DIR$\_SourceCode\StartUp\cmsis_compiler.h</file>
+            <file>$PROJ_DIR$\_SourceCode\StartUp\init_tables.s</file>
+            <file>$PROJ_DIR$\_SourceCode\StartUp\main.c</file>
+            <file>$PROJ_DIR$\_SourceCode\StartUp\mpu_armv7.h</file>
+            <file>$PROJ_DIR$\_SourceCode\StartUp\S32K344.h</file>
+            <file>$PROJ_DIR$\_SourceCode\StartUp\startup_ARMCM7.c</file>
+            <file>$PROJ_DIR$\_SourceCode\StartUp\system_ARMCM7.c</file>
+            <file>$PROJ_DIR$\_SourceCode\Link\S32K344_flash.icf</file>
+            <file>$PROJ_DIR$\_SourceCode\StartUp\typedefs.h</file>
+            <file>$PROJ_DIR$\_SourceCode\StartUp\system_ARMCM7.h</file>
+        </outputs>
+        <forcedrebuild>
+            <name>[REBUILD_ALL]</name>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>[REBUILD_ALL]</name>
+        </forcedrebuild>
+    </configuration>
+</project>

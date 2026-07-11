@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>第2章 工作区与项目创建</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1e9f0 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            padding: 20px;
+        }
+        /* 双边框设计：外边框 + 内阴影 */
+        .double-border {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 2px solid #f1c40f;
+            border-radius: 24px;
+            box-shadow: 0 20px 30px -15px rgba(0,0,0,0.2), inset 0 1px 0 0 #fff8e0;
+            overflow: hidden;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 0;
+        }
+        .sidebar {
+            background: #fefcf5;
+            border-right: 2px solid #fdebb3;
+            padding: 24px 16px;
+        }
+        .sidebar h3 {
+            font-size: 1.4rem;
+            color: #b45f06;
+            border-left: 5px solid #f39c12;
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+        .chapter-list {
+            list-style: none;
+        }
+        .chapter-list li {
+            margin-bottom: 6px;
+        }
+        .chapter-list a {
+            display: block;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: #2c3e50;
+            border-radius: 12px;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .chapter-list a:hover {
+            background: #fdebd0;
+            transform: translateX(3px);
+        }
+        .chapter-list .active {
+            background: #3b82f6;
+            color: white;
+            box-shadow: 0 2px 5px rgba(59,130,246,0.3);
+        }
+        .main-content {
+            padding: 30px 35px;
+            background: white;
+        }
+        .footer-nav {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 2px solid #f0e6d2;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-nav a {
+            padding: 8px 24px;
+            background: #f1f5f9;
+            text-decoration: none;
+            color: #1e40af;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .footer-nav a:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            color: #64748b;
+            border-top: 1px dashed #e2e8f0;
+            font-size: 0.9rem;
+        }
+        h2 { color: #1e3a8a; border-left: 6px solid #f59e0b; padding-left: 15px; margin: 20px 0 15px; }
+        h3 { color: #2c3e50; margin: 20px 0 10px; }
+        pre {
+            background: #2d2f36; color: #f8f8f2; padding: 15px; border-radius: 12px;
+            overflow-x: auto; font-family: 'JetBrains Mono', monospace; margin: 15px 0;
+        }
+        table {
+            width: 100%; border-collapse: collapse; margin: 15px 0; background: #fefce8;
+        }
+        th, td {
+            border: 1px solid #fcd34d; padding: 10px; text-align: left;
+        }
+        th { background: #fffbeb; }
+        .tip, .warning, .highlight {
+            padding: 12px 18px; border-radius: 16px; margin: 15px 0;
+        }
+        .tip { background: #e0f2fe; border-left: 6px solid #0ea5e9; }
+        .warning { background: #fee2e2; border-left: 6px solid #ef4444; }
+        .highlight { background: #fef9c3; border: 1px solid #facc15; }
+    </style>
+</head>
+<body>
+<div class="double-border">
+<div class="container">
+    <div class="sidebar">
+        <h3>📚 课程目录</h3>
+        <ul class="chapter-list">
+            <li><a href="01.html" class="">第1章 EB Tresos入门</a></li>
+<li><a href="02.html" class="active">第2章 工作区与项目创建</a></li>
+<li><a href="03.html" class="">第3章 基础配置流程</a></li>
+<li><a href="04.html" class="">第4章 通用配置模块（Base）</a></li>
+<li><a href="05.html" class="">第5章 微控制器单元（MCU）</a></li>
+<li><a href="06.html" class="">第6章 端口与引脚（Port）</a></li>
+<li><a href="07.html" class="">第7章 数字输入输出（Dio）</a></li>
+<li><a href="08.html" class="">第8章 通用输入输出（Gpt）</a></li>
+<li><a href="09.html" class="">第9章 中断控制器（Icu）</a></li>
+<li><a href="10.html" class="">第10章 脉宽调制（Pwm）</a></li>
+<li><a href="11.html" class="">第11章 模数转换器（Adc）</a></li>
+<li><a href="12.html" class="">第12章 串行外设接口（Spi）</a></li>
+<li><a href="13.html" class="">第13章 内部集成电路（I2c）</a></li>
+<li><a href="14.html" class="">第14章 控制器局域网（Can）</a></li>
+<li><a href="15.html" class="">第15章 本地互联网络（Lin）</a></li>
+<li><a href="16.html" class="">第16章 以太网（Eth）</a></li>
+<li><a href="17.html" class="">第17章 直接内存访问（Dma）</a></li>
+<li><a href="18.html" class="">第18章 内存映射（MemMap）</a></li>
+<li><a href="19.html" class="">第19章 Flash驱动（Fls）</a></li>
+<li><a href="20.html" class="">第20章 EEPROM模拟（Eep）</a></li>
+<li><a href="21.html" class="">第21章 看门狗（Wdg）</a></li>
+<li><a href="22.html" class="">第22章 CRC校验（Crc）</a></li>
+<li><a href="23.html" class="">第23章 错误检测与报告（Det）</a></li>
+<li><a href="24.html" class="">第24章 开发错误追踪（Dem）</a></li>
+<li><a href="25.html" class="">第25章 功能抑制管理器（BswM）</a></li>
+<li><a href="26.html" class="">第26章 通信栈配置（Com）</a></li>
+<li><a href="27.html" class="">第27章 操作系统接口（Os）</a></li>
+<li><a href="28.html" class="">第28章 安全模块（Crypto）</a></li>
+<li><a href="29.html" class="">第29章 调试与验证</a></li>
+<li><a href="30.html" class="">第30章 综合实战项目</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h2>第二课：工作区与项目创建</h2>
+
+<p>大家好，欢迎来到第二课。今天咱们聊聊EB Tresos里最基础、但也最容易踩坑的部分——工作区和项目创建。</p>
+
+<p>说实话，我见过不少新手工程师，一上来就急着配参数，结果项目结构乱成一锅粥。到最后连自己配了什么都找不到。嗯，这节课就是帮你避免这种尴尬。</p>
+
+<h3>工作区到底是什么？</h3>
+
+<p>工作区（Workspace），说白了就是一个文件夹。它用来存放你的所有配置项目、生成的代码、以及工具的一些中间文件。</p>
+
+<p>我个人习惯把工作区放在一个独立的磁盘分区里，比如D:\Workspace\EB_Tresos。为什么？因为工具在生成代码时会创建大量临时文件，如果放在C盘，很容易把系统盘塞满。我曾经有个同事，项目做到一半，C盘爆红，工具直接崩溃，那叫一个惨。</p>
+
+<div class="highlight">
+  <p><strong>核心要点：</strong>工作区路径不要包含中文、空格或特殊字符。否则编译时你会遇到各种莫名其妙的错误。</p>
+</div>
+
+<h3>创建新MCAL配置项目</h3>
+
+<p>创建项目其实很简单，但有几个细节我得提醒你。</p>
+
+<ol>
+  <li><strong>启动EB Tresos</strong>，在启动时它会让你选择工作区路径。如果你已经有现成的工作区，直接选；如果没有，新建一个文件夹就行。</li>
+  <li><strong>进入主界面后</strong>，点击菜单栏的 <code>File → New → AUTOSAR Project</code>。</li>
+  <li><strong>弹出一个向导窗口</strong>，这里要填几个关键信息：
+    <ul>
+      <li><strong>Project Name</strong>：项目名称。我建议用芯片型号+功能模块来命名，比如 <code>S32K144_CanDemo</code>。别用 <code>test1</code>、<code>new_project</code> 这种名字，三个月后你自己都看不懂。</li>
+      <li><strong>Project Location</strong>：项目存放路径。默认在工作区下，你也可以勾选 <code>Use default location</code> 来指定其他位置。</li>
+      <li><strong>AUTOSAR Version</strong>：选择你使用的AUTOSAR版本。比如4.2.2、4.4.0。这里要注意，不同版本的MCAL模块可能不兼容。</li>
+      <li><strong>MCAL Configuration</strong>：选择你要配置的MCAL模块。比如Can、Lin、Spi、Adc等。你可以一次性全选，也可以按需选择。</li>
+    </ul>
+  </li>
+  <li><strong>点击Finish</strong>，工具会自动生成项目骨架。</li>
+</ol>
+
+<div class="tip">
+  <p><strong>我的小技巧：</strong>创建项目时，我习惯先只选一个模块（比如Can），等配置通了再添加其他模块。这样如果出问题，排查范围小很多。</p>
+</div>
+
+<h3>导入现有项目</h3>
+
+<p>工作中经常需要接手别人的项目，或者把之前做好的项目搬到新电脑上。这时候就要用到导入功能。</p>
+
+<p>操作步骤：</p>
+<ol>
+  <li>点击 <code>File → Import</code>。</li>
+  <li>选择 <code>General → Existing Projects into Workspace</code>。</li>
+  <li>在 <code>Select root directory</code> 里找到项目文件夹。</li>
+  <li>工具会自动识别项目，勾选你要导入的项目，点击Finish。</li>
+</ol>
+
+<div class="warning">
+  <p><strong>注意：</strong>导入项目时，如果原项目使用了绝对路径（比如引用了某个固定路径的头文件），导入后可能会报错。我曾经遇到过这种情况，折腾了半天才发现是路径问题。所以，建议大家在创建项目时就养成使用相对路径的习惯。</p>
+</div>
+
+<h3>项目结构解析</h3>
+
+<p>项目创建完成后，你会看到左侧的Project Explorer里多了一个项目。点开它，里面有很多文件夹和文件。别慌，我来给你拆解一下。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>文件夹/文件</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>config</code></td>
+      <td>存放MCAL模块的配置文件（.arxml）。这是你主要操作的地方。</td>
+    </tr>
+    <tr>
+      <td><code>generate</code></td>
+      <td>工具生成的代码。包括头文件、源文件、以及一些辅助文件。</td>
+    </tr>
+    <tr>
+      <td><code>output</code></td>
+      <td>编译输出文件。比如生成的链接脚本、映射文件等。</td>
+    </tr>
+    <tr>
+      <td><code>src</code></td>
+      <td>用户自定义代码。你可以在这里写自己的应用逻辑。</td>
+    </tr>
+    <tr>
+      <td><code>.project</code></td>
+      <td>Eclipse项目描述文件。记录了项目的基本信息。</td>
+    </tr>
+    <tr>
+      <td><code>.cproject</code></td>
+      <td>C/C++项目配置。包括编译器选项、链接器设置等。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>嗯，这里要特别说一下 <code>config</code> 文件夹。它里面每个模块都有一个独立的 <code>.arxml</code> 文件。比如 <code>Can.arxml</code>、<code>Lin.arxml</code>。双击就能打开图形化配置界面。</p>
+
+<p>你想想看，如果没有这个清晰的结构，几十个模块的配置混在一起，那得多乱？</p>
+
+<h3>避坑指南</h3>
+
+<p>最后，分享几个我踩过的坑：</p>
+
+<ul>
+  <li><strong>不要手动修改生成的文件</strong>。比如 <code>generate</code> 文件夹里的代码，每次重新生成都会被覆盖。如果你改了，下次生成就白改了。</li>
+  <li><strong>定期备份工作区</strong>。EB Tresos偶尔会抽风，比如突然崩溃导致项目损坏。我一般每天下班前会把工作区压缩一份，存到网盘里。</li>
+  <li><strong>版本控制</strong>。建议用Git管理项目。但要注意，不要把 <code>generate</code> 和 <code>output</code> 文件夹提交到仓库里，它们太大了，而且每次生成都会变。</li>
+</ul>
+
+<p>好了，这节课就到这里。下节课我们开始正式配置第一个MCAL模块——GPIO。到时候我会手把手带你走一遍完整流程。</p>
+        <div class="footer-nav">
+            <a href="01.html">← 上一章</a>
+            <a href="index.html">📖 返回目录</a>
+            <a href="03.html">下一章 →</a>
+        </div>
+        <footer>公众号:蓝海资料掘金营，微信deep3321</footer>
+    </div>
+</div>
+</div>
+</body>
+</html>

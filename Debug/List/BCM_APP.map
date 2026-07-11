@@ -1,0 +1,414 @@
+###############################################################################
+#
+# IAR ELF Linker V9.32.1.338/W64 for ARM                  12/Jul/2026  03:33:47
+# Copyright 2007-2022 IAR Systems AB.
+#
+#    Output file  =  E:\Project\GitHub\BCM_S32K344\Debug\Exe\BCM_APP.out
+#    Map file     =  E:\Project\GitHub\BCM_S32K344\Debug\List\BCM_APP.map
+#    Command line =
+#        -f E:\Project\GitHub\BCM_S32K344\Debug\Exe\BCM_APP.out.rsp
+#        (E:\Project\GitHub\BCM_S32K344\Debug\Obj\Device\boot_header.o
+#        E:\Project\GitHub\BCM_S32K344\Debug\Obj\Device\init_tables.o
+#        E:\Project\GitHub\BCM_S32K344\Debug\Obj\Device\main.o
+#        E:\Project\GitHub\BCM_S32K344\Debug\Obj\Device\startup_ARMCM7.o
+#        E:\Project\GitHub\BCM_S32K344\Debug\Obj\Device\system_ARMCM7.o
+#        --no_out_extension -o
+#        E:\Project\GitHub\BCM_S32K344\Debug\Exe\BCM_APP.out --map
+#        E:\Project\GitHub\BCM_S32K344\Debug\List\BCM_APP.map --config
+#        D:\SoftWare\Programming\IARSystems\IAR_9.32.1\arm/config/linker/NXP/S32K344.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale
+#        --cpu=Cortex-M7 --fpu=VFPv5_sp)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because --advanced_heap
+was not specified and the application did not appear to
+be primarily optimized for speed.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x40'1000 { section .intvec };
+"P2":  place in [from 0x40'1000 to 0x7f'3fff] { ro };
+define block CSTACK with size = 2K, alignment = 8 { };
+define block PROC_STACK with size = 0, alignment = 8 { };
+"P4":  place in [from 0x2000'0000 to 0x2001'ffff] {
+          rw, block CSTACK, block PROC_STACK };
+define block HEAP with size = 8K, alignment = 8 { };
+"P5":  place in [from 0x2040'0000 to 0x2044'ffff] {
+          block HEAP, rw section shared_ram };
+initialize by copy { rw };
+
+No sections matched the following patterns:
+
+  ro section application_specific_ro  in "P3"
+  rw section shared_ram               in "P5"
+  section .boot_header                in "A1"
+  section .textrw                     in "P1"
+
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                       0x3c0
+  .intvec            const      0x40'1000   0x3c0  startup_ARMCM7.o [1]
+                              - 0x40'13c0   0x3c0
+
+"P2":                                       0x2d0
+  .text              ro code    0x40'13c0    0xda  startup_ARMCM7.o [1]
+  .text              ro code    0x40'149a    0x2a  copy_init3.o [4]
+  .text              ro code    0x40'14c4    0x2c  system_ARMCM7.o [1]
+  .text              ro code    0x40'14f0    0x1c  cstartup_M.o [4]
+  .text              ro code    0x40'150c    0x22  fpinit_M.o [3]
+  .text              ro code    0x40'1530    0x1e  cmain.o [4]
+  .text              ro code    0x40'154e     0x4  low_level_init.o [2]
+  .text              ro code    0x40'1554    0x28  data_init.o [4]
+  .text              ro code    0x40'157c    0x38  main.o [1]
+  .text              ro code    0x40'15b4     0x4  exit.o [2]
+  .text              ro code    0x40'15b8     0xa  cexit.o [4]
+  .text              ro code    0x40'15c4    0x14  exit.o [5]
+  .ecc_tables        const      0x40'15e0    0x40  init_tables.o [1]
+  .text              ro code    0x40'1620    0x38  zero_init3.o [4]
+  .iar.init_table    const      0x40'1658    0x24  - Linker created -
+  Initializer bytes  const      0x40'167c     0x8  <for P4-1>
+  .copy_tables       const      0x40'1690     0x0  init_tables.o [1]
+  .zero_tables       const      0x40'1690     0x0  init_tables.o [1]
+  .rodata            const      0x40'1690     0x0  zero_init3.o [4]
+  .rodata            const      0x40'1690     0x0  copy_init3.o [4]
+                              - 0x40'1690   0x2d0
+
+"P4", part 1 of 3:                            0x8
+  P4-1                        0x2000'0000     0x8  <Init block>
+    .data            inited   0x2000'0000     0x4  main.o [1]
+    .data            inited   0x2000'0004     0x4  system_ARMCM7.o [1]
+                            - 0x2000'0008     0x8
+
+"P4", part 2 of 3:                            0x8
+  .bss                        0x2000'0008     0x8  <Block>
+    .bss             zero     0x2000'0008     0x4  main.o [1]
+    .bss             zero     0x2000'000c     0x4  main.o [1]
+                            - 0x2000'0010     0x8
+
+"P4", part 3 of 3:                          0x800
+  CSTACK                      0x2000'0010   0x800  <Block>
+    CSTACK           uninit   0x2000'0010   0x800  <Block tail>
+                            - 0x2000'0810   0x800
+
+"P5":                                      0x2000
+  HEAP                        0x2040'0000  0x2000  <Block>
+    HEAP             uninit   0x2040'0000  0x2000  <Block tail>
+                            - 0x2040'2000  0x2000
+
+Unused ranges:
+
+         From           To       Size
+         ----           --       ----
+    0x40'1690    0x7f'3fff  0x3f'2970
+  0x2000'0810  0x2001'ffff   0x1'f7f0
+  0x2040'2000  0x2044'ffff   0x4'e000
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x8:
+          0x2000'0008   0x8
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x8:
+            0x40'167c   0x8
+    1 destination range, total size 0x8:
+          0x2000'0000   0x8
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+command line/config:
+    -------------------------------------------
+    Total:
+
+E:\Project\GitHub\BCM_S32K344\Debug\Obj\Device: [1]
+    init_tables.o                   64
+    main.o                 56        4       12
+    startup_ARMCM7.o      218      960
+    system_ARMCM7.o        44        4        4
+    -------------------------------------------
+    Total:                318    1'032       16
+
+dl7M_tln.a: [2]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+m7M_tls.a: [3]
+    fpinit_M.o             34
+    -------------------------------------------
+    Total:                 34
+
+rt7M_tl.a: [4]
+    cexit.o                10
+    cmain.o                30
+    copy_init3.o           42
+    cstartup_M.o           28
+    data_init.o            40
+    zero_init3.o           56
+    -------------------------------------------
+    Total:                206
+
+shb_l.a: [5]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                    6       20
+    Linker created                  36   10'240
+-----------------------------------------------
+    Grand Total:          592    1'088   10'256
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.bss$$Base              0x2000'0008          --   Gb  - Linker created -
+.bss$$Length                    0x8          --   Gb  - Linker created -
+.bss$$Limit             0x2000'0010          --   Gb  - Linker created -
+.iar.init_table$$Base     0x40'1658          --   Gb  - Linker created -
+.iar.init_table$$Limit    0x40'167c          --   Gb  - Linker created -
+?main                     0x40'1531         Code  Gb  cmain.o [4]
+ADC0_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+ADC1_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+ADC2_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+BCTU_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+BusFault_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+CMU0_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+CMU1_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+CMU2_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+CSTACK$$Base            0x2000'0010          --   Gb  - Linker created -
+CSTACK$$Length                0x800          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0810         Data  Gb  - Linker created -
+DATA$$Base                      0x0          --   Gb  - Linker created -
+DATA$$Length                    0x0          --   Gb  - Linker created -
+DMATCD0_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD10_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD11_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD12_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD13_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD14_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD15_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD16_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD17_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD18_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD19_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD1_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD20_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD21_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD22_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD23_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD24_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD25_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD26_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD27_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD28_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD29_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD2_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD30_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD31_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD3_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD4_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD5_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD6_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD7_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD8_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DMATCD9_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+DebugMon_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+Default_Handler           0x40'1499    0x2  Code  Gb  startup_ARMCM7.o [1]
+EMIOS0_2_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+EMIOS0_3_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+EMIOS0_4_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+EMIOS0_5_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+EMIOS0_6_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+EMIOS0_7_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+EMIOS1_2_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+EMIOS1_3_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+EMIOS1_4_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+EMIOS1_5_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+EMIOS1_6_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+EMIOS1_7_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+EMIOS2_2_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+EMIOS2_3_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+EMIOS2_4_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+EMIOS2_5_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+EMIOS2_6_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+EMIOS2_7_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+ENET_0_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+ENET_1_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+ENET_2_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+ENET_3_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+ERM_0_Handler             0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+ERM_1_Handler             0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FCCU_0_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FCCU_1_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FLASH_0_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FLASH_1_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FLASH_2_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FLEXIO_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FlexCAN0_0_Handler        0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FlexCAN0_1_Handler        0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FlexCAN0_2_Handler        0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FlexCAN0_3_Handler        0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FlexCAN1_0_Handler        0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FlexCAN1_1_Handler        0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FlexCAN1_2_Handler        0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FlexCAN2_0_Handler        0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FlexCAN2_1_Handler        0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FlexCAN2_2_Handler        0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FlexCAN3_0_Handler        0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FlexCAN3_1_Handler        0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FlexCAN4_0_Handler        0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FlexCAN4_1_Handler        0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FlexCAN5_0_Handler        0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+FlexCAN5_1_Handler        0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+HEAP$$Base              0x2040'0000          --   Gb  - Linker created -
+HEAP$$Length                 0x2000          --   Gb  - Linker created -
+HEAP$$Limit             0x2040'2000          --   Gb  - Linker created -
+HSE_B_0_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+HSE_B_1_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+HSE_B_2_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+HSE_B_3_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+HSE_B_4_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+HSE_B_5_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+HardFault_Handler         0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+INT0_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+INT1_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+INT2_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+INT3_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+JDC_Handler               0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LCU0_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LCU1_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPCMP0_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPCMP1_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPCMP2_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPI2C0_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPI2C1_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPSPI0_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPSPI1_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPSPI2_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPSPI3_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPSPI4_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPSPI5_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPUART0_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPUART10_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPUART11_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPUART12_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPUART13_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPUART14_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPUART15_Handler          0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPUART1_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPUART2_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPUART3_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPUART4_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPUART5_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPUART6_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPUART7_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPUART8_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+LPUART9_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+MCM_Handler               0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+MU_A_0_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+MU_A_1_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+MU_A_2_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+MU_B_0_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+MU_B_1_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+MU_B_2_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+MemManage_Handler         0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+NMI_Handler               0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+PIT0_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+PIT1_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+PIT2_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+PMC_Handler               0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+PendSV_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+QSPI_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+RGM_Handler               0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+RTC_Handler               0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+Region$$Table$$Base       0x40'1658          --   Gb  - Linker created -
+Region$$Table$$Limit      0x40'167c          --   Gb  - Linker created -
+Reset_Handler             0x40'13c1   0xa8  Code  Gb  startup_ARMCM7.o [1]
+SAI0_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+SAI1_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+SIUL_0_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+SIUL_1_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+SIUL_2_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+SIUL_3_Handler            0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+STM0_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+STM1_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+SVC_Handler               0x40'159b    0xe  Code  Gb  main.o [1]
+SWT0_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+SWT1_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+SysTick_Handler           0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+SystemCoreClock         0x2000'0004    0x4  Data  Gb  system_ARMCM7.o [1]
+SystemInit                0x40'14c5   0x18  Code  Gb  system_ARMCM7.o [1]
+UsageFault_Handler        0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+WKPU_Handler              0x40'1499    0x2  Code  Wk  startup_ARMCM7.o [1]
+__cmain                   0x40'1531         Code  Gb  cmain.o [4]
+__copy_table_end__        0x40'1690         Data  Gb  init_tables.o [1]
+__copy_table_start__      0x40'1690         Data  Gb  init_tables.o [1]
+__ecc_table_end__         0x40'1620         Data  Gb  init_tables.o [1]
+__ecc_table_start__       0x40'15e0         Data  Gb  init_tables.o [1]
+__exit                    0x40'15c5   0x14  Code  Gb  exit.o [5]
+__iar_copy_init3          0x40'149b   0x2a  Code  Gb  copy_init3.o [4]
+__iar_data_init3          0x40'1555   0x28  Code  Gb  data_init.o [4]
+__iar_init_vfp            0x40'150d         Code  Gb  fpinit_M.o [3]
+__iar_program_start       0x40'14f1         Code  Gb  cstartup_M.o [4]
+__iar_zero_init3          0x40'1621   0x38  Code  Gb  zero_init3.o [4]
+__low_level_init          0x40'154f    0x4  Code  Gb  low_level_init.o [2]
+__vector_table            0x40'1000  0x3c0  Data  Gb  startup_ARMCM7.o [1]
+__zero_table_end__        0x40'1690         Data  Gb  init_tables.o [1]
+__zero_table_start__      0x40'1690         Data  Gb  init_tables.o [1]
+_call_main                0x40'153d         Code  Gb  cmain.o [4]
+_exit                     0x40'15b9         Code  Gb  cexit.o [4]
+accumulator             0x2000'000c    0x4  Data  Gb  main.o [1]
+counter                 0x2000'0008    0x4  Data  Gb  main.o [1]
+exit                      0x40'15b5    0x4  Code  Gb  exit.o [2]
+limit_value             0x2000'0000    0x4  Data  Gb  main.o [1]
+main                      0x40'157d   0x1e  Code  Gb  main.o [1]
+
+
+[1] = E:\Project\GitHub\BCM_S32K344\Debug\Obj\Device
+[2] = dl7M_tln.a
+[3] = m7M_tls.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+     592 bytes of readonly  code memory
+   1'088 bytes of readonly  data memory
+  10'256 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

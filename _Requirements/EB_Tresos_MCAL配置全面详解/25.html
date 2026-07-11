@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>第25章 功能抑制管理器（BswM）</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1e9f0 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            padding: 20px;
+        }
+        /* 双边框设计：外边框 + 内阴影 */
+        .double-border {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 2px solid #f1c40f;
+            border-radius: 24px;
+            box-shadow: 0 20px 30px -15px rgba(0,0,0,0.2), inset 0 1px 0 0 #fff8e0;
+            overflow: hidden;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 0;
+        }
+        .sidebar {
+            background: #fefcf5;
+            border-right: 2px solid #fdebb3;
+            padding: 24px 16px;
+        }
+        .sidebar h3 {
+            font-size: 1.4rem;
+            color: #b45f06;
+            border-left: 5px solid #f39c12;
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+        .chapter-list {
+            list-style: none;
+        }
+        .chapter-list li {
+            margin-bottom: 6px;
+        }
+        .chapter-list a {
+            display: block;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: #2c3e50;
+            border-radius: 12px;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .chapter-list a:hover {
+            background: #fdebd0;
+            transform: translateX(3px);
+        }
+        .chapter-list .active {
+            background: #3b82f6;
+            color: white;
+            box-shadow: 0 2px 5px rgba(59,130,246,0.3);
+        }
+        .main-content {
+            padding: 30px 35px;
+            background: white;
+        }
+        .footer-nav {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 2px solid #f0e6d2;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-nav a {
+            padding: 8px 24px;
+            background: #f1f5f9;
+            text-decoration: none;
+            color: #1e40af;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .footer-nav a:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            color: #64748b;
+            border-top: 1px dashed #e2e8f0;
+            font-size: 0.9rem;
+        }
+        h2 { color: #1e3a8a; border-left: 6px solid #f59e0b; padding-left: 15px; margin: 20px 0 15px; }
+        h3 { color: #2c3e50; margin: 20px 0 10px; }
+        pre {
+            background: #2d2f36; color: #f8f8f2; padding: 15px; border-radius: 12px;
+            overflow-x: auto; font-family: 'JetBrains Mono', monospace; margin: 15px 0;
+        }
+        table {
+            width: 100%; border-collapse: collapse; margin: 15px 0; background: #fefce8;
+        }
+        th, td {
+            border: 1px solid #fcd34d; padding: 10px; text-align: left;
+        }
+        th { background: #fffbeb; }
+        .tip, .warning, .highlight {
+            padding: 12px 18px; border-radius: 16px; margin: 15px 0;
+        }
+        .tip { background: #e0f2fe; border-left: 6px solid #0ea5e9; }
+        .warning { background: #fee2e2; border-left: 6px solid #ef4444; }
+        .highlight { background: #fef9c3; border: 1px solid #facc15; }
+    </style>
+</head>
+<body>
+<div class="double-border">
+<div class="container">
+    <div class="sidebar">
+        <h3>📚 课程目录</h3>
+        <ul class="chapter-list">
+            <li><a href="01.html" class="">第1章 EB Tresos入门</a></li>
+<li><a href="02.html" class="">第2章 工作区与项目创建</a></li>
+<li><a href="03.html" class="">第3章 基础配置流程</a></li>
+<li><a href="04.html" class="">第4章 通用配置模块（Base）</a></li>
+<li><a href="05.html" class="">第5章 微控制器单元（MCU）</a></li>
+<li><a href="06.html" class="">第6章 端口与引脚（Port）</a></li>
+<li><a href="07.html" class="">第7章 数字输入输出（Dio）</a></li>
+<li><a href="08.html" class="">第8章 通用输入输出（Gpt）</a></li>
+<li><a href="09.html" class="">第9章 中断控制器（Icu）</a></li>
+<li><a href="10.html" class="">第10章 脉宽调制（Pwm）</a></li>
+<li><a href="11.html" class="">第11章 模数转换器（Adc）</a></li>
+<li><a href="12.html" class="">第12章 串行外设接口（Spi）</a></li>
+<li><a href="13.html" class="">第13章 内部集成电路（I2c）</a></li>
+<li><a href="14.html" class="">第14章 控制器局域网（Can）</a></li>
+<li><a href="15.html" class="">第15章 本地互联网络（Lin）</a></li>
+<li><a href="16.html" class="">第16章 以太网（Eth）</a></li>
+<li><a href="17.html" class="">第17章 直接内存访问（Dma）</a></li>
+<li><a href="18.html" class="">第18章 内存映射（MemMap）</a></li>
+<li><a href="19.html" class="">第19章 Flash驱动（Fls）</a></li>
+<li><a href="20.html" class="">第20章 EEPROM模拟（Eep）</a></li>
+<li><a href="21.html" class="">第21章 看门狗（Wdg）</a></li>
+<li><a href="22.html" class="">第22章 CRC校验（Crc）</a></li>
+<li><a href="23.html" class="">第23章 错误检测与报告（Det）</a></li>
+<li><a href="24.html" class="">第24章 开发错误追踪（Dem）</a></li>
+<li><a href="25.html" class="active">第25章 功能抑制管理器（BswM）</a></li>
+<li><a href="26.html" class="">第26章 通信栈配置（Com）</a></li>
+<li><a href="27.html" class="">第27章 操作系统接口（Os）</a></li>
+<li><a href="28.html" class="">第28章 安全模块（Crypto）</a></li>
+<li><a href="29.html" class="">第29章 调试与验证</a></li>
+<li><a href="30.html" class="">第30章 综合实战项目</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h2>第二十五章 功能抑制管理器（BswM）：规则引擎与模式切换的艺术</h2>
+
+<p>各位同学，今天我们来聊聊BswM模块。说实话，这个模块在AUTOSAR架构里属于那种「平时不起眼，出事真要命」的角色。我最早接触BswM是在一个车身控制项目上，当时因为模式切换逻辑没配好，导致ECU在休眠和唤醒之间反复横跳，差点把电池耗光。嗯，从那以后我就对这个模块格外上心。</p>
+
+<h3>25.1 BswM模块概述</h3>
+
+<p>BswM，全称是Basic Software Mode Manager。说白了，它就是整个ECU的「交通警察」。你想想看，ECU里有那么多模块——Can通信、Dio驱动、Eeprom、Watchdog……它们各自都有状态，谁该在什么时候工作，谁该在什么时候休眠，总得有个协调机制吧？BswM就是干这个的。</p>
+
+<p>我个人习惯把BswM理解成一个「状态机+规则引擎」的组合体。它接收来自各个模块的模式请求，然后根据你配置的规则，决定最终要切换到哪个模式。举个例子：</p>
+
+<ul>
+  <li>Can模块说：「我要进Sleep模式」</li>
+  <li>EcuM说：「不行，我还要处理一个紧急任务」</li>
+  <li>BswM就根据规则判断：听谁的</li>
+</ul>
+
+<p>我在项目中遇到过最典型的场景是：客户要求ECU在CAN总线静默5秒后进入休眠，但同时又要求诊断会话期间不能休眠。这两个条件冲突了怎么办？BswM的规则引擎就是用来解决这种矛盾的。</p>
+
+<div class="highlight">
+  <p><strong>核心要点：</strong>BswM不直接控制硬件，它只负责「决策」。真正的硬件控制由各个驱动模块自己完成。BswM说「我要休眠」，但具体怎么让芯片进入低功耗模式，那是EcuM和Mcu的事。</p>
+</div>
+
+<h3>25.2 规则引擎配置</h3>
+
+<p>规则引擎是BswM的大脑。我刚开始学的时候，觉得这东西就是个if-else，后来发现没那么简单。BswM的规则引擎是基于「逻辑表达式」的，你可以组合多个条件，形成复杂的判断逻辑。</p>
+
+<p>来看一个典型的规则配置结构：</p>
+
+<pre><code>// 伪代码示例：BswM规则配置
+Rule_1:
+  Condition_1: CanSM_CurrentState == CANSM_BSWM_S_NETWORK_MODE
+  Condition_2: EcuM_CurrentState == ECUM_STATE_RUN
+  Action: 切换到 RUN 模式
+
+Rule_2:
+  Condition_1: CanSM_CurrentState == CANSM_BSWM_S_PREPARE_SLEEP
+  Condition_2: Timer_5s_Expired == TRUE
+  Condition_3: Dcm_ActiveSession == FALSE
+  Action: 切换到 PREPARE_SLEEP 模式</code></pre>
+
+<p>这里要注意几个关键点：</p>
+
+<ul>
+  <li><strong>条件来源：</strong>条件可以来自任何BswM支持的模式管理器，比如CanSM、EcuM、ComM等</li>
+  <li><strong>逻辑组合：</strong>支持AND、OR、NOT三种逻辑运算</li>
+  <li><strong>优先级：</strong>规则是按优先级顺序执行的，高优先级规则先匹配</li>
+</ul>
+
+<div class="tip">
+  <p><strong>我的经验：</strong>配置规则时，一定要把最紧急、最关键的规则放在前面。比如「安全相关的模式切换」优先级一定要高于「省电相关的模式切换」。我曾经见过一个项目，因为把休眠规则的优先级设高了，结果安全相关的紧急制动信号被忽略了——还好是在测试阶段发现的。</p>
+</div>
+
+<h3>25.3 动作列表</h3>
+
+<p>规则匹配之后，BswM要执行一系列「动作」。动作列表就是这些动作的集合。每个动作本质上是一个函数调用，告诉某个模块「该你干活了」。</p>
+
+<p>常见的动作类型包括：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>动作类型</th>
+      <th>说明</th>
+      <th>典型示例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>BSWM_ACTION_MODE_REQUEST</td>
+      <td>向某个模式管理器请求模式切换</td>
+      <td>请求CanSM切换到FULL_COMM</td>
+    </tr>
+    <tr>
+      <td>BSWM_ACTION_SCHEDULE_EVENT</td>
+      <td>触发一个调度事件</td>
+      <td>触发EcuM的唤醒事件</td>
+    </tr>
+    <tr>
+      <td>BSWM_ACTION_SET_STATE</td>
+      <td>直接设置BswM内部状态</td>
+      <td>设置BswM自身的状态机</td>
+    </tr>
+    <tr>
+      <td>BSWM_ACTION_EXECUTE_FUNCTION</td>
+      <td>执行一个自定义函数</td>
+      <td>调用用户自定义的回调函数</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>动作列表的执行顺序也很重要。我习惯把「先通知、后执行」作为基本原则。比如：</p>
+
+<ol>
+  <li>先通知CanSM：「准备进入休眠」</li>
+  <li>再通知EcuM：「可以关闭时钟了」</li>
+  <li>最后通知Mcu：「进入低功耗模式」</li>
+</ol>
+
+<p>顺序搞反了会怎样？嗯，我踩过这个坑。有一次我把Mcu的休眠动作放在了最前面，结果CanSM还没来得及关闭收发器，总线上的报文直接把ECU又唤醒了——死循环。</p>
+
+<div class="warning">
+  <p><strong>避坑指南：</strong>动作列表中的每个动作都要考虑「失败处理」。比如请求CanSM切换模式，如果CanSM返回了错误，BswM应该怎么办？是重试？还是跳过？还是回滚到上一个状态？这些都要在配置时想清楚。我曾经因为没配失败处理，导致ECU在异常情况下卡死，最后只能断电重启。</p>
+</div>
+
+<h3>25.4 模式切换逻辑</h3>
+
+<p>模式切换逻辑是BswM最核心的部分。它定义了ECU在不同模式之间如何过渡。常见的模式包括：</p>
+
+<ul>
+  <li><strong>RUN模式：</strong>正常工作，所有模块都激活</li>
+  <li><strong>SLEEP模式：</strong>低功耗，大部分模块关闭</li>
+  <li><strong>PREPARE_SLEEP模式：</strong>准备休眠，做一些清理工作</li>
+  <li><strong>WAKEUP模式：</strong>被唤醒，重新初始化</li>
+</ul>
+
+<p>模式切换不是瞬间完成的，它有一个「过渡状态」。比如从RUN到SLEEP，中间要经过PREPARE_SLEEP。为什么要有过渡状态？因为有些模块需要时间来完成收尾工作。比如Eeprom正在写数据，你不能直接断电，得等它写完。</p>
+
+<p>我给大家画一个典型的模式切换流程：</p>
+
+<pre><code>RUN → PREPARE_SLEEP → SLEEP → WAKEUP → RUN
+  ↑                                        |
+  |________________________________________|</code></pre>
+
+<p>每个箭头都对应一组规则和动作。比如从RUN到PREPARE_SLEEP，规则可能是：</p>
+
+<ul>
+  <li>CAN总线静默超过5秒</li>
+  <li>没有诊断会话在进行</li>
+  <li>没有应用层任务在运行</li>
+</ul>
+
+<p>当这三个条件都满足时，BswM就会执行PREPARE_SLEEP的动作列表。</p>
+
+<div class="highlight">
+  <p><strong>关键设计原则：</strong>模式切换要「平滑」。不要让ECU在模式之间频繁切换，这会导致功耗和性能的波动。我一般会在规则里加一个「滞回时间」，比如条件满足后延迟2秒再切换，避免因为瞬态干扰导致误切换。</p>
+</div>
+
+<h3>25.5 实战经验总结</h3>
+
+<p>最后，我分享几个在项目中积累的经验：</p>
+
+<ol>
+  <li><strong>规则不要太多：</strong>我见过有人配了上百条规则，结果调试的时候根本搞不清哪条规则生效了。一般来说，10-20条规则就够用了。如果超过30条，建议重新审视设计。</li>
+  <li><strong>日志一定要开：</strong>BswM支持详细的日志输出，包括规则匹配过程、动作执行结果等。开发阶段一定要把日志打开，否则出了问题你根本不知道是哪个环节卡住了。</li>
+  <li><strong>测试要覆盖边界：</strong>比如同时收到多个模式请求、规则条件瞬间变化、动作执行失败等。这些边界情况最容易出问题。</li>
+  <li><strong>和EcuM的配合：</strong>BswM和EcuM是紧密相关的。BswM负责「决策」，EcuM负责「执行」。两者的配置要一致，否则会出现「BswM说休眠，EcuM说不行」的尴尬局面。</li>
+</ol>
+
+<p>好了，关于BswM的概述、规则引擎、动作列表和模式切换逻辑，我就讲到这里。下一章我们会深入讲解BswM的具体配置步骤，包括如何在EB Tresos中创建规则、配置动作、调试模式切换等。到时候我会带着大家一步步操作，保证你们学完就能上手。</p>
+
+<p>记住一句话：BswM配置得好，ECU稳如老狗；BswM配置得差，调试到天亮。嗯，这话是我自己编的，但道理是真的。</p>
+        <div class="footer-nav">
+            <a href="24.html">← 上一章</a>
+            <a href="index.html">📖 返回目录</a>
+            <a href="26.html">下一章 →</a>
+        </div>
+        <footer>公众号:蓝海资料掘金营，微信deep3321</footer>
+    </div>
+</div>
+</div>
+</body>
+</html>

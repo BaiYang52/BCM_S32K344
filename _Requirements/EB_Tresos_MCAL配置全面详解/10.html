@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>第10章 脉宽调制（Pwm）</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1e9f0 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            padding: 20px;
+        }
+        /* 双边框设计：外边框 + 内阴影 */
+        .double-border {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 2px solid #f1c40f;
+            border-radius: 24px;
+            box-shadow: 0 20px 30px -15px rgba(0,0,0,0.2), inset 0 1px 0 0 #fff8e0;
+            overflow: hidden;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 0;
+        }
+        .sidebar {
+            background: #fefcf5;
+            border-right: 2px solid #fdebb3;
+            padding: 24px 16px;
+        }
+        .sidebar h3 {
+            font-size: 1.4rem;
+            color: #b45f06;
+            border-left: 5px solid #f39c12;
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+        .chapter-list {
+            list-style: none;
+        }
+        .chapter-list li {
+            margin-bottom: 6px;
+        }
+        .chapter-list a {
+            display: block;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: #2c3e50;
+            border-radius: 12px;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .chapter-list a:hover {
+            background: #fdebd0;
+            transform: translateX(3px);
+        }
+        .chapter-list .active {
+            background: #3b82f6;
+            color: white;
+            box-shadow: 0 2px 5px rgba(59,130,246,0.3);
+        }
+        .main-content {
+            padding: 30px 35px;
+            background: white;
+        }
+        .footer-nav {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 2px solid #f0e6d2;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-nav a {
+            padding: 8px 24px;
+            background: #f1f5f9;
+            text-decoration: none;
+            color: #1e40af;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .footer-nav a:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            color: #64748b;
+            border-top: 1px dashed #e2e8f0;
+            font-size: 0.9rem;
+        }
+        h2 { color: #1e3a8a; border-left: 6px solid #f59e0b; padding-left: 15px; margin: 20px 0 15px; }
+        h3 { color: #2c3e50; margin: 20px 0 10px; }
+        pre {
+            background: #2d2f36; color: #f8f8f2; padding: 15px; border-radius: 12px;
+            overflow-x: auto; font-family: 'JetBrains Mono', monospace; margin: 15px 0;
+        }
+        table {
+            width: 100%; border-collapse: collapse; margin: 15px 0; background: #fefce8;
+        }
+        th, td {
+            border: 1px solid #fcd34d; padding: 10px; text-align: left;
+        }
+        th { background: #fffbeb; }
+        .tip, .warning, .highlight {
+            padding: 12px 18px; border-radius: 16px; margin: 15px 0;
+        }
+        .tip { background: #e0f2fe; border-left: 6px solid #0ea5e9; }
+        .warning { background: #fee2e2; border-left: 6px solid #ef4444; }
+        .highlight { background: #fef9c3; border: 1px solid #facc15; }
+    </style>
+</head>
+<body>
+<div class="double-border">
+<div class="container">
+    <div class="sidebar">
+        <h3>📚 课程目录</h3>
+        <ul class="chapter-list">
+            <li><a href="01.html" class="">第1章 EB Tresos入门</a></li>
+<li><a href="02.html" class="">第2章 工作区与项目创建</a></li>
+<li><a href="03.html" class="">第3章 基础配置流程</a></li>
+<li><a href="04.html" class="">第4章 通用配置模块（Base）</a></li>
+<li><a href="05.html" class="">第5章 微控制器单元（MCU）</a></li>
+<li><a href="06.html" class="">第6章 端口与引脚（Port）</a></li>
+<li><a href="07.html" class="">第7章 数字输入输出（Dio）</a></li>
+<li><a href="08.html" class="">第8章 通用输入输出（Gpt）</a></li>
+<li><a href="09.html" class="">第9章 中断控制器（Icu）</a></li>
+<li><a href="10.html" class="active">第10章 脉宽调制（Pwm）</a></li>
+<li><a href="11.html" class="">第11章 模数转换器（Adc）</a></li>
+<li><a href="12.html" class="">第12章 串行外设接口（Spi）</a></li>
+<li><a href="13.html" class="">第13章 内部集成电路（I2c）</a></li>
+<li><a href="14.html" class="">第14章 控制器局域网（Can）</a></li>
+<li><a href="15.html" class="">第15章 本地互联网络（Lin）</a></li>
+<li><a href="16.html" class="">第16章 以太网（Eth）</a></li>
+<li><a href="17.html" class="">第17章 直接内存访问（Dma）</a></li>
+<li><a href="18.html" class="">第18章 内存映射（MemMap）</a></li>
+<li><a href="19.html" class="">第19章 Flash驱动（Fls）</a></li>
+<li><a href="20.html" class="">第20章 EEPROM模拟（Eep）</a></li>
+<li><a href="21.html" class="">第21章 看门狗（Wdg）</a></li>
+<li><a href="22.html" class="">第22章 CRC校验（Crc）</a></li>
+<li><a href="23.html" class="">第23章 错误检测与报告（Det）</a></li>
+<li><a href="24.html" class="">第24章 开发错误追踪（Dem）</a></li>
+<li><a href="25.html" class="">第25章 功能抑制管理器（BswM）</a></li>
+<li><a href="26.html" class="">第26章 通信栈配置（Com）</a></li>
+<li><a href="27.html" class="">第27章 操作系统接口（Os）</a></li>
+<li><a href="28.html" class="">第28章 安全模块（Crypto）</a></li>
+<li><a href="29.html" class="">第29章 调试与验证</a></li>
+<li><a href="30.html" class="">第30章 综合实战项目</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h2>脉宽调制（Pwm）：Pwm模块概述、通道配置、占空比与频率设置、与Gpt的协同工作</h2>
+
+<p>各位工程师朋友，今天我们聊聊Pwm模块。说实话，Pwm在汽车电子里太常见了——从控制风扇转速、驱动电磁阀，到LED调光、蜂鸣器发声，几乎每个ECU都离不开它。我最早接触Pwm是在做车身域控制器的时候，当时为了调一个步进电机的转速，折腾了好几个晚上。嗯，今天就把这些经验分享给大家。</p>
+
+<h3>一、Pwm模块概述</h3>
+
+<p>Pwm，全称Pulse Width Modulation，脉宽调制。说白了，就是通过调节方波的高电平占整个周期的比例，来模拟一个可变的模拟电压。你想想看，一个信号要么高要么低，但通过调整占空比，就能让负载感受到不同的平均电压。</p>
+
+<p>在AUTOSAR架构里，Pwm模块属于MCAL层，直接操作硬件定时器。它负责生成精确的PWM波形，支持多种通道配置。我个人习惯把Pwm模块看作一个“波形发生器”，你告诉它频率和占空比，它就老老实实输出信号。</p>
+
+<div class="highlight">
+  <p><strong>核心概念：</strong></p>
+  <ul>
+    <li><strong>周期（Period）</strong>：一个完整方波的时间长度，单位通常是秒或微秒</li>
+    <li><strong>频率（Frequency）</strong>：周期的倒数，1秒内有多少个周期</li>
+    <li><strong>占空比（Duty Cycle）</strong>：高电平时间占整个周期的百分比</li>
+    <li><strong>极性（Polarity）</strong>：高电平有效还是低电平有效</li>
+  </ul>
+</div>
+
+<p>我在项目中遇到过一个问题：同一个定时器模块被多个Pwm通道共用，结果频率设置冲突了。所以，理解Pwm的硬件资源分配非常重要。</p>
+
+<h3>二、通道配置</h3>
+
+<p>Pwm通道配置，是我们在EB Tresos里首先要做的事情。每个Pwm通道对应一个硬件输出引脚，你需要告诉工具：这个通道用哪个定时器、哪个比较通道、输出极性是什么。</p>
+
+<p>配置项主要包括：</p>
+
+<table>
+  <tr>
+    <th>配置参数</th>
+    <th>说明</th>
+    <th>我的建议</th>
+  </tr>
+  <tr>
+    <td>PwmChannelId</td>
+    <td>通道ID，唯一标识</td>
+    <td>按功能命名，比如Pwm_FanCtrl</td>
+  </tr>
+  <tr>
+    <td>PwmChannelClass</td>
+    <td>通道类型：固定周期或可变周期</td>
+    <td>大部分场景用固定周期</td>
+  </tr>
+  <tr>
+    <td>PwmDutycycleDefault</td>
+    <td>默认占空比</td>
+    <td>设为0%，防止上电误动作</td>
+  </tr>
+  <tr>
+    <td>PwmPeriodDefault</td>
+    <td>默认周期</td>
+    <td>根据应用场景设定</td>
+  </tr>
+  <tr>
+    <td>PwmPolarity</td>
+    <td>输出极性：高有效或低有效</td>
+    <td>注意负载的驱动方式</td>
+  </tr>
+  <tr>
+    <td>PwmIdleState</td>
+    <td>空闲状态电平</td>
+    <td>通常与极性相反</td>
+  </tr>
+</table>
+
+<p>举个例子，配置一个控制散热风扇的Pwm通道：</p>
+
+<pre><code>/* 在EB Tresos中的配置示例 */
+PwmChannelConfigType {
+    PwmChannelId = 0;
+    PwmChannelClass = PWM_FIXED_PERIOD;
+    PwmDutycycleDefault = 0;      /* 默认关闭 */
+    PwmPeriodDefault = 10000;     /* 10ms周期，100Hz */
+    PwmPolarity = PWM_HIGH_ACTIVE;
+    PwmIdleState = PWM_LOW;
+    PwmNotification = Pwm_Notification_Fan;  /* 回调函数 */
+}</code></pre>
+
+<div class="tip">
+  <p><strong>小技巧：</strong>我曾经在配置通道时，把PwmIdleState设成了高电平，结果ECU休眠时风扇还在转。后来我养成了一个习惯：空闲状态一定要和极性相反，这样在Pwm模块未初始化时，输出是安全的。</p>
+</div>
+
+<h3>三、占空比与频率设置</h3>
+
+<p>占空比和频率，是Pwm的两个核心参数。频率决定了Pwm波形的快慢，占空比决定了有效输出的大小。</p>
+
+<p><strong>频率选择的原则：</strong></p>
+<ul>
+  <li>电机控制：通常20kHz以上，避免人耳听到啸叫</li>
+  <li>LED调光：100Hz-1kHz，太低会闪烁</li>
+  <li>电磁阀驱动：几十Hz到几百Hz，看阀的响应时间</li>
+  <li>加热器：几Hz就够了，热惯性大</li>
+</ul>
+
+<p>我记得有一次做LED尾灯项目，用了200Hz的Pwm，结果在摄像头下看到明显的闪烁。后来改到1kHz，问题解决了。所以，频率选择要考虑整个系统的感知范围。</p>
+
+<p><strong>占空比设置：</strong></p>
+<p>在EB Tresos里，占空比通常用百分比或定时器计数值表示。我个人更喜欢用计数值，因为更精确。比如一个10位定时器，周期是1024，那么50%占空比就是512。</p>
+
+<pre><code>/* 动态设置占空比的API */
+void Pwm_SetDutyCycle(uint8 ChannelId, uint16 DutyCycleValue);
+
+/* 示例：设置通道0占空比为75% */
+Pwm_SetDutyCycle(0, 768);  /* 假设周期为1024 */</code></pre>
+
+<div class="warning">
+  <p><strong>注意：</strong>占空比不能超过周期值。我曾经在代码里写了个bug，占空比设得比周期还大，结果Pwm输出直接变成了常高。调试了半天才发现是参数越界了。所以，调用Pwm_SetDutyCycle之前，一定要做范围检查。</p>
+</div>
+
+<h3>四、与Gpt的协同工作</h3>
+
+<p>Pwm和Gpt（通用定时器）的关系，就像演员和导演。Gpt负责提供时间基准，Pwm负责输出波形。在AUTOSAR里，Pwm模块通常依赖Gpt模块来获取时钟源。</p>
+
+<p><strong>协同工作的典型场景：</strong></p>
+<ul>
+  <li>Pwm使用Gpt的某个定时器作为时基</li>
+  <li>Gpt产生周期中断，Pwm在中断里更新占空比</li>
+  <li>多个Pwm通道共享一个Gpt定时器</li>
+</ul>
+
+<p>配置时，你需要在EB Tresos里指定Pwm通道关联的Gpt设备。比如：</p>
+
+<pre><code>/* Pwm与Gpt的关联配置 */
+PwmConfigType {
+    PwmGptDeviceRef = Gpt_Device_0;  /* 使用Gpt设备0 */
+    PwmGptChannelRef = Gpt_Channel_2; /* 使用Gpt通道2 */
+    PwmPrescaler = 64;                /* 预分频 */
+}</code></pre>
+
+<p>为什么会这样设计？因为硬件定时器资源有限，通过Gpt统一管理，可以避免资源冲突。我见过一个项目，工程师直接在Pwm里硬编码了定时器地址，结果换了芯片平台后，所有代码都要重写。用Gpt做抽象层，移植性就好很多。</p>
+
+<div class="highlight">
+  <p><strong>协同工作的注意事项：</strong></p>
+  <ol>
+    <li>确保Gpt的时钟频率和Pwm的期望频率匹配</li>
+    <li>Gpt中断优先级要合理设置，避免Pwm更新被延迟</li>
+    <li>多个Pwm通道共享Gpt时，注意通道间的相互影响</li>
+    <li>休眠模式下，Gpt和Pwm的时钟管理要一致</li>
+  </ol>
+</div>
+
+<p>嗯，这里还要提一个坑。我曾经在调试时发现，Pwm输出偶尔会跳变。查了很久才发现，是Gpt中断里更新占空比的代码，和Pwm硬件寄存器更新产生了竞争。解决方案是在Gpt中断里加一个标志位，等Pwm当前周期结束后再更新。</p>
+
+<pre><code>/* 安全的Pwm更新方式 */
+void Gpt_Notification(void)
+{
+    /* 设置更新标志 */
+    PwmUpdateFlag = TRUE;
+}
+
+void main_loop(void)
+{
+    if (PwmUpdateFlag)
+    {
+        /* 在Pwm周期边界更新 */
+        Pwm_SetDutyCycle(0, newDuty);
+        PwmUpdateFlag = FALSE;
+    }
+}</code></pre>
+
+<div class="tip">
+  <p><strong>避坑指南：</strong>我曾经在Gpt中断里直接调用Pwm_SetDutyCycle，结果导致Pwm波形毛刺。后来我改成在中断里只设标志，在主循环里更新，波形就干净了。记住：中断服务函数要短小精悍，别在里面干重活。</p>
+</div>
+
+<p>总结一下今天的要点：Pwm模块配置要关注通道参数、频率和占空比的合理选择，以及和Gpt的协同工作。这些内容在EB Tresos里都有对应的配置界面，关键是要理解背后的硬件原理。下次我们讲Icu模块，也就是输入捕获，到时候再聊。</p>
+        <div class="footer-nav">
+            <a href="09.html">← 上一章</a>
+            <a href="index.html">📖 返回目录</a>
+            <a href="11.html">下一章 →</a>
+        </div>
+        <footer>公众号:蓝海资料掘金营，微信deep3321</footer>
+    </div>
+</div>
+</div>
+</body>
+</html>

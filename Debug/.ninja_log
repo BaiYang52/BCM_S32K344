@@ -1,0 +1,19 @@
+# ninja log v5
+0	213	8054983325685414	E:/Project/GitHub/BCM_S32K344/Debug/Obj/Device/init_tables.o	42d22c170e0bc514
+184	317	8054983326678006	E:/Project/GitHub/BCM_S32K344/Debug/Obj/Device/boot_header.o	6bb60e7194402899
+188	423	8054983327723570	E:/Project/GitHub/BCM_S32K344/Debug/Obj/Device/main.o	c2ae6947672fe354
+1	29	8054984373364202	E:/Project/GitHub/BCM_S32K344/Debug/Obj/Device/init_tables.o	f633e5e2449bbaf3
+11	77	8054984373797682	E:/Project/GitHub/BCM_S32K344/Debug/Obj/Device/boot_header.o	5d8a7899d2c92c
+6	193	8054984374916382	E:/Project/GitHub/BCM_S32K344/Debug/Obj/Device/main.o	f8718a2de17590cc
+0	26	8054996840858898	E:/Project/GitHub/BCM_S32K344/Debug/Obj/Device/init_tables.o	11494f6ce85897d
+9	76	8055008659006481	E:/Project/GitHub/BCM_S32K344/Debug/Obj/Device/boot_header.o	6b9da00dec8cd541
+5	179	8055008659999075	E:/Project/GitHub/BCM_S32K344/Debug/Obj/Device/main.o	b5edac45c5ca6b7d
+5	73	8055010103470367	E:/Project/GitHub/BCM_S32K344/Debug/Obj/Device/system_ARMCM7.o	82660460e6aa3202
+1	189	8055010104573265	E:/Project/GitHub/BCM_S32K344/Debug/Obj/Device/startup_ARMCM7.o	73ae4fda087fd08f
+191	662	8055010109375229	E:/Project/GitHub/BCM_S32K344/Debug/Exe/BCM_APP.out	c374d8fe067cfd24
+1	29	8055016273748297	E:/Project/GitHub/BCM_S32K344/Debug/Obj/Device/init_tables.o	11494f6ce85897d
+10	168	8055016275082376	E:/Project/GitHub/BCM_S32K344/Debug/Obj/Device/boot_header.o	6b9da00dec8cd541
+19	217	8055016275553617	E:/Project/GitHub/BCM_S32K344/Debug/Obj/Device/system_ARMCM7.o	82660460e6aa3202
+5	314	8055016276445949	E:/Project/GitHub/BCM_S32K344/Debug/Obj/Device/startup_ARMCM7.o	73ae4fda087fd08f
+14	334	8055016276676552	E:/Project/GitHub/BCM_S32K344/Debug/Obj/Device/main.o	b5edac45c5ca6b7d
+335	387	8055016277293318	E:/Project/GitHub/BCM_S32K344/Debug/Exe/BCM_APP.out	c374d8fe067cfd24
