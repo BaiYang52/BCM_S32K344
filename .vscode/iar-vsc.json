@@ -1,0 +1,18 @@
+{
+  "workspace": {
+    "path": "${workspaceFolder}\\BCM_APP.eww"
+  },
+  "workspaces": {
+    "${workspaceFolder}\\BCM_APP.eww": {
+      "configs": {
+        "${workspaceFolder}\\BCM_APP.ewp": "Debug"
+      },
+      "selected": {
+        "path": "${workspaceFolder}\\BCM_APP.ewp"
+      }
+    }
+  },
+  "workbench": {
+    "path": "D:\\SoftWare\\Programming\\IARSystems\\IAR_9.32.1"
+  }
+}

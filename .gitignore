@@ -1,0 +1,112 @@
+# =============================================================
+# IAR Embedded Workbench - 工程文件
+# 说明: BCM_APP.eww/.ewp/.ewd/.ewt 是 IAR 工程入口,需要进版本库
+#       但 IAR 内部生成的临时/缓存文件全部忽略
+# =============================================================
+BCM_APP.dep
+# IAR 临时备份 (如 *.eww.bak / *.ewp.bak)
+*.eww.bak
+*.ewp.bak
+*.ewd.bak
+*.ewt.bak
+
+# IAR 用户级临时文件 (只在 settings/ 下生成,机器间不应入库)
+settings/BCM_APP.crun
+settings/BCM_APP.dbgdt
+settings/BCM_APP.dnx
+settings/BCM_APP.wsdt
+settings/*.cspy.bat
+settings/*.cspy.ps1
+
+# =============================================================
+# IAR 编译输出目录 (Debug/Release)
+# 整个目录都是机器/构建产物,不进版本库
+# =============================================================
+Debug/
+Release/
+
+# 单独兜底:散落的 .o / .pbi / .xcl / .lst / .map / .out / .pbd 等
+*.o
+*.pbi
+*.xcl
+*.lst
+*.map
+*.out
+*.pbd
+*.pbd.browse
+*.pbw
+*.dep
+*.ninja_deps
+*.ninja_log
+
+# =============================================================
+# OS / 编辑器 / IDE 杂物
+# =============================================================
+# Office 临时锁文件
+~$*
+*.tmp
+*.swp
+*.swo
+
+# Windows
+Thumbs.db
+desktop.ini
+ehthumbs.db
+ehthumbs_vista.db
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.fuse_hidden*
+.Trash-*
+
+# =============================================================
+# NXP S32 Design Studio / DaVinci 临时与本地配置
+# =============================================================
+# DaVinci Configurator 生成的本地缓存 (与本机/用户绑定,不入库)
+CBD2300384_D00/Components/*/src/
+CBD2300384_D00/Components/*/generate/
+CBD2300384_D00/Components/*/config/
+CBD2300384_D00/Components/*/Generated/
+CBD2300384_D00/**/Generated/
+CBD2300384_D00/**/generate/
+CBD2300384_D00/**/inc/SchM_*.h
+# Tresos 工程的本地输出
+**/output
+**/output_*/
+**/tresos_generated/
+**/TresosGenerated/
+
+# =============================================================
+# 文档/资料 - 默认忽略大型二进制,只留源代码
+# 需求/规格 (.docx/.pdf/.zip/.rar/.7z) 一般不入库
+# 如果某些文档确实需要共享,改成 !xxx.pdf 反向声明即可
+# =============================================================
+*.pdf
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+*.tgz
+*.bak
+*.iso
+
+# =============================================================
+# 构建工具产物
+# =============================================================
+build/
+out/
+dist/
+*.log
+
+# 压缩/备份
+*.orig
+*.rej
+*.patch
