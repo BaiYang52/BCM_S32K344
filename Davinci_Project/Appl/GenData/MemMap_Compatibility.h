@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: MemMap_Compatibility.h
- *   Generation Time: 2026-07-12 12:56:23
+ *   Generation Time: 2026-07-12 15:33:41
  *           Project: BCM_S32K344 - Version 1.0
  *          Delivery: CBD2300384_D00
  *      Tool Version: DaVinci Configurator Classic (beta) 5.26.40 SP3
@@ -4490,6 +4490,64 @@
 
 # undef RTE_STOP_SEC_IDLETASK_OSCORE0_CODE /* PRQA S 0841 */ /* MD_MSR_Undef */
 # undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_Undef */
+
+/* -------------------------------------------------------------------------------- */
+
+#elif defined RTE_START_SEC_CTAPPSWC_APPL_CODE
+# ifdef MEMMAP_SECTION_OPEN
+#  error Using RTE_START_SEC_CTAPPSWC_APPL_CODE is not possible as a memory section has already been opened. Nesting is not supported.
+# endif
+# define MEMMAP_SECTION_OPEN
+# define RTE_CTAPPSWC_APPL_CODE_OPEN
+
+/* Generation of pragmas is not possible as neither a start/stop pragma nor a valid vLinkGen logical group reference is given. */
+
+# undef RTE_START_SEC_CTAPPSWC_APPL_CODE /* PRQA S 0841 */ /* MD_MSR_Undef */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_Undef */
+
+#elif defined RTE_STOP_SEC_CTAPPSWC_APPL_CODE
+# ifndef MEMMAP_SECTION_OPEN
+#  error Using RTE_STOP_SEC_CTAPPSWC_APPL_CODE is not possible as no memory section has been opened.
+# endif
+# undef MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_Undef */
+# ifndef RTE_CTAPPSWC_APPL_CODE_OPEN
+#  error Using RTE_STOP_SEC_CTAPPSWC_APPL_CODE is not possible as the corresponding memory section has not been opened.
+# endif
+# undef RTE_CTAPPSWC_APPL_CODE_OPEN /* PRQA S 0841 */ /* MD_MSR_Undef */
+
+/* Generation of pragmas is not possible as neither a start/stop pragma nor a valid vLinkGen logical group reference is given. */
+
+# undef RTE_STOP_SEC_CTAPPSWC_APPL_CODE /* PRQA S 0841 */ /* MD_MSR_Undef */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_Undef */
+
+/* -------------------------------------------------------------------------------- */
+
+#elif defined RTE_START_SEC_SWCINITTASK_CODE
+# ifdef MEMMAP_SECTION_OPEN
+#  error Using RTE_START_SEC_SWCINITTASK_CODE is not possible as a memory section has already been opened. Nesting is not supported.
+# endif
+# define MEMMAP_SECTION_OPEN
+# define RTE_SWCINITTASK_CODE_OPEN
+
+/* Generation of pragmas is not possible as neither a start/stop pragma nor a valid vLinkGen logical group reference is given. */
+
+# undef RTE_START_SEC_SWCINITTASK_CODE /* PRQA S 0841 */ /* MD_MSR_Undef */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_Undef */
+
+#elif defined RTE_STOP_SEC_SWCINITTASK_CODE
+# ifndef MEMMAP_SECTION_OPEN
+#  error Using RTE_STOP_SEC_SWCINITTASK_CODE is not possible as no memory section has been opened.
+# endif
+# undef MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_Undef */
+# ifndef RTE_SWCINITTASK_CODE_OPEN
+#  error Using RTE_STOP_SEC_SWCINITTASK_CODE is not possible as the corresponding memory section has not been opened.
+# endif
+# undef RTE_SWCINITTASK_CODE_OPEN /* PRQA S 0841 */ /* MD_MSR_Undef */
+
+/* Generation of pragmas is not possible as neither a start/stop pragma nor a valid vLinkGen logical group reference is given. */
+
+# undef RTE_STOP_SEC_SWCINITTASK_CODE /* PRQA S 0841 */ /* MD_MSR_Undef */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_Undef */
 #endif
 
 /* -------------------------------------------------------------------------------- */
@@ -5362,6 +5420,18 @@
 #endif
 #ifdef RTE_STOP_SEC_IDLETASK_OSCORE0_CODE
 # error Using RTE_STOP_SEC_IDLETASK_OSCORE0_CODE is not possible as multiple memory allocation keywords are defined. Include the MemMap separately for each one.
+#endif
+#ifdef RTE_START_SEC_CTAPPSWC_APPL_CODE
+# error Using RTE_START_SEC_CTAPPSWC_APPL_CODE is not possible as multiple memory allocation keywords are defined. Include the MemMap separately for each one.
+#endif
+#ifdef RTE_STOP_SEC_CTAPPSWC_APPL_CODE
+# error Using RTE_STOP_SEC_CTAPPSWC_APPL_CODE is not possible as multiple memory allocation keywords are defined. Include the MemMap separately for each one.
+#endif
+#ifdef RTE_START_SEC_SWCINITTASK_CODE
+# error Using RTE_START_SEC_SWCINITTASK_CODE is not possible as multiple memory allocation keywords are defined. Include the MemMap separately for each one.
+#endif
+#ifdef RTE_STOP_SEC_SWCINITTASK_CODE
+# error Using RTE_STOP_SEC_SWCINITTASK_CODE is not possible as multiple memory allocation keywords are defined. Include the MemMap separately for each one.
 #endif
 
 

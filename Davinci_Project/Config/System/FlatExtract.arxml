@@ -65,6 +65,22 @@
                                   <SHORT-NAME>Det</SHORT-NAME>
                                   <TYPE-TREF DEST="SERVICE-SW-COMPONENT-TYPE">/MICROSAR/Det_swc/ComponentTypes/Det</TYPE-TREF>
                                 </SW-COMPONENT-PROTOTYPE>
+                                <SW-COMPONENT-PROTOTYPE UUID="0033aa11-551b-42d0-abaf-22390b6c1d91">
+                                  <SHORT-NAME>CtAppSwc</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV:DEV">
+                                        <SD GID="DV:ImportModePreset">Keep</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <ANNOTATIONS>
+                                    <ANNOTATION>
+                                      <ANNOTATION-ORIGIN>DV:Flattener</ANNOTATION-ORIGIN>
+                                    </ANNOTATION>
+                                  </ANNOTATIONS>
+                                  <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/CtAppSwc</TYPE-TREF>
+                                </SW-COMPONENT-PROTOTYPE>
                               </COMPONENTS>
                             </COMPOSITION-SW-COMPONENT-TYPE>
                             <END-TO-END-PROTECTION-SET UUID="48f24113-f76a-408b-8b59-02b9be866bc9">
@@ -92,12 +108,20 @@
                                   <SDG GID="DV:CfgReferences">
                                     <SD GID="3a76fd63-ef43-450a-b44f-b2d5e2985220">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE</SD>
                                     <SD GID="44e18763-b694-46eb-ac4e-9872489ff425">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/BswM</SD>
+                                    <SD GID="0033aa11-551b-42d0-abaf-22390b6c1d91">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/CtAppSwc</SD>
                                     <SD GID="ca0445ba-9087-4cbb-a613-7a8c97bf613d">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/Det</SD>
                                     <SD GID="dd0ad59e-1886-488d-a46d-9bcb956205cd">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/EcuM</SD>
                                     <SD GID="cb671654-e148-49a2-8a66-eb59162b6854">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/Os_OsCore0_swc</SD>
                                     <SD GID="77db67e4-3433-4557-862f-c74f385af7f6">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/FLATMAP</SD>
                                     <SD GID="60ee7701-3e9e-4905-b2ec-5a99c3c56120">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/SYSTEM</SD>
+                                    <SD GID="c241372b-bdd5-4216-8a82-45757d73466f">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/SYSTEM/COMPOSITIONTYPE</SD>
+                                    <SD GID="6B5F7D51-C70C-432C-BFFE-84BEFADFB3BC">/ComponentTypes/CtAppSwc</SD>
+                                    <SD GID="C0AEAC4B-8596-4C12-A647-B5ED88B7A6BB">/ComponentTypes/CtAppSwc/CtAppSwc_InternalBehavior/CtAppSwc_InitEvent</SD>
+                                    <SD GID="2C00DC4C-0F94-46AF-8787-5EF74FCE3B90">/ComponentTypes/CtAppSwc/CtAppSwc_InternalBehavior/TMT_RCtAppSwc_1000ms</SD>
+                                    <SD GID="A91DB759-28E4-4466-872C-D6811A40BAB6">/ComponentTypes/CtAppSwc/CtAppSwc_InternalBehavior/TMT_RCtAppSwc_10ms</SD>
+                                    <SD GID="96B38CA6-8B8E-4790-9107-A9D20ED9D0FE">/ComponentTypes/CtAppSwc_Implementation</SD>
                                     <SD GID="E958626E-9D82-4622-AA62-032469AF13A3">/ECUCompositionTypes/ECU_Composition</SD>
+                                    <SD GID="F01099D6-9D5B-439A-9582-8F399E5C4FEF">/ECUCompositionTypes/ECU_Composition/CtAppSwc</SD>
                                     <SD GID="cd1b7bc8-5407-4ea5-8d80-11342c6fac77">/MICROSAR/BswM_ib_bswmd</SD>
                                     <SD GID="3459650c-4e21-4305-b1d4-83cbaa40964e">/MICROSAR/BswM_ib_bswmd/BswModuleDescriptions</SD>
                                     <SD GID="3e1b3cce-57cb-423f-bff9-8c7eb10e842a">/MICROSAR/BswM_ib_bswmd/BswModuleDescriptions/BswM/BswMBehavior</SD>
@@ -323,6 +347,7 @@
                                     <SD GID="29D8C45D-AD65-4ADB-A8C0-9051D3BA8EB3">/Predefined_DEV/PortInterfaces/NvSWC_NvMService_AC3_SRBS_DS_Defs/E_NOT_OK</SD>
                                     <SD GID="B0DF499C-5446-40C9-BA84-69FE6BBA9AFA">/Predefined_DEV/PortInterfaces/NvSWC_NvMService_AC3_SRBS_Defs/E_NOT_OK</SD>
                                     <SD GID="6C11D3FD-1F97-4F18-9F28-AEBD06095420">/Predefined_DEV/PortInterfaces/NvSWC_NvMService_SRBS/E_NOT_OK</SD>
+                                    <SD GID="F1A8208A-03C8-43CC-8248-782262669971">/Systems/BCM_S32K344/EcuSwComposition</SD>
                                     <SD GID="581c52d5-c25d-4bb4-bd2d-5e942bd25255">/TS_T40D34M20I1R0/Mcu_ib_bswmd</SD>
                                     <SD GID="473082fd-ce88-4baa-86b4-30a1e727d1c9">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions</SD>
                                     <SD GID="1a58b032-38b3-4105-a1a9-79fc5b38d04c">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior</SD>

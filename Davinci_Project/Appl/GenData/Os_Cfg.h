@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Cfg.h
- *   Generation Time: 2026-07-12 12:56:23
+ *   Generation Time: 2026-07-12 15:33:41
  *           Project: BCM_S32K344 - Version 1.0
  *          Delivery: CBD2300384_D00
  *      Tool Version: DaVinci Configurator Classic (beta) 5.26.40 SP3
@@ -120,9 +120,12 @@
 # define OS_APPMODE_ANY     ((AppModeType)255)
 
 /*! Defines whether EVENT is active (STD_ON) or not (STD_OFF). */
-# define OS_CFG_EVENT                            (STD_OFF)
+# define OS_CFG_EVENT                            (STD_ON)
 
 /* Event masks */
+# define Rte_Ev_Cyclic2_AppRunTask_0_10ms     ((EventMaskType)1uLL)
+# define Rte_Ev_Run_CtAppSwc_RCtAppSwc_1000ms     ((EventMaskType)2uLL)
+# define Rte_Ev_Run_CtAppSwc_RCtAppSwc_10ms     ((EventMaskType)4uLL)
 
 /* Software counter timing macros */
 

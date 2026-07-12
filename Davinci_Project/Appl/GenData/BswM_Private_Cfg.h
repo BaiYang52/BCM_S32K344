@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: BswM_Private_Cfg.h
- *   Generation Time: 2026-07-12 12:56:23
+ *   Generation Time: 2026-07-12 15:33:41
  *           Project: BCM_S32K344 - Version 1.0
  *          Delivery: CBD2300384_D00
  *      Tool Version: DaVinci Configurator Classic (beta) 5.26.40 SP3
@@ -50,6 +50,7 @@
     &&&~ INCLUDE
  ----------------------------------------------------------------------------- */
 #include "BswM_Cfg.h"
+#include "Rte_Main.h" 
 
 
 
@@ -95,6 +96,7 @@
 
 
 
+#define BSWM_ID_AL_INIT_AL_Initialize 0u 
 
 
 /**********************************************************************************************************************
@@ -117,10 +119,25 @@
 */ 
 #define BswM_GetPartitionIdentifiersOfPCConfig()                                                    BswM_PartitionIdentifiers  /**< the pointer to BswM_PartitionIdentifiers */
 #define BswM_GetSizeOfPartitionIdentifiersOfPCConfig()                                              1u  /**< the number of accomplishable value elements in BswM_PartitionIdentifiers */
+#define BswM_GetActionListQueueOfPCPartitionConfig(partitionIndex)                                  BswM_ActionListQueue.raw  /**< the pointer to BswM_ActionListQueue */
+#define BswM_GetActionListsOfPCPartitionConfig(partitionIndex)                                      BswM_ActionLists  /**< the pointer to BswM_ActionLists */
 #define BswM_GetForcedActionListPriorityOfPCPartitionConfig(partitionIndex)                         (&(BswM_ForcedActionListPriority))  /**< the pointer to BswM_ForcedActionListPriority */
+#define BswM_GetInitGenVarAndInitALOfPCPartitionConfig(partitionIndex)                              BswM_InitGenVarAndInitAL  /**< the pointer to BswM_InitGenVarAndInitAL */
 #define BswM_GetInitializedOfPCPartitionConfig(partitionIndex)                                      (&(BswM_Initialized))  /**< the pointer to BswM_Initialized */
 #define BswM_GetQueueSemaphoreOfPCPartitionConfig(partitionIndex)                                   (&(BswM_QueueSemaphore))  /**< the pointer to BswM_QueueSemaphore */
 #define BswM_GetQueueWrittenOfPCPartitionConfig(partitionIndex)                                     (&(BswM_QueueWritten))  /**< the pointer to BswM_QueueWritten */
+#define BswM_GetSizeOfActionListsOfPCPartitionConfig(partitionIndex)                                1u  /**< the number of accomplishable value elements in BswM_ActionLists */
+#define BswM_GetSizeOfInitGenVarAndInitALOfPCPartitionConfig(partitionIndex)                        1u  /**< the number of accomplishable value elements in BswM_InitGenVarAndInitAL */
+/** 
+  \}
+*/ 
+
+/** 
+  \defgroup  BswMPCGetDuplicatedRootDataMacros  BswM Get Duplicated Root Data Macros (PRE_COMPILE)
+  \brief  These macros can be used to read deduplicated root data elements.
+  \{
+*/ 
+#define BswM_GetSizeOfActionListQueueOfPCPartitionConfig(partitionIndex)                            BswM_GetSizeOfActionListsOfPCPartitionConfig(partitionIndex)  /**< the number of accomplishable value elements in BswM_ActionListQueue */
 /** 
   \}
 */ 
@@ -130,7 +147,10 @@
   \brief  These macros can be used to read CONST and VAR data.
   \{
 */ 
+#define BswM_GetActionListQueue(Index, partitionIndex)                                              (BswM_GetActionListQueueOfPCPartitionConfig(partitionIndex)[(Index)])
+#define BswM_GetFctPtrOfActionLists(Index, partitionIndex)                                          (BswM_GetActionListsOfPCPartitionConfig(partitionIndex)[(Index)].FctPtrOfActionLists)
 #define BswM_GetForcedActionListPriority(partitionIndex)                                            ((*(BswM_GetForcedActionListPriorityOfPCPartitionConfig(partitionIndex))))
+#define BswM_GetInitGenVarAndInitAL(Index, partitionIndex)                                          (BswM_GetInitGenVarAndInitALOfPCPartitionConfig(partitionIndex)[(Index)])
 #define BswM_IsInitialized(partitionIndex)                                                          (((*(BswM_GetInitializedOfPCPartitionConfig(partitionIndex)))) != FALSE)
 #define BswM_GetPCPartitionConfigIdxOfPartitionIdentifiers(Index)                                   (BswM_GetPartitionIdentifiersOfPCConfig()[(Index)].PCPartitionConfigIdxOfPartitionIdentifiers)
 #define BswM_GetPartitionSNVOfPartitionIdentifiers(Index)                                           (BswM_GetPartitionIdentifiersOfPCConfig()[(Index)].PartitionSNVOfPartitionIdentifiers)
@@ -145,6 +165,9 @@
   \brief  These macros can be used to read deduplicated data elements.
   \{
 */ 
+#define BswM_GetSizeOfActionListQueue(partitionIndex)                                               BswM_GetSizeOfActionListQueueOfPCPartitionConfig(partitionIndex)
+#define BswM_GetSizeOfActionLists(partitionIndex)                                                   BswM_GetSizeOfActionListsOfPCPartitionConfig(partitionIndex)
+#define BswM_GetSizeOfInitGenVarAndInitAL(partitionIndex)                                           BswM_GetSizeOfInitGenVarAndInitALOfPCPartitionConfig(partitionIndex)
 #define BswM_GetSizeOfPartitionIdentifiers()                                                        BswM_GetSizeOfPartitionIdentifiersOfPCConfig()
 /** 
   \}
@@ -155,6 +178,7 @@
   \brief  These macros can be used to write data.
   \{
 */ 
+#define BswM_SetActionListQueue(Index, Value, partitionIndex)                                       BswM_GetActionListQueueOfPCPartitionConfig(partitionIndex)[(Index)] = (Value)
 #define BswM_SetForcedActionListPriority(Value, partitionIndex)                                     (*(BswM_GetForcedActionListPriorityOfPCPartitionConfig(partitionIndex))) = (Value)
 #define BswM_SetInitialized(Value, partitionIndex)                                                  (*(BswM_GetInitializedOfPCPartitionConfig(partitionIndex))) = (Value)
 #define BswM_SetQueueSemaphore(Value, partitionIndex)                                               (*(BswM_GetQueueSemaphoreOfPCPartitionConfig(partitionIndex))) = (Value)
@@ -168,23 +192,36 @@
   \brief  These macros can be used to detect at runtime a deactivated piece of information. TRUE in the CONFIGURATION_VARIANT PRE-COMPILE, TRUE or FALSE in the CONFIGURATION_VARIANT POST-BUILD.
   \{
 */ 
+#define BswM_HasActionListQueue(partitionIndex)                                                     (TRUE != FALSE)
+#define BswM_HasActionLists(partitionIndex)                                                         (TRUE != FALSE)
+#define BswM_HasFctPtrOfActionLists(partitionIndex)                                                 (TRUE != FALSE)
 #define BswM_HasForcedActionListPriority(partitionIndex)                                            (TRUE != FALSE)
+#define BswM_HasInitGenVarAndInitAL(partitionIndex)                                                 (TRUE != FALSE)
 #define BswM_HasInitialized(partitionIndex)                                                         (TRUE != FALSE)
 #define BswM_HasPartitionIdentifiers()                                                              (TRUE != FALSE)
 #define BswM_HasPCPartitionConfigIdxOfPartitionIdentifiers()                                        (TRUE != FALSE)
 #define BswM_HasPartitionSNVOfPartitionIdentifiers()                                                (TRUE != FALSE)
 #define BswM_HasQueueSemaphore(partitionIndex)                                                      (TRUE != FALSE)
 #define BswM_HasQueueWritten(partitionIndex)                                                        (TRUE != FALSE)
+#define BswM_HasSizeOfActionListQueue(partitionIndex)                                               (TRUE != FALSE)
+#define BswM_HasSizeOfActionLists(partitionIndex)                                                   (TRUE != FALSE)
+#define BswM_HasSizeOfInitGenVarAndInitAL(partitionIndex)                                           (TRUE != FALSE)
 #define BswM_HasSizeOfPartitionIdentifiers()                                                        (TRUE != FALSE)
 #define BswM_HasPCConfig()                                                                          (TRUE != FALSE)
 #define BswM_HasPCPartitionConfigOfPCConfig()                                                       (TRUE != FALSE)
 #define BswM_HasPartitionIdentifiersOfPCConfig()                                                    (TRUE != FALSE)
 #define BswM_HasSizeOfPartitionIdentifiersOfPCConfig()                                              (TRUE != FALSE)
 #define BswM_HasPCPartitionConfig()                                                                 (TRUE != FALSE)
+#define BswM_HasActionListQueueOfPCPartitionConfig(partitionIndex)                                  (TRUE != FALSE)
+#define BswM_HasActionListsOfPCPartitionConfig(partitionIndex)                                      (TRUE != FALSE)
 #define BswM_HasForcedActionListPriorityOfPCPartitionConfig(partitionIndex)                         (TRUE != FALSE)
+#define BswM_HasInitGenVarAndInitALOfPCPartitionConfig(partitionIndex)                              (TRUE != FALSE)
 #define BswM_HasInitializedOfPCPartitionConfig(partitionIndex)                                      (TRUE != FALSE)
 #define BswM_HasQueueSemaphoreOfPCPartitionConfig(partitionIndex)                                   (TRUE != FALSE)
 #define BswM_HasQueueWrittenOfPCPartitionConfig(partitionIndex)                                     (TRUE != FALSE)
+#define BswM_HasSizeOfActionListQueueOfPCPartitionConfig(partitionIndex)                            (TRUE != FALSE)
+#define BswM_HasSizeOfActionListsOfPCPartitionConfig(partitionIndex)                                (TRUE != FALSE)
+#define BswM_HasSizeOfInitGenVarAndInitALOfPCPartitionConfig(partitionIndex)                        (TRUE != FALSE)
 /** 
   \}
 */ 
@@ -194,6 +231,7 @@
   \brief  These macros can be used to increment VAR data with numerical nature.
   \{
 */ 
+#define BswM_IncActionListQueue(Index, partitionIndex)                                              BswM_GetActionListQueue(((Index)), (partitionIndex))++
 #define BswM_IncForcedActionListPriority(partitionIndex)                                            BswM_GetForcedActionListPriority(partitionIndex)++
 #define BswM_IncQueueSemaphore(partitionIndex)                                                      BswM_GetQueueSemaphore(partitionIndex)++
 /** 
@@ -205,6 +243,7 @@
   \brief  These macros can be used to decrement VAR data with numerical nature.
   \{
 */ 
+#define BswM_DecActionListQueue(Index, partitionIndex)                                              BswM_GetActionListQueue(((Index)), (partitionIndex))--
 #define BswM_DecForcedActionListPriority(partitionIndex)                                            BswM_GetForcedActionListPriority(partitionIndex)--
 #define BswM_DecQueueSemaphore(partitionIndex)                                                      BswM_GetQueueSemaphore(partitionIndex)--
 /** 
@@ -216,6 +255,7 @@
   \brief  These macros can be used to add VAR data with numerical nature.
   \{
 */ 
+#define BswM_AddActionListQueue(Index, Value, partitionIndex)                                       BswM_SetActionListQueue(Index, (BswM_GetActionListQueue(((Index)), (partitionIndex)) + Value), partitionIndex)
 #define BswM_AddForcedActionListPriority(Value, partitionIndex)                                     BswM_SetForcedActionListPriority((BswM_GetForcedActionListPriority(partitionIndex) + Value), partitionIndex)
 #define BswM_AddQueueSemaphore(Value, partitionIndex)                                               BswM_SetQueueSemaphore((BswM_GetQueueSemaphore(partitionIndex) + Value), partitionIndex)
 /** 
@@ -227,6 +267,7 @@
   \brief  These macros can be used to substract VAR data with numerical nature.
   \{
 */ 
+#define BswM_SubActionListQueue(Index, Value, partitionIndex)                                       BswM_SetActionListQueue(Index, (BswM_GetActionListQueue(((Index)), (partitionIndex)) - Value), partitionIndex)
 #define BswM_SubForcedActionListPriority(Value, partitionIndex)                                     BswM_SetForcedActionListPriority((BswM_GetForcedActionListPriority(partitionIndex) - Value), partitionIndex)
 #define BswM_SubQueueSemaphore(Value, partitionIndex)                                               BswM_SetQueueSemaphore((BswM_GetQueueSemaphore(partitionIndex) - Value), partitionIndex)
 /** 
@@ -277,6 +318,38 @@
   SECTION: GLOBAL DATA PROTOTYPES
 **********************************************************************************************************************/
 /**********************************************************************************************************************
+  BswM_ActionLists
+**********************************************************************************************************************/
+/** 
+  \var    BswM_ActionLists
+  \details
+  Element    Description
+  FctPtr     Pointer to the array list function.
+*/ 
+#define BSWM_START_SEC_CONST_UNSPECIFIED
+/*lint -save -esym(961, 19.1) */
+#include "BswM_MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_MemMap */
+/*lint -restore */
+extern CONST(BswM_ActionListsType, BSWM_CONST) BswM_ActionLists[1];
+#define BSWM_STOP_SEC_CONST_UNSPECIFIED
+/*lint -save -esym(961, 19.1) */
+#include "BswM_MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_MemMap */
+/*lint -restore */
+
+/**********************************************************************************************************************
+  BswM_InitGenVarAndInitAL
+**********************************************************************************************************************/
+#define BSWM_START_SEC_CONST_UNSPECIFIED
+/*lint -save -esym(961, 19.1) */
+#include "BswM_MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_MemMap */
+/*lint -restore */
+extern CONST(BswM_InitGenVarAndInitALType, BSWM_CONST) BswM_InitGenVarAndInitAL[1];
+#define BSWM_STOP_SEC_CONST_UNSPECIFIED
+/*lint -save -esym(961, 19.1) */
+#include "BswM_MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_MemMap */
+/*lint -restore */
+
+/**********************************************************************************************************************
   BswM_PartitionIdentifiers
 **********************************************************************************************************************/
 /** 
@@ -293,6 +366,23 @@
 /*lint -restore */
 extern CONST(BswM_PartitionIdentifiersType, BSWM_CONST) BswM_PartitionIdentifiers[1];
 #define BSWM_STOP_SEC_CONST_UNSPECIFIED
+/*lint -save -esym(961, 19.1) */
+#include "BswM_MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_MemMap */
+/*lint -restore */
+
+/**********************************************************************************************************************
+  BswM_ActionListQueue
+**********************************************************************************************************************/
+/** 
+  \var    BswM_ActionListQueue
+  \brief  Variable to store action lists which shall be executed.
+*/ 
+#define BSWM_START_SEC_VAR_NO_INIT_8
+/*lint -save -esym(961, 19.1) */
+#include "BswM_MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_MemMap */
+/*lint -restore */
+extern VAR(BswM_ActionListQueueUType, BSWM_VAR_NO_INIT) BswM_ActionListQueue;  /* PRQA S 0759 */  /* MD_CSL_Union */
+#define BSWM_STOP_SEC_VAR_NO_INIT_8
 /*lint -save -esym(961, 19.1) */
 #include "BswM_MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_MemMap */
 /*lint -restore */

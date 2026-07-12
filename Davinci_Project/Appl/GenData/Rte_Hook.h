@@ -30,6 +30,12 @@
  *
  *  Rte_Runnable_BswM_BswM_MainFunction_Return
  *  Rte_Runnable_BswM_BswM_MainFunction_Start
+ *  Rte_Runnable_CtAppSwc_RCtAppSwc_1000ms_Return
+ *  Rte_Runnable_CtAppSwc_RCtAppSwc_1000ms_Start
+ *  Rte_Runnable_CtAppSwc_RCtAppSwc_10ms_Return
+ *  Rte_Runnable_CtAppSwc_RCtAppSwc_10ms_Start
+ *  Rte_Runnable_CtAppSwc_RCtAppSwc_Init_Return
+ *  Rte_Runnable_CtAppSwc_RCtAppSwc_Init_Start
  *  Rte_Runnable_EcuM_EcuM_MainFunction_Return
  *  Rte_Runnable_EcuM_EcuM_MainFunction_Start
  *  Rte_Runnable_EcuM_GetBootTarget_Return
@@ -50,8 +56,11 @@
  *  Rte_Runnable_Os_OsCore0_swc_GetCounterValue_Start
  *  Rte_Runnable_Os_OsCore0_swc_GetElapsedValue_Return
  *  Rte_Runnable_Os_OsCore0_swc_GetElapsedValue_Start
+ *  Rte_Task_Activate
  *  Rte_Task_Dispatch
  *  Rte_Task_Terminate
+ *  Rte_Task_WaitEvent
+ *  Rte_Task_WaitEventRet
  *  SchM_EnterHook_BswM_BSWM_EXCLUSIVE_AREA_0_Return
  *  SchM_EnterHook_BswM_BSWM_EXCLUSIVE_AREA_0_Start
  *  SchM_EnterHook_Det_DET_EXCLUSIVE_AREA_0_Return

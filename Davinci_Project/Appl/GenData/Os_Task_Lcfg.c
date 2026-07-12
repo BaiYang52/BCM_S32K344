@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Task_Lcfg.c
- *   Generation Time: 2026-07-12 12:56:23
+ *   Generation Time: 2026-07-12 15:33:41
  *           Project: BCM_S32K344 - Version 1.0
  *          Delivery: CBD2300384_D00
  *      Tool Version: DaVinci Configurator Classic (beta) 5.26.40 SP3
@@ -108,6 +108,9 @@ OS_LOCAL VAR(Os_TaskType, OS_VAR_NOINIT) OsCfg_Task_Default_Init_Task_Trusted_Dy
 /*! Dynamic task data: IdleTask_OsCore0 */
 OS_LOCAL VAR(Os_TaskType, OS_VAR_NOINIT) OsCfg_Task_IdleTask_OsCore0_Dyn;
 
+/*! Dynamic task data: SwcInitTask */
+OS_LOCAL VAR(Os_TaskType, OS_VAR_NOINIT) OsCfg_Task_SwcInitTask_Dyn;
+
 #define OS_STOP_SEC_CORE0_VAR_NOINIT_UNSPECIFIED
 #include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
 
@@ -131,7 +134,7 @@ CONST(Os_TaskConfigType, OS_CONST) OsCfg_Task_AppRunTask =
   {
     /* .ContextConfig         = */ &OsCfg_Hal_Context_AppRunTask,
     /* .Context               = */ &OsCfg_Hal_Context_AppRunTask_Dyn,
-    /* .Stack                 = */ &OsCfg_Stack_OsCore0_Task_Prio15,
+    /* .Stack                 = */ &OsCfg_Stack_AppRunTask,
     /* .Dyn                   = */ OS_TASK_CASTDYN_TASK_2_THREAD(OsCfg_Task_AppRunTask_Dyn),
     /* .OwnerApplication      = */ &OsCfg_App_SystemApplication_OsCore0,
     /* .Core                  = */ &OsCfg_Core_OsCore0,
@@ -146,15 +149,15 @@ CONST(Os_TaskConfigType, OS_CONST) OsCfg_Task_AppRunTask =
     /* .InitDuringStartUp     = */ TRUE,
     /* .UsesFpu               = */ FALSE
   },
-  /* .HomePriority           = */ (Os_TaskPrioType)2u,
+  /* .HomePriority           = */ (Os_TaskPrioType)3u,
   /* .TaskId                 = */ AppRunTask,
-  /* .RunningPriority        = */ (Os_TaskPrioType)2u,
+  /* .RunningPriority        = */ (Os_TaskPrioType)3u,
   /* .MaxActivations         = */ (Os_ActivationCntType)1u,
   /* .AutostartModes         = */ OS_APPMODE_NONE,
     /* .AccessingApplications = */ OS_APPID2MASK(SystemApplication_OsCore0),  /* PRQA S 0410 */ /* MD_MSR_Dir1.1 */
   /* .NumSchEventsRoundRobin = */ 0u,
   /* .RoundRobinEnabled      = */ FALSE,
-  /* .IsExtended             = */ (boolean)FALSE,
+  /* .IsExtended             = */ (boolean)TRUE,
   /* .StackSharing           = */ OS_TASKSCHEDULE_ALLOWED
 };
 
@@ -251,11 +254,46 @@ CONST(Os_TaskConfigType, OS_CONST) OsCfg_Task_IdleTask_OsCore0 =
     /* .InitDuringStartUp     = */ TRUE,
     /* .UsesFpu               = */ FALSE
   },
-  /* .HomePriority           = */ (Os_TaskPrioType)3u,
+  /* .HomePriority           = */ (Os_TaskPrioType)4u,
   /* .TaskId                 = */ IdleTask_OsCore0,
-  /* .RunningPriority        = */ (Os_TaskPrioType)3u,
+  /* .RunningPriority        = */ (Os_TaskPrioType)4u,
   /* .MaxActivations         = */ (Os_ActivationCntType)1u,
   /* .AutostartModes         = */ OS_APPMODE_ANY,
+    /* .AccessingApplications = */ OS_APPID2MASK(SystemApplication_OsCore0),  /* PRQA S 0410 */ /* MD_MSR_Dir1.1 */
+  /* .NumSchEventsRoundRobin = */ 0u,
+  /* .RoundRobinEnabled      = */ FALSE,
+  /* .IsExtended             = */ (boolean)FALSE,
+  /* .StackSharing           = */ OS_TASKSCHEDULE_ALLOWED
+};
+
+
+/*! Task configuration data: SwcInitTask */
+CONST(Os_TaskConfigType, OS_CONST) OsCfg_Task_SwcInitTask =
+{
+  /* .Thread                 = */
+  {
+    /* .ContextConfig         = */ &OsCfg_Hal_Context_SwcInitTask,
+    /* .Context               = */ &OsCfg_Hal_Context_SwcInitTask_Dyn,
+    /* .Stack                 = */ &OsCfg_Stack_OsCore0_Task_Prio30,
+    /* .Dyn                   = */ OS_TASK_CASTDYN_TASK_2_THREAD(OsCfg_Task_SwcInitTask_Dyn),
+    /* .OwnerApplication      = */ &OsCfg_App_SystemApplication_OsCore0,
+    /* .Core                  = */ &OsCfg_Core_OsCore0,
+    /* .IntApiState           = */ &OsCfg_Core_OsCore0_Dyn.IntApiState,
+    /* .TimeProtConfig        = */ NULL_PTR,
+    /* .MpAccessRightsInitial = */ NULL_PTR,
+    /* .AccessRights          = */ &OsCfg_AccessCheck_NoAccess,
+    /* .Trace                 = */ NULL_PTR,
+    /* .FpuContext            = */ NULL_PTR,
+    /* .InitialCallContext    = */ OS_CALLCONTEXT_TASK,
+    /* .PreThreadHook         = */ &Os_TaskCallPreTaskHook,
+    /* .InitDuringStartUp     = */ TRUE,
+    /* .UsesFpu               = */ FALSE
+  },
+  /* .HomePriority           = */ (Os_TaskPrioType)2u,
+  /* .TaskId                 = */ SwcInitTask,
+  /* .RunningPriority        = */ (Os_TaskPrioType)2u,
+  /* .MaxActivations         = */ (Os_ActivationCntType)1u,
+  /* .AutostartModes         = */ OS_APPMODE_NONE,
     /* .AccessingApplications = */ OS_APPID2MASK(SystemApplication_OsCore0),  /* PRQA S 0410 */ /* MD_MSR_Dir1.1 */
   /* .NumSchEventsRoundRobin = */ 0u,
   /* .RoundRobinEnabled      = */ FALSE,
@@ -277,6 +315,7 @@ CONSTP2CONST(Os_TaskConfigType, OS_CONST, OS_CONST) OsCfg_TaskRefs[OS_TASKID_COU
   OS_TASK_CASTCONFIG_TASK_2_TASK(OsCfg_Task_Default_Init_Task),
   OS_TASK_CASTCONFIG_TASK_2_TASK(OsCfg_Task_Default_Init_Task_Trusted),
   OS_TASK_CASTCONFIG_TASK_2_TASK(OsCfg_Task_IdleTask_OsCore0),
+  OS_TASK_CASTCONFIG_TASK_2_TASK(OsCfg_Task_SwcInitTask),
   NULL_PTR
 };
 

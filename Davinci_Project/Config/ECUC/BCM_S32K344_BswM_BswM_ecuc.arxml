@@ -114,6 +114,106 @@
               <SUB-CONTAINERS>
                 <ECUC-CONTAINER-VALUE UUID="83112935-b1e9-447b-95fa-608394893e62">
                   <SHORT-NAME>BswMCommonData</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="DV:BswM">
+                        <SDG GID="DV:Statemachines">
+                          <SDG GID="DV:INIT">
+                            <SD GID="DV:Version">22.02.00.01</SD>
+                            <SDG GID="DV:Feature:NvMReadAll">
+                              <SD GID="DV:Name">Execute NvM ReadAll</SD>
+                              <SD GID="DV:Value">FALSE</SD>
+                            </SDG>
+                            <SDG GID="DV:Feature:EnableInterrupts">
+                              <SD GID="DV:Name">Enable Interrupts</SD>
+                              <SD GID="DV:Value">FALSE</SD>
+                            </SDG>
+                            <SDG GID="DV:Feature:InitKnownModules">
+                              <SD GID="DV:Name">Initialize known modules</SD>
+                              <SD GID="DV:Value">TRUE</SD>
+                              <SDG GID="DV:Param:PARAMETER:Restore_Default_Sequence">
+                                <SD GID="DV:Name">Restore Default Sequence</SD>
+                                <SD GID="DV:Default">false</SD>
+                                <SD GID="DV:Value">true</SD>
+                              </SDG>
+                              <SDG GID="DV:Feature:INIT_ZERO">
+                                <SD GID="DV:Name">InitPhase: INIT_ZERO</SD>
+                                <SD GID="DV:Value">FALSE</SD>
+                                <SDG GID="DV:Feature:Det_Init">
+                                  <SD GID="DV:Name">Det_Init</SD>
+                                  <SD GID="DV:Value">FALSE</SD>
+                                  <SDG GID="DV:Param:Det_Init_Function">
+                                    <SD GID="DV:Name">Det_Init Function</SD>
+                                    <SD GID="DV:Default">Det_Init(Det_Config_Ptr)</SD>
+                                    <SD GID="DV:Value">Det_Init(Det_Config_Ptr)</SD>
+                                  </SDG>
+                                  <SDG GID="DV:Param:Det_Init_Header">
+                                    <SD GID="DV:Name">Det_Init Header</SD>
+                                    <SD GID="DV:Default">Det.h</SD>
+                                    <SD GID="DV:Value">Det.h</SD>
+                                  </SDG>
+                                </SDG>
+                              </SDG>
+                              <SDG GID="DV:Feature:INIT_ONE">
+                                <SD GID="DV:Name">InitPhase: INIT_ONE</SD>
+                                <SD GID="DV:Value">FALSE</SD>
+                                <SDG GID="DV:Feature:Mcu_Init">
+                                  <SD GID="DV:Name">Mcu_Init</SD>
+                                  <SD GID="DV:Value">FALSE</SD>
+                                  <SDG GID="DV:Param:Mcu_Init_Function">
+                                    <SD GID="DV:Name">Mcu_Init Function</SD>
+                                    <SD GID="DV:Default">Mcu_InitClock(McuConf_McuClockSettingConfig_McuClockSettingConfig_0);while (MCU_PLL_LOCKED != Mcu_GetPllStatus());Mcu_DistributePllClock();Mcu_SetMode(McuConf_McuModeSettingConf_McuModeSettingConf_0);</SD>
+                                    <SD GID="DV:Value">Mcu_InitClock(McuConf_McuClockSettingConfig_McuClockSettingConfig_0);while (MCU_PLL_LOCKED != Mcu_GetPllStatus());Mcu_DistributePllClock();Mcu_SetMode(McuConf_McuModeSettingConf_McuModeSettingConf_0);</SD>
+                                  </SDG>
+                                  <SDG GID="DV:Param:Mcu_Init_Header">
+                                    <SD GID="DV:Name">Mcu_Init Header</SD>
+                                    <SD GID="DV:Default">Mcu.h</SD>
+                                    <SD GID="DV:Value">Mcu.h</SD>
+                                  </SDG>
+                                </SDG>
+                                <SDG GID="DV:Feature:OsIf_Init">
+                                  <SD GID="DV:Name">OsIf_Init</SD>
+                                  <SD GID="DV:Value">FALSE</SD>
+                                  <SDG GID="DV:Param:OsIf_Init_Function">
+                                    <SD GID="DV:Name">OsIf_Init Function</SD>
+                                    <SD GID="DV:Default">OsIf_Init(NULL_PTR)</SD>
+                                    <SD GID="DV:Value">OsIf_Init(NULL_PTR)</SD>
+                                  </SDG>
+                                  <SDG GID="DV:Param:OsIf_Init_Header">
+                                    <SD GID="DV:Name">OsIf_Init Header</SD>
+                                    <SD GID="DV:Default">OsIf.h</SD>
+                                    <SD GID="DV:Value">OsIf.h</SD>
+                                  </SDG>
+                                </SDG>
+                              </SDG>
+                              <SDG GID="DV:Feature:INIT_THREE">
+                                <SD GID="DV:Name">InitPhase: INIT_THREE</SD>
+                                <SD GID="DV:Value">TRUE</SD>
+                                <SDG GID="DV:Feature:Rte_Start">
+                                  <SD GID="DV:Name">Rte_Start</SD>
+                                  <SD GID="DV:Value">TRUE</SD>
+                                  <SDG GID="DV:Param:Rte_Start_Function">
+                                    <SD GID="DV:Name">Rte_Start Function</SD>
+                                    <SD GID="DV:Default">Rte_Start()</SD>
+                                    <SD GID="DV:Value">Rte_Start()</SD>
+                                  </SDG>
+                                  <SDG GID="DV:Param:Rte_Start_Header">
+                                    <SD GID="DV:Name">Rte_Start Header</SD>
+                                    <SD GID="DV:Default">Rte_Main.h</SD>
+                                    <SD GID="DV:Value">Rte_Main.h</SD>
+                                  </SDG>
+                                </SDG>
+                              </SDG>
+                            </SDG>
+                            <SDG GID="DV:Feature:InitForeignModules">
+                              <SD GID="DV:Name">Initialize foreign modules</SD>
+                              <SD GID="DV:Value">FALSE</SD>
+                            </SDG>
+                          </SDG>
+                        </SDG>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
                   <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMGeneral/BswMCommonData</DEFINITION-REF>
                 </ECUC-CONTAINER-VALUE>
                 <ECUC-CONTAINER-VALUE UUID="1aa9608f-277a-48b3-9cff-57f0ec146f2a">
@@ -151,6 +251,110 @@
                 <ECUC-CONTAINER-VALUE UUID="1890e469-d9b3-42ff-84cd-81dcee5ebc51">
                   <SHORT-NAME>BswMModeControl</SHORT-NAME>
                   <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl</DEFINITION-REF>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMInitActionListRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/BswM/BswMConfig/BswMModeControl/INIT_AL_Initialize</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="12edef1d-d2f8-4b67-a049-9e00a26b500c">
+                      <SHORT-NAME>INIT_AL_Initialize</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV:BswM">
+                            <SDG GID="DV:Statemachines">
+                              <SDG GID="DV:INIT">
+                                <SD GID="NAME">INIT_AL_Initialize</SD>
+                                <SD GID="PARAMETER:Restore_Default_Sequence">true</SD>
+                              </SDG>
+                            </SDG>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMActionList</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMActionList/BswMActionListExecution</DEFINITION-REF>
+                          <VALUE>BSWM_CONDITION</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="0884d32f-d812-463f-bad3-b632ff744f63">
+                          <SHORT-NAME>INIT_Action_Rte_Start</SHORT-NAME>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="DV:BswM">
+                                <SDG GID="DV:Statemachines">
+                                  <SDG GID="DV:INIT">
+                                    <SD GID="NAME">INIT_Action_Rte_Start</SD>
+                                  </SDG>
+                                </SDG>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMActionList/BswMActionListItem</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMActionList/BswMActionListItem/BswMAbortOnFail</DEFINITION-REF>
+                              <VALUE>false</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMActionList/BswMActionListItem/BswMActionListItemIndex</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMActionList/BswMActionListItem/BswMActionListItemRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/BswM/BswMConfig/BswMModeControl/INIT_Action_Rte_Start</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="b605f010-5676-4207-a50e-cad1e6a6579e">
+                      <SHORT-NAME>INIT_Action_Rte_Start</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV:BswM">
+                            <SDG GID="DV:Statemachines">
+                              <SDG GID="DV:INIT">
+                                <SD GID="NAME">INIT_Action_Rte_Start</SD>
+                              </SDG>
+                            </SDG>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMAction</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="790cf144-3ce4-404a-8ff2-1e75696347cc">
+                          <SHORT-NAME>BswMAvailableActions</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMAction/BswMAvailableActions</DEFINITION-REF>
+                          <SUB-CONTAINERS>
+                            <ECUC-CONTAINER-VALUE UUID="796cc2a8-f64c-4616-b574-6c2f4314f7a7">
+                              <SHORT-NAME>BswMUserCallout</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMAction/BswMAvailableActions/BswMUserCallout</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMAction/BswMAvailableActions/BswMUserCallout/BswMUserCalloutFunction</DEFINITION-REF>
+                                  <VALUE>Rte_Start()</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMAction/BswMAvailableActions/BswMUserCallout/BswMCreateCallout</DEFINITION-REF>
+                                  <VALUE>false</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMAction/BswMAvailableActions/BswMUserCallout/BswMUserIncludeFile</DEFINITION-REF>
+                                  <VALUE>Rte_Main.h</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                          </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
                 </ECUC-CONTAINER-VALUE>
               </SUB-CONTAINERS>
             </ECUC-CONTAINER-VALUE>

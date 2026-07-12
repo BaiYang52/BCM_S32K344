@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Resource_Lcfg.c
- *   Generation Time: 2026-07-12 12:56:23
+ *   Generation Time: 2026-07-12 15:33:41
  *           Project: BCM_S32K344 - Version 1.0
  *          Delivery: CBD2300384_D00
  *      Tool Version: DaVinci Configurator Classic (beta) 5.26.40 SP3
@@ -114,7 +114,7 @@ CONST(Os_ResourceConfigType, OS_CONST) OsCfg_Resource_OsResource =
   },
   /* .Core            = */ &OsCfg_Core_OsCore0,
   /* .ResourceId      = */ OsResource,
-  /* .CeilingPriority = */ 2
+  /* .CeilingPriority = */ 3
 };
 
 #define OS_STOP_SEC_CORE0_CONST_UNSPECIFIED

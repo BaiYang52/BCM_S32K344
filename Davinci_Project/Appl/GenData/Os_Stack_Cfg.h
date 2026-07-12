@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Stack_Cfg.h
- *   Generation Time: 2026-07-12 12:56:23
+ *   Generation Time: 2026-07-12 15:33:41
  *           Project: BCM_S32K344 - Version 1.0
  *          Delivery: CBD2300384_D00
  *      Tool Version: DaVinci Configurator Classic (beta) 5.26.40 SP3
@@ -61,12 +61,13 @@
 /*! Defines whether stack measurement is active (STD_ON) or not (STD_OFF). */
 # define OS_CFG_STACKMEASUREMENT                 (STD_OFF)
 
-/* Configured stack sizes (Total: 8192 Byte) */
+/* Configured stack sizes (Total: 9216 Byte) */
+# define OS_CFG_SIZE_APPRUNTASK_STACK     (1024u)
 # define OS_CFG_SIZE_OSCORE0_ERROR_STACK     (1024u)
 # define OS_CFG_SIZE_OSCORE0_INIT_STACK     (1024u)
 # define OS_CFG_SIZE_OSCORE0_ISR_CORE_STACK     (1024u)
 # define OS_CFG_SIZE_OSCORE0_KERNEL_STACK     (1024u)
-# define OS_CFG_SIZE_OSCORE0_TASK_PRIO15_STACK     (1024u)
+# define OS_CFG_SIZE_OSCORE0_TASK_PRIO30_STACK     (1024u)
 # define OS_CFG_SIZE_OSCORE0_TASK_PRIO4294967295_STACK     (1024u)
 # define OS_CFG_SIZE_OSCORE0_TASK_PRIO49_STACK     (1024u)
 # define OS_CFG_SIZE_OSCORE0_TASK_PRIO50_STACK     (1024u)

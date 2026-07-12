@@ -33,6 +33,7 @@
 #include "Rte_Main.h"
 
 #include "Rte_BswM.h"
+#include "Rte_CtAppSwc.h"
 #include "Rte_Det.h"
 #include "Rte_EcuM.h"
 #include "Rte_Os_OsCore0_swc.h"
@@ -81,19 +82,6 @@
 # define Rte_EnableOSInterrupts() ResumeOSInterrupts()   /* AUTOSAR OS */
 #endif
 
-/**********************************************************************************************************************
- * Rte Init State Variable
- *********************************************************************************************************************/
-
-#define RTE_START_SEC_VAR_ZERO_INIT_8BIT
-#include "Rte_MemMap.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
-
-volatile VAR(uint8, RTE_VAR_ZERO_INIT) Rte_InitState = RTE_STATE_UNINIT; /* PRQA S 3408 */ /* MD_Rte_3408 */
-volatile VAR(uint8, RTE_VAR_ZERO_INIT) Rte_StartTiming_InitState = RTE_STATE_UNINIT; /* PRQA S 0850, 3408, 1514 */ /* MD_MSR_MacroArgumentEmpty, MD_Rte_3408, MD_Rte_1514 */
-
-#define RTE_STOP_SEC_VAR_ZERO_INIT_8BIT
-#include "Rte_MemMap.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
-
 
 /**********************************************************************************************************************
  * Timer handling
@@ -120,6 +108,9 @@ volatile VAR(uint8, RTE_VAR_ZERO_INIT) Rte_StartTiming_InitState = RTE_STATE_UNI
 #define RTE_CONST_MSEC_SystemTimer_0U (0UL)
 #define RTE_CONST_MSEC_SystemTimer_10U (10UL)
 
+#define RTE_CONST_SEC_SystemTimer_0U (0UL)
+#define RTE_CONST_SEC_SystemTimer_1U (1000UL)
+
 
 /**********************************************************************************************************************
  * Internal definitions
@@ -137,12 +128,13 @@ volatile VAR(uint8, RTE_VAR_ZERO_INIT) Rte_StartTiming_InitState = RTE_STATE_UNI
 
 FUNC(void, RTE_CODE) SchM_Start(void)
 {
-  Rte_InitState = RTE_STATE_SCHM_START;
 }
 
 FUNC(void, RTE_CODE) SchM_Init(void)
 {
-  Rte_InitState = RTE_STATE_SCHM_INIT;
+  /* activate the tasks */
+  (void)ActivateTask(AppRunTask); /* PRQA S 3417 */ /* MD_Rte_Os */
+
 }
 
 FUNC(void, RTE_CODE) SchM_StartTiming(void)
@@ -155,16 +147,21 @@ FUNC(void, RTE_CODE) SchM_StartTiming(void)
 /* PRQA S 6050 1 */ /* MD_MSR_STCAL */
 FUNC(Std_ReturnType, RTE_CODE) Rte_Start(void)
 {
-  Rte_StartTiming_InitState = RTE_STATE_INIT;
-  Rte_InitState = RTE_STATE_INIT;
+  /* activate the tasks */
+  (void)ActivateTask(SwcInitTask); /* PRQA S 3417 */ /* MD_Rte_Os */
+
+  /* activate the alarms used for TimingEvents */
+  (void)SetRelAlarm(Rte_Al_TE_CtAppSwc_RCtAppSwc_1000ms, RTE_SEC_SystemTimer(0U) + (TickType)1U, RTE_SEC_SystemTimer(1U)); /* PRQA S 3417, 1840 */ /* MD_Rte_Os, MD_Rte_Os */
+  (void)SetRelAlarm(Rte_Al_TE_CtAppSwc_RCtAppSwc_10ms, RTE_MSEC_SystemTimer(0U) + (TickType)1U, RTE_MSEC_SystemTimer(10U)); /* PRQA S 3417, 1840 */ /* MD_Rte_Os, MD_Rte_Os */
 
   return RTE_E_OK;
 } /* PRQA S 6050 */ /* MD_MSR_STCAL */
 
 FUNC(Std_ReturnType, RTE_CODE) Rte_Stop(void)
 {
-  Rte_StartTiming_InitState = RTE_STATE_UNINIT;
-  Rte_InitState = RTE_STATE_SCHM_INIT;
+  /* deactivate alarms */
+  (void)CancelAlarm(Rte_Al_TE_CtAppSwc_RCtAppSwc_1000ms); /* PRQA S 3417 */ /* MD_Rte_Os */
+  (void)CancelAlarm(Rte_Al_TE_CtAppSwc_RCtAppSwc_10ms); /* PRQA S 3417 */ /* MD_Rte_Os */
 
   return RTE_E_OK;
 }
@@ -174,14 +171,10 @@ FUNC(void, RTE_CODE) SchM_Deinit(void)
   /* deactivate alarms */
   (void)CancelAlarm(Rte_Al_TE2_AppRunTask_0_10ms); /* PRQA S 3417 */ /* MD_Rte_Os */
 
-  Rte_InitState = RTE_STATE_UNINIT;
 }
 
 FUNC(void, RTE_CODE) Rte_InitMemory(void)
 {
-  Rte_InitState = RTE_STATE_UNINIT;
-  Rte_StartTiming_InitState = RTE_STATE_UNINIT;
-
 }
 
 
@@ -605,22 +598,63 @@ FUNC(void, RTE_CODE) SchM_Exit_Mcu_MCU_EXCLUSIVE_AREA_30(void)
  * Task:     AppRunTask
  * Priority: 15
  * Schedule: FULL
- * Alarm:    Cycle Time 0.01 s Alarm Offset 0 s
  *********************************************************************************************************************/
 /* PRQA S 6010, 6030, 6050, 6080 1 */ /* MD_MSR_STPTH, MD_MSR_STCYC, MD_MSR_STCAL, MD_MSR_STMIF */
 TASK(AppRunTask) /* PRQA S 3408, 1503 */ /* MD_Rte_3408, MD_MSR_Unreachable */
 {
+  EventMaskType ev;
+
+  for(;;) /* FETA_RTE_EXTENDED_TASK */
+  {
+    (void)WaitEvent(Rte_Ev_Cyclic2_AppRunTask_0_10ms | Rte_Ev_Run_CtAppSwc_RCtAppSwc_1000ms | Rte_Ev_Run_CtAppSwc_RCtAppSwc_10ms); /* PRQA S 3417 */ /* MD_Rte_Os */
+    (void)GetEvent(AppRunTask, &ev); /* PRQA S 3417 */ /* MD_Rte_Os */
+    (void)ClearEvent(ev & (Rte_Ev_Cyclic2_AppRunTask_0_10ms | Rte_Ev_Run_CtAppSwc_RCtAppSwc_1000ms | Rte_Ev_Run_CtAppSwc_RCtAppSwc_10ms)); /* PRQA S 3417 */ /* MD_Rte_Os */
+
+    if ((ev & Rte_Ev_Cyclic2_AppRunTask_0_10ms) != (EventMaskType)0)
+    {
+      /* call runnable */
+      BswM_MainFunction(); /* PRQA S 2987 */ /* MD_Rte_2987 */
+
+      /* call runnable */
+      EcuM_MainFunction(); /* PRQA S 2987 */ /* MD_Rte_2987 */
+    }
+
+    if ((ev & Rte_Ev_Run_CtAppSwc_RCtAppSwc_10ms) != (EventMaskType)0)
+    {
+      /* call runnable */
+      RCtAppSwc_10ms(); /* PRQA S 2987 */ /* MD_Rte_2987 */
+    }
+
+    if ((ev & Rte_Ev_Run_CtAppSwc_RCtAppSwc_1000ms) != (EventMaskType)0)
+    {
+      /* call runnable */
+      RCtAppSwc_1000ms(); /* PRQA S 2987 */ /* MD_Rte_2987 */
+    }
+  }
+} /* PRQA S 6010, 6030, 6050, 6080 */ /* MD_MSR_STPTH, MD_MSR_STCYC, MD_MSR_STCAL, MD_MSR_STMIF */
+
+#define RTE_STOP_SEC_APPRUNTASK_CODE
+#include "Rte_MemMap.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
+
+#define RTE_START_SEC_SWCINITTASK_CODE
+#include "Rte_MemMap.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
+
+/**********************************************************************************************************************
+ * Task:     SwcInitTask
+ * Priority: 30
+ * Schedule: FULL
+ *********************************************************************************************************************/
+/* PRQA S 6010, 6030, 6050, 6080 1 */ /* MD_MSR_STPTH, MD_MSR_STCYC, MD_MSR_STCAL, MD_MSR_STMIF */
+TASK(SwcInitTask) /* PRQA S 3408, 1503 */ /* MD_Rte_3408, MD_MSR_Unreachable */
+{
 
   /* call runnable */
-  BswM_MainFunction(); /* PRQA S 2987 */ /* MD_Rte_2987 */
-
-  /* call runnable */
-  EcuM_MainFunction(); /* PRQA S 2987 */ /* MD_Rte_2987 */
+  RCtAppSwc_Init(); /* PRQA S 2987 */ /* MD_Rte_2987 */
 
   (void)TerminateTask(); /* PRQA S 3417 */ /* MD_Rte_Os */
 } /* PRQA S 6010, 6030, 6050, 6080 */ /* MD_MSR_STPTH, MD_MSR_STCYC, MD_MSR_STCAL, MD_MSR_STMIF */
 
-#define RTE_STOP_SEC_APPRUNTASK_CODE
+#define RTE_STOP_SEC_SWCINITTASK_CODE
 #include "Rte_MemMap.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
 
 
@@ -629,11 +663,6 @@ TASK(AppRunTask) /* PRQA S 3408, 1503 */ /* MD_Rte_3408, MD_MSR_Unreachable */
  *********************************************************************************************************************/
 
 /* module specific MISRA deviations:
-   MD_Rte_1514:  MISRA rule: Rule8.9
-     Reason:     Because of external definition, misra does not see the call.
-     Risk:       No functional risk. There is no side effect.
-     Prevention: Not required.
-
    MD_Rte_2987:  MISRA rule: Rule2.2
      Reason:     Used to simplify code generation.
      Risk:       No functional risk. There is no side effect.
@@ -652,3 +681,15 @@ TASK(AppRunTask) /* PRQA S 3408, 1503 */ /* MD_Rte_3408, MD_MSR_Unreachable */
      Prevention: Not required.
 
 */
+
+/**********************************************************************************************************************
+  Finite Execution Time Analysis justifications
+ *********************************************************************************************************************/
+
+/* COV_JUSTIFICATION_BEGIN
+
+  \ID FETA_RTE_EXTENDED_TASK
+  \DESCRIPTION    An extended task is used if more than one runnable entity is mapped to a task with different activation periods
+  \COUNTERMEASURE \S SMI-2063
+
+COV_JUSTIFICATION_END */

@@ -34,13 +34,57 @@
       SCHEDULE = FULL:"@RO@";
 // TIMING_PROTECTION = FALSE|TRUE; (AUTOSAR OS only)
       AUTOSTART = FALSE:"@RO@";
+      EVENT = Rte_Ev_Cyclic2_AppRunTask_0_10ms:"@RO@";
+      EVENT = Rte_Ev_Run_CtAppSwc_RCtAppSwc_1000ms:"@RO@";
+      EVENT = Rte_Ev_Run_CtAppSwc_RCtAppSwc_10ms:"@RO@";
    }:"@RO@@NR@";
 
    ALARM Rte_Al_TE2_AppRunTask_0_10ms {
       COUNTER = SystemTimer;
-      ACTION = ACTIVATETASK
+      ACTION = SETEVENT
       {
          TASK = AppRunTask;
+         EVENT = Rte_Ev_Cyclic2_AppRunTask_0_10ms;
       }:"@ROC@";
       AUTOSTART = FALSE:"@RO@";
    }:"@RO@@NR@";
+
+   ALARM Rte_Al_TE_CtAppSwc_RCtAppSwc_1000ms {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = AppRunTask;
+         EVENT = Rte_Ev_Run_CtAppSwc_RCtAppSwc_1000ms;
+      }:"@ROC@";
+      AUTOSTART = FALSE:"@RO@";
+   }:"@RO@@NR@";
+
+   ALARM Rte_Al_TE_CtAppSwc_RCtAppSwc_10ms {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = AppRunTask;
+         EVENT = Rte_Ev_Run_CtAppSwc_RCtAppSwc_10ms;
+      }:"@ROC@";
+      AUTOSTART = FALSE:"@RO@";
+   }:"@RO@@NR@";
+
+   TASK SwcInitTask {
+      ACTIVATION = 1:"@RO@";
+      PRIORITY = 30:"@RO@";
+      SCHEDULE = FULL:"@RO@";
+// TIMING_PROTECTION = FALSE|TRUE; (AUTOSAR OS only)
+      AUTOSTART = FALSE:"@RO@";
+   }:"@RO@@NR@";
+
+   EVENT Rte_Ev_Cyclic2_AppRunTask_0_10ms {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_CtAppSwc_RCtAppSwc_1000ms {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_CtAppSwc_RCtAppSwc_10ms {
+      MASK = AUTO;
+   }:"@ROC@@NR@";

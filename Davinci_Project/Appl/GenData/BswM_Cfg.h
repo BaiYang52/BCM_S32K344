@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: BswM_Cfg.h
- *   Generation Time: 2026-07-12 12:56:23
+ *   Generation Time: 2026-07-12 15:33:41
  *           Project: BCM_S32K344 - Version 1.0
  *          Delivery: CBD2300384_D00
  *      Tool Version: DaVinci Configurator Classic (beta) 5.26.40 SP3
@@ -183,9 +183,9 @@
   \{
 */ 
 #define BSWM_ACTIONLISTPRIORITYQUEUE                                                                STD_OFF  /**< Deactivateable: 'BswM_ActionListPriorityQueue' Reason: 'Action List Queue Search Algorithm is not equal to PRIORITY_QUEUE' */
-#define BSWM_ACTIONLISTQUEUE                                                                        STD_OFF  /**< Deactivateable: 'BswM_ActionListQueue' Reason: 'the array is deactivated because the size is 0 and the piece of data is in the configuration class: PRE_COMPILE' */
-#define BSWM_ACTIONLISTS                                                                            STD_OFF  /**< Deactivateable: 'BswM_ActionLists' Reason: 'the struct is deactivated because all elements are deactivated.' */
-#define BSWM_FCTPTROFACTIONLISTS                                                                    STD_OFF  /**< Deactivateable: 'BswM_ActionLists.FctPtr' Reason: 'the array is deactivated because the size is 0 and the piece of data is in the configuration class: PRE_COMPILE' */
+#define BSWM_ACTIONLISTQUEUE                                                                        STD_ON
+#define BSWM_ACTIONLISTS                                                                            STD_ON
+#define BSWM_FCTPTROFACTIONLISTS                                                                    STD_ON
 #define BSWM_CANSMCHANNELMAPPING                                                                    STD_OFF  /**< Deactivateable: 'BswM_CanSMChannelMapping' Reason: 'No Mode Request for BswMCanSMIndication configured.' */
 #define BSWM_EXTERNALIDOFCANSMCHANNELMAPPING                                                        STD_OFF  /**< Deactivateable: 'BswM_CanSMChannelMapping.ExternalId' Reason: 'No Mode Request for BswMCanSMIndication configured.' */
 #define BSWM_IMMEDIATEUSERENDIDXOFCANSMCHANNELMAPPING                                               STD_OFF  /**< Deactivateable: 'BswM_CanSMChannelMapping.ImmediateUserEndIdx' Reason: 'No Mode Request for BswMCanSMIndication configured.' */
@@ -285,7 +285,7 @@
 #define BSWM_RULESINDSTARTIDXOFIMMEDIATEUSER                                                        STD_OFF  /**< Deactivateable: 'BswM_ImmediateUser.RulesIndStartIdx' Reason: 'No immediate user in configuration.' */
 #define BSWM_RULESINDUSEDOFIMMEDIATEUSER                                                            STD_OFF  /**< Deactivateable: 'BswM_ImmediateUser.RulesIndUsed' Reason: 'No immediate user in configuration.' */
 #define BSWM_INITDATAHASHCODE                                                                       STD_OFF  /**< Deactivateable: 'BswM_InitDataHashCode' Reason: 'the module configuration does not support flashing of data.' */
-#define BSWM_INITGENVARANDINITAL                                                                    STD_OFF  /**< Deactivateable: 'BswM_InitGenVarAndInitAL' Reason: 'the array is deactivated because the size is 0 and the piece of data is in the configuration class: PRE_COMPILE' */
+#define BSWM_INITGENVARANDINITAL                                                                    STD_ON
 #define BSWM_INITIALIZED                                                                            STD_ON
 #define BSWM_J1939DCMMAPPING                                                                        STD_OFF  /**< Deactivateable: 'BswM_J1939DcmMapping' Reason: 'No Mode Request for BswMJ1939DcmBroadcastStatus configured.' */
 #define BSWM_IMMEDIATEUSERENDIDXOFJ1939DCMMAPPING                                                   STD_OFF  /**< Deactivateable: 'BswM_J1939DcmMapping.ImmediateUserEndIdx' Reason: 'No Mode Request for BswMJ1939DcmBroadcastStatus configured.' */
@@ -449,6 +449,9 @@
 #define BSWM_IMMEDIATEUSERUSEDOFSDEVENTHANDLERMAPPING                                               STD_OFF  /**< Deactivateable: 'BswM_SdEventHandlerMapping.ImmediateUserUsed' Reason: 'No Mode Request for BswMSdEventHandlerCurrentState configured.' */
 #define BSWM_INITVALUEOFSDEVENTHANDLERMAPPING                                                       STD_OFF  /**< Deactivateable: 'BswM_SdEventHandlerMapping.InitValue' Reason: 'No Mode Request for BswMSdEventHandlerCurrentState configured.' */
 #define BSWM_SDEVENTHANDLERSTATE                                                                    STD_OFF  /**< Deactivateable: 'BswM_SdEventHandlerState' Reason: 'the array is deactivated because the size is 0 and the piece of data is in the configuration class: PRE_COMPILE' */
+#define BSWM_SIZEOFACTIONLISTQUEUE                                                                  STD_ON
+#define BSWM_SIZEOFACTIONLISTS                                                                      STD_ON
+#define BSWM_SIZEOFINITGENVARANDINITAL                                                              STD_ON
 #define BSWM_SIZEOFPARTITIONIDENTIFIERS                                                             STD_ON
 #define BSWM_SWCMODEREQUESTUPDATEFCT                                                                STD_OFF  /**< Deactivateable: 'BswM_SwcModeRequestUpdateFct' Reason: 'the array is deactivated because the size is 0 and the piece of data is in the configuration class: PRE_COMPILE' */
 #define BSWM_TIMERSTATE                                                                             STD_OFF  /**< Deactivateable: 'BswM_TimerState' Reason: 'the array is deactivated because the size is 0 and the piece of data is in the configuration class: PRE_COMPILE' */
@@ -467,10 +470,16 @@
 #define BSWM_PARTITIONIDENTIFIERSOFPCCONFIG                                                         STD_ON
 #define BSWM_SIZEOFPARTITIONIDENTIFIERSOFPCCONFIG                                                   STD_ON
 #define BSWM_PCPARTITIONCONFIG                                                                      STD_ON
+#define BSWM_ACTIONLISTQUEUEOFPCPARTITIONCONFIG                                                     STD_ON
+#define BSWM_ACTIONLISTSOFPCPARTITIONCONFIG                                                         STD_ON
 #define BSWM_FORCEDACTIONLISTPRIORITYOFPCPARTITIONCONFIG                                            STD_ON
+#define BSWM_INITGENVARANDINITALOFPCPARTITIONCONFIG                                                 STD_ON
 #define BSWM_INITIALIZEDOFPCPARTITIONCONFIG                                                         STD_ON
 #define BSWM_QUEUESEMAPHOREOFPCPARTITIONCONFIG                                                      STD_ON
 #define BSWM_QUEUEWRITTENOFPCPARTITIONCONFIG                                                        STD_ON
+#define BSWM_SIZEOFACTIONLISTQUEUEOFPCPARTITIONCONFIG                                               STD_ON
+#define BSWM_SIZEOFACTIONLISTSOFPCPARTITIONCONFIG                                                   STD_ON
+#define BSWM_SIZEOFINITGENVARANDINITALOFPCPARTITIONCONFIG                                           STD_ON
 /** 
   \}
 */ 
@@ -480,6 +489,7 @@
   \brief  These defines are used to implement against the minimum value in numerical based data.
   \{
 */ 
+#define BSWM_MIN_ACTIONLISTQUEUE                                                                    0u
 #define BSWM_MIN_FORCEDACTIONLISTPRIORITY                                                           0u
 #define BSWM_MIN_QUEUESEMAPHORE                                                                     0u
 /** 
@@ -491,6 +501,7 @@
   \brief  These defines are used to implement against the maximum value in numerical based data.
   \{
 */ 
+#define BSWM_MAX_ACTIONLISTQUEUE                                                                    255u
 #define BSWM_MAX_FORCEDACTIONLISTPRIORITY                                                           255u
 #define BSWM_MAX_QUEUESEMAPHORE                                                                     255u
 /** 
@@ -502,11 +513,16 @@
   \brief  If all values in a CONST array or an element in a CONST array of structs are equal, the define is STD_ON else STD_OFF.
   \{
 */ 
+#define BSWM_ISDEF_FCTPTROFACTIONLISTS                                                              STD_OFF
+#define BSWM_ISDEF_INITGENVARANDINITAL                                                              STD_OFF
 #define BSWM_ISDEF_PCPARTITIONCONFIGIDXOFPARTITIONIDENTIFIERS                                       STD_OFF
 #define BSWM_ISDEF_PARTITIONSNVOFPARTITIONIDENTIFIERS                                               STD_OFF
 #define BSWM_ISDEF_PCPARTITIONCONFIGOFPCCONFIG                                                      STD_ON
 #define BSWM_ISDEF_PARTITIONIDENTIFIERSOFPCCONFIG                                                   STD_ON
+#define BSWM_ISDEF_ACTIONLISTQUEUEOFPCPARTITIONCONFIG                                               STD_ON
+#define BSWM_ISDEF_ACTIONLISTSOFPCPARTITIONCONFIG                                                   STD_ON
 #define BSWM_ISDEF_FORCEDACTIONLISTPRIORITYOFPCPARTITIONCONFIG                                      STD_ON
+#define BSWM_ISDEF_INITGENVARANDINITALOFPCPARTITIONCONFIG                                           STD_ON
 #define BSWM_ISDEF_INITIALIZEDOFPCPARTITIONCONFIG                                                   STD_ON
 #define BSWM_ISDEF_QUEUESEMAPHOREOFPCPARTITIONCONFIG                                                STD_ON
 #define BSWM_ISDEF_QUEUEWRITTENOFPCPARTITIONCONFIG                                                  STD_ON
@@ -519,11 +535,16 @@
   \brief  If all values in a CONST array or an element in a CONST array of structs are equal, the define contains the always equals value.
   \{
 */ 
+#define BSWM_EQ2_FCTPTROFACTIONLISTS                                                                
+#define BSWM_EQ2_INITGENVARANDINITAL                                                                
 #define BSWM_EQ2_PCPARTITIONCONFIGIDXOFPARTITIONIDENTIFIERS                                         
 #define BSWM_EQ2_PARTITIONSNVOFPARTITIONIDENTIFIERS                                                 
 #define BSWM_EQ2_PCPARTITIONCONFIGOFPCCONFIG                                                        BswM_PCPartitionConfig
 #define BSWM_EQ2_PARTITIONIDENTIFIERSOFPCCONFIG                                                     BswM_PartitionIdentifiers
+#define BSWM_EQ2_ACTIONLISTQUEUEOFPCPARTITIONCONFIG                                                 BswM_ActionListQueue.raw
+#define BSWM_EQ2_ACTIONLISTSOFPCPARTITIONCONFIG                                                     BswM_ActionLists
 #define BSWM_EQ2_FORCEDACTIONLISTPRIORITYOFPCPARTITIONCONFIG                                        (&(BswM_ForcedActionListPriority))
+#define BSWM_EQ2_INITGENVARANDINITALOFPCPARTITIONCONFIG                                             BswM_InitGenVarAndInitAL
 #define BSWM_EQ2_INITIALIZEDOFPCPARTITIONCONFIG                                                     (&(BswM_Initialized))
 #define BSWM_EQ2_QUEUESEMAPHOREOFPCPARTITIONCONFIG                                                  (&(BswM_QueueSemaphore))
 #define BSWM_EQ2_QUEUEWRITTENOFPCPARTITIONCONFIG                                                    (&(BswM_QueueWritten))
@@ -601,6 +622,15 @@
   \brief  These type definitions are used for the SizeOf information.
   \{
 */ 
+/**   \brief  value based type definition for BswM_SizeOfActionListQueue */
+typedef uint8 BswM_SizeOfActionListQueueType;
+
+/**   \brief  value based type definition for BswM_SizeOfActionLists */
+typedef uint8 BswM_SizeOfActionListsType;
+
+/**   \brief  value based type definition for BswM_SizeOfInitGenVarAndInitAL */
+typedef uint8 BswM_SizeOfInitGenVarAndInitALType;
+
 /**   \brief  value based type definition for BswM_SizeOfPartitionIdentifiers */
 typedef uint8 BswM_SizeOfPartitionIdentifiersType;
 
@@ -617,6 +647,12 @@ typedef uint8 BswM_SizeOfPartitionIdentifiersType;
   \brief  These type definitions are used to iterate over an array with least processor cycles for variable access as possible.
   \{
 */ 
+/**   \brief  type used to iterate BswM_ActionLists */
+typedef uint8_least BswM_ActionListsIterType;
+
+/**   \brief  type used to iterate BswM_InitGenVarAndInitAL */
+typedef uint8_least BswM_InitGenVarAndInitALIterType;
+
 /**   \brief  type used to iterate BswM_PartitionIdentifiers */
 typedef uint8_least BswM_PartitionIdentifiersIterType;
 
@@ -628,10 +664,25 @@ typedef uint8_least BswM_PCPartitionConfigIterType;
 */ 
 
 /** 
+  \defgroup  BswMPCIterableTypesWithSizeRelations  BswM Iterable Types With Size Relations (PRE_COMPILE)
+  \brief  These type definitions are used to iterate over a VAR based array with the same iterator as the related CONST array.
+  \{
+*/ 
+/**   \brief  type used to iterate BswM_ActionListQueue */
+typedef BswM_ActionListsIterType BswM_ActionListQueueIterType;
+
+/** 
+  \}
+*/ 
+
+/** 
   \defgroup  BswMPCValueTypes  BswM Value Types (PRE_COMPILE)
   \brief  These type definitions are used for value based data representations.
   \{
 */ 
+/**   \brief  value based type definition for BswM_ActionListQueue */
+typedef uint8 BswM_ActionListQueueType;
+
 /**   \brief  value based type definition for BswM_ForcedActionListPriority */
 typedef uint8 BswM_ForcedActionListPriorityType;
 
@@ -679,6 +730,12 @@ typedef P2FUNC (void, BSWM_CODE, BswM_PartitionFunctionType)(void);
   \brief  These type definitions are used for structured data representations.
   \{
 */ 
+/**   \brief  type used in BswM_ActionLists */
+typedef struct sBswM_ActionListsType
+{
+  BswM_ActionListFuncType FctPtrOfActionLists;  /**< Pointer to the array list function. */
+} BswM_ActionListsType;
+
 /**   \brief  type used in BswM_PartitionIdentifiers */
 typedef struct sBswM_PartitionIdentifiersType
 {
@@ -691,12 +748,52 @@ typedef struct sBswM_PartitionIdentifiersType
 */ 
 
 /** 
+  \defgroup  BswMPCSymbolicStructTypes  BswM Symbolic Struct Types (PRE_COMPILE)
+  \brief  These structs are used in unions to have a symbol based data representation style.
+  \{
+*/ 
+/**   \brief  type to be used as symbolic data element access to BswM_ActionListQueue in the partition context  */
+typedef struct BswM_ActionListQueueStructSTag
+{
+  BswM_ActionListQueueType AL_INIT_AL_Initialize;
+} BswM_ActionListQueueStructSType;
+
+/** 
+  \}
+*/ 
+
+/** 
+  \defgroup  BswMPCUnionIndexAndSymbolTypes  BswM Union Index And Symbol Types (PRE_COMPILE)
+  \brief  These unions are used to access arrays in an index and symbol based style.
+  \{
+*/ 
+/**   \brief  type to access BswM_ActionListQueue in an index and symbol based style. */
+typedef union BswM_ActionListQueueUTag
+{  /* PRQA S 0750 */  /* MD_CSL_Union */
+  BswM_ActionListQueueType raw[1];
+  BswM_ActionListQueueStructSType str;
+} BswM_ActionListQueueUType;
+
+/** 
+  \}
+*/ 
+
+/** 
   \defgroup  BswMPCRootPointerTypes  BswM Root Pointer Types (PRE_COMPILE)
   \brief  These type definitions are used to point from the config root to symbol instances.
   \{
 */ 
+/**   \brief  type used to point to BswM_ActionListQueue */
+typedef P2VAR(BswM_ActionListQueueType, TYPEDEF, BSWM_VAR_NO_INIT) BswM_ActionListQueuePtrType;
+
+/**   \brief  type used to point to BswM_ActionLists */
+typedef P2CONST(BswM_ActionListsType, TYPEDEF, BSWM_CONST) BswM_ActionListsPtrType;
+
 /**   \brief  type used to point to BswM_ForcedActionListPriority */
 typedef P2VAR(BswM_ForcedActionListPriorityType, TYPEDEF, BSWM_VAR_NO_INIT) BswM_ForcedActionListPriorityPtrType;
+
+/**   \brief  type used to point to BswM_InitGenVarAndInitAL */
+typedef P2CONST(BswM_InitGenVarAndInitALType, TYPEDEF, BSWM_CONST) BswM_InitGenVarAndInitALPtrType;
 
 /**   \brief  type used to point to BswM_Initialized */
 typedef P2VAR(BswM_InitializedType, TYPEDEF, BSWM_VAR_NO_INIT) BswM_InitializedPtrType;

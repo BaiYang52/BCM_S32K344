@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Settings>
     <Settings Name="CFG5_GUI_SETTING">
+        <Settings Name="com.vector.cfg.dom.runtimesys.ui.editor.internal.shared.taskmapping.TaskMappingsGridPart">
+            <Setting Value="0,1,2,3,4,5,6,7,8,9,10,11," Name="nattable.BODY.columnIndexOrder"/>
+            <Setting Value="0" Name="nattable.BODY.columnWidth.defaultMinSize"/>
+            <Setting Value="false" Name="nattable.BODY.columnWidth.distributeRemainingSpace"/>
+            <Setting Value="0:21,1:133,2:122,3:126,4:140,5:147,6:108,7:78,8:151,9:153,10:183,11:75," Name="nattable.BODY.columnWidth.sizes"/>
+            <Setting Value="0" Name="nattable.COLUMN_HEADER.columnWidth.defaultMinSize"/>
+            <Setting Value="false" Name="nattable.COLUMN_HEADER.columnWidth.distributeRemainingSpace"/>
+            <Setting Value="0" Name="nattable.CORNER.columnWidth.defaultMinSize"/>
+            <Setting Value="false" Name="nattable.CORNER.columnWidth.distributeRemainingSpace"/>
+            <Setting Value="0" Name="nattable.ROW_HEADER.columnWidth.defaultMinSize"/>
+            <Setting Value="false" Name="nattable.ROW_HEADER.columnWidth.distributeRemainingSpace"/>
+            <Setting Value="ASC" Name="nattable.sortDirections"/>
+            <Setting Value="1" Name="nattable.sortIndexes"/>
+        </Settings>
         <Settings Name="com.vector.cfg.gui.app.dvcfg.views.validation.validationview.hideack">
             <Setting Value="false" Name="buttonStateAck"/>
         </Settings>

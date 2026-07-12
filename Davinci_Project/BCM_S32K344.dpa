@@ -331,5 +331,7 @@
         <AmdGenerateDebugData>false</AmdGenerateDebugData>
         <AutomaticSyncSystemDescription>false</AutomaticSyncSystemDescription>
     </Miscellaneous>
-    <SwctGeneration/>
+    <SwctGeneration>
+        <Component Name="CtAppSwc" GenerationEnabled="true"/>
+    </SwctGeneration>
 </ProjectAssistant>

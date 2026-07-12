@@ -117,10 +117,12 @@ Contents
 <A HREF="#refBack"><FONT SIZE=4 FACE="Verdana, Arial, Helvetica" COLOR="#B70032">Back</FONT></A><br>
 <H2><A NAME="refGeneratedFiles"><FONT SIZE=5 FACE="Verdana, Arial, Helvetica">2 Generated Files</FONT></A></H2>
 Rte_BswM.h<br>
+Rte_CtAppSwc.h<br>
 Rte_Det.h<br>
 Rte_EcuM.h<br>
 Rte_Os_OsCore0_swc.h<br>
 Rte_BswM_Type.h<br>
+Rte_CtAppSwc_Type.h<br>
 Rte_Det_Type.h<br>
 Rte_EcuM_Type.h<br>
 Rte_Os_OsCore0_swc_Type.h<br>
@@ -132,6 +134,7 @@ Rte_Hook.h<br>
 Rte_Cfg.h<br>
 Rte.h<br>
 Rte_Cbk.h<br>
+CtAppSwc_MemMap.h<br>
 Os_OsCore0_swc_MemMap.h<br>
 Rte_Compiler_Cfg.h<br>
 Rte.c<br>
@@ -156,7 +159,7 @@ Rte_Needs.ecuc.arxml<br>
 Note: This resource usage calculation assumes that the "Boolean" data type is based on uint8 base type.<br>
       Further on padding bytes for structs are not considered, which depends on the compiler settings.<br>
 <br>
-RAM   Size: 1 Bytes<br>
+RAM   Size: 0 Bytes<br>
 CONST Size: 0 Bytes<br>
 <br>
 <P ALIGN=LEFT>
@@ -171,9 +174,15 @@ CONST Size: 0 Bytes<br>
 </TR>
 <TR>
 <TD>AppRunTask</TD>
-<TD>Basic</TD>
+<TD>Extended</TD>
 <TD>FULL</TD>
 <TD>15</TD>
+</TR>
+<TR>
+<TD>SwcInitTask</TD>
+<TD>Basic</TD>
+<TD>FULL</TD>
+<TD>30</TD>
 </TR>
 </TABLE>
 <P ALIGN=LEFT>
@@ -192,14 +201,35 @@ CONST Size: 0 Bytes<br>
 <TD><B>TimingEvent</B> Cyclic 10ms</TD>
 <TD>BswM_MainFunction</TD>
 <TD>AppRunTask</TD>
-<TD>n/a</TD>
+<TD>Rte_Ev_Cyclic2_AppRunTask_0_10ms</TD>
 <TD>Rte_Al_TE2_AppRunTask_0_10ms</TD>
+</TR>
+<TR>
+<TD><B>TimingEvent</B> Cyclic 1s</TD>
+<TD>RCtAppSwc_1000ms</TD>
+<TD>AppRunTask</TD>
+<TD>Rte_Ev_Run_CtAppSwc_RCtAppSwc_1000ms</TD>
+<TD>Rte_Al_TE_CtAppSwc_RCtAppSwc_1000ms</TD>
+</TR>
+<TR>
+<TD><B>TimingEvent</B> Cyclic 10ms</TD>
+<TD>RCtAppSwc_10ms</TD>
+<TD>AppRunTask</TD>
+<TD>Rte_Ev_Run_CtAppSwc_RCtAppSwc_10ms</TD>
+<TD>Rte_Al_TE_CtAppSwc_RCtAppSwc_10ms</TD>
+</TR>
+<TR>
+<TD><B>InitEvent</B></TD>
+<TD>RCtAppSwc_Init</TD>
+<TD>SwcInitTask</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
 </TR>
 <TR>
 <TD><B>TimingEvent</B> Cyclic 10ms</TD>
 <TD>EcuM_MainFunction</TD>
 <TD>AppRunTask</TD>
-<TD>n/a</TD>
+<TD>Rte_Ev_Cyclic2_AppRunTask_0_10ms</TD>
 <TD>Rte_Al_TE2_AppRunTask_0_10ms</TD>
 </TR>
 <TR>
@@ -279,14 +309,14 @@ CONST Size: 0 Bytes<br>
 <TD><B>TimingEvent</B> Cyclic 10ms</TD>
 <TD>BswM_MainFunction</TD>
 <TD>AppRunTask</TD>
-<TD>n/a</TD>
+<TD>Rte_Ev_Cyclic2_AppRunTask_0_10ms</TD>
 <TD>Rte_Al_TE2_AppRunTask_0_10ms</TD>
 </TR>
 <TR>
 <TD><B>TimingEvent</B> Cyclic 10ms</TD>
 <TD>EcuM_MainFunction</TD>
 <TD>AppRunTask</TD>
-<TD>n/a</TD>
+<TD>Rte_Ev_Cyclic2_AppRunTask_0_10ms</TD>
 <TD>Rte_Al_TE2_AppRunTask_0_10ms</TD>
 </TR>
 </TABLE>

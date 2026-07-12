@@ -15,5 +15,10 @@
 	</FILEREF>
 	<FILEREF>
 		<ARXML>ECUProjects/BCM_S32K344.arxml</ARXML>
+		<DVG>ECUProjects/BCM_S32K344.dvg</DVG>
+	</FILEREF>
+	<FILEREF>
+		<ARXML>ComponentTypes/CtAppSwc.arxml</ARXML>
+		<DVG>ComponentTypes/CtAppSwc.dvg</DVG>
 	</FILEREF>
 </DCF>

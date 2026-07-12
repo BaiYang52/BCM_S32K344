@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Link_Core0_Stacks.icf
- *   Generation Time: 2026-07-12 12:56:23
+ *   Generation Time: 2026-07-12 15:33:41
  *           Project: BCM_S32K344 - Version 1.0
  *          Delivery: CBD2300384_D00
  *      Tool Version: DaVinci Configurator Classic (beta) 5.26.40 SP3
@@ -57,8 +57,8 @@ block OS_STACK_OSCORE0_TASK_PRIO49_VAR_NOINIT_BLOCK { section .OS_STACK_OSCORE0_
 /* Stack: OsCore0_Task_Prio4294967295 (1024 Byte) */
 block OS_STACK_OSCORE0_TASK_PRIO4294967295_VAR_NOINIT_BLOCK { section .OS_STACK_OSCORE0_TASK_PRIO4294967295_VAR_NOINIT },
 
-/* Stack: OsCore0_Task_Prio15 (1024 Byte) */
-block OS_STACK_OSCORE0_TASK_PRIO15_VAR_NOINIT_BLOCK { section .OS_STACK_OSCORE0_TASK_PRIO15_VAR_NOINIT },
+/* Stack: OsCore0_Task_Prio30 (1024 Byte) */
+block OS_STACK_OSCORE0_TASK_PRIO30_VAR_NOINIT_BLOCK { section .OS_STACK_OSCORE0_TASK_PRIO30_VAR_NOINIT },
 
 /* Stack: OsCore0_Kernel (1024 Byte) */
 block OS_STACK_OSCORE0_KERNEL_VAR_NOINIT_BLOCK { section .OS_STACK_OSCORE0_KERNEL_VAR_NOINIT },
@@ -71,6 +71,9 @@ block OS_STACK_OSCORE0_INIT_VAR_NOINIT_BLOCK { section .OS_STACK_OSCORE0_INIT_VA
 
 /* Stack: OsCore0_Error (1024 Byte) */
 block OS_STACK_OSCORE0_ERROR_VAR_NOINIT_BLOCK { section .OS_STACK_OSCORE0_ERROR_VAR_NOINIT },
+
+/* Stack: AppRunTask (1024 Byte) */
+block OS_STACK_APPRUNTASK_VAR_NOINIT_BLOCK { section .OS_STACK_APPRUNTASK_VAR_NOINIT },
 
 },
 #endif

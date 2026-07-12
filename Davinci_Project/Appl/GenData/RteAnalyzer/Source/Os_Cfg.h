@@ -31,7 +31,8 @@
 # define Default_Init_Task (1U)
 # define Default_Init_Task_Trusted (2U)
 # define IdleTask_OsCore0 (3U)
-# define OS_TASKID_COUNT (4U)
+# define SwcInitTask (4U)
+# define OS_TASKID_COUNT (5U)
 
 
 /* Counters */
@@ -39,8 +40,13 @@
 
 /* Alarms */
 # define Rte_Al_TE2_AppRunTask_0_10ms (0U)
+# define Rte_Al_TE_CtAppSwc_RCtAppSwc_1000ms (1U)
+# define Rte_Al_TE_CtAppSwc_RCtAppSwc_10ms (2U)
 
 /* Events */
+# define Rte_Ev_Cyclic2_AppRunTask_0_10ms (0x01ULL)
+# define Rte_Ev_Run_CtAppSwc_RCtAppSwc_1000ms (0x02ULL)
+# define Rte_Ev_Run_CtAppSwc_RCtAppSwc_10ms (0x04ULL)
 
 /* Spinlocks */
 

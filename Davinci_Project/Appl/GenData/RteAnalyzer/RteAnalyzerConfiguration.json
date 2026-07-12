@@ -569,6 +569,26 @@
             "../Components/TSC_Det"
          ],
          "SourceFile" : "Source/TSC_Det.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "E:/Project/GitHub/BCM_S32K344/CBD2300384_D00/Components/RteAnalyzer/Generator/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/CtAppSwc"
+         ],
+         "SourceFile" : "Source/CtAppSwc.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "E:/Project/GitHub/BCM_S32K344/CBD2300384_D00/Components/RteAnalyzer/Generator/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_CtAppSwc"
+         ],
+         "SourceFile" : "Source/TSC_CtAppSwc.c"
       }
    ],
    "TaskList" : [
@@ -595,6 +615,12 @@
          "Preemptive" : "1",
          "Priority" : "4294967295",
          "TaskName" : "IdleTask_OsCore0"
+      },
+      {
+         "OsApplication" : "",
+         "Preemptive" : "1",
+         "Priority" : "30",
+         "TaskName" : "SwcInitTask"
       }
    ],
    "TemplateDataBaseDirectory" : "E:\\Project\\GitHub\\BCM_S32K344\\CBD2300384_D00\\Components\\Rte\\Generator"
