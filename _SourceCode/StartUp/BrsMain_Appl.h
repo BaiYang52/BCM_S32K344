@@ -78,6 +78,10 @@ void BrsMain_Appl_Init(void);
    Sample w/ infix:  void SchM_Enter_Can_30_Mcan_CAN_30_MCAN_EXCLUSIVE_AREA_0(void)
                      Can_30_Mcan_DisableControllerInterrupts(0u);*/
 
+/* Provide default definition if vBRS generator did not generate it */
+#ifndef BRS_DRVCAN_EXCLUSIVE_AREA_INFIX
+  #define BRS_DRVCAN_EXCLUSIVE_AREA_INFIX(action, area) void SchM_##action##_Can_CAN_##area(void)
+#endif
 #define CAN_START_SEC_CODE
 /* to support CAN driver name infix, vBRS generator provides a wrapper
    for usage of the driver specific MemMap.h define in vBrsCfg.h */

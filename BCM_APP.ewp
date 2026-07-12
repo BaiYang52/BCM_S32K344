@@ -227,6 +227,8 @@
                     <state>BRS_PLATFORM_AMR</state>
                     <state>DISABLE_MCAL_INTERMODULE_ASR_CHECK</state>
                     <state>BRS_ENABLE_CAN_SUPPORT</state>
+                    <state>_IAR_C_S32K3XX_</state>
+                    <state>MCAL_ENABLE_USER_MODE_SUPPORT</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -360,6 +362,7 @@
                     <state>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Base_TS_T40D34M20I1R0\wizard_data\S32K344</state>
                     <state>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Port_TS_T40D34M20I1R0\include</state>
                     <state>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Dio_TS_T40D34M20I1R0\include</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Can_TS_T40D34M20I1R0\include</state>
                     <state>$PROJ_DIR$\CBD2300384_D00\Components\_Common\Implementation</state>
                     <state>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation</state>
                     <state>$PROJ_DIR$\CBD2300384_D00\Components\VStdLib\Implementation</state>

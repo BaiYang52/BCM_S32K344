@@ -91,47 +91,47 @@ extern "C"{
 // /*==================================================================================================
 //                                            CONSTANTS
 // ==================================================================================================*/
-// /**
-// * @brief Physical state 5V or 3.3V
-// * @implements SymbolDefinitions_enum
-// */
-// #define STD_HIGH    0x01
+/**
+* @brief Physical state 5V or 3.3V
+* @implements SymbolDefinitions_enum
+*/
+#define STD_HIGH    0x01
 
-// /**
-// * @brief Physical state 0V.
-// * @implements SymbolDefinitions_enum
-// */
-// #define STD_LOW     0x00
+/**
+* @brief Physical state 0V.
+* @implements SymbolDefinitions_enum
+*/
+#define STD_LOW     0x00
 
-// /**
-// * @brief Logical state active.
-// * @implements SymbolDefinitions_enum
-// */
-// #define STD_ACTIVE  0x01
+/**
+* @brief Logical state active.
+* @implements SymbolDefinitions_enum
+*/
+#define STD_ACTIVE  0x01
 
-// /**
-// * @brief Logical state idle.
-// * @implements SymbolDefinitions_enum
-// */
-// #define STD_IDLE    0x00
+/**
+* @brief Logical state idle.
+* @implements SymbolDefinitions_enum
+*/
+#define STD_IDLE    0x00
 
-// /**
-// * @brief ON State.
-// * @implements SymbolDefinitions_enum
-// */
-// #define STD_ON      0x01
+/**
+* @brief ON State.
+* @implements SymbolDefinitions_enum
+*/
+#define STD_ON      0x01
 
-// /**
-// * @brief OFF state.
-// * @implements SymbolDefinitions_enum
-// */
-// #define STD_OFF     0x00
+/**
+* @brief OFF state.
+* @implements SymbolDefinitions_enum
+*/
+#define STD_OFF     0x00
 
-// /**
-// * @brief Return code for failure/error.
-// * @implements SymbolDefinitions_enum
-// */
-// #define E_NOT_OK    0x01
+/**
+* @brief Return code for failure/error.
+* @implements SymbolDefinitions_enum
+*/
+#define E_NOT_OK    0x01
 
 // /*==================================================================================================
 // *                                       DEFINES AND MACROS

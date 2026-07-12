@@ -614,6 +614,13 @@ void BrsMainResumeAllInterrupts(void);
 /***********************************************************************************************************************
  * UserDefined ExclusiveArea handling for CAN channels, according to AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INT.pdf
  **********************************************************************************************************************/
+/* Provide default definitions if vBRS generator did not generate them */
+#ifndef BRS_DRVCAN_EXCLUSIVE_AREA_INFIX
+  #define BRS_DRVCAN_EXCLUSIVE_AREA_INFIX(action, area) void SchM_##action##_Can_CAN_##area(void)
+#endif
+#ifndef BRS_DRVCAN_HEADER_FILENAME
+  #define BRS_DRVCAN_HEADER_FILENAME "Can.h"
+#endif
 /* Macro is generated in vBrsCfg.h, to support drivers with infix.
    Sample w/o infix: void SchM_Enter_Can_CAN_EXCLUSIVE_AREA_0(void)
                      Can_DisableControllerInterrupts(0u);
