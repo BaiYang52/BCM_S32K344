@@ -1,0 +1,40 @@
+1. Example Description
+    The application includes an S32 Design Studio project that configures the Sent driver.
+ 1.1 The application software functionality
+            The application will initialize the Sent driver, by calling the Sent_Init(). After that Sent device will initiate a polling receive
+            transfer on the SENT configured channelID 0 by calling the function Sent_GetFastChannelMsgData(0). At the  data was received , in case the transfer was successful the checkOk variable will be TRUE.
+2. Installation steps
+    2.1 Hardware installation
+        2.1.1 Supported boards
+            EVB: S32K3X4EVB-Q257 47827 PCB RevX1 SCH RevA. Silicon: P32K344EHVMMS 0P55A CTSK2038
+            EVB: S32K3XXEVB-Q172 51972 PCB RevA SCH RevA. Silicon: P32K344EHVPBS 1P55A CTZX2128B
+        2.2.2 Connections
+            Require SENT device and connect to J37.9 on EVB S32K3XXEVB-Q172 51972 PCB RevA SCH RevA
+            Require SENT device and connect to J358.13 on EVB S32K3X4EVB-Q257 47827 PCB RevX1 SCH RevA
+            Configure SENT device:
+                - Tick-time: 3us
+                - Data length: 6
+        2.2.3 Debugger
+            The debugger must be connected to J48 20-pin JTAG Cortex Debug connector.
+    2.2 Software installation
+        2.2.1 Importing the S32 Design Studio project
+            After opening S32 Design Studio, go to "File -> New -> S32DS Project From Example" and select this example. Then click on "Finish".
+            The project should now be copied into you current workspace.
+         
+3. Generating, building and running the example application
+    3.1 Generating the S32 configuration
+        Before running the example a configuration needs to be generated.  First go to Project Explorer View in S32 DS and select the current project. Select the "S32 Configuration Tool" menu then click on the desired configuration tool (Pins, Cocks, Peripherals etc...). Clicking on any one of those will generate all the components. Make the desired changes(if any) then click on the "S32 Configuration Tool->Update Code" button.
+    3.2 Compiling the application
+        Select the configuration to be built:RAM (Debug_RAM), or FLASH (Debug_FLASH)  by left clicking on the downward arrow corresponding to the build button in eclipse. 
+        Use Project > Build to build the project.
+        Wait for the build action to be completed before continuing to the next step. Check the compiler console for error messages; upon completion, the *.elf binary file
+        should be created.
+    3.2 Running the application on the board
+        Go to Run and select Debug Configurations. There will be a debug configuration for this project:
+        
+        Configuration Name                  Description
+        -------------------------------     -----------------------
+        $(example)_debug_ram                Debug the RAM configuration using PEMicro Debugger
+        
+        Select the desired debug configuration and click on Launch. Now the perspective will change to the Debug Perspective.
+        Use the controls to control the program flow.

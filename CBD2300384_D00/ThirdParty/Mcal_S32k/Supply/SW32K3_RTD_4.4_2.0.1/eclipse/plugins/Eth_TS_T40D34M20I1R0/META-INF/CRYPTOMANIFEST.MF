@@ -1,0 +1,99 @@
+
+Name: generate_PB/src/Eth_PBcfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425872332282487582338652315927193165915287160308958
+ 8327556545704763608243742260652938932400464677745253
+
+Name: generate_PC/include/Gmac_Ip_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 74155374890380440430296338444696234560867145959555750110271
+ 84134960980323558094739387479793251986793561223403715647
+
+Name: generate_PC/include/Eth_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423413023919427711001411014856862901042343464557404
+ 4174589715559000545979111624756203684137447026941742
+
+Name: config/Eth.xdm
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773972067993140293628246121863570771504158902348323
+ 469928422045183731154761885955901009480171277537821735
+
+Name: generate_swcd/swcd/Eth_Bswmd.arxml
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424874854328645579290362067680144598589652862499964
+ 1889795847959587338047765846032966415542610604501039
+
+Name: generate_PB/include/Eth_PBcfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421505303179569511422242230480452132006703518516757
+ 7591291701874789965009396193611188448899985589425625
+
+Name: generate_PB/include/Eth_Ipw_PBcfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421815966277975254138886436041164002469886553394069
+ 3894747040636262922093010907454579417207108376211251
+
+Name: generate_PB/include/Gmac_Ip_PBcfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422492507830929238319101190967952799909503156530912
+ 7093355449126459496389531538615055417145172729581823
+
+Name: generate_PC/src/Gmac_Ip_Cfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773974655018723478934618436605052226950391529605080
+ 683831512892556895782820491046606022618473842341245543
+
+Name: generate_PC/include/Gmac_Ip_Device_Registers.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420621371611139406651601549637377609952695191474520
+ 3646882316461979599082867069290908152130398686552920
+
+Name: generate_PB/src/Gmac_Ip_PBcfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594748778128127512972751492364503970511942239622914708
+ 582223034475629716238393440610645750229576444324646430
+
+Name: generate_PC/include/Gmac_Ip_Features.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424859626642441094488264894107638748934919638323586
+ 6132255817657452716329330464246965022669899248797007
+
+Name: generate_PB/src/Eth_Ipw_PBcfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594753043978548113469345818576495789222206835196147651
+ 128981044899270697328247553958661279602056383062995567
+
+Name: generate_PC/include/Eth_Ipw_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773966235351565213937710897873500572179084385206318
+ 486077029740492231419349252049139134247154171505013550
+

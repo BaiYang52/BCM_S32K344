@@ -1,0 +1,127 @@
+
+Name: generate_PB/src/Flexio_I2c_Ip_PBcfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420665708800689911001529546298316333604354711865421
+ 6599131333446231283772107045478309195150439173961694
+
+Name: generate_PB/include/CDD_I2c_PBcfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773963226883577976020836892647533816100864997659511
+ 706361825082780179207115237676619955885216911723877142
+
+Name: generate_PB/include/Flexio_I2c_Ip_CfgDefines.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422635833418528857533952862505862944459242792813317
+ 5221541784473177946253110541880494383769503205259922
+
+Name: generate_PB/CDD_I2c_RegOperations.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421333365488109998080311216625862057211643536547091
+ 2408015729896706304972409389648455685755368238029475
+
+Name: generate_PB/include/Lpi2c_Ip_PBcfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423163138534726823665735116673557567570481937876198
+ 4839950806315412679457918861695860238648824811660773
+
+Name: generate_PB/src/I2c_Ipw_PBcfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425073658126618906046333523588882014770824840327377
+ 6133218418412817355576345916498299601942668757493019
+
+Name: config/I2c.xdm
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422681789651296609929542744543345541209341487226501
+ 6804807798700982094134380121437837733614623200019537
+
+Name: generate_PC/src/CDD_I2c_Cfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423162090514020657786435589599371116726346604952510
+ 2924855254350852768380268158721420878665575560946382
+
+Name: generate_PB/include/Lpi2c_Ip_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594752311683434851790032860088419784140945409618715915
+ 459044061925676414281667561165701688799837334886071161
+
+Name: generate_PB/include/Lpi2c_Ip_CfgDefines.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594751029919938350704797556580816996525674476477176597
+ 216259861340607476107160005969992711296388582016188049
+
+Name: generate_PB/include/Flexio_I2c_Ip_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425273148224318544219113705817275904894555326229706
+ 7998952528942907313941238475091909240717545233071215
+
+Name: generate_PB/include/Flexio_I2c_Ip_PBcfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773963182833606764592179334132486612313456817377212
+ 878217475393798804018622987491681628251191752077495351
+
+Name: generate_PC/include/CDD_I2c_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421057017230596477721780359329516994817486789665310
+ 2668843653025403931941562292944132612642596494168408
+
+Name: generate_swcd/swcd/I2C_Bswmd.arxml
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425346608610044133377187710528886353099121504572287
+ 7643230173300762249340381970050723588405557497950357
+
+Name: generate_PB/src/Lpi2c_Ip_PBcfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424998153515813678184400146566387592010872280389850
+ 1664467230332367010806548749472663214299159275442641
+
+Name: generate_PB/src/CDD_I2c_PBcfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423407330154906076198387919446109136101334396948886
+ 7634037104893875831232021062471734750875278440649531
+
+Name: generate_PB/include/I2c_Ipw_PBcfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773971605192890223863049158434659332746153406895478
+ 496287523160368762424466328369562447531716383286681138
+
+Name: generate_PC/CDD_I2c_RegOperations.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377426028734655064518778247455121217615209216172499373
+ 2654788957692995514511003028638672402526936077108283
+

@@ -1,0 +1,195 @@
+<?xml version='1.0'?>
+<datamodel version="7.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="Sent" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="Sent" type="AR-ELEMENT" value="MODULE-CONFIGURATION">
+            <d:ctr type="MODULE-CONFIGURATION">
+              <a:a name="DEF" value="ASPath:/TS_T40D34M20I0R0/Sent"/>
+              <a:a name="IMPORTER_INFO" value="Unknown"/>
+              <d:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION" 
+                     value="VariantPreCompile"/>
+              <d:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN" value="true">
+                <a:a name="IMPORTER_INFO" value="Unknown"/>
+              </d:var>
+              <d:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <a:a name="IMPORTER_INFO" value="Unknown"/>
+                <d:var name="ArReleaseMajorVersion" type="INTEGER" value="4">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ArReleaseMinorVersion" type="INTEGER" value="4">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ArReleaseRevisionVersion" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ModuleId" type="INTEGER" value="125">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="SwMajorVersion" type="INTEGER" value="2"/>
+                <d:var name="SwMinorVersion" type="INTEGER" value="0"/>
+                <d:var name="SwPatchVersion" type="INTEGER" value="0"/>
+                <d:var name="VendorApiInfix" type="STRING" value="">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorId" type="INTEGER" value="43">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+              <d:ctr name="SentConfigSet" type="IDENTIFIABLE">
+                <a:a name="IMPORTER_INFO" value="Unknown"/>
+                <d:lst name="SentControllerConfig" type="MAP">
+                  <a:a name="IMPORTER_INFO" value="Unknown"/>
+                  <d:ctr name="SentControllerConfig_0" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:ref name="SentControllerEcucPartitionRef" 
+                           type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:ref name="SentHwControllerRef" type="REFERENCE" 
+                           value="ASPath:/Mcl/Mcl/MclConfig/FlexioCommon_0"/>
+                    <d:var name="EnableHwFiFo" type="BOOLEAN" value="true">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:var name="SentControllerActivation" type="BOOLEAN" 
+                           value="true">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:var name="SentControllerId" type="INTEGER" value="0">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:var name="SentProcessing" type="ENUMERATION" 
+                           value="POLLING">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:var name="SentTimestampPrescaller" type="INTEGER" 
+                           value="0">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:lst name="SentChannelConfig" type="MAP">
+                      <d:ctr name="SentChannelConfig_0" type="IDENTIFIABLE">
+                        <a:a name="IMPORTER_INFO" value="Unknown"/>
+                        <d:ref name="SentFlexioChannelRef" type="REFERENCE" 
+                               value="ASPath:/Mcl/Mcl/MclConfig/FlexioCommon_0/FlexioMclLogicChannels_0"/>
+                        <d:var name="DataLength" type="INTEGER" value="6">
+                          <a:a name="IMPORTER_INFO" value="Unknown"/>
+                        </d:var>
+                        <d:var name="SentChannelId" type="INTEGER" value="0">
+                          <a:a name="IMPORTER_INFO" value="Unknown"/>
+                        </d:var>
+                        <d:var name="DmaBufferDepth" type="INTEGER" value="1">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="SentFastChannelCRCType" type="ENUMERATION" 
+                               value="SENT_RECOMMENDED_IMPLEMENTATION_256_ELEMENT">
+                          <a:a name="IMPORTER_INFO" value="Unknown"/>
+                        </d:var>
+                        <d:var name="SentFastCRCErrorNotificationEnable" 
+                               type="BOOLEAN" value="false">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="SentFastCRCErrorNotification" 
+                               type="FUNCTION-NAME" value="NULL_PTR">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="SentSlowCRCErrorNotificationEnable" 
+                               type="BOOLEAN" value="false">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="SentSlowCRCErrorNotification" 
+                               type="FUNCTION-NAME" value="NULL_PTR">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="SentFastNotificationEnable" type="BOOLEAN" 
+                               value="true">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="SentFastNotification" type="FUNCTION-NAME" 
+                               value="SentFastNotification">
+                          <a:a name="IMPORTER_INFO" value="Unknown"/>
+                        </d:var>
+                        <d:var name="SentSlowChannelCRCType" type="ENUMERATION" 
+                               value="SENT_RECOMMENDED_IMPLEMENTATION_256_ELEMENT">
+                          <a:a name="IMPORTER_INFO" value="Unknown"/>
+                        </d:var>
+                        <d:var name="SentSlowNotificationEnable" type="BOOLEAN" 
+                               value="false">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="SentSlowNotification" type="FUNCTION-NAME" 
+                               value="SentSlowNotification"/>
+                        <d:var name="SentSyncAsyncSelection" type="ENUMERATION" 
+                               value="SENT_PAUSE_PULSE_ENABLED">
+                          <a:a name="IMPORTER_INFO" value="Unknown"/>
+                        </d:var>
+                        <d:var name="SentTickLength" type="INTEGER" value="3">
+                          <a:a name="IMPORTER_INFO" value="Unknown"/>
+                        </d:var>
+                        <d:var name="SentTickLengthExpand" type="INTEGER" 
+                               value="3000">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:ref name="SentDmaChannelRef" type="REFERENCE" >
+                          <a:a name="ENABLE" value="false"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                      </d:ctr>
+                    </d:lst>
+                  </d:ctr>
+                </d:lst>
+              </d:ctr>
+              <d:ctr name="SentGeneral" type="IDENTIFIABLE">
+                <a:a name="IMPORTER_INFO" value="Unknown"/>
+                <d:lst name="SentEcucPartitionRef"/>
+                <d:var name="TickLengthExpandRange" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="SentDevErrorDetect" type="BOOLEAN" value="false"/>
+                <d:var name="SentDmaActivation" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="Unknown"/>
+                </d:var>
+                <d:var name="SentTimeoutMethod" type="ENUMERATION" 
+                       value="OSIF_COUNTER_DUMMY">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="SentEnableMulticoreSupport" type="BOOLEAN" 
+                       value="false"/>
+                <d:var name="SentEnableUserModeSupport" type="BOOLEAN" 
+                       value="false"/>
+                <d:var name="SentIndex" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="Unknown"/>
+                </d:var>
+                <d:var name="SentTimeout" type="INTEGER" value="4000">
+                  <a:a name="IMPORTER_INFO" value="Unknown"/>
+                </d:var>
+                <d:var name="SentTimestampActivation" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="Unknown"/>
+                </d:var>
+                <d:var name="SentVersionInfoApi" type="BOOLEAN" value="false"/>
+                <d:ref name="SentCpuClockRef" type="REFERENCE" 
+                       value="ASPath:/Mcu/Mcu/McuModuleConfiguration/McuClockSettingConfig_0/McuClockReferencePoint_0">
+                  <a:a name="IMPORTER_INFO" value="Unknown"/>
+                </d:ref>
+              </d:ctr>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

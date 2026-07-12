@@ -1,0 +1,68 @@
+/*!
+    @page Flexio_I2s_Ip_example_S32K342_group FLEXIO I2S IP Transfer
+    @brief Example application showing FLEXIO I2S IP usage
+
+    ## Application description ##
+    _____
+    The purpose of this demo application is to show the usage of the FLEXIO I2S driver found
+    on the S32K3XX SoC FLEXIO I2S IP.
+
+    The application uses FLEXIO I2S IP driver to make a data transfer of a defined size.
+    The application contains 2 Flexio channels according to Master and Slave Channels, and it is divided into 2 parts
+        - Part 1: Master sends data, Slave receives data
+        - Part 2: Slave sends data, Master receives data
+    To check if data is transfered correctly, put break point or let program run for about 2 seconds, then see if RecvData content is the same as SendData.
+
+    How the example works:
+    - If all conditions are correct, the code goes to the end of program without stuck in loop and bStatus as TRUE
+
+    ## Prerequisites ##
+    _____
+    To run the example you will need to have the following items:
+    - S32K3XX board
+    - 1 Power adapter for the board
+    - PnE Debugger
+
+    ## Boards supported ##
+    _____
+    The following boards are supported by this application:
+    - Mini-module: XS32K3X2CVB-Q172 PCB 48307 RevX1 SCH RevA
+    - Mother-board: X-S32K3XXX-MB PCB 47386 RevA SCH RevA
+    - Silicon: P32K342EHVPBE 0P97C CTZM2139A
+
+    ## Hardware Wiring ##
+    _____
+    - The debugger must be connected to J52 10-pin JTAG Cortex Debug connector
+
+    PIN FUNCTION                             | S32K3XX Mini      |
+    -----------------------------------------|-------------------|
+    FlexioD0 Slave TX - FlexioD1 Master RX   | J417.1 - J417.2   |
+    FlexioD9 Slave RX - FlexioD14 Master TX  | J418.1 - J421.1   |
+    FlexioD3 Slave SCK - FlexioD2 Master SCK | J418.3 - J418.4   |
+    FlexioD7 Slave WS - FlexioD5 Master WS   | J422.3 - J422.4   |
+
+    ## How to run ##
+    ______
+    #### 1. Importing the project into the workspace ####
+    After opening S32 Design Studio, go to \b File -> \b New \b S32DS \b Project \b From... and select \b Flexio_I2s_Ip_example_S32K342. Then click on \b Finish. \n
+    The project should now be copied into you current workspace.
+    #### 2. Generating the S32 configuration ####
+    The example will run without an active configuration, however if any changes are required, a configuration needs to be generated.
+    The initial configuration will have the same settings as the default example settings.
+    First go to \b Project \b Explorer View in S32 DS and select the current project(\b Flexio_I2s_Ip_example_S32K342).
+    Select the "S32 Configuration Tool" menu then click on the desired configuration tool (Pins, Clocks, Peripherals etc...). Clicking on any one of those will generate all the components.
+    Make the desired changes(if any) then click on the "S32 Configuration Tool->Update Code" button.
+    #### 3. Building the project ####
+    Select the configuration to be built \b RAM (Debug_RAM) or FLASH (Debug_FLASH) by left clicking on the downward arrow corresponding to the \b build button(@image hammer.png).
+    Wait for the build action to be completed before continuing to the next step.
+    #### 4. Running the project ####
+    Go to \b Run and select \b Debug \b Configurations. There will be a debug configuration for this project:
+     Configuration Name                               | Description
+     -------------------------------------------------|------------
+     \b Flexio_I2s_Ip_example_S32K342_Debug_FLASH_PNE | Debug the FLASH configuration using GDB PEMicro
+
+    \n Select the desired debug configuration and click on \b Launch. Now the perspective will change to the \b Debug \b Perspective. \n
+    Use the controls to control the program flow.
+
+    @note For more detailed information related to S32 Design Studio usage please consult the available documentation.
+*/

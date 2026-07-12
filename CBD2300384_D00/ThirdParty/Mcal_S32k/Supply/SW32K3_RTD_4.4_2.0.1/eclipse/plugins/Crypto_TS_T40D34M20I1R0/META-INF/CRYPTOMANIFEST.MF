@@ -1,0 +1,50 @@
+
+Name: generate_PC/Crypto_VersionCheck_Src.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 74155374890365706731330668876147013158154929895819933629791
+ 23460211209100712695305525553654439386360330240962347943
+
+Name: config/Crypto.xdm
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425357258022131770921286124712499666401524826728627
+ 0319182861878057341203887946170765368907490142576781
+
+Name: generate_PC/include/Hse_Ip_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422434324536007910618045749870779765206007351331767
+ 8564988138181580024023755321578333609945253058403850
+
+Name: generate_swcd/swcd/Crypto_Bswmd.arxml
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377427052698085902419288596873605770414766711946647104
+ 4407019127138182046163278114464010793119434550557222
+
+Name: generate_PC/src/Crypto_Cfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421139369309032062224188879342309745762139280575596
+ 7067788388934961919276062348572274177318239102617263
+
+Name: generate_PC/Crypto_VersionCheck_Inc.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594746627091394029023160783715124615782017551439619926
+ 143739835061598037368476768487900926917911377541197253
+
+Name: generate_PC/include/Crypto_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421098793321837492803597424601280100678244298422293
+ 0922138836511860136887266883545410071728574861772590
+

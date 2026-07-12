@@ -1,0 +1,1383 @@
+<?xml version="1.0"?>
+<datamodel version="3.0" xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+                         xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+                         xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+                         xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+<!--
+*   @file    Sent.xdm
+*   @version 2.0.1
+*
+*   @brief   AUTOSAR Sent - Tresos Studio plugin schema file
+*   @details This file contains the schema configuration for and Sent Tresos Studio plugin.
+-->
+<!--
+====================================================================================================
+*   Project              : RTD AUTOSAR 4.4
+*   Platform             : CORTEXM
+*   Peripheral           : FLEXIO_SENT_IP
+*   Dependencies         : none
+*
+*   Autosar Version      : 4.4.0
+*   Autosar Revision     : ASR_REL_4_4_REV_0000
+*   Autosar Conf.Variant :
+*   SW Version           : 2.0.1
+*   Build Version        : S32K3_RTD_2_0_1_D2207_ASR_REL_4_4_REV_0000_20220707
+
+*   (c) Copyright 2020 - 2022 NXP Semiconductors
+*   All Rights Reserved.
+====================================================================================================
+====================================================================================================
+====================================================================================================
+-->
+    <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+        <d:lst type="TOP-LEVEL-PACKAGES">
+            <d:ctr name="TS_T40D34M20I1R0" type="AR-PACKAGE">
+                <a:a name="UUID" value="ECUC:181f65b6-f772-4dd7-b9a6-7749c4c7eba8"/>
+                <d:lst type="ELEMENTS">
+
+                    <d:chc name="Sent" type="AR-ELEMENT" value="MODULE-DEF">
+                        <v:ctr type="MODULE-DEF">
+                            <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                                <ad:ADMIN-DATA>
+                                    <ad:DOC-REVISIONS>
+                                        <ad:DOC-REVISION>
+                                            <ad:REVISION-LABEL>4.6.0</ad:REVISION-LABEL>
+                                            <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                                            <ad:DATE>2014-10-31</ad:DATE>
+                                        </ad:DOC-REVISION>
+                                    </ad:DOC-REVISIONS>
+                                </ad:ADMIN-DATA>
+                            </a:a>
+                            <a:a name="DESC" 
+                                value="EN: This container holds the configuration of a single Sent Driver."/>
+                            <a:a name="LOWER-MULTIPLICITY" value="1"/>
+                            <a:a name="RELEASE" value="asc:4.4"/>
+                            <a:a name="UPPER-MULTIPLICITY" value="*"/>
+                            <a:a name="UUID" value="ECUC:41829d84-d68b-4234-86cf-6ca163c4995d"/>
+                            <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+                            
+                            <v:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN">
+                                <a:a name="DESC" 
+                                    value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="LABEL" value="Post Build Variant Used"/>
+                                <a:a name="UUID" value="ECUC:43b85d0b-6a49-48a9-96e8-7749ab831aa3"/>
+                                <a:a name="ORIGIN" value="EB"/>
+                                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                <a:da name="DEFAULT" value="false"/>
+                                <a:da name="READONLY" value="FALSE"/>
+                                <a:da name="TOOLTIP" 
+                                    value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+                            </v:var>
+
+                            <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                </a:a>
+                                <a:a name="LABEL" value="Config Variant"/>
+                                <a:a name="UUID" value="ECUC:40b85d0b-6a49-48a9-96e8-7749ab831aa3"/>
+                                <a:da name="DEFAULT" value="VariantPostBuild"/>
+                                <a:da name="RANGE">
+                                    <a:v>VariantPostBuild</a:v>
+                                    <a:v>VariantPreCompile</a:v>
+                                </a:da>
+                            </v:var>
+
+                            <v:ctr name="SentConfigSet" type="IDENTIFIABLE">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                This is the multiple configuration set container for SENT Driver.<br>
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="UUID" value="ECUC:8f338c5b-bc57-4a6a-b94d-e4cfacee8f3d"/>
+
+                                    <v:lst name="SentControllerConfig" type="MAP">
+                                        <a:da name="MIN" value="1"/>
+                                        <a:da name="INVALID" type="XPath">
+                                        <a:tst expr="num:i(count(node:current()/*)) &gt; ecu:get('Sent.SentConfigSet.SentControllerConfig')" 
+                                                true="Maximum SENT Controllers available for the selected derivative was exceeded."/>
+                                        </a:da>
+                                        
+                                        <v:ctr name="SentControllerConfig" type="IDENTIFIABLE">
+                                            <a:a name="DESC">
+                                                <a:v>
+                                                    <![CDATA[EN:<html>
+                                                        Contains the channels of each Sent controller<br>
+                                                    </html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="UUID" value="ECUC:8f338c5b-bc57-4a6a-b94d-e8cfacee8f1d"/>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="(../../../SentGeneral/SentEnableMulticoreSupport = 'true') and not(node:exists(SentControllerEcucPartitionRef))"
+                                                    true="SentControllerEcucPartitionRef must be enabled to select a core/partition when enabling Sent multicore support."/>
+                                            </a:da>
+                                            <v:ref name="SentControllerEcucPartitionRef" 
+                                                        type="REFERENCE">
+                                                    <a:a name="DESC">
+                                                        <a:v><![CDATA[EN:<html>
+                                                            EN: Maps a SENT controller to zero or multiple ECUC partitions to limit the access to this controller. The ECUC partitions referenced are a subset of the ECUC partitions where the SENT driver is mapped to.</html>]]></a:v>
+                                                    </a:a>
+                                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                                         type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                    </a:a>
+                                                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                                    <a:a name="POSTBUILDVARIANTMULTIPLICITY" 
+                                                        value="true"/>
+                                                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                    <a:a name="SCOPE" value="ECU"/>
+                                                    <a:a name="OPTIONAL" value="true"/>
+                                                    <a:a name="UUID" value="ECUC:14cc6e73-619e-4029-a793-3535997384ad"/>
+                                                    <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition"/>
+                                                    <a:da name="INVALID" type="XPath">
+                                                        <a:tst expr="node:exists(.) and node:containsValue(../../../../SentGeneral/SentEcucPartitionRef/*, .)" false="The ECUC partitions referenced by
+                                                                SentEcucPartitionRef shall be a subset of the ECUC partitions referenced by SentEcucPartitionRef"/>
+                                                    </a:da>
+                                            </v:ref>
+
+                                            <v:var name="SentTimestampPrescaller" type="INTEGER">
+                                                <a:a name="CALCULATION-LANGUAGE" value="INFORMAL"/>
+                                                <a:a name="DERIVED" value="TRUE"/>
+                                                <a:a name="DESC">
+                                                    <a:v><![CDATA[EN:<html>
+                                                        <br> 0 to 255 - Time Stamp Clock = (High Frequency Clock)/(SentTimestampPrescaller  + 1). Value written in this field should be the value of SentTimestampPrescaller from above formula. Value set by user software should be such that the clock period is at least 1 μs.<br>
+                                                    </html>]]>
+                                                    </a:v>
+                                                </a:a>
+                                                <a:a name="LABEL" value="Time Stamp Prescaller"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:f55e547d-37c7-4393-b930-c3cb7b7678b2"/>
+                                                <a:da name="DEFAULT" value="0"/>
+                                                <a:da name="EDITABLE" type="XPath">
+                                                    <a:tst expr="../../../../SentGeneral/SentTimestampActivation = 'true'"/>
+                                                </a:da>
+                                                <a:da name="INVALID" type="Range">
+                                                    <a:tst expr="&gt;=0"/>
+                                                    <a:tst expr="&lt;=255"/>
+                                                </a:da>
+                                            </v:var>
+                                            
+                                            <v:ref name="SentHwControllerRef" type="CHOICE-REFERENCE">
+                                                        <a:a name="LABEL" value="SentFlexioControllerReference"/>
+                                                        <a:a name="DESC">
+                                                            <a:v>
+                                                                <![CDATA[EN:
+                                                                <html>
+                                                                <b>Sent Flexio Controller Reference</b><p>
+                                                                Reference to the Flexio Controller configure for the Request</p>
+                                                                </html>
+                                                                ]]>
+                                                            </a:v>
+                                                        </a:a>
+                                                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                            type="IMPLEMENTATIONCONFIGCLASS">
+                                                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                            <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                        </a:a>
+                                                        <a:a name="ORIGIN" value="NXP"/>
+                                                        <a:a name="UUID" value="ECUC:feb4877e-6442-4200-a112-8d8195311b08"/>
+                                                        <a:a name="OPTIONAL" value="false"/>
+                                                        <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Mcl/MclConfig/FlexioCommon"/>
+                                            </v:ref>
+                                            
+                                            <v:var name="SentControllerActivation" type="BOOLEAN">
+                                                <a:a name="DESC">
+                                                    <a:v>
+                                                        <![CDATA[EN:<html>
+                                                             Defines if a SENT controller is used in the configuration.<br>
+                                                            Deactivation of a particular SENT controller is equivalent to a SENT controller not used in the configuration.<br>
+                                                        </html>]]>
+                                                    </a:v>
+                                                </a:a>
+                                                <a:a name="LABEL" value="Sent Controller Activation"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:06986fce-c0d5-402d-b7bd-7749b5f2d3e9"/>
+                                                <a:da name="DEFAULT" value="true"/>
+                                            </v:var>
+                                            
+                                            <!-- EnableHwFiFo -->
+                                            <v:var name="EnableHwFiFo" type="BOOLEAN">
+                                                <a:a name="DESC">
+                                                    <a:v>
+                                                        <![CDATA[EN:<html>
+                                                             Enable or disable hardware FIFO for this controller.<br>
+                                                             If DMA is not eanbled, this node is unused
+                                                        </html>]]>
+                                                    </a:v>
+                                                </a:a>
+                                                <a:a name="LABEL" value="Enable Sent Controller hardware FiFo"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:deceade8-eca6-423e-a816-2d7aa305abcd"/>
+                                                <a:da name="EDITABLE" value="false"/>
+                                                <a:da name="DEFAULT" value="false"/>
+                                            </v:var>
+                                            
+                                            <!-- /** @implements SentProcessing_Object */ -->
+                                            <v:var name="SentProcessing" type="ENUMERATION">
+                                                <a:a name="CALCULATION-FORMULA" value="Mode of event triggering: interrupt or polling."/>
+                                                <a:a name="CALCULATION-LANGUAGE" value="INFORMAL"/>
+                                                <a:a name="DERIVED" value="TRUE"/>
+                                                <a:a name="DESC">
+                                                    <a:v>
+                                                        <![CDATA[EN:<html>
+                                                            Select Interrupt or polling used for this channel.
+                                                        </html>]]>
+                                                    </a:v>
+                                                </a:a>
+                                                <a:a name="LABEL" value="Sent Processing Type"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:f55d547d-37c7-4393-b930-c3cb7b7678b3"/>
+                                                <a:da name="DEFAULT" value="POLLING"/>
+                                                <a:da name="RANGE">
+                                                    <a:v>INTERRUPT</a:v>
+                                                    <a:v>POLLING</a:v>
+                                                    <a:v>DMA</a:v>
+                                                </a:da>
+                                                <a:da name="INVALID" type="XPath">
+                                                    <a:tst expr="node:value(.)='DMA' and node:value(../../../../SentGeneral/SentDmaActivation)='false'" true="In order to put a channel in DMA mode please enable de DMA feature by checking the DMA enable box from general tab"/>
+                                                    <a:tst expr="node:value(.)='DMA' and (num:i(count(node:fallback(../SentChannelConfig/*/SentDmaChannelRef, 0))) != num:i(count(node:fallback(../SentChannelConfig/*, 0))))" true="Please enable the optional SentDmaChannelRef and choose a reference for all channel"/>
+                                                </a:da>
+                                            </v:var>
+                                            
+                                            <v:var name="SentControllerId" type="INTEGER">
+                                                <a:a name="DESC">
+                                                    <a:v>
+                                                        <![CDATA[EN:<html>
+                                                            This parameter provides the controller ID which is unique in a given SENT Driver.<br>
+                                                            The value for this parameter starts with 0 and continue without any gaps.<br>
+                                                        </html>]]>
+                                                    </a:v>
+                                                </a:a>
+                                                <a:a name="LABEL" value="Sent Controller ID"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                                                <a:a name="UUID" value="ECUC:18522ce9-9ce2-41d0-a0db-7749cf879264"/>
+                                                <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index, num:i(1))"/>
+                                                <a:da name="RANGE" type="XPath">
+                                                    <a:tst expr="(node:fallback(.,1) &gt;= 0) and (node:fallback(.,1) &lt; num:i(count(node:fallback(node:current()/../../*, 1 ))))" false="Value out of range: must be in range 0 to N-1 (N is number of configured controllers). Use the Calc button to calculate correct default value."/>
+                                                    <a:tst expr="text:uniq(node:fallback(../../*/SentControllerId, text:split('1 2 3')), node:fallback(.,1) )" false="Duplicated value, SentControllerId must be unique across all Sent controllers. Use the Calc button to calculate correct default value."/>
+                                                </a:da>
+                                                <a:da name="INVALID" type="Range">
+                                                    <a:tst expr="&gt;=0"/>
+                                                    <a:tst expr="&lt;=255"/>
+                                                </a:da>
+                                            </v:var>
+
+                                            
+                                            <!-- /** @implements SentChannelConfig_Object */ -->
+                                            <v:lst name="SentChannelConfig" type="MAP">
+                                                <a:da name="MIN" value="1"/>
+                                                <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="num:i(count(node:current()/*)) &gt; ecu:get('Sent.SentConfigSet.SentControllerConfig.SentChannelConfig')" 
+                                                        true="Maximum SENT Channels available for the selected derivative was exceeded."/>
+                                                </a:da>
+                                                <v:ctr name="SentChannelConfig" type="IDENTIFIABLE">
+                                                    <a:a name="DESC" value="This container contains the configuration (parameters) of the SENT channels."/>
+                                                    <a:a name="UUID" value="ECUC:bccf9928-1567-49a4-b767-774900af5bcf"/>
+                                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                        <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                                        <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                                                    </a:a>
+                                                    <a:da name="INVALID" type="XPath">
+                                                    <a:tst expr="text:uniq(../../../*/SentChannelConfig/*/@name, node:name(.))" 
+                                                            false="The name of the Channel should be different on all controllres"/>
+                                                    </a:da>
+                                                     <!--  /** @implements Sent_Object */ -->
+                                                    <v:ref name="SentFlexioChannelRef" type="CHOICE-REFERENCE">
+                                                        <a:a name="LABEL" value="SentFlexioChannelReference"/>
+                                                        <a:a name="DESC">
+                                                            <a:v>
+                                                                <![CDATA[EN:
+                                                                <html>
+                                                                <b>Sent Flexio Channel Reference</b><p>
+                                                                Reference to the Flexio Channel configure for the Request</p>
+                                                                </html>
+                                                                ]]>
+                                                            </a:v>
+                                                        </a:a>
+                                                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                            type="IMPLEMENTATIONCONFIGCLASS">
+                                                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                            <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                        </a:a>
+                                                        <a:a name="ORIGIN" value="NXP"/>
+                                                        <a:a name="UUID" value="ECUC:feb4877e-6442-4200-a112-8d8195310b08"/>
+                                                        <a:a name="OPTIONAL" value="false"/>
+                                                        <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Mcl/MclConfig/FlexioCommon/FlexioMclLogicChannels"/>
+                                                    </v:ref>
+
+                                                    <v:var name="SentChannelId" type="INTEGER">
+                                                        <a:a name="LABEL" value="Sent Channel Id" />
+                                                        <a:a name="DESC">
+                                                            <a:v>
+                                                                <![CDATA[EN:<html>
+                                                                    The Id of this field will be part of the notification message.
+                                                                </html>]]>
+                                                            </a:v>
+                                                        </a:a>
+                                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                            <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                        </a:a>
+                                                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                                        <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                                                        <a:da name="DEFAULT" type="XPath"  expr="num:i( count(node:fallback(../../../../*/SentChannelConfig/*, 1)) -  1 )"/>
+                                                        <a:a name="UUID" value="ECUC:a11f0384-0b5a-4f6c-9aee-47eebfd3ca14"/>
+                                                        <a:da name="INVALID" type="Range">
+                                                            <a:tst expr="&lt;=255"/>
+                                                            <a:tst expr="&gt;=0"/>
+                                                        </a:da>
+                                                        <a:da name="RANGE" type="XPath">
+                                                            <a:tst expr="text:uniq(node:fallback(../../../../*/SentChannelConfig/*/SentChannelId, text:split('1 2 3')), node:fallback(., 0))"
+                                                                false="Duplicated value, SentChannelId must be unique across SentChannelId. Use the Calc button to calculate correct default value."/>
+                                                            <a:tst expr="node:fallback(., 0) &lt; count(node:fallback(../../../../*/SentChannelConfig/*, 0))"
+                                                                false="Value out of range: must be in range 0 to N-1 (N is number of configured channels). Use the Calc button to calculate correct default value."/>
+                                                        </a:da>
+                                                    </v:var>
+                                                    
+                                                    <v:var name="SentSyncAsyncSelection" type="ENUMERATION">
+                                                        <a:a name="CALCULATION-LANGUAGE" value="INFORMAL"/>
+                                                        <a:a name="DERIVED" value="TRUE"/>
+                                                        <a:a name="DESC">
+                                                            <a:v>
+                                                                <![CDATA[EN:<html>
+                                                                    <h1>Note</h1>
+                                                                    <p>EN: pause pulse enabled has the effect of a in sync receive. Pause pulse disable means Async receive 
+                                                                    </p>
+                                                                    
+                                                                </html>]]>
+                                                            </a:v>
+                                                        </a:a>
+                                                        <a:a name="LABEL" value="Pause pulse"/>
+                                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                        </a:a>
+                                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                        <a:a name="ORIGIN" value="NXP"/>
+                                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                        <a:a name="UUID" value="ECUC:f55d547d-37c7-4393-b930-77497b7678b2"/>
+                                                        <a:da name="DEFAULT" value="SENT_PAUSE_PULSE_DISABLED"/>
+                                                        <a:da name="RANGE">
+                                                            <a:v>SENT_PAUSE_PULSE_ENABLED</a:v>
+                                                            <a:v>SENT_PAUSE_PULSE_DISABLED</a:v>
+                                                        </a:da>
+                                                    </v:var>
+                                                    
+                                                    <!-- /** @implements DataLength_Object */ -->
+                                                    <v:var name="DataLength" type="INTEGER">
+                                                        <a:a name="CALCULATION-LANGUAGE" value="INFORMAL"/>
+                                                        <a:a name="DERIVED" value="TRUE"/>
+                                                        <a:a name="DESC">
+                                                            <a:v>
+                                                               <![CDATA[EN:<html>
+                                                                        <br>1 to 6 Data Nibbles supported in this Channel<br>
+                                                                </html>]]>
+                                                            </a:v>
+                                                        </a:a>
+                                                        <a:a name="LABEL" value="Data length test"/>
+                                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                        </a:a>
+                                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                        <a:a name="ORIGIN" value="NXP"/>
+                                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                        <a:a name="UUID" value="ECUC:f55d547d-37c7-4393-b930-7749b7678b1"/>
+                                                        <a:da name="DEFAULT" value="6"/>
+                                                        <a:da name="INVALID" type="Range">
+                                                            <a:tst expr="&gt;=1"/>
+                                                            <a:tst expr="&lt;=6"/>
+                                                        </a:da>
+                                                    </v:var>
+
+                                                    <!-- /** @implements SentDmaBufferDepth_Object */ -->
+                                                    <v:var name="DmaBufferDepth" type="INTEGER">
+                                                        <a:a name="CALCULATION-LANGUAGE" value="INFORMAL"/>
+                                                        <a:a name="DERIVED" value="TRUE"/>
+                                                        <a:a name="DESC">
+                                                            <a:v>
+                                                               <![CDATA[EN:<html>
+                                                                        <br>number of frames were received before processing data<br>
+                                                                </html>]]>
+                                                            </a:v>
+                                                        </a:a>
+                                                        <a:a name="LABEL" value="Dma Buffer Depth"/>
+                                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                        </a:a>
+                                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                        <a:a name="ORIGIN" value="NXP"/>
+                                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                        <a:a name="UUID" value="ECUC:f5ad547d-37c7-4393-b930-7749b7678b1"/>
+                                                        <a:da name="DEFAULT" value="1"/>
+                                                        <a:da name="INVALID" type="Range">
+                                                            <a:tst expr="&gt;=1"/>
+                                                            <a:tst expr="&lt;=5"/>
+                                                        </a:da>
+                                                        <a:da name="EDITABLE" type="XPath">
+                                                            <a:tst expr="(node:value(../../../../../../SentGeneral/SentDmaActivation)='true') "/>
+                                                        </a:da> 
+                                                    </v:var>
+                                                    <v:var name="SentFastChannelCRCType" type="ENUMERATION">
+                                                        <a:a name="CALCULATION-LANGUAGE" value="INFORMAL"/>
+                                                        <a:a name="DERIVED" value="TRUE"/>
+                                                        <a:a name="DESC">
+                                                            <a:v>
+                                                               <![CDATA[EN:<html>
+                                                                        <br>Sent Fast Channel CRC Type<br>
+                                                                        <P>SENT_RECOMMENDED_IMPLEMENTATION_256_ELEMENT: Implementation using 256 Element Array<p>
+                                                                        <P>SENT_RECOMMENDED_IMPLEMENTATION_16_ELEMENT: Implementation using 16 Element Array<p>
+                                                                        <P>SENT_LEGACY_IMPLEMENTATION<p>
+                                                                    </html>]]>
+                                                            </a:v>
+                                                        </a:a>
+                                                        <a:a name="LABEL" value="Sent Fast Channel CRC Type"/>
+                                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                        </a:a>
+                                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                        <a:a name="ORIGIN" value="NXP"/>
+                                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                        <a:a name="UUID" value="ECUC:f55d547d-37c7-4393-b930-77497b7678b4"/>
+                                                        <a:da name="DEFAULT" value="SENT_RECOMMENDED_IMPLEMENTATION_256_ELEMENT"/>
+                                                        <a:da name="RANGE">
+                                                            <a:v>SENT_RECOMMENDED_IMPLEMENTATION_256_ELEMENT</a:v>
+                                                            <a:v>SENT_RECOMMENDED_IMPLEMENTATION_16_ELEMENT</a:v>
+                                                            <a:v>SENT_LEGACY_IMPLEMENTATION</a:v>
+                                                        </a:da>
+                                                        <a:da name="EDITABLE" type="XPath">
+                                                            <a:tst expr="node:exists(../SentFastCRCErrorNotification) and (../SentFastCRCErrorNotification != 'NULL_PTR')"/>
+                                                        </a:da> 
+                                                    </v:var>
+
+                                                    <v:var name="SentSlowChannelCRCType" type="ENUMERATION">
+                                                        <a:a name="CALCULATION-LANGUAGE" value="INFORMAL"/>
+                                                        <a:a name="DERIVED" value="TRUE"/>
+                                                        <a:a name="DESC">
+                                                            <a:v>
+                                                               <![CDATA[EN:<html>
+                                                                    <br>SHORT message can select one of 3 CRC checking:<br>
+                                                                        <P>SENT_RECOMMENDED_IMPLEMENTATION_256_ELEMENT: Implementation using 256 Element Array<p>
+                                                                        <P>SENT_RECOMMENDED_IMPLEMENTATION_16_ELEMENT: Implementation using 16 Element Array<p>
+                                                                        <P>SENT_LEGACY_IMPLEMENTATION<p>
+                                                                    <br>ENHANCED message does not use those CRC checking, it has a specific CRC implementation<br>
+                                                                </html>]]>
+                                                            </a:v>
+                                                        </a:a>
+                                                        <a:a name="LABEL" value="Sent Slow Channel CRC Type"/>
+                                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                        </a:a>
+                                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                        <a:a name="ORIGIN" value="NXP"/>
+                                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                        <a:a name="UUID" value="ECUC:f55d547d-37c7-4393-b930-77497b7678b3"/>
+                                                        <a:da name="DEFAULT" value="SENT_RECOMMENDED_IMPLEMENTATION_256_ELEMENT"/>
+                                                        <a:da name="RANGE">
+                                                            <a:v>SENT_RECOMMENDED_IMPLEMENTATION_256_ELEMENT</a:v>
+                                                            <a:v>SENT_RECOMMENDED_IMPLEMENTATION_16_ELEMENT</a:v>
+                                                            <a:v>SENT_LEGACY_IMPLEMENTATION</a:v>
+                                                        </a:da>
+                                                        <a:da name="EDITABLE" type="XPath">
+                                                            <a:tst expr="node:exists(../SentSlowCRCErrorNotification) and (../SentSlowCRCErrorNotification != 'NULL_PTR')"/>
+                                                        </a:da> 
+                                                    </v:var>
+                                                    
+                                                <v:var name="SentFastCRCErrorNotificationEnable" type="BOOLEAN">
+                                                    <a:a name="DESC">
+                                                        <a:v>
+                                                            <![CDATA[EN:<html>
+                                                                Enable Fast Error Notification.<br>
+                                                            </html>]]>
+                                                        </a:v>
+                                                    </a:a>
+                                                    <a:a name="LABEL" value="Sent Fast Error Notification Enable"/>
+                                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                            <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                    </a:a>
+                                                    <a:a name="ORIGIN" value="NXP"/>
+                                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                    <a:a name="UUID" value="ECUC:06a86fce-c0d5-402d-b7bd-7749b5f2d3e9"/>
+                                                    <a:da name="DEFAULT" value="false"/>
+                                                </v:var>
+                                            
+                                                    <!-- /** @implements SentFastCRCErrorNotification_Object */ -->
+                                                    <v:var name="SentFastCRCErrorNotification" type="FUNCTION-NAME">
+                                                        <a:a name="DESC">
+                                                            <a:v><![CDATA[EN:
+                                                                <html>
+                                                                    This parameter defines the existence and the name of a callout function that is called after an error occured. No call should occur if this is not enabled.
+                                                                </html>
+                                                                ]]>
+                                                            </a:v>
+                                                        </a:a>
+                                                        <a:a name="LABEL" value="Sent Fast Error Notification"/>
+                                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                            <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                        </a:a>
+                                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                        <a:a name="ORIGIN" value="NXP"/>
+                                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                        <a:a name="UUID" value="ECUC:ea61b545-662c-4516-90e3-774900b3656c"/>
+                                                        <a:da name="DEFAULT" value="NULL_PTR"/>
+                                                        <a:da name="EDITABLE" type="XPath" expr="../SentFastCRCErrorNotificationEnable = 'true'"/>
+                                                        <a:da name="INVALID" type="XPath">
+                                                            <a:tst expr="text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$')" 
+                                                                false="Invalid name of the SentFastCRCErrorNotification. Must be valid C function name or NULL_PTR."/>
+                                                            <a:tst expr="not(text:uniq(text:split(concat(concat(text:join(../../../../*/SentChannelConfig/*/SentFastCRCErrorNotification), ' '), text:join(../../../../*/SentChannelConfig/*/SentSlowCRCErrorNotification))), .)) and normalize-space(.) != 'NULL_PTR'"
+                                                                true="Function name for SentFastCRCErrorNotification and SentSlowCRCErrorNotification should be unique on each channel configured"/>
+                                                        </a:da>
+                                                    </v:var>
+                                                    <v:var name="SentSlowCRCErrorNotificationEnable" type="BOOLEAN">
+                                                        <a:a name="DESC">
+                                                            <a:v>
+                                                                <![CDATA[EN:<html>
+                                                                    Enable Slow Error Notification.<br>
+                                                                </html>]]>
+                                                            </a:v>
+                                                        </a:a>
+                                                        <a:a name="LABEL" value="Sent Slow Error Notification Enable"/>
+                                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                        </a:a>
+                                                        <a:a name="ORIGIN" value="NXP"/>
+                                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                        <a:a name="UUID" value="ECUC:06a86fce-c0d5-402d-b1bd-7749b5f2d3e9"/>
+                                                        <a:da name="DEFAULT" value="false"/>
+                                                    </v:var>
+                                                    
+                                                    <!-- /** @implements SentSlowCRCErrorNotification_Object */ -->
+                                                    <v:var name="SentSlowCRCErrorNotification" type="FUNCTION-NAME">
+                                                        <a:a name="DESC">
+                                                            <a:v><![CDATA[EN:
+                                                                <html>
+                                                                    This parameter defines the existence and the name of a callout function that is called after an error occured. No call should occur if this is not enabled.
+                                                                </html>
+                                                                ]]>
+                                                            </a:v>
+                                                        </a:a>
+                                                        <a:a name="LABEL" value="Sent Slow Error Notification"/>
+                                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                            <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                        </a:a>
+                                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                        <a:a name="ORIGIN" value="NXP"/>
+                                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                        <a:da name="EDITABLE" type="XPath" expr="../SentSlowCRCErrorNotificationEnable = 'true'"/>
+                                                        <a:a name="UUID" value="ECUC:ea61b545-662c-4516-90e3-774960b3656c"/>
+                                                        <a:da name="DEFAULT" value="NULL_PTR"/>
+                                                        <a:da name="INVALID" type="XPath">
+                                                            <a:tst expr="text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$')" 
+                                                                false="Invalid name of the SentSlowCRCErrorNotification. Must be valid C function name or NULL_PTR."/>
+                                                            <a:tst expr="not(text:uniq(text:split(concat(concat(text:join(../../../../*/SentChannelConfig/*/SentSlowCRCErrorNotification), ' '), text:join(../../../../*/SentChannelConfig/*/SentFastCRCErrorNotification))), .)) and normalize-space(.) != 'NULL_PTR'"
+                                                                true="Function name for SentSlowCRCErrorNotification and SentFastCRCErrorNotification should be unique on each channel configured"/>
+                                                        </a:da>
+                                                    </v:var>
+                                                    <v:var name="SentFastNotificationEnable" type="BOOLEAN">
+                                                        <a:a name="DESC">
+                                                            <a:v>
+                                                                <![CDATA[EN:<html>
+                                                                    Sent Fast Notification Enable.<br>
+                                                                </html>]]>
+                                                            </a:v>
+                                                        </a:a>
+                                                        <a:a name="LABEL" value="Sent Fast Notification Enable"/>
+                                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                        </a:a>
+                                                        <a:a name="ORIGIN" value="NXP"/>
+                                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                        <a:a name="UUID" value="ECUC:06a86fce-c2d5-402d-b1bd-7749b5f2d3e9"/>
+                                                        <a:da name="DEFAULT" value="false"/>
+                                                    </v:var>
+                                                    
+                                                    <!-- /** @implements SentFastNotification_Object */ -->
+                                                    <v:var name="SentFastNotification" type="FUNCTION-NAME">
+                                                        <a:a name="DESC">
+                                                            <a:v><![CDATA[EN:<html>
+                                                                    User callback function
+                                                                </html>
+                                                                ]]>
+                                                            </a:v>
+                                                        </a:a> 
+                                                        <a:a name="LABEL" value="Sent Fast Notification"/>
+                                                        <a:da name="EDITABLE" type="XPath" expr="../SentFastNotificationEnable = 'true'"/>
+                                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                            <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                        </a:a>
+                                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                        <a:a name="ORIGIN" value="NXP"/>
+                                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                        <a:a name="UUID" value="ECUC:ea61b545-662c-4516-90e3-774960b3656d"/>
+                                                        <a:da name="INVALID" type="XPath">
+                                                            <a:tst expr="((normalize-space(.)='NULL') or (normalize-space(.)='Null') or (normalize-space(.)='false') or (normalize-space(.)='FALSE') or (normalize-space(.)='null') or (normalize-space(.)='null_ptr') or (normalize-space(.)='Null_Ptr'))" 
+                                                                true="Invalid name of the SentFastNotification. Must be valid C function name or NULL_PTR."/>
+                                                            <a:tst expr="text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$')" 
+                                                                false="Invalid name of the SentFastNotification. Must be valid C function name."/>
+                                                            <!-- <a:tst expr="node:value(../../../SentProcessing) = 'DMA'" true="DMA is enabled for this channel. Disable Sent Fast Notification and make sure SentDMAFastChannelReference is enabled" /> -->
+                                                        </a:da>
+                                                        <a:da name="DEFAULT" value="SentFastNotification"/>
+                                                    </v:var>
+                                                    <v:var name="SentSlowNotificationEnable" type="BOOLEAN">
+                                                        <a:a name="DESC">
+                                                            <a:v>
+                                                                <![CDATA[EN:<html>
+                                                                    Sent Slow Notification Enable.<br>
+                                                                </html>]]>
+                                                            </a:v>
+                                                        </a:a>
+                                                        <a:a name="LABEL" value="Sent Slow Notification Enable"/>
+                                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                        </a:a>
+                                                        <a:a name="ORIGIN" value="NXP"/>
+                                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                        <a:a name="UUID" value="ECUC:06a26fce-c2d5-402d-b1bd-7749b5f2d3e9"/>
+                                                        <a:da name="DEFAULT" value="false"/>
+                                                    </v:var>
+                                                                
+                                                    <!-- /** @implements SentSlowNotification_Object */ -->
+                                                    <v:var name="SentSlowNotification" type="FUNCTION-NAME">
+                                                        <a:a name="DESC">
+                                                            <a:v><![CDATA[EN:<html>
+                                                                    User callback function
+                                                                </html>
+                                                                ]]>
+                                                            </a:v>
+                                                        </a:a>
+                                                        <a:a name="LABEL" value="Sent Slow Notification"/>
+                                                        <a:da name="EDITABLE" type="XPath" expr="../SentSlowNotificationEnable = 'true'"/>
+                                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                            <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                        </a:a>
+                                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                        <a:a name="ORIGIN" value="NXP"/>
+                                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                        <a:a name="UUID" value="ECUC:ec61b545-662f-4519-90d3-55df60b3656c"/>
+                                                        <a:da name="INVALID" type="XPath">
+                                                            <a:tst expr="((normalize-space(.)='NULL') or (normalize-space(.)='Null') or (normalize-space(.)='false') or (normalize-space(.)='FALSE') or (normalize-space(.)='null') or (normalize-space(.)='null_ptr') or (normalize-space(.)='Null_Ptr'))" 
+                                                                true="Invalid name of the SentSlowNotification. Must be valid C function name."/>
+                                                            <a:tst expr="text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$')" 
+                                                                false="Invalid name of the SentSlowChannelNotification. Must be valid C function name or NULL_PTR."/>
+                                                            <!-- <a:tst expr="node:value(../../../SentProcessing) = 'DMA'" true="DMA is enabled for this channel.Disable Sent Slow Notification and make sure SentDMAChannelReference is enabled"/> -->
+                                                        </a:da>
+                                                        <a:da name="DEFAULT" value="SentSlowNotification"/>
+                                                    </v:var>
+                                                    
+                                                    <!-- /** @implements SentTickLength_Object */ -->
+                                                    <v:var name="SentTickLength" type="INTEGER">
+                                                        <a:a name="DESC">
+                                                            <a:v>
+                                                                <![CDATA[EN:<html>
+                                                                    Specifies the tick length us.<br>
+                                                                    This parameter is used in order to decode the slave signal<br>
+                                                                    <h1>Note</h1>Implementation specific Parameter.</h1>
+                                                               </html>]]>
+                                                            </a:v>
+                                                        </a:a>
+                                                        <a:a name="LABEL" value="Sent Tick Length (us)"/>
+                                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                        </a:a>
+                                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                        <a:a name="ORIGIN" value="NXP"/>
+                                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                        <a:a name="UUID" value="ECUC:2e9c3e9c-ff1a-4810-a2b4-7749220d322b"/>
+                                                        <a:da name="DEFAULT" value="3"/>
+                                                        <a:a name="EDITABLE" type="XPath">
+                                                          <a:tst expr="(node:fallback(../../../../../../SentGeneral/TickLengthExpandRange,'true') = 'false')"/>
+                                                        </a:a>
+                                                        <a:da name="INVALID" type="Range">
+                                                            <a:tst expr="&gt;=3"/>
+                                                            <a:tst expr="&lt;=5000"/>
+                                                        </a:da>
+                                                    </v:var> 
+                                                    <v:var name="SentTickLengthExpand" type="INTEGER">
+                                                        <a:a name="DESC">
+                                                            <a:v>
+                                                                <![CDATA[EN:<html>
+                                                                    Specifies the tick length ns.<br>
+                                                                    This parameter is used in order to decode the slave signal<br>
+                                                                    <h1>Note</h1>Implementation specific Parameter.</h1>
+                                                               </html>]]>
+                                                            </a:v>
+                                                        </a:a>
+                                                        <a:a name="LABEL" value="Sent Tick Length (ns) for expand (below 3us) mode"/>
+                                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                        </a:a>
+                                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                        <a:a name="ORIGIN" value="NXP"/>
+                                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                        <a:a name="UUID" value="ECUC:2e1c3e9c-ff1a-4810-a2b4-7749220d322b"/>
+                                                        <a:da name="DEFAULT" value="3000"/>
+                                                        <a:a name="EDITABLE" type="XPath">
+                                                          <a:tst expr="(node:fallback(../../../../../../SentGeneral/TickLengthExpandRange,'false') = 'true')"/>
+                                                        </a:a>
+                                                        <a:da name="INVALID" type="Range">
+                                                            <a:tst expr="&gt;=1000"/>
+                                                            <a:tst expr="&lt;=5000000"/>
+                                                        </a:da>
+                                                    </v:var> 
+                                                    <!-- /** @implements SentDmaChannelRef_Object */ -->
+                                                    <v:ref name="SentDmaChannelRef" type="CHOICE-REFERENCE">
+                                                        <a:a name="LABEL" value="SentDMAChannelReference"/>
+                                                        <a:a name="DESC">
+                                                            <a:v>
+                                                                <![CDATA[EN:
+                                                                <html>
+                                                                <b>Sent DMA Channel Reference</b><p>
+                                                                Reference to the DMA Channel configure for the Request</p>
+                                                                </html>
+                                                                ]]>
+                                                            </a:v>
+                                                        </a:a>
+                                                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                            type="IMPLEMENTATIONCONFIGCLASS">
+                                                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                            <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                        </a:a>
+                                                        <a:a name="ORIGIN" value="NXP"/>
+                                                        <a:a name="UUID" value="ECUC:36b15d54-9195-46a8-822c-7acbc93701be"/>
+                                                        <a:a name="OPTIONAL" value="true"/>
+                                                        <a:da name="INVALID" type="XPath">
+                                                              <a:tst expr="(node:value(../../../SentProcessing)= 'DMA') and (node:value(../../../../../../SentGeneral/SentDmaActivation)='true')" false="Enable DMA for this controller or disable the current node"/>
+                                                              <a:tst expr="text:uniq(../../../../*/SentChannelConfig/*/SentDmaChannelRef, .)" false="Duplicate SentDmaChannelRef"/>
+                                                        </a:da>
+                                                        <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Mcl/MclConfig/dmaLogicChannel_Type"/>
+                                                    </v:ref>
+                                                    
+                                                </v:ctr>
+                                            </v:lst>
+                                        </v:ctr>
+                                    </v:lst>
+                            </v:ctr>
+
+                            <v:ctr name="SentGeneral" type="IDENTIFIABLE">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN:<html>
+                                            This container holds the parameters related each SENT Driver Unit.<br>
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="UUID" value="ECUC:92dba3ff-0eab-40cb-b10e-7749d31f8fe9"/>
+                                
+                                <v:lst name="SentEcucPartitionRef">
+                                <a:da name="EDITABLE" type="XPath" expr="../SentEnableMulticoreSupport = 'true'"/>
+                                    <v:ref name="SentEcucPartitionRef" type="REFERENCE">
+                                        <a:a name="DESC">
+                                        <a:v>EN: Maps the SENT driver to zero or multiple ECUC partitions to make the driver API available in the according partition. Depending on the addressed timer resource the interfaces operate as follows:</a:v>
+                                        <a:v>EN: Tags: atp.Status=draft</a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                            type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+                                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                        <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="SCOPE" value="ECU"/>
+                                        <a:a name="UUID" 
+                                            value="ECUC:f86d720b-a1e5-4f3f-a656-0f49601b8563"/>
+                                        <a:da name="REF" 
+                                            value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition"/>
+                                    </v:ref>
+                                </v:lst>
+                                
+                                <v:var name="SentDmaActivation" type="BOOLEAN">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                Activates DMA feature
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="LABEL" value="Activate DMA feature"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:06986fcf-c0d5-402d-b7bd-1ffbb5f2d3e9"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                </v:var>
+                                
+                                <v:var name="TickLengthExpandRange" type="BOOLEAN">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                 Defines if a SENT controller is used in expand mode ().<br>
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="LABEL" value="Expanding Range Mode Support (1->5000us)"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:06983fce-c0d5-402d-b7bd-7749b5f2d3e9"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                </v:var>
+                                <v:var name="SentTimestampActivation" type="BOOLEAN">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                Defines if Timestamp feature is active on current controller.
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="LABEL" value="Sent Timestamp Activation"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:06986fce-c6d5-402d-b7bd-1ffbb5f2d3e9"/>
+                                    <a:da name="EDITABLE" value="false"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                </v:var>
+                                
+                                <v:var name="SentDevErrorDetect" type="BOOLEAN">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                Switches the Development Error Detection and Notification: ON or OFF.<br>
+                                                When this option is OFF code size is reduced, but no error detection is available.<br>
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="LABEL" value="Development Error Detection"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:fae3ece1-6b70-4308-b6ff-7749f085320d"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                </v:var>
+                                
+                                <!-- /** @implements SentEnableUserModeSupport_Object */ -->
+                                <v:var name="SentEnableUserModeSupport" type="BOOLEAN">
+                                    <a:a name="LABEL" value="Sent Enable User Mode Support"/>
+                                    <a:a name="DESC">
+                                    <a:v>
+                                    <![CDATA[EN:
+                                        <html>
+                                            <p>When this parameter is enabled, the SENT module will adapt to run from User Mode, with the following measures:</p>
+                                            <p>(if applicable) a) configuring REG_PROT for the SENT Controllers so that the registers under protection can be accessed from user mode by setting UAA bit in REG_PROT_GCR to 1</p>
+                                            <p>(if applicable) b) using 'call trusted function' stubs for all internal function calls that access registers requiring supervisor mode.</p>
+                                            <p>(if applicable) c) other module specific measures for more information, please see chapter 5.7 User Mode Support in IM</p>
+                                        </html>
+                                    ]]>
+                                    </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:faa4800a-1244-4ef4-9a8b-457befc658cd"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                    <a:a name="VISIBLE" type="XPath">
+                                        <a:tst expr="ecu:get('Sent.SentConfigSet.SupvAvailable')='STD_ON'"/>
+                                    </a:a>
+                                </v:var>
+                                
+                                <v:var name="SentVersionInfoApi" type="BOOLEAN">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                Switches the Sent_GetVersionInfo() API: ON or OFF.<br>
+                                                When this option is ON driver supports API for getting Version information for the Driver.<br>
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="LABEL" value="Provide Version Info API"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:1c149bc9-b9f1-41c4-afa6-774949d3ba8f"/>
+                                    <a:da name="DEFAULT" value="true"/>
+                                </v:var>
+                                
+                                <v:var name="SentIndex" type="INTEGER">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                Specifies the InstanceId of this module instance.<br>
+                                                If only one instance is present it shall have the Id 0.<br>
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="LABEL" value="Sent Driver Index"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:da name="EDITABLE" value="true"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:4e05c426-67f4-4e47-b644-7749e78ec98d"/>
+                                    <a:da name="DEFAULT" value="0"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=0"/>
+                                        <a:tst expr="&lt;=255"/>
+                                    </a:da>
+                                </v:var>
+                                
+                                <v:var name="SentTimeout" type="INTEGER">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                Specifies the timeout for Sent module.<br>
+                                                If the timeout is exceeded, the while loop will be exited<br>
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="LABEL" value="Sent Timeout"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:da name="EDITABLE" value="true"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:994a85c7-4495-4075-95fc-c33fcfc417bd"/>
+                                    <a:da name="DEFAULT" value="100000"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=0"/>
+                                        <a:tst expr="&lt;=4294967295"/>
+                                    </a:da>
+                                </v:var>
+
+                                  <v:var name="SentTimeoutMethod" type="ENUMERATION">
+                                     <a:a name="LABEL" value="SentTimeoutMethod"/>
+                                     <a:a name="DESC">
+                                         <a:v>
+                                             <![CDATA[EN:
+                                                 <html>
+                                                     <p>Configures the timeout method.</p>
+                                                     <p>Based on this selection a certain timeout method from OsIf will be used in the driver.</p>
+                                                     <p>Note: If SystemTimer or CustomTimer are selected make sure the corresponding timer is enabled in OsIf General configuration. </p>
+                                                     Note: Implementation Specific Parameter. <p/>
+                                                 </html>
+                                             ]]>
+                                         </a:v>
+                                     </a:a>
+                                     <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                         <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                         <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                     </a:a>
+                                     <a:a name="ORIGIN" value="NXP"/>
+                                     <a:a name="SCOPE" value="LOCAL"/>
+                                     <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                     <a:a name="UUID" value="ECUC:5f48c30a-a1a6-11eb-bcbc-0242ac130002"/>
+                                     <a:a name="DEFAULT" value="OSIF_COUNTER_DUMMY"/>
+                                     <a:da name="INVALID" type="XPath">
+                                         <a:tst expr="(node:refs('ASPathDataOfSchema:/TS_T40D34M20I1R0/Base/OsIfGeneral/OsIfUseCustomTimer') = 'false') and (node:value(.) = 'OSIF_COUNTER_CUSTOM')" true="Custom Timer is not enabled in OsIf (OsIfGeneral/OsIfUseCustomTimer checkbox)"/>
+                                         <a:tst expr="(node:refs('ASPathDataOfSchema:/TS_T40D34M20I1R0/Base/OsIfGeneral/OsIfUseSystemTimer') = 'false') and (node:value(.) = 'OSIF_COUNTER_SYSTEM')" true="System Timer is not enabled in OsIf (OsIfGeneral/OsIfUseSystemTimer checkbox)"/>
+                                     </a:da>
+                                     <a:da name="RANGE">
+                                         <a:v>OSIF_COUNTER_DUMMY</a:v>
+                                         <a:v>OSIF_COUNTER_SYSTEM</a:v>
+                                         <a:v>OSIF_COUNTER_CUSTOM</a:v>
+                                     </a:da>
+                                   </v:var>       
+                                
+                                <v:ref name="SentCpuClockRef" type="REFERENCE">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                Reference to the CPU clock configuration, which is set in the MCU driver configuration.<br>
+                                                MCU plugin need to be added and then give the reference to it.<br>
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="LABEL" value="Sent CPU Reference Clock"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="UUID" value="ECUC:b051dd0a-d2c6-4feb-b096-7749bfac2fc6"/>
+                                    <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint"/>
+                                    <a:da name="EDITABLE" value="true"/>
+                                    <!-- <a:da name="INVALID" type="XPath" expr="node:refvalid(.)" false="The configured node does not exist or may not be referenced."/> -->
+                                </v:ref>
+                                
+                                <v:var name="SentEnableMulticoreSupport" type="BOOLEAN">
+                                    <a:a name="LABEL" value="Sent Enable Multicore Support"/>
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                        <html>
+                                            Vendor specific:<br>
+                                            Enable Multicore support for Sent driver
+                                        </html>
+                                        ]]></a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">   
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:398cc47b-33ed-4a0f-915d-d6906e260bce"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                    <a:a name="EDITABLE" type="XPath">
+                                        <a:tst expr="(ecu:get(&apos;Sent.SentMulticoreSupport&apos;)='TRUE') or 
+                                            ((ecu:get(&apos;Sent.SentMulticoreSupport&apos;)='FALSE') and (.='true'))"/>
+                                    </a:a>
+                                    <a:da name="INVALID" type="XPath">
+                                            <a:tst expr="(. = 'true') and (num:i(count(../SentEcucPartitionRef/*)) &lt;1)" true="When SentEnableMulticoreSupport is enabled, at least one SentEcucPartitionRef need be configured."/>
+                                            <a:tst expr="(. = 'false') and (num:i(count(../SentEcucPartitionRef/*)) &gt;0)" true="When SentEnableMulticoreSupport disabled, have no any SentEcucPartitionRef are configured."/>
+                                            <a:tst expr="(ecu:get(&apos;Sent.SentMulticoreSupport&apos;)='FALSE') and (.='true')" 
+                                            true="Multicore does not support this derivative!"/>
+                                    </a:da>
+                                </v:var>
+                            </v:ctr>
+                            
+                            <!-- /** @implements CommonPublishedInformation_Object */ -->
+                            <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN:<html>
+                                            Common container, aggregated by all modules.
+                                            It contains published information about vendor and versions.
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="UUID" value="ECUC:7ce530a5-c167-4b47-bf16-e6c9ea78565b"/>
+                                
+                                <!-- /** @implements ArReleaseMajorVersion_Object */ --> 
+                                <v:var name="ArReleaseMajorVersion" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="Ar Release Major Version" />
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                Major version number of AUTOSAR specification on which the appropriate implementation is based on. <p/>
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a> 
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="UUID" value="ECUC:c1f007ac-a12d-49fd-80c2-774928b59357"/>
+                                    <a:da name="DEFAULT" value="4"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=4"/>
+                                        <a:tst expr="&lt;=4"/>
+                                    </a:da>
+                                </v:var>
+                                
+                                <!-- /** @implements ArReleaseMinorVersion_Object */ --> 
+                                <v:var name="ArReleaseMinorVersion" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="Ar Release Minor Version" />
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                Minor version number of AUTOSAR specification on which the appropriate implementation is based on. <p/>
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a> 
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="UUID" value="ECUC:e698d771-96d1-41e8-ba9c-774941dd8f64"/>
+                                    <a:da name="DEFAULT" value="4"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=4"/>
+                                        <a:tst expr="&lt;=4"/>
+                                    </a:da>
+                                </v:var>
+                                
+                                <!-- /** @implements ArReleaseRevisionVersion_Object */ -->
+                                <v:var name="ArReleaseRevisionVersion" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="Ar Release Revision Version" />
+                                    <a:a name="DESC">
+                                         <a:v>
+                                            <![CDATA[EN:<html>
+                                                Revision version number of AUTOSAR specification on which the appropriate implementation is based on. <p/>
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a> 
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="UUID" value="ECUC:0892af18-ceff-45c9-a5fb-7749b22f52de"/>
+                                    <a:da name="DEFAULT" value="0"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=0"/>
+                                        <a:tst expr="&lt;=0"/>
+                                    </a:da>
+                                </v:var>
+                                
+                                <!-- /** @implements ModuleId_Object */ -->
+                                <v:var name="ModuleId" type="INTEGER_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                Module ID of this module from Module List.
+                                                Note: Implementation Specific Parameter
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a> 
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="UUID" value="ECUC:82cd1ad7-7c67-4262-be5f-517ce13c8516"/>
+                                    <a:da name="DEFAULT" value="125"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=125"/>
+                                        <a:tst expr="&lt;=125"/>
+                                    </a:da>
+                                </v:var>
+                                
+                                <!-- /** @implements SwMajorVersion_Object */ --> 
+                                <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                Major version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                                                Note: Implementation Specific Parameter
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a> 
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="UUID" value="ECUC:c1gbc4bf-ebe3-4489-9108-77498380b5b1"/>
+                                    <a:da name="DEFAULT" value="2"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=2"/>
+                                        <a:tst expr="&lt;=2"/>
+                                    </a:da>
+                                </v:var>
+                                
+                                <!-- /** @implements SwMinorVersion_Object */ -->
+                                <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                Minor version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                                                Note: Implementation Specific Parameter
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a> 
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="UUID" value="ECUC:eb2c4547-d471-4378-b998-77494ffcf3ec"/>
+                                    <a:da name="DEFAULT" value="0"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=0"/>
+                                        <a:tst expr="&lt;=0"/>
+                                    </a:da>
+                                </v:var>
+                                
+                                <!-- /** @implements SwPatchVersion_Object */ -->
+                                <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                                                Note: Implementation Specific Parameter
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a> 
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="UUID" value="ECUC:e31d8850-337e-40cb-8008-7749d065ab45"/>
+                                    <a:da name="DEFAULT" value="1"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=1"/>
+                                        <a:tst expr="&lt;=1"/>
+                                    </a:da>
+                                </v:var>
+                                
+                                <!-- /** @implements VendorApiInfix_Object */ --> 
+                                <v:var name="VendorApiInfix" type="STRING_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                             In driver modules which can be instantiated several times on a single ECU, BSW00347 requires that the name of APIs is extended by the VendorId and a vendor specific name.
+                                               This parameter is used to specify the vendor specific name. In total, the Implementation specific name is generated as follows: 
+                                               &lt;ModuleName&gt;_&gt;VendorId&gt;_&lt;VendorApiInfix&gt;&lt;Api name from SWS&gt;.                                  
+                                               This parameter is mandatory for all modules with upper multiplicity &gt; 
+                                               1. It shall not be used for modules with upper multiplicity =1.
+                                               Note: Implementation Specific Parameter
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a> 
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="UUID" value="ECUC:5ee47667-23be-4e7e-af43-77492fc22b7f"/>
+                                    <a:da name="DEFAULT" value=""/>
+                                </v:var>
+                                
+                                <!-- /** @implements VendorId_Object */ --> 
+                                <v:var name="VendorId" type="INTEGER_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list.
+                                                Note: Implementation Specific Parameter
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a> 
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="UUID" value="ECUC:f83f88e6-bee6-4d6e-8589-7749e27564de"/>
+                                    <a:da name="DEFAULT" value="43"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=43"/>
+                                        <a:tst expr="&lt;=43"/>
+                                    </a:da>
+                                </v:var>
+                            </v:ctr>
+                        </v:ctr>
+                    </d:chc>
+                    <d:chc name="Sent_EcuParameterDefinition" type="AR-ELEMENT" value="ECU_PARAMETER_DEFINITION">
+                        <d:ctr type="AR-ELEMENT">
+                            <a:a name="UUID" value="ECUC:bdef251c-9d5c-4848-af10-7b16bde8d8de"/>
+                            <a:a name="DEF" value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+                            <d:lst name="MODULE_REF">
+                                <d:ref type="MODULE_REF" value="ASPath:/TS_T40D34M20I1R0/Sent"/>
+                            </d:lst>
+                        </d:ctr>
+                    </d:chc>
+                    <d:chc name="Sent_ModuleDescription" type="AR-ELEMENT" value="BSW_MODULE_DESCRIPTION">
+                        <d:ctr type="AR-ELEMENT">
+                            <a:a name="DEF" value="ASPath:/AR_PACKAGE_SCHEMA/BSW_MODULE_DESCRIPTION"/>
+                            <d:var name="MODULE_ID" type="INTEGER" >
+                                <a:a name="READONLY" value="true"/>
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:ref type="RECOMMENDED_CONFIGURATION" >
+                                <a:a name="EDITABLE" value="false"/>
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:ref>
+                            <d:ref type="PRE_CONFIGURED_CONF" >
+                                <a:a name="EDITABLE" value="false"/>
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:ref>
+                            <d:ref type="VENDOR_SPECIFIC_MODULE_DEF" value="ASPath:/TS_T40D34M20I1R0/Sent"/>
+                        </d:ctr>
+                    </d:chc>
+                </d:lst>
+            </d:ctr>
+        </d:lst>
+    </d:ctr>
+
+</datamodel>

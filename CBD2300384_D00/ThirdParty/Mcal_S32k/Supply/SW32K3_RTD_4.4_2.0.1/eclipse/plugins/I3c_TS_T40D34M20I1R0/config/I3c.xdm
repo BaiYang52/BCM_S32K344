@@ -1,0 +1,2187 @@
+<?xml version='1.0'?>
+<datamodel version="3.0"
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd"
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd"
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd"
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+<!--
+*   @file    I3c.xdm
+*   @version 2.0.1
+*
+*   @brief   AUTOSAR I3c - Tresos Studio plugin schema file
+*   @details This file contains the schema configuration for and I3c Tresos Studio plugin.
+-->
+<!--
+====================================================================================================
+*   Project              : RTD AUTOSAR 4.4
+*   Platform             : CORTEXM
+*   Peripheral           : I3C
+*   Dependencies         : none
+*
+*   Autosar Version      : 4.4.0
+*   Autosar Revision     : ASR_REL_4_4_REV_0000
+*   Autosar Conf.Variant :
+*   SW Version           : 2.0.1
+*   Build Version        : S32K3_RTD_2_0_1_D2207_ASR_REL_4_4_REV_0000_20220707
+
+*   (c) Copyright 2020 - 2022 NXP Semiconductors
+*   All Rights Reserved.
+====================================================================================================
+-->
+    <d:ctr type="AUTOSAR" factory="autosar"
+        xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd"
+        xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd"
+        xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+        <d:lst type="TOP-LEVEL-PACKAGES">
+            <!-- /** @implements  I3c_Object */ -->
+            <d:ctr name="TS_T40D34M20I1R0" type="AR-PACKAGE">
+                <a:a name="UUID" value="ECUC:a104ed8d-c22e-40ef-b536-8e8865c0ca9b"/>
+                <d:lst type="ELEMENTS">
+                    <d:chc name="I3c" type="AR-ELEMENT" value="MODULE-DEF">
+                        <v:ctr type="MODULE-DEF">
+                            <a:a name="DESC">
+                                <a:v><![CDATA[EN:<html>Configuration of the Synchronous Audio Interface (I3c) module.</html>]]>
+                                </a:v>
+                            </a:a>
+                            <a:a name="LOWER-MULTIPLICITY" value="1" />
+                            <a:a name="UPPER-MULTIPLICITY" value="1" />
+                            <a:a name="RELEASE" value="asc:4.4"/>
+                            <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                                <ad:ADMIN-DATA>
+                                    <ad:LANGUAGE>EN</ad:LANGUAGE>
+                                    <ad:DOC-REVISIONS>
+                                        <ad:DOC-REVISION>
+                                            <ad:REVISION-LABEL>2.0.1</ad:REVISION-LABEL>
+                                            <ad:ISSUED-BY>NXP</ad:ISSUED-BY>
+                                            <ad:DATE>2010-12-03</ad:DATE>
+                                        </ad:DOC-REVISION>
+                                    </ad:DOC-REVISIONS>
+                                </ad:ADMIN-DATA>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+                            <a:a name="UUID" value="ECUC:7d33bb27-e65f-4715-8bb0-2e6adb76544e"/>
+
+                            <v:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN">
+                            <a:a name="DESC"
+                                    value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="LABEL" value="Post Build Variant Used"/>
+                            <a:a name="ORIGIN" value="EB"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                            <a:da name="DEFAULT" value="false"/>
+                            <a:da name="READONLY" value="FALSE"/>
+                            <a:da name="TOOLTIP"
+                                    value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+                            </v:var>
+
+                            <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                                <a:a name="LABEL" value="Config Variant"/>
+                                <a:a name="UUID" value="ECUC:7299d672-b207-4b0c-b62d-daf3c25a1f58"/>
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN:<html>
+                                            VariantPreCompile: Only precompile time configuration parameters. Only one set of parameters.<p/>
+                                            VariantPostBuild: Mix of precompile and postbuild time configuration parameters. Only one set of parameters.<p/>
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                </a:a>
+                                <a:da name="DEFAULT" value="VariantPostBuild"/>
+                                <a:da name="RANGE">
+                                    <a:v>VariantPostBuild</a:v>
+                                    <a:v>VariantPreCompile</a:v>
+                                </a:da>
+                            </v:var>
+
+                            <!-- @implements GeneralConfiguration_Object -->
+                            <v:ctr name="GeneralConfiguration" type="IDENTIFIABLE">
+                              <a:a name="UUID" value="ECUC:8f722fd2-4069-4667-9247-2092f90da676"/>
+                              <a:a name="DESC">
+                                  <a:v><![CDATA[EN:<html><p>This container contains the global configuration parameters of the Non-Autosar I3c driver.</p></html>]]>
+                                  </a:v>
+                              </a:a>
+
+                                <v:var name="I3cEnableSlaveRequests" type="BOOLEAN">
+                                    <a:a name="LABEL" value="Enable Slave Requests"/>
+                                    <a:a name="DESC">
+                                     <a:v><![CDATA[EN:<html><p>Enable/Disable Slave Requests(In-Band Interrupt, Hot-Join and Master Request).</p></html>]]>
+                                     </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:410b0ab1-6e90-41a1-b28a-b119182a1210"/>
+                                    <a:da name="DEFAULT" value="true"/>
+                                    <a:da name="EDITABLE" type="XPath" expr="(node:value(../I3cEnableI3cfeatures) = 'true')"/>
+                                </v:var>
+
+                                <v:var name="I3cEnableI3cfeatures" type="BOOLEAN">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:<html><p>Enable/Disable I3c features.</p></html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="LABEL" value="Enable I3c features"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:3deb1918-14e1-4a91-b820-e2505fdca192"/>
+                                    <a:da name="DEFAULT" value="true"/>
+                                </v:var>
+
+                                <v:var name="I3cInitDynamicProcessAssignment" type="BOOLEAN">
+                                    <a:a name="LABEL" value="Enable Dynamic Address Assignment at Init"/>
+                                    <a:a name="DESC">
+                                     <a:v><![CDATA[EN:<html><p> Enable/Disable Dynamic Address Assignment process at Init() function. And this process can be also done at runtime by using API by using </p></html>]]>
+                                     </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:210a0ab1-6e90-11a1-b28a-a119102a1200"/>
+                                    <a:da name="DEFAULT" value="true"/>
+                                    <a:da name="EDITABLE" type="XPath" expr="(node:value(../I3cEnableI3cfeatures) = 'true')"/>
+                                </v:var>
+
+                                <!-- @implements I3cDevErrorDetect_Object -->
+                                <v:var name="I3cDevErrorDetect" type="BOOLEAN">
+                                    <a:a name="LABEL" value="I3c Development Error Detection"/>
+                                    <a:a name="DESC">
+                                     <a:v><![CDATA[EN:<html><p>Switches the Development Error Detection and Notification ON or OFF.</p></html>]]>
+                                     </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                         type="IMPLEMENTATIONCONFIGCLASS">
+                                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:410b0af9-6e93-44a4-b28a-b189582e3235"/>
+                                    <a:da name="DEFAULT" value="true"/>
+                                </v:var>
+
+                                <!-- @implements I3cDmaFeature_Object -->
+                                <v:var name="I3cDmaFeature" type="BOOLEAN">
+                                    <a:a name="LABEL" value="I3c DMA Support"/>
+                                    <a:a name="DESC">
+                                     <a:v><![CDATA[EN:<html><p>Enable DMA feature for transferring and Notification ON or OFF.</p></html>]]>
+                                     </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                         type="IMPLEMENTATIONCONFIGCLASS">
+                                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:6f3ef59d-c0f8-4a8d-b543-4adfce15d22a"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                    <a:a name="READONLY" value="false"/>
+                                </v:var>
+
+                                <!-- @implements I3cMulticoreSupport_Object -->
+                                <v:var name="I3cMulticoreSupport" type="BOOLEAN">
+                                    <a:a name="LABEL" value="I3c Multicore Support"/>
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:<html>This parameter globally enables the possibility to support multicore. If I3cMulticoreSupport is disabled, then for all the variants no partition shall be defined. If I3cMulticoreSupport is enabled, at least one EcucPartition needs to be defined (in all variants).</html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:3803f88d-f19a-44ca-8fea-a090aa1670b4"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                    <a:da name="EDITABLE" value="false"/>
+                                    <!-- <a:da name="EDITABLE" type="XPath">
+                                         <a:tst expr="ecu:get('I3c.Support.Multicore')= 1 "/>
+                                    </a:da>
+                                    <a:da name="INVALID" type="XPath">
+                                        <a:tst expr="(num:i(count(../I3cEcucPartitionRef/*)) &gt;0) and
+                                                    node:current()='false' "
+                                                true="I3cMulticoreSupport should be enabled." />
+                                         <a:tst expr="(node:value(.)='true') and (num:i(ecu:get('I3c.Support.Multicore')) = 0)" true="Multicore is not available on this derivative."/>
+                                    </a:da> -->
+                                </v:var>
+
+                                <!-- @implements I3cEnableUserModeSupport_Object -->
+                                <v:var name="I3cEnableUserModeSupport" type="BOOLEAN">
+                                    <a:a name="LABEL" value="I3c Enable User Mode Support"/>
+                                    <a:a name="DESC">
+                                    <a:v><![CDATA[EN:<html>
+                                        <h1>I3c Enable User Mode Support</h1><p>
+                                        When this parameter is enabled, the I3c module will adapt to run from User Mode, with
+                                        the following measure : configuring REG_PROT for I3c IPs so that the registers under
+                                        protection can be accessed from user mode by setting UAA bit in REG_PROT_GCR to 1
+                                        for more information and availability on this platform, please see chapter "User Mode Support" in IM.</P>
+                                        <P><b>True</b>: I3c module will adapt to run from User Mode.</P>
+                                        <P><b>False</b>:I3c module will not apdapt to run from User Mode./p>
+                                        <p>If this parameter is not ediatable, that means I3c driver can run in User Mode.</p></html>]]>
+                                    </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:40751cd6-8ee0-446f-be15-ffde7311af96"/>
+                                    <a:a name="EDITABLE" value="false"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                </v:var>
+
+                                <!-- @implements I3cVersionInfoApi_Object -->
+                                <v:var name="I3cVersionInfoApi" type="BOOLEAN">
+                                    <a:a name="LABEL" value="I3c VersionInfo API"/>
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:<html><p>Adds / removes the service I3c_GetVersionInfo() from the code.</p></html>]]></a:v>
+                                    </a:a>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                        type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:b3a4eb3b-2c28-4741-8088-4a9766a6c1c2"/>
+                                    <a:da name="DEFAULT" value="true"/>
+                                </v:var>
+
+                                  <!-- @implements I3cTimeoutMethod_Object -->
+                                  <v:var name="I3cTimeoutMethod" type="ENUMERATION">
+                                    <a:a name="LABEL" value="I3c Timeout Method"/>
+                                    <a:a name="DESC">
+                                    <a:v><![CDATA[EN:<html>
+                                        <p>Configures the timeout method for I3c.</p>
+                                        <p>Based on this selection a certain timeout method from OsIf will be used in the driver.</p>
+                                        <p>Note: If OSIF_COUNTER_SYSTEM or OSIF_COUNTER_CUSTOM are selected make sure the corresponding timer is enabled in OsIf General configuration.</p></p></html>]]>
+                                    </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:37d446af-87a3-4263-8d51-83f752bc4db5"/>
+                                    <a:a name="DEFAULT" value="OSIF_COUNTER_DUMMY"/>
+                                    <a:da name="INVALID" type="XPath">
+                                      <a:tst expr="node:refs('ASPathDataOfSchema:/TS_T40D34M20I1R0/Base/OsIfGeneral/OsIfUseCustomTimer') = 'false' and node:fallback(.,'OSIF_COUNTER_DUMMY') = 'OSIF_COUNTER_CUSTOM'" true="Custom Timer is not enabled in OsIf (OsIfGeneral/OsIfUseCustomTimer checkbox)"/>
+                                      <a:tst expr="node:refs('ASPathDataOfSchema:/TS_T40D34M20I1R0/Base/OsIfGeneral/OsIfUseSystemTimer') = 'false' and node:fallback(.,'OSIF_COUNTER_DUMMY') = 'OSIF_COUNTER_SYSTEM'" true="System Timer is not enabled in OsIf (OsIfGeneral/OsIfUseSystemTimer checkbox)"/>
+                                    </a:da>
+                                    <a:da name="RANGE">
+                                      <a:v>OSIF_COUNTER_DUMMY</a:v>
+                                      <a:v>OSIF_COUNTER_SYSTEM</a:v>
+                                      <a:v>OSIF_COUNTER_CUSTOM</a:v>
+                                    </a:da>
+                                  </v:var>
+
+                                  <!-- @implements I3cTimeoutVal_Object -->
+                                  <v:var name="I3cTimeoutVal" type="INTEGER">
+                                  <a:a name="DESC">
+                                      <a:v><![CDATA[EN:<html><p>This is a timeout (microseconds) value which is used to wait for each synchronization transfer</p></html>]]>
+                                      </a:v>
+                                  </a:a>
+                                  <a:a name="SCOPE" value="LOCAL"/>
+                                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                      type="IMPLEMENTATIONCONFIGCLASS">
+                                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                  </a:a>
+                                  <a:a name="LABEL" value="I3c Transfer Timeout"/>
+                                  <a:a name="ORIGIN" value="NXP"/>
+                                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                                  <a:a name="UUID" value="ECUC:0f2716cf-d292-4428-b8cd-f6d08bd6992a" />
+                                  <a:da name="DEFAULT" value="30000" />
+                                  <a:da name="INVALID" type="Range">
+                                      <a:tst expr="&lt;=4294967295" />
+                                      <a:tst expr="&gt;=1" />
+                                  </a:da>
+                                  </v:var>
+                            </v:ctr>
+
+                            <!-- @implement I3cChannel_Object -->
+                            <v:lst name="I3cChannel" type="MAP">
+                                <a:da name="MIN" value="1"/>
+                                <a:da name="INVALID" type="XPath">
+                                   <a:tst expr="num:i(count(node:current()/*)) &gt; ecu:get(&apos;I3c.I3cChannels&apos;)"
+                                   true="Maximum I3C Hardwares available for the selected derivative was exceeded."/>
+                                </a:da>
+                                <v:ctr name="I3cChannel" type="IDENTIFIABLE">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:<html><p>This container contains the configuration (parameters) of the I3c Controller(s).</p></html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="UUID" value="ECUC:b305390a-4f25-448d-ae17-7b7c53d97cc3"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+
+                                    <!-- @implement I3cChannellId_Object -->
+                                    <v:var name="I3cChannelId" type="INTEGER">
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN:<html><p>Identifies the I3c channel.</p><p/></html>]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="LABEL" value="I3c Channel ID" />
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                            type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SCOPE" value="LOCAL"/>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                                        <a:a name="UUID" value="ECUC:49381118-7757-4e01-ae70-84f6802cef4f"/>
+                                        <a:da name="DEFAULT"  type="XPath" expr="node:fallback(node:current()/../@index, num:i(0))"/>
+                                        <a:da name="INVALID" type="Range">
+                                            <a:tst expr="&lt;ecu:get('I3c.I3cChannels')"/>
+                                            <a:tst expr="&gt;=0"/>
+                                        </a:da>
+                                        <a:da name="RANGE" type="XPath">
+                                            <a:tst expr="(. &gt;= 0) and (.&lt; num:i(count(node:current()/../../*)))"
+                                                false="Value out of range: must be in range 0 to N-1 (N is number of configured channels). Use the 'Calculate Value' button to calculate correct default value."/>
+                                            <a:tst expr="text:uniq(../../*/I3cChannelId, .)"
+                                                false="Duplicated value: I3cChannelId must be unique across all I3c channels. Use the 'Calculate Value' button to calculate correct default value."/>
+                                            <a:tst expr="num:i(node:fallback(.,0)) = num:i(../@index)"
+                                                false="Invalid value: The ID should correspond to the position of the element within the configuration list."/>
+                                        </a:da>
+                                    </v:var>
+
+                                    <v:var name="I3cHwChannel" type="ENUMERATION">
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN:<html><p>Selects hardware channel.</p><p/></html>]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="LABEL" value="I3c Hardware Channel" />
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                            type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="SCOPE" value="LOCAL"/>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="UUID" value="ECUC:c647ece1-cfa9-483a-8ee0-607e7b0a9802"/>
+                                        <a:da name="DEFAULT"  type="XPath" expr="(ecu:list('I3c.I3cHwChannels'))[position()-1=node:fallback( node:current()/../@index, '0')]"/>
+                                        <a:da name="INVALID" type="XPath">
+                                            <a:tst expr="text:uniq(node:fallback(../../*/I3cHwChannel, 0 ), node:fallback( ., 1 ))"
+                                                false="Duplicate physical I3c channel: I3cHwChannel must be unique across all I3c channels. Use the 'Calculate Value' button to calculate correct default value."/>
+                                        </a:da>
+                                        <a:da name="RANGE" type="XPath" expr="ecu:list('I3c.I3cHwChannels')"/>
+                                    </v:var>
+
+                                    <v:var name="I3cMasterSlaveMode" type="ENUMERATION">
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN:<html><p>Select wether the selected channel will be used as Master, Slave or both.
+                                                <ul>
+                                                    <li>MASTER: The module is an I3c Master.</li>
+                                                    <li>SLAVE: The module is an I3c Slave.</li>
+                                                    <li>MASTER_CAPABLE: The I3C module is master-capable; however the module is operating as a slave now.
+                                                                        When used from the start, the I3C module will start as a slave, but will be prepared to switch to master mode using specific procedures.</li>
+                                                </ul></p><p/></html>]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="LABEL" value="I3c Master Slave Mode" />
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                            type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="SCOPE" value="LOCAL"/>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="UUID" value="ECUC:471be4d1-244b-41d1-901b-f6fff29b7465"/>
+                                        <a:da name="DEFAULT" value="MASTER"/>
+                                        <a:da name="RANGE">
+                                            <a:v>MASTER</a:v>
+                                            <a:v>SLAVE</a:v>
+                                            <a:v>MASTER_CAPABLE</a:v>
+                                        </a:da>
+                                    </v:var>
+
+                                    <v:ctr name="I3cMasterConfiguration" type="IDENTIFIABLE">
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN:<html><p>This container contains the configuration (parameters) of the I3c Master Controller(s).</p></html>]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="UUID" value="ECUC:3f0846d2-5853-4a9f-99da-bfc3933f6e9f"/>
+                                        <a:da name="EDITABLE" type="XPath" expr="(node:value(../I3cMasterSlaveMode) != 'SLAVE')"/>
+
+                                        <v:var name="I3cMasterEnable" type="ENUMERATION">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Indicates if the master is enabled and what states are allowed for it (the master).
+                                                    <ul>
+                                                        <li>MASTER_OFF: Master is not enabled.</li>
+                                                        <li>MASTER_ON: Master is enabled.</li>
+                                                        <li>MASTER_CAPABLE: Master capable, but operating as a slave. Only avaialble when I3c is in MASTER_CAPABLE mode.</li>
+                                                    </ul></p><p/></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c Master Enable" />
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="UUID" value="ECUC:7acd00c5-f17f-4611-bda4-864c12c94791"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="DEFAULT" value="MASTER_ON"/>
+                                            <a:da name="RANGE">
+                                                <a:v>MASTER_OFF</a:v>
+                                                <a:v>MASTER_ON</a:v>
+                                                <a:v>MASTER_CAPABLE</a:v>
+                                            </a:da>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="(. = 'MASTER_CAPABLE') and (../../I3cMasterSlaveMode != 'MASTER_CAPABLE')" true="Invalid value. I3c enables MASTER_CAPABLE only when I3c is in MASTER_CAPABLE mode."/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cDisableTimeout" type="BOOLEAN">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Disable timeout to prevent application errors (MERRWARN).</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c Disable Timeout"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:3deb4918-14e6-4a91-b820-e2505fccc592"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="DEFAULT" value="false"/>
+                                        </v:var>
+
+                                        <v:var name="I3cMasterHighKeeper" type="ENUMERATION">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Indicates how High-Keeper is to be supported.
+                                                    <ul>
+                                                        <li>HIGH_KEEPER_NONE: Use PUR to hold SCL high.</li>
+                                                        <li>HIGH_KEEPER_WIRED_IN: Use pin_HK controls.</li>
+                                                        <li>PASSIVE_SDA: Passive on SDA: can Hi-Z for Bus Free and hold.</li>
+                                                        <li>PASSIVE_SDA_SCL: Passive on SDA and SCL: can Hi-Z both for Bus Free, and can Hi-Z SDA for hold.</li>
+                                                    </ul></p><p/></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c Master High Keeper" />
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="UUID" value="ECUC:b4392ccf-d765-457d-be8e-cf56a205e670"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="DEFAULT" value="HIGH_KEEPER_NONE"/>
+                                            <a:da name="RANGE">
+                                                <a:v>HIGH_KEEPER_NONE</a:v>
+                                                <a:v>HIGH_KEEPER_WIRED_IN</a:v>
+                                                <a:v>PASSIVE_SDA</a:v>
+                                                <a:v>PASSIVE_SDA_SCL</a:v>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:ref name="I3cMasterClockReference" type="CHOICE-REFERENCE">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html>I3c FCLK which is set in Mcu module configuration.<p/><p/></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c Functional Clock" />
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                 type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:8241c8cf-ff4e-4527-acc4-027d390ef7eb"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="REF">
+                                                <a:v>ASPathDataOfSchema:/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint</a:v>
+                                            </a:da>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="node:refvalid(.) or node:fallback(../../I3cMasterSlaveMode, 'MASTER') = 'SLAVE'" false="Invalid or empty reference."/>
+                                            </a:da>
+                                        </v:ref>
+
+                                        <v:var name="I3cI2cBaud" type="INTEGER">
+                                            <a:a name="LABEL" value="I2C baud count"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>
+                                                        I3c baud count in cycles.
+                                                        Indicates how many ODBAUD periods are needed to communicate with I2C devices.
+                                                        For example, if ODBAUD gives 200 ns, and the goal is Fm+ (Fast Mode, 1 MHz), then the sum needs to be 1 us.
+                                                        If odd vs. even, then I2CBAUD acts differently. For example, if I2CBAUD = 3, it gives 3 ODBAUD periods low and 2 ODBAUD periods high.
+                                                        If I2CBAUD = 4, then it gives 4 ODBAUD periods for low and 4 ODBAUD periods for high.
+                                                        Also, if I2CBAUD = 3, this yields 200 * 3 = 600 ns and 200 * 2 = 400 ns, with the sum 600 + 400 = 1000 ns = 1us.
+                                                    </p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:c00b52c0-9f33-451f-b167-6df2f5b4be7a"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="DEFAULT" value="10"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=15"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cOpenDrainBaud" type="INTEGER">
+                                            <a:a name="LABEL" value="Open Drain baud count"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>
+                                                        I3c open-drain baud count in cycles.
+                                                        The number of PPBAUD periods to make up one I3C Open-Drain half-clock baseline.
+                                                        ODBAUD half-clock time period = ODBAUD * PPBAUD high period. (if ODHPP is 0)
+                                                        Formula for SCL in Open-Drain mode is (if ODHPP=0)
+                                                        SCL(in MHz) = FCLK / [(2 + 2 * PPBAUD) * (ODBAUD + 1)]
+                                                        Target to get open-drain half clock period is 200ns.
+                                                        For example:
+                                                        If PPBAUD yields 12.5 MHz (40 ns per PPBAUD period), then ODBAUD = 5 can be
+                                                        used to get 200ns. See also ODHPP for details on short High and long Low.
+                                                        If PPBAUD = 3, FCLK = 120MHz, ODBAUD = 5 then open-drain SCL = 120/(2 + 2*3)*(5+1) = 2.5 MHz.
+                                                    </p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:659fab06-7aed-4746-afa6-6c12eba19c55"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="DEFAULT" value="1"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=255"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cPushPullBaud" type="INTEGER">
+                                            <a:a name="LABEL" value="Push Pull baud count"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>
+                                                        I3c push-pull baud count in cycles.
+                                                        This sets the Push-Pull frequency as a divider from the FCLK.
+                                                        This sets the SCL half-clock period baseline (used at least for the high time of SCL).
+                                                        Formula for SCL in Push-Pull mode using PPBAUD and PPLOW is:
+                                                        SCL (Freq in MHz) = FCLK / ((2 + 2 * PPBAUD) + PPLOW).
+                                                        If PPLOW is 0, then SCL high = SCL low (in ns) = (1 + PPBAUD) * 1000 /FCLK(MHz)
+                                                        Examples:
+                                                        If FCLK = 24 MHz, then PPBAUD = 0 yields 12 MHz (42.67 ns per half period)
+                                                        If FCLK = 50 MHz, then PPBAUD = 1 yields 12.5 MHz (20 + 20 = 40 ns per half period)
+                                                    </p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:fd41a8b5-ebb6-4931-a406-b374e43bcbc0"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="DEFAULT" value="11"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=15"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cPushPullLow" type="INTEGER">
+                                            <a:a name="LABEL" value="Push Pull Low"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>
+                                                        Changes the duty cycle for Push-Pull. It indicates how many more FCLKs to use for low.
+                                                        Formula for SCL in Push-Pull mode using PPBAUD and PPLOW is:
+                                                        SCL(Freq in MHz) = FCLK / ((2 + 2 * PPBAUD) + PPLOW)
+                                                        If PPLOW is non-zero, then SCL High (in ns) = [(1 + PPBAUD) * 1000] / FCLK(MHz)
+                                                        SCL low (in ns) = [(1 + PPBAUD + PPLOW) * 1000] / FCLK(MHz)
+                                                        For example, a 50 MHz FCLK, a PPBAUD of 1, and a PPLOW of 1, yields
+                                                        [(1 + 1) * 1000] / 50 = 20 + 20 = 40 ns high and [(1 + 1 + 1) * 1000] / 50 = 20 + 20 + 20 = 60 ns low. This would be
+                                                        equivalent of 10 MHz SCL timing, but maintaining the 40 ns high needed, so that I2C devices do not see the high periods.
+                                                    </p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:fc7b2578-7298-4c66-8601-3893e97697ed"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="DEFAULT" value="0"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=15"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cOpenDrainHighPP" type="BOOLEAN">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>
+                                                        Optional field that allows for the I3c open drain to be long low and short high.
+                                                        The High period of SCL is the PPBAUD period. This leaves enough time for the pull-up resistor to pull
+                                                        the SDA high when SCL is low, but is quick when SCL is high and there are no changes happening.
+                                                        ODBAUD low half-clock time period = ODBAUD * PPBAUD high period.
+                                                        ODBAUD high half-clock time period = PPBAUD high period
+                                                        Formula for SCL in Open-Drain mode is (if ODHPP = 1):
+                                                        SCL(in MHz) = FCLK /[(1 + PPBAUD) * (ODBAUD + 1) + (1 + PBAUD)]
+                                                    </p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="Open Drain High Push-Pull"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:4a4b9902-f8a8-43a6-91b7-4c20b760bde5"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="DEFAULT" value="false"/>
+                                        </v:var>
+
+                                        <v:var name="I3cOpenDrainStop" type="BOOLEAN">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>If true, then STOP will be emitted at open-drain speeds even for I3c messages.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="Open Drain Stop"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:3930b05c-79e2-401a-8513-67170b50698b"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="DEFAULT" value="false"/>
+                                        </v:var>
+
+                                        <v:var name="I3cPpBaudRate" type="FLOAT">
+                                            <a:a name="LABEL" value="Push-Pull Baud Rate (Hz)"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>
+                                                     I3c Push-Pull Baud Rate (Hz).
+                                                     When not in I2c mode, the I3c bus is always initialized in SDR mode. This value is the Push-Pull frequency (in Hz) for the SDR mode.
+                                                     For HDR-DDR mode, one should use the I3c_MasterSetBaudRate() function to change the Push-Pull frequency accordingly.
+                                                     Calculated value.
+                                                     </p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:fcfa13a3-623a-4555-941e-1e0101aea632"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="DEFAULT" type="XPath">
+                                                <a:tst expr=
+                                                "(
+                                                    num:f(noderef:value(concat(noderef:ref(node:fallback(../I3cMasterClockReference, .)),'/McuClockReferencePointFrequency'))) div
+                                                    ((num:f(2) * num:f(node:fallback(../I3cPushPullBaud, 11))) + num:f(2) - num:f(node:fallback(../I3cPushPullLow, 0)))
+                                                )"/>
+                                            </a:da>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=12900000"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                            <a:da name="RANGE" type="XPath">
+                                                    <a:tst expr=
+                                                            "num:f(node:fallback(.,0)) != (
+                                                                (noderef:value(concat(noderef:ref(node:fallback(../I3cMasterClockReference, .)),'/McuClockReferencePointFrequency'))) div
+                                                                ((num:i(2) * num:i(node:fallback(../I3cPushPullBaud, 11))) + num:i(2) - num:i(node:fallback(../I3cPushPullLow, 0)))
+                                                            ) and (node:fallback(../../I3cMasterSlaveMode, 'MASTER') != 'SLAVE')"
+                                                            true="Please press the button to calculate the value automatically."/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cOdBaudRate" type="FLOAT">
+                                            <a:a name="LABEL" value="Open-Drain Baud Rate (Hz)"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>I3c Open-Drain Baud Rate (Hz). Calculated value.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:fcfa13a3-613a-4555-941e-1e0101aea432"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="DEFAULT" type="XPath">
+                                                <a:tst expr=
+                                                "(
+                                                    (num:i(1) + num:i(number(node:fallback(../I3cOpenDrainHighPP, 'false') = 'true'))) div
+                                                    (
+                                                        num:i(1) div num:i(node:fallback(../I3cPpBaudRate,5000000)) +
+                                                        ((num:i(1) div num:i(node:fallback(../I3cPpBaudRate, 5000000))) * num:i(node:fallback(../I3cOpenDrainBaud, 1))) +
+                                                        ((num:i(1) div num:i(node:fallback(../I3cPpBaudRate, 5000000))) * num:i(number(node:fallback(../I3cOpenDrainHighPP, 'false') = 'true')))
+                                                    )
+                                                )"/>
+                                            </a:da>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=5000000"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                            <a:da name="RANGE" type="XPath">
+                                                <a:tst expr=
+                                                        "num:f(node:fallback(.,0)) !=
+                                                        (
+                                                            (num:i(1) + num:i(number(node:fallback(../I3cOpenDrainHighPP, 'true') = 'true'))) div
+                                                            (
+                                                                num:i(1) div num:i(node:fallback(../I3cPpBaudRate,5000000)) +
+                                                                ((num:i(1) div num:i(node:fallback(../I3cPpBaudRate, 5000000))) * num:i(node:fallback(../I3cOpenDrainBaud, 1))) +
+                                                                ((num:i(1) div num:i(node:fallback(../I3cPpBaudRate, 5000000))) * num:i(number(node:fallback(../I3cOpenDrainHighPP, 'true') = 'true')))
+                                                            )
+                                                        ) and (node:fallback(../../I3cMasterSlaveMode, 'MASTER') != 'SLAVE')"
+                                                                true="Please press the button to calculate the value automatically."/>
+                                                        <a:tst expr=
+                                                                "(node:fallback(../../I3cMasterSlaveMode, 'MASTER') = 'SLAVE') or
+                                                                    (
+                                                                        (((num:f(node:fallback(.,0)) &lt;=5000000) and (node:fallback(../I3cOpenDrainHighPP, 'true') = 'true')) or
+                                                                        ((num:f(node:fallback(.,0)) &lt;=2700000) and (node:fallback(../I3cOpenDrainHighPP, 'true') = 'false')))
+                                                                    )"
+                                                       false="Open-Drain baud rate is out of range. Please change OD Baud accordingly and then press the button to calculate the value automatically."/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cI2cBaudRate" type="FLOAT">
+                                            <a:a name="LABEL" value="I2C Baud Rate (Hz)"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>I2C Baud Rate (Hz). Calculated value.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:fcfa13a3-513a-4555-941e-1e0101aea432"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="DEFAULT" type="XPath">
+                                                <a:tst expr=
+                                                "(
+                                                    (
+                                                        num:i(2) *
+                                                        (
+                                                            num:f(noderef:value(concat(noderef:ref(node:fallback(../I3cMasterClockReference, .)),'/McuClockReferencePointFrequency'))) div
+                                                            (
+                                                                num:i(2) * (num:f(node:fallback(../I3cPushPullBaud, 11)) + num:i(1)) * (num:i(node:fallback(../I3cOpenDrainBaud, 1)) + num:i(1))
+                                                            )
+                                                        )
+                                                    ) div
+                                                    (
+                                                        num:i(node:fallback(../I3cI2cBaud, 10)) + num:i(2)
+                                                    )
+                                                )"/>
+                                            </a:da>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=1200000"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                            <a:da name="RANGE" type="XPath">
+                                                <a:tst expr=
+                                                        "num:f(node:fallback(.,0)) !=
+                                                        (
+                                                            num:i(2) *
+                                                            (
+                                                                num:f(noderef:value(concat(noderef:ref(node:fallback(../I3cMasterClockReference, .)),'/McuClockReferencePointFrequency'))) div
+                                                                (
+                                                                    num:i(2) * (num:f(node:fallback(../I3cPushPullBaud, 11)) + num:i(1)) * (num:i(node:fallback(../I3cOpenDrainBaud, 1)) + num:i(1))
+                                                                )
+                                                            ) div
+                                                            (
+                                                                num:i(node:fallback(../I3cI2cBaud, 10)) + num:i(2)
+                                                            )
+                                                        ) and (node:fallback(../../I3cMasterSlaveMode, 'MASTER') != 'SLAVE')"
+                                                        true="Please press the button to calculate the value automatically."/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cSkew" type="INTEGER">
+                                            <a:a name="LABEL" value="I3c Skew"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Number of FCLK counts for an SDA change after SCL for I3c push-pull.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:fcfa13a3-613a-4555-941e-1e0101aea632"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="DEFAULT" value="0"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=7"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cMasterTransferType" type="ENUMERATION">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Type of the transfer: DMA or interrupts.
+                                                    <ul>
+                                                        <li>DMA: The driver will use DMA to perform a transfer.</li>
+                                                        <li>INTERRUPTS: The driver will use interrupts to perform a transfer.</li>
+                                                    </ul></p><p/></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c Transfer Type" />
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="UUID" value="ECUC:41993e51-e33b-4c3f-b9b7-036550cd7b25"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="DEFAULT" value="INTERRUPTS"/>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="(. = 'DMA') and (../../../../GeneralConfiguration/I3cDmaFeature = 'false')" true="DMA support must be enabled."/>
+                                            </a:da>
+                                            <a:da name="RANGE">
+                                                <a:v>DMA</a:v>
+                                                <a:v>INTERRUPTS</a:v>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:ref name="I3cMasterDmaTxChannel" type="CHOICE-REFERENCE">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html>Specifies DMA Tx channel used.<p/><p/></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c DMA Tx Channel" />
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:8242c8cf-ff4e-4527-acc4-027d390ef7eb"/>
+                                            <a:a name="OPTIONAL" value="true"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="node:value(../I3cMasterTransferType) = 'DMA' and (node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="REF">
+                                                <a:v>ASPathDataOfSchema:/AUTOSAR/EcucDefs/Mcl/MclConfig/dmaLogicChannel_Type</a:v>
+                                            </a:da>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="node:refvalid(.) or (node:value(../I3cMasterTransferType) = 'INTERRUPT')" false="Invalid or empty reference."/>
+                                                <a:tst expr="(node:value(../I3cMasterTransferType) = 'DMA') and text:contains(../../*/I3cMasterDmaRxChannel, .)" true="Duplicated Dma Channel, it must be unique across all I3C channels."/>
+                                            </a:da>
+                                        </v:ref>
+
+                                        <v:ref name="I3cMasterDmaRxChannel" type="CHOICE-REFERENCE">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html>Specifies DMA Rx channel used.<p/><p/></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c DMA Rx Channel" />
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:0802367b-f29f-4797-9492-092da65d96d7"/>
+                                            <a:a name="OPTIONAL" value="true"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="node:value(../I3cMasterTransferType) = 'DMA' and (node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="REF">
+                                                <a:v>ASPathDataOfSchema:/AUTOSAR/EcucDefs/Mcl/MclConfig/dmaLogicChannel_Type</a:v>
+                                            </a:da>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="node:refvalid(.) or (node:value(../I3cMasterTransferType) = 'INTERRUPT')" false="Invalid or empty reference."/>
+                                            </a:da>
+                                        </v:ref>
+
+                                        <v:var name="I3cIbiResp" type="ENUMERATION">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>In-Band Interrupt (IBI) response.
+                                                    <ul>
+                                                        <li>ACK: ACK with no mandatory byte.</li>
+                                                        <li>NACK: NACK.</li>
+                                                        <li>ACK_MANDATORY: ACK with mandatory byte.</li>
+                                                        <li>MANUAL: Reserved.</li>
+                                                    </ul></p><p/></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c IBI Response Type" />
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="UUID" value="ECUC:8080c1d3-9041-4fae-95bb-533dbe5e55b0"/>
+                                            <a:a name="EDITABLE" type="XPath">
+                                            <a:tst expr="(
+                                                         (node:value(../../I3cMasterSlaveMode) != 'SLAVE') and
+                                                         (node:value(../../../../GeneralConfiguration/I3cEnableSlaveRequests) = 'true')
+                                                         )"/>
+                                            </a:a>
+                                            <a:da name="DEFAULT" value="ACK"/>
+                                            <a:da name="RANGE">
+                                                <a:v>ACK</a:v>
+                                                <a:v>NACK</a:v>
+                                                <a:v>ACK_MANDATORY</a:v>
+                                                <a:v>MANUAL</a:v>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cSendStop" type="BOOLEAN">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>If this is true, then a STOP is emitted after a Slave Request has been processed.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c IBI Send Stop"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:52acf54d-da1e-4d31-ab3e-5d02425c08c7"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="DEFAULT" value="true"/>
+                                        </v:var>
+
+                                        <v:var name="I3cEmitAutoIbi" type="BOOLEAN">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>
+                                                            An In-Band interrupt request means that the slave will push the corresponding address
+                                                            (its Dynamic Address for IBI and Master Request, and the reserved address 0x02 for Hot-Join)
+                                                            after a START (but not after a Repeated START). If no START is forthcoming on the I3c Bus,
+                                                            then the slave will pull the SDA line low and will wait for a START. This can happen unexpectedly
+                                                            (on a START from a transfer for example), or Auto IBI feature can be used. Using Auto IBI feature means that
+                                                            the master holds in a stopped state and emits START + 0x7E continuously such that it will always
+                                                            lose the header arbitration, in favor of the interrupt.
+                                                            If this box is checked, then Auto IBI feature is used for the following In-Band interrupts.
+                                                        </p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c Emit Auto IBI"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:52acf54d-da1e-4d11-ab3e-5d02425c08c7"/>
+                                            <a:a name="EDITABLE" type="XPath">
+                                            <a:tst expr="(
+                                                         (node:value(../../I3cMasterSlaveMode) != 'SLAVE') and
+                                                         (node:value(../../../../GeneralConfiguration/I3cEnableSlaveRequests) = 'true')
+                                                         )"/>
+                                            </a:a>
+                                            <a:da name="DEFAULT" value="true"/>
+                                        </v:var>
+
+                                        <v:var name="I3cEnableStartOptimization" type="BOOLEAN">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>If this is true, then all I3c Dynamic Addresses must be less than 0x40. This improves the speed for sending the START header.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c Enable Start Optimization"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:55acf54d-da1e-4d71-ab3e-5d02425c08c7"/>
+                                            <a:a name="EDITABLE" type="XPath">
+                                            <a:tst expr="(
+                                                         (node:value(../../I3cMasterSlaveMode) != 'SLAVE') and
+                                                         (node:value(../../../../GeneralConfiguration/I3cEnableSlaveRequests) = 'true')
+                                                         )"/>
+                                            </a:a>
+                                            <a:da name="DEFAULT" value="false"/>
+                                        </v:var>
+
+                                        <v:var name="I3cNoMandatoryByte" type="BOOLEAN">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>If true, then the ADDRx from In-Band Interrupt Rules register refer to slaves without mandatory byte.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c No Mandatory Byte"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:29753fbb-aa94-48f4-9a2d-4b732887a8c5"/>
+                                            <a:a name="EDITABLE" type="XPath">
+                                            <a:tst expr="(
+                                                         (node:value(../../I3cMasterSlaveMode) != 'SLAVE') and
+                                                         (node:value(../../../../GeneralConfiguration/I3cEnableSlaveRequests) = 'true')
+                                                         )"/>
+                                            </a:a>
+                                            <a:da name="DEFAULT" value="false"/>
+                                        </v:var>
+
+                                        <v:lst name="I3cIbiAddressRegistry" type="MAP">
+                                            <a:da name="MIN" value="0"/>
+                                            <a:da name="MAX" type="XPath" expr="ecu:get('I3c.I3cMaxDevices')"/>
+                                            <a:a name="EDITABLE" type="XPath">
+                                              <a:tst expr="(
+                                                         (node:value(../../I3cMasterSlaveMode) != 'SLAVE') and
+                                                         (node:value(../../../../GeneralConfiguration/I3cEnableSlaveRequests) = 'true')
+                                                         )"/>
+                                            </a:a>
+                                            <v:ctr name="I3cIbiAddressRegistry" type="IDENTIFIABLE">
+                                                <a:a name="DESC">
+                                                    <a:v><![CDATA[EN:<html><p>Addresses of the slaves which use In-Band Interrupts.</p></html>]]>
+                                                    </a:v>
+                                                </a:a>
+                                                <a:a name="UUID" value="ECUC:8e1a166e-c3b8-4ee1-833f-3f7cfd7ed278"/>
+                                                <a:a name="EDITABLE" type="XPath">
+                                                <a:tst expr="(
+                                                            (node:value(../../../I3cMasterSlaveMode) != 'SLAVE') and
+                                                            (node:value(../../../../../GeneralConfiguration/I3cEnableSlaveRequests) = 'true')
+                                                            )"/>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                                    <icc:v mclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+
+                                                <v:var name="I3cSlaveAddress" type="INTEGER">
+                                                    <a:a name="LABEL" value="I3c Slave Address"/>
+                                                    <a:a name="DESC">
+                                                        <a:v><![CDATA[EN:<html><p>Slave addresses.</p></html>]]>
+                                                        </a:v>
+                                                    </a:a>
+                                                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                            type="IMPLEMENTATIONCONFIGCLASS">
+                                                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                    </a:a>
+                                                    <a:a name="ORIGIN" value="NXP"/>
+                                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                    <a:a name="SCOPE" value="LOCAL"/>
+                                                    <a:a name="UUID" value="ECUC:0f243412-8c77-4ef3-a538-93e2ed1eb637"/>
+                                                    <a:a name="EDITABLE" type="XPath">
+                                                    <a:tst expr="(
+                                                                (node:value(../../../../I3cMasterSlaveMode) != 'SLAVE') and
+                                                                (node:value(../../../../../../GeneralConfiguration/I3cEnableSlaveRequests) = 'true')
+                                                                )"/>
+                                                    </a:a>
+                                                    <a:a name="DEFAULT_RADIX" value="HEX"/>
+                                                    <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index, num:i(1))"/>
+                                                    <a:da name="INVALID" type="XPath">
+                                                        <a:tst expr="text:uniq(node:fallback( ../../*/I3cSlaveAddress, text:split('0') ), node:fallback( ., 1 ))" false="Duplicated value, I3cSlaveAddress must be unique across all addresses. Use the Calc button to calculate correct default value."/>
+                                                    </a:da>
+                                                    <a:da name="INVALID" type="Range">
+                                                        <a:tst expr="&lt;=127"/>
+                                                        <a:tst expr="&gt;=0"/>
+                                                    </a:da>
+                                                </v:var>
+                                            </v:ctr>
+                                        </v:lst>
+
+                                        <v:lst name="I3cDynamicAddressList" type="MAP">
+                                            <a:da name="MIN" value="0"/>
+                                            <a:da name="MAX" type="XPath" expr="ecu:get('I3c.I3cMaxDevices')"/>
+                                                <a:a name="EDITABLE" type="XPath">
+                                                <a:tst expr="(
+                                                             (node:value(../../I3cMasterSlaveMode) != 'SLAVE') and
+                                                             (node:value(../../../../GeneralConfiguration/I3cEnableI3cfeatures) = 'true')
+                                                             )"/>
+                                                </a:a>
+                                            <v:ctr name="I3cDynamicAddressList" type="IDENTIFIABLE">
+                                                <a:a name="DESC">
+                                                    <a:v><![CDATA[EN:<html><p>List of the dynamic addresses to be assigned at the I3c Bus initialization.
+                                                    Note:
+                                                    <ul>
+                                                        <li>The first address will be assigned to the slave with the lowest Provisional ID, and so on.</li>
+                                                        <li>The dynamic address establish the interrupt priority for the slaves (the lower the address, the higher the priority).</li>
+                                                        <li>If I3c Start Optimization is enabled, all addresses must be lower than 0x40.</li>
+                                                    </ul>
+                                                    </p></html>]]>
+                                                    </a:v>
+                                                </a:a>
+                                                <a:a name="UUID" value="ECUC:8ccd97a2-03fa-4f6a-ad23-aa40bc42295e"/>
+                                                <a:a name="EDITABLE" type="XPath">
+                                                <a:tst expr="(
+                                                             (node:value(../../../I3cMasterSlaveMode) != 'SLAVE') and
+                                                             (node:value(../../../../../GeneralConfiguration/I3cEnableI3cfeatures) = 'true')
+                                                             )"/>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                                    <icc:v mclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+
+                                                <v:var name="I3cSlaveDynamicAddress" type="INTEGER">
+                                                    <a:a name="LABEL" value="I3c Slave Dynamic Address"/>
+                                                    <a:a name="DESC">
+                                                        <a:v><![CDATA[EN:<html><p>Slave dynamic addresses.</p></html>]]>
+                                                        </a:v>
+                                                    </a:a>
+                                                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                            type="IMPLEMENTATIONCONFIGCLASS">
+                                                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                    </a:a>
+                                                    <a:a name="ORIGIN" value="NXP"/>
+                                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                    <a:a name="SCOPE" value="LOCAL"/>
+                                                    <a:a name="UUID" value="ECUC:793eaef7-5c32-4ff2-86db-62e834de1efe"/>
+                                                    <a:a name="DEFAULT_RADIX" value="HEX"/>
+                                                    <a:a name="EDITABLE" type="XPath">
+                                                    <a:tst expr="(
+                                                                (node:value(../../../../I3cMasterSlaveMode) != 'SLAVE') and
+                                                                (node:value(../../../../../../GeneralConfiguration/I3cEnableI3cfeatures) = 'true')
+                                                                )"/>
+                                                    </a:a>
+                                                    <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index, num:i(1))"/>
+                                                    <a:da name="INVALID" type="XPath">
+                                                        <a:tst expr="(../../../I3cEnableStartOptimization = 'true') and (. &gt;= 64)" true="Invalid value. All addresses must be lower than 0x40."/>
+                                                        <a:tst expr="text:uniq(node:fallback( ../../*/I3cSlaveDynamicAddress, text:split('0') ), node:fallback( ., 1 ))" false="Duplicated value, I3cSlaveAddress must be unique across all addresses. Use the Calc button to calculate correct default value."/>
+                                                    </a:da>
+                                                    <a:da name="INVALID" type="Range">
+                                                        <a:tst expr="&lt;=127"/>
+                                                        <a:tst expr="&gt;=0"/>
+                                                    </a:da>
+                                                </v:var>
+                                            </v:ctr>
+                                        </v:lst>
+
+                                        <v:var name="I3cMasterCallback" type="FUNCTION-NAME">
+                                            <a:a name="LABEL" value="I3c Master Callback"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>I3c Master Callback. This function will be called for all I3c events.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:35e8be17-4c2c-4520-a94c-f26e932c9e89"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="DEFAULT" value="NULL_PTR"/>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="not(text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$'))"
+                                                true="Invalid identifier. The field must specify a valid C function identifier (i.e. an arbitrarily long sequence of digits, underscores, lowercase and uppercase Latin letters, that must begin with a non-digit character)"/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cMasterGetIbiAddressCallback" type="FUNCTION-NAME">
+                                            <a:a name="LABEL" value="I3c Master Get IBI Address Callback"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>
+                                                        This callback is used by the user to get the address of the slave
+                                                        which requested an In-Band interrupt. This callback is used only if the
+                                                        In-Band interrupt won the header arbitration. If the In-Band interrupt requires
+                                                        manual intervention, based on the slave's address, the user can use MasterCallback for I3C_IP_MASTER_EVENT_IBI event
+                                                        and the I3c_Ip_MasterManualIbiResponse() function to make the ACK/NACK decision. If no manual intervention is required,
+                                                        this callback can be used so that the user is aware of the slave's address which requested the IBI.
+                                                    </p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:35e8be27-4c2c-4520-a94c-f26e932c9e89"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'SLAVE')"/>
+                                            <a:da name="DEFAULT" value="NULL_PTR"/>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="not(text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$'))"
+                                                true="Invalid identifier. The field must specify a valid C function identifier (i.e. an arbitrarily long sequence of digits, underscores, lowercase and uppercase Latin letters, that must begin with a non-digit character)"/>
+                                            </a:da>
+                                        </v:var>
+                                    </v:ctr>
+
+                                    <v:ctr name="I3cSlaveConfiguration" type="IDENTIFIABLE">
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN:<html><p>This container contains the configuration (parameters) of the I3c Slave Controller(s).</p></html>]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="UUID" value="ECUC:2d1fbd7e-0d38-415a-9854-d06a4f15921e"/>
+                                        <a:da name="EDITABLE" type="XPath" expr="(node:value(../I3cMasterSlaveMode) != 'MASTER')"/>
+
+                                        <v:var name="I3cSlaveEnable" type="BOOLEAN">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>If true, then a slave can operate on the I2c or I3c bus. Otherwise, ignore I2c or I3c bus.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c Slave Enable"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:f2ec31ff-c6d5-4f40-a1c9-da3d97bb530e"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="DEFAULT" value="false"/>
+                                        </v:var>
+
+                                        <v:var name="I3cNack" type="BOOLEAN">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>If true, then the slave will NACK all requests to it, except a CCC broadcast.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c Nack"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:c4321065-8902-45f0-849d-590a78811004"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="DEFAULT" value="false"/>
+                                        </v:var>
+
+                                        <v:var name="I3cMatchStartStop" type="BOOLEAN">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Whether to assert START/STOP status only if the slave is addressed.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c Match Start Stop"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:ea8e5fe4-1028-41e5-a10d-3bc2817dcad8"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="DEFAULT" value="false"/>
+                                        </v:var>
+
+                                        <v:var name="I3cIgnoreS0S1Error" type="BOOLEAN">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Whether to ignore S0/S1 error in SDR mode.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c Ignore S0 S1 Error"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:3d769d58-d59c-4b49-bb25-614e3c122a3e"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="DEFAULT" value="false"/>
+                                        </v:var>
+
+                                        <v:var name="I3cHighDataRateSupport" type="BOOLEAN">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>If true, the slave allow HDR-DDR messaging, if available.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c High Data Rate Support"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:2f26e036-819b-4609-bf4a-2d2b4d1d10e8"/>
+                                            <a:a name="EDITABLE" type="XPath">
+                                            <a:tst expr="(
+                                                         (node:value(../../I3cMasterSlaveMode) != 'MASTER') and
+                                                         (node:value(../../../../GeneralConfiguration/I3cEnableSlaveRequests) = 'true')
+                                                         )"/>
+                                            </a:a>
+                                            <a:da name="DEFAULT" value="false"/>
+                                        </v:var>
+
+                                        <v:var name="I3cOfflineSupport" type="BOOLEAN">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Whether to wait 60 us of bus quiet or HDR Exit Pattern to ensure bus is not in HDR mode and safely track the message.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c Offline Support"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:f0daed9c-a8f3-4d2e-994b-25b600232a22"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="DEFAULT" value="false"/>
+                                        </v:var>
+
+                                        <v:var name="I3cBusAvailableMatch" type="INTEGER">
+                                            <a:a name="LABEL" value="I3c Bus Available Match"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Provides the count of the slow clock to count out 1 us (or more), to allow an In-Band Interrupt (IBI) to drive SDA low.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:898dd5b8-4a6b-4eba-93fd-f854754dd6e4"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="DEFAULT" value="23"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=63"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cStaticAddress" type="INTEGER">
+                                            <a:a name="LABEL" value="I3c Static Address"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Slave Static Address.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:680b05ba-9c05-4e04-a513-e7573d511d3a"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="DEFAULT" value="0"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=127"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cSlaveTransferType" type="ENUMERATION">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Type of the transfer: DMA or interrupts.
+                                                    <ul>
+                                                        <li>DMA: The driver will use DMA to perform a transfer.</li>
+                                                        <li>INTERRUPTS: The driver will use interrupts to perform a transfer.</li>
+                                                    </ul></p><p/></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c Transfer Type" />
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="UUID" value="ECUC:8ca31c15-7336-4420-8f4c-5c3195dbc6ec"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="DEFAULT" value="INTERRUPTS"/>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="(. = 'DMA') and (../../../../GeneralConfiguration/I3cDmaFeature = 'false')" true="DMA support must be enabled."/>
+                                            </a:da>
+                                            <a:da name="RANGE">
+                                                <a:v>DMA</a:v>
+                                                <a:v>INTERRUPTS</a:v>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:ref name="I3cSlaveDmaTxChannel" type="CHOICE-REFERENCE">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html>Specifies DMA Tx channel used.<p/><p/></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c DMA Tx Channel" />
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:166ad685-72da-4a87-ad1c-00b28ffc93c6"/>
+                                            <a:a name="OPTIONAL" value="true"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="node:value(../I3cSlaveTransferType) = 'DMA' and (node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="REF">
+                                                <a:v>ASPathDataOfSchema:/AUTOSAR/EcucDefs/Mcl/MclConfig/dmaLogicChannel_Type</a:v>
+                                            </a:da>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="node:refvalid(.) or (node:value(../I3cSlaveTransferType) = 'INTERRUPT')" false="Invalid or empty reference."/>
+                                                <a:tst expr="(node:value(../I3cSlaveTransferType) = 'DMA') and text:contains(../../*/I3cSlaveDmaRxChannel, .)" true="Duplicated Dma Channel, it must be unique across all I3C channels."/>
+                                            </a:da>
+                                        </v:ref>
+
+                                        <v:ref name="I3cSlaveDmaRxChannel" type="CHOICE-REFERENCE">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html>Specifies DMA Rx channel used.<p/><p/></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c DMA Rx Channel" />
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:e6c87075-cc78-4d19-acf9-5599cfa55e68"/>
+                                            <a:a name="OPTIONAL" value="true"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="node:value(../I3cSlaveTransferType) = 'DMA' and (node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="REF">
+                                                <a:v>ASPathDataOfSchema:/AUTOSAR/EcucDefs/Mcl/MclConfig/dmaLogicChannel_Type</a:v>
+                                            </a:da>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="node:refvalid(.) or (node:value(../I3cSlaveTransferType) = 'INTERRUPT')" false="Invalid or empty reference."/>
+                                            </a:da>
+                                        </v:ref>
+
+                                        <v:var name="I3cTransferSize" type="ENUMERATION">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Transfer size: bytes or half words</p><p/></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c Transfer Size" />
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="UUID" value="ECUC:eef5b711-790d-4073-a31a-bb20a3df2257"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="DEFAULT" value="BYTES"/>
+                                            <a:da name="RANGE">
+                                                <a:v>BYTES</a:v>
+                                                <a:v>HALF_WORDS</a:v>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cBCR" type="INTEGER">
+                                            <a:a name="LABEL" value="I3c Bus Characteristics"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Bus Characteristics.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:b24c2ffe-c7c2-4124-a49d-961e68eb2cbe"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="DEFAULT" value="102"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=255"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cDCR" type="INTEGER">
+                                            <a:a name="LABEL" value="I3c Device Characteristics"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Device Characteristics.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:e5152a03-2384-4819-bdf5-5f6d312436cf"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="DEFAULT" value="0"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=255"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cVendorId" type="INTEGER">
+                                            <a:a name="LABEL" value="I3c Vendor ID"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Slave Vendor ID.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:f5519eaf-ae9f-44df-bdb7-66bc6ec4e28b"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="DEFAULT" value="283"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=32767"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cPartNumber" type="INTEGER">
+                                            <a:a name="LABEL" value="I3c Part Number"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Slave ID Part Number.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:96fc3da2-8030-47a9-a96e-32734c7f1228"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="DEFAULT" value="1"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=4294967295"/>
+                                                <a:tst expr="&gt;=1"/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cVendorInfo" type="INTEGER">
+                                            <a:a name="LABEL" value="Vendor Information"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>The value will be returned in Vendor Reserved field by the GETSTATUS CCC command.
+                                                                          The vendor information should be maintained by the application, because the master reads this field.
+                                                                          If VENDINFO is not configured, then the GETSTATUS field always returns 0.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:96fc3da2-4030-47a9-a96e-32734c7f1228"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="DEFAULT" value="0"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=255"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cActState" type="INTEGER">
+                                            <a:a name="LABEL" value="Slave Activity State"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>The value will be returned in Activity Mode field by the GETSTATUS CCC command.
+                                                                         The activity state should be maintained by the application, because the master will read
+                                                                         this field. If the activity state is not configured, then the GETSTATUS command will always return 0.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:95fc3da2-4030-47a9-a96e-32734c7f1228"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="DEFAULT" value="0"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=3"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cPendingInt" type="INTEGER">
+                                            <a:a name="LABEL" value="Pending Interrupt"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Should be set to the pending interrupt that the GETSTATUS CCC (command code) will return.
+                                                                          The pending interrupt should be maintained by the application, because the master reads this field.
+                                                                          If PENDINT=0 and
+                                                                                • If an IBI interrupt is pending, then the GETSTATUS command returns 1.
+                                                                                • If an IBI interrupt is not pending, then the GETSTATUS field returns 0.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:96fc3da2-4030-47a9-a93e-32734c7f1228"/>
+                                            <a:a name="EDITABLE" type="XPath">
+                                            <a:tst expr="(
+                                                         (node:value(../../I3cMasterSlaveMode) != 'MASTER') and
+                                                         (node:value(../../../../GeneralConfiguration/I3cEnableSlaveRequests) = 'true')
+                                                         )"/>
+                                            </a:a>
+                                            <a:da name="DEFAULT" value="0"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=15"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cExtendedIbiData" type="BOOLEAN">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>If true, then there are more bytes following the mandatory byte.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c Extended IBI Data"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:5ed84dde-60b8-4c00-ac8a-33e74a94c78c"/>
+                                            <a:a name="EDITABLE" type="XPath">
+                                            <a:tst expr="(
+                                                         (node:value(../../I3cMasterSlaveMode) != 'MASTER') and
+                                                         (node:value(../../../../GeneralConfiguration/I3cEnableSlaveRequests) = 'true')
+                                                         )"/>
+                                            </a:a>
+                                            <a:da name="DEFAULT" value="false"/>
+                                        </v:var>
+
+                                        <v:var name="I3cCountExtraBytes" type="INTEGER">
+                                            <a:a name="LABEL" value="I3c Count Extra Bytes"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>The number of extra bytes past the Mandatory Data Byte.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:b2bdcef8-9ebe-4898-9426-6c2d18c6bf17"/>
+                                            <a:a name="EDITABLE" type="XPath">
+                                            <a:tst expr="(
+                                                         (node:value(../I3cExtendedIbiData)) and
+                                                         (node:value(../../I3cMasterSlaveMode) != 'MASTER') and
+                                                         (node:value(../../../../GeneralConfiguration/I3cEnableSlaveRequests) = 'true')
+                                                         )"/>
+                                            </a:a>
+                                            <a:da name="DEFAULT" value="0"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=7"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cMapIndex" type="INTEGER">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Index of Dynamic Address that IBI is for.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="I3c Map Index"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:1e01ceea-a99e-4665-a3e6-0e69b8057bd6"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="DEFAULT" value="0"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=1"/> <!-- TODO: to be taken from resources -->
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cClockFrequency" type="INTEGER">
+                                            <a:a name="LABEL" value="I3c Clock Frequency"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Slave control clock frequency.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:7d1d1b45-d157-4624-8a72-e7e8cedb896f"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="DEFAULT" value="48"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=255"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cClockAccuracy" type="INTEGER">
+                                            <a:a name="LABEL" value="I3c Clock Accuracy"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>Slave control clock accuracy.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:a47a0d92-d05d-4ef8-b2a3-95aa2e248374"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:da name="DEFAULT" value="10"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=255"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+
+                                        <v:var name="I3cHotJoinDevice" type="BOOLEAN">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>If this is true, then this I3c device is a Hot-Join device and all specific requirements apply.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="LABEL" value="Hot-Join Device"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:52acf54d-da1e-4d71-ab3e-5d02425c08c7"/>
+                                            <a:a name="EDITABLE" type="XPath">
+                                            <a:tst expr="(
+                                                         (node:value(../../I3cMasterSlaveMode) != 'MASTER') and
+                                                         (node:value(../../../../GeneralConfiguration/I3cEnableSlaveRequests) = 'true')
+                                                         )"/>
+                                            </a:a>
+                                            <a:da name="DEFAULT" value="false"/>
+                                        </v:var>
+
+                                        <v:var name="I3cSlaveCallback" type="FUNCTION-NAME">
+                                            <a:a name="LABEL" value="I3c Slave Callback"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:<html><p>I3c Slave Callback. This function will be called for all I3c events.</p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:2b54e4e4-f103-48aa-b4d2-5f7f9eea3591"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="(node:value(../../I3cMasterSlaveMode) != 'MASTER')"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:da name="DEFAULT" value="NULL_PTR"/>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="not(text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$'))"
+                                                true="Invalid identifier. The field must specify a valid C function identifier (i.e. an arbitrarily long sequence of digits, underscores, lowercase and uppercase Latin letters, that must begin with a non-digit character)"/>
+                                            </a:da>
+                                        </v:var>
+                                    </v:ctr>
+                                </v:ctr>
+                            </v:lst>
+
+                            <!-- /** @implements CommonPublishedInformation_Object */ -->
+                            <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                                <a:a name="DESC">
+                                    <a:v><![CDATA[EN:<html>Common container, aggregated by all modules. It contains published information about vendor and versions.</html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="UUID" value="ECUC:993c0058-e0ca-4ddd-9bde-0d61b4781f46"/>
+
+                                <v:var name="ArReleaseMajorVersion" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="Ar Release Major Version" />
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:<html>Major version number of AUTOSAR specification on which the appropriate implementation is based on.<p/></html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="UUID" value="ECUC:41960f98-e8ba-4b12-98ed-8bb8acd26fd8"/>
+                                    <a:da name="DEFAULT" value="4"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=4"/>
+                                        <a:tst expr="&lt;=4"/>
+                                    </a:da>
+                                </v:var>
+
+                                <v:var name="ArReleaseMinorVersion" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="Ar Release Minor Version" />
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:<html>Minor version number of AUTOSAR specification on which the appropriate implementation is based on.<p/></html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="UUID" value="ECUC:e9455f41-1a92-4796-b703-dec07313f75a"/>
+                                    <a:da name="DEFAULT" value="4"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=4"/>
+                                        <a:tst expr="&lt;=4"/>
+                                    </a:da>
+                                </v:var>
+
+                                <v:var name="ArReleaseRevisionVersion" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="Ar Release Revision Version" />
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:<html>Revision version number of AUTOSAR specification on which the appropriate implementation is based on.<p/></html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="UUID" value="ECUC:8367bb42-509e-4bb3-b637-72e126d18ceb"/>
+                                    <a:da name="DEFAULT" value="0"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=0"/>
+                                        <a:tst expr="&lt;=0"/>
+                                    </a:da>
+                                </v:var>
+
+                                <v:var name="ModuleId" type="INTEGER_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:<html>Module ID of this module from Module List.</html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="UUID" value="ECUC:57c766ef-bd9a-46a1-b3b8-b2babfc50b0c"/>
+                                    <a:da name="DEFAULT" value="255"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=255"/>
+                                        <a:tst expr="&lt;=255"/>
+                                    </a:da>
+                                </v:var>
+
+                                <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:<html>Major version number of the vendor specific implementation of the module. The numbering is vendor specific.</html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="UUID" value="ECUC:c6f10ce4-05f4-4b1f-b303-cc11d36d2fc8"/>
+                                    <a:da name="DEFAULT" value="2"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=2"/>
+                                        <a:tst expr="&lt;=2"/>
+                                    </a:da>
+                                </v:var>
+
+                                <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:<html>Minor version number of the vendor specific implementation of the module. The numbering is vendor specific.</html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="UUID" value="ECUC:d4d53d48-7a3a-40d3-8407-7eae11b14150"/>
+                                    <a:da name="DEFAULT" value="0"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=0"/>
+                                        <a:tst expr="&lt;=0"/>
+                                    </a:da>
+                                </v:var>
+
+                                <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:<html>Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific.</html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="UUID" value="ECUC:669ba326-1b74-45bf-a341-7cb55fad67b9"/>
+                                    <a:da name="DEFAULT" value="1"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=1"/>
+                                        <a:tst expr="&lt;=1"/>
+                                    </a:da>
+                                </v:var>
+
+                                <v:var name="VendorApiInfix" type="STRING_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:<html>
+                                         In driver modules which can be instantiated several times on a single ECU, BSW00347 requires that the name of APIs is extended by the VendorId and a vendor specific name.
+                                         This parameter is used to specify the vendor specific name. In total, the implementation specific name is generated as follows:
+                                         &lt;ModuleName&gt;_&gt;VendorId&gt;_&lt;VendorApiInfix&gt;&lt;Api name from SWS&gt;.
+                                         E.g.  assuming that the VendorId of the implementor is 123 and the implementer chose a VendorApiInfix of &quot;v11r456&quot; a api name Can_Write defined in the SWS will translate to Can_123_v11r456Write.
+                                         This parameter is mandatory for all modules with upper multiplicity &gt; 1. It shall not be used for modules with upper multiplicity =1.</html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="UUID" value="ECUC:13b4aba8-5727-48bd-b109-7fb321852ea7"/>
+                                    <a:da name="DEFAULT" value=""/>
+                                     <a:da name="READONLY" value="true"/>
+                                </v:var>
+
+                                <v:var name="VendorId" type="INTEGER_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:<html>Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list.</html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="UUID" value="ECUC:962b16d0-ad38-4645-9443-25c254e29c29"/>
+                                    <a:da name="DEFAULT" value="43"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=43"/>
+                                        <a:tst expr="&lt;=43"/>
+                                    </a:da>
+                                </v:var>
+                            </v:ctr>
+                        </v:ctr>
+                    </d:chc>
+
+                    <d:chc name="I3c_EcuParameterDefinition" type="AR-ELEMENT" value="ECU_PARAMETER_DEFINITION">
+                        <d:ctr type="AR-ELEMENT">
+                            <a:a name="UUID" value="ECUC:adb9a39b-4993-4664-996b-4c1f7d88d567"/>
+                            <a:a name="DEF" value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+                            <d:lst name="MODULE_REF">
+                                <d:ref type="MODULE_REF" value="ASPath:/TS_T40D34M20I1R0/I3c"/>
+                            </d:lst>
+                        </d:ctr>
+                    </d:chc>
+                    <d:chc name="I3c_ModuleDescription" type="AR-ELEMENT" value="BSW_MODULE_DESCRIPTION">
+                        <d:ctr type="AR-ELEMENT">
+                            <a:a name="DEF" value="ASPath:/AR_PACKAGE_SCHEMA/BSW_MODULE_DESCRIPTION"/>
+                            <d:var name="MODULE_ID" type="INTEGER" >
+                                <a:a name="EDITABLE" value="false"/>
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:ref type="RECOMMENDED_CONFIGURATION" >
+                                <a:a name="EDITABLE" value="false"/>
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:ref>
+                            <d:ref type="PRE_CONFIGURED_CONF" >
+                                <a:a name="EDITABLE" value="false"/>
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:ref>
+                            <d:ref type="VENDOR_SPECIFIC_MODULE_DEF" value="ASPath:/TS_T40D34M20I1R0/I3c"/>
+                        </d:ctr>
+                    </d:chc>
+                </d:lst>
+            </d:ctr>
+        </d:lst>
+    </d:ctr>
+</datamodel>
