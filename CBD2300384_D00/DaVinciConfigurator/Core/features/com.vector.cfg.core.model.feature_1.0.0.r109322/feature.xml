@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vector.cfg.core.model.feature"
+      label="AUTOSAR Model for DaVinci Products"
+      version="1.0.0.r109322"
+      provider-name="Vector Informatik GmbH">
+
+   <description>
+      AUTOSAR model for DaVinci products.
+   </description>
+
+   <copyright>
+      (c) Copyright Vector Informatik GmbH. All Rights Reserved.
+   </copyright>
+
+   <license url="http://www.vector.com">
+      Vector Group License Agreement
+
+This software is licensed under the terms and conditions of „Delivery and maintenance of software products” of Vector Group, see www.vector.com
+   </license>
+
+   <includes
+         id="com.vector.cfg.model.mdf.feature"
+         version="1.15.0.201910210654"/>
+
+   <includes
+         id="com.vector.cfg.util.feature"
+         version="1.0.0.r109322"/>
+
+   <plugin
+         id="com.vector.cfg.model"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.query"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.parser"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.unit"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.rules"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.parser.latest"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.mdf.authentication"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.automation.scripting.base"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.mdf"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.mdf.asr.base"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.mdf.asr.latest.api"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.mdf.asr.latest"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.formula.api"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.json"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.base"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.preferences"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.project"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.jaxb"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.app.changenotification"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.base.contribution"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.exporter"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.variance.api"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.annotation.api"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.annotation"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.mdf.meta"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.workflow.annotations.update"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.workflow.annotations.diff"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.annotations.copypaste"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.base"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.api"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.ecuc"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.ecuc.api"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.uow.api"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.uow"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.variance"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.asr.view.api"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.base.api"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.parser.contribution"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.project.contribution"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.addons.contribution"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.addons.exportfilter"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.model.traverser"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.jaxb.locations"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.location.mapping.if"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.location.mapping.impl"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.location.mapping.contribution.if"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+
+   <plugin
+         id="com.vector.cfg.model.location.mapping.internal.if"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+</feature>

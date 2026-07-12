@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0">
+	<AR-PACKAGES>
+		<AR-PACKAGE UUID="ff55d029-386d-43a2-b3c2-dfef4c7a5e36">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<ECUC-MODULE-CONFIGURATION-VALUES UUID="99d68af1-58e4-4210-9cf2-8f9f5f9f5e07">
+					<SHORT-NAME>Os_Pre</SHORT-NAME>
+					<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/Os</DEFINITION-REF>
+					<CONTAINERS>
+						<ECUC-CONTAINER-VALUE UUID="5585d20c-23fc-4b60-becd-24db2138a894">
+							<SHORT-NAME>OsPublishedInformation</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsPublishedInformation</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="66c4563e-365b-47a2-aae8-b3e5ce6e3426">
+									<SHORT-NAME>Generic_CortexM</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-TEXTUAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsMpuAlignment</DEFINITION-REF>
+											<VALUE>SIZE</VALUE>
+										</ECUC-TEXTUAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsMpuEndAddressAccessible</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-TEXTUAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-MULTILINE-STRING-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsHardwareManuals</DEFINITION-REF>
+											<VALUE>ARMv7-M Architecture Reference Manual edition: ARM DDI 0403E.b (ID120114), 02 December 2014</VALUE>
+										</ECUC-TEXTUAL-PARAM-VALUE>
+										<ECUC-TEXTUAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsStackAlignment</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</ECUC-TEXTUAL-PARAM-VALUE>
+										<ECUC-TEXTUAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsExceptionVectorTableAlignment</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</ECUC-TEXTUAL-PARAM-VALUE>
+										<ECUC-TEXTUAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsInterruptVectorTableAlignment</DEFINITION-REF>
+											<VALUE>2048</VALUE>
+										</ECUC-TEXTUAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsMpuPrivilegedRegionsConfigurable</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="21303dea-beb1-4765-ab8d-cb6b2963807a">
+											<SHORT-NAME>Core0</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsPhysicalCore</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsPhysicalCore/OsPhysicalCoreId</DEFINITION-REF>
+													<VALUE>0</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsPhysicalCore/OsPhysicalCoreExceptionSources</DEFINITION-REF>
+													<VALUE>8</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsPhysicalCore/OsPhysicalCoreIsAutostart</DEFINITION-REF>
+													<VALUE>1</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsPhysicalCore/OsPhysicalCoreMasterStartAllowed</DEFINITION-REF>
+													<VALUE>0</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsPhysicalCore/OsPhysicalCorePrivelegedHwAccess</DEFINITION-REF>
+													<VALUE>1</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsPhysicalCore/OsPhysicalCoreType</DEFINITION-REF>
+													<VALUE>Cortex-M</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsPhysicalCore/OsPhysicalCoreDefaultEntrySymbol</DEFINITION-REF>
+													<VALUE>_start</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="5e0bf136-3b15-4430-b796-8614dc70d478">
+											<SHORT-NAME>NVIC</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsSystemIntCtrl</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsSystemIntCtrl/OsSystemIntCtrlMaxPrios</DEFINITION-REF>
+													<VALUE>256</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsSystemIntCtrl/OsSystemIntCtrlMaxSources</DEFINITION-REF>
+													<VALUE>512</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsSystemIntCtrl/OsSystemIntCtrlPrioOrder</DEFINITION-REF>
+													<VALUE>DESC</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsSystemIntCtrl/OsSystemIntCtrlBaseAddress</DEFINITION-REF>
+													<VALUE>3758153728</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsSystemIntCtrl/OsSystemIntCtrlType</DEFINITION-REF>
+													<VALUE>NVIC</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="605bee85-58f8-4980-b8c8-4c0c223f1b64">
+											<SHORT-NAME>SysTick</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsHardwareTimer</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsHardwareTimer/OsHardwareTimerBaseAddress</DEFINITION-REF>
+													<VALUE>3758153744</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsHardwareTimer/OsHardwareTimerId</DEFINITION-REF>
+													<VALUE>0</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsHardwareTimer/OsHardwareTimerSize</DEFINITION-REF>
+													<VALUE>24</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsHardwareTimer/OsHardwareTimerUnit</DEFINITION-REF>
+													<VALUE>PIT</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsHardwareTimer/OsHardwareTimerType</DEFINITION-REF>
+													<VALUE>SysTick</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="6bcd9483-c059-4e7d-9402-7186560ed673">
+													<SHORT-NAME>SysTick_Ch0</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsHardwareTimer/OsHardwareTimerChannel</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsHardwareTimer/OsHardwareTimerChannel/OsHardwareTimerChannelId</DEFINITION-REF>
+															<VALUE>0</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsHardwareTimer/OsHardwareTimerChannel/OsHardwareTimerChannelIntSource</DEFINITION-REF>
+															<VALUE>15</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsPublishedInformation/OsDerivativeInformation/OsHardwareTimer/OsHardwareTimerChannel/OsHardwareTimerChannelOffset</DEFINITION-REF>
+															<VALUE>0</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+							</SUB-CONTAINERS>
+						</ECUC-CONTAINER-VALUE>
+					</CONTAINERS>
+				</ECUC-MODULE-CONFIGURATION-VALUES>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</AR-PACKAGES>
+</AUTOSAR>

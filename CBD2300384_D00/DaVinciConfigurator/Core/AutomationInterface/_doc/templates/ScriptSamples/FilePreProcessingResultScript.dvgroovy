@@ -1,0 +1,31 @@
+import static com.vector.cfg.automation.api.ScriptApi.*
+
+//daVinci enables the IDE code completion support
+daVinci {
+    scriptDescription "Changes the shortname of a Signal which is included in the communication Extract"	
+
+    /* 
+     * Task: ChangeShortName
+     * Type: DV_ON_FILE_PREPROCESSING_RESULT
+     * -------------------------------------------------------------------------------------------------------
+     * Changes the shortname of a Signal which is included in the communication Extract
+     * -------------------------------------------------------------------------------------------------------
+     */
+	
+	scriptTask("ChangeShortName", DV_ON_FILE_PREPROCESSING_RESULT) {
+		taskDescription 'Changes the shortname of a Signal'
+		
+		taskHelp '''ChangeShortName script task
+		The task changes with the MdfModel the shortname of a Signal which is included in the communication Extract. 
+		'''
+
+		code { 
+			def asrPath = AsrPath.create("/DaVinci/ABC_ClusterCANCluster/ABC_ISignal/Signal_Bool_Msg_Bool")
+			transaction {
+				mdfModel(asrPath) {
+					name = "Test"
+				}
+			}
+		}
+	}
+}

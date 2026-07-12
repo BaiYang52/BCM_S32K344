@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtModuleInitialization xmlns="InitService" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="InitService .\InitService.xsd">
+<!--Adc_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Adc</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Adc_Init</InitFunctionName>
+			<InitFunctionHeader>Adc.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_LATE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>ADC_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Adc_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_POST_BUILD_LOADABLE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>&amp;Adc_Config</ConfigPtrName>
+					<ConfigPtrClass>ADC_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Adc_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Adc_Init-->
+
+<!--No_Base_Init--> <!--
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Base</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Base_Init</InitFunctionName>
+			<InitFunctionHeader>Base.h</InitFunctionHeader>
+			<InitPhase>NO_INIT</InitPhase>
+			<InitFunctionData/>
+		</ModuleInitFunction>
+	</InitModule>
+--> <!--End of No_Base_Init-->
+
+<!--OsIf_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Base</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>OsIf_Init</InitFunctionName>
+			<InitFunctionHeader>OsIf.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>BASE_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Base_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of OsIf_Init-->
+	
+<!--Crypto_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Crypto</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Crypto_Init</InitFunctionName>
+			<InitFunctionHeader>Crypto.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_LATE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>CRYPTO_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Crypto_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Crypto_Init-->
+
+<!--No_Dio_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Dio</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Dio_Init</InitFunctionName>
+			<InitFunctionHeader>Dio.h</InitFunctionHeader>
+			<InitPhase>NO_INIT</InitPhase>
+			<InitFunctionData/>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of No_Dio_Init-->
+
+<!--Eth_Init-->
+	<InitModule>
+		<ModuleRef>/Eth_43_GMAC_TS_T40D34M20I1R0/Eth</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Eth_43_GMAC_Init</InitFunctionName>
+			<InitFunctionHeader>Eth_43_GMAC.h</InitFunctionHeader>
+			<InitPhase>INIT_TWO_MCAL</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>ETH_43_GMAC_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Eth_43_GMAC_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_LINK_TIME</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>ETH_43_GMAC_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Eth_43_GMAC_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_POST_BUILD_LOADABLE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>&amp;Eth_43_GMAC_Config</ConfigPtrName>
+					<ConfigPtrClass>ETH_43_GMAC_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Eth_43_GMAC_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Eth_Init-->
+
+<!--Fee_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Fee</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Fee_Init</InitFunctionName>
+			<InitFunctionHeader>Fee.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_LATE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>Fee_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Fee_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Fee_Init-->
+
+<!--Fls_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Fls</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Fls_Init</InitFunctionName>
+			<InitFunctionHeader>Fls.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_LATE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>FLS_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Fls_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_POST_BUILD_LOADABLE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>&amp;Fls_Config</ConfigPtrName>
+					<ConfigPtrClass>FLS_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Fls_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Fls_Init-->
+
+<!--Gpt_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Gpt</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Gpt_Init</InitFunctionName>
+			<InitFunctionHeader>Gpt.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_LATE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>GPT_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Gpt_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_POST_BUILD_LOADABLE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>&amp;Gpt_Config</ConfigPtrName>
+					<ConfigPtrClass>GPT_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Gpt_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Gpt_Init-->
+
+<!--I2c_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/I2c</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>I2c_Init</InitFunctionName>
+			<InitFunctionHeader>Cdd_I2c.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_LATE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>I2C_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>I2c_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_POST_BUILD_LOADABLE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>&amp;I2c_Config</ConfigPtrName>
+					<ConfigPtrClass>I2C_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>I2c_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of I2c_Init-->
+
+<!--Icu_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Icu</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Icu_Init</InitFunctionName>
+			<InitFunctionHeader>Icu.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_LATE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>ICU_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Icu_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_POST_BUILD_LOADABLE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>&amp;Icu_Config</ConfigPtrName>
+					<ConfigPtrClass>ICU_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Icu_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Icu_Init-->
+
+<!--Mcl_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Mcl</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Mcl_Init</InitFunctionName>
+			<InitFunctionHeader>CDD_Mcl.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_LATE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>MCL_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Mcl_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_POST_BUILD_LOADABLE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>&amp;Mcl_Config</ConfigPtrName>
+					<ConfigPtrClass>MCL_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Mcl_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Mcl_Init-->
+
+<!--Mcu_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Mcu</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Mcu_Init</InitFunctionName>
+			<InitFunctionCall>Mcu_InitClock(McuConf_McuClockSettingConfig_McuClockSettingConfig_0);while (MCU_PLL_LOCKED != Mcu_GetPllStatus());Mcu_DistributePllClock();Mcu_SetMode(McuConf_McuModeSettingConf_McuModeSettingConf_0);</InitFunctionCall>
+			<InitFunctionHeader>Mcu.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>MCU_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Mcu_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_POST_BUILD_LOADABLE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>&amp;Mcu_Config</ConfigPtrName>
+					<ConfigPtrClass>MCU_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Mcu_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Mcu_Init-->
+
+<!--Ocu_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Ocu</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Ocu_Init</InitFunctionName>
+			<InitFunctionHeader>Ocu.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_LATE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>OCU_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Ocu_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_POST_BUILD_LOADABLE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>&amp;Ocu_Config</ConfigPtrName>
+					<ConfigPtrClass>OCU_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Ocu_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Ocu_Init-->
+
+<!--Port_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Port</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Port_Init</InitFunctionName>
+			<InitFunctionHeader>Port.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_EARLY</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>PORT_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Port_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_POST_BUILD_LOADABLE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>&amp;Port_Config</ConfigPtrName>
+					<ConfigPtrClass>PORT_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Port_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Port_Init-->
+
+<!--Pwm_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Pwm</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Pwm_Init</InitFunctionName>
+			<InitFunctionHeader>Pwm.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_LATE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>PWM_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Pwm_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_POST_BUILD_LOADABLE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>&amp;Pwm_Config</ConfigPtrName>
+					<ConfigPtrClass>PWM_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Pwm_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Pwm_Init-->
+
+<!--No_Resource_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Resource</ModuleRef> 
+		<ModuleInitFunction>
+			<InitFunctionName>Resource_Init</InitFunctionName>
+			<InitFunctionHeader>Resource.h</InitFunctionHeader>
+			<InitPhase>NO_INIT</InitPhase>
+			<InitFunctionData/>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of No_Resource_Init-->
+
+<!--Spi_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Spi</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Spi_Init</InitFunctionName>
+			<InitFunctionHeader>Spi.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_LATE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>SPI_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Spi_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_LINK_TIME</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>SPI_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Spi_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_POST_BUILD_LOADABLE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>&amp;Spi_Config</ConfigPtrName>
+					<ConfigPtrClass>SPI_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Spi_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Spi_Init-->
+
+<!--Uart_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Uart</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Uart_Init</InitFunctionName>
+			<InitFunctionHeader>Uart.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_LATE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>UART_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Uart_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_POST_BUILD_LOADABLE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>&amp;Uart_xConfig</ConfigPtrName>
+					<ConfigPtrClass>UART_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Uart_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Uart_Init-->
+
+<!--Wdg_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Wdg</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Wdg_43_Instance0_Init</InitFunctionName>
+			<InitFunctionHeader>Wdg_43_Instance0.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_LATE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>WDG_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Wdg_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_LINK_TIME</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>WDG_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Wdg_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_POST_BUILD_LOADABLE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>&amp;Wdg_Config_0</ConfigPtrName>
+					<ConfigPtrClass>WDG_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Wdg_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Wdg_Init-->
+
+<!--Wdg_43_Instance1_Init-->
+	<InitModule>
+		<ModuleRef>/Wdg_43_Instance1_TS_T40D34M20I1R0/Wdg</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Wdg_43_Instance1_Init</InitFunctionName>
+			<InitFunctionHeader>Wdg_43_Instance1.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_LATE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>WDG_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Wdg_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_LINK_TIME</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>WDG_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Wdg_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_POST_BUILD_LOADABLE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>&amp;Wdg_Config_1</ConfigPtrName>
+					<ConfigPtrClass>WDG_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Wdg_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Wdg_43_Instance1_Init-->
+
+<!--Wdg_43_Instance2_Init-->
+	<InitModule>
+		<ModuleRef>/Wdg_43_Instance2_TS_T40D34M20I1R0/Wdg</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Wdg_43_Instance2_Init</InitFunctionName>
+			<InitFunctionHeader>Wdg_43_Instance2.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_LATE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>WDG_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Wdg_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_LINK_TIME</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>WDG_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Wdg_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_POST_BUILD_LOADABLE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>&amp;Wdg_Config_2</ConfigPtrName>
+					<ConfigPtrClass>WDG_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Wdg_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Wdg_43_Instance2_Init-->
+
+<!--Wdg_43_Instance3_Init-->
+	<InitModule>
+		<ModuleRef>/Wdg_43_Instance3_TS_T40D34M20I1R0/Wdg</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Wdg_43_Instance3_Init</InitFunctionName>
+			<InitFunctionHeader>Wdg_43_Instance3.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_LATE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>WDG_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Wdg_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_LINK_TIME</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>WDG_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Wdg_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_POST_BUILD_LOADABLE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>&amp;Wdg_Config_3</ConfigPtrName>
+					<ConfigPtrClass>WDG_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Wdg_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Wdg_43_Instance3_Init-->
+
+<!--Sbc_fs26_Init-->  
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Sbc_fs26</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Sbc_fs26_Init</InitFunctionName>
+			<InitFunctionHeader>CDD_Sbc_fs26.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_LATE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>SBC_FS26_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Sbc_fs26_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_POST_BUILD_LOADABLE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>&amp;Sbc_fs26_Config</ConfigPtrName>
+					<ConfigPtrClass>SBC_FS26_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Sbc_fs26_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Sbc_fs26_Init--> 
+
+<!--Wdg_43_fs26_Init-->	
+	<InitModule>
+		<ModuleRef>/Wdg_43_fs26_TS_T40D34M20I1R0/Wdg</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Wdg_43_fs26_Init</InitFunctionName>
+			<InitFunctionHeader>Wdg_43_fs26.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_LATE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>WDG_43_FS26_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Wdg_43_fs26_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_LINK_TIME</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>WDG_43_FS26_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Wdg_43_fs26_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_POST_BUILD_LOADABLE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>&amp;Wdg_43_fs26_Config</ConfigPtrName>
+					<ConfigPtrClass>WDG_43_FS26_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>Wdg_43_fs26_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of Wdg_43_fs26_Init-->
+
+<!--No_Bist_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/Bist</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>Bist_Init</InitFunctionName>
+			<InitFunctionHeader>Bist.h</InitFunctionHeader>
+			<InitPhase>NO_INIT</InitPhase>
+			<InitFunctionData/>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of No_Bist_Init-->
+
+<!--eMcem_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/eMcem</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>eMcem_Init</InitFunctionName>
+			<InitFunctionHeader>eMcem.h</InitFunctionHeader>
+			<InitPhase>INIT_ONE_LATE</InitPhase>
+			<InitFunctionData>
+				<ConfigVariant>VARIANT_PRE_COMPILE</ConfigVariant>
+				<ConfigPtrData>
+					<ConfigPtrName>NULL_PTR</ConfigPtrName>
+					<ConfigPtrClass>EMCEM_APPL_CONST</ConfigPtrClass>
+					<ConfigPtrType>eMcem_ConfigType</ConfigPtrType>
+				</ConfigPtrData>
+			</InitFunctionData>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of eMcem_Init-->
+
+<!--No_SafetyBase_Init-->
+	<InitModule>
+		<ModuleRef>/TS_T40D34M20I1R0/SafetyBase</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>SafetyBase_Init</InitFunctionName>
+			<InitFunctionHeader>SafetyBase.h</InitFunctionHeader>
+			<InitPhase>NO_INIT</InitPhase>
+			<InitFunctionData/>
+		</ModuleInitFunction>
+	</InitModule>
+<!--End of No_SafetyBase_Init-->
+</ExtModuleInitialization>

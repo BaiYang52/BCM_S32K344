@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+============================================================================
+
+Copyright (c) 2021 by Vector Informatik GmbH. All rights reserved.
+
+This software is copyright protected and proprietary to Vector Informatik GmbH.
+Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+All other rights remain with Vector Informatik GmbH.
+
+============================================================================
+
+This file is needed for internal use.
+Please do not modify this file, otherwise the software may behave in
+unexpected way.
+
+============================================================================
+
+============================================================================
+                P R O J E C T
+============================================================================
+Module
+=======================
+S32K3xxNxp01Asr4Sub
+============================================================================
+                R E V I S I O N   H I S T O R Y
+============================================================================
+Date		Version	Author	Description
+=========	=======	=======	=================================================
+Refer to Settings_ExtGen_S32K3xx.xml
+*****************************************************************************
+-->
+<GeneratorPackageInformation xsi:schemaLocation="com.vector.cfg.gen.core.generatorpackageinformation GeneratorPackageInformation.xsd" xmlns="com.vector.cfg.gen.core.generatorpackageinformation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<GeneratorPackage>
+		<DefRef>/TS_T40D34M20I1R0/Base</DefRef>
+		<AutosarLayer>MCAL</AutosarLayer>
+	</GeneratorPackage>
+	<GeneratorPackage>
+		<DefRef>/TS_T40D34M20I1R0/Mcl</DefRef>
+		<AutosarLayer>MCAL</AutosarLayer>
+	</GeneratorPackage>
+	<GeneratorPackage>
+		<DefRef>/TS_T40D34M20I1R0/Sbc_fs26</DefRef>
+		<AutosarLayer>MCAL</AutosarLayer>
+	</GeneratorPackage>
+	<GeneratorPackage>
+		<DefRef>/TS_T40D34M20I1R0/Uart</DefRef>
+		<AutosarLayer>MCAL</AutosarLayer>
+	</GeneratorPackage>
+	<GeneratorPackage>
+		<DefRef>/TS_T40D34M20I1R0/Bist</DefRef>
+		<AutosarLayer>MCAL</AutosarLayer>
+	</GeneratorPackage>
+	<GeneratorPackage>
+		<DefRef>/TS_T40D34M20I1R0/eMcem</DefRef>
+		<AutosarLayer>MCAL</AutosarLayer>
+	</GeneratorPackage>
+	<GeneratorPackage>
+		<DefRef>/TS_T40D34M20I1R0/SafetyBase</DefRef>
+		<AutosarLayer>MCAL</AutosarLayer>
+	</GeneratorPackage>
+</GeneratorPackageInformation>

@@ -1,0 +1,1785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 rel. 3 sp1 (x64) (http://www.altova.com) by  (Vector Informatik GmbH) -->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 file:///D:/bla/ASR403/AUTOSAR_4-0-3.xsd">
+	<!-- AUTOSAR ECU Configuration Parameter Definition -->
+	<!--
+    Document Owner: AUTOSAR
+    Document Responsibility: AUTOSAR
+    Document Identification No: 289
+    Document Classification: Standard
+    Document Version: 4.2.0
+    Document Status: Final
+    Part of Release: 4.0 (2011-11-09)
+    Revision: 3
+    -->
+	<!-- Generated on Thu Nov 10 11:36:22 CET 2011 -->
+	<!-- MMT:        2.7.5 -->
+	<!-- Meta-Model: https://svn3.autosar.org/repos2/work/24_Sources/branches/R4.0/MMOD_MetaModel_059/master/AUTOSAR_MetaModel_Master.EAP@105697 -->
+	<!--
+    Disclaimer
+
+    This specification and the material contained in it, as released by AUTOSAR, 
+    is for the purpose of information only. AUTOSAR and the companies that have 
+    contributed to it shall not be liable for any use of the specification.
+
+    The material contained in this specification is protected by copyright and 
+    other types of Intellectual Property Rights. The commercial exploitation of 
+    the material contained in this specification requires a license to such 
+    Intellectual Property Rights.
+
+    This specification may be utilized or reproduced without any modification, in 
+    any form or by any means, for informational purposes only.
+    For any other purpose, no part of the specification may be utilized or 
+    reproduced, in any form or by any means, without permission in writing from 
+    the publisher.
+
+    The AUTOSAR specifications have been developed for automotive applications 
+    only. They have neither been developed, nor tested for non-automotive 
+    applications.
+
+    The word AUTOSAR and the AUTOSAR logo are registered trademarks.
+
+
+
+    Advice for users
+
+    AUTOSAR specifications may contain exemplary items (exemplary reference models,
+    "use cases", and/or references to exemplary technical solutions, devices, 
+    processes or software).
+
+    Any such exemplary items are contained in the specifications for illustration 
+    purposes only, and they themselves are not part of the AUTOSAR Standard. 
+    Neither their presence in such specifications, nor any later documentation of 
+    AUTOSAR conformance of products actually implementing such exemplary items, 
+    imply that intellectual property rights covering such exemplary items are 
+    licensed under the same rules as applicable to the AUTOSAR Standard.
+
+    -->
+	<ADMIN-DATA>
+		<DOC-REVISIONS>
+			<DOC-REVISION>
+				<REVISION-LABEL>4.2.0</REVISION-LABEL>
+				<ISSUED-BY>AUTOSAR</ISSUED-BY>
+				<DATE>2011-11-09</DATE>
+			</DOC-REVISION>
+		</DOC-REVISIONS>
+	</ADMIN-DATA>
+	<AR-PACKAGES>
+		<!-- AR-Package: AUTOSAR -->
+		<AR-PACKAGE UUID="ECUC:AUTOSAR">
+			<SHORT-NAME>AUTOSAR</SHORT-NAME>
+			<AR-PACKAGES>
+				<!-- AR-Package: AUTOSAR -->
+				<AR-PACKAGE UUID="ECUC:ECUCDEFS">
+					<SHORT-NAME>EcucDefs</SHORT-NAME>
+					<ELEMENTS>
+						<!-- Module Definition: DoIP-->
+						<ECUC-MODULE-DEF UUID="01a84faa-a44a-4934-b166-0c0854fb77aa">
+							<SHORT-NAME>DoIP</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Configuration of the DoIP (Diagnostic over IP) module.</L-2>
+							</DESC>
+							<ADMIN-DATA>
+								<DOC-REVISIONS>
+									<DOC-REVISION>
+										<REVISION-LABEL>4.3.0</REVISION-LABEL>
+										<ISSUED-BY>AUTOSAR</ISSUED-BY>
+										<DATE>2012-08-01</DATE>
+									</DOC-REVISION>
+								</DOC-REVISIONS>
+							</ADMIN-DATA>
+							<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<SUPPORTED-CONFIG-VARIANTS>
+								<SUPPORTED-CONFIG-VARIANT>VARIANT-LINK-TIME</SUPPORTED-CONFIG-VARIANT>
+								<SUPPORTED-CONFIG-VARIANT>VARIANT-POST-BUILD</SUPPORTED-CONFIG-VARIANT>
+								<SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+							</SUPPORTED-CONFIG-VARIANTS>
+							<CONTAINERS>
+								<!-- Container Definition: DoIPConfigSet -->
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="8d69e9a6-7dde-43cc-b8a5-6a893adec2c1">
+									<SHORT-NAME>DoIPConfigSet</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container contains the configuration parameters and sub containers of the AUTOSAR DoIP module. This container is a MultipleConfigurationContainer, i.e. this container and its sub-containers exist once per configuration set.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<MULTIPLE-CONFIGURATION-CONTAINER>true</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: DoIPEid -->
+										<ECUC-INTEGER-PARAM-DEF UUID="c95693a7-1fa8-4ec3-82d8-278e9a7c4b78">
+											<SHORT-NAME>DoIPEid</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Configured EID (Entity ID of) for vehicle identification/vehicle announcement. Only necessary if DoIPUseMacAddressForIdentification is set to FALSE.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>281474976710656</MAX>
+											<MIN>1</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPGid -->
+										<ECUC-INTEGER-PARAM-DEF UUID="1a8fb635-bf3f-4bcc-9d25-44369902fd98">
+											<SHORT-NAME>DoIPGid</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Configured GID (Group ID of) for vehicle identification/vehicle announcement.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>281474976710656</MAX>
+											<MIN>1</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPLogicalAddress -->
+										<ECUC-INTEGER-PARAM-DEF UUID="1084b0a2-dd48-4589-af11-a38fe122145a">
+											<SHORT-NAME>DoIPLogicalAddress</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Describes the logical address of the DoIP entity, i.e. the SA that will route diagnostic requests to the Dcm of the DoIP entity.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>65535</MAX>
+											<MIN>1</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+									</PARAMETERS>
+									<SUB-CONTAINERS>
+										<!-- Container Definition: DoIPInterface -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:789e2362-020e-4531-b21a-6f65ae92c662">
+											<SHORT-NAME>DoIPInterface</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container defines a logical IP interface and collects properties to configure this interface.</L-2>
+												<L-2 L="EN">Tags: atp.Status=draft</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>255</UPPER-MULTIPLICITY>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: DoIPAliveCheckResponseTimeout -->
+												<ECUC-FLOAT-PARAM-DEF UUID="ECUC:a680c7fa-c06d-4139-b2a8-e60b1ee21fa6">
+													<SHORT-NAME>DoIPAliveCheckResponseTimeout</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Timeout  in [s] for waiting for a response to an Alive Check request before the connection is considered to be disconnected. Represents parameter T_TCP_AliveCheck of ISO 13400-2:2012.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>INF</MAX>
+													<MIN>0</MIN>
+												</ECUC-FLOAT-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: DoIPGeneralInactivityTime -->
+												<ECUC-FLOAT-PARAM-DEF UUID="ECUC:3c672e92-2dff-4c0d-98eb-0c9379bcafec">
+													<SHORT-NAME>DoIPGeneralInactivityTime</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Timeout in [s] for maximum inactivity of a TCP socket connection before the DoIP module will close the according socket connection. Represents parameter T_TCP_General_Inactivity of ISO 13400-2:2012</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>INF</MAX>
+													<MIN>0</MIN>
+												</ECUC-FLOAT-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: DoIPInitialInactivityTime -->
+												<ECUC-FLOAT-PARAM-DEF UUID="ECUC:f455792f-afbc-4de1-ab70-30d56a927828">
+													<SHORT-NAME>DoIPInitialInactivityTime</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Timeout in [s] used for initial inactivity of a connected TCP socket connection directly after socket connection. Represents parameter T_TCP_Initial_Inactivity of ISO 13400-2:2012</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>INF</MAX>
+													<MIN>0</MIN>
+												</ECUC-FLOAT-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: DoIPInitialVehicleAnnouncementTime -->
+												<ECUC-FLOAT-PARAM-DEF UUID="ECUC:f2ce0a2d-fc67-453a-8b22-6f0f033507b2">
+													<SHORT-NAME>DoIPInitialVehicleAnnouncementTime</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Time to wait in [s] for sending first vehicle anouncement message after IP address assignment. Represents parameter A_DoIP_Announce_Wait of ISO 13400-2:2012</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>INF</MAX>
+													<MIN>0</MIN>
+												</ECUC-FLOAT-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: DoIPInterfaceActLineCtrl -->
+												<ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:6e2237e3-5bac-41e9-bf4a-ae8559979fa6">
+													<SHORT-NAME>DoIPInterfaceActLineCtrl</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This attribute defines whether the network interface</L-2>
+														<L-2 L="EN">Tags: atp.Status=draft</L-2>
+													</DESC>
+													<INTRODUCTION>
+														<P>
+															<L-1 L="EN">- is started "on-demand" when an activation line is sensed (TRUE) or
+                                                - is always available (FALSE).</L-1>
+														</P>
+													</INTRODUCTION>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</ECUC-BOOLEAN-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: DoIPInterfaceAnnouncementStart -->
+												<ECUC-ENUMERATION-PARAM-DEF UUID="ECUC:c7a33c91-d135-444a-8806-80515d8ae9fe">
+													<SHORT-NAME>DoIPInterfaceAnnouncementStart</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This attribute defines, when vehicle announcement is started on a DoIPInterface</L-2>
+														<L-2 L="EN">Tags: atp.Status=draft</L-2>
+													</DESC>
+													<INTRODUCTION>
+														<P>
+															<L-1 L="EN">* Automatic: As soon as the underlying UDP vehicle announcement connection switches to SOAD_SOCON_ONLINE
+                                                * OnTrigger: As soon as the API DoIP_TriggerVehicleAnnouncement is called for the given DoIPInterface instance</L-1>
+														</P>
+													</INTRODUCTION>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>DOIP_AUTOMATIC_ANNOUNCE</DEFAULT-VALUE>
+													<LITERALS>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="ECUC:d5ca6f1d-dcf6-91d2-5f76-913f9dcbf971">
+															<SHORT-NAME>DOIP_AUTOMATIC_ANNOUNCE</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Tags: atp.Status=draft</L-2>
+															</DESC>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="ECUC:e1d067c8-bed6-93b0-54fc-05759abb455b">
+															<SHORT-NAME>DOIP_ONTRIGGER_ANNOUNCE</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Tags: atp.Status=draft</L-2>
+															</DESC>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ECUC-ENUMERATION-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: DoIPInterfaceId -->
+												<ECUC-INTEGER-PARAM-DEF UUID="ECUC:1b2e63b0-6029-4653-b54a-f59977514a0c">
+													<SHORT-NAME>DoIPInterfaceId</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter is an identifier of the DoIPInterface. The value of this parameter will be assigned to the symbolic name derived from the container short name.</L-2>
+														<L-2 L="EN">Tags: atp.Status=draft</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+													<MAX>255</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: DoIPMaxTesterConnections -->
+												<ECUC-INTEGER-PARAM-DEF UUID="ECUC:4ee8c2a0-3924-41c7-a5d1-3bcf431efb0e">
+													<SHORT-NAME>DoIPMaxTesterConnections</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Maximum amount of tester connections that shall be maintained at one time before alive check is performed.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>255</MAX>
+													<MIN>1</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: DoIPUseMacAddressForIdentification -->
+												<ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:364c701f-a202-4a4b-b7bc-ee6cf58cddb3">
+													<SHORT-NAME>DoIPUseMacAddressForIdentification</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Provided the information if a configured EID at vehicle identification response/vehicle announment is used or the MAC address.</L-2>
+													</DESC>
+													<INTRODUCTION>
+														<P>
+															<L-1 L="EN">TRUE: Use MAC Address instead of EID for Vehicle identification/announcement. 
+                                                FALSE: Use configured EID for vehicle identification/announcement. Dependencies: DoIPEID</L-1>
+														</P>
+													</INTRODUCTION>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</ECUC-BOOLEAN-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: DoIPUseVehicleIdentificationSyncStatus -->
+												<ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:77dc8eda-649f-4728-9915-a08f25f81905">
+													<SHORT-NAME>DoIPUseVehicleIdentificationSyncStatus</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Defines if the optional VIN/GID synchronization status is used additionally in the vehicle identification/announcement.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</ECUC-BOOLEAN-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: DoIPVehicleAnnouncementCount -->
+												<ECUC-INTEGER-PARAM-DEF UUID="ECUC:18720174-b4fb-4222-8e3b-9de228019753">
+													<SHORT-NAME>DoIPVehicleAnnouncementCount</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Number of vehicle announcement messages on IP address assignment. Represents parameter A_DoIP_Announce_Num of ISO 13400-2:2012.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>255</MAX>
+													<MIN>1</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: DoIPVehicleAnnouncementInterval -->
+												<ECUC-FLOAT-PARAM-DEF UUID="ECUC:53d5e0b6-56d1-459d-a3ec-69ce6e1c46c1">
+													<SHORT-NAME>DoIPVehicleAnnouncementInterval</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Time to wait in [s] for sending subsequent vehicle anouncement messages. Represents parameter A_DoIP_Announce_Interval of ISO 13400-2:2012</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>INF</MAX>
+													<MIN>0</MIN>
+												</ECUC-FLOAT-PARAM-DEF>
+											</PARAMETERS>
+											<SUB-CONTAINERS>
+												<!-- Container Definition: DoIPChannel -->
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:ce8927a0-58c7-4099-a996-3ee43001e9e8">
+													<SHORT-NAME>DoIPChannel</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Configuration of one DoIPChannel.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>65536</UPPER-MULTIPLICITY>
+													<REFERENCES>
+														<!-- Reference Definition: DoIPChannelSARef -->
+														<ECUC-REFERENCE-DEF UUID="ECUC:893cf71a-c06b-4044-812c-8df50e45d13e">
+															<SHORT-NAME>DoIPChannelSARef</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Reference to the DoIPTester.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/DoIP/DoIPConfigSet/DoIPInterface/DoIPTester</DESTINATION-REF>
+														</ECUC-REFERENCE-DEF>
+														<!-- Reference Definition: DoIPChannelTARef -->
+														<ECUC-REFERENCE-DEF UUID="ECUC:cbe1685e-4306-4efc-8345-5a1446b28405">
+															<SHORT-NAME>DoIPChannelTARef</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Reference to the target address.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/DoIP/DoIPConfigSet/DoIPInterface/DoIPConnections/DoIPTargetAddress</DESTINATION-REF>
+														</ECUC-REFERENCE-DEF>
+													</REFERENCES>
+													<SUB-CONTAINERS>
+														<!-- Container Definition: DoIPPduRRxPdu -->
+														<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:63341ec1-b4ca-4bbc-82b5-a883d528b7c1">
+															<SHORT-NAME>DoIPPduRRxPdu</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This container contains the Rx Pdus to connect with the Rx Pdus of the PduR.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<PARAMETERS>
+																<!-- PARAMETER DEFINITION: DoIPPduRRxPduId -->
+																<ECUC-INTEGER-PARAM-DEF UUID="ECUC:affbfe09-cf4f-43ed-91f0-957c1e71f17f">
+																	<SHORT-NAME>DoIPPduRRxPduId</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">The DoIPPduRRxPduId is required by the API call DoIP_TpCancelReceive.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+																	<MAX>65535</MAX>
+																	<MIN>0</MIN>
+																</ECUC-INTEGER-PARAM-DEF>
+															</PARAMETERS>
+															<REFERENCES>
+																<!-- Reference Definition: DoIPPduRRxPduRef -->
+																<ECUC-REFERENCE-DEF UUID="ECUC:0fb53490-8f12-418b-a048-feaf0c60d6b0">
+																	<SHORT-NAME>DoIPPduRRxPduRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Reference to the "global" Pdu structure to allow harmonization of handle IDs in the COM-Stack.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DESTINATION-REF>
+																</ECUC-REFERENCE-DEF>
+															</REFERENCES>
+														</ECUC-PARAM-CONF-CONTAINER-DEF>
+														<!-- Container Definition: DoIPPduRTxPdu -->
+														<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:ecf769bc-a264-4426-a107-185d357d42b4">
+															<SHORT-NAME>DoIPPduRTxPdu</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This container contains the Tx Pdus to connect with the Tx Pdus of the PduR.  If the parameter is not configured the channel is for functional addressing.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<PARAMETERS>
+																<!-- PARAMETER DEFINITION: DoIPPduRTxPduId -->
+																<ECUC-INTEGER-PARAM-DEF UUID="ECUC:4ec22559-5780-41ca-af56-0b32ecdd6dae">
+																	<SHORT-NAME>DoIPPduRTxPduId</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">The DoIPPduRTxPduId is required by DoIP_TpTransmit or DoIP_IfTransmit and DoIP_TpCancelTransmit.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+																	<MAX>65535</MAX>
+																	<MIN>0</MIN>
+																</ECUC-INTEGER-PARAM-DEF>
+																<!-- PARAMETER DEFINITION: DoIPPduType -->
+																<ECUC-ENUMERATION-PARAM-DEF UUID="ECUC:17c8aace-cda8-471d-8cb2-e474dda9c61a">
+																	<SHORT-NAME>DoIPPduType</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">API Type to use for communication with PduR. DOIP_IFPDU for UUDT messages, DOIP_TPPDU for all other diagnostic messages.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<DEFAULT-VALUE>DOIP_TPPDU</DEFAULT-VALUE>
+																	<LITERALS>
+																		<ECUC-ENUMERATION-LITERAL-DEF UUID="ECUC:79d8724a-625c-91f0-4c45-56b5146f170d">
+																			<SHORT-NAME>DOIP_IFPDU</SHORT-NAME>
+																			<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																		</ECUC-ENUMERATION-LITERAL-DEF>
+																		<ECUC-ENUMERATION-LITERAL-DEF UUID="ECUC:d54adf18-f8db-8a05-2931-a379d85281cb">
+																			<SHORT-NAME>DOIP_TPPDU</SHORT-NAME>
+																			<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																		</ECUC-ENUMERATION-LITERAL-DEF>
+																	</LITERALS>
+																</ECUC-ENUMERATION-PARAM-DEF>
+															</PARAMETERS>
+															<REFERENCES>
+																<!-- Reference Definition: DoIPPduRTxPduRef -->
+																<ECUC-REFERENCE-DEF UUID="ECUC:f703fb82-d2e7-4545-a97c-3275ff0bfc5d">
+																	<SHORT-NAME>DoIPPduRTxPduRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Reference to the "global" Pdu structure to allow harmonization of handle IDs in the COM-Stack.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DESTINATION-REF>
+																</ECUC-REFERENCE-DEF>
+															</REFERENCES>
+														</ECUC-PARAM-CONF-CONTAINER-DEF>
+													</SUB-CONTAINERS>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+												<!-- Container Definition: DoIPConnections -->
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:06a174a5-5ad6-4b7a-8ce8-c64883f2e5c5">
+													<SHORT-NAME>DoIPConnections</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Container contains all lower layer connection specific information, i.e. the single Pdu References and Handle IDs to the SoAd.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<SUB-CONTAINERS>
+														<!-- Container Definition: DoIPTargetAddress -->
+														<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:11b8faaf-bc59-49fe-97b5-29df73fa6ee7">
+															<SHORT-NAME>DoIPTargetAddress</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This container describes a possible TargetAddress that is supported by DoIP.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>65535</UPPER-MULTIPLICITY>
+															<PARAMETERS>
+																<!-- PARAMETER DEFINITION: DoIPTargetAddressValue -->
+																<ECUC-INTEGER-PARAM-DEF UUID="ECUC:c46011a4-ab1a-42cf-a2f8-b71632fcfd59">
+																	<SHORT-NAME>DoIPTargetAddressValue</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Valid Target Address of a DoIP target address.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<MAX>65535</MAX>
+																	<MIN>0</MIN>
+																</ECUC-INTEGER-PARAM-DEF>
+															</PARAMETERS>
+														</ECUC-PARAM-CONF-CONTAINER-DEF>
+														<!-- Container Definition: DoIPTcpConnection -->
+														<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:e3ccdc1d-8a6b-40a0-abbf-59a1db67e267">
+															<SHORT-NAME>DoIPTcpConnection</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This container describes a TCP connection to the lower layer SoAd module.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>255</UPPER-MULTIPLICITY>
+															<PARAMETERS>
+																<!-- PARAMETER DEFINITION: DoIPRequestAddressAssignment -->
+																<ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:5fac5a9e-0915-86f1-5a0e-df77eade14b8">
+																	<SHORT-NAME>DoIPRequestAddressAssignment</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">The DoIP module shall request IP address assignment by calling SoAd_RequestIpAddrAssignment() for the TcpIpLocalAddr related to this DoIpConnection.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<DEFAULT-VALUE>true</DEFAULT-VALUE>
+																</ECUC-BOOLEAN-PARAM-DEF>
+																<!-- PARAMETER DEFINITION: DoIPTcpConnectionSecurityRequired -->
+																<ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:e723d1bf-784e-4527-892c-4fcbf9e11e05">
+																	<SHORT-NAME>DoIPTcpConnectionSecurityRequired</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Indicates if the associated TCP socket uses a secure connection (e.g. TLS)</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<DEFAULT-VALUE>false</DEFAULT-VALUE>
+																</ECUC-BOOLEAN-PARAM-DEF>
+															</PARAMETERS>
+															<SUB-CONTAINERS>
+																<!-- Container Definition: DoIPSoAdTcpRxPdu -->
+																<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:f8ff31c4-d60d-4316-b021-67cb31934ee7">
+																	<SHORT-NAME>DoIPSoAdTcpRxPdu</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This container describes a Rx PDU received via SoAd over TCP</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<PARAMETERS>
+																		<!-- PARAMETER DEFINITION: DoIPSoAdTcpRxPduId -->
+																		<ECUC-INTEGER-PARAM-DEF UUID="ECUC:87bc6f78-b949-44dd-a958-16f6c2003d78">
+																			<SHORT-NAME>DoIPSoAdTcpRxPduId</SHORT-NAME>
+																			<DESC>
+																				<L-2 L="EN">The DoIPSoAdTcpRxPduId is required by the API call DoIP_SoAdTpRxIndication to receive I-PDUs from the SoAd.</L-2>
+																			</DESC>
+																			<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																			<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																			<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																			<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+																			<MAX>65535</MAX>
+																			<MIN>0</MIN>
+																		</ECUC-INTEGER-PARAM-DEF>
+																	</PARAMETERS>
+																	<REFERENCES>
+																		<!-- Reference Definition: DoIPSoAdTcpRxPduRef -->
+																		<ECUC-REFERENCE-DEF UUID="ECUC:7fa9533f-a369-48ce-8666-1982b51d007d">
+																			<SHORT-NAME>DoIPSoAdTcpRxPduRef</SHORT-NAME>
+																			<DESC>
+																				<L-2 L="EN">Reference to the "global" Pdu structure to allow harmonization of handle IDs in the COM-Stack.</L-2>
+																			</DESC>
+																			<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																			<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																			<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																			<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DESTINATION-REF>
+																		</ECUC-REFERENCE-DEF>
+																	</REFERENCES>
+																</ECUC-PARAM-CONF-CONTAINER-DEF>
+																<!-- Container Definition: DoIPSoAdTcpTxPdu -->
+																<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:b94850e4-7ec7-4c7a-95d7-e883570c386f">
+																	<SHORT-NAME>DoIPSoAdTcpTxPdu</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This container describes a Tx PDU sent via SoAd over TCP</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<PARAMETERS>
+																		<!-- PARAMETER DEFINITION: DoIPSoAdTcpTxPduId -->
+																		<ECUC-INTEGER-PARAM-DEF UUID="ECUC:18866fc8-b1b6-4749-866c-8d0dff665d6e">
+																			<SHORT-NAME>DoIPSoAdTcpTxPduId</SHORT-NAME>
+																			<DESC>
+																				<L-2 L="EN">The DoIPSoAdTcpTxPduId is required by the API call DoIP_SoAdTpTxConfirmation that is called by the SoAd to confirm that the IPdu has been transmitted successfully.</L-2>
+																			</DESC>
+																			<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																			<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																			<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																			<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+																			<MAX>65535</MAX>
+																			<MIN>0</MIN>
+																		</ECUC-INTEGER-PARAM-DEF>
+																	</PARAMETERS>
+																	<REFERENCES>
+																		<!-- Reference Definition: DoIPSoAdTcpTxPduRef -->
+																		<ECUC-REFERENCE-DEF UUID="ECUC:71678586-2f21-4e4f-aefc-997db5b282a4">
+																			<SHORT-NAME>DoIPSoAdTcpTxPduRef</SHORT-NAME>
+																			<DESC>
+																				<L-2 L="EN">Reference to the "global" Pdu structure to allow harmonization of handle IDs in the COM-Stack.</L-2>
+																			</DESC>
+																			<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																			<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																			<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																			<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DESTINATION-REF>
+																		</ECUC-REFERENCE-DEF>
+																	</REFERENCES>
+																</ECUC-PARAM-CONF-CONTAINER-DEF>
+															</SUB-CONTAINERS>
+														</ECUC-PARAM-CONF-CONTAINER-DEF>
+														<!-- Container Definition: DoIPUdpConnection -->
+														<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:113b6883-6d62-4e20-9cb6-680252dad2b0">
+															<SHORT-NAME>DoIPUdpConnection</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This Container describes a Udp connection to the lower layer SoAd module.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>255</UPPER-MULTIPLICITY>
+															<PARAMETERS>
+																<!-- PARAMETER DEFINITION: DoIPRequestAddressAssignment -->
+																<ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:8d1ae703-ec0c-9471-4b05-edd862510501">
+																	<SHORT-NAME>DoIPRequestAddressAssignment</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">The DoIP module shall request IP address assignment by calling SoAd_RequestIpAddrAssignment() for the TcpIpLocalAddr related to this DoIpConnection.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<DEFAULT-VALUE>true</DEFAULT-VALUE>
+																</ECUC-BOOLEAN-PARAM-DEF>
+															</PARAMETERS>
+															<SUB-CONTAINERS>
+																<!-- Container Definition: DoIPSoAdUdpRxPdu -->
+																<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:799689c9-1f1f-4245-8228-18b7bf0c2dee">
+																	<SHORT-NAME>DoIPSoAdUdpRxPdu</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This container describes a Rx PDU received via SoAd over UDP.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<PARAMETERS>
+																		<!-- PARAMETER DEFINITION: DoIPSoAdUdpRxPduId -->
+																		<ECUC-INTEGER-PARAM-DEF UUID="ECUC:103f1b68-c87a-4b28-ad2b-a9a27b600be2">
+																			<SHORT-NAME>DoIPSoAdUdpRxPduId</SHORT-NAME>
+																			<DESC>
+																				<L-2 L="EN">The DoIPSoAdUdpRxPduId is required by the API call DoIP_SoAdIfRxIndication to receive I-PDUs from the SoAd.</L-2>
+																			</DESC>
+																			<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																			<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																			<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																			<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+																			<MAX>65535</MAX>
+																			<MIN>0</MIN>
+																		</ECUC-INTEGER-PARAM-DEF>
+																	</PARAMETERS>
+																	<REFERENCES>
+																		<!-- Reference Definition: DoIPSoAdUdpRxPduRef -->
+																		<ECUC-REFERENCE-DEF UUID="ECUC:fd7f5cdf-7cf4-45f4-a627-2d343a8f7ed5">
+																			<SHORT-NAME>DoIPSoAdUdpRxPduRef</SHORT-NAME>
+																			<DESC>
+																				<L-2 L="EN">Reference to the "global" Pdu structure to allow harmonization of handle IDs in the COM-Stack.</L-2>
+																			</DESC>
+																			<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																			<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																			<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																			<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DESTINATION-REF>
+																		</ECUC-REFERENCE-DEF>
+																	</REFERENCES>
+																</ECUC-PARAM-CONF-CONTAINER-DEF>
+																<!-- Container Definition: DoIPSoAdUdpTxPdu -->
+																<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:b3d21ded-7966-4862-8d48-ddf2775239cc">
+																	<SHORT-NAME>DoIPSoAdUdpTxPdu</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This container describes a Tx PDU sent via SoAd over UDP.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<PARAMETERS>
+																		<!-- PARAMETER DEFINITION: DoIPSoAdUdpTxPduId -->
+																		<ECUC-INTEGER-PARAM-DEF UUID="ECUC:2f55a1ec-664b-4bd6-9da3-2f80f2a73746">
+																			<SHORT-NAME>DoIPSoAdUdpTxPduId</SHORT-NAME>
+																			<DESC>
+																				<L-2 L="EN">The DoIPSoAdUdpTxPduId is required by the API call DoIP_SoAdIfTxConfirmation that is called by the SoAd to confirm that the IPdu has been transmitted successfully.</L-2>
+																			</DESC>
+																			<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																			<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																			<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																			<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+																			<MAX>65535</MAX>
+																			<MIN>0</MIN>
+																		</ECUC-INTEGER-PARAM-DEF>
+																	</PARAMETERS>
+																	<REFERENCES>
+																		<!-- Reference Definition: DoIPSoAdUdpTxPduRef -->
+																		<ECUC-REFERENCE-DEF UUID="ECUC:c31e5dee-28e5-4b32-8cec-51f54e77a3a3">
+																			<SHORT-NAME>DoIPSoAdUdpTxPduRef</SHORT-NAME>
+																			<DESC>
+																				<L-2 L="EN">Reference to the "global" Pdu structure to allow harmonization of handle IDs in the COM-Stack.</L-2>
+																			</DESC>
+																			<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																			<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																			<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																			<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DESTINATION-REF>
+																		</ECUC-REFERENCE-DEF>
+																	</REFERENCES>
+																</ECUC-PARAM-CONF-CONTAINER-DEF>
+															</SUB-CONTAINERS>
+														</ECUC-PARAM-CONF-CONTAINER-DEF>
+														<!-- Container Definition: DoIPUdpVehicleAnnouncementConnection -->
+														<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:ec10775c-9dc4-49d9-b17b-73c202f875ed">
+															<SHORT-NAME>DoIPUdpVehicleAnnouncementConnection</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This container describes the UDP multicast connections to the lower layer SoAd module.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>255</UPPER-MULTIPLICITY>
+															<PARAMETERS>
+																<!-- PARAMETER DEFINITION: DoIPRequestAddressAssignment -->
+																<ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:67eff5dd-1c6e-902a-5fca-f998126ea83e">
+																	<SHORT-NAME>DoIPRequestAddressAssignment</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">The DoIP module shall request IP address assignment by calling SoAd_RequestIpAddrAssignment() for the TcpIpLocalAddr related to this DoIpConnection.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<DEFAULT-VALUE>true</DEFAULT-VALUE>
+																</ECUC-BOOLEAN-PARAM-DEF>
+															</PARAMETERS>
+															<SUB-CONTAINERS>
+																<!-- Container Definition: DoIPSoAdUdpVehicleAnnouncementTxPdu -->
+																<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:ca2c98f1-142e-4d74-b3e2-a2c7a5d2a5a7">
+																	<SHORT-NAME>DoIPSoAdUdpVehicleAnnouncementTxPdu</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This container describes the vehicle announcement TxPdu sent via the SoAd.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<PARAMETERS>
+																		<!-- PARAMETER DEFINITION: DoIPSoAdUdpVehicleAnnouncementTxPduId -->
+																		<ECUC-INTEGER-PARAM-DEF UUID="ECUC:d714703b-f033-4dcf-91de-1b6f531e9af7">
+																			<SHORT-NAME>DoIPSoAdUdpVehicleAnnouncementTxPduId</SHORT-NAME>
+																			<DESC>
+																				<L-2 L="EN">The DoIPSoAdUdpVehicleAnnouncementTxPduId is required by the API call DoIP_SoAdIfTxConfirmation() that is called by the SoAd to confirm that the IPdu has been transmitted successfully.</L-2>
+																			</DESC>
+																			<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																			<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																			<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																			<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+																			<MAX>4294967295</MAX>
+																			<MIN>0</MIN>
+																		</ECUC-INTEGER-PARAM-DEF>
+																	</PARAMETERS>
+																	<REFERENCES>
+																		<!-- Reference Definition: DoIPSoAdUdpVehicleAnnouncementTxPduRef -->
+																		<ECUC-REFERENCE-DEF UUID="ECUC:90da376e-29ea-4262-aa92-05bf32a3971e">
+																			<SHORT-NAME>DoIPSoAdUdpVehicleAnnouncementTxPduRef</SHORT-NAME>
+																			<DESC>
+																				<L-2 L="EN">Reference to the "global" PDU structure to allow harmonization of handle IDs in the COM-Stack.</L-2>
+																			</DESC>
+																			<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																			<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																			<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																			<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DESTINATION-REF>
+																		</ECUC-REFERENCE-DEF>
+																	</REFERENCES>
+																</ECUC-PARAM-CONF-CONTAINER-DEF>
+															</SUB-CONTAINERS>
+														</ECUC-PARAM-CONF-CONTAINER-DEF>
+													</SUB-CONTAINERS>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+												<!-- Container Definition: DoIPFurtherActionByteCallback -->
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:5aac8f6a-2a4d-4d01-af2e-645e910e158d">
+													<SHORT-NAME>DoIPFurtherActionByteCallback</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This container describes the Callbackfunction to get the Further Action byte. This container shall always be present. If the DoIPFurtherActionByteDirect parameter is not present, the DoIP module will use an RPort of ServiceInterface CallbackGetFurtherActionByte with the name "CBGetFurtherActionByte_&lt;shortname of enclosing DoIPInterface container&gt;".</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<PARAMETERS>
+														<!-- PARAMETER DEFINITION: DoIPFurtherActionByteDirect -->
+														<ECUC-FUNCTION-NAME-DEF UUID="ECUC:b16ec364-7eb2-447e-ad3a-c55fe58378cb">
+															<SHORT-NAME>DoIPFurtherActionByteDirect</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Direct C Callback function to get the OEM specific Further Action Byte for the DoIP vehicle identification response/vehicle announcement. If the DoIPFurtherActionByteDirect parameter is present, the DoIP module will not use an RPort of ServiceInterface "CBGetFurtherActionByte" but will call the configured function.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<ECUC-FUNCTION-NAME-DEF-VARIANTS>
+																<ECUC-FUNCTION-NAME-DEF-CONDITIONAL/>
+															</ECUC-FUNCTION-NAME-DEF-VARIANTS>
+														</ECUC-FUNCTION-NAME-DEF>
+													</PARAMETERS>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+												<!-- Container Definition: DoIPRoutingActivation -->
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:8c07e2b0-4dd1-45fc-89ae-19a97da7e734">
+													<SHORT-NAME>DoIPRoutingActivation</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This container describes the routing activation possibilities by representing for each container a possible routing activation request message to the DoIP entity and the according references to the activated diagnostic messages.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>255</UPPER-MULTIPLICITY>
+													<PARAMETERS>
+														<!-- PARAMETER DEFINITION: DoIPRoutingActivationNumber -->
+														<ECUC-INTEGER-PARAM-DEF UUID="ECUC:335e310b-8d47-48bf-b643-5c12468a5f01">
+															<SHORT-NAME>DoIPRoutingActivationNumber</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Identifies the Routing activation Number which is received for a DoIP routing activation request message.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MAX>255</MAX>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<!-- PARAMETER DEFINITION: DoIPRoutingActivationSecurityRequired -->
+														<ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:d645dea9-213c-4ac7-9407-a6cc7586ae8f">
+															<SHORT-NAME>DoIPRoutingActivationSecurityRequired</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Indicates if a routing activation requires a secure TCP connection</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>false</DEFAULT-VALUE>
+														</ECUC-BOOLEAN-PARAM-DEF>
+													</PARAMETERS>
+													<REFERENCES>
+														<!-- Reference Definition: DoIPTargetAddressRef -->
+														<ECUC-REFERENCE-DEF UUID="ECUC:ebc9f44b-f588-4a77-a371-08bfa7d33272">
+															<SHORT-NAME>DoIPTargetAddressRef</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Reference to all DoIPTargetAddress which are activated on this Routing activation.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>65535</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/DoIP/DoIPConfigSet/DoIPInterface/DoIPConnections/DoIPTargetAddress</DESTINATION-REF>
+														</ECUC-REFERENCE-DEF>
+													</REFERENCES>
+													<SUB-CONTAINERS>
+														<!-- Container Definition: DoIPRoutingActivationAuthenticationCallback -->
+														<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:726377c7-0039-4edc-b57c-dd98bc5e99b7">
+															<SHORT-NAME>DoIPRoutingActivationAuthenticationCallback</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Container describes the Callbackfunction to call on a Routing Activation Request for Authentication. If this container is configured but the DoIPRoutingActivationAuthenticationFunc parameter is not present, the DoIP module will use an RPort of ServiceInterface &lt;RoutingActivation&gt;_RoutingActivation with the name "CB&lt;RoutingActivation&gt;RoutingActivation". &lt;RoutingActivation&gt; is the ShortName of the DoIPRoutingActiviation container.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<PARAMETERS>
+																<!-- PARAMETER DEFINITION: DoIPRoutingActivationAuthenticationFunc -->
+																<ECUC-FUNCTION-NAME-DEF UUID="ECUC:05ef7a06-64da-467c-be24-d40bac66acc3">
+																	<SHORT-NAME>DoIPRoutingActivationAuthenticationFunc</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Direct C Callback function to trigger the authentication function for routing activation. If the DoIPRoutingActivationAuthenticationFunc parameter is present, the DoIP module will not use an RPort of ServiceInterface &lt;RoutingActivation&gt;_RoutingActivation but call the configured function.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<ECUC-FUNCTION-NAME-DEF-VARIANTS>
+																		<ECUC-FUNCTION-NAME-DEF-CONDITIONAL/>
+																	</ECUC-FUNCTION-NAME-DEF-VARIANTS>
+																</ECUC-FUNCTION-NAME-DEF>
+																<!-- PARAMETER DEFINITION: DoIPRoutingActivationAuthenticationReqLength -->
+																<ECUC-INTEGER-PARAM-DEF UUID="ECUC:2abdcf96-9b8e-4936-afc0-ede76b21f3a7">
+																	<SHORT-NAME>DoIPRoutingActivationAuthenticationReqLength</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Describes the amount of bytes used to handle to the authentication function on routing activation. If 0 is configured as length the parameter AuthenticationReqData will not be handled to the API.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<MAX>4</MAX>
+																	<MIN>0</MIN>
+																</ECUC-INTEGER-PARAM-DEF>
+																<!-- PARAMETER DEFINITION: DoIPRoutingActivationAuthenticationResLength -->
+																<ECUC-INTEGER-PARAM-DEF UUID="ECUC:45e1fc22-6491-40ed-87b8-7917007771a8">
+																	<SHORT-NAME>DoIPRoutingActivationAuthenticationResLength</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Describes the amount of bytes used to read by the authentication function on routing activation. If 0 is configured as length the parameter AuthenticationResData will not be fetched via the API.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<MAX>4</MAX>
+																	<MIN>0</MIN>
+																</ECUC-INTEGER-PARAM-DEF>
+															</PARAMETERS>
+														</ECUC-PARAM-CONF-CONTAINER-DEF>
+														<!-- Container Definition: DoIPRoutingActivationConfirmationCallback -->
+														<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:7e1d1ce3-eff6-43ab-a071-e6b83dfa4855">
+															<SHORT-NAME>DoIPRoutingActivationConfirmationCallback</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Container describes the Callbackfunction to call on a Routing Activation Request for Confirmation. If this container is configured but the DoIPRoutingActivationConfirmationFunc parameter is not present the DoIP module will use an RPort of ServiceInterface &lt;RoutingActivation&gt;_RoutingActivation with the name "CB&lt;RoutingActivation&gt;RoutingActivation". &lt;RoutingActivation&gt; is the ShortName of the DoIPRoutingActiviation container.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<PARAMETERS>
+																<!-- PARAMETER DEFINITION: DoIPRoutingActivationConfirmationFunc -->
+																<ECUC-FUNCTION-NAME-DEF UUID="ECUC:4630dc00-f4e8-4bf0-b18c-1a98a4f2f7c9">
+																	<SHORT-NAME>DoIPRoutingActivationConfirmationFunc</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Direct C Callback function to trigger the confirmation function for routing activation. If the DoIPRoutingActivationConfirmationFunc parameter is present the DoIP module will not use an RPort of ServiceInterface &lt;RoutingActivation&gt;_RoutingActivation but call the configured function.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<ECUC-FUNCTION-NAME-DEF-VARIANTS>
+																		<ECUC-FUNCTION-NAME-DEF-CONDITIONAL/>
+																	</ECUC-FUNCTION-NAME-DEF-VARIANTS>
+																</ECUC-FUNCTION-NAME-DEF>
+																<!-- PARAMETER DEFINITION: DoIPRoutingActivationConfirmationReqLength -->
+																<ECUC-INTEGER-PARAM-DEF UUID="ECUC:b5b1030f-ad9f-4bbf-b2a0-9674bf5f20a7">
+																	<SHORT-NAME>DoIPRoutingActivationConfirmationReqLength</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Describes the amount of bytes used to handle to the confirmation function on routing activation. If 0 is configured as length the parameter ConfirmedReqData will not be handled to the API.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<MAX>4</MAX>
+																	<MIN>0</MIN>
+																</ECUC-INTEGER-PARAM-DEF>
+																<!-- PARAMETER DEFINITION: DoIPRoutingActivationConfirmationResLength -->
+																<ECUC-INTEGER-PARAM-DEF UUID="ECUC:701e1997-d200-4ee4-8372-e5eb0dc94c56">
+																	<SHORT-NAME>DoIPRoutingActivationConfirmationResLength</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Describes the amount of bytes used to read by the confirmation function on routing activation. If 0 is configured as length the parameter ConfirmedResData will not be fetched via the API.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<MAX>4</MAX>
+																	<MIN>0</MIN>
+																</ECUC-INTEGER-PARAM-DEF>
+															</PARAMETERS>
+														</ECUC-PARAM-CONF-CONTAINER-DEF>
+													</SUB-CONTAINERS>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+												<!-- Container Definition: DoIPTester -->
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:5ec2063c-2a23-4da2-be67-e7cd0a80ee93">
+													<SHORT-NAME>DoIPTester</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This container describes the properties of the possible connectable Tester for the DoIP entity.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>255</UPPER-MULTIPLICITY>
+													<PARAMETERS>
+														<!-- PARAMETER DEFINITION: DoIPNumByteDiagAckNack -->
+														<ECUC-INTEGER-PARAM-DEF UUID="ECUC:2cdb3b03-189a-4c0d-847c-ec5cbe717265">
+															<SHORT-NAME>DoIPNumByteDiagAckNack</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Specifies the number of original Diagnostic request bytes the DoIP entity responses on a NACK of a diagnostic response message to the Tester.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MAX>4294967295</MAX>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<!-- PARAMETER DEFINITION: DoIPTesterSA -->
+														<ECUC-INTEGER-PARAM-DEF UUID="ECUC:44ccb383-1ad0-47a4-a3c4-5056f05a922d">
+															<SHORT-NAME>DoIPTesterSA</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Source Address of the Tester sent via routing activation or diagnostic message.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MAX>65535</MAX>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+													</PARAMETERS>
+													<REFERENCES>
+														<!-- Reference Definition: DoIPRoutingActivationRef -->
+														<ECUC-REFERENCE-DEF UUID="ECUC:cc241bfa-5d3c-4e9b-b190-f764add15a77">
+															<SHORT-NAME>DoIPRoutingActivationRef</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Reference to a DoIPRoutingActivation describing the possible routing activations of the DoIPTester</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>255</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/DoIP/DoIPConfigSet/DoIPInterface/DoIPRoutingActivation</DESTINATION-REF>
+														</ECUC-REFERENCE-DEF>
+													</REFERENCES>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<!-- Container Definition: DoIPGeneral -->
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="a200892b-4c11-4c77-b67f-2952d1f89fa8">
+									<SHORT-NAME>DoIPGeneral</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container specifies the general configuration parameters of the DoIP module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: DoIPAliveCheckResponseTimeout -->
+										<ECUC-FLOAT-PARAM-DEF UUID="793e123f-c484-4b36-bbc1-5bf785f30557">
+											<SHORT-NAME>DoIPAliveCheckResponseTimeout</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Timeout  in [s] for waiting for a response to an Alive Check request before the connection is considered to be disconnected. Represents parameter T_TCP_AliveCheck of ISO 13400-2:2012.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>Inf</MAX>
+											<MIN>0</MIN>
+										</ECUC-FLOAT-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPDevelopmentErrorDetect -->
+										<ECUC-BOOLEAN-PARAM-DEF UUID="c28940cb-abef-45c2-b81b-4acc74805f22">
+											<SHORT-NAME>DoIPDevelopmentErrorDetect</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Pre-processor switch for enabling development error detection support.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPDhcpOptionVinUse -->
+										<ECUC-BOOLEAN-PARAM-DEF UUID="34eca337-52b5-4f79-b980-6dfd71924ce3">
+											<SHORT-NAME>DoIPDhcpOptionVinUse</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If DoIPDhcpOptionVinUse is set to true the DoIP module will add the VIN to the Dhcp host name if no valid Dhcp host name is already set.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPEntityStatusMaxByteFieldUse -->
+										<ECUC-BOOLEAN-PARAM-DEF UUID="a3eae043-90c1-4201-99b0-544baa6daa37">
+											<SHORT-NAME>DoIPEntityStatusMaxByteFieldUse</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter is used to distinguish the optional support of the Max data size element of a diagnostic entity status response.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPGIDInvalidityPattern -->
+										<ECUC-INTEGER-PARAM-DEF UUID="bdf5e8e8-4413-464e-9cb0-8de8ccb334ca">
+											<SHORT-NAME>DoIPGIDInvalidityPattern</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Specifies the Byte pattern that is used for response messages if no valid GID could be retrieved.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>255</MAX>
+											<MIN>0</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPGeneralInactivityTime -->
+										<ECUC-FLOAT-PARAM-DEF UUID="4f72ae2d-e209-4d55-80e4-1b1a184fdf7f">
+											<SHORT-NAME>DoIPGeneralInactivityTime</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Timeout in [s] for maximum inactivity of a TCP socket connection before the DoIP module will close the according socket connection. Represents parameter T_TCP_General_Inactivity of ISO 13400-2:2012</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>Inf</MAX>
+											<MIN>0</MIN>
+										</ECUC-FLOAT-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPHeaderFileInclusion -->
+										<ECUC-STRING-PARAM-DEF UUID="be23b072-c4b1-42f1-9a54-8724b30ad635">
+											<SHORT-NAME>DoIPHeaderFileInclusion</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Name of the header file(s) to be included by the DoIP module containing the used C-callback declarations.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</ECUC-STRING-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPInitialInactivityTime -->
+										<ECUC-FLOAT-PARAM-DEF UUID="6cee6e0a-89a7-432d-a52d-02778cb163b1">
+											<SHORT-NAME>DoIPInitialInactivityTime</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Timeout in [s] used for initial inactivity of a connected TCP socket connection directly after socket connection. Represents parameter T_TCP_Initial_Inactivity of ISO 13400-2:2012</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>Inf</MAX>
+											<MIN>0</MIN>
+										</ECUC-FLOAT-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPInitialVehicleAnnouncementTime -->
+										<ECUC-FLOAT-PARAM-DEF UUID="a7f39a11-cdac-4b86-bb77-a4ff32f15a50">
+											<SHORT-NAME>DoIPInitialVehicleAnnouncementTime</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Time to wait in [s] for sending first vehicle anouncement message after IP address assignment. Represents parameter A_DoIP_Announce_Wait of ISO 13400-2:2012</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>Inf</MAX>
+											<MIN>0</MIN>
+										</ECUC-FLOAT-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPMainFunctionPeriod -->
+										<ECUC-FLOAT-PARAM-DEF UUID="45805d43-26d8-499f-a62b-aac4ff4fa6ef">
+											<SHORT-NAME>DoIPMainFunctionPeriod</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Determines the frequency at which the DoIP_MainFunction() is called in [s].</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>Inf</MAX>
+											<MIN>0</MIN>
+										</ECUC-FLOAT-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPMaxRequestBytes -->
+										<ECUC-INTEGER-PARAM-DEF UUID="1dc915a9-732a-43a8-aef7-863930443e13">
+											<SHORT-NAME>DoIPMaxRequestBytes</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Specifies the maximum allowed bytes of a DoIP message request without the DoIP header.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>18446744073709551615</MAX>
+											<MIN>1</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPMaxTesterConnections -->
+										<ECUC-INTEGER-PARAM-DEF UUID="07f5b919-fdf8-42f7-adf5-9bb3adaf5f10">
+											<SHORT-NAME>DoIPMaxTesterConnections</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Maximum ammount of tester connections that shall be maintained at one time before alive check is performed.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>255</MAX>
+											<MIN>1</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPNodeType -->
+										<ECUC-ENUMERATION-PARAM-DEF UUID="61c81de9-2eba-4604-b9d9-d1ac5b7f839b">
+											<SHORT-NAME>DoIPNodeType</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Describes the Type of the DoIP node.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<LITERALS>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="3531162d-6374-4ca0-99a3-66b74beb0bc5">
+													<SHORT-NAME>DOIP_GATEWAY</SHORT-NAME>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="8a8e93b9-6eca-491f-9e04-2e9a39f34143">
+													<SHORT-NAME>DOIP_NODE</SHORT-NAME>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ECUC-ENUMERATION-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPUseEIDasGID -->
+										<ECUC-BOOLEAN-PARAM-DEF UUID="bad7e06b-1634-436d-8300-99dff78ddc70">
+											<SHORT-NAME>DoIPUseEIDasGID</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Specifies if the DoIP entity shall use its EID if it is the Master for vehicle identification gid on the vehicle identification/vehicle announcement.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPUseMacAddressForIdentification -->
+										<ECUC-BOOLEAN-PARAM-DEF UUID="e4ac2e8b-253b-4854-a364-afd28ec5978d">
+											<SHORT-NAME>DoIPUseMacAddressForIdentification</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Provided the information if a configured EID at vehicle identification response/vehicle announment is used or the MAC address.</L-2>
+											</DESC>
+											<INTRODUCTION>
+												<P>
+													<L-1 L="EN">TRUE: Use MAC Address instead of EID for Vehicle identification/announcement. 
+                                                    FALSE: Use configured EID for vehicle identification/announcement. Dependencies: DoIPEID</L-1>
+												</P>
+											</INTRODUCTION>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPUseVehicleIdentificationSyncStatus -->
+										<ECUC-BOOLEAN-PARAM-DEF UUID="5ea10f94-5872-4c20-8f2f-c7075d2f2a44">
+											<SHORT-NAME>DoIPUseVehicleIdentificationSyncStatus</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Defines if the optional VIN/GID synchronization status is used additionally in the vehicle identification/announcement.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPVehicleAnnouncementInterval -->
+										<ECUC-FLOAT-PARAM-DEF UUID="7f8a0d21-9ee1-4c44-ad90-69c57b6bca35">
+											<SHORT-NAME>DoIPVehicleAnnouncementInterval</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Time to wait in [s] for sending subsequent vehicle anouncement messages. Represents parameter A_DoIP_Announce_Interval of ISO 13400-2:2012</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>Inf</MAX>
+											<MIN>0</MIN>
+										</ECUC-FLOAT-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPVehicleAnnouncementRepetition -->
+										<ECUC-INTEGER-PARAM-DEF UUID="67c2379d-043a-47c4-85ef-fed9b25185e6">
+											<SHORT-NAME>DoIPVehicleAnnouncementRepetition</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Amount of repetitions of the vehicle announcement message on IP address assignment. Represents parameter A_DoIP_Annunce_Num of ISO 13400-2:2012</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>255</MAX>
+											<MIN>1</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPVersionInfoApi -->
+										<ECUC-BOOLEAN-PARAM-DEF UUID="0df20c8e-36cd-42b1-ba65-bb9bdba72b35">
+											<SHORT-NAME>DoIPVersionInfoApi</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Activates the DoIP_GetVersionInfo() API.</L-2>
+											</DESC>
+											<INTRODUCTION>
+												<P>
+													<L-1 L="EN">TRUE: Enables the DoIP_GetVersionInfo() API. 
+                                                    FALSE: DoIP_GetVersionInfo() API is not included.</L-1>
+												</P>
+											</INTRODUCTION>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPVinGidMaster -->
+										<ECUC-BOOLEAN-PARAM-DEF UUID="20d5dfb6-e29c-4cc9-a9ff-68bb282ac904">
+											<SHORT-NAME>DoIPVinGidMaster</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Specifies if the DoIP entity is the Vehicle identification Master for the GID (Group ID).</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DoIPVinInvalidityPattern -->
+										<ECUC-INTEGER-PARAM-DEF UUID="03d1fd23-6844-4ce8-a957-a235ad2196c0">
+											<SHORT-NAME>DoIPVinInvalidityPattern</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Specifies the Byte pattern that is used for response messages if no valid VIN could be retrieved.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>255</MAX>
+											<MIN>0</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+									</PARAMETERS>
+									<SUB-CONTAINERS>
+										<!-- Container Definition: DoIPGetGid -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="404eacad-16bf-4d40-8cbe-c29de0edbdd5">
+											<SHORT-NAME>DoIPGetGid</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container describes the Callbackfunction to get the GID.</L-2>
+											</DESC>
+											<INTRODUCTION>
+												<P>
+													<L-1 L="EN">If this container is not configured no Callbackfunction will be used.
+            
+                                                    If this container is configured but the DoIPGetGID parameter is not present, the DoIP module will use an RPort of ServiceInterface CallbackGetGID with the name "CBGetGID".</L-1>
+												</P>
+											</INTRODUCTION>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: DoIPGetGID -->
+												<ECUC-FUNCTION-NAME-DEF UUID="345849a7-a78d-4180-bf69-3515f9cc891a">
+													<SHORT-NAME>DoIPGetGID</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Direct C Callback function to get the GID of the DoIP entity. If the DoIPGetGID parameter is present, the DoIP module will not use an RPort of ServiceInterface CallbackGetGID but call the configured function.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</ECUC-FUNCTION-NAME-DEF>
+											</PARAMETERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: DoIPPowerModeCallback -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="6e539553-d1c8-43ab-b1a3-203d615f12f9">
+											<SHORT-NAME>DoIPPowerModeCallback</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container describes the Callbackfunction to get the Power Mode. This container shall always be present.</L-2>
+											</DESC>
+											<INTRODUCTION>
+												<P>
+													<L-1 L="EN">If the DoIPPowerMode parameter is not present, the DoIP module will use an RPort of ServiceInterface CallbackGetPowerMode with the name "CBGetPowerMode".</L-1>
+												</P>
+											</INTRODUCTION>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: DoIPPowerMode -->
+												<ECUC-FUNCTION-NAME-DEF UUID="94c460ea-9181-4043-8dab-35fc02b0c798">
+													<SHORT-NAME>DoIPPowerMode</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Direct C Callback function to get the Power Mode of the DoIP entity. If the DoIPPowerMode parameter is present, the DoIP module will not use an RPort of ServiceInterface CallbackGetPowerMode but will call the configured function.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</ECUC-FUNCTION-NAME-DEF>
+											</PARAMETERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: DoIPTriggerGidSynchronization -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="6b8b0f97-aa8a-42a5-987f-b025ebb6c347">
+											<SHORT-NAME>DoIPTriggerGidSynchronization</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container describes the Callbackfunction to trigger the GID synchronisation.</L-2>
+											</DESC>
+											<INTRODUCTION>
+												<P>
+													<L-1 L="EN">If this container is not configured no Callbackfunction will be used.
+            
+                                                    If this container is configured but the DoIPTriggerGIDSynchronzation parameter is not present, the DoIP module will use an RPort of ServiceInterface CallbackTriggerGIDSynchronization with the name "CBTriggerGIDSynchronization".</L-1>
+												</P>
+											</INTRODUCTION>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: DoIPTriggerGIDSynchronzation -->
+												<ECUC-FUNCTION-NAME-DEF UUID="bec04140-0464-4b01-8f65-e8c59aa1b004">
+													<SHORT-NAME>DoIPTriggerGIDSynchronzation</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Direct C Callback function to trigger the synchronization of the GID. If the DoIPTriggerGIDSynchronzation parameter is present, the DoIP module will not use an RPort of ServiceInterface CallbackTriggerGIDSynchronization but call the configured function.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</ECUC-FUNCTION-NAME-DEF>
+											</PARAMETERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+							</CONTAINERS>
+						</ECUC-MODULE-DEF>
+					</ELEMENTS>
+				</AR-PACKAGE>
+			</AR-PACKAGES>
+		</AR-PACKAGE>
+	</AR-PACKAGES>
+</AUTOSAR>

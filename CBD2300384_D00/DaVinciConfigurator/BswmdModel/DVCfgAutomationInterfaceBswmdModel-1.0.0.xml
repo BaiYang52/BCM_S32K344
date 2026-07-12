@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DVCfgAutomationBswmdModelGenerationResult>
+    <Hashvalue>AAqMBy19t80SKLs361rNfA==</Hashvalue>
+    <BswmdModelGeneratorVersion>1.6.21</BswmdModelGeneratorVersion>
+    <ECoreFeatureVersion>5.44.0</ECoreFeatureVersion>
+    <Generation>
+        <State>SUCCESSFUL</State>
+        <Retries>1</Retries>
+    </Generation>
+    <ModuleBlackList>
+        <ModuleDef>/TS_T40D34M20I1R0/Mcl</ModuleDef>
+        <ModuleDef>/TS_T40D34M20I1R0/Spi</ModuleDef>
+    </ModuleBlackList>
+    <LastExceptionStacktrace>com.vector.cfg.gen.bswmdmodelgenerator.common.exceptions.BswmdModelGeneratorCompilationException: The Compilation of the jar file failed with following errors: &#xD;
+[Error] JavaCompiler - Duplicate method getReferencesOfSpiFlexioRxAndCsChannelsConfigPointingToMe() in type com.vector.cfg.automation.model.ecuc.ts_t40d34m20i1r0.mcl.mclconfig.flexiocommon.flexiomcllogicchannels.FlexioMclLogicChannels&#xD;
+                     - at line 1486 in C:\Users\BaiYang\AppData\Local\Temp\DaVinci\Cfg-BaiYang8384816\BswmdModelGenerator\1783828400591-0\BswmdTaskCLASSES_JavaProject\src\com\vector\cfg\automation\model\ecuc\ts_t40d34m20i1r0\mcl\mclconfig\flexiocommon\flexiomcllogicchannels\FlexioMclLogicChannels.java&#xD;
+&#xD;
+[Error] JavaCompiler - Duplicate method getReferencesOfSpiFlexioRxAndCsChannelsConfigPointingToMe() in type com.vector.cfg.automation.model.ecuc.ts_t40d34m20i1r0.mcl.mclconfig.flexiocommon.flexiomcllogicchannels.FlexioMclLogicChannels&#xD;
+                     - at line 1505 in C:\Users\BaiYang\AppData\Local\Temp\DaVinci\Cfg-BaiYang8384816\BswmdModelGenerator\1783828400591-0\BswmdTaskCLASSES_JavaProject\src\com\vector\cfg\automation\model\ecuc\ts_t40d34m20i1r0\mcl\mclconfig\flexiocommon\flexiomcllogicchannels\FlexioMclLogicChannels.java&#xD;
+&#xD;
+[Error] JavaCompiler - Duplicate method getFlexioMclLogicChannelsTarget() in type com.vector.cfg.automation.model.ecuc.ts_t40d34m20i1r0.spi.spigeneral.spiphyunit.spiflexiorxandcschannelsconfig.SpiFlexioRxAndCsChannelsConfig&#xD;
+                     - at line 147 in C:\Users\BaiYang\AppData\Local\Temp\DaVinci\Cfg-BaiYang8384816\BswmdModelGenerator\1783828400591-0\BswmdTaskCLASSES_JavaProject\src\com\vector\cfg\automation\model\ecuc\ts_t40d34m20i1r0\spi\spigeneral\spiphyunit\spiflexiorxandcschannelsconfig\SpiFlexioRxAndCsChannelsConfig.java&#xD;
+&#xD;
+[Error] JavaCompiler - Duplicate method getFlexioMclLogicChannelsTarget() in type com.vector.cfg.automation.model.ecuc.ts_t40d34m20i1r0.spi.spigeneral.spiphyunit.spiflexiorxandcschannelsconfig.SpiFlexioRxAndCsChannelsConfig&#xD;
+                     - at line 168 in C:\Users\BaiYang\AppData\Local\Temp\DaVinci\Cfg-BaiYang8384816\BswmdModelGenerator\1783828400591-0\BswmdTaskCLASSES_JavaProject\src\com\vector\cfg\automation\model\ecuc\ts_t40d34m20i1r0\spi\spigeneral\spiphyunit\spiflexiorxandcschannelsconfig\SpiFlexioRxAndCsChannelsConfig.java&#xD;
+-------------------------------------------------&#xD;
+	at com.vector.cfg.gen.bswmdmodelgenerator.internal.compiler.BswmdModelCompiler.a(SourceFile:330)&#xD;
+	at com.vector.cfg.gen.bswmdmodelgenerator.internal.compiler.BswmdModelCompiler.bF(SourceFile:214)&#xD;
+	at com.vector.cfg.gen.bswmdmodelgenerator.internal.compiler.BswmdModelCompiler.buildJarFiles(SourceFile:99)&#xD;
+	at com.vector.cfg.gen.bswmdmodelgenerator.internal.executor.BswmdModelGenerationCompilationExecutorFromConfigXml.a(SourceFile:160)&#xD;
+	at com.vector.cfg.gen.bswmdmodelgenerator.internal.executor.BswmdModelGenerationCompilationExecutorFromConfigXml.a(SourceFile:116)&#xD;
+	at com.vector.cfg.gen.bswmdmodelgenerator.internal.executor.BswmdModelGenerationCompilationExecutorFromConfigXml.execute(SourceFile:59)&#xD;
+	at com.vector.cfg.gen.bswmdmodelgenerator.ModelGenerationCompilationExecutor.executeInternal(SourceFile:106)&#xD;
+	at com.vector.cfg.gen.bswmdmodelgenerator.ModelGenerationCompilationExecutor.execute(SourceFile:80)&#xD;
+	at com.vector.cfg.gen.bswmdmodelgenerator.target.gen.BswmdModelGenerationCompilationExecutor.execute(SourceFile:56)&#xD;
+	at com.vector.cfg.gen.bswmdmodelgenerator.target.gen.automation.AutomationBswmdModelGenerator.t(SourceFile:107)&#xD;
+	at com.vector.cfg.gen.bswmdmodelgenerator.target.gen.automation.AutomationBswmdModelGenerator.generateModelAndWriteResultXml(SourceFile:79)&#xD;
+	at com.vector.cfg.gen.bswmdmodelgenerator.target.gen.automation.BswmdModelGeneratorAutomationService.generateNewModel(SourceFile:263)&#xD;
+	at com.vector.cfg.gen.bswmdmodelgenerator.app.Application.a(SourceFile:178)&#xD;
+	at com.vector.cfg.gen.bswmdmodelgenerator.target.gen.automation.BswmdModelGeneratorAutomationService.executeIfModelIsNotUpToDate(SourceFile:201)&#xD;
+	at com.vector.cfg.gen.bswmdmodelgenerator.app.Application.C(SourceFile:177)&#xD;
+	at com.vector.cfg.gen.bswmdmodelgenerator.app.Application.startInternal(SourceFile:88)&#xD;
+	at com.vector.cfg.gen.bswmdmodelgenerator.app.Application.start(SourceFile:66)&#xD;
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)&#xD;
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)&#xD;
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)&#xD;
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)&#xD;
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)&#xD;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#xD;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#xD;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#xD;
+	at java.lang.reflect.Method.invoke(Method.java:498)&#xD;
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:660)&#xD;
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)&#xD;
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1468)&#xD;
+</LastExceptionStacktrace>
+</DVCfgAutomationBswmdModelGenerationResult>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><feature provider-name="Vector Informatik GmbH" label="DaVinci Cfg Automation Interface" id="com.vector.cfg.automation.msr.feature" version="1.0.0.r109322">
+<description>
+      Automation interface for DaVinci Configurator.
+   </description>
+<copyright>
+      (c) Copyright Vector Informatik GmbH. All Rights Reserved.
+   </copyright>
+<license url="http://www.vector.com">
+      Vector Group License Agreement
+
+This software is licensed under the terms and conditions of „Delivery and maintenance of software products” of Vector Group, see www.vector.com
+   </license>
+<includes id="com.vector.cfg.automation.feature" version="1.0.0.r109322"/>
+<includes id="com.vector.cfg.gen.bswmdmodelgenerator.feature" version="1.0.0.r109322"/>
+<plugin install-size="0" download-size="0" unpack="false" id="com.vector.cfg.automation.classloading.msr" version="1.0.0.109322"/>
+<plugin install-size="0" download-size="0" unpack="false" id="com.vector.cfg.automation" version="1.0.0.109322"/>
+<plugin install-size="0" download-size="0" unpack="false" id="com.vector.cfg.automation.app" version="1.0.0.109322"/>
+<plugin install-size="0" download-size="0" unpack="false" id="com.vector.cfg.project.settings.msr.groovy" version="1.0.0.109322"/>
+</feature>

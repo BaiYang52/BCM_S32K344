@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: com.vector.splash.ui
+Bundle-SymbolicName: com.vector.splash.ui;singleton:=true
+Export-Package: com.vector.splash.ui; uses:="org.eclipse.swt.events,  
+ org.eclipse.swt.graphics,  org.eclipse.swt.widgets,  org.eclipse.ui.s
+ plash"
+Bundle-Name: Vector Splash Screen
+Bundle-Version: 1.0.0.109322
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: Vector Informatik GmbH
+Import-Package: com.vector.cfg.util.log,org.eclipse.core.runtime,org.e
+ clipse.swt,org.eclipse.swt.events,org.eclipse.swt.graphics,org.eclips
+ e.swt.internal,org.eclipse.swt.widgets,org.eclipse.ui.splash
+Eclipse-BundleShape: dir
+

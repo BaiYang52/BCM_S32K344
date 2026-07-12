@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Settings Name="com.vector.cfg.core.sip.ISIPService">
+    <Settings Name="ModuleList">
+      <Settings Name="DrvI2c_S32K14xFsli2c01Asr">
+        <Settings Name="I2C_GRP_S32Kx">
+          <Setting Name="SIP_Folder" Value="DrvI2c_S32K14xFsli2c01Asr" />
+          <Settings Name="72A47C44-01F4-4607-B61F-5D1964705F2F">
+            <Setting Name="Derivative" Value="S32K314" />
+            <Setting Name="SIP_Folder" Value="S32Kx" />
+            <Setting Name="ReleaseType" Value="Hardware Reference Checked" />
+          </Settings>
+        </Settings>
+      </Settings>
+    </Settings>
+  </Settings>
+</Settings>

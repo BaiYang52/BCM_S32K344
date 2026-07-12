@@ -1,0 +1,1878 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+***********************************************************************************************************************
+COPYRIGHT
+===============================================================================
+Copyright (c) 2021 by Vector Informatik GmbH.                                         All rights reserved.
+
+    This software is copyright protected and proprietary to Vector Informatik GmbH.
+    Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+    All other rights remain with Vector Informatik GmbH.
+===============================================================================
+FILE DESCRIPTION
+===============================================================================
+File:           Wdg_30_TLE4278G_bswmd.arxml
+Component:      $COMPONENT$
+Module:         Wdg
+Generator:      $GENERATOR$
+Description:    $DESCRIPTION$
+*********************************************************************************************************************** 
+-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0">
+	<AR-PACKAGES>
+		<AR-PACKAGE UUID="ff55d029-386d-43a2-b3c2-dfef4c7a5e36">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<AR-PACKAGES>
+				<AR-PACKAGE UUID="23647588-f5d1-4744-b6fd-45982db4cb08">
+					<SHORT-NAME>Wdg_30_TLE4278G</SHORT-NAME>
+					<ELEMENTS>
+						<ECUC-MODULE-DEF UUID="428d8310-83eb-4499-a76f-9aebe7413581">
+							<SHORT-NAME>Wdg</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Configuration of the Wdg (Watchdog driver) module.</L-2>
+							</DESC>
+							<CATEGORY>VENDOR_SPECIFIC_MODULE_DEFINITION</CATEGORY>
+							<ADMIN-DATA>
+								<DOC-REVISIONS>
+									<DOC-REVISION>
+										<REVISION-LABEL>01.00.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>virmfr</ISSUED-BY>
+										<DATE>2008-01-07T00:00:00+02:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Initial version</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>01.00.01</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>virmfr</ISSUED-BY>
+										<DATE>2008-01-07T00:00:00+02:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Adaption to Autosar 2.1.0</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>01.01.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>virmfr</ISSUED-BY>
+										<DATE>2008-01-07T00:00:00+02:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Added Header with revision history, Parameter WdgCheckParamVinfoPtr added</L-2>
+												</CHANGE>
+												<REASON>
+													<L-2 L="EN">ESCAN00022974</L-2>
+												</REASON>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>01.02.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>virmfr</ISSUED-BY>
+										<DATE>2011-07-08T00:00:00+02:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Pre and Recommended configuration added, Introduced a intermediate layer for the Wdg</L-2>
+												</CHANGE>
+												<REASON>
+													<L-2 L="EN">ESCAN00028650, ESCAN00051142</L-2>
+												</REASON>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>01.03.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>virou</ISSUED-BY>
+										<DATE>2014-10-14T00:00:00+02:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Trigger counter value is configurable</L-2>
+												</CHANGE>
+												<REASON>
+													<L-2 L="EN">ESCAN00078933</L-2>
+												</REASON>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.00.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>virmid</ISSUED-BY>
+										<DATE>2015-01-20</DATE>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.00.01</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>virmid</ISSUED-BY>
+										<DATE>2015-06-02</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Updated software version</L-2>
+												</CHANGE>
+												<REASON>
+													<L-2 L="EN">ESCAN00083201</L-2>
+												</REASON>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.01.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>virmid</ISSUED-BY>
+										<DATE>2015-06-15T06:34:07+02:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Updated software version, minor conformance changes</L-2>
+												</CHANGE>
+												<REASON>
+													<L-2 L="EN">ESCAN00083141</L-2>
+												</REASON>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.01.01</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>virmid</ISSUED-BY>
+										<DATE>2015-09-02T06:49:28+02:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Updated software version, added copyright header</L-2>
+												</CHANGE>
+												<REASON>
+													<L-2 L="EN">ESCAN00084928</L-2>
+												</REASON>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.01.02</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>virmid</ISSUED-BY>
+										<DATE>2015-09-14T05:23:03+02:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Updated software version, minor corrections</L-2>
+												</CHANGE>
+												<REASON>
+													<L-2 L="EN">-</L-2>
+												</REASON>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.01.03</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>virmid</ISSUED-BY>
+										<DATE>2016-02-22T03:15:31+01:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Updated software version</L-2>
+												</CHANGE>
+												<REASON>
+													<L-2 L="EN">ESCAN00088466, ESCAN00088472</L-2>
+												</REASON>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>3.00.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>virmid</ISSUED-BY>
+										<DATE>2016-09-28T05:07:26+02:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Development according to SafeBSW</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>4.00.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>virmid</ISSUED-BY>
+										<DATE>2017-04-04T09:51:46+02:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Generic support of IO-based external watchdog peripherals</L-2>
+												</CHANGE>
+												<REASON>
+													<L-2 L="EN">ESCAN00094613</L-2>
+												</REASON>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>4.00.01</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>virmid</ISSUED-BY>
+										<DATE>2017-06-29T02:22:16+02:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Remove 'MultipleConfigurationSet-Container'-attribute from WdgDeviceConfig</L-2>
+												</CHANGE>
+												<REASON>
+													<L-2 L="EN">ESCAN00095678</L-2>
+												</REASON>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>4.02.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>virlrs</ISSUED-BY>
+										<DATE>2020-02-19T13:18:43+01:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Introduce boolean parameter SafeBswChecks.</L-2>
+												</CHANGE>
+												<REASON>
+													<L-2 L="EN">CTM-1198</L-2>
+												</REASON>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>4.02.01</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>virskl</ISSUED-BY>
+										<DATE>2020-05-19T15:19:29+02:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Reference WdgTriggerTimer to GptChannelConfiguration is not AUTOSAR 3 compatible</L-2>
+												</CHANGE>
+												<REASON>
+													<L-2 L="EN">ESCAN00106403</L-2>
+												</REASON>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>4.03.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>virwsl</ISSUED-BY>
+										<DATE>2021-09-23T11:04:09+02:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Update to new Core version</L-2>
+												</CHANGE>
+												<REASON>
+													<L-2 L="EN">CTM-3276</L-2>
+												</REASON>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+								</DOC-REVISIONS>
+							</ADMIN-DATA>
+							<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+							<REFINED-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/AUTOSAR/EcucDefs/Wdg</REFINED-MODULE-DEF-REF>
+							<SUPPORTED-CONFIG-VARIANTS>
+								<SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+							</SUPPORTED-CONFIG-VARIANTS>
+							<CONTAINERS>
+								<!-- Container Definition: WdgDemEventParameterRefs -->
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="41738582-4d18-4991-89a4-1b99a53f7b1d">
+									<SHORT-NAME>WdgDemEventParameterRefs</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container includes the references to DemEventParameter elements which shall be invoked using the API Dem_ReportErrorStatus in case the corresponding error occurs. The EventId is taken from the referenced DemEventParameter's DemEventId value.</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<INTRODUCTION>
+										<P>
+											<L-1 L="EN">The standardized errors are provided in the container and can be extended by vendor-specific error references.</L-1>
+										</P>
+									</INTRODUCTION>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<REFERENCES>
+										<!-- Symbolic Name Reference Definition: WDG_E_DISABLE_REJECTED -->
+										<!-- Symbolic Name Reference Definition: WDG_E_MODE_FAILED -->
+										<ECUC-CHOICE-REFERENCE-DEF UUID="6037ed13-38bf-4138-b3e0-90369b21da85">
+											<SHORT-NAME>WDG_E_DISABLE_REJECTED</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Reference to the DemEventParameter which shall be issued when the error "Initialization or mode switch failed because it would disable the watchdog" has occurred.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<DESTINATION-REFS>
+												<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Dem/DemConfigSet/DemEventParameter</DESTINATION-REF>
+												<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter</DESTINATION-REF>
+											</DESTINATION-REFS>
+										</ECUC-CHOICE-REFERENCE-DEF>
+										<ECUC-CHOICE-REFERENCE-DEF UUID="b78ba680-6bc7-45d5-b63c-be8f0b18a611">
+											<SHORT-NAME>WDG_E_MODE_FAILED</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Reference to the DemEventParameter which shall be issued when the error "Setting a watchdog mode failed (during initialization or mode switch)" has occurred.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<DESTINATION-REFS>
+												<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter</DESTINATION-REF>
+												<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Dem/DemConfigSet/DemEventParameter</DESTINATION-REF>
+											</DESTINATION-REFS>
+										</ECUC-CHOICE-REFERENCE-DEF>
+									</REFERENCES>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<!-- Container Definition: WdgGeneral -->
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="8a4d86cc-ed7f-4aa9-9078-71385f88f6c9">
+									<SHORT-NAME>WdgGeneral</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container includes all general parameters of the watchdog driver.</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: WdgDevErrorDetect -->
+										<ECUC-BOOLEAN-PARAM-DEF UUID="8800850d-f073-480a-9164-7f5bed56d530">
+											<SHORT-NAME>WdgDevErrorDetect</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter switches the Development Error Detection and Notification ON or OFF.
+
+True: Development error detection is enabled.
+False: Development error detection is disabled.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: WdgDisableAllowed -->
+										<ECUC-BOOLEAN-PARAM-DEF UUID="4efbcfa5-d4d9-4b69-82f9-10d4abed3188">
+											<SHORT-NAME>WdgDisableAllowed</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter allows/forbids disabling the watchdog driver during runtime.
+
+True: Disabling the watchdog during runtime is allowed.
+False: Disabling the watchdog during runtime is not allowed.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: WdgIndex -->
+										<ECUC-INTEGER-PARAM-DEF UUID="633b594a-0efc-4351-b5f4-f173daac5dd8">
+											<SHORT-NAME>WdgIndex</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter represents the watchdog driver's ID so that it can be referenced by the watchdog interface.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+											<MAX>255</MAX>
+											<MIN>0</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: WdgInitialTimeout -->
+										<ECUC-FLOAT-PARAM-DEF UUID="1189506a-8b14-4ca8-a9e6-b6841cd54bdd">
+											<SHORT-NAME>WdgInitialTimeout</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This value specifies the initial timeout (sec) for the trigger condition to be initialized during Init function. It shall be not larger than WdgMaxTimeout.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:Display">
+														<SD GID="DV:BaseUnit">SEC</SD>
+														<SD GID="DV:Unit">MSEC</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>65.535</MAX>
+											<MIN>0</MIN>
+										</ECUC-FLOAT-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: WdgMaxTimeout -->
+										<ECUC-FLOAT-PARAM-DEF UUID="478ceb5f-b44b-4e6d-b6b5-55f748074bbd">
+											<SHORT-NAME>WdgMaxTimeout</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This value specifies the maximum timeout (sec) to which the watchdog trigger condition can be initialized.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:Display">
+														<SD GID="DV:BaseUnit">SEC</SD>
+														<SD GID="DV:Unit">MSEC</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>65.535</MAX>
+											<MIN>0</MIN>
+										</ECUC-FLOAT-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: WdgRunArea -->
+										<ECUC-ENUMERATION-PARAM-DEF UUID="41650ede-da87-4eed-8200-bc88fad18cb5">
+											<SHORT-NAME>WdgRunArea</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Not used.
+
+This parameter represents the watchdog driver execution area is either from ROM(Flash) or RAM as required with the particular microcontroller.
+
+RAM: Watchdog run area is RAM.
+ROM: Watchdog run area is ROM.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<LITERALS>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="3f8011f2-4aa0-4759-a351-9f78d312212e">
+													<SHORT-NAME>RAM</SHORT-NAME>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="f0ca323d-7e14-43d3-994d-52c93778a3df">
+													<SHORT-NAME>ROM</SHORT-NAME>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ECUC-ENUMERATION-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: WdgTriggerLocation -->
+										<ECUC-FUNCTION-NAME-DEF UUID="7a2ec91e-33df-4148-b4b4-c4a334320f1d">
+											<SHORT-NAME>WdgTriggerLocation</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Not used. 
+
+This parameter defines the location (memory address) of the watchdog trigger routine.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<ECUC-FUNCTION-NAME-DEF-VARIANTS>
+												<ECUC-FUNCTION-NAME-DEF-CONDITIONAL>
+													<DEFAULT-VALUE>Wdg_30_TLE4278G_Cbk_GptNotificationTrigger</DEFAULT-VALUE>
+												</ECUC-FUNCTION-NAME-DEF-CONDITIONAL>
+											</ECUC-FUNCTION-NAME-DEF-VARIANTS>
+										</ECUC-FUNCTION-NAME-DEF>
+										<!-- PARAMETER DEFINITION: WdgVersionInfoApi -->
+										<ECUC-BOOLEAN-PARAM-DEF UUID="d62b5d00-165d-4ad8-9cf8-30b004527ef0">
+											<SHORT-NAME>WdgVersionInfoApi</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter enables/disables the function Wdg_GetVersionInfo() to get major, minor and patch version information.
+
+True: API is enabled.
+False: API is disabled.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-STRING-PARAM-DEF UUID="c2f3bc39-8a56-4502-b69e-cf19b0e58a26">
+											<SHORT-NAME>WdgUserConfigFile</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Reference to an external text file that will be included during generation to Wdg_30_TLE4278G_Cfg.h.
+
+The content of the user configuration file will be added at the end of the generated module configuration file and allows altering or extending the generated code.
+
+Caution: User configuration files can cause the software module to malfunction and must only be used with great care!
+</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:variantMultiplicityPBL">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</ECUC-STRING-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="c09d92f8-376e-4abb-879b-a12a8bd313ce">
+											<SHORT-NAME>WdgSafeBswChecks</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Selects if safety checks are used.
+
+These checks improve robustness as e.g. invalid parameters are checked before function is executed. This attribute has to be enabled for safety projects where this component is mapped to an ASIL partition.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+									</PARAMETERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<!-- Container Definition: WdgPublishedInformation -->
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="a838f3e9-deab-40ec-af1b-01c49c320d35">
+									<SHORT-NAME>WdgPublishedInformation</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container includes all Wdg specific published information parameters</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: WdgTriggerMode -->
+										<ECUC-ENUMERATION-PARAM-DEF UUID="2a41b851-6cf0-4b47-ba17-768e6859b839">
+											<SHORT-NAME>WdgTriggerMode</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Not used
+
+This parameter defines the watchdog trigger mode (toggle/window/both)</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>WDG_BOTH</DEFAULT-VALUE>
+											<LITERALS>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="deaba5e0-2931-4f9d-b1d5-8bde7f5c1da5">
+													<SHORT-NAME>WDG_BOTH</SHORT-NAME>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="b198ba47-0cc1-4c8a-83a9-3ac784110e2e">
+													<SHORT-NAME>WDG_TOGGLE</SHORT-NAME>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="c16150be-a66e-4bd7-9b44-7776dee83366">
+													<SHORT-NAME>WDG_WINDOW</SHORT-NAME>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ECUC-ENUMERATION-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="2d4daacb-fa7b-4ba9-a3b0-fd8c4a2d137b">
+											<SHORT-NAME>WdgOffModeSupported</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter indicates if WDGIF_OFF_MODE is supported.
+
+True: WDGIF_OFF_MODE is supported.
+False: WDGIF_OFF_MODE is not supported.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="41533fa6-3926-4ea7-bf4f-eced8dd94a70">
+											<SHORT-NAME>WdgSlowModeSupported</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter indicates if WDGIF_SLOW_MODE is supported.
+
+True: WDGIF_SLOW_MODE is supported.
+False: WDGIF_SLOW_MODE is not supported.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="8056b6a6-7261-464a-999d-fc24717e09f8">
+											<SHORT-NAME>WdgFastModeSupported</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter indicates if WDGIF_FAST_MODE is supported.
+FastMode is mandatory and must not be disabled.
+
+True: WDGIF_FAST_MODE is supported.
+False: WDGIF_FAST_MODE is not supported.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+									</PARAMETERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<!-- Container Definition: WdgSettingsConfig -->
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="fdf23809-b68a-49f3-a749-d521ea6cc35a">
+									<SHORT-NAME>WdgSettingsConfig</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container includes the configuration items for the different watchdog settings, including those for external watchdog hardware.</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<MULTIPLE-CONFIGURATION-CONTAINER>true</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: WdgDefaultMode -->
+										<ECUC-ENUMERATION-PARAM-DEF UUID="03bf83ba-7fec-4c87-b8f1-04f0026cce9b">
+											<SHORT-NAME>WdgDefaultMode</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter defines the default mode for watchdog driver initialization.
+
+WDGIF_FAST_MODE:  In this mode, the watchdog driver is set up for a short timeout period (fast triggering).
+WDGIF_OFF_MODE: In this mode, the watchdog driver is disabled (switched off).
+WDGIF_SLOW_MODE:  In this mode, the watchdog driver is set up for a log timeout period (slow triggering).</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<LITERALS>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="e78b241a-1eac-4729-8681-884676db32d6">
+													<SHORT-NAME>WDGIF_FAST_MODE</SHORT-NAME>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="342a8033-15cf-42bd-9488-de3a35827e33">
+													<SHORT-NAME>WDGIF_OFF_MODE</SHORT-NAME>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="6f983998-d11e-40c3-820c-32c579729bba">
+													<SHORT-NAME>WDGIF_SLOW_MODE</SHORT-NAME>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ECUC-ENUMERATION-PARAM-DEF>
+									</PARAMETERS>
+									<SUB-CONTAINERS>
+										<!-- Container Definition: WdgExternalConfiguration -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="f3962558-5242-4811-8781-6b54cb47d899">
+											<SHORT-NAME>WdgExternalConfiguration</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container includes configuration items for an external watchdog hardware</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+													<SDG GID="MSR:Process">
+														<SD GID="MSR:TraceRef">SPEC-2647958</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<REFERENCES>
+												<!-- Choice Reference Definition: WdgExternalContainerRef -->
+												<ECUC-CHOICE-REFERENCE-DEF UUID="c6297ecb-7392-4342-b7c0-07d378cfccb4">
+													<SHORT-NAME>WdgExternalContainerRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Not used.
+
+Reference to either a DioChannelGroup or an SpiSequence.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<DESTINATION-REFS>
+														<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Dio/DioConfig/DioPort/DioChannelGroup</DESTINATION-REF>
+														<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Spi/SpiDriver/SpiSequence</DESTINATION-REF>
+													</DESTINATION-REFS>
+												</ECUC-CHOICE-REFERENCE-DEF>
+												<ECUC-CHOICE-REFERENCE-DEF UUID="89db79a9-2be1-4eab-8845-3a0b9eaa8595">
+													<SHORT-NAME>WdgTriggerPinRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Reference to WdgDioPin which is used to trigger the external watchdog peripheral.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<DESTINATION-REFS>
+														<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioPins</DESTINATION-REF>
+													</DESTINATION-REFS>
+												</ECUC-CHOICE-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: WdgSettingsFast -->
+										<!-- Container Definition: WdgSettingsOff -->
+										<!-- Container Definition: WdgSettingsSlow -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="cf4dac8d-8e89-4c79-b483-1714cea699fe">
+											<SHORT-NAME>WdgGptChannelParameterRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Container includes Gpt specific settings.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<ECUC-FLOAT-PARAM-DEF UUID="0594b185-bdf8-44b4-ab01-902565b35d1a">
+													<SHORT-NAME>WdgTriggerTimerFreq</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This values specifies the frequency of GptChannel reference WdgTriggerTimer in Hz.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">HZ</SD>
+																<SD GID="DV:Unit">KHZ</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>1.7976931348623157E+308</MAX>
+													<MIN>0</MIN>
+												</ECUC-FLOAT-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="e36d3dae-9df7-45eb-9fc5-058f2deafa4b">
+													<SHORT-NAME>WdgTickValueMax</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This value specifies the maximum value in ticks, the timer channel is able to count. With the next tick, the timer overflows and rolls over to zero.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">Ticks</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>1</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<ECUC-CHOICE-REFERENCE-DEF UUID="2e51943f-bffc-478d-8f38-c59412f3ef5d">
+													<SHORT-NAME>WdgTriggerTimer</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Reference to GptChannel that is used to time watchdog triggering.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<DESTINATION-REFS>
+														<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Gpt/GptChannelConfigSet/GptChannelConfiguration</DESTINATION-REF>
+														<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Gpt/GptChannelConfigSet/GptChannelConfiguration</DESTINATION-REF>
+													</DESTINATION-REFS>
+												</ECUC-CHOICE-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="c1cb6dff-5606-427c-aaef-542768efddcc">
+											<SHORT-NAME>WdgSettingsFast</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container includes hardware dependent settings for the watchdog driver's "fast" mode.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<ECUC-FLOAT-PARAM-DEF UUID="8ba4aa1d-d1c2-4b89-8e46-382c0637e2ee">
+													<SHORT-NAME>WdgTriggerTimeFast</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This value specifies the trigger period for WDGIF_FAST_MODE.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">SEC</SD>
+																<SD GID="DV:Unit">MSEC</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</ECUC-FLOAT-PARAM-DEF>
+												<ECUC-FLOAT-PARAM-DEF UUID="f67f60f6-2e35-4cb6-baaa-94a8496c3976">
+													<SHORT-NAME>WdgDutyCycle</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This value specifies the duty-cycle of the trigger signal during WDGIF_FAST_MODE. It allows influencing the trigger pulse during the trigger period.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">%</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>50</DEFAULT-VALUE>
+													<MAX>100</MAX>
+													<MIN>0</MIN>
+												</ECUC-FLOAT-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<ECUC-CHOICE-REFERENCE-DEF UUID="0ad406c9-c595-48d2-8471-d53c7039961d">
+													<SHORT-NAME>WdgDioModeSettingsRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Reference to WdgDioModeSetting. The referenced mode specific settings (e.g. setting specified levels of mode pins) is applied during transition to WDGIF_FAST_MODE.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<DESTINATION-REFS>
+														<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings</DESTINATION-REF>
+													</DESTINATION-REFS>
+												</ECUC-CHOICE-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="2c45f10c-20d5-449b-be42-30619bf312fe">
+											<SHORT-NAME>WdgSettingsSlow</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container includes hardware dependent settings for the watchdog driver's "slow" mode.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<ECUC-FLOAT-PARAM-DEF UUID="d298cbe4-fc0e-47aa-bc2b-cf5512e3e89a">
+													<SHORT-NAME>WdgTriggerTimeSlow</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This value specifies the trigger period for WDGIF_SLOW_MODE.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">SEC</SD>
+																<SD GID="DV:Unit">MSEC</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</ECUC-FLOAT-PARAM-DEF>
+												<ECUC-FLOAT-PARAM-DEF UUID="8159a374-766e-4e3c-a5bf-27b9a0745800">
+													<SHORT-NAME>WdgDutyCycle</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This value specifies the duty-cycle of the trigger signal during WDGIF_SLOW_MODE. It allows influencing the trigger pulse during the trigger period.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">%</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>50</DEFAULT-VALUE>
+												</ECUC-FLOAT-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<ECUC-CHOICE-REFERENCE-DEF UUID="a74d70fb-b5c7-4285-9e5b-02a015f1544e">
+													<SHORT-NAME>WdgDioModeSettingsRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Reference to WdgDioModeSetting. The referenced mode specific settings (e.g. setting specified levels of mode pins) is applied during transition to WDGIF_SLOW_MODE.
+
+Note: WDGIF_SLOW_MODE only is available in case this reference is configured.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<DESTINATION-REFS>
+														<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings</DESTINATION-REF>
+													</DESTINATION-REFS>
+												</ECUC-CHOICE-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="a2e4d055-48ee-481b-a6d8-82017a3f67b7">
+											<SHORT-NAME>WdgSettingsOff</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container includes hardware dependent settings for the watchdog driver's "off" mode.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<REFERENCES>
+												<ECUC-CHOICE-REFERENCE-DEF UUID="52139bda-faa0-427e-8c7a-2f24a2abb83d">
+													<SHORT-NAME>WdgDioModeSettingsRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Reference to WdgDioModeSetting. The referenced mode specific settings (e.g. setting specified levels of mode pins) is applied during transition to WDGIF_OFF_MODE.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<DESTINATION-REFS>
+														<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings</DESTINATION-REF>
+													</DESTINATION-REFS>
+												</ECUC-CHOICE-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="9e168d3f-d0fa-42ce-9a8d-83c82f1307b4">
+									<SHORT-NAME>WdgAsr3Compatibility</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container includes configuration items for ASR3 compatibility.
+
+Note: If this (optional) container exists, the ASR3 compatibility mode is enabled.(See Technical reference for further information.)</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<PARAMETERS>
+										<ECUC-FLOAT-PARAM-DEF UUID="474ad7f7-3dd4-4142-b1a0-71afce89ef89">
+											<SHORT-NAME>WdgTriggerTimeout</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This value specifies the timeout (sec) for the trigger condition to be set everytime when Wdg_Trigger is called.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:Display">
+														<SD GID="DV:BaseUnit">SEC</SD>
+														<SD GID="DV:Unit">MSEC</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>65.535</MAX>
+											<MIN>0</MIN>
+										</ECUC-FLOAT-PARAM-DEF>
+									</PARAMETERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="2570fde6-6b61-4c45-ac10-f5f6d59bc7a1">
+									<SHORT-NAME>WdgDeviceConfig</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container includes configurations for specific external watchdog peripherals.</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<SUB-CONTAINERS>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ba313b04-7d47-4c44-81f4-18c6fabe9da8">
+											<SHORT-NAME>WdgDioPins</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container includes the pin configuration for an external watchdog peripheral.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<ECUC-ENUMERATION-PARAM-DEF UUID="5719f046-f537-48f5-8da0-c4efaaa5b280">
+													<SHORT-NAME>WdgInitialLevel</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter defines the polarity of the trigger pin (referenced in WdgTriggerPinRef). It determines the physical level which is set during initialization.
+
+STD_HIGH: Trigger pin is set to physical level HIGH during initialization. (First transition will be a falling edge to LOW.)
+STD_LOW: Trigger pin is set to physical level LOW during initialization. (First transition will be a rising edge to HIGH.)
+
+Note: This parameter only is required in case the WdgDioPin is configured as trigger pin (Referenced in WdgTriggerPinRef).</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<LITERALS>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="37565e70-215a-49d3-a869-bdc2be540c11">
+															<SHORT-NAME>STD_LOW</SHORT-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="44fc42d8-1fb9-4548-9fd2-e1ebd804b9d3">
+															<SHORT-NAME>STD_HIGH</SHORT-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ECUC-ENUMERATION-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<ECUC-CHOICE-REFERENCE-DEF UUID="0d1260cf-fc07-4720-b626-88b405991208">
+													<SHORT-NAME>WdgDioPinChannelRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Reference to DioChannel connected to watchdog input/trigger pin.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<DESTINATION-REFS>
+														<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Dio/DioConfig/DioPort/DioChannel</DESTINATION-REF>
+														<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Dio/DioPort/DioChannel</DESTINATION-REF>
+													</DESTINATION-REFS>
+												</ECUC-CHOICE-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="d252a41b-7492-4dc0-9d8e-c6f2927624f0">
+											<SHORT-NAME>WdgDioModeSettings</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container includes the mode specific configuration for external watchdog peripheral.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<ECUC-BOOLEAN-PARAM-DEF UUID="c7e28ea1-b9fe-45cc-b220-7f08f4473780">
+													<SHORT-NAME>WdgEnableIrreversible</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter defines whether the enabling of the watchdog hardware is irreversible. In case the connected hardware can not be disabled once it was enabled (set to/initialized with WDGIF_FAST_MODE or WDGIF_SLOW_MODE) the value has to be set to TRUE.
+
+TRUE: Enabling the watchdog is irreversible.
+FALSE: Disabling the watchdog again is possible.
+
+Note: This parameter only is relevant in case the this WdgDioModeSettings container is referenced from WdgSettingsOff.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>false</DEFAULT-VALUE>
+												</ECUC-BOOLEAN-PARAM-DEF>
+											</PARAMETERS>
+											<SUB-CONTAINERS>
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="dca4e9ef-840c-462b-9b13-dd96a64921ef">
+													<SHORT-NAME>WdgDioModeLevels</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This container includes the assignment between a WdgDioPin and a physical levels for a specific mode setting.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:postBuildSelectableChangeable">false</SD>
+																<SD GID="DV:postBuildNotDeletable">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+													<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+													<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+													<PARAMETERS>
+														<ECUC-ENUMERATION-PARAM-DEF UUID="391e4cc4-e15a-4c18-843a-477af33936bc">
+															<SHORT-NAME>WdgDioPinModeLevel</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter defines the physical level which is set at the related pin (WdgDioPinChannelRef) 
+
+STD_HIGH: Related pin is set to physical level HIGH during initialization.
+STD_LOW: Related pin is set to physical level HIGH during initialization.
+
+Note: Depended on the used hardware derivative this value may vary. (E.g. SII S19400A/B/C/G/H/I require STD_HIGH on Pin WEN to enable the watchdog, S19400D/E/F/J/K/L require STD_LOW on Pin WEN to enable the watchdog.)</L-2>
+															</DESC>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<LITERALS>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="3f82e992-b8b9-4da8-9253-704e05e48a65">
+																	<SHORT-NAME>STD_HIGH</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="2eeb4719-9f6f-4eef-869b-c7b7d965a6b9">
+																	<SHORT-NAME>STD_LOW</SHORT-NAME>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+															</LITERALS>
+														</ECUC-ENUMERATION-PARAM-DEF>
+													</PARAMETERS>
+													<REFERENCES>
+														<ECUC-CHOICE-REFERENCE-DEF UUID="01fe7b73-a2db-4fcd-83dd-7caff8fccfce">
+															<SHORT-NAME>WdgDioPinRef</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Reference to WdgDioPin.</L-2>
+															</DESC>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<DESTINATION-REFS>
+																<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioPins</DESTINATION-REF>
+															</DESTINATION-REFS>
+														</ECUC-CHOICE-REFERENCE-DEF>
+													</REFERENCES>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+							</CONTAINERS>
+						</ECUC-MODULE-DEF>
+						<BSW-IMPLEMENTATION UUID="3c814b85-384b-4c7d-b9fa-134b84d2f150">
+							<SHORT-NAME>Wdg_Impl</SHORT-NAME>
+							<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+							<SW-VERSION>4.02.00</SW-VERSION>
+							<USED-CODE-GENERATOR>DaVinci Configurator</USED-CODE-GENERATOR>
+							<VENDOR-ID>30</VENDOR-ID>
+							<AR-RELEASE-VERSION>4.00.03</AR-RELEASE-VERSION>
+							<BEHAVIOR-REF DEST="BSW-INTERNAL-BEHAVIOR">/MICROSAR/Wdg_30_TLE4278G_ib_bswmd/BswModuleDescriptions/Wdg/Wdg_30_TLE4278GBehavior</BEHAVIOR-REF>
+							<PRECONFIGURED-CONFIGURATION-REFS>
+								<PRECONFIGURED-CONFIGURATION-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/MICROSAR/Wdg_30_TLE4278G/Wdg_Pre</PRECONFIGURED-CONFIGURATION-REF>
+							</PRECONFIGURED-CONFIGURATION-REFS>
+							<RECOMMENDED-CONFIGURATION-REFS>
+								<RECOMMENDED-CONFIGURATION-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/MICROSAR/Wdg_30_TLE4278G/Wdg_Rec</RECOMMENDED-CONFIGURATION-REF>
+							</RECOMMENDED-CONFIGURATION-REFS>
+							<VENDOR-API-INFIX>TLE4278G</VENDOR-API-INFIX>
+							<VENDOR-SPECIFIC-MODULE-DEF-REFS>
+								<VENDOR-SPECIFIC-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg</VENDOR-SPECIFIC-MODULE-DEF-REF>
+							</VENDOR-SPECIFIC-MODULE-DEF-REFS>
+						</BSW-IMPLEMENTATION>
+						<ECUC-MODULE-CONFIGURATION-VALUES UUID="8ef0aa05-09cf-41bb-bab9-89fb20d9ae99">
+							<SHORT-NAME>Wdg_Pre</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg</DEFINITION-REF>
+							<CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="96f153f6-a119-4eb0-860e-65d29921cbf3">
+									<SHORT-NAME>WdgPublishedInformation</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgPublishedInformation</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgPublishedInformation/WdgFastModeSupported</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+								</ECUC-CONTAINER-VALUE>
+							</CONTAINERS>
+						</ECUC-MODULE-CONFIGURATION-VALUES>
+						<ECUC-MODULE-CONFIGURATION-VALUES UUID="b8d4d695-35c5-4163-98f3-8bf697b4c1e2">
+							<SHORT-NAME>Wdg_Rec</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg</DEFINITION-REF>
+							<CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="e33b4297-806d-4a32-8dae-b836ddf4d19f">
+									<SHORT-NAME>MAX6369</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="5d05e2c4-ca4c-4d7f-a3eb-2e41a918539b">
+											<SHORT-NAME>Max6369_PinSet0</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioPins</DEFINITION-REF>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="487730f2-5d76-4f48-9990-8a5adccbc169">
+											<SHORT-NAME>Max6369_PinSet1</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioPins</DEFINITION-REF>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="ac592cff-cfbe-4c68-a17a-77d8a28ee5df">
+											<SHORT-NAME>Max6369_PinSet2</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioPins</DEFINITION-REF>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="61725fde-4392-4444-8615-63d4418f93d9">
+											<SHORT-NAME>Max6369_PinWdi</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioPins</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioPins/WdgInitialLevel</DEFINITION-REF>
+													<VALUE>STD_HIGH</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="6bc80d0d-de1a-4476-96c3-7f321b545f89">
+											<SHORT-NAME>Max6369_10ms</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="cbe3de4d-6237-4df1-b2d5-46c30f690aa2">
+													<SHORT-NAME>Set0</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinModeLevel</DEFINITION-REF>
+															<VALUE>STD_LOW</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+													<REFERENCE-VALUES>
+														<ECUC-REFERENCE-VALUE>
+															<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinRef</DEFINITION-REF>
+															<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Wdg_30_TLE4278G/Wdg_Rec/MAX6369/Max6369_PinSet0</VALUE-REF>
+														</ECUC-REFERENCE-VALUE>
+													</REFERENCE-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="d02dc7e7-ef46-4306-b6ac-a8cbe09b9635">
+													<SHORT-NAME>Set1</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinModeLevel</DEFINITION-REF>
+															<VALUE>STD_LOW</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+													<REFERENCE-VALUES>
+														<ECUC-REFERENCE-VALUE>
+															<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinRef</DEFINITION-REF>
+															<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Wdg_30_TLE4278G/Wdg_Rec/MAX6369/Max6369_PinSet1</VALUE-REF>
+														</ECUC-REFERENCE-VALUE>
+													</REFERENCE-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="31ee5a0d-9efd-4b92-82e5-08417376ff33">
+													<SHORT-NAME>Set2</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinModeLevel</DEFINITION-REF>
+															<VALUE>STD_HIGH</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+													<REFERENCE-VALUES>
+														<ECUC-REFERENCE-VALUE>
+															<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinRef</DEFINITION-REF>
+															<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Wdg_30_TLE4278G/Wdg_Rec/MAX6369/Max6369_PinSet2</VALUE-REF>
+														</ECUC-REFERENCE-VALUE>
+													</REFERENCE-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="2ae6b015-03cc-4d8c-bc0d-37c6e0fea38b">
+											<SHORT-NAME>Max6369_30ms</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="842b93e8-aa71-49a7-9b13-c886f258324a">
+													<SHORT-NAME>Set0</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinModeLevel</DEFINITION-REF>
+															<VALUE>STD_LOW</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+													<REFERENCE-VALUES>
+														<ECUC-REFERENCE-VALUE>
+															<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinRef</DEFINITION-REF>
+															<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Wdg_30_TLE4278G/Wdg_Rec/MAX6369/Max6369_PinSet0</VALUE-REF>
+														</ECUC-REFERENCE-VALUE>
+													</REFERENCE-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="271fba9c-6930-4b8f-881c-e2c62daa382b">
+													<SHORT-NAME>Set1</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinModeLevel</DEFINITION-REF>
+															<VALUE>STD_HIGH</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+													<REFERENCE-VALUES>
+														<ECUC-REFERENCE-VALUE>
+															<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinRef</DEFINITION-REF>
+															<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Wdg_30_TLE4278G/Wdg_Rec/MAX6369/Max6369_PinSet1</VALUE-REF>
+														</ECUC-REFERENCE-VALUE>
+													</REFERENCE-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="6baefa01-f219-476a-8978-e7ee35bcea94">
+													<SHORT-NAME>Set2</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinModeLevel</DEFINITION-REF>
+															<VALUE>STD_LOW</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+													<REFERENCE-VALUES>
+														<ECUC-REFERENCE-VALUE>
+															<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinRef</DEFINITION-REF>
+															<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Wdg_30_TLE4278G/Wdg_Rec/MAX6369/Max6369_PinSet2</VALUE-REF>
+														</ECUC-REFERENCE-VALUE>
+													</REFERENCE-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="8e5cea3a-f1c0-43df-a9f0-29840ea75734">
+											<SHORT-NAME>Max6369_Disabled</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="f2f06383-af82-4d63-9620-2e7971066e65">
+													<SHORT-NAME>Set0</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinModeLevel</DEFINITION-REF>
+															<VALUE>STD_LOW</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+													<REFERENCE-VALUES>
+														<ECUC-REFERENCE-VALUE>
+															<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinRef</DEFINITION-REF>
+															<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Wdg_30_TLE4278G/Wdg_Rec/MAX6369/Max6369_PinSet0</VALUE-REF>
+														</ECUC-REFERENCE-VALUE>
+													</REFERENCE-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="45717452-5593-4f90-bfd0-b8054bfa2b58">
+													<SHORT-NAME>Set1</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinModeLevel</DEFINITION-REF>
+															<VALUE>STD_HIGH</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+													<REFERENCE-VALUES>
+														<ECUC-REFERENCE-VALUE>
+															<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinRef</DEFINITION-REF>
+															<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Wdg_30_TLE4278G/Wdg_Rec/MAX6369/Max6369_PinSet1</VALUE-REF>
+														</ECUC-REFERENCE-VALUE>
+													</REFERENCE-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="8abe1c5d-ac7f-469a-bd9a-3f8c5ab9fc68">
+													<SHORT-NAME>Set2</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinModeLevel</DEFINITION-REF>
+															<VALUE>STD_HIGH</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+													<REFERENCE-VALUES>
+														<ECUC-REFERENCE-VALUE>
+															<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinRef</DEFINITION-REF>
+															<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Wdg_30_TLE4278G/Wdg_Rec/MAX6369/Max6369_PinSet2</VALUE-REF>
+														</ECUC-REFERENCE-VALUE>
+													</REFERENCE-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="849500cf-d707-48e8-bfe2-1e920fd67739">
+									<SHORT-NAME>TLE4278G</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="5b4b5cf9-9bfa-453c-a400-389b9ca139ea">
+											<SHORT-NAME>TLE4278G_WDI</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioPins</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioPins/WdgInitialLevel</DEFINITION-REF>
+													<VALUE>STD_HIGH</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="384f9ddb-b50e-40c4-946e-25779bbec149">
+									<SHORT-NAME>S19400</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="11aa71fb-73ac-411c-b9e9-11a3355b3f49">
+											<SHORT-NAME>S19400_Enabled</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="65cdd988-ec7f-4305-9d5e-573eb89178a2">
+													<SHORT-NAME>S19400_WEN</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinModeLevel</DEFINITION-REF>
+															<VALUE>STD_HIGH</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+													<REFERENCE-VALUES>
+														<ECUC-REFERENCE-VALUE>
+															<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinRef</DEFINITION-REF>
+															<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Wdg_30_TLE4278G/Wdg_Rec/S19400/S19400_WEN</VALUE-REF>
+														</ECUC-REFERENCE-VALUE>
+													</REFERENCE-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="12765ebd-498d-4ad4-9d2a-32545102d526">
+											<SHORT-NAME>S19400_WDI</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioPins</DEFINITION-REF>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="f9623883-1c12-4bc4-9282-d2a8f70ba990">
+											<SHORT-NAME>S19400_WEN</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioPins</DEFINITION-REF>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="bdf969ee-e941-4d58-b896-c2bef01ba930">
+											<SHORT-NAME>S19400_Disabled</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="5d452076-c2b8-45f6-bf94-d4726ac0cf1a">
+													<SHORT-NAME>S19400_WEN</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinModeLevel</DEFINITION-REF>
+															<VALUE>STD_LOW</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+													<REFERENCE-VALUES>
+														<ECUC-REFERENCE-VALUE>
+															<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinRef</DEFINITION-REF>
+															<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Wdg_30_TLE4278G/Wdg_Rec/S19400/S19400_WEN</VALUE-REF>
+														</ECUC-REFERENCE-VALUE>
+													</REFERENCE-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="a7836dc2-58bf-47ae-9e3c-9c4d9a4a39a7">
+									<SHORT-NAME>TLE7368</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="af5e0f49-9271-4585-92f4-4f1efa68c2c0">
+											<SHORT-NAME>TLE7368_WDI</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioPins</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioPins/WdgInitialLevel</DEFINITION-REF>
+													<VALUE>STD_HIGH</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="93968912-bdf9-4a2a-9eea-9cb439ddf8eb">
+											<SHORT-NAME>TLE7368_DISABLE</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgEnableIrreversible</DEFINITION-REF>
+													<VALUE>1</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="3c350dbc-4471-48e6-98e4-0521b2d9100f">
+													<SHORT-NAME>TLE7368_WDI</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinModeLevel</DEFINITION-REF>
+															<VALUE>STD_HIGH</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+													<REFERENCE-VALUES>
+														<ECUC-REFERENCE-VALUE>
+															<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinRef</DEFINITION-REF>
+															<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Wdg_30_TLE4278G/Wdg_Rec/TLE7368/TLE7368_WDI</VALUE-REF>
+														</ECUC-REFERENCE-VALUE>
+													</REFERENCE-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="cde68fd3-a8a1-4884-8ae0-d5ce3dc3184c">
+											<SHORT-NAME>TLE7368_ENABLE</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="58d11ede-44a7-4597-adad-c0348c2f0301">
+													<SHORT-NAME>TLE7368_WDI</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinModeLevel</DEFINITION-REF>
+															<VALUE>STD_LOW</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+													<REFERENCE-VALUES>
+														<ECUC-REFERENCE-VALUE>
+															<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioModeSettings/WdgDioModeLevels/WdgDioPinRef</DEFINITION-REF>
+															<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Wdg_30_TLE4278G/Wdg_Rec/TLE7368/TLE7368_WDI</VALUE-REF>
+														</ECUC-REFERENCE-VALUE>
+													</REFERENCE-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="0b6ce888-3c5e-47d8-a92d-38e621f600d2">
+									<SHORT-NAME>TPS383x</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="b152fb79-b7e9-4b04-9626-381a908cf6ab">
+											<SHORT-NAME>TPS383x_WDI</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Wdg_30_TLE4278G/Wdg/WdgDeviceConfig/WdgDioPins</DEFINITION-REF>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+							</CONTAINERS>
+						</ECUC-MODULE-CONFIGURATION-VALUES>
+					</ELEMENTS>
+				</AR-PACKAGE>
+			</AR-PACKAGES>
+		</AR-PACKAGE>
+	</AR-PACKAGES>
+</AUTOSAR>

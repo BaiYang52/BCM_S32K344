@@ -1,0 +1,26 @@
+<!-- Entities -->
+
+<!ENTITY ti.SwAddrMethod    "SwAddrMethod">
+<!ENTITY ti.Package         "Package">
+
+<!-- Elements -->
+
+<!ELEMENT SwAddrMethod  (%C.DefAttr;, ATTRLink*, GenAttrList?)>
+
+<!ATTLIST SwAddrMethod %A.ConfigItem; 
+          MemoryAllocationKeywordPolicy  (NONE|ADDR-METHOD-SHORT-NAME|ADDR-METHOD-SHORT-NAME-AND-ALIGNMENT) "NONE"
+          SectionInitializationPolicy   (NONE|CLEARED|INIT|NO-INIT|POWER-ON-CLEARED|POWER-ON-INIT) "NONE"
+          MemorySectionType (NONE|CALIBRATION-OFFLINE|CALIBRATION-ONLINE|CALIBRATION-VARIABLES|CALPRM|CODE|CONFIG-DATA|CONST|EXCLUDED-FROM-FLASH|USER-DEFINED|VAR|VAR-FAST|VAR-NO-INIT|VAR-POWER-ON-INIT) "NONE"
+          PackageLink NMTOKEN #FIXED "&ti.Package;"
+>
+
+<!-- Links -->
+
+<!ELEMENT SwAddrMethodLink EMPTY>
+
+<!ATTLIST SwAddrMethodLink 
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.SwAddrMethod;"
+>

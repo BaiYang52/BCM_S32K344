@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+***********************************************************************************************************************
+COPYRIGHT
+===============================================================================
+Copyright (c) 2021 by Vector Informatik GmbH.                                         All rights reserved.
+
+    This software is copyright protected and proprietary to Vector Informatik GmbH.
+    Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+    All other rights remain with Vector Informatik GmbH.
+===============================================================================
+FILE DESCRIPTION
+===============================================================================
+File:           I2c_S32K14xFsli2c01_bswmd.arxml
+Component:      $COMPONENT$
+Module:         I2c
+Generator:      $GENERATOR$
+Description:    $DESCRIPTION$
+***********************************************************************************************************************
+-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0">
+	<AR-PACKAGES>
+		<AR-PACKAGE UUID="ff55d029-386d-43a2-b3c2-dfef4c7a5e36">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<AR-PACKAGES>
+				<AR-PACKAGE UUID="ae085711-cfd0-4d65-98c6-1c3dc37cbbde">
+					<SHORT-NAME>I2c_S32K14xFsli2c01</SHORT-NAME>
+					<ELEMENTS>
+						<ECUC-MODULE-CONFIGURATION-VALUES UUID="6c78868c-3f96-4256-a58e-c679e160f206">
+							<SHORT-NAME>I2c_Pre</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/I2c_S32K14xFsli2c01/I2c</DEFINITION-REF>
+							<CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="a25f2f3b-e410-4474-8745-07752f655976">
+									<SHORT-NAME>S32K14x_I2c_Unit0</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/I2c_S32K14xFsli2c01/I2c/I2cHardwareConfiguration</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/I2c_S32K14xFsli2c01/I2c/I2cHardwareConfiguration/I2cUnitBase</DEFINITION-REF>
+											<VALUE>1074159616</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/I2c_S32K14xFsli2c01/I2c/I2cHardwareConfiguration/I2cUnitEnd</DEFINITION-REF>
+											<VALUE>1074159999</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="0f0e1626-0f29-4b2d-b332-b67db21100ac">
+									<SHORT-NAME>S32K148_I2c_Unit1</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/I2c_S32K14xFsli2c01/I2c/I2cHardwareConfiguration</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/I2c_S32K14xFsli2c01/I2c/I2cHardwareConfiguration/I2cUnitBase</DEFINITION-REF>
+											<VALUE>1074163712</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/I2c_S32K14xFsli2c01/I2c/I2cHardwareConfiguration/I2cUnitEnd</DEFINITION-REF>
+											<VALUE>1074164095</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="3b09ff12-068d-4de9-9771-12d2a88b6add">
+									<SHORT-NAME>S32K3xx_I2c_Unit0</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/I2c_S32K14xFsli2c01/I2c/I2cHardwareConfiguration</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/I2c_S32K14xFsli2c01/I2c/I2cHardwareConfiguration/I2cUnitBase</DEFINITION-REF>
+											<VALUE>1077215232</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/I2c_S32K14xFsli2c01/I2c/I2cHardwareConfiguration/I2cUnitEnd</DEFINITION-REF>
+											<VALUE>1077215615</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="8fba014f-a3ae-4f1b-b689-74c3f3dc384e">
+									<SHORT-NAME>S32K3xx_I2c_Unit1</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/I2c_S32K14xFsli2c01/I2c/I2cHardwareConfiguration</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/I2c_S32K14xFsli2c01/I2c/I2cHardwareConfiguration/I2cUnitBase</DEFINITION-REF>
+											<VALUE>1077231616</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/I2c_S32K14xFsli2c01/I2c/I2cHardwareConfiguration/I2cUnitEnd</DEFINITION-REF>
+											<VALUE>1077231999</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+								</ECUC-CONTAINER-VALUE>
+							</CONTAINERS>
+						</ECUC-MODULE-CONFIGURATION-VALUES>
+					</ELEMENTS>
+				</AR-PACKAGE>
+			</AR-PACKAGES>
+		</AR-PACKAGE>
+	</AR-PACKAGES>
+</AUTOSAR>

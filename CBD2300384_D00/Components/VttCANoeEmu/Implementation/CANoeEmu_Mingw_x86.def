@@ -1,0 +1,10 @@
+EXPORTS
+  VIARequiredVersion  = VIARequiredVersion@8
+  VIADesiredVersion   = VIADesiredVersion@8
+  VIASetService       = VIASetService@4
+  VIAGetModuleApi     = VIAGetModuleApi@8
+  VIAReleaseModuleApi = VIAReleaseModuleApi@4
+  NLGetModuleOptions  = NLGetModuleOptions@4
+  CANoeEmuVTT_DumpSut = CANoeEmuVTT_DumpSut@4
+  caplDllGetTable
+  

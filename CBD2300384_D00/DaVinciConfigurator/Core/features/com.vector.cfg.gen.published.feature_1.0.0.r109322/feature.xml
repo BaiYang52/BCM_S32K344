@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vector.cfg.gen.published.feature"
+      label="API for DaVinci Generators"
+      version="1.0.0.r109322"
+      provider-name="Vector Informatik GmbH">
+
+   <description>
+      Published API for DaVinci generators.
+   </description>
+
+   <copyright>
+      (c) Copyright Vector Informatik GmbH. All Rights Reserved.
+   </copyright>
+
+   <license url="http://www.vector.com">
+      Vector Group License Agreement
+
+This software is licensed under the terms and conditions of „Delivery and maintenance of software products” of Vector Group, see www.vector.com
+   </license>
+
+   <includes
+         id="com.vector.cfg.core.feature"
+         version="1.0.0.r109322"/>
+
+   <plugin
+         id="com.vector.cfg.gen.core.moduleInterface"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gen.core.utils"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.console.base"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.console.app.base"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+</feature>

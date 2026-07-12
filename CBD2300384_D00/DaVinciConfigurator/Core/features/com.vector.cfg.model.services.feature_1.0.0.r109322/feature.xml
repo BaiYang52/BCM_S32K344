@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vector.cfg.model.services.feature"
+      label="Model Services for DaVinci Products"
+      version="1.0.0.r109322"
+      provider-name="Vector Informatik GmbH">
+
+   <description>
+      Model services for DaVinci products.
+   </description>
+
+   <copyright>
+      (c) Copyright Vector Informatik GmbH. All Rights Reserved.
+   </copyright>
+
+   <license url="http://www.vector.com">
+      Vector Group License Agreement
+
+This software is licensed under the terms and conditions of „Delivery and maintenance of software products” of Vector Group, see www.vector.com
+   </license>
+
+   <includes
+         id="com.vector.cfg.core.model.feature"
+         version="1.0.0.r109322"/>
+
+   <plugin
+         id="com.vector.cfg.model.swcTemplates"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.services"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.abstraction"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.sysdesc"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.sysdesc.validation"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.formula"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.formula.asr"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.services.client"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+</feature>

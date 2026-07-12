@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vector.cfg.core.feature"
+      label="DaVinci Products Core"
+      version="1.0.0.r109322"
+      provider-name="Vector Informatik GmbH">
+
+   <description>
+      DaVinci products core.
+   </description>
+
+   <copyright>
+      (c) Copyright Vector Informatik GmbH. All Rights Reserved.
+   </copyright>
+
+   <license url="http://www.vector.com">
+      Vector Group License Agreement
+
+This software is licensed under the terms and conditions of „Delivery and maintenance of software products” of Vector Group, see www.vector.com
+   </license>
+
+   <includes
+         id="com.vector.cfg.core.model.feature"
+         version="1.0.0.r109322"/>
+
+   <includes
+         id="com.vector.cfg.reporting.feature"
+         version="1.4.0.r109322"/>
+
+   <plugin
+         id="com.vector.cfg.project"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.business"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.project.activity"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.core"
+         download-size="0"
+         install-size="0"
+         version="5.44.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.core.tooldefinition"
+         download-size="0"
+         install-size="0"
+         version="5.26.40.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.core.operation"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.severities"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.core.sip"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.core.sip.msr"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.business.msr"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.business.vtt"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.validation.basicrules.impl"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.consistency.core.impl"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.consistency.core.internal.if"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.consistency.requester.if"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.consistency.core.util"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.consistency.core.if"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.consistency.requester.impl"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.consistency.contribution.if"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.consistency.contribution.fw"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.consistency.publishedapi.legacy"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.consistency.publishedapi.gencorevalidators.legacy"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.consistency.gencore.legacy"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.consistency.contribution.util"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.consistency.requester.util"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+</feature>

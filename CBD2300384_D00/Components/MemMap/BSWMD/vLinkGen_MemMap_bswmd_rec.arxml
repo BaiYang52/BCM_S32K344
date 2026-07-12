@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0">
+	<AR-PACKAGES>
+		<AR-PACKAGE UUID="ff55d029-386d-43a2-b3c2-dfef4c7a5e36">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<ECUC-MODULE-CONFIGURATION-VALUES UUID="a16f2778-a9bd-4134-bdb3-2edec0c691ca">
+					<SHORT-NAME>vLinkGen_Rec</SHORT-NAME>
+					<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/vLinkGen</DEFINITION-REF>
+					<CONTAINERS>
+						<ECUC-CONTAINER-VALUE UUID="39153dde-f148-43f3-94bb-2a1f4bedb536">
+							<SHORT-NAME>vLinkGenMemLayout</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="cb992802-2680-41fc-8813-0366fdd8e965">
+									<SHORT-NAME>vLinkGenLinkerSections</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="1c753c5f-f706-4715-860c-588d5c68e6b4">
+											<SHORT-NAME>MSR_CODE</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerCodeSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerCodeSection/vLinkGenLinkerCodeSectionName</DEFINITION-REF>
+													<VALUE>MSR_CODE</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="422d3179-3f79-40fc-a04b-60aa6011715e">
+											<SHORT-NAME>MSR_CONST</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerConstSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerConstSection/vLinkGenLinkerConstSectionName</DEFINITION-REF>
+													<VALUE>MSR_CONST</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="5d9a0203-94c5-4837-bd01-79a9c58c4587">
+											<SHORT-NAME>MSR_PBCFG_CONST</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerConstSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerConstSection/vLinkGenLinkerConstSectionName</DEFINITION-REF>
+													<VALUE>MSR_PBCFG_CONST</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="3f2a48e1-07c8-43e8-b088-de61789005c6">
+											<SHORT-NAME>MSR_PBCFG_VAR</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionName</DEFINITION-REF>
+													<VALUE>MSR_PBCFG_VAR</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="f9e714ff-6403-4208-a5ed-01527f073163">
+											<SHORT-NAME>MSR_VAR_CLEARED</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionName</DEFINITION-REF>
+													<VALUE>MSR_VAR_CLEARED</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="78a9522b-eb32-49ca-bab1-e6b76f32ad79">
+											<SHORT-NAME>MSR_VAR_INIT</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionName</DEFINITION-REF>
+													<VALUE>MSR_VAR_INIT</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="ceb37d15-46e6-42cb-9330-ba81008f2fcc">
+											<SHORT-NAME>MSR_VAR_NO_INIT</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionName</DEFINITION-REF>
+													<VALUE>MSR_VAR_NO_INIT</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="ac17f60d-2fd0-4e5d-abb2-eab79872040c">
+											<SHORT-NAME>MSR_CONST_FAST</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerConstSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerConstSection/vLinkGenLinkerConstSectionFast</DEFINITION-REF>
+													<VALUE>1</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerConstSection/vLinkGenLinkerConstSectionName</DEFINITION-REF>
+													<VALUE>MSR_CONST_FAST</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="f692d4a3-1983-42b8-9b42-1fc140591880">
+											<SHORT-NAME>MSR_VAR_FAST_CLEARED</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionFast</DEFINITION-REF>
+													<VALUE>1</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionName</DEFINITION-REF>
+													<VALUE>MSR_VAR_FAST_CLEARED</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="b68ff266-c014-4399-baaf-7de911ca9587">
+											<SHORT-NAME>MSR_VAR_FAST_INIT</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionFast</DEFINITION-REF>
+													<VALUE>1</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionName</DEFINITION-REF>
+													<VALUE>MSR_VAR_FAST_INIT</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="764768eb-6e4d-4e53-88f7-5170844c2e75">
+											<SHORT-NAME>MSR_VAR_FAST_NO_INIT</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionFast</DEFINITION-REF>
+													<VALUE>1</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionName</DEFINITION-REF>
+													<VALUE>MSR_VAR_FAST_NO_INIT</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="16948bfc-4298-4bb2-b2ec-84ce9fc1a532">
+											<SHORT-NAME>MSR_PBCFG_CONST_FAST</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerConstSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerConstSection/vLinkGenLinkerConstSectionFast</DEFINITION-REF>
+													<VALUE>1</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerConstSection/vLinkGenLinkerConstSectionName</DEFINITION-REF>
+													<VALUE>MSR_PBCFG_CONST_FAST</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="658e0ebf-6315-46fc-9cf4-7369a2e2019b">
+											<SHORT-NAME>MSR_PBCFG_VAR_FAST</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionFast</DEFINITION-REF>
+													<VALUE>1</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionName</DEFINITION-REF>
+													<VALUE>MSR_PBCFG_VAR_FAST</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="c8f48c62-20c1-4768-8dcf-99034473dc9d">
+											<SHORT-NAME>MSR_PBCFG_VAR_FAST_NO_INIT</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionFast</DEFINITION-REF>
+													<VALUE>1</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionName</DEFINITION-REF>
+													<VALUE>MSR_PBCFG_VAR_FAST_NO_INIT</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="693f1b06-b056-4145-aae4-18dcd4d3d5a7">
+											<SHORT-NAME>MSR_PBCFG_VAR_NO_INIT</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionName</DEFINITION-REF>
+													<VALUE>MSR_PBCFG_VAR_NO_INIT</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="ebd9deb5-eee4-4f11-9bf8-ae6deb1e68ec">
+											<SHORT-NAME>MSR_VAR_SAVED_ZONE_INIT</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionName</DEFINITION-REF>
+													<VALUE>MSR_VAR_SAVED_ZONE_INIT</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="5734743c-e47f-410a-87e5-42b30b6d01ad">
+											<SHORT-NAME>MSR_VAR_SAVED_ZONE_NO_INIT</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionName</DEFINITION-REF>
+													<VALUE>MSR_VAR_SAVED_ZONE_NO_INIT</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="80906729-4455-4ddf-bb6c-b547ce731516">
+											<SHORT-NAME>MSR_VAR_SAVED_ZONE_FAST_INIT</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionFast</DEFINITION-REF>
+													<VALUE>1</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionName</DEFINITION-REF>
+													<VALUE>MSR_VAR_SAVED_ZONE_FAST_INIT</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="c4a2176c-d904-4af7-a464-c769c53c36b2">
+											<SHORT-NAME>MSR_VAR_SAVED_ZONE_FAST_NO_INIT</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionFast</DEFINITION-REF>
+													<VALUE>1</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionName</DEFINITION-REF>
+													<VALUE>MSR_VAR_SAVED_ZONE_FAST_NO_INIT</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="860bc98c-ca30-437a-8b04-2044b51b2b50">
+											<SHORT-NAME>MSR_PBCFG_VAR_CLEARED</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionName</DEFINITION-REF>
+													<VALUE>MSR_PBCFG_VAR_CLEARED</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="ffa7f50c-b1dd-4cd1-a6a0-486840bb8e37">
+											<SHORT-NAME>MSR_PBCFG_VAR_FAST_CLEARED</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-LINKER-SYMBOL-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionName</DEFINITION-REF>
+													<VALUE>MSR_PBCFG_VAR_FAST_CLEARED</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLinkerSections/vLinkGenLinkerVarSection/vLinkGenLinkerVarSectionFast</DEFINITION-REF>
+													<VALUE>1</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="0c0be22d-4cd5-4acd-937b-7aa7da4fe8bd">
+									<SHORT-NAME>MSR_CODE</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalConstGroup</DEFINITION-REF>
+									<REFERENCE-VALUES>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalConstGroup/vLinkGenConstGroupContentType</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenContentTypes/GLOBAL_CODE</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+									</REFERENCE-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="2c1352df-46f6-4e64-8a67-8fa688cc3aa2">
+											<SHORT-NAME>MSR_CODE</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalConstGroup/vLinkGenConstSectionGroup</DEFINITION-REF>
+											<REFERENCE-VALUES>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalConstGroup/vLinkGenConstSectionGroup/vLinkGenConstSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_CODE</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+											</REFERENCE-VALUES>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="55384f7c-9c44-40a6-b8aa-fa1cf031c29b">
+									<SHORT-NAME>MSR_CONST</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalConstGroup</DEFINITION-REF>
+									<REFERENCE-VALUES>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalConstGroup/vLinkGenConstGroupContentType</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenContentTypes/GLOBAL_CONST</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+									</REFERENCE-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="1022e6b2-2b0b-47e2-ac0f-3a515dca86e6">
+											<SHORT-NAME>MSR_CONST</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalConstGroup/vLinkGenConstSectionGroup</DEFINITION-REF>
+											<REFERENCE-VALUES>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalConstGroup/vLinkGenConstSectionGroup/vLinkGenConstSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_CONST</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalConstGroup/vLinkGenConstSectionGroup/vLinkGenConstSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_CONST_FAST</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+											</REFERENCE-VALUES>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="2a6ea8f8-6690-4132-89cb-cea9c5b82f90">
+									<SHORT-NAME>MSR_PBCFG_CONST</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalConstGroup</DEFINITION-REF>
+									<REFERENCE-VALUES>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalConstGroup/vLinkGenConstGroupContentType</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenContentTypes/GLOBAL_CONST</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+									</REFERENCE-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="1578d56f-0706-440c-b213-0205629c6d8e">
+											<SHORT-NAME>MSR_PBCFG_CONST</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalConstGroup/vLinkGenConstSectionGroup</DEFINITION-REF>
+											<REFERENCE-VALUES>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalConstGroup/vLinkGenConstSectionGroup/vLinkGenConstSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_PBCFG_CONST</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalConstGroup/vLinkGenConstSectionGroup/vLinkGenConstSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_PBCFG_CONST_FAST</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+											</REFERENCE-VALUES>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="6215e263-5b23-4329-9a08-609d9eb692b6">
+									<SHORT-NAME>MSR_VAR</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup</DEFINITION-REF>
+									<REFERENCE-VALUES>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarGroupContentType</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenContentTypes/GLOBAL_DATA</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+									</REFERENCE-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="82a53dc1-9470-4e05-9bc7-5b364254d413">
+											<SHORT-NAME>MSR_VAR_CLEARED</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupInit</DEFINITION-REF>
+													<VALUE>ZERO_INIT</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+											<REFERENCE-VALUES>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_VAR_CLEARED</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_VAR_FAST_CLEARED</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+											</REFERENCE-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="ce263b5d-5761-4536-b00a-35fd528a272f">
+											<SHORT-NAME>MSR_VAR_INIT</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupInit</DEFINITION-REF>
+													<VALUE>INIT</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+											<REFERENCE-VALUES>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_VAR_INIT</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_VAR_FAST_INIT</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+											</REFERENCE-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="f23c1446-42d5-4541-bf73-7e05889b3b6d">
+											<SHORT-NAME>MSR_VAR_NO_INIT</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupInit</DEFINITION-REF>
+													<VALUE>NONE</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+											<REFERENCE-VALUES>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_VAR_NO_INIT</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_VAR_FAST_NO_INIT</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+											</REFERENCE-VALUES>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="ad8a032b-e2b1-41c5-92c5-4e09fbff8baa">
+									<SHORT-NAME>MSR_PBCFG_VAR</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup</DEFINITION-REF>
+									<REFERENCE-VALUES>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarGroupContentType</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenContentTypes/GLOBAL_DATA</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+									</REFERENCE-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="3786528f-13af-4d69-8cff-c99cb54ebb08">
+											<SHORT-NAME>MSR_PBCFG_VAR_INIT</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupInit</DEFINITION-REF>
+													<VALUE>INIT</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+											<REFERENCE-VALUES>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_PBCFG_VAR</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_PBCFG_VAR_FAST</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+											</REFERENCE-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="3eeee8ab-c087-40fd-b285-8e3a8c3f53fc">
+											<SHORT-NAME>MSR_PBCFG_VAR_NO_INIT</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupInit</DEFINITION-REF>
+													<VALUE>NONE</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+											<REFERENCE-VALUES>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_PBCFG_VAR_NO_INIT</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_PBCFG_VAR_FAST_NO_INIT</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+											</REFERENCE-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="d71a589a-8aed-48f6-ad97-c01d27d440e9">
+											<SHORT-NAME>MSR_PBCFG_VAR_CLEARED</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupInit</DEFINITION-REF>
+													<VALUE>ZERO_INIT</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+											<REFERENCE-VALUES>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_PBCFG_VAR_CLEARED</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_PBCFG_VAR_FAST_CLEARED</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+											</REFERENCE-VALUES>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="931dc23d-2063-4d25-bbbb-b9e36fab0493">
+									<SHORT-NAME>MSR_VAR_SAVED_ZONE</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup</DEFINITION-REF>
+									<REFERENCE-VALUES>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarGroupContentType</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenContentTypes/RETENTION_DATA</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+									</REFERENCE-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="b4d0202d-9300-4cfa-a9af-719f6cc57627">
+											<SHORT-NAME>MSR_VAR_SAVED_ZONE_INIT</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupInit</DEFINITION-REF>
+													<VALUE>INIT</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+											<REFERENCE-VALUES>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_VAR_SAVED_ZONE_INIT</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_VAR_SAVED_ZONE_FAST_INIT</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+											</REFERENCE-VALUES>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="41fff9c0-0bb1-45ba-8da9-7cdb77b1796b">
+											<SHORT-NAME>MSR_VAR_SAVED_ZONE_NO_INIT</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-TEXTUAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupInit</DEFINITION-REF>
+													<VALUE>NONE</VALUE>
+												</ECUC-TEXTUAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+											<REFERENCE-VALUES>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_VAR_SAVED_ZONE_NO_INIT</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+												<ECUC-REFERENCE-VALUE>
+													<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/vLinkGen/vLinkGenMemLayout/vLinkGenLogicalVarGroup/vLinkGenVarSectionGroup/vLinkGenVarSectionGroupRef</DEFINITION-REF>
+													<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/vLinkGenLinkerSections/MSR_VAR_SAVED_ZONE_FAST_NO_INIT</VALUE-REF>
+												</ECUC-REFERENCE-VALUE>
+											</REFERENCE-VALUES>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+							</SUB-CONTAINERS>
+						</ECUC-CONTAINER-VALUE>
+					</CONTAINERS>
+				</ECUC-MODULE-CONFIGURATION-VALUES>
+				<ECUC-MODULE-CONFIGURATION-VALUES UUID="11d78ef9-da9a-4d84-af9d-02d24b461b53">
+					<SHORT-NAME>MemMap_Rec</SHORT-NAME>
+					<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/MemMap</DEFINITION-REF>
+					<CONTAINERS>
+						<ECUC-CONTAINER-VALUE UUID="398b3ba5-d4fe-4e3a-af75-a5486da0b7e7">
+							<SHORT-NAME>MSR_CONST</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="e612d767-e246-4f35-aea4-ca4e87637263">
+									<SHORT-NAME>MSR_CONST</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet/MemMapAddressingMode</DEFINITION-REF>
+									<REFERENCE-VALUES>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet/MemMapAddressingMode/MemMapLinkerLogicalGroupRef</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/MSR_CONST</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+									</REFERENCE-VALUES>
+								</ECUC-CONTAINER-VALUE>
+							</SUB-CONTAINERS>
+						</ECUC-CONTAINER-VALUE>
+						<ECUC-CONTAINER-VALUE UUID="ffd3c864-be1c-410b-97c1-9eac4bbb3647">
+							<SHORT-NAME>MSR_PBCFG_CONST</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="f032811b-c7a7-4d24-8d9f-bc8b7fad79f1">
+									<SHORT-NAME>MSR_PBCFG_CONST</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet/MemMapAddressingMode</DEFINITION-REF>
+									<REFERENCE-VALUES>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet/MemMapAddressingMode/MemMapLinkerLogicalGroupRef</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/MSR_PBCFG_CONST</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+									</REFERENCE-VALUES>
+								</ECUC-CONTAINER-VALUE>
+							</SUB-CONTAINERS>
+						</ECUC-CONTAINER-VALUE>
+						<ECUC-CONTAINER-VALUE UUID="5aff4df9-659e-4ff8-b911-0b7ecac6b551">
+							<SHORT-NAME>MSR_PBCFG_VAR</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="b908df62-5669-4718-b1a9-ee289d0483c3">
+									<SHORT-NAME>MSR_PBCFG_VAR</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet/MemMapAddressingMode</DEFINITION-REF>
+									<REFERENCE-VALUES>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet/MemMapAddressingMode/MemMapLinkerLogicalGroupRef</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/MSR_PBCFG_VAR</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+									</REFERENCE-VALUES>
+								</ECUC-CONTAINER-VALUE>
+							</SUB-CONTAINERS>
+						</ECUC-CONTAINER-VALUE>
+						<ECUC-CONTAINER-VALUE UUID="8b8ff1ff-4daa-4856-b454-23866f90b8ef">
+							<SHORT-NAME>MSR_VAR_CLEARED</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="825c0287-f585-46be-bbe1-ac4b8897de0b">
+									<SHORT-NAME>MSR_VAR_CLEARED</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet/MemMapAddressingMode</DEFINITION-REF>
+									<REFERENCE-VALUES>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet/MemMapAddressingMode/MemMapLinkerLogicalGroupRef</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/MSR_VAR</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+									</REFERENCE-VALUES>
+								</ECUC-CONTAINER-VALUE>
+							</SUB-CONTAINERS>
+						</ECUC-CONTAINER-VALUE>
+						<ECUC-CONTAINER-VALUE UUID="8c51595d-9d93-4107-9459-9f462b9cb16b">
+							<SHORT-NAME>MSR_VAR_INIT</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="78de0447-846d-4194-9a37-3d4849247dc2">
+									<SHORT-NAME>MSR_VAR_INIT</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet/MemMapAddressingMode</DEFINITION-REF>
+									<REFERENCE-VALUES>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet/MemMapAddressingMode/MemMapLinkerLogicalGroupRef</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/MSR_VAR</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+									</REFERENCE-VALUES>
+								</ECUC-CONTAINER-VALUE>
+							</SUB-CONTAINERS>
+						</ECUC-CONTAINER-VALUE>
+						<ECUC-CONTAINER-VALUE UUID="a8ec831a-74fe-4a07-bb6a-532b8a18274c">
+							<SHORT-NAME>MSR_VAR_NO_INIT</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="db5d9a35-2a2e-40a3-9530-87b294063e93">
+									<SHORT-NAME>MSR_VAR_NO_INIT</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet/MemMapAddressingMode</DEFINITION-REF>
+									<REFERENCE-VALUES>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet/MemMapAddressingMode/MemMapLinkerLogicalGroupRef</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/MSR_VAR</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+									</REFERENCE-VALUES>
+								</ECUC-CONTAINER-VALUE>
+							</SUB-CONTAINERS>
+						</ECUC-CONTAINER-VALUE>
+						<ECUC-CONTAINER-VALUE UUID="e69bf20a-50ea-4bb2-af57-cbb83d62b2a0">
+							<SHORT-NAME>MSR_VAR_SAVED_ZONE</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="c933bdcf-4e3d-4195-83a1-3e8a2b7ccf7f">
+									<SHORT-NAME>MSR_VAR_SAVED_ZONE</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet/MemMapAddressingMode</DEFINITION-REF>
+									<REFERENCE-VALUES>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/MemMap/MemMapAddressingModeSet/MemMapAddressingMode/MemMapLinkerLogicalGroupRef</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/vLinkGen_Rec/vLinkGenMemLayout/MSR_VAR_SAVED_ZONE</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+									</REFERENCE-VALUES>
+								</ECUC-CONTAINER-VALUE>
+							</SUB-CONTAINERS>
+						</ECUC-CONTAINER-VALUE>
+					</CONTAINERS>
+				</ECUC-MODULE-CONFIGURATION-VALUES>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</AR-PACKAGES>
+</AUTOSAR>

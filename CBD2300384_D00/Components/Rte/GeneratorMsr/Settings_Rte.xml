@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Settings>
+  <Settings Name="com.vector.cfg.gen.Rte.settings.RteSettings">
+    <Setting Name="DVRteGenPath" Value="$(SipRootPath)\$(PCKG-12CBB8F8-ECDB-443F-8E86-5EBA613F4C6C:DVCfgRteGen.exe:dir)\$(PCKG-12CBB8F8-ECDB-443F-8E86-5EBA613F4C6C:DVCfgRteGen.exe:name)"/>
+    <Settings Name="BswModulePaths">
+      <Setting Name="E2EXf" Value="$(SipRootPath)\$(PCKG-46D7076F-A140-41DB-9F36-B407EF1B90B4:E2EXf.c:dir)" />
+      <Setting Name="Com" Value="$(SipRootPath)\$(PCKG-8BA47229-CFD4-4F9C-9FDA-4DAB9262B3FF:Com.c:dir)" />
+    </Settings>
+    <Setting Name="Use64BitMode" Value="auto"/>
+    <Setting Name="GenerateQacVersion" Value="9"/>
+    <Setting Name="DisableMemMap" Value="false"/>
+    <Setting Name="GenerateMcSupportData" Value="true"/>
+    <Setting Name="RteDisableDevChecks" Value="false"/>  
+    <Setting Name="ExcludeBswModulesFromNameExtension" Value="/MICROSAR/(Xcp_ib_bswmd|VTT|Crypto_30_Vtt_ib_bswmd)/.*"/>  
+  </Settings>
+</Settings>
+

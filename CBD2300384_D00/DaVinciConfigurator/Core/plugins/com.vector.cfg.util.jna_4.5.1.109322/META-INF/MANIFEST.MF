@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: com.vector.cfg.util.jna
+Bundle-SymbolicName: com.vector.cfg.util.jna;singleton:=true
+Require-Bundle: org.eclipse.core.runtime
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Vector Informatik GmbH
+Export-Package: com.sun.jna,com.sun.jna.platform,com.sun.jna.platform.
+ dnd,com.sun.jna.platform.mac,com.sun.jna.platform.unix,com.sun.jna.pl
+ atform.win32,com.sun.jna.platform.win32.COM,com.sun.jna.platform.winc
+ e,com.sun.jna.ptr,com.sun.jna.win32
+Bundle-Name: JNA
+Bundle-Version: 4.5.1.109322
+Bundle-ClassPath: .,lib/jna-4.5.1.jar,lib/jna-platform-4.5.1.jar
+Bundle-Activator: com.vector.cfg.util.jna.internal.Activator
+Eclipse-BundleShape: dir
+

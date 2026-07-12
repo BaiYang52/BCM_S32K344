@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+***********************************************************************************************************************
+COPYRIGHT
+===============================================================================
+Copyright (c) 2016 by Vector Informatik GmbH.                                         All rights reserved.
+
+    This software is copyright protected and proprietary to Vector Informatik GmbH.
+    Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+    All other rights remain with Vector Informatik GmbH.
+===============================================================================
+FILE DESCRIPTION
+===============================================================================
+File:           FrIf_preo.arxml
+Component:      
+Module:         FrIf
+Generator:      
+Description:    
+*********************************************************************************************************************** 
+-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0">
+	<AR-PACKAGES>
+		<AR-PACKAGE UUID="ff55d029-386d-43a2-b3c2-dfef4c7a5e36">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ADMIN-DATA>
+				<DOC-REVISIONS>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.00.00</REVISION-LABEL>
+						<STATE>released</STATE>
+						<ISSUED-BY>visoh</ISSUED-BY>
+						<DATE>2016-01-25T10:15:47+01:00</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Creation</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">ESCAN00085550</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.00.01</REVISION-LABEL>
+						<STATE>released</STATE>
+						<ISSUED-BY>visoh</ISSUED-BY>
+						<DATE>2016-05-31T11:47:50+02:00</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Remove preconfiguration of FrIfSchedulingAlgorithm</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">ESCAN00090209</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.00.02</REVISION-LABEL>
+						<STATE>released</STATE>
+						<ISSUED-BY>visoh</ISSUED-BY>
+						<DATE>2016-11-11T11:28:16+01:00</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Change preconfiguration of FrIfAllowDynamicLSduLength</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">ESCAN00092761</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.01.00</REVISION-LABEL>
+						<STATE>released</STATE>
+						<ISSUED-BY>vissuv</ISSUED-BY>
+						<DATE>2022-03-02T11:53:13+01:00</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Removed DevErrorDetect, Moved VersionInfoApi from Rec to Pre</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">Alignment with current BSWMD default values, and VAG Specs Q-LAH_80125A-7, Q-LAH_80125A-14 and Q-LAH_80125A-79</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+				</DOC-REVISIONS>
+			</ADMIN-DATA>
+			<ELEMENTS>
+				<ECUC-MODULE-CONFIGURATION-VALUES UUID="42a2b246-3905-49cc-ac54-479ec657c6b6">
+					<SHORT-NAME>FrIf_Pre</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV:ClassConfiguration">
+								<SD>/MICROSAR/FrIf_Pre_Class2/FrIfConfig/FrIfCluster/FrIfJobList/FrIfJob/FrIfCommunicationOperation</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/FrIf</DEFINITION-REF>
+					<CONTAINERS>
+						<ECUC-CONTAINER-VALUE UUID="ffa991ae-316c-4d12-9ad1-a5a5fbbc71e1">
+							<SHORT-NAME>FrIfGeneral</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrIf/FrIfGeneral</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfDualChannelRedundancySupport</DEFINITION-REF>
+									<VALUE>0</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfGetNmVectorSupport</DEFINITION-REF>
+									<VALUE>0</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfGlobalUniformUpdateBytePos</DEFINITION-REF>
+									<VALUE>0</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfNumClstSupported</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfNumCtrlSupported</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfUniformUpdateBytePos</DEFINITION-REF>
+									<VALUE>0</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfUnusedBitValue</DEFINITION-REF>
+									<VALUE>0</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfVersionInfoApi</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+							</PARAMETER-VALUES>
+						</ECUC-CONTAINER-VALUE>
+					</CONTAINERS>
+				</ECUC-MODULE-CONFIGURATION-VALUES>
+				<ECUC-MODULE-CONFIGURATION-VALUES UUID="b8083668-0ce7-4888-8b7e-5a3393365583">
+					<SHORT-NAME>FrIf_Rec</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV:ClassConfiguration">
+								<SD>/MICROSAR/FrIf_Rec_Class1/FrIfConfig/FrIfCluster/FrIfController/FrIfFrameTriggering</SD>
+								<SD>/MICROSAR/FrIf_Rec_Class2/FrIfConfig/FrIfCluster/FrIfJobList/FrIfJob</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/FrIf</DEFINITION-REF>
+					<CONTAINERS>
+						<ECUC-CONTAINER-VALUE UUID="69cee828-7245-4d89-9c95-f4f9d2308ec6">
+							<SHORT-NAME>FrIfGeneral</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrIf/FrIfGeneral</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfAbortCommunicationDisable</DEFINITION-REF>
+									<VALUE>0</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfCancelTransmitSupport</DEFINITION-REF>
+									<VALUE>0</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfDelayedTxConfirmationSupport</DEFINITION-REF>
+									<VALUE>0</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfEnablePrepareLpdu</DEFINITION-REF>
+									<VALUE>0</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfFreeOpCallbackSupport</DEFINITION-REF>
+									<VALUE>0</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfGetSyncFrameListSupport</DEFINITION-REF>
+									<VALUE>0</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfJobConcatenationEnable</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfJobsUseFreeOpCallback</DEFINITION-REF>
+									<VALUE>0</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfPduDirtyByteUsage</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfReadCCConfigApi</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfReconfigLPduSupport</DEFINITION-REF>
+									<VALUE>0</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfSetWakeupChannelDisable</DEFINITION-REF>
+									<VALUE>0</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfSingleChannelAPI</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfGeneral/FrIfWrapperAPIsAsMacro</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+							</PARAMETER-VALUES>
+						</ECUC-CONTAINER-VALUE>
+					</CONTAINERS>
+				</ECUC-MODULE-CONFIGURATION-VALUES>
+				<ECUC-MODULE-CONFIGURATION-VALUES UUID="076c5e88-fa63-4f63-9217-08f6f015b03b">
+					<SHORT-NAME>FrIf_Pre_Class2</SHORT-NAME>
+					<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/FrIf</DEFINITION-REF>
+					<CONTAINERS>
+						<ECUC-CONTAINER-VALUE UUID="7fe44fbb-3c74-4f11-9538-300e05336841">
+							<SHORT-NAME>FrIfConfig</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrIf/FrIfConfig</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="cc79143c-ba54-4f1b-8e0a-b599bc8ab47e">
+									<SHORT-NAME>FrIfCluster</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrIf/FrIfConfig/FrIfCluster</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="998732d2-424b-4b02-9f4c-068a2c4875b2">
+											<SHORT-NAME>FrIfJobList</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrIf/FrIfConfig/FrIfCluster/FrIfJobList</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="6df82636-5e44-4a86-a6fc-9ef5b042057f">
+													<SHORT-NAME>FrIfJob</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrIf/FrIfConfig/FrIfCluster/FrIfJobList/FrIfJob</DEFINITION-REF>
+													<SUB-CONTAINERS>
+														<ECUC-CONTAINER-VALUE UUID="601f22f0-cffd-497a-a65b-9a99d463e1d9">
+															<SHORT-NAME>FrIfCommunicationOperation</SHORT-NAME>
+															<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrIf/FrIfConfig/FrIfCluster/FrIfJobList/FrIfJob/FrIfCommunicationOperation</DEFINITION-REF>
+															<PARAMETER-VALUES>
+																<ECUC-NUMERICAL-PARAM-VALUE>
+																	<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfConfig/FrIfCluster/FrIfJobList/FrIfJob/FrIfCommunicationOperation/FrIfManualAssignedLPdu</DEFINITION-REF>
+																	<VALUE>0</VALUE>
+																</ECUC-NUMERICAL-PARAM-VALUE>
+															</PARAMETER-VALUES>
+														</ECUC-CONTAINER-VALUE>
+													</SUB-CONTAINERS>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+							</SUB-CONTAINERS>
+						</ECUC-CONTAINER-VALUE>
+					</CONTAINERS>
+				</ECUC-MODULE-CONFIGURATION-VALUES>
+				<ECUC-MODULE-CONFIGURATION-VALUES UUID="0f954eac-25cf-4453-8c30-ee2f34fd48ea">
+					<SHORT-NAME>FrIf_Rec_Class1</SHORT-NAME>
+					<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/FrIf</DEFINITION-REF>
+					<CONTAINERS>
+						<ECUC-CONTAINER-VALUE UUID="645aae68-120b-45c7-a1b9-d855676a4906">
+							<SHORT-NAME>FrIfConfig</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrIf/FrIfConfig</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="70eea8b6-87d9-4ca3-80b2-57a581eceacb">
+									<SHORT-NAME>FrIfCluster</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrIf/FrIfConfig/FrIfCluster</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="bb4bb729-2ed6-448e-9db6-773f7b3346f0">
+											<SHORT-NAME>FrIfController</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrIf/FrIfConfig/FrIfCluster/FrIfController</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="2c40d182-c675-4282-96f2-0f368763f028">
+													<SHORT-NAME>FrIfFrameTriggering</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrIf/FrIfConfig/FrIfCluster/FrIfController/FrIfFrameTriggering</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfConfig/FrIfCluster/FrIfController/FrIfFrameTriggering/FrIfAllowDynamicLSduLength</DEFINITION-REF>
+															<VALUE>0</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+							</SUB-CONTAINERS>
+						</ECUC-CONTAINER-VALUE>
+					</CONTAINERS>
+				</ECUC-MODULE-CONFIGURATION-VALUES>
+				<ECUC-MODULE-CONFIGURATION-VALUES UUID="9502f667-f22f-46d8-9c6b-1b524fa4a6eb">
+					<SHORT-NAME>FrIf_Rec_Class2</SHORT-NAME>
+					<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/FrIf</DEFINITION-REF>
+					<CONTAINERS>
+						<ECUC-CONTAINER-VALUE UUID="c0264f1c-4f3a-46e8-9632-dc60c418b56c">
+							<SHORT-NAME>FrIfConfig</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrIf/FrIfConfig</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="0bdb3b99-1405-4eb5-a8cd-7c5ec06de039">
+									<SHORT-NAME>FrIfCluster</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrIf/FrIfConfig/FrIfCluster</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="4f2c41a6-1859-4ac1-b2fa-907cebc47e84">
+											<SHORT-NAME>FrIfJobList</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrIf/FrIfConfig/FrIfCluster/FrIfJobList</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="245fe64d-e00f-4dcf-b180-618321534d37">
+													<SHORT-NAME>FrIfJob</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrIf/FrIfConfig/FrIfCluster/FrIfJobList/FrIfJob</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrIf/FrIfConfig/FrIfCluster/FrIfJobList/FrIfJob/FrIfDelayedTxConfirmation</DEFINITION-REF>
+															<VALUE>0</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+							</SUB-CONTAINERS>
+						</ECUC-CONTAINER-VALUE>
+					</CONTAINERS>
+				</ECUC-MODULE-CONFIGURATION-VALUES>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</AR-PACKAGES>
+</AUTOSAR>

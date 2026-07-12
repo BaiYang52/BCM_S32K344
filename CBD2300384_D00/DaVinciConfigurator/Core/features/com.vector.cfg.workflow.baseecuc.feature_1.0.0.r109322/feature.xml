@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vector.cfg.workflow.baseecuc.feature"
+      label="DaVinci Cfg BaseEcuc Workflow"
+      version="1.0.0.r109322"
+      provider-name="Vector Informatik GmbH">
+
+   <description>
+      DaVinci Configurator BaseEcuc workflow.
+   </description>
+
+   <copyright>
+      (c) Copyright Vector Informatik GmbH. All Rights Reserved.
+   </copyright>
+
+   <license url="http://www.vector.com">
+      Vector Group License Agreement
+
+This software is licensed under the terms and conditions of „Delivery and maintenance of software products” of Vector Group, see www.vector.com
+   </license>
+
+   <plugin
+         id="com.vector.cfg.workflow.baseecuc.generator"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.workflow.baseecuc.mapping"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.workflow.baseecuc.model.ecuc"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.workflow.baseecuc.model.extract"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.workflow.ecucupdater"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.workflow.baseecuc.util"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.workflow.baseecuc.model.relations"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0">
+	<AR-PACKAGES>
+		<AR-PACKAGE UUID="ff55d029-386d-43a2-b3c2-dfef4c7a5e36">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<ECUC-MODULE-CONFIGURATION-VALUES UUID="a657ed1c-e759-41d3-b111-1a5c22689ae1">
+					<SHORT-NAME>Os_Rec</SHORT-NAME>
+					<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/Os</DEFINITION-REF>
+					<CONTAINERS>
+						<ECUC-CONTAINER-VALUE UUID="f2ea24af-393e-467a-8e0e-63db27133924">
+							<SHORT-NAME>OsMemoryProtection</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsMemoryProtection</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="7741b051-d538-420e-aac6-9adc3d005643">
+									<SHORT-NAME>Core0_ROM_Execute_All</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionProtectionUnitSlot</DEFINITION-REF>
+											<VALUE>3</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<REFERENCE-VALUES>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionProtectionUnit</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os_Rec/OsPublishedInformation/Generic_CortexM33_Mp/Core0/Core0_MPU</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionAccessRights</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os_Rec/OsPublishedInformation/Generic_CortexM33_Mp/OsMemoryRegionSpecifics/SUPERVISOR_R_USER_R</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionAccessRights</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os_Rec/OsPublishedInformation/Generic_CortexM33_Mp/OsMemoryRegionSpecifics/EXECUTE_ALLOWED</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionFlags</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os_Rec/OsPublishedInformation/Generic_CortexM33_Mp/OsMemoryRegionSpecifics/TYPE_NORMAL_MEMORY_INNER_WRITEBACK_TRANSIENT_READALLOCATE_WRITEALLOCATE</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionFlags</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os_Rec/OsPublishedInformation/Generic_CortexM33_Mp/OsMemoryRegionSpecifics/TYPE_NORMAL_MEMORY_OUTER_WRITEBACK_TRANSIENT_READALLOCATE_WRITEALLOCATE</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+									</REFERENCE-VALUES>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="356feab2-fc91-491d-b808-56eae0caf525">
+									<SHORT-NAME>Core0_ROM_Read_All</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionProtectionUnitSlot</DEFINITION-REF>
+											<VALUE>4</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<REFERENCE-VALUES>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionProtectionUnit</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os_Rec/OsPublishedInformation/Generic_CortexM33_Mp/Core0/Core0_MPU</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionAccessRights</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os_Rec/OsPublishedInformation/Generic_CortexM33_Mp/OsMemoryRegionSpecifics/SUPERVISOR_R_USER_R</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionFlags</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os_Rec/OsPublishedInformation/Generic_CortexM33_Mp/OsMemoryRegionSpecifics/TYPE_NORMAL_MEMORY_INNER_WRITEBACK_TRANSIENT_READALLOCATE_WRITEALLOCATE</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionFlags</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os_Rec/OsPublishedInformation/Generic_CortexM33_Mp/OsMemoryRegionSpecifics/TYPE_NORMAL_MEMORY_OUTER_WRITEBACK_TRANSIENT_READALLOCATE_WRITEALLOCATE</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+									</REFERENCE-VALUES>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="3ea9495a-b095-442b-9b18-3d1fd3ce2a20">
+									<SHORT-NAME>Core0_RAM_Peripherals</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionProtectionUnitSlot</DEFINITION-REF>
+											<VALUE>5</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<REFERENCE-VALUES>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionProtectionUnit</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os_Rec/OsPublishedInformation/Generic_CortexM33_Mp/Core0/Core0_MPU</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionAccessRights</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os_Rec/OsPublishedInformation/Generic_CortexM33_Mp/OsMemoryRegionSpecifics/SUPERVISOR_RW_USER_NONE</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionFlags</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os_Rec/OsPublishedInformation/Generic_CortexM33_Mp/OsMemoryRegionSpecifics/TYPE_DEVICE_nGnRE_MEMORY</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+									</REFERENCE-VALUES>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="ed239907-a497-4735-9c62-7ff8cea72083">
+									<SHORT-NAME>Core0_RAM_Shared_All</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionProtectionUnitSlot</DEFINITION-REF>
+											<VALUE>6</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<REFERENCE-VALUES>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionProtectionUnit</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os_Rec/OsPublishedInformation/Generic_CortexM33_Mp/Core0/Core0_MPU</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionAccessRights</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os_Rec/OsPublishedInformation/Generic_CortexM33_Mp/OsMemoryRegionSpecifics/SUPERVISOR_RW_USER_RW</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionFlags</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os_Rec/OsPublishedInformation/Generic_CortexM33_Mp/OsMemoryRegionSpecifics/TYPE_NORMAL_MEMORY_INNER_NON_CACHEABLE</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionFlags</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os_Rec/OsPublishedInformation/Generic_CortexM33_Mp/OsMemoryRegionSpecifics/TYPE_NORMAL_MEMORY_OUTER_NON_CACHEABLE</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+									</REFERENCE-VALUES>
+								</ECUC-CONTAINER-VALUE>
+							</SUB-CONTAINERS>
+						</ECUC-CONTAINER-VALUE>
+					</CONTAINERS>
+				</ECUC-MODULE-CONFIGURATION-VALUES>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</AR-PACKAGES>
+</AUTOSAR>

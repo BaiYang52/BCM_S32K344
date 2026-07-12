@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: sun.misc
+Export-Package: sun.misc
+Bundle-Name: sun.misc package from JRE
+Bundle-Version: 1.0.0.201906171301
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: Oracle
+Fragment-Host: system.bundle
+
+

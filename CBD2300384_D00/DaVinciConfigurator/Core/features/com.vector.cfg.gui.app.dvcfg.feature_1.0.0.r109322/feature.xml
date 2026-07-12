@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vector.cfg.gui.app.dvcfg.feature"
+      label="DaVinci Cfg GUI"
+      version="1.0.0.r109322"
+      provider-name="Vector Informatik GmbH"
+      plugin="com.vector.cfg.gui.app.dvcfg">
+
+   <description>
+      DaVinci Configurator GUI.
+   </description>
+
+   <copyright>
+      (c) Copyright Vector Informatik GmbH. All Rights Reserved.
+   </copyright>
+
+   <license url="http://www.vector.com/int/en/company/get-info/terms-and-conditions/">
+      Vector Group License Agreement
+
+This software is licensed under the terms and conditions of „Delivery and maintenance of software products” of Vector Group, see https://www.vector.com/int/en/company/get-info/terms-and-conditions/
+   </license>
+
+   <includes
+         id="com.vector.cfg.app.jre.feature"
+         version="1.0.0.r109322"/>
+
+   <includes
+         id="com.vector.cfg.app.deploy.dvcfg.feature"
+         version="1.0.0.r109322"/>
+
+   <includes
+         id="com.vector.cfg.gui.feature"
+         version="1.0.0.r109322"/>
+
+   <includes
+         id="com.vector.cfg.automation.msr.feature"
+         version="1.0.0.r109322"/>
+
+   <includes
+         id="com.vector.cfg.console.app.dvcfg.feature"
+         version="1.0.0.r109322"/>
+
+   <includes
+         id="com.vector.cfg.dom.msr.feature"
+         version="1.0.0.r109322"/>
+
+   <includes
+         id="com.vector.cfg.gui.app.dvcfg.external.feature"
+         version="1.0.0.r109322"/>
+
+   <includes
+         id="com.vector.cfg.customersupport.feature"
+         version="1.0.0.r109322"/>
+
+   <plugin
+         id="com.vector.cfg.gui.app"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gui.app.dvcfg"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gui.branding.dvcfg"
+         download-size="0"
+         install-size="0"
+         version="5.26.40.r109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gui.gen"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gui.findview"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gui.activity"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gui.gce"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gui.errorlog"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gui.sip.msr"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.dom.ui.image"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gui.scripting"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gen.core.genusage"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gui.workflow.vase"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gui.persistency.msr"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gui.pse.dvcfg"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gui.workflow.diff"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gui.vtt.msr"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.reporting.ui"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gui.danglingreference"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.addons.copypaste.msr"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.splash.ui"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"/>
+
+</feature>

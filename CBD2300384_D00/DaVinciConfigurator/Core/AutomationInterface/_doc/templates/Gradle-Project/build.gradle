@@ -1,0 +1,21 @@
+/*
+ * AutomationInterface bootstrap
+ */
+apply from:'dvCfgAutomationBootstrap.gradle'
+
+/*
+ * AutomationInterface configuration
+ */
+dvCfgAutomation {
+    classes project.ext.automationClasses
+}
+
+/*
+ * If spock test framework is needed, comment in this lines.
+ */
+// dependencies {
+//    compileOnly("org.spockframework:spock-core:1.3-groovy-2.5"){
+//        exclude group: 'org.codehaus.groovy', module: 'groovy-all'
+//    }
+// }
+

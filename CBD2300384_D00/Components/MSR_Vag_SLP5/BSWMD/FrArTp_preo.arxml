@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+***********************************************************************************************************************
+COPYRIGHT
+===============================================================================
+Copyright (c) 2023 by Vector Informatik GmbH.                                         All rights reserved.
+
+    This software is copyright protected and proprietary to Vector Informatik GmbH.
+    Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+    All other rights remain with Vector Informatik GmbH.
+===============================================================================
+FILE DESCRIPTION
+===============================================================================
+File:           FrArTp_preo.arxml
+Component:      FrTp
+Module:         FrArTp_Pre
+Generator:      
+Description:    
+*********************************************************************************************************************** 
+-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0">
+	<AR-PACKAGES>
+		<AR-PACKAGE UUID="ff55d029-386d-43a2-b3c2-dfef4c7a5e36">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ADMIN-DATA>
+				<DOC-REVISIONS>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.00.00</REVISION-LABEL>
+						<STATE>released</STATE>
+						<ISSUED-BY>visoh</ISSUED-BY>
+						<DATE>2016-01-25T09:48:52+01:00</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Creation</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">ESCAN00085550</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.01.00</REVISION-LABEL>
+						<STATE>released</STATE>
+						<ISSUED-BY>vissuv</ISSUED-BY>
+						<DATE>2020-09-14T11:34:25+02:00</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Removed FrArTpTimeBuffer</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">ESCAN00107372</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.02.00</REVISION-LABEL>
+						<STATE>released</STATE>
+						<ISSUED-BY>vissuv</ISSUED-BY>
+						<DATE>2021-01-20T17:58:43+01:00</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Modified FrArTpMaxBs</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">ESCAN00108297</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.03.00</REVISION-LABEL>
+						<STATE>released</STATE>
+						<ISSUED-BY>vissuv</ISSUED-BY>
+						<DATE>2022-03-02T11:53:13+01:00</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Removed DevErrorDetect, Moved VersionInfoApi from Rec to Pre</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">Alignment with current BSWMD default values, and VAG Specs Q-LAH_80125A-7, Q-LAH_80125A-14 and Q-LAH_80125A-79</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.04.00</REVISION-LABEL>
+						<STATE>released</STATE>
+						<ISSUED-BY>visoh</ISSUED-BY>
+						<DATE>2023-01-31T09:04:01+01:00</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Modified FrArTpPaddingByte</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">ESCAN00113759</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+				</DOC-REVISIONS>
+			</ADMIN-DATA>
+			<ELEMENTS>
+				<ECUC-MODULE-CONFIGURATION-VALUES UUID="4ce502e6-f427-4dc1-b501-ec9e3bb89608">
+					<SHORT-NAME>FrArTp_Pre</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV:ClassConfiguration">
+								<SD>/MICROSAR/FrArTp_Pre_Class1/FrArTpMultipleConfig/FrArTpChannel</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/FrArTp</DEFINITION-REF>
+					<CONTAINERS>
+						<ECUC-CONTAINER-VALUE UUID="7fcb7b10-952c-48dc-bb2b-38280dfeb27d">
+							<SHORT-NAME>FrArTpGeneral</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrArTp/FrArTpGeneral</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrArTp/FrArTpGeneral/FrArTpDisableSyncSFReception</DEFINITION-REF>
+									<VALUE>0</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrArTp/FrArTpGeneral/FrArTpHaveAckRt</DEFINITION-REF>
+									<VALUE>0</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrArTp/FrArTpGeneral/FrArTpHaveGrpSeg</DEFINITION-REF>
+									<VALUE>0</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrArTp/FrArTpGeneral/FrArTpVersionInfoApi</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+							</PARAMETER-VALUES>
+						</ECUC-CONTAINER-VALUE>
+					</CONTAINERS>
+				</ECUC-MODULE-CONFIGURATION-VALUES>
+				<ECUC-MODULE-CONFIGURATION-VALUES UUID="4fa83187-605b-43d5-adc7-7ccd0eaa690d">
+					<SHORT-NAME>FrArTp_Rec</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV:ClassConfiguration">
+								<SD>/MICROSAR/FrArTp_Rec_Class1/FrArTpMultipleConfig/FrArTpChannel/FrArTpConnection</SD>
+								<SD>/MICROSAR/FrArTp_Rec_Class2/FrArTpMultipleConfig/FrArTpChannel</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/FrArTp</DEFINITION-REF>
+					<CONTAINERS>
+						<ECUC-CONTAINER-VALUE UUID="678ee722-9605-411a-aae7-722b8271956e">
+							<SHORT-NAME>FrArTpGeneral</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrArTp/FrArTpGeneral</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrArTp/FrArTpGeneral/FrArTpHaveLm</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrArTp/FrArTpGeneral/FrArTpHaveRc</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrArTp/FrArTpGeneral/FrArTpHaveTc</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/FrArTp/FrArTpGeneral/FrArTpMainFuncCycle</DEFINITION-REF>
+									<VALUE>0.005</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrArTp/FrArTpGeneral/FrArTpPaddingByte</DEFINITION-REF>
+									<VALUE>170</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+							</PARAMETER-VALUES>
+						</ECUC-CONTAINER-VALUE>
+					</CONTAINERS>
+				</ECUC-MODULE-CONFIGURATION-VALUES>
+				<ECUC-MODULE-CONFIGURATION-VALUES UUID="7053a609-b8ac-4858-bb6c-ae0d9c8e915d">
+					<SHORT-NAME>FrArTp_Pre_Class1</SHORT-NAME>
+					<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/FrArTp</DEFINITION-REF>
+					<CONTAINERS>
+						<ECUC-CONTAINER-VALUE UUID="4d62999d-5986-4959-b9ef-c635771699bb">
+							<SHORT-NAME>FrArTpMultipleConfig</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="732b0617-b4b8-463f-917c-870297311402">
+									<SHORT-NAME>FrArTpChannel</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-TEXTUAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpAckType</DEFINITION-REF>
+											<VALUE>FRARTP_NO</VALUE>
+										</ECUC-TEXTUAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpGrpSeg</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpMaxAr</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpMaxAs</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpMaxBs</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpMaxFrIf</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpMaxRn</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpTimeFrIf</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+								</ECUC-CONTAINER-VALUE>
+							</SUB-CONTAINERS>
+						</ECUC-CONTAINER-VALUE>
+					</CONTAINERS>
+				</ECUC-MODULE-CONFIGURATION-VALUES>
+				<ECUC-MODULE-CONFIGURATION-VALUES UUID="aec0aed3-0674-45e3-91ec-3e2c57bf0339">
+					<SHORT-NAME>FrArTp_Rec_Class1</SHORT-NAME>
+					<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/FrArTp</DEFINITION-REF>
+					<CONTAINERS>
+						<ECUC-CONTAINER-VALUE UUID="c2124507-fec7-42a4-a690-5d08d1357ca9">
+							<SHORT-NAME>FrArTpMultipleConfig</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="34013b67-7fad-41fe-9d33-6318c6eede09">
+									<SHORT-NAME>FrArTpChannel</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="a605eb8d-87ab-448f-807b-e075b5c02d92">
+											<SHORT-NAME>FrArTpConnection</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpConnection</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<ECUC-NUMERICAL-PARAM-VALUE>
+													<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpConnection/FrArTpMultRec</DEFINITION-REF>
+													<VALUE>0</VALUE>
+												</ECUC-NUMERICAL-PARAM-VALUE>
+											</PARAMETER-VALUES>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+							</SUB-CONTAINERS>
+						</ECUC-CONTAINER-VALUE>
+					</CONTAINERS>
+				</ECUC-MODULE-CONFIGURATION-VALUES>
+				<ECUC-MODULE-CONFIGURATION-VALUES UUID="27ca1813-3e5d-4d3c-817e-f83034333301">
+					<SHORT-NAME>FrArTp_Rec_Class2</SHORT-NAME>
+					<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/FrArTp</DEFINITION-REF>
+					<CONTAINERS>
+						<ECUC-CONTAINER-VALUE UUID="722129e3-48b9-44b3-8eb8-da369ff23208">
+							<SHORT-NAME>FrArTpMultipleConfig</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="e30cbba8-1e3c-4cf7-add5-cf494d957c06">
+									<SHORT-NAME>FrArTpChannel</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-TEXTUAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpAdrType</DEFINITION-REF>
+											<VALUE>FRARTP_TB</VALUE>
+										</ECUC-TEXTUAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpConcurrentConns</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-TEXTUAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpLm</DEFINITION-REF>
+											<VALUE>FRARTP_ISO</VALUE>
+										</ECUC-TEXTUAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpStMin</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpTc</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpTimeBr</DEFINITION-REF>
+											<VALUE>0.8</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpTimeCs</DEFINITION-REF>
+											<VALUE>0.8</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpTimeoutAr</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpTimeoutAs</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpTimeoutBs</DEFINITION-REF>
+											<VALUE>1.15</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpTimeoutCr</DEFINITION-REF>
+											<VALUE>1.15</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrArTp/FrArTpMultipleConfig/FrArTpChannel/FrArTpUsePduFc</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+								</ECUC-CONTAINER-VALUE>
+							</SUB-CONTAINERS>
+						</ECUC-CONTAINER-VALUE>
+					</CONTAINERS>
+				</ECUC-MODULE-CONFIGURATION-VALUES>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</AR-PACKAGES>
+</AUTOSAR>

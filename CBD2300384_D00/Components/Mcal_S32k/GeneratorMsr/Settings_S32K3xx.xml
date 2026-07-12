@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+============================================================================
+
+Copyright (c) 2022 by Vector Informatik GmbH. All rights reserved.
+
+This software is copyright protected and proprietary to Vector Informatik GmbH.
+Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+All other rights remain with Vector Informatik GmbH.
+
+============================================================================
+
+This file is needed for internal use.
+Please do not modify this file, otherwise the software may behave in
+unexpected way.
+
+================================================================================
+                P R O J E C T
+================================================================================
+Module
+=======================
+S32K3xxNxp01Asr4Sub
+===============================================================================
+               R E V I S I O N   H I S T O R Y
+===============================================================================
+Date		Version		Author		Description
+========	=======		=======		=====================================================
+2020-05-19	1.00.00		virnid		initial MIP; integration of S32K2XX_MCAL4_3_EAR_HF3_0_8_1 / S32K2XX_Crypto_MCAL4_3_EAR_0_8_1
+2020-10-15	2.00.00		virelt		Integration of S32K3xx ASR4.x MCAL
+2020-10-26	2.00.01		virnid		Integration of SW32K3_RTD_4.4_0.8.0_P02
+2020-11-30	2.01.00		virnid		Integration of SW32K3_RTD_4.4_0.8.1
+2021-01-13	2.01.01		virnid		Changed ConfigPtrName for Pwm in InitFunctionsSettings
+2021-03-30	2.02.00		virnid		Integration of SW32K3_RTD_4.4_0.9.0; added Uart
+2021-07-14	2.02.01		virnid		Changed header include for Fls Init function
+2021-09-22	2.03.00		virnid		Integration of SW32K3_RTD_4.4_1.0.0_CD01
+2021-10-11	2.04.00		virnid		Integration of SW32K3_RTD_4.4_1.0.0
+2021-12-08  2.05.00		virnid		Integration of Sbc and Spd
+2022-02-16	2.05.01		virnid		Adding initialization step for Mcu (InitFunctions_Settings.xml)
+2022-02-28	2.05.02		virnid		Updating init order (InitFunctions_Settings.xml)
+2022-03-15	2.06.00		virnid		Integration of SW32K3_RTD_4.4_2.0.0_CD01
+2022-04-01	2.07.00		virnid		Integration of SW32K3_RTD_4.4_2.0.0
+2022-07-14	2.08.00		virnid		Integration of SW32K3_RTD_4.4_2.0.1 and SW32K396_RTD_4.4_3.0.0_CD02
+2022-11-02	2.09.00		virnid		Integration of SW32K358_RTD_R21-11_3.0.0_CD03 and SW32K396_RTD_4.4_3.0.0_CD02_P01
+2023-01-02	2.10.00		jmaier		Integration of SW32K3_RTD_4.4_2.0.2 and SW32K358_RTD_R21_11_3.0.0_CD03_P01_D2211
+2023-01-03	2.11.00		virnid		Integration of SW32K3XX_RTD_R21-11_3.0.0_CD04
+2023-01-03	2.11.01		jmaier		Changed Initialzation order for Port Mcu and Eth
+*******************************************************************************************************************************
+-->
+<Settings>
+	<Settings Name="com.vector.cfg.gen.Tresos_proxy.settings.TresosSettings">   <!-- Constant -->
+		<Settings Name="ModuleList">
+			<Settings Name=" Adc_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/TS_T40D34M20I1R0/Adc"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Adc_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module -->
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+					<Setting Name="Mcu" Value="/TS_T40D34M20I1R0/Mcu"/>
+				    <Setting Name="Dem" Value="/[ANY]/Dem"/>
+<Setting Name="Mcl" Value="/TS_T40D34M20I1R0/Mcl"/>
+				    <Setting Name="EcuC" Value="/[ANY]/EcuC"/>
+				    <Setting Name="Os" Value ="/[ANY]/Os"/>
+				    <Setting Name="Base" Value ="/TS_T40D34M20I1R0/Base"/>
+			    </Settings>  
+			</Settings>
+			<Settings Name=" Base_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/TS_T40D34M20I1R0/Base"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Base_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="Dem" Value="/[ANY]/Dem"/>					
+				    <Setting Name="EcuM" Value="/[ANY]/EcuM"/>
+				    <Setting Name="EcuC" Value="/[ANY]/EcuC"/>
+				    <Setting Name="Os" Value="/[ANY]/Os"/>
+				    <Setting Name="Adc" Value="/TS_T40D34M20I1R0/Adc"/>
+<Setting Name="Crypto" Value="/TS_T40D34M20I1R0/Crypto"/>
+				    <Setting Name="Dio" Value="/TS_T40D34M20I1R0/Dio"/>
+<!--<Setting Name="Eth" Value="/Eth_43_GMAC_TS_T40D34M20I1R0/Eth"/>-->
+<!--<Setting Name="Fee" Value="/TS_T40D34M20I1R0/Fee"/>-->
+				    <Setting Name="Fls" Value="/TS_T40D34M20I1R0/Fls"/>
+				    <Setting Name="Gpt" Value="/TS_T40D34M20I1R0/Gpt"/>				
+<Setting Name="I2c" Value="/TS_T40D34M20I1R0/I2c"/>
+				    <Setting Name="Icu" Value="/TS_T40D34M20I1R0/Icu"/>
+<Setting Name="Mcl" Value="/TS_T40D34M20I1R0/Mcl"/>
+				    <Setting Name="Mcu" Value="/TS_T40D34M20I1R0/Mcu"/>
+					<Setting Name="Ocu" Value="/TS_T40D34M20I1R0/Ocu"/>
+				    <Setting Name="Port" Value="/TS_T40D34M20I1R0/Port"/>
+				    <Setting Name="Pwm" Value="/TS_T40D34M20I1R0/Pwm"/>
+				    <Setting Name="Spi" Value="/TS_T40D34M20I1R0/Spi"/>
+<Setting Name="Uart" Value="/TS_T40D34M20I1R0/Uart"/>
+				    <Setting Name="Wdg" Value="/[ANY]/Wdg"/>
+			    </Settings>	  
+			</Settings>
+			<Settings Name=" Crypto_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/TS_T40D34M20I1R0/Crypto"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Crypto_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module -->
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="Os" Value="/[ANY]/Os"/>
+				    <Setting Name="EcuC" Value="/[ANY]/EcuC"/>
+				    <Setting Name="Base" Value ="/TS_T40D34M20I1R0/Base"/>
+			    </Settings>  
+			</Settings>
+			<Settings Name=" Dio_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/TS_T40D34M20I1R0/Dio"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Dio_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module -->
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="EcuC" Value="/[ANY]/EcuC"/>
+				    <Setting Name="Os" Value="/[ANY]/Os"/>
+			    </Settings>	 	  
+			</Settings>
+			<Settings Name=" Fls_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/TS_T40D34M20I1R0/Fls"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Fls_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module
+					 So if data in the Ressource or Dem module is changed the Fls module is also revalidated. -->
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="Dem" Value="/[ANY]/Dem"/>
+				    <Setting Name="EcuC" Value="/[ANY]/EcuC"/>
+				    <Setting Name="Os" Value="/[ANY]/Os"/>
+				    <Setting Name="Spi" Value="/TS_T40D34M20I1R0/Spi"/>
+<Setting Name="Mcl" Value="/TS_T40D34M20I1R0/Mcl"/>
+				    <Setting Name="Base" Value ="/TS_T40D34M20I1R0/Base"/>
+			    </Settings>	  
+			</Settings>
+			<Settings Name=" Gpt_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/TS_T40D34M20I1R0/Gpt"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Gpt_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module
+					 So if data in the Ressource or Dem module is changed the Gpt module is also revalidated. -->
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="EcuM" Value="/[ANY]/EcuM"/>
+				    <Setting Name="EcuC" Value="/[ANY]/EcuC"/>
+				    <Setting Name="Os" Value="/[ANY]/Os"/>
+				    <Setting Name="Dem" Value="/[ANY]/Dem"/>
+				    <Setting Name="Base" Value ="/TS_T40D34M20I1R0/Base"/>
+				    <Setting Name="Mcu" Value="/TS_T40D34M20I1R0/Mcu"/>
+<Setting Name="Mcl" Value="/TS_T40D34M20I1R0/Mcl"/>
+			    </Settings>	  
+			</Settings>
+			<Settings Name=" Icu_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/TS_T40D34M20I1R0/Icu"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Icu_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module -->
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="EcuM" Value="/[ANY]/EcuM"/>
+				    <Setting Name="EcuC" Value="/[ANY]/EcuC"/>
+				    <Setting Name="Os" Value="/[ANY]/Os"/>
+					<Setting Name="Dem" Value="/[ANY]/Dem"/>
+<Setting Name="Mcl" Value="/TS_T40D34M20I1R0/Mcl"/>
+			    </Settings>	  
+			</Settings>
+			<Settings Name=" Mcl_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/TS_T40D34M20I1R0/Mcl"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Mcl_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module
+					 So if data in the Ressource or Dem module is changed the Icu module is also revalidated. -->
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="EcuC" Value="/[ANY]/EcuC"/>
+				    <Setting Name="Os" Value="/[ANY]/Os"/>
+				    <Setting Name="Dem" Value="/[ANY]/Dem"/>
+				    <Setting Name="EcuM" Value="/[ANY]/EcuM"/>
+				    <Setting Name="Icu" Value="/TS_T40D34M20I1R0/Icu"/>
+				    <Setting Name="Pwm" Value="/TS_T40D34M20I1R0/Pwm"/>
+				    <Setting Name="Ocu" Value="/TS_T40D34M20I1R0/Ocu"/>
+				    <Setting Name="Gpt" Value="/TS_T40D34M20I1R0/Gpt"/>
+				    <Setting Name="Spi" Value="/TS_T40D34M20I1R0/Spi"/>
+<Setting Name="I2c" Value="/TS_T40D34M20I1R0/I2c"/>
+<Setting Name="Uart" Value="/TS_T40D34M20I1R0/Uart"/>
+			    </Settings>	  
+			</Settings>
+			<Settings Name=" Mcu_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/TS_T40D34M20I1R0/Mcu"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Mcu_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module
+					 So if data in the Ressource or Dem module is changed the Mcu module is also revalidated. -->
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="Dem" Value="/[ANY]/Dem"/>
+				    <Setting Name="EcuM" Value="/[ANY]/EcuM"/>
+				    <Setting Name="EcuC" Value="/[ANY]/EcuC"/>
+				    <Setting Name="Os" Value="/[ANY]/Os"/>
+				    <Setting Name="Base" Value ="/TS_T40D34M20I1R0/Base"/>
+			    </Settings>	  
+			</Settings>
+			<Settings Name=" Ocu_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/TS_T40D34M20I1R0/Ocu"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Ocu_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module -->
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->					
+				    <Setting Name="Dem" Value="/[ANY]/Dem"/>
+				    <Setting Name="EcuC" Value="/[ANY]/EcuC"/>
+				    <Setting Name="Os" Value="/[ANY]/Os"/>
+<Setting Name="Mcl" Value="/TS_T40D34M20I1R0/Mcl"/>
+				    <Setting Name="Mcu" Value="/TS_T40D34M20I1R0/Mcu"/>
+			    </Settings>  
+			</Settings>
+			<Settings Name=" Port_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/TS_T40D34M20I1R0/Port"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Port_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module
+					 So if data in the Ressource or Dem module is changed the Port module is also revalidated. -->
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="EcuC" Value="/[ANY]/EcuC"/>
+				    <Setting Name="Os" Value="/[ANY]/Os"/>	
+			    </Settings>	  
+			</Settings>
+			<Settings Name=" Pwm_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/TS_T40D34M20I1R0/Pwm"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Pwm_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module
+					 So if data in the Ressource or Dem module is changed the Pwm module is also revalidated. -->
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="Dem" Value="/[ANY]/Dem"/>
+				    <Setting Name="Mcu" Value="/TS_T40D34M20I1R0/Mcu"/>
+<Setting Name="Mcl" Value="/TS_T40D34M20I1R0/Mcl"/>
+				    <Setting Name="EcuC" Value="/[ANY]/EcuC"/>
+				    <Setting Name="Os" Value="/[ANY]/Os"/>				    
+			    </Settings>	  
+			</Settings>
+			<Settings Name=" Spi_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/TS_T40D34M20I1R0/Spi"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Spi_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module
+					 So if data in the Ressource or Dem module is changed the Spi module is also revalidated. -->
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="Dem" Value="/[ANY]/Dem"/>
+				    <Setting Name="EcuC" Value="/[ANY]/EcuC"/>
+				    <Setting Name="Os" Value="/[ANY]/Os"/>
+				    <Setting Name="Mcu" Value="/TS_T40D34M20I1R0/Mcu"/>
+<Setting Name="Mcl" Value="/TS_T40D34M20I1R0/Mcl"/>
+				    <Setting Name="Base" Value ="/TS_T40D34M20I1R0/Base"/>
+			    </Settings>	  
+			</Settings>
+			<Settings Name=" Uart_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/TS_T40D34M20I1R0/Uart"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Uart_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module
+					 So if data in the Ressource or Dem module is changed the Uart module is also revalidated. -->
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="Dem" Value="/[ANY]/Dem"/>
+				    <Setting Name="EcuC" Value="/[ANY]/EcuC"/>
+				    <Setting Name="Os" Value="/[ANY]/Os"/>
+				    <Setting Name="Base" Value ="/TS_T40D34M20I1R0/Base"/>
+				    <Setting Name="Mcu" Value="/TS_T40D34M20I1R0/Mcu"/>
+<Setting Name="Mcl" Value="/TS_T40D34M20I1R0/Mcl"/>
+			    </Settings>	  
+			</Settings>
+			<Settings Name=" Wdg_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/TS_T40D34M20I1R0/Wdg"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Wdg_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module
+					 So if data in the Ressource or Dem module is changed the Wdg module is also revalidated. -->
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="Mcu" Value="/TS_T40D34M20I1R0/Mcu"/>
+				    <Setting Name="Dem" Value="/[ANY]/Dem"/>
+				    <Setting Name="EcuC" Value="/[ANY]/EcuC"/>
+				    <Setting Name="Os" Value="/[ANY]/Os"/>
+				    <Setting Name="Gpt" Value="/TS_T40D34M20I1R0/Gpt"/>
+				    <Setting Name="Dio" Value="/TS_T40D34M20I1R0/Dio"/>
+				    <Setting Name="Spi" Value="/TS_T40D34M20I1R0/Spi"/>
+				    <Setting Name="Base" Value ="/TS_T40D34M20I1R0/Base"/>
+			    </Settings>	  
+			</Settings>
+			<Settings Name=" Wdg_43_Instance1_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/Wdg_43_Instance1_TS_T40D34M20I1R0/Wdg"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Wdg_43_Instance1_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module
+					 So if data in the Ressource or Dem module is changed the Wdg module is also revalidated. -->
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="Mcu" Value="/TS_T40D34M20I1R0/Mcu"/>
+				    <Setting Name="Dem" Value="/[ANY]/Dem"/>
+				    <Setting Name="EcuC" Value="/[ANY]/EcuC"/>
+				    <Setting Name="Os" Value="/[ANY]/Os"/>
+				    <Setting Name="Gpt" Value="/TS_T40D34M20I1R0/Gpt"/>
+				    <Setting Name="Dio" Value="/TS_T40D34M20I1R0/Dio"/>
+				    <Setting Name="Spi" Value="/TS_T40D34M20I1R0/Spi"/>
+				    <Setting Name="Base" Value ="/TS_T40D34M20I1R0/Base"/>
+			    </Settings>	  
+			</Settings>
+			<Settings Name=" Wdg_43_Instance2_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/Wdg_43_Instance2_TS_T40D34M20I1R0/Wdg"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Wdg_43_Instance2_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module
+					 So if data in the Ressource or Dem module is changed the Wdg module is also revalidated. -->
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="Mcu" Value="/TS_T40D34M20I1R0/Mcu"/>
+				    <Setting Name="Dem" Value="/[ANY]/Dem"/>
+				    <Setting Name="EcuC" Value="/[ANY]/EcuC"/>
+				    <Setting Name="Os" Value="/[ANY]/Os"/>
+				    <Setting Name="Gpt" Value="/TS_T40D34M20I1R0/Gpt"/>
+				    <Setting Name="Dio" Value="/TS_T40D34M20I1R0/Dio"/>
+				    <Setting Name="Spi" Value="/TS_T40D34M20I1R0/Spi"/>
+				    <Setting Name="Base" Value ="/TS_T40D34M20I1R0/Base"/>
+			    </Settings>	  
+			</Settings>
+			<Settings Name=" Wdg_43_Instance3_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/Wdg_43_Instance3_TS_T40D34M20I1R0/Wdg"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Wdg_43_Instance3_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module
+					 So if data in the Ressource or Dem module is changed the Wdg module is also revalidated. -->
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="Mcu" Value="/TS_T40D34M20I1R0/Mcu"/>
+				    <Setting Name="Dem" Value="/[ANY]/Dem"/>
+				    <Setting Name="EcuC" Value="/[ANY]/EcuC"/>
+				    <Setting Name="Os" Value="/[ANY]/Os"/>
+				    <Setting Name="Gpt" Value="/TS_T40D34M20I1R0/Gpt"/>
+				    <Setting Name="Dio" Value="/TS_T40D34M20I1R0/Dio"/>
+				    <Setting Name="Spi" Value="/TS_T40D34M20I1R0/Spi"/>
+				    <Setting Name="Base" Value ="/TS_T40D34M20I1R0/Base"/>
+			    </Settings>	  
+			</Settings>
+			<Settings Name=" Sbc_fs26_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/TS_T40D34M20I1R0/Sbc_fs26"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Sbc_fs26_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module
+					 So if data in the Ressource or Dem module is changed the Sbc_fs26 module is also revalidated. -->
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				</Settings>
+			</Settings>
+			<Settings Name=" Wdg_43_fs26_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/Wdg_43_fs26_TS_T40D34M20I1R0/Wdg"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Wdg_43_fs26_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module
+					 So if data in the Ressource or Dem module is changed the Wdg module is also revalidated. -->
+				    <Setting Name="Resource" Value="/TS_T40D34M20I1R0/Resource"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				    <Setting Name="Dem" Value="/[ANY]/Dem"/>
+				    <Setting Name="EcuC" Value="/[ANY]/EcuC"/>
+				    <Setting Name="Os" Value="/[ANY]/Os"/>
+				    <Setting Name="Gpt" Value="/TS_T40D34M20I1R0/Gpt"/>
+				    <Setting Name="Dio" Value="/TS_T40D34M20I1R0/Dio"/>
+				    <Setting Name="Spi" Value="/TS_T40D34M20I1R0/Spi"/>
+			    </Settings>	  
+			</Settings>
+			<Settings Name=" Bist_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/TS_T40D34M20I1R0/Bist"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="Bist_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module
+					 So if data in the Ressource or Dem module is changed the Bist module is also revalidated. -->
+				    <Setting Name="SafetyBase" Value="/TS_T40D34M20I1R0/SafetyBase"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+				</Settings>
+			</Settings>
+			<Settings Name=" eMcem_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/TS_T40D34M20I1R0/eMcem"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="eMcem_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module
+					 So if data in the Ressource or Dem module is changed the Bist module is also revalidated. -->
+				    <Setting Name="SafetyBase" Value="/TS_T40D34M20I1R0/SafetyBase"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+<!--<Setting Name="sCheck" Value="/TS_T40D34M20I1R0/sCheck"/>-->
+<!--<Setting Name="mSel" Value="/TS_T40D34M20I1R0/mSel"/>-->
+				</Settings>
+			</Settings>
+			<Settings Name=" SafetyBase_TS_T40D34M20I1R0">   							<!--ModuleName -->
+			    <Setting Name="ModuleDefRef" Value="/TS_T40D34M20I1R0/SafetyBase"/>		<!-- ModuleDefinition Path -->
+				<Setting Name="PluginName" Value="SafetyBase_TS_T40D34M20I1R0"/>   		<!-- Tresos Plugin name -->
+				<Setting Name="Target" Value="CORTEXM"/>
+				<Setting Name="Derivate" Value="S32K3XX"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\Components\Mcal_S32k\GeneratorMsr\prepare_output_S32K3xx.xsl"/>	
+				<Settings Name="AdditionalModulesForGeneration">	
+				<!-- N-times modules, dependencies to validate the current module
+					 So if data in the Ressource or Dem module is changed the Bist module is also revalidated. -->
+				    <Setting Name="SafetyBase" Value="/TS_T40D34M20I1R0/SafetyBase"/>	 <!-- DefRef ModuleDefinition of the Dependency -->
+<!--<Setting Name="sCheck" Value="/TS_T40D34M20I1R0/sCheck"/>-->
+				</Settings>
+			</Settings>
+		</Settings>
+	</Settings>
+</Settings>

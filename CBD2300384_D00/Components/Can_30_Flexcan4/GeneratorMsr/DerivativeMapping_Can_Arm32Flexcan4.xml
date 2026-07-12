@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+***********************************************************************************************************************
+Group format:
+
+Can_<Platform>_<SubGroup>_xMB<MailboxAmount><IsrGroup>....._xBT<0,1,2>_xPAR<0,1>_xFD<0,1>_xRAM<0,1>
+
+Platform: ""S32"
+SubGroup: hard coded in generator, define the BaseAddress mapping to physical channel
+_xMB:     one for each physical channel (limited by ChannelMax)
+          MailboxAmount: 16, 32, 64, 96, 128 for this channel
+          IsrGroup: A-C or X for GENERIC
+             GENERIC /* GROUP_X  no interrupt functions are added to OS */,
+             GROUP_A /* single source Interrupt */,
+             GROUP_B /* 0to7+enhanced FIFO, 8to127 (8to95) (8to63) (8to31) */,
+             GROUP_C /* 0to31+enhanced FIFO, optional 32to63, 64to95 */,
+             GROUP_D /* enhanced FIFO, 0to63 (0to127) (0to63) (0to31) */, 
+_xPAR:       0:  isParityCheckAvailable=false
+             1:  isParityCheckAvailable=true
+_xEBR:       0:  supportExpandedBitTimingRegisters=false
+             1:  supportExpandedBitTimingRegisters=true
+_xEFD:       0:  supportExtraCanFdRAM=false
+             1:  supportExtraCanFdRAM=true
+_xRAM:       0:  supportExtendedRAMCheck=false
+             1:  supportExtendedRAMCheck=true
+_xUM:        0:  supportUserMode=false
+             1:  supportUserMode=true
+_xERR:       0:  isErrorInterruptAvailable=false
+             1:  isErrorInterruptAvailable=true
+_xEFI:       nn: number of available standard filter for enhanced RxFifo
+*********************************************************************************************************************** 
+-->
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Settings Name="com.vector.cfg.core.sip.ISIPService">
+    <Settings Name="ModuleList">
+      <Settings Name="Can_30_Flexcan4">
+        <!-- S32_Generic  ChannelMax:4 -->
+        <Settings Name="Can_S32_Generic_xMB128B_xMB128B_xMB128B_xMB128B_xPAR1_xEBR0_xEFD0_xRAM1_xUM0_xERR1_xEFI128">
+          <Setting Name="SIP_Folder" Value="Can_30_Flexcan4_Arm32Flexcan4" />
+        </Settings>
+        <!-- S32  ChannelMax:4 -->
+        <!-- S32K2TV  ChannelMax:1 -->
+        <!-- S32K3  ChannelMax:1 1ch*96-->
+        <Settings Name="Can_S32_S32K3_xMB96C_xPAR1_xEBR1_xEFD0_xRAM1_xUM1_xERR0_xEFI128">
+          <Setting Name="SIP_Folder" Value="Can_30_Flexcan4_Arm32Flexcan4" />
+          <Settings Name="72A47C44-01F4-4607-B61F-5D1964705F2F">
+            <Setting Name="Derivative" Value="S32K314" />
+            <Setting Name="SIP_Folder" Value="Can_30_Flexcan4_Arm32Flexcan4" />
+            <Setting Name="ReleaseType" Value="Tested" />
+          </Settings>
+        </Settings>
+        <!-- S32K3  ChannelMax:1 1ch*64-->
+        <!-- S32K3  ChannelMax:3 3ch*96-->
+        <!-- S32R  ChannelMax:8 8*128-->
+        <!-- SAF85  ChannelMax:2 2*96-->
+        <!-- NCJ29D6  ChannelMax:1 1*64-->
+        <!-- KW4 Generic ChannelMax:1 1*32-->
+        <Settings Name="Can_KW4_Generic_xMB32A_xPAR0_xEBR1_xEFD0_xRAM1_xUM0_xERR0_xEFI32">
+          <Setting Name="SIP_Folder" Value="Can_30_Flexcan4_Arm32Flexcan4" />
+        </Settings>
+        <!-- KW45  ChannelMax:1 1*32-->
+      </Settings>
+    </Settings>
+  </Settings>
+</Settings>

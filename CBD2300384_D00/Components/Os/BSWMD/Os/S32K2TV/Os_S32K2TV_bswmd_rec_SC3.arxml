@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0">
+	<AR-PACKAGES>
+		<AR-PACKAGE UUID="ff55d029-386d-43a2-b3c2-dfef4c7a5e36">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<ECUC-MODULE-CONFIGURATION-VALUES UUID="a657ed1c-e759-41d3-b111-1a5c22689ae1">
+					<SHORT-NAME>Os_Rec</SHORT-NAME>
+					<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/Os</DEFINITION-REF>
+					<CONTAINERS>
+						<ECUC-CONTAINER-VALUE UUID="f2ea24af-393e-467a-8e0e-63db27133924">
+							<SHORT-NAME>OsMemoryProtection</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsMemoryProtection</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="e8a6ab59-6eeb-480b-a567-0aef8a706f37">
+									<SHORT-NAME>Core0_FullAccessSupervisor</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-TEXTUAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionStartAddress</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</ECUC-TEXTUAL-PARAM-VALUE>
+										<ECUC-TEXTUAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionEndAddress</DEFINITION-REF>
+											<VALUE>0x100000000</VALUE>
+										</ECUC-TEXTUAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionProtectionUnitSlot</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<REFERENCE-VALUES>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionProtectionUnit</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os/OsPublishedInformation/S32K2TV/Core0/Core0_MPU</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionAccessRights</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os/OsPublishedInformation/S32K2TV/OsMemoryRegionSpecifics/SUPERVISOR_RWX</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionAccessRights</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os/OsPublishedInformation/S32K2TV/OsMemoryRegionSpecifics/USER_RX</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionFlags</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os/OsPublishedInformation/S32K2TV/OsMemoryRegionSpecifics/TYPE_CACHEABLE_WRITEBACK_ALLOCATE</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+									</REFERENCE-VALUES>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="31930437-63c0-42e5-a96c-9e72825c58a2">
+									<SHORT-NAME>Core0_StackProtection</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-TEXTUAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionStartAddress</DEFINITION-REF>
+											<VALUE>_OS_CORE0_STACKS_START</VALUE>
+										</ECUC-TEXTUAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionProtectionUnitSlot</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<REFERENCE-VALUES>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-CHOICE-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionProtectionUnit</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os/OsPublishedInformation/S32K2TV/Core0/Core0_MPU</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionAccessRights</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os/OsPublishedInformation/S32K2TV/OsMemoryRegionSpecifics/SUPERVISOR_R</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionAccessRights</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os/OsPublishedInformation/S32K2TV/OsMemoryRegionSpecifics/USER_R</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+										<ECUC-REFERENCE-VALUE>
+											<DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsMemoryProtection/OsMemoryRegion/OsMemoryRegionFlags</DEFINITION-REF>
+											<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Os/OsPublishedInformation/S32K2TV/OsMemoryRegionSpecifics/TYPE_CACHEABLE_WRITEBACK_ALLOCATE</VALUE-REF>
+										</ECUC-REFERENCE-VALUE>
+									</REFERENCE-VALUES>
+								</ECUC-CONTAINER-VALUE>
+							</SUB-CONTAINERS>
+						</ECUC-CONTAINER-VALUE>
+					</CONTAINERS>
+				</ECUC-MODULE-CONFIGURATION-VALUES>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</AR-PACKAGES>
+</AUTOSAR>

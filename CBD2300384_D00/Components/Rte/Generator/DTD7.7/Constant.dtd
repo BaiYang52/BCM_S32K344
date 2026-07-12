@@ -1,0 +1,77 @@
+<!-- Entities -->
+
+<!ENTITY ti.Constant       "Constant">
+<!ENTITY ti.DataType       "DataType">
+<!ENTITY ti.RecordElement  "RecordElement">
+<!ENTITY ti.Package        "Package">
+
+<!-- Elements -->
+
+<!ELEMENT Constant  (%C.DefAttr;, ATTRLink*, ArrayElementConstant*, RecordElementConstant*, GenAttrList?)>
+<!ELEMENT ArrayElementConstant  (DESC?, ATTRLink*, ArrayElementConstant*, RecordElementConstant*, GenAttrList?)>
+<!ELEMENT RecordElementConstant (DESC?, ATTRLink*, ArrayElementConstant*, RecordElementConstant*, GenAttrList?)>
+
+
+<!ATTLIST Constant %A.ConfigItem;
+    Value           CDATA ''
+    DataTypeLink    NMTOKEN #FIXED "&ti.DataType;"
+    PackageLink     NMTOKEN #FIXED "&ti.Package;"
+    Generate        (NONE|CONST|DEFINE) "NONE"
+    LiteralName     CDATA ''
+    ValueSpec       (Text|Numeric|Array|Record|AppValue|ConstRef|NotAvailableValue) "Numeric"
+    IsNumericApp    CDATA '1'
+    ConstRefLink    NMTOKEN #FIXED "&ti.Constant;"
+    UnitLink        NMTOKEN #FIXED "&ti.Unit;"
+    AppValueConstantValueSpec   (None|Value|String|Enum|Boolean) "String"
+    IsSpecifiedByRule   CDATA ''
+    Rule            (FILL_UNTIL_END|FILL_UNTIL_MAX_SIZE) "FILL_UNTIL_END"
+    MaxSizeToFill   CDATA ''
+    IsTextualValue  CDATA '0'
+    DefaultPatternSpecified CDATA '0'
+    DefaultPattern          CDATA ''
+>
+
+<!ATTLIST ArrayElementConstant %A.ChildItem;
+    Value           CDATA ''
+    ArrayIndex      CDATA '0'
+    LiteralName     CDATA ''
+    ValueSpec       (Text|Numeric|Array|Record|AppValue|ConstRef) "Numeric"
+    IsNumericApp    CDATA '1'
+    ConstRefLink    NMTOKEN #FIXED "&ti.Constant;"
+    UnitLink        NMTOKEN #FIXED "&ti.Unit;"
+    AppValueConstantValueSpec   (None|Value|String|Enum|Boolean) "String"
+    IsSpecifiedByRule   CDATA ''
+    Rule            (FILL_UNTIL_END|FILL_UNTIL_MAX_SIZE) "FILL_UNTIL_END"
+    MaxSizeToFill   CDATA ''
+    IsTextualValue  CDATA '0'
+>
+
+<!ATTLIST RecordElementConstant %A.ChildItem;
+	Value           CDATA ''
+	RecordElementLink NMTOKEN #FIXED "&ti.RecordElement;"
+    LiteralName     CDATA ''
+    ValueSpec       (Text|Numeric|Array|Record|AppValue|ConstRef|NotAvailableValue) "Numeric"
+    ConstRefLink    NMTOKEN #FIXED "&ti.Constant;"
+    IsNumericApp    CDATA '1'
+    OrderIndex      CDATA '0'
+    UnitLink        NMTOKEN #FIXED "&ti.Unit;"
+    AppValueConstantValueSpec   (None|Value|String|Enum|Boolean) "String"
+    IsSpecifiedByRule   CDATA ''
+    Rule            (FILL_UNTIL_END|FILL_UNTIL_MAX_SIZE) "FILL_UNTIL_END"
+    MaxSizeToFill   CDATA ''
+    IsTextualValue  CDATA '0'
+    DefaultPatternSpecified CDATA '0'
+    DefaultPattern  CDATA ''
+>
+
+
+<!-- Links -->
+
+<!ELEMENT ConstantLink EMPTY>
+
+<!ATTLIST ConstantLink 
+    %A.LinkGUID;
+    %A.LinkChildGUID;
+    %A.LinkVersion;
+    %A.LinkType; "&ti.Constant;"
+>

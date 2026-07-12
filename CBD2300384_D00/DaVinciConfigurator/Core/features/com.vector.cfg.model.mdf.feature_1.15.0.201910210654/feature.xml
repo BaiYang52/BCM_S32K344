@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vector.cfg.model.mdf.feature"
+      label="MDF Model Feature"
+      version="1.15.0.201910210654"
+      provider-name="Vector Informatik GmbH">
+
+   <description>
+      DaVinciCFG Model MDF Feature for target platform
+   </description>
+
+   <copyright>
+      (c) Copyright Vector Informatik GmbH. All Rights Reserved.
+   </copyright>
+
+   <license url="http://www.vector.com">
+      Vector Group License Agreement
+
+This software is licensed under the terms and conditions of „Delivery and maintenance of software products” of Vector Group, see www.vector.com
+   </license>
+
+   <plugin
+         id="aquintos.auth.log"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="aquintos.authentication"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="aquintos.commonresources"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="aquintos.deltamodel"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="aquintos.log"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="aquintos.mdf"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="aquintos.mmregistry"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="aquintos.modelbridge"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="aquintos.operationsframework"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="aquintos.utilities"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="aquintos.uuid"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="com.ning.compress-lzf"
+         download-size="0"
+         install-size="0"
+         version="1.0.5.201804161355"
+         unpack="false"/>
+
+   <plugin
+         id="org.hsqldb"
+         download-size="0"
+         install-size="0"
+         version="2.2.5.201804101419"
+         unpack="false"/>
+
+   <plugin
+         id="vi.annotations.nodsl.base.if"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="vi.api"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="vi.auth.api"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="vi.collections"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="vi.concurrency.api"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="vi.deltamodel.nodsl.modeling.if"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="vi.info"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="vi.info.mdf"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="vi.mdf.nodsl.modeling.if"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="vi.mdf.nodsl.modeling.impl"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="vi.mdf.nodsl.modeling.internal.if"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="vi.mdf.nodsl.modeling.legacy.util"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="vi.mm.mof.modeling.impl"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="vi.mmregistry.nodsl.modeling.if"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="vi.modelbridge.nodsl.modeling.if"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="vi.monitoring.nodsl.base.if"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="vi.status.nodsl.base.if"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="vi.testenv.nodsl.base.util"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jdt.annotation"
+         download-size="0"
+         install-size="0"
+         version="2.2.200.v20180921-1416"
+         unpack="false"/>
+
+   <plugin
+         id="vi.common.nodsl.base.if"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="vi.authentication.nodsl.base.if"
+         download-size="0"
+         install-size="0"
+         version="9.0.0.201910210654"
+         unpack="false"/>
+
+   <plugin
+         id="vi.globalevent.nodsl.modeling.if"
+         download-size="0"
+         install-size="0"
+         version="9.5.0.201910210654"
+         unpack="false"/>
+
+</feature>

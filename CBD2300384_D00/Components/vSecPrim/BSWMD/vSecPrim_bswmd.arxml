@@ -1,0 +1,3555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+***********************************************************************************************************************
+COPYRIGHT
+===============================================================================
+Copyright (c) 2023 by Vector Informatik GmbH.                                         All rights reserved.
+
+    This software is copyright protected and proprietary to Vector Informatik GmbH.
+    Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+    All other rights remain with Vector Informatik GmbH.
+===============================================================================
+FILE DESCRIPTION
+===============================================================================
+File:           vSecPrim_bswmd.arxml
+Component:      Security_vSecPrim
+Module:         vSecPrim
+Generator:      DaVinci Configurator
+Description:    -
+*********************************************************************************************************************** 
+-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0">
+	<AR-PACKAGES>
+		<AR-PACKAGE UUID="ff55d029-386d-43a2-b3c2-dfef4c7a5e36">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<BSW-IMPLEMENTATION UUID="b0e9f4c5-3717-44da-945d-0d1bd52e681b">
+					<SHORT-NAME>vSecPrim_Impl</SHORT-NAME>
+					<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+					<SW-VERSION>7.00.00</SW-VERSION>
+					<USED-CODE-GENERATOR>DaVinci Configurator</USED-CODE-GENERATOR>
+					<VENDOR-ID>30</VENDOR-ID>
+					<BEHAVIOR-REF DEST="BSW-INTERNAL-BEHAVIOR">/MICROSAR/vSecPrim_ib_bswmd/BswModuleDescriptions/vSecPrim/vSecPrim</BEHAVIOR-REF>
+					<PRECONFIGURED-CONFIGURATION-REFS>
+						<PRECONFIGURED-CONFIGURATION-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/MICROSAR/vSecPrim_Pre</PRECONFIGURED-CONFIGURATION-REF>
+					</PRECONFIGURED-CONFIGURATION-REFS>
+					<RECOMMENDED-CONFIGURATION-REFS>
+						<RECOMMENDED-CONFIGURATION-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/MICROSAR/vSecPrim_Rec</RECOMMENDED-CONFIGURATION-REF>
+					</RECOMMENDED-CONFIGURATION-REFS>
+					<VENDOR-SPECIFIC-MODULE-DEF-REFS>
+						<VENDOR-SPECIFIC-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/MICROSAR/vSecPrim</VENDOR-SPECIFIC-MODULE-DEF-REF>
+					</VENDOR-SPECIFIC-MODULE-DEF-REFS>
+				</BSW-IMPLEMENTATION>
+				<ECUC-MODULE-DEF UUID="a09f997f-b6b6-47d8-ae6b-4cc58cee354f">
+					<SHORT-NAME>vSecPrim</SHORT-NAME>
+					<DESC>
+						<L-2 L="EN">The Software Crypto Library vSecPrim provides cryptographic algorithms and can be used within AUTOSAR or as a standalone library. If it is used within AUTOSAR, the module is only to be used in combination with the Crypto Driver.
+
+#Security #Cryptography #Library
+#Vector
+						</L-2>
+					</DESC>
+					<CATEGORY>VENDOR_SPECIFIC_MODULE_DEFINITION</CATEGORY>
+					<ADMIN-DATA>
+						<DOC-REVISIONS>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.00.00</REVISION-LABEL>
+								<STATE>beta</STATE>
+								<ISSUED-BY>vismaw</ISSUED-BY>
+								<DATE>2018-07-07T02:21:42+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Initial creation</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.01.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visrpp</ISSUED-BY>
+								<DATE>2018-08-21T19:01:44+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added algorithm dependencies, added support for preconfigurations, added parameter ClearWorkspaceEnabled.</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">STORYC-6308</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>2.00.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismwe</ISSUED-BY>
+								<DATE>2018-12-12T08:04:37+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Support ChaCha20, Poly1305, EC-Burmester-Desmedt, KDF X9.63 with SHA-2 256 and avoid usage of limit.h</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">STORYC-7254, STORYC-7277, STORYC-7162</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>2.01.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismwe</ISSUED-BY>
+								<DATE>2019-01-21T08:43:45+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Support HMAC-SHA384</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">STORYC-7448</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>2.02.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismwe</ISSUED-BY>
+								<DATE>2019-02-20T13:29:49+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Update Version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">STORYC-7656</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.00.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>viseag</ISSUED-BY>
+								<DATE>2019-11-06T16:41:55+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Support PBKDF2-HMACSHA256</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">SEC-831</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.01.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>viseag</ISSUED-BY>
+								<DATE>2020-03-12T16:41:55+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Support RSA PSS SHA256, Remove 64k single call limitation for all security algorithm</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">SEC-1063, SEC-879</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.01.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismwe</ISSUED-BY>
+								<DATE>2020-03-25T09:52:06+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Adapt Version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00105935</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.00.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>viseag</ISSUED-BY>
+								<DATE>2020-04-14T16:41:55+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Adapt Version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">SEC-1159</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.00.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>viseag</ISSUED-BY>
+								<DATE>2020-05-14T11:56:06+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Adapt Version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00106368</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.01.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>viseag</ISSUED-BY>
+								<DATE>2020-05-19T12:02:55+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Support CTR DRBG based on AES128, Support  KDF X9.63 with SHA-2 512</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">SEC-1162, SEC-1532</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.02.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>viseag</ISSUED-BY>
+								<DATE>2020-07-06T09:15:55+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Support HASH DRBG based on SHA2-512, Support SHA3</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">SEC-1221, SEC-1474</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>5.00.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>viseag</ISSUED-BY>
+								<DATE>2020-08-18T09:15:55+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Support AES-CMAC 256 Beta, support AES-CCM 128 Beta, support HKDF HMAC SHA256 Two Step Beta, support SPAKE2+ Beta</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">SEC-1748, SEC-1750, SEC-1752, SEC-1754</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>5.01.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>viseag</ISSUED-BY>
+								<DATE>2020-09-04T15:25:55+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Support AES-CMAC 256 Production, support AES-CCM 128 Production, support HKDF HMAC SHA256 Production</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">SEC-1803, SEC-1807, SEC-1810</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>5.02.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>viseag</ISSUED-BY>
+								<DATE>2020-10-21T15:20:22+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Support SPAKE2+ Production, support inplace encryption for AES GCM</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">SEC-1814, SEC-1816</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>5.03.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>viseag</ISSUED-BY>
+								<DATE>2020-12-02T11:56:06+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Use VStdLib for MemCpy and similar services, provide generic hashing API</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">SEC-301, SEC-2075</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>5.04.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>viseag</ISSUED-BY>
+								<DATE>2021-02-19T08:38:06+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Reduce QAC findings in QM parts of the component</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">SEC-1693</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>5.05.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>olapointe</ISSUED-BY>
+								<DATE>2021-06-14T08:38:06+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Include description</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">SEC-2683</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>6.00.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>viseag</ISSUED-BY>
+								<DATE>2021-11-10T11:10:06+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Support HKDF SHA2-256 (One Step)</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">SEC-3458</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>6.01.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>viseag</ISSUED-BY>
+								<DATE>2022-01-13T11:10:06+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Adapt version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">SEC-3148</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>7.00.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>viseag</ISSUED-BY>
+								<DATE>2022-12-15T11:10:06+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Support HDKF HMAC SHA384</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">SEC-5046</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+						</DOC-REVISIONS>
+					</ADMIN-DATA>
+					<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+					<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+					<SUPPORTED-CONFIG-VARIANTS>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-LINK-TIME</SUPPORTED-CONFIG-VARIANT>
+					</SUPPORTED-CONFIG-VARIANTS>
+					<CONTAINERS>
+						<ECUC-PARAM-CONF-CONTAINER-DEF UUID="acd2dd30-01d8-4578-9195-463ffc9701a2">
+							<SHORT-NAME>vSecPrimBasicAlgorithms</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Container for basic algorithm configuration.</L-2>
+							</DESC>
+							<ADMIN-DATA>
+								<SDGS>
+									<SDG GID="DV:CfgPostBuild">
+										<SD GID="DV:postBuildSelectableChangeable">false</SD>
+										<SD GID="DV:postBuildNotDeletable">false</SD>
+									</SDG>
+								</SDGS>
+							</ADMIN-DATA>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+							<SUB-CONTAINERS>
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="915bb2b5-e734-4d17-8b6a-c5825781fcd0">
+									<SHORT-NAME>vSecPrimHash</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container for hash algorithm configuration.</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<PARAMETERS>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="c52b1ff3-402c-488e-826f-eb2f0b90cfa5">
+											<SHORT-NAME>vSecPrimSHA1Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+SHA1</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTSHA</SD>
+															<SD>ACTUTILITIES</SD>
+															<SD>HASH</SD>
+														</SDG>
+														<SDG GID="DV:vSecPrim:AlgoInfo">
+															<SD GID="DV:vSecPrim:AlgoName">SHA1</SD>
+															<SD GID="DV:vSecPrim:AlgoIdentifier">VSECPRIM_DIGEST_SHA1</SD>
+															<SD GID="DV:vSecPrim:DigestLength">20</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="ebf81dbe-59f8-47a9-84ae-fa6f096625ca">
+											<SHORT-NAME>vSecPrimRIPEMD160Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+RIPEMD160</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTRMD160</SD>
+															<SD>ACTUTILITIES</SD>
+															<SD>HASH</SD>
+														</SDG>
+														<SDG GID="DV:vSecPrim:AlgoInfo">
+															<SD GID="DV:vSecPrim:AlgoName">RIPEMD160</SD>
+															<SD GID="DV:vSecPrim:AlgoIdentifier">VSECPRIM_DIGEST_RIPEMD160</SD>
+															<SD GID="DV:vSecPrim:DigestLength">20</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="f74de5a0-f6cf-4c4c-b2a3-c4cac7dcda6b">
+											<SHORT-NAME>vSecPrimSHA2_256Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithms can be used:
+SHA2-224
+SHA2-256</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTSHA2_32</SD>
+															<SD>ACTUTILITIES</SD>
+															<SD>HASH</SD>
+														</SDG>
+														<SDG GID="DV:vSecPrim:AlgoInfo">
+															<SD GID="DV:vSecPrim:AlgoName">SHA2_224</SD>
+															<SD GID="DV:vSecPrim:AlgoIdentifier">VSECPRIM_DIGEST_SHA2_224</SD>
+															<SD GID="DV:vSecPrim:DigestLength">28</SD>
+														</SDG>
+														<SDG GID="DV:vSecPrim:AlgoInfo">
+															<SD GID="DV:vSecPrim:AlgoName">SHA2_256</SD>
+															<SD GID="DV:vSecPrim:AlgoIdentifier">VSECPRIM_DIGEST_SHA2_256</SD>
+															<SD GID="DV:vSecPrim:DigestLength">32</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="7ff72a22-3efb-4095-aac1-6e388213bb34">
+											<SHORT-NAME>vSecPrimSHA2_512Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithms can be used:
+SHA2-384
+SHA2-512
+SHA2-512_224
+SHA2-512_256</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTSHA2_64</SD>
+															<SD>ACTUTILITIES</SD>
+															<SD>HASH</SD>
+														</SDG>
+														<SDG GID="DV:vSecPrim:AlgoInfo">
+															<SD GID="DV:vSecPrim:AlgoName">SHA2_384</SD>
+															<SD GID="DV:vSecPrim:AlgoIdentifier">VSECPRIM_DIGEST_SHA2_384</SD>
+															<SD GID="DV:vSecPrim:DigestLength">48</SD>
+														</SDG>
+														<SDG GID="DV:vSecPrim:AlgoInfo">
+															<SD GID="DV:vSecPrim:AlgoName">SHA2_512</SD>
+															<SD GID="DV:vSecPrim:AlgoIdentifier">VSECPRIM_DIGEST_SHA2_512</SD>
+															<SD GID="DV:vSecPrim:DigestLength">64</SD>
+														</SDG>
+														<SDG GID="DV:vSecPrim:AlgoInfo">
+															<SD GID="DV:vSecPrim:AlgoName">SHA2_512_224</SD>
+															<SD GID="DV:vSecPrim:AlgoIdentifier">VSECPRIM_DIGEST_SHA2_512_224</SD>
+															<SD GID="DV:vSecPrim:DigestLength">28</SD>
+														</SDG>
+														<SDG GID="DV:vSecPrim:AlgoInfo">
+															<SD GID="DV:vSecPrim:AlgoName">SHA2_512_256</SD>
+															<SD GID="DV:vSecPrim:AlgoIdentifier">VSECPRIM_DIGEST_SHA2_512_256</SD>
+															<SD GID="DV:vSecPrim:DigestLength">32</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="0e318c71-7741-4301-aa0b-a47858919c18">
+											<SHORT-NAME>vSecPrimSHA3Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithms can be used:
+SHA3-224
+SHA3-256
+SHA3-384
+SHA3-512
+SHAKE128
+SHAKE256</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTSHA3</SD>
+															<SD>ACTKECCAK</SD>
+															<SD>ACTUTILITIES</SD>
+															<SD>HASH</SD>
+														</SDG>
+														<SDG GID="DV:vSecPrim:AlgoInfo">
+															<SD GID="DV:vSecPrim:AlgoName">SHA3_224</SD>
+															<SD GID="DV:vSecPrim:AlgoIdentifier">VSECPRIM_DIGEST_SHA3_224</SD>
+															<SD GID="DV:vSecPrim:DigestLength">28</SD>
+														</SDG>
+														<SDG GID="DV:vSecPrim:AlgoInfo">
+															<SD GID="DV:vSecPrim:AlgoName">SHA3_256</SD>
+															<SD GID="DV:vSecPrim:AlgoIdentifier">VSECPRIM_DIGEST_SHA3_256</SD>
+															<SD GID="DV:vSecPrim:DigestLength">32</SD>
+														</SDG>
+														<SDG GID="DV:vSecPrim:AlgoInfo">
+															<SD GID="DV:vSecPrim:AlgoName">SHA3_384</SD>
+															<SD GID="DV:vSecPrim:AlgoIdentifier">VSECPRIM_DIGEST_SHA3_384</SD>
+															<SD GID="DV:vSecPrim:DigestLength">48</SD>
+														</SDG>
+														<SDG GID="DV:vSecPrim:AlgoInfo">
+															<SD GID="DV:vSecPrim:AlgoName">SHA3_512</SD>
+															<SD GID="DV:vSecPrim:AlgoIdentifier">VSECPRIM_DIGEST_SHA3_512</SD>
+															<SD GID="DV:vSecPrim:DigestLength">64</SD>
+														</SDG>
+														<SDG GID="DV:vSecPrim:AlgoInfo">
+															<SD GID="DV:vSecPrim:AlgoName">SHAKE_128</SD>
+															<SD GID="DV:vSecPrim:AlgoIdentifier">VSECPRIM_DIGEST_SHAKE_128</SD>
+															<SD GID="DV:vSecPrim:DigestLength">32</SD>
+														</SDG>
+														<SDG GID="DV:vSecPrim:AlgoInfo">
+															<SD GID="DV:vSecPrim:AlgoName">SHAKE_256</SD>
+															<SD GID="DV:vSecPrim:AlgoIdentifier">VSECPRIM_DIGEST_SHAKE_256</SD>
+															<SD GID="DV:vSecPrim:DigestLength">64</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="55f64d77-c82f-4713-9cd2-ea82abeaf28c">
+											<SHORT-NAME>vSecPrimMD5Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+MD5</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTMD5</SD>
+															<SD>ACTUTILITIES</SD>
+															<SD>HASH</SD>
+														</SDG>
+														<SDG GID="DV:vSecPrim:AlgoInfo">
+															<SD GID="DV:vSecPrim:AlgoName">MD5</SD>
+															<SD GID="DV:vSecPrim:AlgoIdentifier">VSECPRIM_DIGEST_MD5</SD>
+															<SD GID="DV:vSecPrim:DigestLength">16</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+									</PARAMETERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="3fe98efd-f7d4-4210-8f14-5bf14cccfb76">
+									<SHORT-NAME>vSecPrimRandomNumberGeneration</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container for random number generation algorithm configuration.</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<PARAMETERS>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="4cebdf01-bf7a-42d3-a2a8-ca2f78b24794">
+											<SHORT-NAME>vSecPrimFIPS186Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+FIPS186-2</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTFIPS186</SD>
+															<SD>ACTSHA</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="835d6814-aefd-4990-9923-c3beb7561dab">
+											<SHORT-NAME>vSecPrimCtrDrbgEnabled</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">CTR DRBG Enabled</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+CTR_DRBG based on AES</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTUTILITIES</SD>
+															<SD>ACTAES</SD>
+															<SD>ACTIAES</SD>
+															<SD>ACTPADDING</SD>
+															<SD>ACTCTRDRBG</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="96cb9229-7386-42cc-ab52-a60c1666b1d8">
+											<SHORT-NAME>vSecPrimHashDrbgEnabled</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">HASH DRBG Enabled</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+HASH_DRBG based on SHA2-512</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTUTILITIES</SD>
+															<SD>ACTSHA2_64</SD>
+															<SD>ACTHASHDRBG</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+									</PARAMETERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</ECUC-PARAM-CONF-CONTAINER-DEF>
+						<ECUC-PARAM-CONF-CONTAINER-DEF UUID="215f9c0f-ba08-48cf-8d53-4d67f1732642">
+							<SHORT-NAME>vSecPrimSymmetricAlgorithms</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Container for symmetric algorithm configuration.</L-2>
+							</DESC>
+							<ADMIN-DATA>
+								<SDGS>
+									<SDG GID="DV:CfgPostBuild">
+										<SD GID="DV:postBuildSelectableChangeable">false</SD>
+										<SD GID="DV:postBuildNotDeletable">false</SD>
+									</SDG>
+								</SDGS>
+							</ADMIN-DATA>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+							<SUB-CONTAINERS>
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="319b3598-8057-464a-a28c-3fc0d134fa88">
+									<SHORT-NAME>vSecPrimCipher</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container for symmetric cipher algorithm configuration.</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<PARAMETERS>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="238985cc-c6a7-4bad-bcf4-89bbdbac4a9f">
+											<SHORT-NAME>vSecPrimAes128Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+AES128</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTAES</SD>
+															<SD>ACTIAES</SD>
+															<SD>ACTPADDING</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="e9dc7245-1c64-47d7-b3ce-ef716d32b73e">
+											<SHORT-NAME>vSecPrimAes192Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+AES192</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTAES</SD>
+															<SD>ACTIAES</SD>
+															<SD>ACTPADDING</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="63e7827d-4d87-4cf7-b73c-ee2c5e93f35e">
+											<SHORT-NAME>vSecPrimAes256Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+AES256</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTAES</SD>
+															<SD>ACTIAES</SD>
+															<SD>ACTPADDING</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="c335a626-67d8-4ae6-af0f-5ed01b4d03d9">
+											<SHORT-NAME>vSecPrimGcmEnabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithms can be used:
+AES-GCM</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTGCM</SD>
+															<SD>ACTGHASH</SD>
+															<SD>ACTAES</SD>
+															<SD>ACTIAES</SD>
+															<SD>ACTPADDING</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="f54275aa-7104-4503-a30f-50df3688d4b7">
+											<SHORT-NAME>vSecPrimAesCcmEnabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithms can be used:
+AES128-CCM</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTCCM</SD>
+															<SD>ACTAES</SD>
+															<SD>ACTIAES</SD>
+															<SD>ACTPADDING</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="dc5af78c-9e62-4f5b-b758-d40cd8a129f9">
+											<SHORT-NAME>vSecPrimDesEnabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+DES</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTDES</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="ed0abbc3-4b56-4069-bf37-1838e2f9edfc">
+											<SHORT-NAME>vSecPrimRC2Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+RC2 (ARC2)</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTRC2</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="3abfba1d-7182-4a7d-bad5-56486e13a7f4">
+											<SHORT-NAME>vSecPrimTDesEnabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+TDES (3DES)</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTTDES</SD>
+															<SD>ACTDES</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="a5a73d18-b53c-47b4-ad7c-d7e8e934997f">
+											<SHORT-NAME>vSecPrimChaCha20Enabled</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">ChaCha20 Enabled</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+ChaCha20</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTCHACHA20</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="a06b772a-eb74-40a4-8408-c00d163a7a38">
+											<SHORT-NAME>vSecPrimAeadChaCha20Poly1305Enabled</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Aead ChaCha20 and Poly1305 Enabled</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+Aead with ChaCha20 and Poly1305</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTCHACHA20</SD>
+															<SD>ACTPOLY1305</SD>
+															<SD>ACTAEAD7539</SD>
+															<SD>ACTBIGNUM</SD>
+															<SD>ACTBNREDUCE</SD>
+															<SD>ACTBNSUB</SD>
+															<SD>ACTBNADD</SD>
+															<SD>ACTBNMULT</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+									</PARAMETERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="6316838e-d7f2-429a-a7c0-eb8811f74687">
+									<SHORT-NAME>vSecPrimMac</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container for Mac algorithm configuration.</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<PARAMETERS>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="cb619d98-7330-4a78-a75f-6eea8aedf81c">
+											<SHORT-NAME>vSecPrimSipHashEnabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+SipHash</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTSIPHASH</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="f8fa6879-ff95-45eb-9ee7-303410295260">
+											<SHORT-NAME>vSecPrimCmacEnabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+CMAC</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTCMACAES</SD>
+															<SD>ACTAES</SD>
+															<SD>ACTIAES</SD>
+															<SD>ACTPADDING</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="22778248-cc46-40d2-942c-ff22894d0b3c">
+											<SHORT-NAME>vSecPrimHMacSHA1Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+HMac using SHA1 as hash algorithm</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTHASHMAC</SD>
+															<SD>ACTSHA</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="2dc760bb-367c-44b1-84ad-97bdd313b99c">
+											<SHORT-NAME>vSecPrimHMacRMD160Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+HMac using RMD160 as hash algorithm</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTHASHMACRMD160</SD>
+															<SD>ACTRMD160</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="1e18a65d-1d77-4702-87af-60990c1c31eb">
+											<SHORT-NAME>vSecPrimHMacSHA2_256Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+HMac using SHA2_256 as hash algorithm</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTHASHMACSHA256</SD>
+															<SD>ACTSHA2_32</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="7471fbdf-dbdf-413f-9ac4-154b75891de3">
+											<SHORT-NAME>vSecPrimGMacEnabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+GMac</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTGCM</SD>
+															<SD>ACTGHASH</SD>
+															<SD>ACTAES</SD>
+															<SD>ACTIAES</SD>
+															<SD>ACTPADDING</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="6cbaa002-c11b-4a7c-9ccc-cfe2ac2036bf">
+											<SHORT-NAME>vSecPrimPoly1305Enabled</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Poly1305 Enabled</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+Poly1305</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTPOLY1305</SD>
+															<SD>ACTBIGNUM</SD>
+															<SD>ACTBNREDUCE</SD>
+															<SD>ACTBNSUB</SD>
+															<SD>ACTBNADD</SD>
+															<SD>ACTBNMULT</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="1b73d5f0-2bb6-4171-8242-503f7e9ffdea">
+											<SHORT-NAME>vSecPrimHMacSHA2_384Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+HMac using SHA2_384 as hash algorithm</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTHASHMACSHA384</SD>
+															<SD>ACTSHA2_64</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+									</PARAMETERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</ECUC-PARAM-CONF-CONTAINER-DEF>
+						<ECUC-PARAM-CONF-CONTAINER-DEF UUID="8aff8b11-332a-4813-86eb-e8ddde4d6871">
+							<SHORT-NAME>vSecPrimAsymmetricAlgorithms</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Container for asymmetric algorithm configuration.</L-2>
+							</DESC>
+							<ADMIN-DATA>
+								<SDGS>
+									<SDG GID="DV:CfgPostBuild">
+										<SD GID="DV:postBuildSelectableChangeable">false</SD>
+										<SD GID="DV:postBuildNotDeletable">false</SD>
+									</SDG>
+								</SDGS>
+							</ADMIN-DATA>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+							<SUB-CONTAINERS>
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="c7d15e2a-6b2a-4950-9c1e-77c3b2bbd470">
+									<SHORT-NAME>vSecPrimSignature</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container for signature algorithm configuration.</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<PARAMETERS>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="b9f8111b-e690-4036-a96f-d9017923b066">
+											<SHORT-NAME>vSecPrimRSA_PSS_RIPEMD160Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+RSA Signature Generation / Verification according to PSS using RIPEMD160 as hash function</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTRMD160</SD>
+															<SD>ACTIRSAPRIVATE</SD>
+															<SD>ACTIRSAEXP</SD>
+															<SD>ACTIRSAPUBLIC</SD>
+															<SD>ACTIRSAPRIVATECRT</SD>
+															<SD>ACTBIGNUM</SD>
+															<SD>ACTBNREDUCE</SD>
+															<SD>ACTBNSUB</SD>
+															<SD>ACTBNADD</SD>
+															<SD>ACTBNMODEXP</SD>
+															<SD>ACTBNMONTMUL</SD>
+															<SD>ACTBNMODSUB</SD>
+															<SD>ACTBNMULT</SD>
+															<SD>ACTBNODDINVMODBASE</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="07626812-137f-4a0b-b11b-f6933039ed7c">
+											<SHORT-NAME>vSecPrimRSA_PSS_SHA1Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+RSA Signature Generation / Verification according to PSS using SHA1 as hash function</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTSHA</SD>
+															<SD>ACTIRSAPRIVATE</SD>
+															<SD>ACTIRSAEXP</SD>
+															<SD>ACTIRSAPUBLIC</SD>
+															<SD>ACTIRSAPRIVATECRT</SD>
+															<SD>ACTBIGNUM</SD>
+															<SD>ACTBNREDUCE</SD>
+															<SD>ACTBNSUB</SD>
+															<SD>ACTBNADD</SD>
+															<SD>ACTBNMODEXP</SD>
+															<SD>ACTBNMONTMUL</SD>
+															<SD>ACTBNMODSUB</SD>
+															<SD>ACTBNMULT</SD>
+															<SD>ACTBNODDINVMODBASE</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="0f0dc14f-ed72-4e24-a07e-22659ba84623">
+											<SHORT-NAME>vSecPrimRSA_PSS_SHA2_256Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+RSA Signature Generation / Verification according to PSS using SHA2_256 as hash function</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTSHA2_32</SD>
+															<SD>ACTIRSAPRIVATE</SD>
+															<SD>ACTIRSAEXP</SD>
+															<SD>ACTIRSAPUBLIC</SD>
+															<SD>ACTBIGNUM</SD>
+															<SD>ACTBNREDUCE</SD>
+															<SD>ACTBNSUB</SD>
+															<SD>ACTBNADD</SD>
+															<SD>ACTBNMODEXP</SD>
+															<SD>ACTBNMONTMUL</SD>
+															<SD>ACTBNMODSUB</SD>
+															<SD>ACTBNMULT</SD>
+															<SD>ACTBNODDINVMODBASE</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="b185b824-cb52-40c9-88eb-49f002d1894c">
+											<SHORT-NAME>vSecPrimRSA_V15_RIPEMD160Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+RSA Signature Generation / Verification according to RSASSA-PKCS1-v1_5 using RIPEMD160 as hash function</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTRMD160</SD>
+															<SD>ACTIRSAPRIVATE</SD>
+															<SD>ACTIRSAEXP</SD>
+															<SD>ACTIRSAPUBLIC</SD>
+															<SD>ACTIRSAPRIVATECRT</SD>
+															<SD>ACTBIGNUM</SD>
+															<SD>ACTBNREDUCE</SD>
+															<SD>ACTBNSUB</SD>
+															<SD>ACTBNADD</SD>
+															<SD>ACTBNMODEXP</SD>
+															<SD>ACTBNMONTMUL</SD>
+															<SD>ACTBNMODSUB</SD>
+															<SD>ACTBNMULT</SD>
+															<SD>ACTBNODDINVMODBASE</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="6e451db9-f38b-44ae-8acb-24bc3dc41a61">
+											<SHORT-NAME>vSecPrimRSA_V15_SHA1Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+RSA Signature Generation / Verification according to RSASSA-PKCS1-v1_5 using SHA1 as hash function</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTSHA</SD>
+															<SD>ACTIRSAPRIVATE</SD>
+															<SD>ACTIRSAEXP</SD>
+															<SD>ACTIRSAPUBLIC</SD>
+															<SD>ACTIRSAPRIVATECRT</SD>
+															<SD>ACTBIGNUM</SD>
+															<SD>ACTBNREDUCE</SD>
+															<SD>ACTBNSUB</SD>
+															<SD>ACTBNADD</SD>
+															<SD>ACTBNMODEXP</SD>
+															<SD>ACTBNMONTMUL</SD>
+															<SD>ACTBNMODSUB</SD>
+															<SD>ACTBNMULT</SD>
+															<SD>ACTBNODDINVMODBASE</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="467791ae-f714-45fa-82a8-2fc79e3235b7">
+											<SHORT-NAME>vSecPrimRSA_V15_SHA2_256Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+RSA Signature Generation / Verification according to RSASSA-PKCS1-v1_5 using SHA2_256 as hash function</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTSHA2_32</SD>
+															<SD>ACTIRSAPRIVATE</SD>
+															<SD>ACTIRSAEXP</SD>
+															<SD>ACTIRSAPUBLIC</SD>
+															<SD>ACTIRSAPRIVATECRT</SD>
+															<SD>ACTBIGNUM</SD>
+															<SD>ACTBNREDUCE</SD>
+															<SD>ACTBNSUB</SD>
+															<SD>ACTBNADD</SD>
+															<SD>ACTBNMODEXP</SD>
+															<SD>ACTBNMONTMUL</SD>
+															<SD>ACTBNMODSUB</SD>
+															<SD>ACTBNMULT</SD>
+															<SD>ACTBNODDINVMODBASE</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="63a20750-3940-4821-8237-9bf83349a700">
+											<SHORT-NAME>vSecPrimECDSA_25519Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+ECDSA Signature Generation / Verification according to curve ED25519</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTED25519</SD>
+															<SD>ACTED25519CORE</SD>
+															<SD>ACT25519UTIL</SD>
+															<SD>ACTSHA2_64</SD>
+															<SD>ACTBIGNUM</SD>
+															<SD>ACTBNSUB</SD>
+															<SD>ACTBNADD</SD>
+															<SD>ACTBNMODSUB</SD>
+															<SD>ACTBNMULT</SD>
+															<SD>ACTBNMODADD</SD>
+															<SD>ACTEXTERNRANDOM</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="9229d787-5ef3-4691-aeb9-e3f91cdc25bd">
+											<SHORT-NAME>vSecPrimECDSA_GenericEnabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+ECDSA Signature Generation / Verification using generic curve</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ESLGETLENGTHECP</SD>
+															<SD>ACTECDSA</SD>
+															<SD>ACTIECDSA</SD>
+															<SD>ACTECLENGTHINFO</SD>
+															<SD>ACTECTOOLS</SD>
+															<SD>ACTECPOINT</SD>
+															<SD>ACTECKEY</SD>
+															<SD>ACTIECKEY</SD>
+															<SD>ACTBIGNUM</SD>
+															<SD>ACTBNSUB</SD>
+															<SD>ACTBNADD</SD>
+															<SD>ACTBNMONTMUL</SD>
+															<SD>ACTBNMODSUB</SD>
+															<SD>ACTBNMODEXP</SD>
+															<SD>ACTBNMODADD</SD>
+															<SD>ACTEXTERNRANDOM</SD>
+															<SD>ACTBNDIV2</SD>
+															<SD>ACTBNMODRANDOMIZE</SD>
+															<SD>ACTBNMODDIV2</SD>
+															<SD>ACTBNFIELDINVERSION</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+									</PARAMETERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="36efc363-4525-4960-9745-014ff4a6f8f5">
+									<SHORT-NAME>vSecPrimKeyExchange</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container for key exchange algorithm configuration.</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<PARAMETERS>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="7f1b4292-57d2-4389-b9e5-06a053c3ed9e">
+											<SHORT-NAME>vSecPrimECDH_25519Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+ECDH Key Exchange according to curve ED25519</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACT25519UTIL</SD>
+															<SD>ACTX25519</SD>
+															<SD>ACTX25519CORE</SD>
+															<SD>ACTBIGNUM</SD>
+															<SD>ACTBNSUB</SD>
+															<SD>ACTBNADD</SD>
+															<SD>ACTBNMODSUB</SD>
+															<SD>ACTBNMULT</SD>
+															<SD>ACTBNMODADD</SD>
+															<SD>ACTEXTERNRANDOM</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="7d19381a-6330-45a5-b854-a3ff486904b8">
+											<SHORT-NAME>vSecPrimECDH_GenericEnabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+ECDH Key Exchange using generic curve</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ESLGETLENGTHECP</SD>
+															<SD>ACTECDH</SD>
+															<SD>ACTIECDH</SD>
+															<SD>ACTKDF2HMACSHA1</SD>
+															<SD>ACTHASHMAC</SD>
+															<SD>ACTSHA</SD>
+															<SD>ACTECLENGTHINFO</SD>
+															<SD>ACTECTOOLS</SD>
+															<SD>ACTECPOINT</SD>
+															<SD>ACTECKEY</SD>
+															<SD>ACTIECKEY</SD>
+															<SD>ACTBIGNUM</SD>
+															<SD>ACTBNSUB</SD>
+															<SD>ACTBNADD</SD>
+															<SD>ACTBNMONTMUL</SD>
+															<SD>ACTBNMODSUB</SD>
+															<SD>ACTBNMODEXP</SD>
+															<SD>ACTBNMODADD</SD>
+															<SD>ACTEXTERNRANDOM</SD>
+															<SD>ACTBNDIV2</SD>
+															<SD>ACTBNMODRANDOMIZE</SD>
+															<SD>ACTBNMODDIV2</SD>
+															<SD>ACTBNFIELDINVERSION</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="ab991656-478a-44f0-be90-8f19731230c2">
+											<SHORT-NAME>vSecPrimECBD_GenericEnabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+EC Burmester Desmedt Key Exchange using generic curve</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ESLGETLENGTHECP</SD>
+															<SD>ACTECBD_GENERIC</SD>
+															<SD>ACTECLENGTHINFO</SD>
+															<SD>ACTECTOOLS</SD>
+															<SD>ACTECPOINT</SD>
+															<SD>ACTECKEY</SD>
+															<SD>ACTIECKEY</SD>
+															<SD>ACTBIGNUM</SD>
+															<SD>ACTBNSUB</SD>
+															<SD>ACTBNADD</SD>
+															<SD>ACTBNMONTMUL</SD>
+															<SD>ACTBNMODSUB</SD>
+															<SD>ACTBNMODEXP</SD>
+															<SD>ACTBNMODADD</SD>
+															<SD>ACTEXTERNRANDOM</SD>
+															<SD>ACTBNDIV2</SD>
+															<SD>ACTBNMODRANDOMIZE</SD>
+															<SD>ACTBNMODDIV2</SD>
+															<SD>ACTBNFIELDINVERSION</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="76fa5f12-b29e-4f9b-a1cd-023cfd92ffa6">
+											<SHORT-NAME>vSecPrimSPAKE2pEnabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+SPAKE2+ preamble phase
+SPAKE2+ Key Exchange using curve SECP256r1, SHA256, HKDF HMAC SHA256 and CMAC AES128</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ESLGETLENGTHECP</SD>
+															<SD>ACTECLENGTHINFO</SD>
+															<SD>ACTECKEY</SD>
+															<SD>ACTIECKEY</SD>
+															<SD>ACTECTOOLS</SD>
+															<SD>ACTECPOINT</SD>
+															<SD>ACTBIGNUM</SD>
+															<SD>ACTBNSUB</SD>
+															<SD>ACTBNADD</SD>
+															<SD>ACTBNMONTMUL</SD>
+															<SD>ACTBNMODSUB</SD>
+															<SD>ACTBNMODEXP</SD>
+															<SD>ACTBNMODADD</SD>
+															<SD>ACTEXTERNRANDOM</SD>
+															<SD>ACTBNDIV2</SD>
+															<SD>ACTBNMODRANDOMIZE</SD>
+															<SD>ACTBNMODDIV2</SD>
+															<SD>ACTBNFIELDINVERSION</SD>
+															<SD>ACTBNREDUCE</SD>
+															<SD>ACTSPAKE2P</SD>
+															<SD>ACTUTILITIES</SD>
+															<SD>ACTSHA2_32</SD>
+															<SD>ACTHKDFHMACSHA256</SD>
+															<SD>ACTHASHMACSHA256</SD>
+															<SD>ACTCMACAES</SD>
+															<SD>ACTAES</SD>
+															<SD>ACTIAES</SD>
+															<SD>ACTPADDING</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+									</PARAMETERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="71cf92a2-204b-46de-806d-e7576640dc64">
+									<SHORT-NAME>vSecPrimKeyDerivation</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container for key derivation algorithm configuration.</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<PARAMETERS>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="3b501b28-af6c-414f-a47b-204dd0f72c50">
+											<SHORT-NAME>vSecPrimPKCS5Enabled</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">PKCS5 HMac SHA1 Enabled</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+Key Derivation according to PKCS5 / KDF2 with underlying primitive HMAC SHA1.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTKDF2HMACSHA1</SD>
+															<SD>ACTHASHMAC</SD>
+															<SD>ACTSHA</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="9f7b109c-97ca-4761-8a89-d46c585c8341">
+											<SHORT-NAME>vSecPrimANSI_X963Enabled</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">ANSI X9.63 SHA1 Enabled</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+Key Derivation according to ANSI X963 SHA1
+</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTKDFX963</SD>
+															<SD>ACTSHA</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="0306920d-18c9-4451-a8be-4c532fc33f36">
+											<SHORT-NAME>vSecPrimANSI_X963_SHA256Enabled</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">ANSI X9.63 SHA256 Enabled</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+Key Derivation according to ANSI X963 SHA256
+</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTKDFX963SHA256</SD>
+															<SD>ACTSHA2_32</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="ac683523-b4bc-4f04-a287-56e01361fc41">
+											<SHORT-NAME>vSecPrimPKCS5HMacSHA256Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+Key Derivation according to PKCS5 / KDF2 with underlying primitive HMAC SHA256.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTKDF2HMACSHA256</SD>
+															<SD>ACTHASHMACSHA256</SD>
+															<SD>ACTSHA2_32</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="0e939264-8ad0-4ac4-b518-cd13b5ac9400">
+											<SHORT-NAME>vSecPrimANSI_X963_SHA512Enabled</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">ANSI X9.63 SHA512 Enabled</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+Key Derivation according to ANSI X963 SHA512
+</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTKDFX963SHA512</SD>
+															<SD>ACTSHA2_64</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="98b625b4-421c-46c0-b9a8-422a815c8898">
+											<SHORT-NAME>vSecPrimHKDF_HMAC_SHA256Enabled</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">HKDF HMAC SHA256 Enabled</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+Key Derivation according to HKDF HMAC SHA256 one step method (Option 2) and two step method
+</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTHKDFHMACSHA256</SD>
+															<SD>ACTHASHMACSHA256</SD>
+															<SD>ACTSHA2_32</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="7f5290fa-8c39-41f2-9de4-4bdaa4ffd141">
+											<SHORT-NAME>vSecPrimHKDF_HMAC_SHA384Enabled</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">HKDF HMAC SHA384 Enabled</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+Key Derivation according to HKDF HMAC SHA384 one step method (Option 2) and two step method
+</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTHKDFHMACSHA384</SD>
+															<SD>ACTHASHMACSHA384</SD>
+															<SD>ACTSHA2_64</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="a10b9bb4-c1bc-4636-a69b-82b1fd8b9503">
+											<SHORT-NAME>vSecPrimHKDF_SHA2_256_OnestepEnabled</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">HKDF SHA2_256 One Step Enabled</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+Key Derivation according to HKDF SHA2_256, one step method (Option 1)
+</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTHKDFHASHONESTEP</SD>
+															<SD>ACTSHA2_32</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+									</PARAMETERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="7651f40b-2167-4768-8804-99a2f593194a">
+									<SHORT-NAME>vSecPrimCipher</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container for asymmetric cipher algorithm configuration.</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<PARAMETERS>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="27a63a03-13ce-4aa9-88eb-5bfb02652f81">
+											<SHORT-NAME>vSecPrimRSA_OAEP_SHA1Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+RSA Asymmetric encryption according to OAEP using SHA1 as hash algorithm</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTSHA</SD>
+															<SD>ACTIRSAPRIVATE</SD>
+															<SD>ACTIRSAEXP</SD>
+															<SD>ACTIRSAPUBLIC</SD>
+															<SD>ACTIRSAPRIVATECRT</SD>
+															<SD>ACTBIGNUM</SD>
+															<SD>ACTBNREDUCE</SD>
+															<SD>ACTBNSUB</SD>
+															<SD>ACTBNADD</SD>
+															<SD>ACTBNMODEXP</SD>
+															<SD>ACTBNMONTMUL</SD>
+															<SD>ACTBNMODSUB</SD>
+															<SD>ACTBNMULT</SD>
+															<SD>ACTBNODDINVMODBASE</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="6ae07ed4-a890-49bf-ae38-472b4432b743">
+											<SHORT-NAME>vSecPrimRSA_OAEP_SHA2_256Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+RSA Asymmetric encryption according to OAEP using SHA2_256 as hash algorithm</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTSHA2_32</SD>
+															<SD>ACTIRSAPRIVATE</SD>
+															<SD>ACTIRSAEXP</SD>
+															<SD>ACTIRSAPUBLIC</SD>
+															<SD>ACTIRSAPRIVATECRT</SD>
+															<SD>ACTBIGNUM</SD>
+															<SD>ACTBNREDUCE</SD>
+															<SD>ACTBNSUB</SD>
+															<SD>ACTBNADD</SD>
+															<SD>ACTBNMODEXP</SD>
+															<SD>ACTBNMONTMUL</SD>
+															<SD>ACTBNMODSUB</SD>
+															<SD>ACTBNMULT</SD>
+															<SD>ACTBNODDINVMODBASE</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="6cd74a94-128e-4fc7-9f32-45ecd13480b3">
+											<SHORT-NAME>vSecPrimRSA_V15Enabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+RSA Asymmetric encryption according to RSASSA-PKCS1-v1_5</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ACTIRSAPRIVATE</SD>
+															<SD>ACTIRSAEXP</SD>
+															<SD>ACTIRSAPUBLIC</SD>
+															<SD>ACTIRSAPRIVATECRT</SD>
+															<SD>ACTBIGNUM</SD>
+															<SD>ACTBNREDUCE</SD>
+															<SD>ACTBNSUB</SD>
+															<SD>ACTBNADD</SD>
+															<SD>ACTBNMODEXP</SD>
+															<SD>ACTBNMONTMUL</SD>
+															<SD>ACTBNMODSUB</SD>
+															<SD>ACTBNMULT</SD>
+															<SD>ACTBNODDINVMODBASE</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+									</PARAMETERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="f1ee49ef-2dd7-4993-9d2d-2d3ecf488829">
+									<SHORT-NAME>vSecPrimKeyGeneration</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container for key generation algorithm configuration.</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<PARAMETERS>
+										<ECUC-BOOLEAN-PARAM-DEF UUID="6ae62102-ea57-4024-9f9d-6d295f763419">
+											<SHORT-NAME>vSecPrimECCEnabled</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If enabled, the following algorithm can be used:
+Key Generation using elliptic curves</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:vSecPrim">
+														<SDG GID="DV:vSecPrim:NeededAlgorithms">
+															<SD>ESLGETLENGTHECP</SD>
+															<SD>ACTIECKEY</SD>
+															<SD>ACTECLENGTHINFO</SD>
+															<SD>ACTECTOOLS</SD>
+															<SD>ACTECPOINT</SD>
+															<SD>ACTECKEY</SD>
+															<SD>ACTIECKEY</SD>
+															<SD>ACTBIGNUM</SD>
+															<SD>ACTBNSUB</SD>
+															<SD>ACTBNADD</SD>
+															<SD>ACTBNMONTMUL</SD>
+															<SD>ACTBNMODSUB</SD>
+															<SD>ACTBNMODEXP</SD>
+															<SD>ACTBNMODADD</SD>
+															<SD>ACTBNDIV2</SD>
+															<SD>ACTBNMODRANDOMIZE</SD>
+															<SD>ACTBNMODDIV2</SD>
+															<SD>ACTBNFIELDINVERSION</SD>
+															<SD>ACTEXTERNRANDOM</SD>
+															<SD>ACTUTILITIES</SD>
+														</SDG>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</ECUC-BOOLEAN-PARAM-DEF>
+									</PARAMETERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</ECUC-PARAM-CONF-CONTAINER-DEF>
+						<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ee710804-dbdb-4d57-a443-7b97084737de">
+							<SHORT-NAME>vSecPrimOptimization</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Container for optimization configuration options.</L-2>
+							</DESC>
+							<ADMIN-DATA>
+								<SDGS>
+									<SDG GID="DV:CfgPostBuild">
+										<SD GID="DV:postBuildSelectableChangeable">false</SD>
+										<SD GID="DV:postBuildNotDeletable">false</SD>
+									</SDG>
+								</SDGS>
+							</ADMIN-DATA>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+							<PARAMETERS>
+								<ECUC-ENUMERATION-PARAM-DEF UUID="e6e79b71-8260-461f-b787-ca9c207ddd64">
+									<SHORT-NAME>vSecPrimAesSpeedUp</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the optimization level of the Aes algorithms.
+The higher the level, the faster the code will be executed at the cost of a higher memory consumption.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>SPEED_UP_LEVEL_3</DEFAULT-VALUE>
+									<LITERALS>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="82503a7a-331d-4f89-8238-a3e18695b58a">
+											<SHORT-NAME>SPEED_UP_LEVEL_0</SHORT-NAME>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="def4726d-3f7c-46e8-95b5-20227660fa8d">
+											<SHORT-NAME>SPEED_UP_LEVEL_1</SHORT-NAME>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="6c47bdc6-5d0b-45a5-ba60-510ba0517ecd">
+											<SHORT-NAME>SPEED_UP_LEVEL_2</SHORT-NAME>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="9d82d155-06eb-4dcd-9d39-3858ea220f12">
+											<SHORT-NAME>SPEED_UP_LEVEL_3</SHORT-NAME>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ECUC-ENUMERATION-PARAM-DEF>
+								<ECUC-ENUMERATION-PARAM-DEF UUID="e8cf334c-242d-41fa-a621-3f3a69b5e975">
+									<SHORT-NAME>vSecPrimSha1SpeedUp</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the optimization level of the SHA1 algorithms.
+The higher the level, the faster the code will be executed at the cost of a higher memory consumption.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>SPEED_UP_LEVEL_1</DEFAULT-VALUE>
+									<LITERALS>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="73bd71ed-5ff2-4e16-8537-8e05313f16ce">
+											<SHORT-NAME>SPEED_UP_LEVEL_0</SHORT-NAME>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="7077a555-3908-4d59-bf3a-2e026bc16b8e">
+											<SHORT-NAME>SPEED_UP_LEVEL_1</SHORT-NAME>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="00f934d7-1072-4ec4-a7f3-e1cb8dbb0e60">
+											<SHORT-NAME>SPEED_UP_LEVEL_2</SHORT-NAME>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="6f4335b7-d17b-4bc3-97c7-943a17d7d28a">
+											<SHORT-NAME>SPEED_UP_LEVEL_3</SHORT-NAME>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ECUC-ENUMERATION-PARAM-DEF>
+								<ECUC-ENUMERATION-PARAM-DEF UUID="a8a1e11c-6fd6-4c70-848a-5b429279b9c9">
+									<SHORT-NAME>vSecPrimSha256SpeedUp</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the optimization level of the SHA2_256 algorithms.
+The higher the level, the faster the code will be executed at the cost of a higher memory consumption.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>SPEED_UP_LEVEL_0</DEFAULT-VALUE>
+									<LITERALS>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="a44820b6-14ae-48ef-9319-5cb209c45293">
+											<SHORT-NAME>SPEED_UP_LEVEL_0</SHORT-NAME>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="287d3178-315f-479a-9a39-f63e91a4db37">
+											<SHORT-NAME>SPEED_UP_LEVEL_1</SHORT-NAME>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ECUC-ENUMERATION-PARAM-DEF>
+								<ECUC-ENUMERATION-PARAM-DEF UUID="7148a3b1-130f-413e-9d4e-f9b42e7c5ebe">
+									<SHORT-NAME>vSecPrimSha512SpeedUp</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the optimization level of the SHA2_512 algorithms.
+The higher the level, the faster the code will be executed at the cost of a higher memory consumption.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>SPEED_UP_LEVEL_0</DEFAULT-VALUE>
+									<LITERALS>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="037dcc56-b4bc-465d-8688-a5286b4d04df">
+											<SHORT-NAME>SPEED_UP_LEVEL_0</SHORT-NAME>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="e101abed-b66c-4b2c-bcb5-4492c07381ff">
+											<SHORT-NAME>SPEED_UP_LEVEL_1</SHORT-NAME>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ECUC-ENUMERATION-PARAM-DEF>
+								<ECUC-ENUMERATION-PARAM-DEF UUID="23f96131-9f02-4dad-9f20-dc435313a649">
+									<SHORT-NAME>vSecPrimChaCha20SpeedUp</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">ChaCha20 Speed Up</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the optimization level of the ChaCha20 algorithms.
+The higher the level, the faster the code will be executed at the cost of a higher memory consumption.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>SPEED_UP_LEVEL_1</DEFAULT-VALUE>
+									<LITERALS>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="e378c11c-5bb6-414c-ba2f-9b26daf8876b">
+											<SHORT-NAME>SPEED_UP_LEVEL_0</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="1eb23a60-967c-48c9-8988-593a0d24ffc5">
+											<SHORT-NAME>SPEED_UP_LEVEL_1</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="b7e4a176-18ef-49d8-aaf7-62a480429ae9">
+											<SHORT-NAME>SPEED_UP_LEVEL_2</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ECUC-ENUMERATION-PARAM-DEF>
+							</PARAMETERS>
+						</ECUC-PARAM-CONF-CONTAINER-DEF>
+						<ECUC-PARAM-CONF-CONTAINER-DEF UUID="73280f6a-154c-483b-b28f-dd51fde62f06">
+							<SHORT-NAME>vSecPrimGeneral</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Container for common configuration options.</L-2>
+							</DESC>
+							<ADMIN-DATA>
+								<SDGS>
+									<SDG GID="DV:CfgPostBuild">
+										<SD GID="DV:postBuildSelectableChangeable">false</SD>
+										<SD GID="DV:postBuildNotDeletable">false</SD>
+									</SDG>
+								</SDGS>
+							</ADMIN-DATA>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+							<PARAMETERS>
+								<ECUC-STRING-PARAM-DEF UUID="1a0f5629-dfc3-49cf-8d16-eb2b2a432108">
+									<SHORT-NAME>vSecPrimUserConfigFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">User configuration file that shall be part of the vSecPrim configuration.
+If you want to overwrite or provide own settings in the generated configuration file, you can specify a path to a user defined configuration file. The user defined configuration file will be included at the end of the generated file. Thus definitions in the user defined configuration file can overwrite definitions in the generated configuration file.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</ECUC-STRING-PARAM-DEF>
+								<ECUC-ENUMERATION-PARAM-DEF UUID="70039845-eb08-4218-ae0a-3afbfd56c704">
+									<SHORT-NAME>vSecPrimRSAMaxKeySize</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Maximum key size in Bits which can be used for the RSA algorithms.
+The range is from 512 to 4096 Bit.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>RSA_MAX_KEY_SIZE_2048</DEFAULT-VALUE>
+									<LITERALS>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="7a101831-7f9a-4699-9874-68bf99d7a8c7">
+											<SHORT-NAME>RSA_MAX_KEY_SIZE_2048</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="5a8c57cc-98aa-42d2-893b-32f0a5b0daeb">
+											<SHORT-NAME>RSA_MAX_KEY_SIZE_1024</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="7529e71d-5a35-4510-94ee-bd1220a6be7c">
+											<SHORT-NAME>RSA_MAX_KEY_SIZE_4096</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="bb5ee1ff-a657-4a24-8da6-9e49dcf385c6">
+											<SHORT-NAME>RSA_MAX_KEY_SIZE_512</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="fbf35515-a787-4d8b-b928-0f8df6a20755">
+											<SHORT-NAME>RSA_MAX_KEY_SIZE_1536</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="2aa23626-b768-428b-ba3c-b323f6b7f6f9">
+											<SHORT-NAME>RSA_MAX_KEY_SIZE_3072</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ECUC-ENUMERATION-PARAM-DEF>
+								<ECUC-ENUMERATION-PARAM-DEF UUID="80415f02-6143-4127-8fd9-20ee69d41fd3">
+									<SHORT-NAME>vSecPrimECPMaxKeySize</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Maximum key size in Bits which can be used for the ECP algorithms.
+The range is from 160 to 521 Bit.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>ECP_MAX_KEY_SIZE_256</DEFAULT-VALUE>
+									<LITERALS>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="a1cdb423-9d98-4683-9a92-f9c37acbce5f">
+											<SHORT-NAME>ECP_MAX_KEY_SIZE_160</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="b7064d92-ccf2-4da0-8c16-9b1e9dc12d78">
+											<SHORT-NAME>ECP_MAX_KEY_SIZE_192</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="6304a83e-4447-426d-854e-043dbf6dc710">
+											<SHORT-NAME>ECP_MAX_KEY_SIZE_224</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="04834a23-6630-4dfb-99c3-96ffb288be8f">
+											<SHORT-NAME>ECP_MAX_KEY_SIZE_256</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="9bbf9ca9-e679-4b61-8cf2-e3101e0030c3">
+											<SHORT-NAME>ECP_MAX_KEY_SIZE_320</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="5c8dabdb-c1ea-485a-91a3-11072289b6a7">
+											<SHORT-NAME>ECP_MAX_KEY_SIZE_384</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="287e4d9f-63de-448d-88db-bbf6401f0261">
+											<SHORT-NAME>ECP_MAX_KEY_SIZE_512</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="0e3565d3-eff8-42f0-9ca6-338a5b629dcc">
+											<SHORT-NAME>ECP_MAX_KEY_SIZE_521</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ECUC-ENUMERATION-PARAM-DEF>
+								<ECUC-BOOLEAN-PARAM-DEF UUID="f43996d0-b586-4ac9-bff5-161a26132ea2">
+									<SHORT-NAME>vSecPrimClearWorkspaceEnabled</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If enabled, the workspace is cleared after the processing of any algorithm has finished.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</ECUC-BOOLEAN-PARAM-DEF>
+								<ECUC-BOOLEAN-PARAM-DEF UUID="6b202a99-7e12-446d-95ba-c280a5c42151">
+									<SHORT-NAME>vSecPrimSupportUInt64</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Distinguish if uint64 is provided on the platform.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</ECUC-BOOLEAN-PARAM-DEF>
+								<ECUC-BOOLEAN-PARAM-DEF UUID="56f1b8bb-305e-4ecc-b4f7-bd50a6285152">
+									<SHORT-NAME>vSecPrimUseVstdLib</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If enabled, the copy and memory set implementation of VStdLib is used instead of the vSecPrim implementation of these functions.
+Set this value to "false", if vSecPrim shall be built/delivered as library.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</ECUC-BOOLEAN-PARAM-DEF>
+								<ECUC-ENUMERATION-PARAM-DEF UUID="e2db726d-3ba2-427a-a2c6-c92b59dd14ff">
+									<SHORT-NAME>vSecPrimWatchdogLevel</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the level of watchdog call frequency.
+WD_LEVEL_0: WD is disabled
+WD_LEVEL_1: WD called from outer functions only
+WD_LEVEL_2: WD called from inner functions as well
+WD_LEVEL_3: WD also called in inner hash loops</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>WD_LEVEL_0</DEFAULT-VALUE>
+									<LITERALS>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="d24a1ebc-912f-4f5a-a22f-d6643f4254e6">
+											<SHORT-NAME>WD_LEVEL_0</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="67079442-0273-4992-b151-78cf396c703f">
+											<SHORT-NAME>WD_LEVEL_1</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="26b74c3a-cb46-49db-994e-9f3791cbf3bc">
+											<SHORT-NAME>WD_LEVEL_2</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="b53a81fc-5ce5-48e2-ad79-e6149ab197bf">
+											<SHORT-NAME>WD_LEVEL_3</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ECUC-ENUMERATION-PARAM-DEF>
+								<ECUC-ENUMERATION-PARAM-DEF UUID="1655df71-67c6-4597-a104-a80e61c643f0">
+									<SHORT-NAME>vSecPrimSizeOfEsltLength</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Size Of eslt_Length</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Decide which type is used for eslt_Length.
+If size is set to uint16 max input length for single update is limitied to 65535 bytes.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>SIZE_UINT32</DEFAULT-VALUE>
+									<LITERALS>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="e21899de-2f69-42eb-9976-1184258b15e9">
+											<SHORT-NAME>SIZE_UINT16</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="1cfbcdf4-bc17-43d2-a6a9-d142d220dc22">
+											<SHORT-NAME>SIZE_UINT32</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ECUC-ENUMERATION-PARAM-DEF>
+								<ECUC-ENUMERATION-PARAM-DEF UUID="def73ca4-7160-4569-b368-0f5557d01f33">
+									<SHORT-NAME>vSecPrimCTRDRBGAES128SecurityStrength</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Security Strength of CTRDRBG AES128</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">The security strength determines the minimum entropy input length for CTR DRBG AES128.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>SECURITY_STRENGTH_128</DEFAULT-VALUE>
+									<LITERALS>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="2cfd7eb0-a1e0-46b3-8372-ff96cc995b2b">
+											<SHORT-NAME>SECURITY_STRENGTH_112</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+										<ECUC-ENUMERATION-LITERAL-DEF UUID="b1424ffe-273d-48e6-9572-6b8cb73c08bf">
+											<SHORT-NAME>SECURITY_STRENGTH_128</SHORT-NAME>
+											<ORIGIN>Vector Informatik</ORIGIN>
+										</ECUC-ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ECUC-ENUMERATION-PARAM-DEF>
+								<ECUC-INTEGER-PARAM-DEF UUID="26d6f730-b062-422b-b1ff-9736beddd7f0">
+									<SHORT-NAME>vSecPrimDrbgReseedInterval</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Number of requests for random number generation with CTR DRBG without reseeding.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>4294967295</DEFAULT-VALUE>
+									<MAX>4294967295</MAX>
+									<MIN>1</MIN>
+								</ECUC-INTEGER-PARAM-DEF>
+								<ECUC-INTEGER-PARAM-DEF UUID="5e1f8f6a-4b68-4234-8f16-f25e399928eb">
+									<SHORT-NAME>vSecPrimSPAKE2pMaxAADSize</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Maximum size of associated data for SPAKE2+ MAC key derivation in bytes. The range is between 0 and (2^13 - 1) bytes.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>16</DEFAULT-VALUE>
+									<MAX>8191</MAX>
+									<MIN>1</MIN>
+								</ECUC-INTEGER-PARAM-DEF>
+								<ECUC-INTEGER-PARAM-DEF UUID="99c49cd7-5dcf-4a47-b9cc-cb7d9b051366">
+									<SHORT-NAME>vSecPrimSPAKE2pPreambleOKMLength</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Maximum size of PBKDF output data for SPAKE2+ in the preamble phase in bytes.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>64</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>1</MIN>
+								</ECUC-INTEGER-PARAM-DEF>
+							</PARAMETERS>
+						</ECUC-PARAM-CONF-CONTAINER-DEF>
+					</CONTAINERS>
+				</ECUC-MODULE-DEF>
+				<ECUC-MODULE-CONFIGURATION-VALUES UUID="7a21be29-e160-40da-88d4-bd3dd4ef4ae1">
+					<SHORT-NAME>vSecPrim_Pre</SHORT-NAME>
+					<DESC>
+						<L-2 L="EN">Software Crypto Library pre-configuration</L-2>
+					</DESC>
+					<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/vSecPrim</DEFINITION-REF>
+					<CONTAINERS></CONTAINERS>
+				</ECUC-MODULE-CONFIGURATION-VALUES>
+				<ECUC-MODULE-CONFIGURATION-VALUES UUID="854cfbf3-de54-4594-a693-43e96fb89d0a">
+					<SHORT-NAME>vSecPrim_Rec</SHORT-NAME>
+					<DESC>
+						<L-2 L="EN">Software Crypto Library rec-configuration</L-2>
+					</DESC>
+					<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/vSecPrim</DEFINITION-REF>
+					<CONTAINERS></CONTAINERS>
+				</ECUC-MODULE-CONFIGURATION-VALUES>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</AR-PACKAGES>
+</AUTOSAR>

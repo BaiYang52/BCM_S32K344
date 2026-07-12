@@ -1,0 +1,2046 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 rel. 3 sp1 (x64) (http://www.altova.com) by  (Vector Informatik GmbH) -->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+	<!-- AUTOSAR ECU Configuration Parameter Definition -->
+	<!--
+    Document Owner:                 AUTOSAR
+    Document Responsibility:        AUTOSAR
+    Document Identification Number: 289
+    Document Status:                Published
+    Part of AUTOSAR Standard:       Classic Platform
+    Part of AUTOSAR Release:        R20-11
+    -->
+	<!-- Generated on Thu Nov 26 13:53:08 CET 2020 -->
+	<!-- MMT:        4.3.0 -->
+	<!-- Meta-Model: D:\jenkins\workspace\BuildMetaModelArtifactsStage2Uml\01_Sources\MMOD_MetaModel_059\cleaned\AUTOSAR_MMOD_MetaModel.eap -->
+	<!--
+Disclaimer
+
+This work (specification and/or software implementation) and the material
+contained in it, as released by AUTOSAR, is for the purpose of information
+only. AUTOSAR and the companies that have contributed to it shall not be liable
+for any use of the work.
+
+The material contained in this work is protected by copyright and other types
+of intellectual property rights. The commercial exploitation of the material
+contained in this work requires a license to such intellectual property rights.
+
+This work may be utilized or reproduced without any modification, in any form
+or by any means, for informational purposes only. For any other purpose, no
+part of the work may be utilized or reproduced, in any form or by any means,
+without permission in writing from the publisher.
+
+The work has been developed for automotive applications only. It has neither
+been developed, nor tested for non-automotive applications.
+
+The word AUTOSAR and the AUTOSAR logo are registered trademarks.
+
+    -->
+	<ADMIN-DATA>
+		<DOC-REVISIONS>
+			<DOC-REVISION>
+				<REVISION-LABEL>4.6.0</REVISION-LABEL>
+				<ISSUED-BY>AUTOSAR</ISSUED-BY>
+			</DOC-REVISION>
+		</DOC-REVISIONS>
+	</ADMIN-DATA>
+	<AR-PACKAGES>
+		<!-- AR-Package: AUTOSAR -->
+		<AR-PACKAGE UUID="ECUC:AUTOSAR">
+			<SHORT-NAME>AUTOSAR</SHORT-NAME>
+			<AR-PACKAGES>
+				<!-- AR-Package: AUTOSAR -->
+				<AR-PACKAGE UUID="ECUC:ECUCDEFS">
+					<SHORT-NAME>EcucDefs</SHORT-NAME>
+					<ELEMENTS>
+						<!-- Module Definition: Arti -->
+						<ECUC-MODULE-DEF UUID="ECUC:d0758586-0443-404b-a4e3-dd824bb49b41">
+							<SHORT-NAME>Arti</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">The Arti Module serves as a superordinate container collecting all information and parameters concerning ARTI.</L-2>
+							</DESC>
+							<ADMIN-DATA>
+								<DOC-REVISIONS>
+									<DOC-REVISION>
+										<REVISION-LABEL>4.6.0</REVISION-LABEL>
+										<ISSUED-BY>AUTOSAR</ISSUED-BY>
+									</DOC-REVISION>
+								</DOC-REVISIONS>
+							</ADMIN-DATA>
+							<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<CONTAINERS>
+								<!-- Container Definition: ArtiGeneric -->
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:0e95db36-c2ca-478f-97d2-668bf818bfea">
+									<SHORT-NAME>ArtiGeneric</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The ArtiGeneric container contains definitions for generic objects, i.e. not belonging to a standard AUTOSAR module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<SUB-CONTAINERS>
+										<!-- Container Definition: ArtiGenericComponentClass -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:dc8b1c52-b839-4702-bb8c-c00e6dacf867">
+											<SHORT-NAME>ArtiGenericComponentClass</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">The class definition describes the layout of the object (similar to a "class" definition in C).</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: ArtiGenericComponentClassName -->
+												<ECUC-STRING-PARAM-DEF UUID="ECUC:79e31615-719b-4b28-925b-201e1179e7cc">
+													<SHORT-NAME>ArtiGenericComponentClassName</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Name of the class.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<ECUC-STRING-PARAM-DEF-VARIANTS>
+														<ECUC-STRING-PARAM-DEF-CONDITIONAL/>
+													</ECUC-STRING-PARAM-DEF-VARIANTS>
+												</ECUC-STRING-PARAM-DEF>
+											</PARAMETERS>
+											<SUB-CONTAINERS>
+												<!-- Container Definition: ArtiGenericComponentClassParameter -->
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:b1ca1916-0013-4c35-bc71-2e3e03cabf31">
+													<SHORT-NAME>ArtiGenericComponentClassParameter</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Parameter definition of a class.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+													<PARAMETERS>
+														<!-- PARAMETER DEFINITION: ArtiGenericComponentClassParameterName -->
+														<ECUC-STRING-PARAM-DEF UUID="ECUC:9f2ea270-7b99-4b12-a771-536d771488eb">
+															<SHORT-NAME>ArtiGenericComponentClassParameterName</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Name of the parameter.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<ECUC-STRING-PARAM-DEF-VARIANTS>
+																<ECUC-STRING-PARAM-DEF-CONDITIONAL/>
+															</ECUC-STRING-PARAM-DEF-VARIANTS>
+														</ECUC-STRING-PARAM-DEF>
+													</PARAMETERS>
+													<REFERENCES>
+														<!-- Reference Definition: ArtiGenericComponentClassParameterTypeMapRef -->
+														<ECUC-REFERENCE-DEF UUID="ECUC:8de6e175-ddaa-4330-a4bf-3e422898c906">
+															<SHORT-NAME>ArtiGenericComponentClassParameterTypeMapRef</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Refers to a parameter type to interpret the parameter value.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiParameterTypeMap</DESTINATION-REF>
+														</ECUC-REFERENCE-DEF>
+													</REFERENCES>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiGenericComponentInstance -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:1171181e-f661-40f0-bd48-7e753290dfd9">
+											<SHORT-NAME>ArtiGenericComponentInstance</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">The instance definition describes a specific instantiated object.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: ArtiGenericComponentInstanceName -->
+												<ECUC-STRING-PARAM-DEF UUID="ECUC:1d57675e-c642-4cb1-9f57-388c4a670cb9">
+													<SHORT-NAME>ArtiGenericComponentInstanceName</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Name of the instance.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<ECUC-STRING-PARAM-DEF-VARIANTS>
+														<ECUC-STRING-PARAM-DEF-CONDITIONAL/>
+													</ECUC-STRING-PARAM-DEF-VARIANTS>
+												</ECUC-STRING-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiGenericComponentInstanceClassRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:98317161-8c38-4440-92c8-a681ac313c7e">
+													<SHORT-NAME>ArtiGenericComponentInstanceClassRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to a ArtGenericClass of which this object is instantiated.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentClass</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+											<SUB-CONTAINERS>
+												<!-- Container Definition: ArtiGenericComponentInstanceParameter -->
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:0ce680cf-6a46-4224-be85-cebc9da404b3">
+													<SHORT-NAME>ArtiGenericComponentInstanceParameter</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Parameter definition of an instance.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+													<REFERENCES>
+														<!-- Reference Definition: ArtiGenericComponentInstanceParameterClassParameterRef -->
+														<ECUC-REFERENCE-DEF UUID="ECUC:973f8d67-63a5-4b7e-b77a-a490839e21a5">
+															<SHORT-NAME>ArtiGenericComponentInstanceParameterClassParameterRef</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Refers to an ArtiGenericComponentClassParameter that defines this parameter.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentClass/ArtiGenericComponentClassParameter</DESTINATION-REF>
+														</ECUC-REFERENCE-DEF>
+														<!-- Reference Definition: ArtiGenericComponentInstanceParameterConstantRef -->
+														<ECUC-REFERENCE-DEF UUID="ECUC:4b5042b3-46b6-47bf-945d-e9a998784f0f">
+															<SHORT-NAME>ArtiGenericComponentInstanceParameterConstantRef</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Refers to an ArtiConstant that represents the value of this parameter.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiConstant</DESTINATION-REF>
+														</ECUC-REFERENCE-DEF>
+														<!-- Reference Definition: ArtiGenericComponentInstanceParameterExpressionRef -->
+														<ECUC-REFERENCE-DEF UUID="ECUC:d8811807-ab16-4bdd-b707-9827a8f7cc5c">
+															<SHORT-NAME>ArtiGenericComponentInstanceParameterExpressionRef</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Refers to an ArtiExpression that evaluates the value of this parameter.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiExpression</DESTINATION-REF>
+														</ECUC-REFERENCE-DEF>
+														<!-- Reference Definition: ArtiGenericComponentInstanceParameterHookRef -->
+														<ECUC-REFERENCE-DEF UUID="ECUC:4cb52969-651d-43b2-be80-86c040ecc70b">
+															<SHORT-NAME>ArtiGenericComponentInstanceParameterHookRef</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Refers to a hook that records this parameter.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiHook</DESTINATION-REF>
+														</ECUC-REFERENCE-DEF>
+													</REFERENCES>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<!-- Container Definition: ArtiHardware -->
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:8ae17e9e-0047-4b41-af33-78e6292cdfe9">
+									<SHORT-NAME>ArtiHardware</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The ArtiHardware container contains ARTI extensions to the EcucHardware module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<SUB-CONTAINERS>
+										<!-- Container Definition: ArtiHardwareCoreClass -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:2857607a-8c82-4f33-bb04-8ab37a2d358b">
+											<SHORT-NAME>ArtiHardwareCoreClass</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Contains the layout of an ARTI "Core" object, extending the EcucCoreDefinition.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiHardwareCoreClassCurrentApplicationRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:36f89e39-a933-428e-b126-c64841317313">
+													<SHORT-NAME>ArtiHardwareCoreClassCurrentApplicationRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectClassParameter that defines the ArtiCurrentApplicationInstance parameter.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectClassParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiHardwareCoreClassCurrentIsrRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:c9e3fffc-8e0f-4227-8cf4-387375fac5fb">
+													<SHORT-NAME>ArtiHardwareCoreClassCurrentIsrRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectClassParameter that defines the ArtiCurrentIsrInstance parameter.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectClassParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiHardwareCoreClassCurrentTaskRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:708bb30c-2a67-4c71-903c-d9c6bf6ff762">
+													<SHORT-NAME>ArtiHardwareCoreClassCurrentTaskRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectClassParameter that defines the ArtiCurrentTaskInstance parameter.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectClassParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiHardwareCoreClassGenericComponentRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:0a888e86-605f-46ab-ac9c-42d475ed602f">
+													<SHORT-NAME>ArtiHardwareCoreClassGenericComponentRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentClass that extends the core description.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentClass</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiHardwareCoreClassLastErrorRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:1b65f6e9-3208-4cf1-acb8-bbffeb3991b2">
+													<SHORT-NAME>ArtiHardwareCoreClassLastErrorRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectClassParameter that defines the ArtiLastErrorInstance parameter.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectClassParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiHardwareCoreClassRunningTaskPriorityRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:ef3bb939-b4c6-48cb-9c09-cb9116346610">
+													<SHORT-NAME>ArtiHardwareCoreClassRunningTaskPriorityRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectClassParameter that defines the ArtiHwCoreInstanceRunningTaskPriority parameter. This attribute specifies how to evaluate the current priority of the task referred by RUNNINGTASK. The current priority can be different from the static task priority as a result of priority ceiling protocol. This attribute differs from ArtiCurrentTask-&gt;ArtiOsTaskClassPriority as here is a single variable while in multiple tasks there is a single variable per task.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectClassParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiHardwareCoreInstance -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:18bd11ce-a56f-4567-9063-0de14da10d07">
+											<SHORT-NAME>ArtiHardwareCoreInstance</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Description: Represents an instance of an ARTI "Core" object, extending the EcucCoreDefinition. When using ARTI for debugging or hardware based tracing, this is mandatory (i.e. multiplicity 1..*), else optional.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: ArtiHardwareCoreInstanceCoreId -->
+												<ECUC-INTEGER-PARAM-DEF UUID="ECUC:eabec4d1-dc65-423a-ae3a-84f9039de478">
+													<SHORT-NAME>ArtiHardwareCoreInstanceCoreId</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter represents the "CoreID" as given by the OS, returned by GetCoreID().</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiHardwareCoreInstanceCurrentApplicationRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:9a7fdd04-1dcf-4728-97f5-28418182e5a2">
+													<SHORT-NAME>ArtiHardwareCoreInstanceCurrentApplicationRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "current application" that is running on this core.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiHardwareCoreInstanceCurrentIsrRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:6e865b4a-079b-4903-baec-5661a918a7b2">
+													<SHORT-NAME>ArtiHardwareCoreInstanceCurrentIsrRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "current ISR" that is running on this core.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiHardwareCoreInstanceCurrentTaskRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:59402b5a-a0bd-4cb0-8aea-00334d1c529f">
+													<SHORT-NAME>ArtiHardwareCoreInstanceCurrentTaskRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "current task" that is running on this core.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiHardwareCoreInstanceEcucCoreRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:47b50d4e-d888-4937-bab8-115f1d9387e5">
+													<SHORT-NAME>ArtiHardwareCoreInstanceEcucCoreRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the EcucCoreDefinition of this core.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucHardware/EcucCoreDefinition</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiHardwareCoreInstanceGenericComponentRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:b6f98c07-f72e-42d1-ac19-2b8d85c07970">
+													<SHORT-NAME>ArtiHardwareCoreInstanceGenericComponentRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentInstance that extends a core.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentInstance</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiHardwareCoreInstanceLastErrorRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:4286f213-38f7-475a-9d2c-4188a8ac75ba">
+													<SHORT-NAME>ArtiHardwareCoreInstanceLastErrorRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "last error" that happened on this core.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiHardwareCoreInstanceRunningTaskPriorityRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:b093adb2-8da2-444f-b97a-c9ad6f37f246">
+													<SHORT-NAME>ArtiHardwareCoreInstanceRunningTaskPriorityRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "running task priority" that is on this core.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiHardwareCoreInstanceValidRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:b0132d13-b0f7-413d-bf4f-ddac77a553c0">
+													<SHORT-NAME>ArtiHardwareCoreInstanceValidRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "validity" of this ArtiHwCoreInstance. Every object declaration may contain a VALID attribute telling the debugger whether the object's attributes are currently valid. It may have an integer type of any size. Its possible values are 0 (invalid) and non zero (object is valid).</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<!-- Container Definition: ArtiOs -->
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:87148dee-7bd7-42cd-85b5-2211305f3490">
+									<SHORT-NAME>ArtiOs</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The ArtiOs container contains ARTI extensions to the EcucDefs/Os module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<SUB-CONTAINERS>
+										<!-- Container Definition: ArtiOsAlarmClass -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:f6c8f934-40a8-495d-93c5-6d24cc11b848">
+											<SHORT-NAME>ArtiOsAlarmClass</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Contains the layout of an ArtiOsAlarm object.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiOsAlarmClassGenericComponentClassRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:2b159123-ec19-44d2-ab6a-cbfd521680c6">
+													<SHORT-NAME>ArtiOsAlarmClassGenericComponentClassRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentClass that extends the ArtiOsAlarmClass.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentClass</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsAlarmClassStateRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:7e2abcc9-b755-4a65-aeee-f0d5a13a6f40">
+													<SHORT-NAME>ArtiOsAlarmClassStateRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectClassParameter that declares the attribute ArtiOsAlarmStateRef in ArtiOsAlarmInstances. This attribute specifies if an alarm is "RUNNING" or "STOPPED". The refered ArtiObjectClassParameter does include the mapping from integer to human readable "RUNNING" or "STOPPED".</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectClassParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiOsAlarmInstance -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:13b6673b-5924-488d-9efc-98f04702dbe8">
+											<SHORT-NAME>ArtiOsAlarmInstance</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Represents an instance of an ArtiOsAlarm object, extending the EcuC OsTaskAlarm.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: ArtiOsAlarmInstanceAction -->
+												<ECUC-STRING-PARAM-DEF UUID="ECUC:d8e08489-bab7-4efb-8629-c14919cb3f01">
+													<SHORT-NAME>ArtiOsAlarmInstanceAction</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This attribute provides a string with a description of the action when the alarm expires, e.g. "ActivateTask TaskA".</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<ECUC-STRING-PARAM-DEF-VARIANTS>
+														<ECUC-STRING-PARAM-DEF-CONDITIONAL/>
+													</ECUC-STRING-PARAM-DEF-VARIANTS>
+												</ECUC-STRING-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: ArtiOsAlarmInstanceCounter -->
+												<ECUC-STRING-PARAM-DEF UUID="ECUC:756503f2-4eb8-461f-a079-355e4bb43368">
+													<SHORT-NAME>ArtiOsAlarmInstanceCounter</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This attribute provides a string containing the name of the counter used by this alarm.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<ECUC-STRING-PARAM-DEF-VARIANTS>
+														<ECUC-STRING-PARAM-DEF-CONDITIONAL/>
+													</ECUC-STRING-PARAM-DEF-VARIANTS>
+												</ECUC-STRING-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiOsAlarmInstanceAlarmTimeRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:b4d33c37-865c-4c49-bf2c-dab6df3c1a6e">
+													<SHORT-NAME>ArtiOsAlarmInstanceAlarmTimeRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This attribute specifies how to evaluate the time until the alarm expires next. The time should be represented in seconds.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsAlarmInstanceCycleTimeRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:35a98a28-b083-4c79-8201-8eafd004f9d6">
+													<SHORT-NAME>ArtiOsAlarmInstanceCycleTimeRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This attribute specifies how to evaluate the cycle time for cyclic alarms. The value of "cycle time" is 0 for non-cyclic alarms. The time should be represendet in seconds.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsAlarmInstanceEcuCRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:aecb39a2-9cfe-4dac-bfaa-68d826543841">
+													<SHORT-NAME>ArtiOsAlarmInstanceEcuCRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an EcuC OsAlarm that is beeing extended.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Os/OsAlarm</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsAlarmInstanceGenericComponentInstanceRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:f94ec3f7-dff7-4d78-b797-6453c58e0dc2">
+													<SHORT-NAME>ArtiOsAlarmInstanceGenericComponentInstanceRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentInstance that extends the ArtiOsAlarmInstance.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentInstance</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsAlarmInstanceStateRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:77eb375d-d579-4cc9-95d6-1e64b20b12f1">
+													<SHORT-NAME>ArtiOsAlarmInstanceStateRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "state" of this alarm. The result then is mapped with the typemap of the ArtiOsAlarmStateRef of the ArtiOsAlarmClass.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsAlarmInstanceValidRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:42da2230-8e6d-4e3c-941e-d72effca8e94">
+													<SHORT-NAME>ArtiOsAlarmInstanceValidRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "validity" of this alarm. Every object declaration may contain a VALID attribute telling the debugger whether the object's attributes are currently valid. It may have an integer type of any size. Its possible values are 0 (invalid) and non zero (object is valid).</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiOsClass -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:407dd9b4-0454-4bbe-ba9f-030c9f6fe697">
+											<SHORT-NAME>ArtiOsClass</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Contains the layout of an ARTI "Os" object, extending the EcuC OsOS.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiOsClassAppModeRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:2543c018-e93d-4d83-aab8-7060068d1d7e">
+													<SHORT-NAME>ArtiOsClassAppModeRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectClassParameter that defines the ArtiOsAppModeInstance parameter.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectClassParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsClassGenericComponentRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:ca3a7994-71fa-421e-8d5b-31256ed3fbf1">
+													<SHORT-NAME>ArtiOsClassGenericComponentRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentClass that extends the OS description.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentClass</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsClassServiceTraceRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:d3c5dce4-6661-423d-8541-760e8bde9e2f">
+													<SHORT-NAME>ArtiOsClassServiceTraceRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectClassParameter that defines the ArtiOsInstanceServiceTrace parameter. This attribute indicates the entry or exit of a service routine and the ID of this service routine. The value of this attribute must be evaluated from one single memory location.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectClassParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiOsContextClass -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:c370f4c9-6f6e-462a-bddb-624db0aa9a96">
+											<SHORT-NAME>ArtiOsContextClass</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Contains the layout of an ARTI "OsContext" object.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiOsContextClassGenericComponentClassRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:d5d77649-562c-43ef-82f9-dfbc705cd081">
+													<SHORT-NAME>ArtiOsContextClassGenericComponentClassRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentClass that extends the ArtiOsContextClass.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentClass</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiOsContextInstance -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:73757e1e-6f5f-40e6-a447-edaf12ca137b">
+											<SHORT-NAME>ArtiOsContextInstance</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Represents an instance of an "ArtiContext" object.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiOsContextInstanceAddressRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:d498eb59-23b7-480c-a18a-6ed6bebbba53">
+													<SHORT-NAME>ArtiOsContextInstanceAddressRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "address" of this context.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsContextInstanceGenericComponentInstanceRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:7c03b1d4-5acd-49ed-b6fc-7330ececd934">
+													<SHORT-NAME>ArtiOsContextInstanceGenericComponentInstanceRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentInstance that extends the ArtiOsContext.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentInstance</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsContextInstanceSizeRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:7b80e64e-c91b-473c-b0e1-84b7f39e9856">
+													<SHORT-NAME>ArtiOsContextInstanceSizeRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "size" of this context.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsContextInstanceValidRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:f7f426f2-9b3f-4ea7-b0de-fc742bf533ab">
+													<SHORT-NAME>ArtiOsContextInstanceValidRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "validity" of this context. Every object declaration may contain a VALID attribute telling the debugger whether the object's attributes are currently valid. It may have an integer type of any size. Its possible values are 0 (invalid) and non zero (object is valid).</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiOsInstance -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:696083fb-4846-4ead-8267-2b601f9fb8bb">
+											<SHORT-NAME>ArtiOsInstance</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Represents an instance of an ARTI "Os" object, extending the EcuC OsOS.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiOsInstanceAppModeRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:27d75b37-1075-4ec5-98d1-0cf7f925d12e">
+													<SHORT-NAME>ArtiOsInstanceAppModeRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "application mode" of this OS.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsInstanceEcucRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:4ccdcb25-b09f-4f50-ab64-22122367b124">
+													<SHORT-NAME>ArtiOsInstanceEcucRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the EcucDefs/Os/OsOS of this OS.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Os/OsOS</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsInstanceGenericComponentRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:837582c4-d78d-4071-ba04-14148708b906">
+													<SHORT-NAME>ArtiOsInstanceGenericComponentRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentInstance that extends the OS.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentInstance</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsInstanceHookRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:9f2b7d96-7a32-4cc3-8306-b087284e5c02">
+													<SHORT-NAME>ArtiOsInstanceHookRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to a hook defined in the OS.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiHook</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsInstanceServiceTraceRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:ceddfdcc-f46a-4e85-bcc9-4c7dea5e2d53">
+													<SHORT-NAME>ArtiOsInstanceServiceTraceRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to a hook defined in the OS.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsInstanceValidRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:a4d1f2b2-15c2-4efa-87a7-644b1d225bcb">
+													<SHORT-NAME>ArtiOsInstanceValidRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "validity" of this ArtiOsInstance. Every object declaration may contain a VALID attribute telling the debugger whether the object's attributes are currently valid. It may have an integer type of any size. Its possible values are 0 (invalid) and non zero (object is valid).</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiOsIsrClass -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:335c0140-9ebc-400a-a7b3-c6cdb56169f4">
+											<SHORT-NAME>ArtiOsIsrClass</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Contains the layout of an ARTI "OsIsr" object, extending the EcuC OsIsr.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiOsIsrClassGenericComponentRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:2fca94bd-d5ab-41f2-84ed-b2e2ebde6663">
+													<SHORT-NAME>ArtiOsIsrClassGenericComponentRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an optional ArtiGenericComponentClass that extends the OsIsr with additional parameters.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentClass</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiOsIsrInstance -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:b057462e-ba05-482e-b4d1-bb784a65325c">
+											<SHORT-NAME>ArtiOsIsrInstance</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Represents an instance of an ARTI "OsIsr" object, extending the EcuC OsIsr.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: ArtiOsIsrInstanceCategory -->
+												<ECUC-ENUMERATION-PARAM-DEF UUID="ECUC:a6bc034f-8b89-4c91-aeb3-77294bb27f90">
+													<SHORT-NAME>ArtiOsIsrInstanceCategory</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Specifies category of this ISR. If omitted the instance is related to a CATEGORY_2.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<LITERALS>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="ECUC:48d1c30c-1f1f-9746-58e9-43b597ece667">
+															<SHORT-NAME>CATEGORY_1</SHORT-NAME>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="ECUC:25d1a26a-912c-8a53-698a-11e93178fec6">
+															<SHORT-NAME>CATEGORY_2</SHORT-NAME>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ECUC-ENUMERATION-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: ArtiOsIsrInstanceFunction -->
+												<ECUC-FUNCTION-NAME-DEF UUID="ECUC:b51c4f2f-7d97-43c6-b814-fbabc9b947e2">
+													<SHORT-NAME>ArtiOsIsrInstanceFunction</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter represents the C function name of the ISR routine.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<ECUC-FUNCTION-NAME-DEF-VARIANTS>
+														<ECUC-FUNCTION-NAME-DEF-CONDITIONAL/>
+													</ECUC-FUNCTION-NAME-DEF-VARIANTS>
+												</ECUC-FUNCTION-NAME-DEF>
+												<!-- PARAMETER DEFINITION: ArtiOsIsrInstanceId -->
+												<ECUC-INTEGER-PARAM-DEF UUID="ECUC:e319855a-e1db-4299-82f8-80a0376604d4">
+													<SHORT-NAME>ArtiOsIsrInstanceId</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter represents the "ISRID" as given by the OS, returned by GetISRID().</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiOsIsrInstanceEcucRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:a7cb30fd-600e-4211-82f2-76d752327527">
+													<SHORT-NAME>ArtiOsIsrInstanceEcucRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the EcucDefs/Os/OsIsr of this ISR.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Os/OsIsr</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsIsrInstanceGenericComponentRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:56825c6b-8d9e-4555-aa9e-69ba2106696d">
+													<SHORT-NAME>ArtiOsIsrInstanceGenericComponentRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an optional ArtiGenericComponentInstance that extends this OsIsr with additional parameters.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentInstance</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsIsrInstanceValidRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:8811e977-25ce-48fb-812c-81c156cc4938">
+													<SHORT-NAME>ArtiOsIsrInstanceValidRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "validity" of this ArtiOsIsrInstance. Every object declaration may contain a VALID attribute telling the debugger whether the object's attributes are currently valid. It may have an integer type of any size. Its possible values are 0 (invalid) and non zero (object is valid).</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiOsMessageContainerClass -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:4d3166b2-d2e4-4e7e-ae58-cd1384c1a2f4">
+											<SHORT-NAME>ArtiOsMessageContainerClass</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Contains the layout of an ARTI "OsMessageContainer" object. The "OsMessageContainer" object represents an existing combination of OSEK messages.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiOsMessageContainerClassGenericComponentClassRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:6fe9fd84-c9ee-4faf-acf0-343acd36dff4">
+													<SHORT-NAME>ArtiOsMessageContainerClassGenericComponentClassRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentClass that extends the ArtiOsMessageContainerClass.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentClass</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiOsMessageContainerInstance -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:f81ef7a5-b044-488d-b5a7-38d66d610d0d">
+											<SHORT-NAME>ArtiOsMessageContainerInstance</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Represents an instance of an "ArtiMessageContainer" object.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: ArtiOsMessageContainerInstanceMsgName -->
+												<ECUC-STRING-PARAM-DEF UUID="ECUC:ef06dd09-9147-4da1-858b-d3c0afa53b97">
+													<SHORT-NAME>ArtiOsMessageContainerInstanceMsgName</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This attribute provides the name of the message as defined in OIL file.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<ECUC-STRING-PARAM-DEF-VARIANTS>
+														<ECUC-STRING-PARAM-DEF-CONDITIONAL/>
+													</ECUC-STRING-PARAM-DEF-VARIANTS>
+												</ECUC-STRING-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: ArtiOsMessageContainerInstanceMsgType -->
+												<ECUC-STRING-PARAM-DEF UUID="ECUC:13ba9a9c-0504-42ab-bba0-f5bc39dd5394">
+													<SHORT-NAME>ArtiOsMessageContainerInstanceMsgType</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This attribute provides the type of the message.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<ECUC-STRING-PARAM-DEF-VARIANTS>
+														<ECUC-STRING-PARAM-DEF-CONDITIONAL/>
+													</ECUC-STRING-PARAM-DEF-VARIANTS>
+												</ECUC-STRING-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiOsMessageContainerInstanceFirstElementRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:d02ae1ba-6675-4847-aa7a-4193bd0005df">
+													<SHORT-NAME>ArtiOsMessageContainerInstanceFirstElementRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "firstelement" of this "ArtiOsMessageContainer". This attribute provides the formula for evaluation of address of first valid message. This message will be received next. If no message is in the queue the value is zero.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsMessageContainerInstanceGenericComponentInstanceRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:eb32ba22-fa53-45fe-99c9-8b393d8e8cfb">
+													<SHORT-NAME>ArtiOsMessageContainerInstanceGenericComponentInstanceRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentInstance that extends the ArtiOsMessageContainerInstance.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentInstance</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsMessageContainerInstanceQueueCountRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:ac8e14b2-abd7-4bf9-8d75-89fe5589c91f">
+													<SHORT-NAME>ArtiOsMessageContainerInstanceQueueCountRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "queuecount" of this "ArtiOsMessageContainer". This attribute provides the number of valid messages in the queue and "1" for unqueued messages.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsMessageContainerInstanceQueueSizeRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:bc49b697-3299-4765-8593-1ff592d5b695">
+													<SHORT-NAME>ArtiOsMessageContainerInstanceQueueSizeRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "queuesize" of this "ArtiOsMessageContainer". This attribute provides the size of the queue for queued messages and "1" for unqueued messages.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsMessageContainerInstanceValidRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:40b080ea-4be2-42a1-bfad-758b5f8ca676">
+													<SHORT-NAME>ArtiOsMessageContainerInstanceValidRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "validity" of this ArtiOsMessageContainerInstance. Every object declaration may contain a VALID attribute telling the debugger whether the object's attributes are currently valid. It may have an integer type of any size. Its possible values are 0 (invalid) and non zero (object is valid).</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiOsResourceClass -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:20fdf1bf-55b0-40cd-9f86-a3f7e7212764">
+											<SHORT-NAME>ArtiOsResourceClass</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Contains the layout of an ArtiOsResource object. The ArtiOsResource object represents an OSEK resource.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiOsResourceClassGenericComponentClassRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:0e22238d-1295-43ee-9c9b-04147679330b">
+													<SHORT-NAME>ArtiOsResourceClassGenericComponentClassRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentClass that extends the ArtiOsResourceClass.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentClass</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsResourceClassLockerRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:a3ac7330-3cb9-47c6-b083-076103ab5762">
+													<SHORT-NAME>ArtiOsResourceClassLockerRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectClassParameter that declares the attribute ArtiOsResourceLockerRef in ArtiOsResourceInstances. This attribute indicates the locking ArtiOsTaskInstance or ArtiOsIsrInstance.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectClassParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsResourceClassStateRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:3a587256-3d4e-42dd-bdfd-6424edb739ce">
+													<SHORT-NAME>ArtiOsResourceClassStateRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectClassParameter that declares the attribute ArtiOsResourceStateRef in ArtiOsResourceInstances. This attribute represents the state of a resource ("LOCKED"/"UNLOCKED"). The ArtiObjectClassParameter does include the mapping from integer to human readable "LOCKED" or "UNLOCKED".</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectClassParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiOsResourceInstance -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:335f2f7b-6bad-48f1-9923-1e77382b22f8">
+											<SHORT-NAME>ArtiOsResourceInstance</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Represents an instance of an ArtiOsResource object.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: ArtiOsResourceInstancePriority -->
+												<ECUC-STRING-PARAM-DEF UUID="ECUC:9701fe64-1afd-4731-9d9a-5a76d7fd3812">
+													<SHORT-NAME>ArtiOsResourceInstancePriority</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This attribute has two components that state: that the RESOURCE is used by TASKs only or by TASKs and ISRs, and the priority that will be used when locking the RESOURCE.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<ECUC-STRING-PARAM-DEF-VARIANTS>
+														<ECUC-STRING-PARAM-DEF-CONDITIONAL/>
+													</ECUC-STRING-PARAM-DEF-VARIANTS>
+												</ECUC-STRING-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiOsResourceInstanceEcuCRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:9870f0b8-92d8-465b-aff0-cbc3a736869b">
+													<SHORT-NAME>ArtiOsResourceInstanceEcuCRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an EcuC OsResource that is beeing extended.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Os/OsResource</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsResourceInstanceGenericComponentInstanceRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:87a06716-22dd-4533-88a1-6ec4c15fe2fd">
+													<SHORT-NAME>ArtiOsResourceInstanceGenericComponentInstanceRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentInstance that extends the ArtiOsResourceInstance.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentInstance</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsResourceInstanceLockerRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:cd0c3100-679d-4814-ad76-cbcfa7e4d017">
+													<SHORT-NAME>ArtiOsResourceInstanceLockerRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "locker" of this ArtiOsResource.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsResourceInstanceStateRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:a1bc17e6-735b-4885-acf3-3579cade827f">
+													<SHORT-NAME>ArtiOsResourceInstanceStateRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "state" of this ArtiOsResource.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsResourceInstanceValidRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:69611519-6ebc-4a39-b6dd-f7ee915e568c">
+													<SHORT-NAME>ArtiOsResourceInstanceValidRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "validity" of this ArtiOsResourceInstance. Every object declaration may contain a VALID attribute telling the debugger whether the object's attributes are currently valid. It may have an integer type of any size. Its possible values are 0 (invalid) and non zero (object is valid).</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiOsStackClass -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:d8126031-adca-4867-95d6-ba1adc5e86e2">
+											<SHORT-NAME>ArtiOsStackClass</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Contains the layout of an ArtiOsStack object. The ArtiOsStack object defines the memory area of any stack in the system.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiOsStackClassGenericComponentClassRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:8afcf99d-3900-488c-9d99-8d88885087a8">
+													<SHORT-NAME>ArtiOsStackClassGenericComponentClassRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentClass that extends the ArtiOsStackClass.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentClass</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiOsStackInstance -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:e719b4a1-b433-42d3-afe1-cf8273400432">
+											<SHORT-NAME>ArtiOsStackInstance</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Represents an instance of an ArtiOsStack object.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: ArtiOsStackInstanceDirection -->
+												<ECUC-STRING-PARAM-DEF UUID="ECUC:8f64367d-6ec9-4d11-b1e4-a795bc5851fb">
+													<SHORT-NAME>ArtiOsStackInstanceDirection</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This attribute specifies the direction of stack growth and may have either "UP" or "DOWN" as its value. UP means growing from lower to higher addresses. DOWN means growing from higher addresses to lower addresses.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<ECUC-STRING-PARAM-DEF-VARIANTS>
+														<ECUC-STRING-PARAM-DEF-CONDITIONAL/>
+													</ECUC-STRING-PARAM-DEF-VARIANTS>
+												</ECUC-STRING-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiOsStackInstanceBaseAddressRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:a8347439-fc5b-41db-bea9-b002016671e1">
+													<SHORT-NAME>ArtiOsStackInstanceBaseAddressRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "baseaddress" of this ArtiOsStack. This attribute specifies the lowest address of stack memory area, regardless of the stack direction.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsStackInstanceFillPatternRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:107bd51c-e8e4-49d7-ac81-ec768c92bbd8">
+													<SHORT-NAME>ArtiOsStackInstanceFillPatternRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "fillpattern" of this ArtiOsStack. If the operating system fills the stack during initialisation, this attribute specifies with which pattern the stack area is initialised. This allows the debugger to evaluate the maximum stack usage. For "stackdirection" "DOWN" the pattern starts at "baseaddress". For "stackdirection" "UP" the pattern starts at "baseaddress" + "size". If no pattern is used, this attribute must be omitted.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsStackInstanceGenericComponentInstanceRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:5a50e6bd-a0a8-49fc-8dad-89d8a95df83e">
+													<SHORT-NAME>ArtiOsStackInstanceGenericComponentInstanceRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentInstance that extends the ArtiOsStackInstance.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentInstance</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsStackInstanceSizeRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:16d3d24f-27c0-4d4e-8c8d-0937ca8809bd">
+													<SHORT-NAME>ArtiOsStackInstanceSizeRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "size" of this ArtiOsStack. This attribute represents the size (in bytes) of the memory area allocated for stack.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsStackInstanceValidRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:7e5eca33-79b5-4276-a09d-69ddbae8ce97">
+													<SHORT-NAME>ArtiOsStackInstanceValidRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "validity" of this ArtiOsStackInstance. Every object declaration may contain a VALID attribute telling the debugger whether the object's attributes are currently valid. It may have an integer type of any size. Its possible values are 0 (invalid) and non zero (object is valid).</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiOsTaskClass -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:f4b3af52-d152-4341-a493-a38ae7d0a345">
+											<SHORT-NAME>ArtiOsTaskClass</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Contains the layout of an ARTI "OsTask" object, extending the EcuC OsTask.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiOsTaskClassClassGenericComponentRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:2f77be33-f281-452e-b63e-154d05e6fd72">
+													<SHORT-NAME>ArtiOsTaskClassClassGenericComponentRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentClass that extends the OsTask.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentClass</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsTaskClassContextRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:e907b038-bf11-420a-b91c-d059c913b741">
+													<SHORT-NAME>ArtiOsTaskClassContextRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">ArtiOsTaskContextRef in ArtiOsTaskInstances. This attribute contains a reference to the context object that the task is currently using.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectClassParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsTaskClassCurrentTaskStateRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:5799e97c-37d7-48ac-b75f-6d2f10212ead">
+													<SHORT-NAME>ArtiOsTaskClassCurrentTaskStateRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectClassParameter that defines the ArtiCurrentTaskStateInstance parameter including the task state mapping.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectClassParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsTaskClassPriorityRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:3299a988-d752-41a8-8311-f39944d56ddb">
+													<SHORT-NAME>ArtiOsTaskClassPriorityRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectClassParameter that declares the attribute ArtiOsTaskPriorityRef in ArtiOsTaskInstances. This attribute represents the current priority of the TASK object. The current priority can be different from the static task priority as a result of priority ceiling protocol. The priority displayed is the priority as defined in the OsTask.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectClassParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsTaskClassStackRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:6c5b8e8d-143b-4d35-baaa-b2cce0139255">
+													<SHORT-NAME>ArtiOsTaskClassStackRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectClassParameter that declares the attribute ArtiOsTaskStackRef in ArtiOsTaskInstances. This attribute contains a reference to the stack object that the task is currently using.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectClassParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiOsTaskInstance -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:485b0f61-3e65-4100-a507-b9e4a4c9cf25">
+											<SHORT-NAME>ArtiOsTaskInstance</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Represents an instance of an ARTI "OsTask" object, extending the EcuC OsTask.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: ArtiOsTaskInstanceFunction -->
+												<ECUC-FUNCTION-NAME-DEF UUID="ECUC:23ae0f71-e011-4f9f-8f4d-86775ad81ef6">
+													<SHORT-NAME>ArtiOsTaskInstanceFunction</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter represents the C function name of the task body.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<ECUC-FUNCTION-NAME-DEF-VARIANTS>
+														<ECUC-FUNCTION-NAME-DEF-CONDITIONAL/>
+													</ECUC-FUNCTION-NAME-DEF-VARIANTS>
+												</ECUC-FUNCTION-NAME-DEF>
+												<!-- PARAMETER DEFINITION: ArtiOsTaskInstanceId -->
+												<ECUC-INTEGER-PARAM-DEF UUID="ECUC:9aa6d0d2-d65d-4dd9-9195-e423e1563d51">
+													<SHORT-NAME>ArtiOsTaskInstanceId</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter represents the "TaskID" as given by the OSEK OS, returned by GetTaskID().</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiOsTaskInstanceContextRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:50cebf51-c4ce-4d34-af35-236de78ee234">
+													<SHORT-NAME>ArtiOsTaskInstanceContextRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the ArtiOsContext of this ArtiOsTask.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsTaskInstanceCurrentActivationsRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:3c32c481-c95b-460c-8a77-e43104ddf350">
+													<SHORT-NAME>ArtiOsTaskInstanceCurrentActivationsRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "current activations" of this task. This attribute specifies the number of current activations for the task.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsTaskInstanceCurrentTaskStateRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:7141bb20-c512-4d20-b0c7-5df85a7f98fc">
+													<SHORT-NAME>ArtiOsTaskInstanceCurrentTaskStateRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "current state" of this task.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsTaskInstanceEcucRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:129f6697-aa8d-4ec0-a897-43cef1b128d0">
+													<SHORT-NAME>ArtiOsTaskInstanceEcucRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentInstance that extends the OsTask.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Os/OsTask</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsTaskInstanceGenericComponentRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:badacb9d-24ec-4359-aa35-1099e50424ca">
+													<SHORT-NAME>ArtiOsTaskInstanceGenericComponentRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentInstance that extends the OsTask.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentInstance</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsTaskInstancePriorityRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:b69c941d-9937-4b77-9bcb-11476eec7d70">
+													<SHORT-NAME>ArtiOsTaskInstancePriorityRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "task priority" of this task.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsTaskInstanceStackRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:0e5fbf19-1ecd-43b3-b363-2ef518815341">
+													<SHORT-NAME>ArtiOsTaskInstanceStackRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the ArtiOsStack of this ArtiOsTask.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiOsTaskInstanceValidRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:7fe49fd9-9de1-4d40-bf9a-10f20e334e71">
+													<SHORT-NAME>ArtiOsTaskInstanceValidRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectInstanceParameter that contains the evaluation for the "validity" of this ArtiOsTaskInstance. Every object declaration may contain a VALID attribute telling the debugger whether the object's attributes are currently valid. It may have an integer type of any size. Its possible values are 0 (invalid) and non zero (object is valid).</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectInstanceParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<!-- Container Definition: ArtiRte -->
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:46efdcc8-4930-43da-bee1-cd957abebf33">
+									<SHORT-NAME>ArtiRte</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The ArtiRte Container contains all parameters for ARTI that are filled by the generators RTE.</L-2>
+										<L-2 L="EN">Tags: atp.Status=draft</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<REFERENCES>
+										<!-- Reference Definition: ArtiRteHookRef -->
+										<ECUC-REFERENCE-DEF UUID="ECUC:c78c2157-32e4-46c1-abcf-cd848657aa15">
+											<SHORT-NAME>ArtiRteHookRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Refers to an arti hook which is called by the RTE.</L-2>
+												<L-2 L="EN">Tags: atp.Status=draft</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiHook</DESTINATION-REF>
+										</ECUC-REFERENCE-DEF>
+									</REFERENCES>
+									<SUB-CONTAINERS>
+										<!-- Container Definition: ArtiRteRunnableClass -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:0a3434b9-48dc-4401-a0bc-b8293b8edbdd">
+											<SHORT-NAME>ArtiRteRunnableClass</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Contains the layout of an ArtiRteRunnable object.</L-2>
+												<L-2 L="EN">Tags: atp.Status=draft</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiRteRunnableClassGenericComponentClassRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:ece2ff41-0954-457e-b67b-c9322f6a044f">
+													<SHORT-NAME>ArtiRteRunnableClassGenericComponentClassRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentClass that extends the ArtiRteRunnableClass.</L-2>
+														<L-2 L="EN">Tags: atp.Status=draft</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentClass</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiRteRunnableIdRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:0dea5fbb-c2d4-41f0-88fc-39ecbc5acc1b">
+													<SHORT-NAME>ArtiRteRunnableIdRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectClassParameter that declares the attribute ArtiRteRunnableIdRef in ArtiRteRunnableEntityInstances. This attribute specifies the idOf(reName) mapping.</L-2>
+														<L-2 L="EN">Tags: atp.Status=draft</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectClassParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiRteRunnableInstance -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:bfbd97db-1e8f-46bd-be04-dcf5c5b37d6c">
+											<SHORT-NAME>ArtiRteRunnableInstance</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Represents an instance of an ArtiRteRunnable object, extending the BswM RunnableEntity.</L-2>
+												<L-2 L="EN">Tags: atp.Status=draft</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: ArtiRteRunnableInstanceSymbol -->
+												<ECUC-STRING-PARAM-DEF UUID="ECUC:02f89655-649b-4366-86e1-23662b53210c">
+													<SHORT-NAME>ArtiRteRunnableInstanceSymbol</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Specifies the symbol / function name that implements the runnable.</L-2>
+														<L-2 L="EN">Tags: atp.Status=draft</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<ECUC-STRING-PARAM-DEF-VARIANTS>
+														<ECUC-STRING-PARAM-DEF-CONDITIONAL/>
+													</ECUC-STRING-PARAM-DEF-VARIANTS>
+												</ECUC-STRING-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<!-- Foreign Reference Definition: ArtiRteRunnableInstanceBswRef -->
+												<ECUC-FOREIGN-REFERENCE-DEF UUID="ECUC:d90e068d-0f9e-46eb-b1ab-8eac60e5bc55">
+													<SHORT-NAME>ArtiRteRunnableInstanceBswRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an Rte Runnable that is beeing extended.</L-2>
+														<L-2 L="EN">Tags: atp.Status=draft</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-TYPE>RUNNABLE-ENTITY</DESTINATION-TYPE>
+												</ECUC-FOREIGN-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiRteRunnableInstanceGenericComponentInstanceRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:66eff002-6121-4a11-aaa6-a575dc82f37e">
+													<SHORT-NAME>ArtiRteRunnableInstanceGenericComponentInstanceRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentInstance that extends the ArtiRteRunnableInstance.</L-2>
+														<L-2 L="EN">Tags: atp.Status=draft</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentInstance</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiRteSchedulableClass -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:ea200fed-5ef4-48a7-953b-ba2359f9217c">
+											<SHORT-NAME>ArtiRteSchedulableClass</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Contains the layout of an ArtiRteSchedulable object.</L-2>
+												<L-2 L="EN">Tags: atp.Status=draft</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiRteSchedulableClassGenericComponentClassRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:bd6d4955-4116-4194-bb66-831a6ef371d8">
+													<SHORT-NAME>ArtiRteSchedulableClassGenericComponentClassRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentClass that extends the ArtiRteSchedulableClass.</L-2>
+														<L-2 L="EN">Tags: atp.Status=draft</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentClass</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiRteSchedulableIdRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:e1f9c8ec-8066-4c11-b51f-41c3dbea2f9d">
+													<SHORT-NAME>ArtiRteSchedulableIdRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to the ArtiObjectClassParameter that declares the attribute ArtiRteSchmEntityIdRef in ArtiRteSchedulableInstances. This attribute specifies the idOf(entityName) mapping.</L-2>
+														<L-2 L="EN">Tags: atp.Status=draft</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiObjectClassParameter</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiRteSchedulableInstance -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:17e891ee-aadb-4f70-9599-fd1c0cd41da5">
+											<SHORT-NAME>ArtiRteSchedulableInstance</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Represents an instance of an ArtiRteSchedulable object, extending the Rte Schedulable Entity.</L-2>
+												<L-2 L="EN">Tags: atp.Status=draft</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: ArtiRteSchedulableInstanceSymbol -->
+												<ECUC-STRING-PARAM-DEF UUID="ECUC:6661ae2c-5a54-47b6-ad13-58eb4db1330e">
+													<SHORT-NAME>ArtiRteSchedulableInstanceSymbol</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Specifies the symbol / function name that implements the schedulable.</L-2>
+														<L-2 L="EN">Tags: atp.Status=draft</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<ECUC-STRING-PARAM-DEF-VARIANTS>
+														<ECUC-STRING-PARAM-DEF-CONDITIONAL/>
+													</ECUC-STRING-PARAM-DEF-VARIANTS>
+												</ECUC-STRING-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<!-- Foreign Reference Definition: ArtiRteSchedulableInstanceBswRef -->
+												<ECUC-FOREIGN-REFERENCE-DEF UUID="ECUC:91e56d6f-d29b-4e0b-8ccf-3904c0baa9c7">
+													<SHORT-NAME>ArtiRteSchedulableInstanceBswRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an Rte Schedulable that is beeing extended.</L-2>
+														<L-2 L="EN">Tags: atp.Status=draft</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-TYPE>BSW-SCHEDULABLE-ENITIY</DESTINATION-TYPE>
+												</ECUC-FOREIGN-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiRteSchedulableInstanceGenericComponentInstanceRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:157afd43-fcbb-44a8-9b64-7da8ae411fd7">
+													<SHORT-NAME>ArtiRteSchedulableInstanceGenericComponentInstanceRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an ArtiGenericComponentInstance that extends the ArtiRteSchedulableInstance.</L-2>
+														<L-2 L="EN">Tags: atp.Status=draft</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiGeneric/ArtiGenericComponentInstance</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<!-- Container Definition: ArtiValues -->
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:23abaaea-04ea-4349-8305-0ad31e31794e">
+									<SHORT-NAME>ArtiValues</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The ArtiValues container collects all parameter values for ARTI that are filled by the generators (OS, RTE, ...)</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+									<SUB-CONTAINERS>
+										<!-- Container Definition: ArtiConstant -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:c161abde-e451-46ea-8dba-d7db465845ee">
+											<SHORT-NAME>ArtiConstant</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container holds a constant value.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: ArtiConstantString -->
+												<ECUC-STRING-PARAM-DEF UUID="ECUC:0a007e52-6426-4b2d-80fb-3e05379d598f">
+													<SHORT-NAME>ArtiConstantString</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This is the constant value for a specific parameter.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<ECUC-STRING-PARAM-DEF-VARIANTS>
+														<ECUC-STRING-PARAM-DEF-CONDITIONAL/>
+													</ECUC-STRING-PARAM-DEF-VARIANTS>
+												</ECUC-STRING-PARAM-DEF>
+											</PARAMETERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiExpression -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:cc7289be-08d8-4286-91af-79259f674241">
+											<SHORT-NAME>ArtiExpression</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container holds a C like expression that a debugger can evaluate. This is similar to what is already done in ORTI.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: ArtiExpressionString -->
+												<ECUC-STRING-PARAM-DEF UUID="ECUC:dfcfe0ed-0e16-4049-969b-78a5d40b4491">
+													<SHORT-NAME>ArtiExpressionString</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This string represents a C like expression that a debugger can evaluate.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<ECUC-STRING-PARAM-DEF-VARIANTS>
+														<ECUC-STRING-PARAM-DEF-CONDITIONAL/>
+													</ECUC-STRING-PARAM-DEF-VARIANTS>
+												</ECUC-STRING-PARAM-DEF>
+											</PARAMETERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiHook -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:81392ce4-93b8-4934-b9fe-7f01dcc2da72">
+											<SHORT-NAME>ArtiHook</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container represents an ARTI hook that is present in the module.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: ArtiHookClass -->
+												<ECUC-STRING-PARAM-DEF UUID="ECUC:00a1fa88-924d-4a55-8215-5a48f98ba9c1">
+													<SHORT-NAME>ArtiHookClass</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Name of the (schedule) class of macros. Classes can be one of the predefined classes or user defined.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<ECUC-STRING-PARAM-DEF-VARIANTS>
+														<ECUC-STRING-PARAM-DEF-CONDITIONAL/>
+													</ECUC-STRING-PARAM-DEF-VARIANTS>
+												</ECUC-STRING-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: ArtiHookContext -->
+												<ECUC-STRING-PARAM-DEF UUID="ECUC:7a8eb1a0-da8c-4914-8cc9-a560b8a6643a">
+													<SHORT-NAME>ArtiHookContext</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Name of the execution context. One of NOSUSP, SPRVSR, or USER.</L-2>
+													</DESC>
+													<INTRODUCTION>
+														<P>
+															<L-1 L="EN">See also chapter "ARTI Tracing Macro".</L-1>
+														</P>
+													</INTRODUCTION>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<ECUC-STRING-PARAM-DEF-VARIANTS>
+														<ECUC-STRING-PARAM-DEF-CONDITIONAL/>
+													</ECUC-STRING-PARAM-DEF-VARIANTS>
+												</ECUC-STRING-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: ArtiHookEventName -->
+												<ECUC-STRING-PARAM-DEF UUID="ECUC:ec285046-62b2-4145-ae17-79253c2fe836">
+													<SHORT-NAME>ArtiHookEventName</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">The name of the event as defined for a particular class, or an arbitrary name for generic classes.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<ECUC-STRING-PARAM-DEF-VARIANTS>
+														<ECUC-STRING-PARAM-DEF-CONDITIONAL/>
+													</ECUC-STRING-PARAM-DEF-VARIANTS>
+												</ECUC-STRING-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: ArtiHookInstance -->
+												<ECUC-STRING-PARAM-DEF UUID="ECUC:cb5240f2-7b27-42ab-b327-42a3902e03fb">
+													<SHORT-NAME>ArtiHookInstance</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Name of an instance of the (schedule) class.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<ECUC-STRING-PARAM-DEF-VARIANTS>
+														<ECUC-STRING-PARAM-DEF-CONDITIONAL/>
+													</ECUC-STRING-PARAM-DEF-VARIANTS>
+												</ECUC-STRING-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiHookEventParameterTypeRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:d22b8331-8951-49cb-96a3-3bbc2560d20e">
+													<SHORT-NAME>ArtiHookEventParameterTypeRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to a parameter type to interpret the hook event number.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiParameterTypeMap</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiHookInstanceParameterTypeRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:4df421d6-b105-4baf-9768-ee004ef81c6e">
+													<SHORT-NAME>ArtiHookInstanceParameterTypeRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to a parameter type to interpret the hook instance number.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiParameterTypeMap</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiObjectClassParameter -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:1c08a76b-96f1-4c04-abf7-5415edcb7bbb">
+											<SHORT-NAME>ArtiObjectClassParameter</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container represents a parameter of an Arti object class definition.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiObjectClassParameterTypeMapRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:c715d81a-354a-4048-8aef-a286b8082e74">
+													<SHORT-NAME>ArtiObjectClassParameterTypeMapRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to a parameter type to interpret the instance parameter value.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiParameterTypeMap</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiObjectInstanceParameter -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:6575b287-9552-4ee7-8014-9d0b93ba9acb">
+											<SHORT-NAME>ArtiObjectInstanceParameter</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container represents a parameter of an Arti object instance.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<REFERENCES>
+												<!-- Reference Definition: ArtiObjectInstanceParameterConstantRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:47fc42b3-bf66-4fe3-9ff5-bec32cc927a5">
+													<SHORT-NAME>ArtiObjectInstanceParameterConstantRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to a constant representing the value of this parameter.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiConstant</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiObjectInstanceParameterExpressionRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:b19c6494-e2d8-427d-872d-ef02f4cc11b3">
+													<SHORT-NAME>ArtiObjectInstanceParameterExpressionRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to an expression that evaluates the value of this parameter.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiExpression</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+												<!-- Reference Definition: ArtiObjectInstanceParameterHookRef -->
+												<ECUC-REFERENCE-DEF UUID="ECUC:dbbd7880-78a6-4814-9702-0c1f420f4333">
+													<SHORT-NAME>ArtiObjectInstanceParameterHookRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Refers to a hook that records this parameter.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiHook</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiParameterTypeMap -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:522ccfe6-c7f4-400d-8817-54f1041e9fad">
+											<SHORT-NAME>ArtiParameterTypeMap</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">A map of key/value pairs to map a parameter value to a display string and/or an Arti or EcuC object.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<SUB-CONTAINERS>
+												<!-- Container Definition: ArtiParameterTypeMapPair -->
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:b141b4df-cead-4a92-aac5-ec2ecf7ec3f6">
+													<SHORT-NAME>ArtiParameterTypeMapPair</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">A key/value pair to map a parameter value to a display string and/or an Arti or EcuC object.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+													<PARAMETERS>
+														<!-- PARAMETER DEFINITION: ArtiParameterTypeMapPairInput -->
+														<ECUC-INTEGER-PARAM-DEF UUID="ECUC:83031463-4053-4dbb-bfaf-237015e31ced">
+															<SHORT-NAME>ArtiParameterTypeMapPairInput</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">The numerical value given by a parameter to translate.</L-2>
+															</DESC>
+															<INTRODUCTION>
+																<P>
+																	<L-1 L="EN">When used with Hooks (ArtiHooks), this parameter is mandatory (multiplicity 1) and its value is limited to the range of 0..65535. When used with Hooks, this parameter may be used to map the values given by "instanceParameter" and/or the "eventParameter" of the ARTI_TRACE macro.</L-1>
+																</P>
+															</INTRODUCTION>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MAX>65535</MAX>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<!-- PARAMETER DEFINITION: ArtiParameterTypeMapPairOutput -->
+														<ECUC-STRING-PARAM-DEF UUID="ECUC:0bc154c3-6242-45b2-beee-247d35a47561">
+															<SHORT-NAME>ArtiParameterTypeMapPairOutput</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">The string to display for the Input value.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<ECUC-STRING-PARAM-DEF-VARIANTS>
+																<ECUC-STRING-PARAM-DEF-CONDITIONAL/>
+															</ECUC-STRING-PARAM-DEF-VARIANTS>
+														</ECUC-STRING-PARAM-DEF>
+													</PARAMETERS>
+													<REFERENCES>
+														<!-- Reference Definition: ArtiParameterTypeMapPairInputExpressionRef -->
+														<ECUC-REFERENCE-DEF UUID="ECUC:21ef4ed0-1c9f-4534-bc7c-f3ab3266efe1">
+															<SHORT-NAME>ArtiParameterTypeMapPairInputExpressionRef</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Refers to an expression that evaluates to a numerical value to translate.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiExpression</DESTINATION-REF>
+														</ECUC-REFERENCE-DEF>
+														<!-- Choice Reference Definition: ArtiParameterTypeMapPairOutputRef -->
+														<ECUC-CHOICE-REFERENCE-DEF UUID="ECUC:17fa6f71-ca96-4719-b1e6-d19ab7d61747">
+															<SHORT-NAME>ArtiParameterTypeMapPairOutputRef</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Choice Reference to ArtiOsTaskInstance, ArtiOsIsrInstance, ArtiStatesTaskState, OsAppMode, ArtiOsContextInstance, or ArtiOsStackInstance.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<DESTINATION-REFS>
+																<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiOs/ArtiOsContextInstance</DESTINATION-REF>
+																<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiOs/ArtiOsIsrInstance</DESTINATION-REF>
+																<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiOs/ArtiOsStackInstance</DESTINATION-REF>
+																<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiOs/ArtiOsTaskInstance</DESTINATION-REF>
+																<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Arti/ArtiValues/ArtiStates/ArtiStatesTaskState</DESTINATION-REF>
+																<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Os/OsAppMode</DESTINATION-REF>
+															</DESTINATION-REFS>
+														</ECUC-CHOICE-REFERENCE-DEF>
+													</REFERENCES>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: ArtiStates -->
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:f09e1b11-b3d0-4428-b514-97a06ade8299">
+											<SHORT-NAME>ArtiStates</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container contains all states of tasks, isrs... that the EcuC uses.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<SUB-CONTAINERS>
+												<!-- Container Definition: ArtiStatesTaskState -->
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:e8303f32-586e-4a57-8910-c6c969a7f363">
+													<SHORT-NAME>ArtiStatesTaskState</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Each state used by the OS has to be listed as ArtiStatesTaskState Parameter with a choice of the states.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+													<PARAMETERS>
+														<!-- PARAMETER DEFINITION: ArtiStatesTaskStateEnhanced -->
+														<ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:3c4e4984-fd12-46b1-92e6-d2fa56d11758">
+															<SHORT-NAME>ArtiStatesTaskStateEnhanced</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Set to true, if the OS provides an "enhanced" state model with "READY" split to "Activated", "Preempted", "Released".</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+														</ECUC-BOOLEAN-PARAM-DEF>
+														<!-- PARAMETER DEFINITION: ArtiStatesTaskStateEnum -->
+														<ECUC-ENUMERATION-PARAM-DEF UUID="ECUC:2f811309-d4f6-4fc7-b12e-03e43ac7e547">
+															<SHORT-NAME>ArtiStatesTaskStateEnum</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">ArtiStatesTaskState choice of the states.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<LITERALS>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="ECUC:f7c997c1-f1d0-9a3f-3cc8-98b4e5d4bdaa">
+																	<SHORT-NAME>ArtiTaskStateActivated</SHORT-NAME>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="ECUC:ad221324-306c-982e-2411-39aae3a76ae0">
+																	<SHORT-NAME>ArtiTaskStatePreempted</SHORT-NAME>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="ECUC:29897f0f-cdb8-912d-3d1a-456cd2966408">
+																	<SHORT-NAME>ArtiTaskStateReady</SHORT-NAME>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="ECUC:d8f08c77-ae90-8d85-29a8-e1b6ed07afc5">
+																	<SHORT-NAME>ArtiTaskStateReleased</SHORT-NAME>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="ECUC:c49a422f-5817-9094-1dc6-fa24a6915dad">
+																	<SHORT-NAME>ArtiTaskStateRunning</SHORT-NAME>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="ECUC:eaabdc47-365f-95fe-1a45-6c73489bc579">
+																	<SHORT-NAME>ArtiTaskStateSuspended</SHORT-NAME>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+																<ECUC-ENUMERATION-LITERAL-DEF UUID="ECUC:e0b36fb2-6195-9423-21bb-3bb9528ae723">
+																	<SHORT-NAME>ArtiTaskStateWaiting</SHORT-NAME>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																</ECUC-ENUMERATION-LITERAL-DEF>
+															</LITERALS>
+														</ECUC-ENUMERATION-PARAM-DEF>
+													</PARAMETERS>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+							</CONTAINERS>
+						</ECUC-MODULE-DEF>
+					</ELEMENTS>
+				</AR-PACKAGE>
+			</AR-PACKAGES>
+		</AR-PACKAGE>
+	</AR-PACKAGES>
+</AUTOSAR>

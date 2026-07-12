@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vector.cfg.console.app.dvcfg.feature"
+      label="DaVinci Cfg Cmd Line"
+      version="1.0.0.r109322"
+      provider-name="Vector Informatik GmbH">
+
+   <description>
+      DaVinci Configurator command line application.
+   </description>
+
+   <copyright>
+      (c) Copyright Vector Informatik GmbH. All Rights Reserved.
+   </copyright>
+
+   <license url="http://www.vector.com">
+      Vector Group License Agreement
+
+This software is licensed under the terms and conditions of „Delivery and maintenance of software products” of Vector Group, see www.vector.com
+   </license>
+
+   <includes
+         id="com.vector.cfg.workflow.feature"
+         version="1.0.0.r109322"/>
+
+   <includes
+         id="com.vector.cfg.model.services.feature"
+         version="1.0.0.r109322"/>
+
+   <includes
+         id="com.vector.cfg.console.feature"
+         version="1.0.0.r109322"/>
+
+   <includes
+         id="com.vector.cfg.core.msr.feature"
+         version="1.0.0.r109322"/>
+
+   <includes
+         id="com.vector.cfg.gen.core.msr.feature"
+         version="1.0.0.r109322"/>
+
+   <includes
+         id="com.vector.cfg.app.console.deploy.dvcfg.feature"
+         version="1.0.0.r109322"/>
+
+   <includes
+         id="com.vector.cfg.gen.bswmdmodelgenerator.feature"
+         version="1.0.0.r109322"/>
+
+   <includes
+         id="com.vector.cfg.model.services.msr.feature"
+         version="1.0.0.r109322"/>
+
+   <includes
+         id="com.vector.cfg.reporting.feature"
+         version="1.4.0.r109322"/>
+
+   <includes
+         id="com.vector.cfg.customersupport.feature"
+         version="1.0.0.r109322"/>
+
+   <plugin
+         id="com.vector.cfg.console.converter"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.console.customer"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.console.exporter"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.console.project"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.workflow.update.console"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.workflow.vase.console"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.dom.mem"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.dom.mem.shared"
+         download-size="0"
+         install-size="0"
+         version="2.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.dom.mem.validations"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.app.workspace"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.reporting.ecuc"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.reporting.ecuc.groovy"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.dom.runtimesys.validations"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.dom.runtimesys"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vector.cfg.dom.modemgt.feature"
+      label="DaVinci Cfg Mode Management Domain"
+      version="1.0.0.r109322"
+      provider-name="Vector Informatik GmbH">
+
+   <description>
+      DaVinci Configurator mode management domain.
+   </description>
+
+   <copyright>
+      (c) Copyright Vector Informatik GmbH. All Rights Reserved.
+   </copyright>
+
+   <license url="http://www.vector.com">
+      Vector Group License Agreement
+
+This software is licensed under the terms and conditions of „Delivery and maintenance of software products” of Vector Group, see www.vector.com
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="com.vector.cfg.util"/>
+      <import plugin="com.vector.cfg.model"/>
+      <import plugin="com.vector.cfg.gui.core"/>
+      <import plugin="com.vector.cfg.core"/>
+      <import plugin="com.vector.cfg.gui.core.ctrl"/>
+      <import plugin="com.vector.cfg.business"/>
+      <import plugin="org.eclipse.ui.forms" version="3.5.100" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="com.vector.cfg.dom.modemgt.ui"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.dom.modemgt"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.dom.modemgt.groovy"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vector.cfg.gen.bswmdmodelgenerator.feature"
+      label="DaVinci BswmdModelGenerator"
+      version="1.0.0.r109322"
+      provider-name="Vector Informatik GmbH">
+
+   <description>
+      DaVinci BSWMD model generator.
+   </description>
+
+   <copyright>
+      (c) Copyright Vector Informatik GmbH. All Rights Reserved.
+   </copyright>
+
+   <license url="http://www.vector.com">
+      Vector Group License Agreement
+
+This software is licensed under the terms and conditions of „Delivery and maintenance of software products” of Vector Group, see www.vector.com
+   </license>
+
+   <includes
+         id="com.vector.cfg.core.model.feature"
+         version="1.0.0.r109322"/>
+
+   <includes
+         id="com.vector.cfg.core.feature"
+         version="1.0.0.r109322"/>
+
+   <includes
+         id="com.vector.cfg.gen.published.feature"
+         version="1.0.0.r109322"/>
+
+   <plugin
+         id="com.vector.cfg.gen.bswmdmodelgenerator"
+         download-size="0"
+         install-size="0"
+         version="1.6.21.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gen.bswmdmodelgenerator.common"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gen.bswmdmodelgenerator.generatorconfiguration"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gen.bswmdmodelgenerator.model"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gen.bswmdmodelgenerator.target.gen"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.gen.bswmdmodelgenerator.app"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.core.license.dvcfg"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.util.platform.msr"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.dpa"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.addons.msr"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.addons.published"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.arxml.resources.msr"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.pes.nvlm"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.licensing.vlal2"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.109322"
+         unpack="false"/>
+
+</feature>

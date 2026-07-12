@@ -1,0 +1,422 @@
+/**********************************************************************************************************************
+ *  COPYRIGHT
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  \verbatim
+ *  Copyright (c) 2022 by Vector Informatik GmbH.                                                  All rights reserved.
+ *
+ *                Please note, that this file contains example configuration used by the
+ *                MICROSAR BSW. This code may influence the behaviour of the MICROSAR BSW
+ *                in principle. Therefore, great care must be taken to verify
+ *                the correctness of the implementation.
+ *
+ *                The contents of the originally delivered files are only examples respectively
+ *                implementation proposals. With regard to the fact that these functions
+ *                are meant for demonstration purposes only, the liability of Vector Informatik
+ *                shall be expressly excluded in cases of ordinary negligence,
+ *                to the extent admissible by law or statute.
+ *  \endverbatim
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  FILE DESCRIPTION
+ *  -------------------------------------------------------------------------------------------------------------------
+ *         File:  RteMcGroups.groovy
+ *    Component:  -
+ *       Module:  -
+ *    Generator:  -
+ *
+ *  Description:  This File creates McGroups for the McDataInstances provided by the RTE generator.
+ *
+ *********************************************************************************************************************/
+/**********************************************************************************************************************
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  REVISION HISTORY
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  Version   Date        Author  Change Id      Description
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  01.00.00  2022-02-15  visso   RTE-5606       Initial Creation
+ *********************************************************************************************************************/
+import com.vector.cfg.model.access.AsrPath
+import com.vector.cfg.model.access.IModelAccess
+import com.vector.cfg.model.access.IReferenceAccess
+import com.vector.cfg.model.mdf.ar4x.swcomponenttemplate.components.MIPortPrototype
+import com.vector.cfg.model.mdf.ar4x.swcomponenttemplate.swcinternalbehavior.MIRunnableEntity
+import com.vector.cfg.model.mdf.ar4x.commonstructure.mcgroups.MIMcGroupARRef
+import com.vector.cfg.model.mdf.ar4x.commonstructure.mcgroups.MIMcGroupDataRefSet
+import com.vector.cfg.model.mdf.ar4x.commonstructure.mcgroups.MIMcGroupDataRefSetConditional
+import com.vector.cfg.model.mdf.ar4x.commonstructure.measurementcalibrationsupport.MIMcDataInstance
+import com.vector.cfg.model.mdf.ar4x.commonstructure.measurementcalibrationsupport.MIMcDataInstanceARRef
+import com.vector.cfg.model.mdf.ar4x.commonstructure.modedeclaration.MIModeDeclarationGroupPrototype
+import com.vector.cfg.model.mdf.ar4x.swcomponenttemplate.components.MIPPortPrototype
+import com.vector.cfg.model.mdf.ar4x.swcomponenttemplate.components.MIRPortPrototype
+import com.vector.cfg.model.mdf.ar4x.swcomponenttemplate.composition.MISwComponentPrototype
+import com.vector.cfg.model.mdf.ar4x.swcomponenttemplate.datatype.dataprototypes.MIParameterDataPrototype
+import com.vector.cfg.model.mdf.ar4x.swcomponenttemplate.datatype.dataprototypes.MIVariableDataPrototype
+import com.vector.cfg.model.mdf.commoncore.autosar.MIReferrableARRef
+import com.vector.cfg.model.mdf.model.autosar.base.MIARElement
+import com.vector.cfg.model.mdf.model.autosar.base.MIARPackage
+import com.vector.cfg.model.mdf.ar4x.commonstructure.mcgroups.MIMcGroup
+import com.vector.cfg.model.mdf.ar4x.bswmoduletemplate.bswimplementation.MIBswImplementation
+import com.vector.cfg.util.version.IVersion
+import com.vector.cfg.model.access.IReferrableAccess
+import java.nio.file.Path
+import java.nio.file.*
+import static com.vector.cfg.automation.api.ScriptApi.*
+import com.vector.cfg.consistency.EValidationSeverityType
+
+//daVinci enables the IDE code completion support
+daVinci {
+    scriptDescription "RTE McGroup creation script which creates groups for measurement calibration parameters"
+
+    /* 
+     * Task: GenStepTask
+     * Type: DV_GENERATION_STEP
+     * -------------------------------------------------------------------------------------------------------
+     * Executes the script task code as generation step and report a validation result
+     * -------------------------------------------------------------------------------------------------------
+     */
+    scriptTask("RteMcGroups", DV_GENERATION_STEP){
+        taskDescription "RTE McGroup creation"
+        
+        code{ phase, genType, resultSinkFromTask ->
+
+            if (phase.calculation){
+                // Execute code before / after calculation
+                // -------------------------------------------------
+                def referrableAccess = activeProject().getInstance(IReferrableAccess.class);
+                def ma = activeProject().getInstance(IModelAccess.class);
+                def refAccess = activeProject().getInstance(IReferenceAccess.class);
+                    transaction {
+                        // search McSupportData instances of MICROSAR Rte Implementation
+                        def rteImpl = referrableAccess.getReferrableByPath("/MICROSAR/Rte_Impl")
+                        if (rteImpl != null && rteImpl.getMcSupport() != null)
+                        {
+                            scriptLogger.info("found RTE Implementation with McSupport")
+
+                            // create /MICROSAR/McSupport package to store our groups if it does not exist, yet
+                            MIARPackage pkg = referrableAccess.getReferrableByPath("/MICROSAR/McSupport");
+                            if (pkg == null)
+                            {
+                                AsrPath asrPkgToCreate = AsrPath.create("/MICROSAR/McSupport")
+                                IVersion version = com.vector.cfg.util.version.Version.valueOf("4.4.0");
+                                String currentPath = new java.io.File(".").getCanonicalPath();
+                                String filePath = paths.getDpaProjectFolder()
+                                filePath += "/Config/InternalBehavior/McGroups.arxml";
+                                java.nio.file.Path p = java.nio.file.Paths.get(filePath);
+                                scriptLogger.info("creating " + filePath)
+                                pkg = operations.createUniqueMappedAutosarPackage(asrPkgToCreate, p, version)
+                            }
+
+                            // collect all McDataInstances
+                            ArrayList<MIMcDataInstance> allInstances = new ArrayList<MIMcDataInstance>();
+                            for (MIMcDataInstance instance : rteImpl.getMcSupport().getMcParameterInstance())
+                            {
+                                allInstances.add(instance);
+                            }
+                            for (MIMcDataInstance instance : rteImpl.getMcSupport().getMcVariableInstance())
+                            {
+                                allInstances.add(instance);
+                            }
+                            HashSet<String> usedGroups = new HashSet<String>();
+                            for (MIMcDataInstance instance : allInstances)
+                            {
+                                if (instance.getFlatMapEntry() != null && instance.getFlatMapEntry().getRefTarget() != null && instance.getFlatMapEntry().getRefTarget().getEcuExtractReference() != null &&
+                                        instance.getFlatMapEntry().getRefTarget().getEcuExtractReference().getTarget() != null && instance.getFlatMapEntry().getRefTarget().getEcuExtractReference().getTarget().getRefTarget() != null)
+                                {
+                                    def instanceRef = instance.getFlatMapEntry().getRefTarget().getEcuExtractReference();
+                                    String componentName = null;
+                                    String portName = null;
+                                    String runnableName = null;
+                                    String elementName = instanceRef.getTarget().getRefTarget().getName();
+                                    boolean isTx = false;
+                                    boolean isRx = false;
+                                    ArrayList< ArrayList<String >> a2lPaths = new ArrayList< ArrayList<String >>();
+                                    // extract interesting information from flat instance descriptor
+                                    for (MIReferrableARRef ref : instanceRef.getContext())
+                                    {
+                                        if (ref.getRefTarget() instanceof MISwComponentPrototype)
+                                        {
+                                            componentName = ref.getRefTarget().getName();
+                                        }
+                                        if (ref.getRefTarget() instanceof MIPortPrototype)
+                                        {
+                                            portName = ref.getRefTarget().getName();
+                                            if (ref.getRefTarget() instanceof MIPPortPrototype)
+                                            {
+                                                isTx = true;
+                                            }
+                                            if (ref.getRefTarget() instanceof MIRPortPrototype)
+                                            {
+                                                isRx = true;
+                                            }
+                                        }
+                                        if (ref.getRefTarget() instanceof MIRunnableEntity)
+                                        {
+                                            runnableName = ref.getRefTarget().getName();
+                                        }
+                                    }
+                                    // calculate a2l paths in the group structure where the element shall occure
+                                    if (componentName != null)
+                                    {
+                                        if (instanceRef.getTarget().getRefTarget() instanceof MIVariableDataPrototype)
+                                        {
+                                            MIVariableDataPrototype vp = instanceRef.getTarget().getRefTarget();
+                                            if (runnableName == null && portName != null)
+                                            {
+                                                // sender-receiver ports without usage of XCP Events
+                                                if (isTx)
+                                                {
+                                                    ArrayList<String> a2lPath = new ArrayList<String>();
+                                                    a2lPath.add("RTE");
+                                                    a2lPath.add("SWCs");
+                                                    a2lPath.add(componentName);
+                                                    a2lPath.add("SenderPorts");
+                                                    a2lPath.add(portName + "_" + elementName);
+                                                    a2lPaths.add(a2lPath);
+                                                }
+                                                // use separate branch to create two entries for PR-ports
+                                                if (isRx)
+                                                {
+                                                    ArrayList<String> a2lPath = new ArrayList<String>();
+                                                    a2lPath.add("RTE");
+                                                    a2lPath.add("SWCs");
+                                                    a2lPath.add(componentName);
+                                                    a2lPath.add("ReceiverPorts");
+                                                    a2lPath.add(portName + "_" + elementName);
+                                                    a2lPaths.add(a2lPath);
+                                                }
+                                            }
+                                            else if (runnableName != null && portName != null)
+                                            {
+                                                // sender-receiver ports with usage of XCP Events (MICROSAR extension)
+                                                ArrayList<String> a2lPath = new ArrayList<String>();
+                                                a2lPath.add("RTE");
+                                                a2lPath.add("SWCs");
+                                                a2lPath.add(componentName);
+                                                a2lPath.add("Runnables");
+                                                a2lPath.add(runnableName);
+                                                a2lPath.add(portName + "_" + elementName);
+                                                a2lPaths.add(a2lPath);
+                                            }
+                                            else if (portName == null && (vp.getSwcInternalBehaviorExplicitInterRunnableVariableOwner() != null ||
+                                                    vp.getSwcInternalBehaviorImplicitInterRunnableVariableOwner()))
+                                            {
+                                                // inter-runnable variables
+                                                ArrayList<String> a2lPath = new ArrayList<String>();
+                                                a2lPath.add("RTE");
+                                                a2lPath.add("SWCs");
+                                                a2lPath.add(componentName);
+                                                a2lPath.add("InterRunnableVariables");
+                                                a2lPath.add(elementName);
+                                                a2lPaths.add(a2lPath);
+                                            }
+                                            else if (portName == null && vp.getHasArTypedPerInstanceMemoryVariableDataPrototypeArTypedPerInstanceMemoryOwner() != null)
+                                            {
+                                                // per instance memories
+                                                ArrayList<String> a2lPath = new ArrayList<String>();
+                                                a2lPath.add("RTE");
+                                                a2lPath.add("SWCs");
+                                                a2lPath.add(componentName);
+                                                a2lPath.add("PerInstanceMemories");
+                                                a2lPath.add(elementName);
+                                                a2lPaths.add(a2lPath);
+                                            }
+                                        }
+                                        else if (instanceRef.getTarget().getRefTarget() instanceof MIModeDeclarationGroupPrototype)
+                                        {
+                                            // mode ports
+                                            if (isTx)
+                                            {
+                                                ArrayList<String> a2lPath = new ArrayList<String>();
+                                                a2lPath.add("RTE");
+                                                a2lPath.add("SWCs");
+                                                a2lPath.add(componentName);
+                                                a2lPath.add("ModeProvidePorts");
+                                                a2lPath.add(portName + "_" + elementName);
+                                                a2lPaths.add(a2lPath);
+                                            }
+                                            // use separate branch to create two entries for PR-ports
+                                            if (isRx)
+                                            {
+                                                ArrayList<String> a2lPath = new ArrayList<String>();
+                                                a2lPath.add("RTE");
+                                                a2lPath.add("SWCs");
+                                                a2lPath.add(componentName);
+                                                a2lPath.add("ModeRequirePorts");
+                                                a2lPath.add(portName + "_" + elementName);
+                                                a2lPaths.add(a2lPath);
+                                            }
+                                        }
+                                        else if (instanceRef.getTarget().getRefTarget() instanceof MIParameterDataPrototype)
+                                        {
+                                            if (portName == null)
+                                            {
+                                                // calibration parameters
+                                                ArrayList<String> a2lPath = new ArrayList<String>();
+                                                a2lPath.add("RTE");
+                                                a2lPath.add("SWCs");
+                                                a2lPath.add(componentName);
+                                                a2lPath.add("CalibrationParameters");
+                                                a2lPath.add(elementName);
+                                                a2lPaths.add(a2lPath);
+                                            }
+                                            else
+                                            {
+                                                // calibration ports
+                                                ArrayList<String> a2lPath = new ArrayList<String>();
+                                                a2lPath.add("RTE");
+                                                a2lPath.add("SWCs");
+                                                a2lPath.add(componentName);
+                                                a2lPath.add("CalibrationPorts");
+                                                a2lPath.add(portName + "_" + elementName);
+                                                a2lPaths.add(a2lPath);
+                                            }
+                                        }
+                                    }
+                                    for (ArrayList<String> a2lPath in a2lPaths)
+                                    {
+                                        def parentPath = "/MICROSAR/McSupport";
+                                        MIMcGroup parentGroup = null;
+
+                                        String groupString = "";
+                                        String prefix = "";
+                                        for (String e in a2lPath)
+                                        {
+                                            if (!groupString.isEmpty())
+                                            {
+                                                groupString += ".";
+                                            }
+                                            groupString += e;
+                                        }
+                                        scriptLogger.info("adding " + instance.getName() + " to " + groupString);
+
+                                        def parentPackage = referrableAccess.getReferrableByPath(parentPath);
+                                        for (String entry in a2lPath)
+                                        {
+                                            def mcGroup = referrableAccess.getReferrableByPath(parentPath + "/" + prefix + entry);
+                                            usedGroups.add(prefix + entry);
+                                            // mc group not yet created => create it
+                                            if (mcGroup == null)
+                                            {
+                                                mcGroup = operations.createModelObject(MIMcGroup);
+
+                                                mcGroup.setName(prefix + entry);
+                                                parentPackage.element.add(mcGroup);
+                                            }
+                                            if (parentGroup != null)
+                                            {
+                                                boolean refExists = false;
+                                                for (MIMcGroupARRef eRef : parentGroup.subGroup) {
+                                                    if (eRef.getRefTarget() != null && eRef.getRefTarget() == mcGroup)
+                                                    {
+                                                        refExists = true;
+                                                        break;
+                                                    }
+                                                }
+                                                if (!refExists) {
+                                                    MIMcGroupARRef mcGroupRef = operations.createModelObject(MIMcGroupARRef);
+                                                    mcGroupRef.setRefTarget(mcGroup);
+                                                    parentGroup.subGroup.add(mcGroupRef);
+                                                }
+
+                                            }
+                                            parentGroup = mcGroup;
+                                            if (!entry.equals("SWCs") && !entry.equals("RTE") && !entry.equals("CalibrationPorts") && !entry.equals("SenderPorts") && !entry.equals("ReceiverPorts") && !entry.equals("ModeProvidePorts") && !entry.equals("ModeRequirePorts") && !entry.equals("PerInstanceMemories") && !entry.equals("InterRunnableVariables") && !entry.equals("Runnables") && !entry.equals("CalibrationParameters"))
+                                            {
+                                                prefix += entry + "_";
+                                            }
+                                        }
+                                        if (parentGroup != null) {
+                                            ArrayList<MIMcDataInstance> instanceList = new ArrayList<MIMcDataInstance>();
+                                            instanceList.add(instance);
+                                            for (MIMcDataInstance currentInstance : ma.getAllInstancesOfType(MIMcDataInstance)) {
+                                                if (referrableAccess.getAutosarPath(currentInstance).startsWith(referrableAccess.getAutosarPath(instance) + "/")) {
+                                                    // also add child elements to the group (e.g. for record elements)
+                                                    instanceList.add(currentInstance);
+                                                }
+                                            }
+                                            for (MIMcDataInstance currentInstance : instanceList) {
+                                                MIMcDataInstanceARRef refExists = null;
+
+                                                if (instance.getMcSupportDataMcParameterInstanceOwner() != null) {
+                                                    if (parentGroup.getRefCalprmSet() == null) {
+                                                        MIMcGroupDataRefSet set = operations.createModelObject(MIMcGroupDataRefSet);
+                                                        MIMcGroupDataRefSetConditional cond = operations.createModelObject(MIMcGroupDataRefSetConditional);
+                                                        set.getMcGroupDataRefSetVariant().add(cond);
+                                                        parentGroup.setRefCalprmSet(set);
+                                                    }
+                                                    for (MIMcDataInstanceARRef eRef : parentGroup.getRefCalprmSet().getMcGroupDataRefSetVariant().get(0).getMcDataInstance()) {
+                                                        if (eRef.getRefTarget() != null && eRef.getRefTarget() == currentInstance) {
+                                                            refExists = eRef;
+                                                            break;
+                                                        }
+                                                    }
+                                                    if (!refExists) {
+                                                        MIMcDataInstanceARRef ref = operations.createModelObject(MIMcDataInstanceARRef);
+                                                        ref.setRefTarget(currentInstance);
+                                                        parentGroup.getRefCalprmSet().getMcGroupDataRefSetVariant().get(0).getMcDataInstance().add(ref);
+                                                        refExists = ref;
+                                                    }
+                                                } else {
+                                                    if (parentGroup.getRefMeasurementSet() == null) {
+                                                        MIMcGroupDataRefSet set = operations.createModelObject(MIMcGroupDataRefSet);
+                                                        MIMcGroupDataRefSetConditional cond = operations.createModelObject(MIMcGroupDataRefSetConditional);
+                                                        set.getMcGroupDataRefSetVariant().add(cond);
+                                                        parentGroup.setRefMeasurementSet(set);
+                                                    }
+                                                    for (MIMcDataInstanceARRef eRef : parentGroup.getRefMeasurementSet().getMcGroupDataRefSetVariant().get(0).getMcDataInstance()) {
+                                                        if (eRef.getRefTarget() != null && eRef.getRefTarget() == currentInstance) {
+                                                            refExists = eRef;
+                                                            break;
+                                                        }
+                                                    }
+                                                    if (refExists == null) {
+                                                        MIMcDataInstanceARRef ref = operations.createModelObject(MIMcDataInstanceARRef);
+                                                        ref.setRefTarget(currentInstance);
+                                                        parentGroup.getRefMeasurementSet().getMcGroupDataRefSetVariant().get(0).getMcDataInstance().add(ref);
+                                                        refExists = ref;
+                                                    }
+                                                }
+                                                for (MIMcDataInstanceARRef ref : refAccess.getAllReferencesPointingTo(currentInstance)) {
+                                                    if (ref != refExists && ma.getImmediateParent(ref) instanceof MIMcGroupDataRefSetConditional) {
+                                                        ref.delete();
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            // delete no longer needed groups
+                            MIARPackage parentPackage = referrableAccess.getReferrableByPath("/MICROSAR/McSupport");
+                            ArrayList<MIARElement> elementList = new ArrayList<MIARElement>();
+                            elementList.addAll(parentPackage.element);
+                            for (def element : elementList)
+                            {
+                                if ((element instanceof MIMcGroup) && !usedGroups.contains(element.getName()))
+                                {
+                                    element.delete();
+                                }
+                            }
+                            ArrayList<MIMcGroupARRef> arGroupRefs = new ArrayList<MIMcGroupARRef>();
+                            arGroupRefs.addAll(ma.getAllInstancesOfType(MIMcGroupARRef.class));
+                            for (def element : arGroupRefs)
+                            {
+                                if (element.getRefTarget() == null)
+                                {
+                                   element.delete();
+                                }
+                            }
+                            ArrayList<MIMcDataInstanceARRef> mcInstanceRefs = new ArrayList<MIMcDataInstanceARRef>();
+                            mcInstanceRefs.addAll(ma.getAllInstancesOfType(MIMcDataInstanceARRef.class));
+                            for (def element : mcInstanceRefs)
+                            {
+                                if (element.getRefTarget() == null)
+                                {
+                                    element.delete();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    }
+}

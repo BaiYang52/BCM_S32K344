@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0">
+	<AR-PACKAGES>
+		<AR-PACKAGE UUID="ff55d029-386d-43a2-b3c2-dfef4c7a5e36">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<ECUC-MODULE-CONFIGURATION-VALUES UUID="11d78ef9-da9a-4d84-af9d-02d24b461b53">
+					<SHORT-NAME>MemMap_Pre</SHORT-NAME>
+					<ANNOTATIONS>
+						<ANNOTATION>
+							<LABEL>
+								<L-4 L="EN">MemMap_ARM_Derivative</L-4>
+							</LABEL>
+							<ANNOTATION-ORIGIN>DV:UseCase</ANNOTATION-ORIGIN>
+							<ANNOTATION-TEXT>
+								<LIST>
+									<ITEM>
+										<P>
+											<L-1 L="EN">Enabled</L-1>
+										</P>
+									</ITEM>
+								</LIST>
+							</ANNOTATION-TEXT>
+						</ANNOTATION>
+					</ANNOTATIONS>
+					<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/MemMap</DEFINITION-REF>
+					<CONTAINERS>
+						<ECUC-CONTAINER-VALUE UUID="a04fa6de-1d4d-4967-86e1-d1a9917d69b3">
+							<SHORT-NAME>MemMapGeneral</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/MemMap/MemMapGeneral</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/MemMap/MemMapGeneral/MemMapTypedPragmas</DEFINITION-REF>
+									<VALUE>0</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+								<ECUC-NUMERICAL-PARAM-VALUE>
+									<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/MemMap/MemMapGeneral/MemMapGeneratePragmasForNearAddressing</DEFINITION-REF>
+									<VALUE>0</VALUE>
+								</ECUC-NUMERICAL-PARAM-VALUE>
+							</PARAMETER-VALUES>
+						</ECUC-CONTAINER-VALUE>
+					</CONTAINERS>
+				</ECUC-MODULE-CONFIGURATION-VALUES>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</AR-PACKAGES>
+</AUTOSAR>

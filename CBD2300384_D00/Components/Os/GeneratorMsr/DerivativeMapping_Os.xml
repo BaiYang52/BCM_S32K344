@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Settings Name="com.vector.cfg.core.sip.ISIPService">
+    <Settings Name="ModuleList">
+      <Settings Name="Os">
+        <Settings Name="S32K3xx">
+          <Setting Name="SIP_Folder" Value="Os" />
+          <Settings Name="72A47C44-01F4-4607-B61F-5D1964705F2F">
+            <Setting Name="Derivative" Value="S32K314" />
+            <Setting Name="SIP_Folder" Value="S32K3xx" />
+            <Setting Name="ReleaseType" Value="Hardware Reference Checked" />
+          </Settings>
+        </Settings>
+      </Settings>
+    </Settings>
+  </Settings>
+</Settings>

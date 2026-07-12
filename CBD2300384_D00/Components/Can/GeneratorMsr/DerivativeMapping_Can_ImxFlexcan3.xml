@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+***********************************************************************************************************************
+Group format:
+
+Can_<Platform>_<SubGroup>_xMB<MailboxAmount><IsrGroup>....._xBT<0,1,2>_xPAR<0,1>_xFD<0,1>_xRAM<0,1>
+
+Platform: "Vybrid", "Imx", "S32", "Mpc5700"
+SubGroup: hard coded in generator, define the BaseAddress mapping to physical channel (optional)
+_xMB:     one for each physical channel (limited by ChannelMax)
+          MailboxAmount: 16, 32, 64, 96, 128 for this channel
+          IsrGroup: A-G or X for GENERIC
+             GENERIC /* GROUP_X  no interrupt functions are added to OS */,
+             GROUP_A /* single ISR */,
+             GROUP_B /* 0to3, 4to7, 8to11, 12to15, 16to31, 32to39, 40to47, 48to55, 56to63, 64To79 (optional), 80to95 (optional) */,
+             GROUP_C /* 0to3, 4to7, 8to11, 12to15, 16to31, 32to63, 64to95 (optional) */,
+             GROUP_D /* 0, 1, 2, .., 15, 16to31, 32to63, 64to95 (optional), 96to127 (optional) */,
+             GROUP_E /* 0to7, 8to15, 16to31, 32to63 */,
+             GROUP_F /* 0to15, 16to31 (optional), 32to63 (optional), 64to95 (optional) */,
+             GROUP_G /* 0to31, 32to63 (optional), 64to95 (optional), 96to127 (optional) */,
+             GROUP_H /* 0to15, 16to31 (optional), 32to47 (optional), 48to63 (optional) */,
+             GROUP_I /* 1 mailbox interrupt for all mailboxes */
+_xBT:        0:  supportExtendedBitTiming=false, supportExtendedSjw=false
+             1:  supportExtendedBitTiming=true, supportExtendedSjw=false
+             2:  supportExtendedBitTiming=true, supportExtendedSjw=true
+_xPAR:       0:  isParityCheckAvailable=false
+             1:  isParityCheckAvailable=true
+_xFD:        0:  supportCANFD=false
+             1:  supportCANFD=true
+_xRAM:       0:  supportExtendedRAMCheck=false
+             1:  supportExtendedRAMCheck=true
+_xERR:       0:  isErrorInterruptAvailable=false
+             1:  isErrorInterruptAvailable=true
+*********************************************************************************************************************** 
+-->
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Settings Name="com.vector.cfg.core.sip.ISIPService">
+    <Settings Name="ModuleList">
+      <Settings Name="Can">
+        <!-- *************************************************************** -->
+        <!-- Vybrid_Generic  ChannelMax:2 -->
+        <Settings Name="Can_Vybrid_Generic_xMB64A_xMB64A_xBT0_xPAR1_xFD0_xRAM1_xERR0">
+          <Setting Name="SIP_Folder" Value="Can_ImxFlexcan3" />
+        </Settings>
+        <!-- Vybrid  ChannelMax:2 -->
+        <!-- *************************************************************** -->
+        <!-- Imx_Generic  ChannelMax:2 -->
+        <Settings Name="Can_Imx_Generic_xMB64A_xMB64A_xBT0_xPAR0_xFD0_xRAM1_xERR0">
+          <Setting Name="SIP_Folder" Value="Can_ImxFlexcan3" />
+        </Settings>
+        <!-- Imx  ChannelMax:2 -->
+        <!-- *************************************************************** -->
+        <!-- Mpc5700_Generic  ChannelMax:8 -->
+        <Settings Name="Can_Mpc5700_Generic_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xBT0_xPAR0_xFD0_xRAM1_xERR1">
+          <Setting Name="SIP_Folder" Value="Can_ImxFlexcan3" />
+        </Settings>
+        <!-- Mpc5700_Calypso  ChannelMax:8 -->
+        <!-- Mpc5700_Quasar  ChannelMax:3 -->
+        <!-- Mpc5700_Panther  ChannelMax:3 -->
+        <!-- Mpc5700_Racerunner  ChannelMax:4 -->
+        <!-- Mpc5700_Rainier  ChannelMax:4 -->
+        <!-- Mpc5700_RacerunnerUltra  ChannelMax:3 -->
+        <!-- Mpc5700_Castor4  ChannelMax:8 -->
+        <!-- Mpc5700_Cobra  ChannelMax:4 -->
+        <!-- *************************************************************** -->
+        <!-- S32_Generic  ChannelMax:3 -->
+        <Settings Name="Can_S32_Generic_xMB32F_xMB32F_xMB32F_xBT2_xPAR0_xFD1_xRAM1_xERR1">
+          <Setting Name="SIP_Folder" Value="Can_ImxFlexcan3" />
+        </Settings>
+        <!-- S32K1   ChannelMax:3 -->
+        <!-- S32K2TV  ChannelMax:8 -->
+        <!-- S32K3  ChannelMax:6 1ch*0 + 2ch*64 + 3ch*32-->
+        <Settings Name="Can_S32_S32K3_xMB0G_xMB64G_xMB64G_xMB32G_xMB32G_xMB32G_xBT2_xPAR1_xFD1_xRAM1_xERR0">
+          <Setting Name="SIP_Folder" Value="Can_ImxFlexcan3" />
+          <Settings Name="72A47C44-01F4-4607-B61F-5D1964705F2F">
+            <Setting Name="Derivative" Value="S32K314" />
+            <Setting Name="SIP_Folder" Value="Can_ImxFlexcan3" />
+            <Setting Name="ReleaseType" Value="Tested" />
+          </Settings>
+        </Settings>
+        <!-- S32K3  ChannelMax:4 1ch*0 + 2ch*64 + 1ch*32-->
+        <!-- S32K3  ChannelMax:3 1ch*0 + 2ch*64-->
+        <Settings Name="Can_G9_Generic_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xMB64X_xBT2_xPAR1_xFD1_xRAM1_xERR0">
+          <Setting Name="SIP_Folder" Value="Can_ImxFlexcan3" />
+        </Settings>
+      </Settings>
+    </Settings>
+  </Settings>
+</Settings>
