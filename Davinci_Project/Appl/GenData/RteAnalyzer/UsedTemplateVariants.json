@@ -791,6 +791,194 @@
             "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
          }
       },
+      "SchM_Dio.h" : {
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_00" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_01" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_02" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_03" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_04" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_05" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_06" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_07" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_08" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_09" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_10" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_11" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_12" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_13" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_14" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_15" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_16" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_17" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_18" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_19" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_20" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_21" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_22" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_23" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_24" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_25" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_26" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_27" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_28" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_29" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_30" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_00" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_01" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_02" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_03" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_04" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_05" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_06" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_07" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_08" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_09" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_10" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_11" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_12" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_13" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_14" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_15" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_16" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_17" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_18" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_19" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_20" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_21" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_22" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_23" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_24" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_25" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_26" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_27" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_28" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_29" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_30" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         }
+      },
       "SchM_EcuM.h" : {
          "SchM_Enter_EcuM_ECUM_EXCLUSIVE_AREA_0" : {
             "d04949d119d50064b356ac78c5423a4b" : {}
@@ -814,6 +1002,194 @@
             "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
          },
          "SchM_Exit_EcuM_ECUM_EXCLUSIVE_AREA_3" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         }
+      },
+      "SchM_Port.h" : {
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_00" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_05" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_06" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_07" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_08" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_09" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_10" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_11" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_12" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_13" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_14" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_15" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_16" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_17" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_18" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_19" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_20" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_21" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_22" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_23" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_24" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_25" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_26" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_27" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_28" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_29" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Enter_Port_PORT_EXCLUSIVE_AREA_30" : {
+            "d04949d119d50064b356ac78c5423a4b" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_00" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_05" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_06" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_07" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_08" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_09" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_10" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_11" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_12" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_13" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_14" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_15" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_16" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_17" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_18" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_19" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_20" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_21" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_22" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_23" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_24" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_25" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_26" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_27" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_28" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_29" : {
+            "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
+         },
+         "SchM_Exit_Port_PORT_EXCLUSIVE_AREA_30" : {
             "70f7afa710b9bdb6e8591ae22e0fec5a" : {}
          }
       }

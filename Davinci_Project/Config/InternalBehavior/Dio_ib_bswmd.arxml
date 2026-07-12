@@ -4,13 +4,13 @@
     <AR-PACKAGE UUID="05214e7a-ff95-4a21-b3a6-f53e64c26fea">
       <SHORT-NAME>TS_T40D34M20I1R0</SHORT-NAME>
       <AR-PACKAGES>
-        <AR-PACKAGE UUID="7117de57-702e-4f34-8e3a-97f68343c276">
+        <AR-PACKAGE UUID="37d5fde2-3ae0-45e5-9c44-2bde2308aa05">
           <SHORT-NAME>Dio_ib_bswmd</SHORT-NAME>
           <AR-PACKAGES>
-            <AR-PACKAGE UUID="0b2809fd-357f-41fa-86b9-b19930a025f5">
+            <AR-PACKAGE UUID="55f7c5fb-2efe-4da8-902d-95df7d0c60c9">
               <SHORT-NAME>BswModuleDescriptions</SHORT-NAME>
               <ELEMENTS>
-                <BSW-MODULE-DESCRIPTION UUID="952aa6ad-8cf0-43bc-8a7f-6a5494bed719">
+                <BSW-MODULE-DESCRIPTION UUID="e61928d6-169b-4e44-95bd-4f5e5527c0ef">
                   <SHORT-NAME>Dio</SHORT-NAME>
                   <PROVIDED-ENTRYS>
                     <BSW-MODULE-ENTRY-REF-CONDITIONAL>
@@ -18,105 +18,105 @@
                     </BSW-MODULE-ENTRY-REF-CONDITIONAL>
                   </PROVIDED-ENTRYS>
                   <INTERNAL-BEHAVIORS>
-                    <BSW-INTERNAL-BEHAVIOR UUID="104665ee-94c4-4a39-8cc3-916e13bfe58b">
+                    <BSW-INTERNAL-BEHAVIOR UUID="56b9d521-13d6-47ab-a879-1f448c9844c7">
                       <SHORT-NAME>DioBehavior</SHORT-NAME>
                       <EXCLUSIVE-AREAS>
-                        <EXCLUSIVE-AREA UUID="0f5f65f1-7370-4c30-bdbb-4a30aaa7095e">
+                        <EXCLUSIVE-AREA UUID="b7079d15-0711-4084-92b4-a9d70e461bb5">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_00</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="7ba4c114-8d6e-4a77-8678-e07761e775ef">
+                        <EXCLUSIVE-AREA UUID="94393123-fd1c-4f6b-a9a3-28ba7d638dfe">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_01</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="aa90bb0f-d0a3-4015-94d2-ce8e997411f4">
+                        <EXCLUSIVE-AREA UUID="9e423520-8e2d-43d7-8343-889faf476c5f">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_02</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="de74c5a0-8801-4c8f-88a6-d11a9654d306">
+                        <EXCLUSIVE-AREA UUID="b3413ab0-08b0-4815-bca1-d21b3486884c">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_03</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="719bad30-86fb-448c-a823-06439c9d7359">
+                        <EXCLUSIVE-AREA UUID="66752397-ae53-4af3-becf-92a2ff2bb1ab">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_04</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="4332d566-fdf5-4d0e-9377-5164297f478e">
+                        <EXCLUSIVE-AREA UUID="1f63fa2d-1ea8-44af-b4c8-599f1e048b87">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_05</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="db83ee40-27ce-4246-9e2a-358d5020638f">
+                        <EXCLUSIVE-AREA UUID="3dd483aa-3f67-40ec-a103-fee823c49baa">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_06</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="790c64ee-76a8-4430-b1dc-fd25b96fe442">
+                        <EXCLUSIVE-AREA UUID="c76f15c4-a567-4896-9986-05396a037379">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_07</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="77941f0d-ac31-4365-8506-6db44f00ec7a">
+                        <EXCLUSIVE-AREA UUID="4a1f2c3e-62fd-4b96-93c9-d77705dbc163">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_08</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="208108eb-d7bb-4fe7-995c-ffd4ea020d4e">
+                        <EXCLUSIVE-AREA UUID="ddd29a3e-df28-4e8e-908b-2072ca56503f">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_09</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="3d7002b9-40db-41af-ad3c-95c434bd511b">
+                        <EXCLUSIVE-AREA UUID="96614fdb-919f-40a3-b85f-3f01ec1b4b78">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_10</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="c6a73e5f-5802-42cb-bde6-7dd200c8cc0f">
+                        <EXCLUSIVE-AREA UUID="4ebe1e25-b434-45d0-9b29-6d2f331f2c57">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_11</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="992608a7-d17a-4a01-9487-45ec39d5964e">
+                        <EXCLUSIVE-AREA UUID="b2145d7f-37ee-4495-bdb8-be57fc6fc0d5">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_12</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="8218352e-1364-4343-9d30-85e1485cde72">
+                        <EXCLUSIVE-AREA UUID="4df31e94-a3b5-474c-8e3d-33d21b181f42">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_13</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="2bf4c6f6-eb81-4b98-bc27-07f39ae00d35">
+                        <EXCLUSIVE-AREA UUID="0528e3fa-ed9d-46be-b107-4245acc1eea4">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_14</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="9f1992ac-05f4-4dfd-8ebe-4f42adc3786f">
+                        <EXCLUSIVE-AREA UUID="fc14fcdb-9989-4704-99ab-89468b91bcbb">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_15</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="23f65956-7b48-4ea4-8da8-cc269d23316f">
+                        <EXCLUSIVE-AREA UUID="963c58df-38af-4578-90bf-b806b9bbd9bc">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_16</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="c821ae8a-4103-4076-8cd3-9ee2956aa35d">
+                        <EXCLUSIVE-AREA UUID="3dea63f4-cdc9-481e-abc4-735b75a508c3">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_17</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="1439b521-6baa-445c-b5ef-3b7b485e90b6">
+                        <EXCLUSIVE-AREA UUID="49b86748-bdbb-459f-b736-b4d2c3d442af">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_18</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="a5f6a021-a0fe-483c-b9dc-d06f7b4fcbcd">
+                        <EXCLUSIVE-AREA UUID="debf5e16-87d0-464e-b157-feadedd400dc">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_19</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="958ba721-baf1-4f55-8ce0-f4001703d7ce">
+                        <EXCLUSIVE-AREA UUID="0781fb35-f221-4668-91cf-b7d29255fd14">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_20</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="462a7a46-6588-46d3-9257-904683bd4eb0">
+                        <EXCLUSIVE-AREA UUID="5923a0e6-d189-4b6a-9d24-fa347ebaefcb">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_21</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="6d09867f-da02-472b-b682-b65e646081cd">
+                        <EXCLUSIVE-AREA UUID="a6a6b7ca-bdae-4617-97a2-23d386ec0f37">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_22</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="4ab92fc9-315d-403d-a058-a16a4315abbb">
+                        <EXCLUSIVE-AREA UUID="9b00eadd-bdc4-4521-b754-89bf99c1ac38">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_23</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="65afbf2e-ddde-40e6-8746-12cb30d3fdcf">
+                        <EXCLUSIVE-AREA UUID="501654d6-5f2d-4f4f-bd3c-b1655d83c672">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_24</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="b1ea73b3-d091-4b47-b4a7-b8f1550236e3">
+                        <EXCLUSIVE-AREA UUID="7f89d5cd-6476-41cf-9848-48081ec32aae">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_25</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="4f9c86f9-a8f7-4240-98bb-78a1e4105672">
+                        <EXCLUSIVE-AREA UUID="459d887e-c275-49f2-96f7-8637abf1e1d1">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_26</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="9fb82e27-3551-43e6-8d0e-47f5519d754b">
+                        <EXCLUSIVE-AREA UUID="cb401162-c3f9-4b2b-9895-23f0bf0872af">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_27</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="296744ce-83c5-446c-93b4-ed97cb2fc3b0">
+                        <EXCLUSIVE-AREA UUID="6d006c81-1558-48d3-a5e5-57f3866a524e">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_28</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="4594572d-b31c-49d2-913b-5a44f3976a86">
+                        <EXCLUSIVE-AREA UUID="124f19a7-a2ee-47b2-9664-3bcb62744eb8">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_29</SHORT-NAME>
                         </EXCLUSIVE-AREA>
-                        <EXCLUSIVE-AREA UUID="4f8e316a-290f-42ca-834d-69e394189e2e">
+                        <EXCLUSIVE-AREA UUID="76dd6b80-ec1c-4fe2-98d4-4334429c94de">
                           <SHORT-NAME>DIO_EXCLUSIVE_AREA_30</SHORT-NAME>
                         </EXCLUSIVE-AREA>
                       </EXCLUSIVE-AREAS>
                       <ENTITYS>
-                        <BSW-CALLED-ENTITY UUID="f1a9f7cf-3971-4c90-91dc-4a2ed47042f3">
+                        <BSW-CALLED-ENTITY UUID="b037800b-1f2c-42a6-ba59-b41a8733e69e">
                           <SHORT-NAME>Dio_Virtual</SHORT-NAME>
                           <CAN-ENTER-EXCLUSIVE-AREA-REFS>
                             <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Dio_ib_bswmd/BswModuleDescriptions/Dio/DioBehavior/DIO_EXCLUSIVE_AREA_00</CAN-ENTER-EXCLUSIVE-AREA-REF>
@@ -157,7 +157,7 @@
                     </BSW-INTERNAL-BEHAVIOR>
                   </INTERNAL-BEHAVIORS>
                 </BSW-MODULE-DESCRIPTION>
-                <BSW-MODULE-ENTRY UUID="b9a299bf-9735-425e-93f0-6dbb13c6e8b9">
+                <BSW-MODULE-ENTRY UUID="7b50820a-c66b-4cd0-b2fe-70c866369dbb">
                   <SHORT-NAME>Dio_Virtual</SHORT-NAME>
                   <CALL-TYPE>REGULAR</CALL-TYPE>
                   <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>

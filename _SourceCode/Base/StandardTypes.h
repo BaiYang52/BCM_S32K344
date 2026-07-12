@@ -95,43 +95,57 @@ extern "C"{
 * @brief Physical state 5V or 3.3V
 * @implements SymbolDefinitions_enum
 */
+#ifndef
 #define STD_HIGH    0x01
+#endif
 
 /**
 * @brief Physical state 0V.
 * @implements SymbolDefinitions_enum
 */
+#ifndef
 #define STD_LOW     0x00
+#endif
 
 /**
 * @brief Logical state active.
 * @implements SymbolDefinitions_enum
 */
+#ifndef
 #define STD_ACTIVE  0x01
+#endif
 
 /**
 * @brief Logical state idle.
 * @implements SymbolDefinitions_enum
 */
+#ifndef
 #define STD_IDLE    0x00
+#endif
 
 /**
 * @brief ON State.
 * @implements SymbolDefinitions_enum
 */
+#ifndef
 #define STD_ON      0x01
+#endif
 
 /**
 * @brief OFF state.
 * @implements SymbolDefinitions_enum
 */
+#ifndef
 #define STD_OFF     0x00
+#endif
 
 /**
 * @brief Return code for failure/error.
 * @implements SymbolDefinitions_enum
 */
+#ifndef
 #define E_NOT_OK    0x01
+#endif
 
 // /*==================================================================================================
 // *                                       DEFINES AND MACROS

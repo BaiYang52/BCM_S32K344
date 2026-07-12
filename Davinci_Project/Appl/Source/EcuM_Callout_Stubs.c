@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: EcuM_Callout_Stubs.c
- *   Generation Time: 2026-07-12 12:56:23
+ *   Generation Time: 2026-07-12 15:56:36
  *           Project: BCM_S32K344 - Version 1.0
  *          Delivery: CBD2300384_D00
  *      Tool Version: DaVinci Configurator Classic (beta) 5.26.40 SP3
@@ -83,6 +83,7 @@
 #include "Rte_Main.h" 
 #include "OsIf.h" 
 #include "Mcu.h" 
+#include "Port.h" 
 
 
 /**********************************************************************************************************************
@@ -264,6 +265,7 @@ FUNC(void, ECUM_CODE) EcuM_AL_DriverInitOne(void)
   BswM_PreInit( BswM_Config_Ptr );
   Mcu_Init( &Mcu_Config );
   Mcu_InitClock(McuConf_McuClockSettingConfig_McuClockSettingConfig_0);while (MCU_PLL_LOCKED != Mcu_GetPllStatus());Mcu_DistributePllClock();Mcu_SetMode(McuConf_McuModeSettingConf_McuModeSettingConf_0);
+  Port_Init( NULL_PTR );
 
 /**********************************************************************************************************************
  * DO NOT CHANGE THIS COMMENT!           <USERBLOCK EcuM_AL_DriverInitOne>                  DO NOT CHANGE THIS COMMENT!

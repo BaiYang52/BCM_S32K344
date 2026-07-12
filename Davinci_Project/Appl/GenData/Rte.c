@@ -39,8 +39,10 @@
 #include "Rte_Os_OsCore0_swc.h"
 #include "SchM_BswM.h"
 #include "SchM_Det.h"
+#include "SchM_Dio.h"
 #include "SchM_EcuM.h"
 #include "SchM_Mcu.h"
+#include "SchM_Port.h"
 
 #include "Rte_Hook.h"
 

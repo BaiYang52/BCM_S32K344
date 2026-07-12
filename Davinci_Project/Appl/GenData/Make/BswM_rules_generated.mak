@@ -21,7 +21,7 @@
 # #  FILE DESCRIPTION
 # #  -------------------------------------------------------------------------------------------------------------------
 # #              File: BswM_rules_generated.mak
-# #   Generation Time: 2026-07-12 15:33:41
+# #   Generation Time: 2026-07-12 15:56:36
 # #           Project: BCM_S32K344 - Version 1.0
 # #          Delivery: CBD2300384_D00
 # #      Tool Version: DaVinci Configurator Classic (beta) 5.26.40 SP3

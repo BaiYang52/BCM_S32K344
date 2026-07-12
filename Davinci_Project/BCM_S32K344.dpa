@@ -107,6 +107,12 @@
         <Splitter File=".\Config\ECUC\BCM_S32K344_Mcu_Mcu_ecuc.arxml">
             <Module Name="Mcu"/>
         </Splitter>
+        <Splitter File=".\Config\ECUC\BCM_S32K344_Dio_Dio_ecuc.arxml">
+            <Module Name="Dio"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\BCM_S32K344_Port_Port_ecuc.arxml">
+            <Module Name="Port"/>
+        </Splitter>
         <OwnFolderForEachSplitter>false</OwnFolderForEachSplitter>
         <OwnFileForEachInstance>true</OwnFileForEachInstance>
     </EcucSplitter>
