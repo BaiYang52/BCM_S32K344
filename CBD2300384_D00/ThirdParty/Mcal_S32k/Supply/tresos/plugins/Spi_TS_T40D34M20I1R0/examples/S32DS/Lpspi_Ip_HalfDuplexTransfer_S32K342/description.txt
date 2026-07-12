@@ -1,0 +1,65 @@
+1. Example Description
+    This application demonstrates the usage of LPSPI driver in Real Time Drivers.
+    The application includes a Design Studio project, that uses predefined configurations for the IP layer only (Clock, Pin, Siul2, OsIf, Lpspi, IntCtrl).
+    The application uses the LPSPI driver to transfer 10 frames in between 2 LPSPI physical units in half-duplex mode.
+
+    1.1 The application software functionality
+            - Clock_Ip_Init
+                    Initialize the clock sources, the clock tree and to configure the clock gating of the peripherals.
+            - Siul2_Port_Ip_Init
+                    Initializes the pins used by the application using the Siul2_Port API.
+            - IntCtrl_Ip_Init
+                    Enable and set priority interrupt vectors configured on peripherals configuration tool.
+            - IntCtrl_Ip_ConfigIrqRouting
+                    Install handler for the configured interrupts.
+            - Lpspi_Ip_Init
+                    Initializes the LPSPI physical unit with its configuration data.
+            - Lpspi_Ip_UpdateTransferMode
+                    Select polling or interrupt mode in transfer.
+            - Lpspi_Ip_AsyncTransmit
+                    Prepare buffers of slave Spi and wait master start transfer.
+            - Lpspi_Ip_SyncTransmit
+                    Master start transfer with the slave by synchronous mode.
+            - Lpspi_Ip_GetStatus
+                    Get state of the instance
+
+    1.2 The application description
+            - The application uses the SPI driver to transfer data in half-duplex mode
+            - Transfer 10 frames 8 bits via LPSPI0(MASTER) and 10 frames 8 bits via LPSPI2(SLAVE)
+
+2. Installation steps
+    2.1 Hardware installation
+        2.1.1 Supported boards
+        2.1.1 Supported boards
+            - Mini-module: XS32K3X2CVB-Q172 PCB 48307 RevX1 SCH RevA
+            - Mother-board: X-S32K3XXX-MB PCB 47386 RevA SCH RevA
+
+        2.1.2 Connections
+            ------------------------------------------------------
+                            |            X-S32K3XXX-MB
+            PIN FUNCTION    |-------------------------------------
+                            |  Master(LPSPI_0)   | Slave(LPSPI_2)
+            ----------------|-------------------------------------
+            CLK             |           PTC8     |      PTB29
+            MISO            |           PTE0     |      PTB27
+            MOSI            |           PTE2     |      PTB28
+            CS0             |           PTB0     |      PTB25
+            ------------------------------------------------------
+            Connecting the same name pins of master and slave together
+
+        2.2.3 Debugger
+            PNE Debugger (optional, users can use Open SDA)
+    2.2 Software installation
+        2.2.1 Importing the S32 Design Studio project
+            After opening S32 Design Studio, go to "File -> New -> S32DS Project From Example" and select "Lpspi_Ip_HalfDuplexTransfer_S32K342". Then click on "Finish".
+            The project should now be copied into you current workspace.
+
+3. Building the example application
+    3.1 Generation the code by switch to Peripherals/Pin/Clock tools and click the button "Update Code"
+    3.2 Compiling the application
+        Select the configuration to be built: RAM (Debug_RAM), or FLASH (Debug_FLASH) by left clicking on the downward arrow corresponding to the build button in eclipse. 
+        Wait for the build action to be completed before continuing to the next step. Check the compiler console for error messages; upon completion, Lpspi_Ip_HalfDuplexTransfer_S32K342.elf binary file
+        should be created.
+    3.3 Running the application on the board
+        Click button "Run" or "Debug" on S32 Design Studio.
+        

@@ -1,0 +1,73 @@
+1. Example Description
+    This application demonstrates the usage of a subset of Real Time Drivers that are included in this code drop. It is not part of the production code deliverables.
+    This is a simple application which shows the usage of Uart driver on S32DS for S32K344 derivative.
+    1.1 The application software functionality
+            - Port_Init
+                    Initialize the pins used by the application using the Port driver.
+            - Mcu_Init, Mcu_InitClock, Mcu_SetMode
+                    Initialize the clock sources for project.
+            - Mcl_Init
+                    Initialize the Mcl module for Flexio common part.
+            - Platform_Init
+              Platform_InstallIrqHandler
+                    Install the ISR for the Uart
+            - Uart_Init
+                    Initialize the Uart driver
+            - Uart_Deinit
+                    Deinitialize the Uart driver
+            - Uart_AsyncSend
+                    Send Uart data
+            - Uart_AsyncReceive
+                    Receive Uart data
+            - Uart_GetStatus
+                    Get status of Uart
+            - Uart_Deinit
+                    Uninitialize the Uart driver
+            - Mcl_Deinit
+                    Uninitialize the Mcl driver
+    1.2 The application description
+            - The first welcome message is sent via UART: "Hello, This message is sent via Uart!"
+            - The second welcome message is sent via UART: "Have a nice day!"
+            - User need to check return status of Send_Data() function for verifying example.
+
+2. Installation steps
+    2.1 Hardware installation
+        2.1.1 Hardware preparation
+            - S32K3X4EVB-Q257 47827 PCB RevX1 SCH RevA or S32K3XXEVB-Q172 51972 PCB RevA SCH RevA
+            - 1 Power Adapters 12V
+            - 1 microUSB cable
+            - 1 Personal Computer
+        2.2.2 Connections
+            - It uses Lpuart instance 3, comunicates with Flexio instance 0 channel 0 for Tx and channel 1 for Rx
+            - With S32K3X4EVB-Q257 47827 PCB RevX1 SCH RevA: Connect PTA0(J352.22) - PTD3(J352.10) and PTA1(J352.19) - PTD2(J352.7)
+            - With S32K3XXEVB-Q172 51972 PCB RevA SCH RevA: Connect PTA0(J2.22) - PTD3(J2.10) and PTA1(J2.19) - PTD2(J2.7)
+        2.2.3 Debugger
+            - EVB is debugged through OpenSDA USB connection
+    2.2 Software installation
+        2.2.1 Importing the S32 Design Studio project
+            Make sure that all RTD plugins are already installed in the S32DS plugins directory
+
+3. How to run
+    3.1 Importing the project into the workspace
+        After opening S32 Design Studio, go to "File -> New -> S32DS Project From Example" and select "Uart_Example_S32K344". Then click on "Finish".
+        The project should now be copied into you current workspace.
+        Wait for the S32 Configuration was initialized and ready.
+    3.2 Generating the S32 configuration
+        The example will run without an active configuration, however if any changes are required, a configuration needs to be generated.
+        The initial configuration will have the same settings as the default example settings.
+        Right click on the current project, then click "S32 Configuration Tool" choose "Open Clocks".
+        Pay attention to any error and warning message. If any configured value is invalid, they will be shown for user.
+        Make the desired changes (if any) then click "Update Code".
+    3.3 Building the project
+        Select the configuration to be built: RAM (Debug_RAM), or FLASH (Debug_FLASH) by left clicking on the downward arrow corresponding to the build button in eclipse.
+        Use Project > Build to build the project.
+        Wait for the build action to be completed before continuing to the next step. Check the compiler console for error messages; upon completion, the *.elf binary file should  be created.
+    3.4 Running the project
+        Go to Run and select Debug Configurations. There will be a debug configuration for this project:
+        Configuration Name                               Description
+        -------------------------------                  -----------------------
+        Uart_Example_S32K344_Debug_RAM_PNE               Debug the RAM configuration using PEmicro probe
+        Uart_Example_S32K344_Debug_FLASH_PNE             Debug the FLASH configuration using PEmicro probe
+
+        Select the desired debug configuration and click on Launch. Now the perspective will change to the Debug Perspective.
+        Use the controls to control the program flow.

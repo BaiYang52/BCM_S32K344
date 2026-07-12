@@ -1,0 +1,40 @@
+1. Example Description
+        LED RGBLED0_RED - control with input in ICU-eMios pin through IcuSignalNotification function  
+    1.1 The aplication software functionality
+        GPIO trigger will generate edges to ICU-eMios input pins. The interrupts will be generated for the ICU-eMios channels and the user's functions will be called, the user's functions will blink LED.
+2. Installation steps
+    2.1 Hardware installation
+        2.1.1 Supported boards
+            - S32K3X4EVB-Q257 47827 PCB RevX1 SCH RevA
+            - S32K3XXEVB-Q172 51972 PCB RevA SCH RevA 
+        2.2.2 Connections
+            A wire connection is required between the following:
+                - pin J357.8 (PTA9 - gpio trigger)    to  J253.1 (PTC11 - EMIOS_1_CH_1 input) in board S32K3X4EVB-Q257 47827 PCB RevX1 SCH RevA
+                
+                - pin J37.11(PTA9 - gpio trigger)    to    J4.1 (PTC11 - EMIOS_1_CH_1 input) in board S32K3XXEVB-Q172 51972 PCB RevA SCH RevA 
+        2.2.3 Debugger
+            - The debugger must be connected to J52 10-pin JTAG Cortex Debug connector in board S32K3X4EVB-Q257 47827 PCB RevX1 SCH RevA.
+            - The debugger must be connected to J36 10-pin JTAG Cortex Debug connector in board S32K3XXEVB-Q172 51972 PCB RevA SCH RevA .
+    2.2 Software installation
+        2.2.1 Importing the S32 Design Studio project
+            After opening S32 Design Studio, go to "File -> New -> S32DS Project From Example" and select this example. Then click on "Finish".
+            The project should now be copied into you current workspace.
+         
+3. Generating, building and running the example application
+    3.1 Generating the S32 configuration
+        Before running the example a configuration needs to be generated.  First go to Project Explorer View in S32 DS and select the current project. Select the "S32 Configuration Tool" menu then click on the desired configuration tool (Pins, Cocks, Peripherals etc...). Clicking on any one of those will generate all the components. Make the desired changes(if any) then click on the "S32 Configuration Tool->Update Code" button.
+    3.2 Compiling the application
+        Select the configuration to be built: RAM (Debug_RAM), or FLASH (Debug_FLASH) by left clicking on the downward arrow corresponding to the build button in eclipse. 
+        Use Project > Build to build the project.
+        Wait for the build action to be completed before continuing to the next step. Check the compiler console for error messages; upon completion, the *.elf binary file
+        should be created.
+    3.2 Running the application on the board
+        Go to Run and select Debug Configurations. There will be a debug configuration for this project:
+        
+        Configuration Name                  Description
+        -------------------------------     -----------------------
+        $(example)_debug_ram_pemicro        Debug the RAM configuration using PEmicro probe
+        $(example)_debug_flash_pemicro      Debug the FLASH configuration using PEmicro probe
+        
+        Select the desired debug configuration and click on Launch. Now the perspective will change to the Debug Perspective.
+        Use the controls to control the program flow.

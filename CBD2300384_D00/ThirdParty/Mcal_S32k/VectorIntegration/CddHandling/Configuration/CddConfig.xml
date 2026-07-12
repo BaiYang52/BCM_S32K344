@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CddConfig xmlns="http://www.vector.com/MIPv2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vector.com/MIPv2 ./CddConfig.xsd">
+  <CddPackagePaths Summary="Paths to CDD Packages">
+  </CddPackagePaths>
+  <CddModulePaths Summary="Paths to single CDD modules">
+  </CddModulePaths>
+  <CddModulesUsed Summary="CDD Modules integrated">
+  </CddModulesUsed>
+</CddConfig>

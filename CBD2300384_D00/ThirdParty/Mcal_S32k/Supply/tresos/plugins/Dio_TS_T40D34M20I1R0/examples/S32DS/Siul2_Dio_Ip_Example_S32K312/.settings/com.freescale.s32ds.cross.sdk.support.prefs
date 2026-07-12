@@ -1,0 +1,2 @@
+com.freescale.s32ds.cross.sdk.support.attachedSDKs=$(platform_sdk_name)_S32K312_M7_$(platform_sdk_version)_PATH|Debug_FLASH
+eclipse.preferences.version=1

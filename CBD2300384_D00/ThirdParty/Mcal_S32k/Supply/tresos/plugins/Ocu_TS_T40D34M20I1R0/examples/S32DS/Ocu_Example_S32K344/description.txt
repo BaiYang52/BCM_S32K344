@@ -1,0 +1,54 @@
+1. Example Description
+    This application demonstrates the usage of a subset of Real Time Drivers that are included in this code drop. It is not part of the production code deliverables.
+    The application includes a Design Studio project that configures the Dio, Mcl, Mcu, Ocu, Os, Platform and Port drivers.
+    The application uses the HLD layer functionality to trigger a compare match interrupt and blink LEDs on board.
+    1.1 The application software functionality
+            - Port_Init
+                    Initialize the pins used by the application using the Port driver.
+            - Mcu_Init
+                    Initialize the clock sources, the clock tree and to configure the clock gating of the peripherals.
+                    The clock configuration that is used will enable and use the PLL as source clock.
+            - Platform_Init
+                    Initialize the interrupt controller and to apply the interrupt configuration according to the Platform configuration.
+                    Install the ISR for the eMios timer used by the Ocu driver
+            - Mcl_Init 
+                    Initialize eMios counterBus use by Ocu.
+            - Ocu_Init, Ocu_StartChannel, Ocu_EnableNotification
+                    Initialize the Ocu driver, start the selected channel and enable its notification.
+            - After the initialization the channel will start counting, the notification will be generated upon each compare match and a 'while(1) loop' will run to blink a LED.
+                    Notification function will toggle the PTB13 pin and will increase a 'count' variable by 1. 
+                    The 'while(1) loop' will toggle the PTA29 gpio pin every 100 increments of the counter using Dio driver (Dio_WriteChannel).
+2. Installation steps
+    2.1 Hardware installation
+        2.1.1 Supported boards
+            - EVB: S32K3X4EVB-Q257 47827 PCB RevX1 SCH RevA. Silicon: P32K344EHVMMS 0P55A CTSK2038A
+            - EVB: S32K3XXEVB-Q172 51972 PCB RevA SCH RevA. Silicon: P32K344EHVPBS 1P55A CTZX2128B
+        2.2.2 Connections
+            A wire connection is required between the following:
+                - pin J352.4 on board S32K3X4EVB-Q257 47827 PCB RevX1 SCH RevA: PTB13 - EMIOS_0_CH1 output.
+                - pin J2.4 on board S32K3XXEVB-Q172 51972 PCB RevA SCH RevA: PTB13 - EMIOS_0_CH1 output.
+                - RGBLED0_RED on both boards: PTA29 - gpio LED blink.
+        2.2.3 Pemicro
+            The Pemicro must be connected to J32 10-pin JTAG Cortex Debug connector.
+    2.2 Software installation
+        2.2.1 Importing the S32 Design Studio project
+            After opening S32 Design Studio, go to "File -> New -> S32DS Project From Example" and select this example. Then click on "Finish".
+            The project should now be copied into you current workspace.
+
+3. Generating, building and running the example application
+    3.1 Generating the S32 configuration
+        Before running the example a configuration needs to be generated.  First go to Project Explorer View in S32 DS and select the current project. Select the "S32 Configuration Tool" menu then click on the desired configuration tool (Pins, Cocks, Peripherals etc...). Clicking on any one of those will generate all the components. Make the desired changes(if any) then click on the "S32 Configuration Tool->Update Code" button.
+    3.2 Compiling the application
+        Select the configuration to be built: RAM (Debug_RAM) by left clicking on the downward arrow corresponding to the build button in eclipse.
+        Use Project > Build to build the project.
+        Wait for the build action to be completed before continuing to the next step. Check the compiler console for error messages; upon completion, the *.elf binary file
+        should be created.
+    3.3 Running the application on the board
+        Go to Run and select Debug Configurations. There will be a debug configuration for this project:
+
+        Configuration Name                  Description
+        -------------------------------     -----------------------
+        $(example)_debug_flash_pemicro        Debug the FLASH configuration using PEmicro probe
+
+        Select the desired debug configuration and click on Launch. Now the perspective will change to the Debug Perspective.
+        Use the controls to control the program flow.

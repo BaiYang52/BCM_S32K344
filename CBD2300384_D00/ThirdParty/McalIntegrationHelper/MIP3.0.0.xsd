@@ -1,0 +1,480 @@
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.vector.com/MIPv2" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://www.vector.com/MIPv2" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.1">
+	<!-- 
+		Type for ActionDefVar
+	
+		 The ActionDefVarType always contains the element 'Name'. 
+		 The ActionDefVarType always contains the element 'ValueBOP' element (that can be combined with other elements) or a 'Value' element.
+		 The element 'ValueBOP' must be combined with one of the following elements: 
+		-'LookForPathPattern' 
+		-'LookForPatternInFile' AND 'PathRel'
+		-'BaseValue' AND 'BasePattern'
+	 -->
+	<xs:complexType name="ActionDefVarType">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:choice>
+				<xs:element name="Value" type="xs:string"/>
+				<xs:sequence>
+					<xs:choice>
+						<xs:element name="LookForPathPattern" type="xs:string"/>
+						<xs:sequence>
+							<xs:element name="LookForPatternInFile" type="xs:string"/>
+							<xs:element name="PathRel" type="xs:string"/>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element name="BaseValue" type="xs:string"/>
+							<xs:element name="BasePattern" type="xs:string"/>
+						</xs:sequence>
+					</xs:choice>
+					<xs:element name="ValueBOP" type="xs:string"/>
+					<xs:group ref="ns1:ConditionGroup" minOccurs="0"/>
+				</xs:sequence>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="Summary" type="xs:string" use="required"/>
+		<xs:attribute name="RelatedPackage" type="xs:unsignedByte" use="required"/>
+		<!-- ExecuteHidden specifies if the content of 'Summary' attribute shall be displayed in Helper Tool or not. Default value = false, which means that the Summary is always displayed in tool if this attribute is not specified. -->		
+		<xs:attribute name="ExecuteHidden" type="xs:boolean" use="optional"/>
+		<xs:attribute name="ActionId" type="xs:unsignedByte" use="optional"/>		
+	</xs:complexType>
+	<!-- 
+		Type for Condition 
+	-->
+	<xs:complexType name="ConditionType">
+		<xs:attribute name="Pattern" type="xs:string" use="required"/>
+		<xs:attribute name="Exist" type="xs:string" use="optional"/>
+		<xs:attribute name="Match" type="xs:string" use="optional"/>
+		<xs:attribute name="NotMatch" type="xs:string" use="optional"/>
+		<xs:attribute name="Equal" type="xs:string" use="optional"/>
+		<xs:attribute name="NotEqual" type="xs:string" use="optional"/>
+		<xs:attribute name="Greater" type="xs:string" use="optional"/>
+		<xs:attribute name="GreaterEqual" type="xs:string" use="optional"/>
+		<xs:attribute name="Lower" type="xs:string" use="optional"/>
+		<xs:attribute name="LowerEqual" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<!-- 
+		Type for CombinedCondition 
+	-->
+	<xs:complexType name="CombinedConditionType">
+		<xs:choice>
+			<!-- Combined Condition beginns with And -->
+			<xs:element name="And" type="ns1:AndConditionType" minOccurs="0" maxOccurs="1"/>
+			<!-- Combined Condition beginns with Or -->
+			<xs:element name="Or" type="ns1:AndConditionType" minOccurs="0" maxOccurs="1"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="And" type="ns1:AndConditionType"/>
+	<xs:complexType name="AndConditionType">
+		<xs:all>
+			<xs:element ref="ns1:And" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="ns1:Or" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Condition" type="ns1:ConditionType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="Or" type="ns1:OrConditionType"/>
+	<xs:complexType name="OrConditionType">
+		<xs:all>
+			<xs:element ref="ns1:And" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="ns1:Or" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Condition" type="ns1:ConditionType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:all>
+	</xs:complexType>
+	<!-- 
+		Group for CombinedCondition or Condition
+	-->
+	<xs:element name="Condition" type="ns1:ConditionType"/>
+	<xs:element name="CombinedCondition" type="ns1:CombinedConditionType"/>
+	<xs:group name="ConditionGroup">
+		<xs:choice>
+			<xs:element ref="ns1:Condition"/>
+			<xs:element ref="ns1:CombinedCondition"/>
+		</xs:choice>
+	</xs:group>
+	<!-- 
+		Type for GroupConditionType
+	-->
+	<xs:complexType name="GroupConditionType">
+		<xs:group ref="ns1:ConditionGroup"/>
+	</xs:complexType>
+	<!-- 
+		Type for ActionRenameFile
+	-->
+	<xs:complexType name="ActionRenameFileType">
+		<xs:sequence>
+			<xs:element name="PathRel" type="xs:string"/>
+			<xs:element name="NewName" type="xs:string"/>
+			<xs:element name="ExcludePattern" type="xs:string" minOccurs="0"/>
+			<xs:group ref="ns1:ConditionGroup" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="Summary" type="xs:string" use="required"/>
+		<xs:attribute name="RelatedPackage" type="xs:unsignedByte" use="required"/>
+		<xs:attribute name="ActionId" type="xs:unsignedByte" use="optional"/>
+		<xs:attribute name="MultiFile" type="xs:boolean" use="optional"/>
+	</xs:complexType>
+	<!-- 
+		Type for ActionPatchFile
+	-->
+	<xs:complexType name="ActionPatchFileType">
+		<xs:sequence>
+			<xs:element name="PathRel" type="xs:string"/>
+			<xs:element name="Pattern" type="xs:string"/>
+			<xs:element name="ReplaceBOP" type="xs:string"/>
+			<xs:element name="SkipPattern" type="xs:string" minOccurs="0"/>
+			<xs:group ref="ns1:ConditionGroup" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="Summary" type="xs:string" use="required"/>
+		<xs:attribute name="RelatedPackage" type="xs:unsignedByte" use="required"/>
+		<xs:attribute name="MultiFile" type="xs:boolean" use="optional"/>
+		<xs:attribute name="ActionId" type="xs:unsignedByte" use="optional"/>
+	</xs:complexType>
+	<!-- 
+		Type for ActionCopyPattern 
+	-->
+	<xs:complexType name="ActionCopyPatternType">
+		<xs:sequence>
+			<xs:element name="SourceRootRel" type="xs:string"/>
+			<xs:element name="TargetRootRel" type="xs:string"/>
+			<xs:element name="SourcePattern" type="xs:string"/>
+			<xs:element name="TargetBOP" type="xs:string"/>
+			<xs:element name="ExcludePattern" type="xs:string" minOccurs="0"/>
+			<xs:group ref="ns1:ConditionGroup" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="Summary" type="xs:string" use="required"/>
+		<xs:attribute name="RelatedPackage" type="xs:unsignedByte" use="required"/>
+		<xs:attribute name="ActionId" type="xs:unsignedByte" use="required"/>
+		<xs:attribute name="Undo" type="xs:boolean" use="optional"/>
+	</xs:complexType>
+	<!-- 
+		Type for ActionRemove 
+	-->
+	<xs:complexType name="ActionRemoveType">
+		<xs:sequence>
+			<xs:element name="PathRel" type="xs:string"/>
+			<xs:group ref="ns1:ConditionGroup" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="Summary" type="xs:string" use="required"/>
+		<xs:attribute name="RelatedPackage" type="xs:short" use="required"/>
+		<xs:attribute name="MultiFile" type="xs:boolean"/>
+		<xs:attribute name="ActionId" type="xs:unsignedByte" use="optional"/>
+	</xs:complexType>
+	<!-- 
+		Type for ActionRemovePackage
+	-->
+	<xs:complexType name="ActionRemovePackageType">
+		<xs:attribute name="Summary" type="xs:string" use="required"/>
+		<xs:attribute name="RelatedPackage" type="xs:unsignedByte" use="required"/>
+	</xs:complexType>
+	<!-- 
+		Type for ActionCopyPackage
+	-->
+	<xs:complexType name="ActionCopyPackageType">
+		<xs:group ref="ns1:ConditionGroup" minOccurs="0"/>
+		<xs:attribute name="Summary" type="xs:string" use="required"/>
+		<xs:attribute name="RelatedPackage" type="xs:unsignedByte" use="required"/>
+		<xs:attribute name="ActionId" type="xs:unsignedByte" use="optional"/>
+	</xs:complexType>
+	<!-- 
+		Type for ActionEnableCdd
+	-->
+	<xs:complexType name="ActionEnableCddType">
+		<xs:all>
+			<xs:element name="PackageName" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Enable" type="xs:boolean" nillable="false"/>
+		</xs:all>
+		<xs:attribute name="Summary" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="RelatedPackage" type="xs:unsignedByte" use="required"/>
+	</xs:complexType>
+	<!--
+		Type for the Folder of ExpectedStructure
+	-->
+	<xs:element name="Folder" type="ns1:FolderType"/>
+	<xs:complexType name="FolderType">
+		<xs:sequence>
+			<xs:element ref="ns1:Folder" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="Name" type="xs:string" use="required"/>
+		<xs:attribute name="Files" type="xs:string" use="optional"/>
+		<xs:attribute name="Mandatory" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="true"/>
+					<xs:enumeration value="false"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Exist" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="true"/>
+					<xs:enumeration value="false"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:assert test="if (@Mandatory eq 'false') then not(@Exist eq 'false') else true()"/>
+		<!-- Do not allow the combination of Mandatory="false" and Exist="false"-->
+	</xs:complexType>
+	<!--
+		Type for the File of ExpectedStructure
+	-->
+	<xs:complexType name="FileType">
+		<xs:attribute name="Name" type="xs:string" use="required"/>
+		<xs:attribute name="Exist" type="xs:boolean" use="optional"/>
+	</xs:complexType>
+	<!--
+		The 'MipConfig' element specifies the order in which the elements underneath appear. 
+		There is exactly ONE 'GeneralInformation' element. After that, there are ONE OR MORE 'Packages' elements. 
+		After that, there is ONE 'Install', ONE 'Prepare', ONE 'UndoPrepare' and ONE 'Remove' element.
+		Last there CAN be ONE 'Bswmd' and ONE 'Finalize' element. 
+	-->
+	<xs:element name="MipConfig">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="GeneralInformation">
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="SipBase_RelPath" type="xs:string"/>
+							<xs:element name="McalSupply_RelPath" type="xs:string"/>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Packages">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Package" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NameExpected" type="xs:string"/>
+										<xs:element name="StructureExpected">
+											<xs:complexType>
+												<xs:choice>
+													<xs:sequence>
+														<xs:element name="Folder" type="ns1:FolderType" maxOccurs="unbounded"/>
+														<xs:element name="File" type="ns1:FileType" minOccurs="0" maxOccurs="unbounded"/>
+													</xs:sequence>
+													<xs:sequence>
+														<xs:element name="File" type="ns1:FileType" maxOccurs="unbounded"/>
+													</xs:sequence>
+												</xs:choice>
+												<!-- Ensure that at least one Folder or File is defined. Max number is infinite.-->
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Description" type="xs:string"/>
+										<xs:element name="Mandatory" type="xs:boolean"/>
+									</xs:sequence>
+									<xs:attribute name="Summary" type="xs:string" use="required"/>
+									<xs:attribute name="Id" type="xs:unsignedByte" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="TechRef" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Cdd">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ActionEnableCdd" type="ns1:ActionEnableCddType"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Install">
+					<xs:complexType>
+						<xs:choice maxOccurs="unbounded">
+							<xs:element name="ActionCopyPackage" type="ns1:ActionCopyPackageType" maxOccurs="unbounded"/>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Prepare">
+					<xs:complexType>
+						<xs:choice maxOccurs="unbounded">
+							<!-- Single Actions may be summarized in an action group -->
+							<xs:element name="ActionGroup" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:choice maxOccurs="unbounded">										
+											<xs:element name="ActionDefVar" type="ns1:ActionDefVarType" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="ActionPatchFile" type="ns1:ActionPatchFileType" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="ActionCopyPattern" type="ns1:ActionCopyPatternType" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="ActionRenameFile" type="ns1:ActionRenameFileType" minOccurs="0" maxOccurs="unbounded"/>										
+											<xs:element name="ActionRemove" type="ns1:ActionRemoveType" minOccurs="0" maxOccurs="unbounded"/>
+										</xs:choice>
+										<xs:element name="GroupCondition" type="ns1:GroupConditionType" minOccurs="0"/>
+									</xs:sequence>
+									<xs:attribute name="Summary" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<!-- Single Actions without action group -->
+							<xs:element name="ActionDefVar" type="ns1:ActionDefVarType" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="ActionPatchFile" type="ns1:ActionPatchFileType" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="ActionCopyPattern" type="ns1:ActionCopyPatternType" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="ActionRenameFile" type="ns1:ActionRenameFileType" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="ActionRemove" type="ns1:ActionRemoveType" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="UndoPrepare">
+					<xs:complexType>
+						<xs:choice maxOccurs="unbounded">
+							<xs:element name="Undo" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="ActionId" type="xs:unsignedByte" use="required"/>
+									<xs:attribute name="Summary" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ActionDefVar" type="ns1:ActionDefVarType" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="ActionPatchFile" type="ns1:ActionPatchFileType" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="ActionCopyPattern" type="ns1:ActionCopyPatternType" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="ActionRenameFile" type="ns1:ActionRenameFileType" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="ActionRemove" type="ns1:ActionRemoveType" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Remove" minOccurs="0">
+					<xs:complexType>
+						<xs:choice maxOccurs="unbounded">
+							<xs:element name="ActionRemovePackage" type="ns1:ActionRemovePackageType" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="ActionRemove" type="ns1:ActionRemoveType" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="ActionDefVar" type="ns1:ActionDefVarType" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Bswmd" minOccurs="0">
+					<!--
+						The 'Bswmd' element specifies the order in which the elements underneath appear.
+						The 'Bswmd' element always contains ONE 'ActionDefVarBswmd' element at first position. After that, there can be some 'ActionDefVar' elements. 
+						Next there can be either the elements ('Conditions' and 'Derivatives') or ('DerivativeScan' and 'ActionDefVarBeforeCopy').
+						After that there has to be at least one 'Copy' element.
+					-->
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ActionDefVarBswmd" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Name" type="xs:string" fixed="BswmdMcalFolder"/>
+										<xs:choice>
+											<xs:element name="Value" type="xs:string"/>
+											<xs:sequence>
+												<xs:choice>
+													<xs:element name="LookForPathPattern" type="xs:string"/>
+													<xs:choice maxOccurs="unbounded">
+														<xs:element name="LookForPatternInFile" type="xs:string"/>
+														<xs:element name="PathRel" type="xs:string"/>
+													</xs:choice>
+													<xs:choice maxOccurs="unbounded">
+														<xs:element name="BaseValue" type="xs:string"/>
+														<xs:element name="BasePattern" type="xs:string"/>
+													</xs:choice>
+												</xs:choice>
+												<xs:element name="ValueBOP" type="xs:string"/>
+											</xs:sequence>
+										</xs:choice>
+									</xs:sequence>
+									<xs:attribute name="Summary" type="xs:string" use="required"/>
+									<xs:attribute name="RelatedPackage" type="xs:unsignedByte" use="required"/>
+									<xs:attribute name="ExecuteHidden" type="xs:boolean" use="optional"/>
+									<xs:attribute name="ActionId" type="xs:unsignedByte" use="optional"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ActionDefVar" type="ns1:ActionDefVarType" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:choice>
+								<xs:choice maxOccurs="unbounded">
+									<xs:element name="Conditions" minOccurs="0">
+										<xs:complexType>
+											<xs:choice maxOccurs="unbounded">
+												<xs:element name="Condition" maxOccurs="unbounded">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="LookForExistingPathPattern" type="xs:string"/>
+														</xs:sequence>
+														<xs:attribute name="Name" type="xs:string" use="required"/>
+													</xs:complexType>
+												</xs:element>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="Derivatives" minOccurs="0">
+										<xs:complexType>
+											<xs:choice maxOccurs="unbounded">
+												<xs:element name="Derivative" maxOccurs="unbounded">
+													<xs:complexType>
+														<xs:attribute name="ConditionName" type="xs:string" use="optional"/>
+														<xs:attribute name="DisplayName" type="xs:string" use="required"/>
+														<xs:attribute name="IdentifyingFileFragment" type="xs:string" use="required"/>
+													</xs:complexType>
+												</xs:element>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+								</xs:choice>
+								<xs:sequence>
+									<xs:element name="DerivativeScan" minOccurs="0">
+										<xs:complexType>
+											<xs:all>
+												<xs:element name="Pattern" type="xs:string"/>
+												<xs:element name="DisplayNameBOP" type="xs:string"/>
+												<xs:element name="IdentifyingFileFragmentBOP" type="xs:string"/>
+											</xs:all>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="ActionDefVarBeforeCopy" type="ns1:ActionDefVarType" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:choice>
+							<xs:element name="Copy" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Pattern" type="xs:string"/>
+										<xs:element name="TargetBOP" type="xs:string"/>
+										<xs:element name="ExcludePattern" type="xs:string" minOccurs="0"/>
+										<xs:element name="RemovePattern" type="xs:string"/>
+										<xs:group ref="ns1:ConditionGroup" minOccurs="0"/>
+									</xs:sequence>
+									<xs:attribute name="RelatedPackage" type="xs:unsignedByte" use="required"/>
+									<xs:attribute name="Renesas" type="xs:boolean" use="optional"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Finalize" minOccurs="0">
+					<xs:complexType>
+						<xs:choice maxOccurs="unbounded">
+							<!-- Single Actions may be summarized in an action group -->
+							<xs:element name="ActionGroup" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:choice maxOccurs="unbounded">
+											<xs:element name="ActionDefVar" type="ns1:ActionDefVarType" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="ActionPatchFile" type="ns1:ActionPatchFileType" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="ActionCopyPattern" type="ns1:ActionCopyPatternType" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="ActionRenameFile" type="ns1:ActionRenameFileType" minOccurs="0" maxOccurs="unbounded"/>										
+											<xs:element name="ActionRemove" type="ns1:ActionRemoveType" minOccurs="0" maxOccurs="unbounded"/>									
+										</xs:choice>
+										<xs:element name="GroupCondition" type="ns1:GroupConditionType" minOccurs="0"/>
+									</xs:sequence>
+									<xs:attribute name="Summary" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<!-- Single Actions without action group -->
+							<xs:element name="ActionDefVar" type="ns1:ActionDefVarType" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="ActionPatchFile" type="ns1:ActionPatchFileType" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="ActionCopyPattern" type="ns1:ActionCopyPatternType" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="ActionRenameFile" type="ns1:ActionRenameFileType" minOccurs="0" maxOccurs="unbounded"/>										
+							<xs:element name="ActionRemove" type="ns1:ActionRemoveType" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

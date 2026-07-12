@@ -1,0 +1,55 @@
+1. Example Description
+    This application demonstrates the usage of a subset of Real Time Drivers that are included in this code drop. It is not part of the production code deliverables.
+    Two Lpspi physical units are used to transfer together in half-duplex mode.
+
+    1.1 The application software functionality
+            - Spi_Init
+                    Initialization of spi hardware units by configuring SpiPhyUnit tabs of configurations tool.
+            - Spi_SetAsyncMode
+                    Selecting polling or interrupt mode of asynchronous transfers after that.
+            - Spi_SetupEB
+                    Setting up external buffers to transmit and reception of both slave and master.
+            - Spi_AsyncTransmit
+                    Slave and master set up as configurations on SpiExternalDevice and data to transfer.
+                    After that master will start the transfer by asynchronous method.
+
+    1.2 The application description
+            - The application uses the SPI driver to transfer data in 1 bits transfer half-duplex mode.
+            - Transfer 10 frames 8 bits via LPSPI0(MASTER) and 10 frames 8 bits via LPSPI2(SLAVE).
+
+2. Installation steps
+    2.1 Hardware installation
+        2.1.1 Supported boards
+            - S32K3X4EVB-Q257 47827 PCB RevX1 SCH RevA or S32K3XXEVB-Q172 51972 PCB RevA SCH RevA
+        2.1.2 Connections
+            ------------------------------------------------------
+                               |          S32K3X4EVB
+            PIN FUNCTION       |----------------------------------
+                               | SLAVE(LPSPI_2)  | MASTER(LPSPI_0)
+            -------------------|----------------------------------
+            CLK                |  J37.6  (PTB29) |  J2.21  (PTC8)
+            MISO               |  J37.14 (PTB3)  |  J37.9  (PTE0)
+            MOSI               |  J3.18  (PTE16) |  J37.13 (PTE2)
+            CS0                |  J3.6   (PTB25) |  J2.24  (PTB0)
+            ------------------------------------------------------
+            Connecting the same name pins of master and slave together.
+            With S32K3XXEVB-Q172 51972 PCB RevA SCH RevA: use jump to connect.
+            With S32K3X4EVB-Q257 47827 PCB RevX1 SCH RevA: use Pinmatrix to connect.
+
+        2.2.3 Debugger
+            PNE Debugger (optional, users can use Open SDA)
+
+    2.2 Software installation
+        2.2.1 Importing the S32 Design Studio project
+            After opening S32 Design Studio, go to "File -> New -> S32DS Project From Example" and select "Spi_HalfDuplexTransfer_S32K344". Then click on "Finish".
+            The project should now be copied into you current workspace.
+
+3. Building the example application
+    3.1 Generation the code by switch to Peripherals/Pin/Clock tools and click the button "Update Code"
+    3.2 Compiling the application
+        Select the configuration to be built: RAM (Debug_RAM), or FLASH (Debug_FLASH) by left clicking on the downward arrow corresponding to the build button in eclipse. 
+        Wait for the build action to be completed before continuing to the next step. Check the compiler console for error messages; upon completion, Spi_HalfDuplexTransfer_S32K344.elf binary file
+        should be created.
+    3.3 Running the application on the board
+        Click button "Run" or "Debug" on S32 Design Studio.
+        

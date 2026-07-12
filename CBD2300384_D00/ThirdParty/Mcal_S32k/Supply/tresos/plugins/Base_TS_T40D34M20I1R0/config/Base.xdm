@@ -1,0 +1,639 @@
+<?xml version='1.0'?>
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+<!--
+*   @file    Base.xml
+*   @version 2.0.1
+*
+*   @brief   AUTOSAR Base - Tresos Studio plugin schema file
+*   @details This file contains the schema configuration for and Base Tresos Studio plugin.
+-->
+<!--
+====================================================================================================
+*   Project              : RTD AUTOSAR 4.4
+*   Platform             : CORTEXM
+*   Peripheral           : S32K3XX
+*   Dependencies         : none
+*
+*   Autosar Version      : 4.4.0
+*   Autosar Revision     : ASR_REL_4_4_REV_0000
+*   Autosar Conf.Variant :
+*   SW Version           : 2.0.1
+*   Build Version        : S32K3_RTD_2_0_1_D2207_ASR_REL_4_4_REV_0000_20220707
+
+*   (c) Copyright 2020 - 2022 NXP Semiconductors
+*   All Rights Reserved.
+====================================================================================================
+-->           
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="TS_T40D34M20I1R0" type="AR-PACKAGE">
+        <a:a name="UUID" value="ECUC:71c11b62-2e2b-49f8-a1fa-63bdeaea4ad0"/>
+        <d:lst type="ELEMENTS">
+          <d:chc name="Base" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+            <a:a name="RELEASE" value="asc:4.4"/>
+              <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                <ad:ADMIN-DATA>
+                  <ad:DOC-REVISIONS>
+                    <ad:DOC-REVISION>
+                      <ad:REVISION-LABEL>4.1.0</ad:REVISION-LABEL>
+                      <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                      <ad:DATE>2010-12-03</ad:DATE>
+                    </ad:DOC-REVISION>
+                  </ad:DOC-REVISIONS>
+                </ad:ADMIN-DATA>
+              </a:a>
+              <a:a name="DESC" 
+                   value="EN: Configuration of Base module."/>
+              <a:a name="LOWER-MULTIPLICITY" value="1"/>
+              <a:a name="UPPER-MULTIPLICITY" value="1"/>
+              <a:a name="UUID" value="ECUC:592f3090-1e4d-41bd-a567-b2a1ed945a8d"/>
+              <a:a name="POSTBUILDVARIANTSUPPORT" value="false"/>
+
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                <a:a name="LABEL" value="Config Variant"/>                
+                <a:a name="UUID" value="ECUC:42656996-f61c-4973-baad-2a72d0463fe2"/>
+                <a:da name="DEFAULT" value="VariantPreCompile"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPreCompile</a:v>
+                </a:da>
+              </v:var>
+              
+              <v:ctr name="OsIfGeneral" type="IDENTIFIABLE">
+                <a:a name="LABEL" value="OsIfGeneral"/>
+                <a:a name="DESC" 
+                     value="EN: This container contains the configuration parameters for the OS Interface."/>
+                <a:a name="UUID" value="ECUC:7e85fcfb-efe1-44d1-8afb-227cef92ccf8"/>
+
+                  <v:var name="OsIfMulticoreSupport" type="BOOLEAN">
+                    <a:a name="LABEL" value="OsIfMulticoreSupport"/>
+                    <a:a name="DESC">
+                        <a:v><![CDATA[EN:<html>
+                                Switches global multicore support on or off:<br/>
+                                False: For all variants, no EcucPartition shall be referenced in OsIfEcucPartitionRef.<br/>
+                                True: For all variants, at least one EcucPartition needs to be referenced in OsIfEcucPartitionRef.
+                                </html>]]>
+                        </a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="NXP"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:fbb4800a-1114-4ef4-9a8b-324ebcf56789"/>
+                    <a:da name="DEFAULT" value="false"/>
+                    <a:da name="INVALID" type="XPath">
+                        <a:tst expr="node:current()='true' and contains(node:value(as:modconf('Resource')[1]/ResourceGeneral/ResourceSubderivative), 's32k344')"
+                            true="The derivative S32K344 will be treated as a single-core device. So the MulticoreSupport should be disabled"/>
+                        <a:tst expr="node:current()='true' and contains(node:value(as:modconf('Resource')[1]/ResourceGeneral/ResourceSubderivative), 's32k342')"
+                            true="The derivative S32K342 will be treated as a single-core device. So the MulticoreSupport should be disabled"/>
+                        <a:tst expr="node:current()='true' and contains(node:value(as:modconf('Resource')[1]/ResourceGeneral/ResourceSubderivative), 's32k341')"
+                            true="The derivative S32K341 will be treated as a single-core device. So the MulticoreSupport should be disabled"/>
+                        <a:tst expr="node:current()='true' and contains(node:value(as:modconf('Resource')[1]/ResourceGeneral/ResourceSubderivative), 's32k314')"
+                            true="The derivative S32K314 will be treated as a single-core device. So the MulticoreSupport should be disabled"/>
+                        <a:tst expr="node:current()='true' and contains(node:value(as:modconf('Resource')[1]/ResourceGeneral/ResourceSubderivative), 's32k312')"
+                            true="The derivative S32K312 will be treated as a single-core device. So the MulticoreSupport should be disabled"/>
+                        <a:tst expr="node:current()='true' and contains(node:value(as:modconf('Resource')[1]/ResourceGeneral/ResourceSubderivative), 's32k1')"
+                            true="S32K1XX will be treated as a single-core device. So the MulticoreSupport should be disabled"/>
+                        <a:tst expr="node:current()='true' and contains(node:value(as:modconf('Resource')[1]/ResourceGeneral/ResourceSubderivative), 'sja')"
+                            true="SJA11XX will be treated as a single-core device. So the MulticoreSupport should be disabled"/>
+                    </a:da>
+                  </v:var>
+                  <!--  @implements OsIfEnableUserModeSupport_Object  -->
+                  <v:var name="OsIfEnableUserModeSupport" type="BOOLEAN">
+                    <a:a name="LABEL" value="OsIfEnableUserModeSupport"/>
+                    <a:a name="DESC">
+                        <a:v>
+                        <![CDATA[EN:
+                            <html>
+                                <p>When this parameter is enabled, the OsIf module will adapt to run from User Mode, with the following measures:</p>
+                                <p>(if applicable) a) configuring REG_PROT for the Eth Controllers so that the registers under protection eth be accessed from user mode by setting UAA bit in REG_PROT_GCR to 1</p>
+                                <p>(if applicable) b) using 'call trusted function' stubs for all internal function calls that access registers requiring supervisor mode.</p>
+                                <p>(if applicable) c) other module specific measures for more information, please see chapter 5.7 User Mode Support in IM</p>
+                            </html>
+                        ]]>
+                        </a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="NXP"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:fbb4800a-1114-4ef4-9a8b-324ebfc11529"/>
+                    <a:da name="DEFAULT" value="false"/>
+                  </v:var>
+
+                  <v:var name="OsIfDevErrorDetect" type="BOOLEAN">
+                    <a:a name="LABEL" value="OsIfDevErrorDetect"/>
+                    <a:a name="DESC" 
+                         value="EN: Switches the development error detection and notification on or off."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="NXP"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:ba826417-4631-45aa-a826-c2197826cca2"/>
+                    <a:da name="DEFAULT" value="false"/>
+                  </v:var>
+
+                  <v:var name="OsIfUseSystemTimer" type="BOOLEAN">
+                    <a:a name="LABEL" value="OsIfUseSystemTimer"/>
+                    <a:a name="DESC" 
+                         value="EN: Switches the system timer usage on or off. The system timer is architecture-specific and may not exist."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="NXP"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:ba826417-4631-45aa-a826-c2197816cec1"/>
+                    <a:da name="DEFAULT" value="false"/>
+                    <a:a name="INVALID" type="XPath">
+         <!--              <a:tst expr="(. = 'true') and not(node:exists(../OsIfSystemTimerClockRef))"
+                             true="OsIfSystemTimerClockRef must be enabled and configured when OsIfUseSystemTimer = TRUE."/> -->
+                    </a:a>
+                  </v:var>
+
+                  <v:var name="OsIfUseCustomTimer" type="BOOLEAN">
+                    <a:a name="LABEL" value="OsIfUseCustomTimer"/>
+                    <a:a name="DESC"
+                         value="EN: Switches the custom timer usage on or off.
+                                    When this feature is enabled, the application will have to provide the functions expected by the OSIF API."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="NXP"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:ba826417-4631-45aa-a826-c21971242cec"/>
+                    <a:da name="DEFAULT" value="false"/>
+                  </v:var>
+      
+                  <v:var name="OsIfInstanceId" type="INTEGER">
+                    <a:a name="DESC" value="EN: Instance ID of the OsIf driver. This ID is used to discern several OsIf drivers in case more than one driver is used in the same ECU."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:1d5e98b1-25e6-3e2d-b1fd-d43aa3722b80"/>
+                    <a:da name="DEFAULT" value="0"/>
+                    <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=255"/>
+                          <a:tst expr="&gt;=0"/>
+                    </a:da>
+                  </v:var>
+
+                  <!--  @implements OsIfOperatingSystemType_Object  -->                                    
+                  <v:chc name="OsIfOperatingSystemType" type="IDENTIFIABLE">
+                    <a:a name="LABEL" value="OsIfOperatingSystemType"/>
+                    <a:a name="DESC"
+                         value="EN: This container contains the configuration parameters for the OS Interface."/>
+                    <a:a name="UUID" value="ECUC:7e85fcfb-efe1-44d1-8afb-2163fec2ccf8"/>
+                    <a:a name="INVALID" type="XPath">
+                        <a:tst expr="node:when(node:exists(as:modconf('Resource')[1]/ResourceGeneral/ARM_CoreArchitecture),
+                                     (node:value(.)='OsIfFreeRtosType') and (node:value(as:modconf('Resource')[1]/ResourceGeneral/ARM_CoreArchitecture) != 'ARM_M_ARCH'),
+                                     false())"
+                               true="FreeRTOS support is only available for Cortex-M processors (i.e. Resource/ResourceGeneral/ARM_CoreArchitecture)"/>
+                    </a:a>
+
+                    <v:ctr name="OsIfAutosarOsType" type="IDENTIFIABLE">
+                      <a:a name="LABEL" value="OsIfAutosarOsType"/>
+                      <a:a name="DESC" 
+                           value="EN: This container contains the configuration parameters for AUTOSAR OS."/>
+                      <a:a name="UUID" value="ECUC:7e85fcfb-efe1-44d1-8afb-2163fecc2fc1"/>
+                    </v:ctr>
+
+                    <v:ctr name="OsIfFreeRtosType" type="IDENTIFIABLE">
+                      <a:a name="LABEL" value="OsIfFreeRtosType"/>
+                      <a:a name="DESC" 
+                           value="EN: This container contains the configuration parameters for FreeRTOS."/>
+                      <a:a name="UUID" value="ECUC:7e85fcfb-efe1-44d1-8afb-1235efcc2fc1"/>
+
+                    </v:ctr>
+
+                    <v:ctr name="OsIfZephyrOsType" type="IDENTIFIABLE">
+                      <a:a name="LABEL" value="OsIfZephyrOsType"/>
+                      <a:a name="DESC" 
+                           value="EN: This container contains the configuration parameters for Zephyr OS."/>
+                      <a:a name="UUID" value="ECUC:8e85dfbc-ef1e-55cd-8aea-123352fcfcc5"/>
+
+                    </v:ctr>
+
+                    <v:ctr name="OsIfBaremetalType" type="IDENTIFIABLE">
+                      <a:a name="LABEL" value="OsIfBaremetalType"/>
+                      <a:a name="DESC" 
+                           value="EN: This container contains the configuration parameters for bare-metal."/>
+                      <a:a name="UUID" value="ECUC:7e85fcfb-efe1-44d1-8afb-12335cf2cfc1"/>
+
+                    </v:ctr>
+                  </v:chc>
+
+                  <v:lst name="OsIfEcucPartitionRef">
+                    <a:da name="INVALID" type="XPath">
+                        <a:tst expr="(count(./*) = 0) and (../OsIfMulticoreSupport = 'true')"
+                               true="This list must refer at least one ECUC partition when OsIfMulticoreSupport = 'true'"/>
+                        <a:tst expr="(count(./*) > 0) and (../OsIfMulticoreSupport = 'false')"
+                               true="This list must not refer any ECUC partition when OsIfMulticoreSupport = 'false'"/>
+                    </a:da>
+
+                    <v:ref name="OsIfEcucPartitionRef" type="REFERENCE">
+                      <a:a name="DESC">
+                        <a:v><![CDATA[EN:<html>
+                           Maps the OsIf module to zero or multiple ECUC partitions to make the module's API
+                           available in this partition. The OsIf module will operate as an independent
+                           instance in each of the partitions.
+                        </html>]]></a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="NXP"/>
+                      <a:a name="SCOPE" value="ECU"/>
+                      <a:a name="UUID" value="ECUC:2257ea54-1810-4b76-84b2-e19232518c32"/>
+                      <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition"/>
+                      <a:a name="INVALID" type="XPath">
+                        <a:tst expr="node:refvalid(.)"
+                               false="Invalid or empty reference."/>
+                        <a:tst expr="text:uniq(../*, .)"
+                               false="The referenced ECUC partition must be unique within the OsIfEcucPartitionRef list."/>
+                        <a:tst expr="node:containsValue(as:modconf('Os')[1]/OsApplication/*/OsAppEcucPartitionRef, .)"
+                               false="The referenced ECUC partition isn't used by any OsApplication (i.e. Os/OsApplication/*/OsAppEcucPartitionRef)"/>
+                        <a:tst expr="node:containsValue(../../OsIfCounterConfig/*/OsIfCounterEcucPartitionRef, .)"
+                               false="The referenced ECUC partition isn't used by any OSIF Counter (i.e. OsIfGeneral/OsIfCounterConfig/*/OsIfCounterEcucPartitionRef)."/>
+                      </a:a>
+                    </v:ref>
+                  </v:lst>
+
+                  <v:lst name="OsIfCounterConfig" type="MAP">
+                    <a:da name="MIN" value="0"/>
+                     <a:da name="INVALID" type="XPath">
+                       <a:tst expr="num:i(count(./*)) > node:when((node:value(../OsIfMulticoreSupport) = 'true') and node:exists(as:modconf('EcuC')[1]),
+                                                        num:i(count(as:modconf('EcuC')[1]/EcucHardware/*/EcucCoreDefinition/*/EcucCoreId)),
+                                                        num:i(1))"
+                              true="The number of OsIf Counters cannot exceed the number of available ECU Cores (i.e. #EcuC/EcuHardware/EcucCoreDefinition)"/>
+                       <a:tst expr="(node:value(../OsIfMulticoreSupport) = 'false') and ../OsIfUseSystemTimer = 'true' and (num:i(count(./*)) != 1)"
+                              true="The number of OsIf Counters must be exactly one when System Timer is enabled and multicore is disabled"/>
+                     </a:da>
+
+                    <v:ctr name="OsIfCounterConfig" type="IDENTIFIABLE">
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="DESC">
+                        <a:v><![CDATA[EN:<html>
+                           Configures counters used by OsIf.
+                        </html>]]></a:v>
+                      </a:a>
+                      <a:a name="UUID" value="ECUC:464cdcf8-06e8-436f-9b4b-7ddc6ebd42ce"/>
+                      <a:a name="INVALID" type="XPath">
+                        <a:tst expr="node:value(../../OsIfMulticoreSupport) = 'true' and not(node:exists(./OsIfCounterEcucPartitionRef))"
+                               true="OsIfCounterEcucPartitionRef must be enabled in multicore environments"/>
+                        <a:tst expr="node:name(../../OsIfOperatingSystemType) = 'OsIfAutosarOsType' and not(node:exists(./OsIfOsCounterRef))"
+                               true="OsIfOsCounterRef must be enabled in Autosar OS mode"/>
+                        <a:tst expr="node:name(../../OsIfOperatingSystemType) = 'OsIfBaremetalType' and not(node:exists(./OsIfSystemTimerClockRef))"
+                               true="OsIfSystemTimerClockRef must be enabled in baremetal mode"/>
+                      </a:a>
+                      <v:ref name="OsIfCounterEcucPartitionRef" type="REFERENCE">
+                        <a:a name="DESC">
+                          <a:v><![CDATA[EN:<html>
+                             Maps the OsIf Counter to zero or one ECUC partition. <br />
+                             The ECUC partition referenced is a subset of the ECUC partitions where the OsIf module is mapped to.
+                          </html>]]></a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="ECU"/>
+                        <a:a name="OPTIONAL" value="true"/>
+                        <a:a name="UUID" value="ECUC:f86d720b-a1e5-4f3f-a656-0f49615a236e"/>
+                        <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition"/>
+                        <a:a name="INVALID" type="XPath">
+                          <a:tst expr="node:refvalid(.)" false="Invalid or empty reference."/>
+                          <a:tst expr="node:containsValue(../../../OsIfEcucPartitionRef/*, .)"
+                                 false="The ECUC partition referenced by OsIfCounterEcucPartitionRef shall be a subset of the ECUC partitions referenced by OsIfEcucPartitionRef."/>
+                          <a:tst expr="text:uniq(../../*/OsIfCounterEcucPartitionRef, .)"
+                                 false="OsIfCounterEcucPartitionRef must be unique across all OsIf Counters in OsIfCounterConfig (i.e. only one OsIf Counter is allowed per partition)"/>
+                        </a:a>
+                      </v:ref>
+
+                      <v:ref name="OsIfSystemTimerClockRef" type="REFERENCE">
+                        <a:a name="LABEL" value="OsIfSystemTimerClockRef"/>
+                        <a:a name="DESC">
+                          <a:v>
+                            <![CDATA[EN:<html>
+                                Reference to the system timer clock source configuration, which is set in the MCU module configuration. <br />
+                                Cortex-M: The clock source of the system timer is usually the clock source of the CPU on which the application will run. <br />
+                                Cortex-A/R: The clock source of the system timer is usually a divided clock of FXOSC_CLK. The divide value is system specific, usually residing in a register of the GPR hardware module. <br />
+                           </html>]]>
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="OPTIONAL" value="true"/>
+                        <a:a name="UUID" value="ECUC:b051dd0a-d2c6-4feb-b096-75f6fbca2dc6"/>
+                        <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint"/>
+                        <a:a name="INVALID" type="XPath">
+                          <a:tst expr="node:refvalid(.)" false="Invalid or empty reference."/>
+                          <a:tst expr="../../../OsIfUseSystemTimer = 'true'" false="OsIfUseSystemTimer must be enabled first before configuring OsIfSystemTimerClockRef."/>
+                          <a:tst expr="node:name(../../../OsIfOperatingSystemType) = 'OsIfBaremetalType'" false="OsIfSystemTimerClockRef must be used only in baremetal mode"/>
+                        </a:a>
+                      </v:ref>
+
+                      <v:ref name="OsIfOsCounterRef" type="REFERENCE">
+                        <a:a name="LABEL" value="OsIfOsCounterRef"/>
+                        <a:a name="DESC">
+                          <a:v>
+                            <![CDATA[EN:<html>
+                                A reference to an OS Counter. <br />
+                                Parameter OsSecondsPerTick of the referenced OS Counter must have multiplicity = 1. <br />
+                                Limitation: The referenced OS Counter will be used by all drivers assigned to the same partition referenced by OsIfCounterEcucPartitionRef.
+                            </html>]]>
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="OPTIONAL" value="true"/>
+                        <a:a name="UUID" value="ECUC:9afcd54f-4c05-442a-b507-a0d31a48376a"/>
+                        <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Os/OsCounter"/>
+                        <a:a name="INVALID" type="XPath">
+                          <a:tst expr="node:refvalid(.)" false="Invalid or empty reference."/>
+                          <a:tst expr="node:refvalid(.) and not(node:exists(node:ref(.)/OsSecondsPerTick))" true="Parameter OsIfOsCounterRef/OsSecondsPerTick is required for counter objects that count timing related information."/>
+                          <a:tst expr="node:name(../../../OsIfOperatingSystemType) = 'OsIfAutosarOsType'" false="Os Counter can be used only in Autosar OS mode"/>
+                        </a:a>
+                      </v:ref>
+                    </v:ctr>
+                  </v:lst>
+              </v:ctr>
+              
+                <!--  @implements CommonPublishedInformation_Object  -->
+                <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                    <a:a name="DESC">
+                        <a:v>
+                            <![CDATA[EN:
+                                <html><p>Common container, aggregated by all modules. It contains published information about vendor and versions.</p></html>
+                            ]]>
+                        </a:v>
+                    </a:a>
+                    <a:a name="UUID" value="ECUC:be68078a-ba7e-4320-b0a2-8096d0117449"/>
+                    
+                    <v:var name="ArReleaseMajorVersion" type="INTEGER_LABEL">
+                        <a:a name="LABEL" value="AUTOSAR Major Version"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN: 
+                                    <html><p>Major version number of AUTOSAR specification on which the appropriate implementation is based on.</p></html>
+                                ]]>
+                            </a:v>
+                        </a:a>              
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:34c22bf9-48de-4dd3-82fc-816cfff1cb0f"/>
+                        <a:da name="DEFAULT" value="4"/>                       
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;=4"/>
+                            <a:tst expr="&lt;=4"/>
+                        </a:da>                    
+                    </v:var>
+                    
+                    <v:var name="ArReleaseMinorVersion" type="INTEGER_LABEL">
+                        <a:a name="LABEL" value="AUTOSAR Minor Version"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN: 
+                                    <html><p>Minor version number of AUTOSAR specification on which the appropriate implementation is based on.</p></html>
+                                ]]>
+                            </a:v>
+                        </a:a>              
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                               <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:f436d341-569d-4d76-8d98-1056d2b73f14"/>
+                        <a:da name="DEFAULT" value="4"/>                       
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;=4"/>
+                            <a:tst expr="&lt;=4"/>
+                        </a:da>                    
+                    </v:var>
+                    
+                    <v:var name="ArReleaseRevisionVersion" type="INTEGER_LABEL">
+                        <a:a name="LABEL" value="AUTOSAR Release Revision Version"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN: 
+                                    <html><p>Revision version number of AUTOSAR specification on which the appropriate implementation is based on.</p></html>
+                                ]]>
+                            </a:v>
+                        </a:a>              
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:1a1b2eca-c1f2-4a20-af93-bb8ca769b0de"/>
+                        <a:da name="DEFAULT" value="0"/>                       
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;=0"/>
+                            <a:tst expr="&lt;=0"/>
+                        </a:da>                    
+                    </v:var>
+                    
+                    <v:var name="ModuleId" type="INTEGER_LABEL">
+                        <a:a name="LABEL" value="Module Id"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN: 
+                                    <html><p>Module ID of this module from Module List.</p></html>
+                                ]]>
+                            </a:v>
+                        </a:a>              
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:1905f4dc-0261-465f-bd1a-ffd4aebdb06f"/>
+                        <a:da name="DEFAULT" value="0"/>                                         
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;=0"/>
+                            <a:tst expr="&lt;=0"/>
+                        </a:da>                    
+                    </v:var>
+                    
+                    <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                        <a:a name="LABEL" value="Software Major Version"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN: 
+                                    <html><p>Major version number of the vendor specific implementation of the module. The numbering is vendor specific.</p></html>
+                                ]]>
+                            </a:v>
+                        </a:a>              
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:94de7870-f105-4735-8322-d03c96e8fc90"/>
+                        <a:da name="DEFAULT" value="2"/>
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;=2"/>
+                            <a:tst expr="&lt;=2"/>
+                        </a:da>                    
+                    </v:var>
+                    
+                    <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                        <a:a name="LABEL" value="Software Minor Version"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN: 
+                                    <html><p>Minor version number of the vendor specific implementation of the module. The numbering is vendor specific.</p></html>
+                                ]]>
+                            </a:v>
+                        </a:a>              
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:22d7db7b-2967-4542-a20a-b07f71d1169a"/>
+                        <a:da name="DEFAULT" value="0"/>                     
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;=0"/>
+                            <a:tst expr="&lt;=0"/>
+                        </a:da>                    
+                    </v:var>
+                    
+                    <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                        <a:a name="LABEL" value="Software Patch Version"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN: 
+                                    <html><p>Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific.</p></html>
+                                ]]>
+                            </a:v>
+                        </a:a>              
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:5c3d7547-867f-49ef-a995-0ac578840480"/>
+                        <a:da name="DEFAULT" value="1"/>                                         
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;=1"/>
+                            <a:tst expr="&lt;=1"/>
+                        </a:da>                    
+                    </v:var>
+                    
+                    <v:var name="VendorApiInfix" type="STRING_LABEL">
+                        <a:a name="LABEL" value="Vendor Api Infix"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN: 
+                                    <html><p>
+                                        In driver modules which can be instantiated several times on a single ECU, BSW00347 requires that the name of APIs is extended by the VendorId and a vendor specific name. 
+                                        This parameter is used to specify the vendor specific name. In total, the implementation specific name is generated as follows:
+                                        &lt;ModuleName&gt;_&gt;VendorId&gt;_&lt;VendorApiInfix&gt;&lt;Api name from SWS&gt;.
+                                        E.g.  assuming that the VendorId of the implementor is 123 and the implementer chose a VendorApiInfix of &quot;v11r456&quot; a api name Can_Write defined in the SWS will translate to Can_123_v11r456Write. 
+                                        This parameter is mandatory for all modules with upper multiplicity &gt; 1. It shall not be used for modules with upper multiplicity =1.
+                                    </p></html>
+                                ]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:ce566ab7-944c-4e70-b1d1-a1a2360226ce"/>
+                        <a:da name="DEFAULT" value=""/>
+                        <a:a name="OPTIONAL" value="true"/>
+                        <a:da name="READONLY" value="true"/>
+                    </v:var>
+                    
+                    <v:var name="VendorId" type="INTEGER_LABEL">
+                        <a:a name="LABEL" value="Vendor Id"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN: 
+                                    <html><p>Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list.</p></html>
+                                ]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:48c313fa-18a0-4d1d-ba70-3f05b0b47b9d"/>
+                        <a:da name="DEFAULT" value="43"/>
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;=43"/>
+                            <a:tst expr="&lt;=43"/>
+                        </a:da>                    
+                    </v:var>
+                </v:ctr>    
+              </v:ctr>                
+          </d:chc>
+          <d:chc name="Base_EcuParameterDefinition" 
+                 type="AR-ELEMENT" value="ECU_PARAMETER_DEFINITION">
+            <d:ctr type="AR-ELEMENT">
+                <a:a name="DEF" value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+                <d:lst name="MODULE_REF">
+                    <d:ref type="MODULE_REF" value="ASPath:/TS_T40D34M20I1R0/Base"/>
+                </d:lst>
+                <a:a name="UUID" value="ECUC:8eddf444-8f10-4056-ac2a-1308eaf25de5"/>
+            </d:ctr>
+          </d:chc>
+          <d:chc name="Base_ModuleDescription" 
+                 type="AR-ELEMENT" value="BSW_MODULE_DESCRIPTION">
+            <d:ctr type="AR-ELEMENT">
+              <a:a name="DEF" 
+                   value="ASPath:/AR_PACKAGE_SCHEMA/BSW_MODULE_DESCRIPTION"/>
+              <d:var name="MODULE_ID" type="INTEGER" >
+                <a:a name="EDITABLE" value="false"/>
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:var>
+              <d:ref type="RECOMMENDED_CONFIGURATION" >
+                <a:a name="EDITABLE" value="false"/>
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:ref>
+              <d:ref type="PRE_CONFIGURED_CONF" >
+                <a:a name="EDITABLE" value="false"/>
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:ref>
+              <d:ref type="VENDOR_SPECIFIC_MODULE_DEF" 
+                     value="ASPath:/TS_T40D34M20I1R0/Base"/>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

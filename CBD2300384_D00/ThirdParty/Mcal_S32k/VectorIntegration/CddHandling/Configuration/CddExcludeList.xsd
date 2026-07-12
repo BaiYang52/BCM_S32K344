@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns3="http://www.vector.com/MIPv2" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" targetNamespace="http://www.vector.com/MIPv2" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="CddExcludeList" msdata:IsDataSet="true" msdata:Locale="en-US">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="ModuleList">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Module" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="Name" type="xs:string"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

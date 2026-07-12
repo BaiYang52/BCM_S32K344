@@ -1,0 +1,54 @@
+1. Example Description
+    This application demonstrates the usage of LPI2C driver in Real Time Drivers.
+    The application includes a Design Studio project, that uses predefined configurations for the IP layer only (Clock, Pin, Siul2, IntCtrl, OsIf, Lpi2c).
+    The application uses the LPI2C driver to asynchronous data.
+    1.1 The application software functionality
+            - Clock_Ip_Init
+                    Initialize the clock sources, the clock tree and to configure the clock gating of the peripherals.
+            - Init_Pins
+                    Initializes the pins used by the application using the Siul2_Port API.
+            - IntCtrl_Ip_Init
+                    Initializes the interrupt used by the application
+            - IntCtrl_Ip_EnableIrq
+                    Enable the interrupt used by the application
+            - Lpi2c_Ip_MasterInit
+                    Initialization i2c master. 
+            - Lpi2c_Ip_SlaveInit
+                    Initialization i2c slave.                     
+            - Lpi2c_Ip_MasterSendData
+                    Transfers asynchronous data.
+
+2. Installation steps
+    2.1 Hardware installation
+        2.1.1 Supported boards
+        - S32K3X4EVB-Q257 47827 PCB RevX1 SCH RevA. Silicon: P32K344EHVMMS 0P55A CTSK2038A
+        2.2.2 Connections
+            Connections: SDA: J354.12 - J353.25 SCL: J354.9 - J353.28 Pull up resistors of 4.7K each, one connected between SDA(J354.12) and VDD and one connected between SCL(J354.9) and VDD
+        2.2.3 Debugger
+            The debugger must be connected to J32 10-pin JTAG Cortex Debug connector.
+    2.2 Software installation
+        2.2.1 Importing the S32 Design Studio project
+            After opening S32 Design Studio, go to "File -> New -> S32DS Project From Example" and select the example. Then click on "Finish".
+            The project should now be copied into you current workspace.
+         
+3. Generating, building and running the example application
+    3.1 Generating the S32 configuration
+        Before running the example a configuration needs to be generated.  First go to Project Explorer View in S32 DS and select the current project. Select the "S32 Configuration Tool" menu then click on the desired configuration tool (Pins, Cocks, Peripherals etc...). Clicking on any one of those will generate all the components. Make the desired changes(if any) then click on the "S32 Configuration Tool->Update Code" button.
+    3.2 Compiling the application
+        Select the configuration to be built: RAM (Debug_RAM), or FLASH (Debug_FLASH) by left clicking on the downward arrow corresponding to the build button in eclipse. 
+        Wait for the build action to be completed before continuing to the next step. Check the compiler console for error messages; upon completion, I2c_S32K344_IP_DS.elf binary file
+        should be created.
+    3.2 Running the application on the board in one of two ways below:
+        3.2.1 To execute the example application load the executable file to the evaluation board using the Lauterbach debugger and the s32k3xx.cmm script.
+        Open the cmm script in a text editor and replace the following strings:
+            - __TARGET_MEMORY - replace with RAM (for RAM configuration), or FLASH (for FLASH configuration)
+            - __PATH_TO_ELF - replace with the path to the elf binary files built with S32 DS
+        Run this script using T32 Lauterbach debugger after making the changes.
+        3.2.2 Go to Run and select Debug Configurations. There will be a debug configuration for this project:
+        
+        Configuration Name                  Description
+        -------------------------------     -----------------------
+        $(example)_debug_ram                Debug the RAM configuration using PEMicro Debugger
+        
+        Select the desired debug configuration and click on Launch. Now the perspective will change to the Debug Perspective.
+        Use the controls to control the program flow.

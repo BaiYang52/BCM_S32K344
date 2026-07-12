@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CddExcludeList xmlns="http://www.vector.com/MIPv2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vector.com/MIPv2 ./CddExcludeList.xsd"> 
+	<ModuleList>
+		<Module Name="base"></Module>
+		<Module Name="can"></Module>
+		<Module Name="cantrcv"></Module>
+		<Module Name="canif"></Module>
+		<Module Name="cryif"></Module>
+		<Module Name="csm"></Module>
+		<Module Name="dem"></Module>
+		<Module Name="det"></Module>
+		<Module Name="ecuc"></Module>
+		<Module Name="ecum"></Module>
+		<Module Name="eth"></Module>
+		<Module Name="ethif"></Module>
+		<Module Name="ethtrcv"></Module>
+		<Module Name="fr"></Module>
+		<Module Name="frif"></Module>
+		<Module Name="fee"></Module>
+		<Module Name="lin"></Module>
+		<Module Name="linif"></Module>
+		<Module Name="memif"></Module>
+		<Module Name="os"></Module>		
+		<Module Name="resource"></Module>
+		<Module Name="resourcem"></Module>
+		<Module Name="rte"></Module>
+		<Module Name="wdgif"></Module>
+	</ModuleList>
+</CddExcludeList>

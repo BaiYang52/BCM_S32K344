@@ -1,0 +1,60 @@
+1. Example Description
+        The example application showcases the usage of 3 features offered by the Crypto driver:
+         - AES128 ECB Encryption and Decryption
+         - CMAC Generate/Verify
+         - HASH
+
+    1.1 The application software functionality
+        The example application code sections are split in 3 subsections, one for each of the 3 shown features.
+        Example code for feature #1:
+           Performs 2 synchronous encryption/decryption operations with 2 different values for the key and 2 different plain/cipher texts
+           Assumes that both the values of the key and the data to encrypt/decrypt can change at run-time, so they are stored in RAM
+        Example code for feature #2:
+           Performs 2 synchronous CMAC generate/verify operations with 2 different values for the key and 2 different blocks of data
+           Assumes that both the values of the key and the data to generate/verify CMAC over can change at run-time, so they are stored in RAM
+        Example code for feature #3:
+           Performs 2 synchronous Hash operations (SHA-1, SHA2-256) over a 64 bytes block of data
+           Assumes that the value of the data to hash can change at run-time, so it is stored in RAM
+
+        Configuration:
+          - HSE Key catalogs should be configured with at least one group of AES128 keys
+          - Because the value(Key Material) of the AES128 key that is used is changed at run-time, the key element that stores the key must be stored
+        in the HSE RAM Catalog so it can be updated for as many times as needed.
+          - The HseKeyFlags of the Key Element storing the HSE AES128 key must have the HSE_KF_USAGE_ENCRYPT, HSE_KF_USAGE_DECRYPT, HSE_KF_USAGE_SIGN and HSE_KF_USAGE_VERIFY flags
+          - The Crypto Driver Object that is used to process the jobs (CDO_Symmetric) should have the following primitives set:
+             - AES128_Encrypt and AES128_Decrypt
+             - CMAC_Generate and CMAC_Verify
+             - HASH_SHA1 and HASH_SHA2_256
+
+2. Installation steps
+    2.1 Hardware installation
+        2.1.1 Supported boards
+            - Mini-module:  XS32K3X2CVB-Q172 PCB 48307 RevX1 SCH RevA
+            - Mother-board: X-S32K3XXX-MB PCB 47386 RevA SCH RevA
+        2.1.2 Connections
+            No special wiring connections are needed for this example.
+        2.1.3 Debugger
+            The debugger must be connected to the mini-module's J7 10-pin JTAG Cortex Debug connector.
+    2.2 Software installation
+        2.2.1 Importing the S32 Design Studio project
+            After opening S32 Design Studio, go to "File -> New -> S32DS Project From Example" and select this example. Then click on "Finish".
+            The project should now be copied into you current workspace.
+
+3. Generating, building and running the example application
+    3.1 Generating the S32 configuration
+        Before running the example a configuration needs to be generated.  First go to Project Explorer View in S32 DS and select the current project. Select the "S32 Configuration Tool" menu then click on the desired configuration tool (Pins, Cocks, Peripherals etc...). Clicking on any one of those will generate all the components. Make the desired changes(if any) then click on the "S32 Configuration Tool->Update Code" button.
+    3.2 Compiling the application
+        Select the configuration to be built: RAM (Debug_RAM) or FLASH (Debug_FLASH) by left clicking on the downward arrow corresponding to the build button in eclipse.
+        Use Project > Build to build the project.
+        Wait for the build action to be completed before continuing to the next step. Check the compiler console for error messages; upon completion, the *.elf binary file
+        should be created.
+    3.3 Running the application on the board
+        To run the example application, user needs to select a FLASH programming algorithm in the Advanced Options dialog of the Debug Configuration, follow the steps:
+          - Go to Run and select Debug Configurations. There will be a debug configuration for this project:
+            Configuration Name                    Description
+            -------------------------------       --------------------------------------
+            $(example)_Debug_FLASH_PNE            Debug the FLASH configuration using PEmicro debugger
+
+          - Select the desired Debug Configuration:
+            At the PEmicro Debugger Tab => click Advanced Options button => at the Flash Algorithm Selection => select nxp_s32k342_1x32x456k_hse_enabled => click OK button to close Advanced Options dialog => click Debug button at the Debug Configuration dialog. Now the perspective will change to the Debug Perspective.
+          - Use the controls to control the program flow.

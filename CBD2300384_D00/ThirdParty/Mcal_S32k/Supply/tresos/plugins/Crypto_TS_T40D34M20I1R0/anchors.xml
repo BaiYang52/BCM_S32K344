@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<!--
+*   @file    anchors.xml
+*   @version 2.0.1
+*
+*   @brief   AUTOSAR Crypto_TS_T40D34M20I1R0 - Tresos Studio plugin documentation configuration file.
+*   @details This file contains the links to the plugin documents for Crypto Tresos Studio plugin.
+-->
+<!--
+====================================================================================================
+*   Project              : RTD AUTOSAR 4.4
+*   Platform             : CORTEXM
+*   Peripheral           : HSE
+*   Dependencies         : none
+*
+*   Autosar Version      : 4.4.0
+*   Autosar Revision     : ASR_REL_4_4_REV_0000
+*   Autosar Conf.Variant :
+*   SW Version           : 2.0.1
+*   Build Version        : S32K3_RTD_2_0_1_D2207_ASR_REL_4_4_REV_0000_20220707
+*
+*   Copyright 2020 - 2022 NXP Semiconductors
+*   NXP Confidential. This software is owned or controlled by NXP and may only be  used strictly in accordance with the applicable license terms.  By expressly  accepting such terms or by downloading, installing, activating and/or otherwise  using the software, you are agreeing that you have read, and that you agree to  comply with and are bound by, such license terms.  If you do not agree to be  bound by the applicable license terms, then you may not retain, install, activate or otherwise use the software.
+====================================================================================================
+====================================================================================================
+====================================================================================================
+-->
+
+
+<toc label="Crypto CORTEXM/S32K3XX">
+      <topic label="Integration Manual: &quot;RTD_CRYPTO_IM.pdf&quot;" href="doc/RTD_CRYPTO_IM.pdf"/>
+      <topic label="User manual: &quot;RTD_CRYPTO_UM.pdf&quot;" href="doc/RTD_CRYPTO_UM.pdf"/>
+</toc>

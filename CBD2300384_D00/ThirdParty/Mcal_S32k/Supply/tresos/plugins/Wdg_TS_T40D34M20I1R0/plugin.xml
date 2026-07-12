@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<!--
+*   @file    plugin.xml
+*   @version 2.0.1
+*
+*   @brief   AUTOSAR Wdg_TS_T40D34M20I1R0 - Tresos Studio plugin configuration file.
+*   @details This file contains the configuration for and Wdg Tresos Studio plugin.
+-->
+<!--
+====================================================================================================
+*   Project              : RTD AUTOSAR 4.4
+*   Platform             : CORTEXM
+*   Peripheral           : Swt
+*   Dependencies         : none
+*
+*   Autosar Version      : 4.4.0
+*   Autosar Revision     : ASR_REL_4_4_REV_0000
+*   Autosar Conf.Variant :
+*   SW Version           : 2.0.1
+*   Build Version        : S32K3_RTD_2_0_1_D2207_ASR_REL_4_4_REV_0000_20220707
+*
+*   Copyright 2020 - 2022 NXP Semiconductors
+*   NXP Confidential. This software is owned or controlled by NXP and may only be  used strictly in accordance with the applicable license terms.  By expressly  accepting such terms or by downloading, installing, activating and/or otherwise  using the software, you are agreeing that you have read, and that you agree to  comply with and are bound by, such license terms.  If you do not agree to be  bound by the applicable license terms, then you may not retain, install, activate or otherwise use the software.
+====================================================================================================
+====================================================================================================
+====================================================================================================
+-->
+
+<plugin>
+  <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="Wdg_TS_T40D34M20I1R0_ModuleId"
+             name="Wdg_TS_T40D34M20I1R0 Module">
+
+    <module id="Wdg_TS_T40D34M20I1R0"
+            label="Wdg"
+            mandatory="false"
+            allowMultiple="false"
+            description="Wdg BSW module"
+            copyright="Copyright 2020 - 2022 NXP Semiconductors"
+            swVersionMajor="2"
+            swVersionMinor="0"
+            swVersionPatch="1"
+            swVersionSuffix="D2207"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix="Rev_0000"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0000"
+            categoryType="Wdg"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <ecuType target="CORTEXM" derivate="S32K3XX"/>
+
+    </module>
+    </extension>
+   
+<extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="Wdg_43_Instance1_TS_T40D34M20I1R0_ModuleId"
+             name="Wdg_43_Instance1_TS_T40D34M20I1R0 Module">
+    <module id="Wdg_43_Instance1_TS_T40D34M20I1R0"
+            label="Wdg_43_Instance1"
+            mandatory="false"
+            allowMultiple="false"
+            description="Wdg BSW module"
+            copyright="Copyright 2020 - 2022 NXP Semiconductors"
+            swVersionMajor="2"
+            swVersionMinor="0"
+            swVersionPatch="1"
+            swVersionSuffix="D2207"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix="Rev_0000"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0000"
+            categoryType="Wdg_43_Instance1"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <ecuType target="CORTEXM" derivate="S32K3XX"/>
+    </module>
+</extension>
+<extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="Wdg_43_Instance2_TS_T40D34M20I1R0_ModuleId"
+             name="Wdg_43_Instance2_TS_T40D34M20I1R0 Module">
+    <module id="Wdg_43_Instance2_TS_T40D34M20I1R0"
+            label="Wdg_43_Instance2"
+            mandatory="false"
+            allowMultiple="false"
+            description="Wdg BSW module"
+            copyright="Copyright 2020 - 2022 NXP Semiconductors"
+            swVersionMajor="2"
+            swVersionMinor="0"
+            swVersionPatch="1"
+            swVersionSuffix="D2207"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix="Rev_0000"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0000"
+            categoryType="Wdg_43_Instance2"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <ecuType target="CORTEXM" derivate="S32K3XX"/>
+    </module>
+</extension>
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="Wdg_TS_T40D34M20I1R0_ConfigId"
+             name="Wdg_TS_T40D34M20I1R0 Configuration">
+    <configuration moduleId="Wdg_TS_T40D34M20I1R0">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Wdg -->
+          <resource value="config/Wdg.xdm" type="xdm"/>
+
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/TS_T40D34M20I1R0/Wdg"/>
+      </data>
+
+      <editor id="Wdg_TS_T40D34M20I1R0_EditorId"
+              label="Default"
+              tooltip="Wdg BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/TS_T40D34M20I1R0/Wdg"/>
+          <parameter name="title" value="Wdg"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+  </extension>
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="Wdg_43_Instance1_TS_T40D34M20I1R0_ConfigId"
+             name="Wdg_43_Instance1_TS_T40D34M20I1R0 Configuration">
+    <configuration moduleId="Wdg_43_Instance1_TS_T40D34M20I1R0">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Wdg -->
+          <resource value="config/Wdg.xdm" type="xdm"/>
+
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/Wdg_43_Instance1_TS_T40D34M20I1R0/Wdg"/>
+      </data>
+      <editor id="Wdg_43_Instance1_TS_T40D34M20I1R0_EditorId"
+              label="Default"
+              tooltip="Wdg BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/Wdg_43_Instance1_TS_T40D34M20I1R0/Wdg"/>
+          <parameter name="title" value="Wdg"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+  </extension>
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="Wdg_43_Instance2_TS_T40D34M20I1R0_ConfigId"
+             name="Wdg_43_Instance2_TS_T40D34M20I1R0 Configuration">
+    <configuration moduleId="Wdg_43_Instance2_TS_T40D34M20I1R0">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Wdg -->
+          <resource value="config/Wdg.xdm" type="xdm"/>
+
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/Wdg_43_Instance2_TS_T40D34M20I1R0/Wdg"/>
+      </data>
+      <editor id="Wdg_43_Instance2_TS_T40D34M20I1R0_EditorId"
+              label="Default"
+              tooltip="Wdg BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/Wdg_43_Instance2_TS_T40D34M20I1R0/Wdg"/>
+          <parameter name="title" value="Wdg"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+  </extension>
+
+ <extension point="dreisoft.tresos.launcher2.plugin.generator"
+             id="EPCGenerator"
+             name="EPC Generator">
+  <generator moduleId="Wdg_TS_T40D34M20I1R0"
+               id="Wdg_TS_T40D34M20I1R0"
+               class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+   
+  <parameter name="variantAware" value="true"/>
+  <parameter name="cfgFilePath" value="output"/>
+  <parameter name="generateAllModules" value="false"/>
+  <parameter name="generateIntoOneFile" value="false"/>
+  <parameter name="contentType" value="asc:4.4.0"/>
+  </generator>
+ </extension>
+ <extension point="dreisoft.tresos.launcher2.plugin.generator"
+             id="EPCGenerator"
+             name="EPC Generator">
+  <generator moduleId="Wdg_43_Instance1_TS_T40D34M20I1R0"
+               id="Wdg_43_Instance1_TS_T40D34M20I1R0"
+               class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+   
+  <parameter name="variantAware" value="true"/>
+  <parameter name="cfgFilePath" value="output"/>
+  <parameter name="generateAllModules" value="false"/>
+  <parameter name="generateIntoOneFile" value="false"/>
+  <parameter name="contentType" value="asc:4.4.0"/>
+  </generator>
+ </extension>
+ <extension point="dreisoft.tresos.launcher2.plugin.generator"
+             id="EPCGenerator"
+             name="EPC Generator">
+  <generator moduleId="Wdg_43_Instance2_TS_T40D34M20I1R0"
+               id="Wdg_43_Instance2_TS_T40D34M20I1R0"
+               class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+   
+  <parameter name="variantAware" value="true"/>
+  <parameter name="cfgFilePath" value="output"/>
+  <parameter name="generateAllModules" value="false"/>
+  <parameter name="generateIntoOneFile" value="false"/>
+  <parameter name="contentType" value="asc:4.4.0"/>
+  </generator>
+ </extension>
+  
+ <extension point="dreisoft.tresos.generator.api.plugin.generator" id="Wdg_TS_T40D34M20I1R0_NGGeneratorId">
+          <generator moduleId="Wdg_TS_T40D34M20I1R0"
+                     class="dreisoft.tresos.generator.ng.api.NGGenerator"
+                     id="Wdg_TS_T40D34M20I1R0_UniqueNGGeneratorId"
+                     modes="generate,generate_PC,generate_PB,verify"
+                     step="post"> <!-- run after code-generation -->
+              <parameter name="buildfile" value="ant_generator.xml"/>
+           <parameter name="variantAware" value="true"/>
+          </generator>
+  </extension>
+ <extension point="dreisoft.tresos.generator.api.plugin.generator" id="Wdg_43_Instance1_TS_T40D34M20I1R0_NGGeneratorId">
+          <generator moduleId="Wdg_43_Instance1_TS_T40D34M20I1R0"
+                     class="dreisoft.tresos.generator.ng.api.NGGenerator"
+                     id="Wdg_43_Instance1_TS_T40D34M20I1R0_UniqueNGGeneratorId"
+                     modes="generate,generate_PC,generate_PB,verify"
+                     step="post"> <!-- run after code-generation -->
+              <parameter name="buildfile" value="ant_generator.xml"/>
+           <parameter name="variantAware" value="true"/>
+          </generator>
+  </extension>
+ <extension point="dreisoft.tresos.generator.api.plugin.generator" id="Wdg_43_Instance2_TS_T40D34M20I1R0_NGGeneratorId">
+          <generator moduleId="Wdg_43_Instance2_TS_T40D34M20I1R0"
+                     class="dreisoft.tresos.generator.ng.api.NGGenerator"
+                     id="Wdg_43_Instance2_TS_T40D34M20I1R0_UniqueNGGeneratorId"
+                     modes="generate,generate_PC,generate_PB,verify"
+                     step="post"> <!-- run after code-generation -->
+              <parameter name="buildfile" value="ant_generator.xml"/>
+           <parameter name="variantAware" value="true"/>
+          </generator>
+  </extension>
+      <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="Wdg_TS_T40D34M20I1R0_GeneratorId"
+              name="Wdg_TS_T40D34M20I1R0 Generator">
+    <generator moduleId="Wdg_TS_T40D34M20I1R0"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+  
+    <parameter name="variantAware" value="true"/>
+    <!-- swcd modes and template path parameters -->
+    <parameter name="mode_type" mode="generate_swcd" value="generate"></parameter>
+    <parameter name="mode_type" mode="verify_swcd" value="verify"></parameter>
+    <parameter name="templates" mode="generate_swcd,verify_swcd" value="generate_swcd"></parameter>   
+
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate,generate_PC,generate_PB,generate_LT"/>
+      <!-- custom generators -->
+      <parameter name="templates" mode="generate_PC" value="generate_PC"/>
+      <parameter name="templates" mode="generate_PB" value="generate_PB"/>
+      <parameter name="templates" mode="generate_LT" value="generate_LT"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate_PC" value="generate"/>
+      <parameter name="mode_type" mode="generate_PB" value="generate"/>
+      <parameter name="mode_type" mode="generate_LT" value="generate"/>
+    </generator>
+  </extension>
+<extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="Wdg_43_Instance1_TS_T40D34M20I1R0_GeneratorId"
+              name="Wdg_43_Instance1_TS_T40D34M20I1R0 Generator">
+    <generator moduleId="Wdg_43_Instance1_TS_T40D34M20I1R0"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+  
+    <parameter name="variantAware" value="true"/>
+    <!-- swcd modes and template path parameters -->
+    <parameter name="mode_type" mode="generate_swcd" value="generate"></parameter>
+    <parameter name="mode_type" mode="verify_swcd" value="verify"></parameter>
+    <parameter name="templates" mode="generate_swcd,verify_swcd" value="generate_swcd"></parameter>   
+
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate,generate_PC,generate_PB,generate_LT"/>
+      <!-- custom generators -->
+      <parameter name="templates" mode="generate_PC" value="generate_PC"/>
+      <parameter name="templates" mode="generate_PB" value="generate_PB"/>
+      <parameter name="templates" mode="generate_LT" value="generate_LT"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate_PC" value="generate"/>
+      <parameter name="mode_type" mode="generate_PB" value="generate"/>
+      <parameter name="mode_type" mode="generate_LT" value="generate"/>
+    </generator>
+  </extension>
+<extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="Wdg_43_Instance2_TS_T40D34M20I1R0_GeneratorId"
+              name="Wdg_43_Instance2_TS_T40D34M20I1R0 Generator">
+    <generator moduleId="Wdg_43_Instance2_TS_T40D34M20I1R0"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+  
+    <parameter name="variantAware" value="true"/>
+    <!-- swcd modes and template path parameters -->
+    <parameter name="mode_type" mode="generate_swcd" value="generate"></parameter>
+    <parameter name="mode_type" mode="verify_swcd" value="verify"></parameter>
+    <parameter name="templates" mode="generate_swcd,verify_swcd" value="generate_swcd"></parameter>   
+
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate,generate_PC,generate_PB,generate_LT"/>
+      <!-- custom generators -->
+      <parameter name="templates" mode="generate_PC" value="generate_PC"/>
+      <parameter name="templates" mode="generate_PB" value="generate_PB"/>
+      <parameter name="templates" mode="generate_LT" value="generate_LT"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate_PC" value="generate"/>
+      <parameter name="mode_type" mode="generate_PB" value="generate"/>
+      <parameter name="mode_type" mode="generate_LT" value="generate"/>
+    </generator>
+  </extension>
+ 
+  <extension point="org.eclipse.help.toc">
+    <toc file="anchors.xml" primary="true"/>
+    <toc file="$nl$/Wdg/toc.xml" primary="false"/>
+    <!-- toc file="$nl$/ReleaseNotes/toc.xml" primary="false"/ !-->
+  </extension>
+</plugin>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Settings>
+	<Settings Name="com.vector.cfg.gen.Tresos_proxy.settings.TresosSettings">  
+		<Settings Name="ModuleList">
+			<Settings Name="[Value_01_Module_SN_Pckg_SN]">				
+				<Setting Name="ModuleDefRef" Value="/[Value_02_ModuleDefRef_SN_1]/[Value_03_ModuleDefRef_SN_2]"/>	
+				<Setting Name="PluginName" Value="[Value_04_PluginValue]"/>		
+				<Setting Name="Target" Value="[Value_05_TargetValue]"/>
+				<Setting Name="Derivate" Value="[Value_06_DerivateValue]"/>
+				<Setting Name="TransformationXsltFile" Value="$(SipRootPath)\[Value_07_TransformationXsltFilePath]"/>	
+				<Settings Name="AdditionalModulesForGeneration"/>
+			</Settings>
+		</Settings>
+	</Settings>
+</Settings> 
+

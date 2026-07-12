@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+==================================================================================================
+
+Copyright (c) 2022 by Vector Informatik GmbH. All rights reserved.
+
+This software is copyright protected and proprietary to Vector Informatik GmbH.
+Vector Informatik GmbH grants to you only those rights as set out in the 
+license conditions.
+All other rights remain with Vector Informatik GmbH.
+
+==================================================================================================
+
+This file is needed for internal use.
+Please do not modify this file, otherwise the software may behave in
+unexpected way.
+
+==================================================================================================
+
+==================================================================================================
+                P R O J E C T
+==================================================================================================
+Module
+=======================
+S32K3xxNxp01Asr4Sub
+==================================================================================================
+                R E V I S I O N   H I S T O R Y
+==================================================================================================
+Date		Version		Author		Description
+==========	=======		=======  	==========================================================
+2020-05-19	1.00.00		virnid		initial MIP; integration of S32K2XX_MCAL4_3_EAR_HF3_0_8_1 / S32K2XX_Crypto_MCAL4_3_EAR_0_8_1
+2020-07-10							Renamed Settings_ExtGen_S32K3xx.xml to Settings_S32K3xx.xml during review
+2020-10-15	2.00.00		virelt		Integration of S32K3xx ASR4.x MCAL
+2020-11-30	2.01.00		virnid		Integration of SW32K3_RTD_4.4_0.8.1
+2020-01-12	2.02.00		virnid		Integration of SW32K3_RTD_4.4_0.8.1_FBR_1.1
+2021-03-30	2.03.00		virnid		Integration of SW32K3_RTD_4.4_0.9.0
+2021-07-14	2.04.00		virnid		Update to HT 3.7
+2021-09-22	2.05.00		virnid		Integration of SW32K3_RTD_4.4_1.0.0_CD01; enable CDD feature
+2021-10-11	2.06.00		virnid		Integration of SW32K3_RTD_4.4_1.0.0
+2021-12-08	2.07.00		virnid		Integration of Sbc and Spd
+2022-02-28	2.07.01		virnid		Adding copy actions for packages 3 to 5
+2022-04-01	2.08.00		virnid		Integration of SW32K3_RTD_4.4_2.0.0
+2022-07-14	2.09.00		virnid		Integration of SW32K3_RTD_4.4_2.0.1 and SW32K396_RTD_4.4_3.0.0_CD02
+2022-11-02	2.10.00		virnid		Integration of SW32K358_RTD_R21-11_3.0.0_CD03 and SW32K396_RTD_4.4_3.0.0_CD02_P01
+2022-12-21	2.11.00		jmaier		Integration of SW32K3_RTD_4.4_2.0.2 and SW32K358_RTD_R21_11_3.0.0_CD03_P01_D2211
+2023-01-03	2.12.00		virnid		Integration of SW32K3XX_RTD_R21-11_3.0.0_CD04 
+**************************************************************************************************************************
+-->
+<MipConfig xmlns="http://www.vector.com/MIPv2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vector.com/MIPv2 ../../McalIntegrationHelper/MIP3.0.0.xsd">
+	<!--
+  =====================================================================================================
+  Generic Informations
+  =====================================================================================================
+  This is the configuration file for the 3rdParty McalIntegartionHelper.
+  Please note: This file has been created and tested for a specific and agreed MCAL version.
+               As typically pattern based specificatons and actions are used this configuration
+               will be valid for other MCAL versions in most cases but this cannot be guaranteed.
+  All steps processed by the tool are logged during execution and can be retraced later on.
+  -->
+	<GeneralInformation>
+		<!-- Path to SIP base path relative to the location of this file 
+         ATTENTION: All other paths within this configuraton file are relative to the SIP Base path! -->
+		<SipBase_RelPath>..\\..\\..\\</SipBase_RelPath>
+		<!-- Path to the MCAL supply folder relative to the SIP Base path -->
+		<McalSupply_RelPath>ThirdParty\\Mcal_S32k.*\\Supply</McalSupply_RelPath>
+	</GeneralInformation>
+  <!--
+  =====================================================================================================
+  Package definitions
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  Attributes:
+    - Summary:      Free text to describe the package content in short
+    - Id:           Unique number to identify the package. This Id will be used by following commands.
+    - TechRef:      Holds the relative path to the Technical Reference sheet.
+  Elements:
+    - NameExpected: This is the folder name of the package as specified by MCAL supplier.
+                    Typically this folder name contains informations about version and supported 
+                    controllers or families
+    - StructureExpected: This specifies that the MCAL uses the structure expected structure.
+    - Folder: This specifies the name of the folder that is part of the expected structure,
+    		    with the help of the Name attribute it is possible to specify a folder name.
+		    By default, every folder is considered mandatory, unless specified otherwise
+		    with the attribute Mandatory set to false.
+		    With the use of the Files attribute, it is possible to specify mandatory files in the structure.
+    - Description:  Free text to describe the contents of this package in detail
+    - Mandatory:    'true' if this package is mandatory, 'false' otherwise
+  =====================================================================================================
+  -->
+	<Packages TechRef="?CONST.TechRef_PathRel?\TechnicalReference_3rdParty-MCAL-Integration_S32K.pdf">
+		<!-- Package 1 -->
+		<Package Summary="MCAL Package" Id="1">
+			<NameExpected>S.?32K.*(MCAL|RTD).*</NameExpected>
+			<StructureExpected>
+				<Folder Name="eclipse">
+					<Folder Name="plugins">
+						<Folder Name="Mcu_TS_.*"/>
+						<Folder Name="Resource_TS_.*"/>
+					</Folder>
+				</Folder>
+			</StructureExpected>
+			<Description>Base package containing the S32K3xx AUTOSAR 4.x MCAL</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<!-- Package 2 -->
+		<Package Summary="Tresos Tool" Id="2">
+			<NameExpected>.*tresos.*</NameExpected>
+			<StructureExpected>
+				<Folder Name="bin" Files="tresos_cmd.bat, tresos_gui.exe"/>
+				<Folder Name="plugins"/>
+				<Folder Name="configuration" Mandatory="false"/>
+				<Folder Name="licenses" Mandatory="false"/>
+			</StructureExpected>
+			<Description>Contains the 3rd Party Configuration and Generation Tool</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<!-- Package 3 -->
+		<Package Summary="HSE firmware" Id="3">
+			<NameExpected>(?i)HSE_FW_S32.*_.*</NameExpected>
+			<StructureExpected>
+				<Folder Name="docs"/>
+			</StructureExpected>
+			<Description>Contains the HSE firmware and interface</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+		<!-- Package 4 -->
+		<Package Summary="Safety Peripheral Drivers" Id="4">
+			<NameExpected>(?i)S.?32K.*SPD_\d*\.\d*\.\d*</NameExpected>
+			<StructureExpected>
+				<Folder Name="eclipse">
+					<Folder Name="plugins">
+						<Folder Name="Bist_TS_.*"/>
+						<Folder Name="eMcem_TS_.*"/>
+					</Folder>
+				</Folder>
+			</StructureExpected>
+			<Description>Contains the SPD drivers</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+		<!-- Package 5 -->
+		<Package Summary="Sbc package" Id="5">
+			<NameExpected>(S32K3\d*_)?FS26(_\w*)?_\d.\d_\d.\d.*</NameExpected>
+			<StructureExpected>
+				<Folder Name="eclipse">
+					<Folder Name="plugins">
+						<Folder Name="Sbc_fs26_.*"/>
+						<Folder Name="Wdg_43_fs26_.*"/>
+					</Folder>
+				</Folder>
+			</StructureExpected>
+			<Description>Contains the Sbc drivers</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+	</Packages>
+	<Cdd>
+		<ActionEnableCdd Summary="Enables CDD feature if MCAL Base package is in use." RelatedPackage="1">
+			<Enable>true</Enable>
+		</ActionEnableCdd>
+	</Cdd>	
+	<!--
+  =====================================================================================================
+  Below all actions are described which are needed in order to install or remove the MCAL packages.
+  They are devided in the sections.
+  - Install:     With this step the MCAL is installed/copied into the SIP structure thus commonly only
+                 one action for each package is necessary namely copy the package.
+                 If package is already available in SIP (e.g. had been included in SIP) these steps will 
+                 be skipped.
+  - Prepare:     During this step some necessary operation within the MCAL packages and within the 
+                 Vector SIP are executed.
+  - UndoPrepare: With this actions the actions described within the Prepare section will be undone.
+  - Remove:      The actions described here will remove the MCAL packages!
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  For all 4 sections all available actions can be executed as often as needed.
+  Order of action in this file is equal to the order of execution.
+  =====================================================================================================
+  -->
+	<Install>
+		<ActionCopyPackage Summary="Copy package" RelatedPackage="1"/>
+		<ActionCopyPackage Summary="Copy package" RelatedPackage="2"/>
+		<ActionCopyPackage Summary="Copy package" RelatedPackage="3"/>
+		<ActionCopyPackage Summary="Copy package" RelatedPackage="4"/>
+		<ActionCopyPackage Summary="Copy package" RelatedPackage="5"/>
+	</Install>
+	<Prepare>
+		
+		<!--Read the Minor Version Number of the CFG5 Version to find out which Microsar Release was delivered. Minor Version Number plus 3 results in the Microsar Release.-->
+		<ActionGroup Summary="Define temporary variables">
+			<ActionDefVar Summary="Define Temporary Variable 'CFG5_Version'" RelatedPackage="1" ExecuteHidden="true">
+				<Name>CFG5_Version</Name>
+				<LookForPatternInFile><![CDATA[(.*version=5\.)(\d\d)(.*)]]></LookForPatternInFile>
+				<PathRel>DaVinciConfigurator\\Core\\.eclipseproduct</PathRel>
+				<ValueBOP>$2</ValueBOP>
+			</ActionDefVar>
+	
+			<ActionDefVar Summary="Define temporary variable 'Mcal_Mod_V'" RelatedPackage="1" ExecuteHidden="true">
+				<Name>Mcal_Mod_V</Name>
+				<LookForPathPattern>?CONST.Package_PathRel_Id1?\\eclipse\\plugins\\Base(NXP)?_TS_(.*)</LookForPathPattern>
+				<ValueBOP>$2</ValueBOP>
+			</ActionDefVar>
+			<ActionDefVar Summary="Define temporary variable 'Mcal_Base_Name'" RelatedPackage="1" ExecuteHidden="true">
+				<Name>Mcal_Base_Name</Name>
+				<LookForPathPattern>?CONST.Package_PathRel_Id1?\\eclipse\\plugins\\(Base)(NXP)?_TS_(.*)</LookForPathPattern>
+				<ValueBOP>$1$2</ValueBOP>
+			</ActionDefVar>
+			<ActionDefVar Summary="Define temporary variable 'ASR Version'" RelatedPackage="1" ExecuteHidden="true">
+				<Name>Mcal_ASR_Version</Name>
+				<LookForPatternInFile><![CDATA[(.*<parameter name="contentType" value="asc:)(.*)("/>)]]></LookForPatternInFile>
+				<PathRel>?CONST.Package_PathRel_Id1?\\eclipse\\plugins\\Base(NXP)?_TS_?VAR.Mcal_Mod_V?\\plugin\.xml</PathRel>
+				<ValueBOP>$2</ValueBOP>
+			</ActionDefVar>
+			<ActionDefVar Summary="Define temporary variable 'ASR Schema Version'" RelatedPackage="1" ExecuteHidden="true">
+				<Name>Mcal_ASR_Schema_Version</Name>
+				<LookForPatternInFile><![CDATA[(<AUTOSAR.*)]]></LookForPatternInFile>
+				<PathRel>?CONST.Package_PathRel_Id1?\\eclipse\\plugins\\Base(NXP)?_TS_?VAR.Mcal_Mod_V?\\autosar\\Base(NXP)?\.epd</PathRel>
+				<ValueBOP>$1</ValueBOP>
+			</ActionDefVar>
+			
+			<ActionDefVar Summary="Define temporary variable 'HSE_BASE_PATH'" RelatedPackage="3" ExecuteHidden="true">
+				<Name>HSE_BASE_PATH</Name>
+				<LookForPathPattern>?CONST.Package_PathRel_Id3?(\\hse_full_mem)?\\interface</LookForPathPattern>
+				<ValueBOP>$(HSE_PATH)$1</ValueBOP>
+				<Condition Pattern="?CONST.Package_PathRel_Id3?(\\hse_full_mem)?\\interface" Exist="true"/>
+			</ActionDefVar>
+			
+			<ActionDefVar Summary="Define temporary variable 'Spd_Mod_V'" RelatedPackage="4" ExecuteHidden="true">
+				<Name>Spd_Mod_V</Name>
+				<LookForPathPattern>?CONST.Package_PathRel_Id4?\\eclipse\\plugins\\SafetyBase_TS_(.*)</LookForPathPattern>
+				<ValueBOP>$1</ValueBOP>
+			</ActionDefVar>
+			
+			<ActionDefVar Summary="Define temporary variable 'Sbc_Mod_V'" RelatedPackage="5" ExecuteHidden="true">
+				<Name>Sbc_Mod_V</Name>
+				<LookForPathPattern>?CONST.Package_PathRel_Id5?\\eclipse\\plugins\\Wdg.*_TS_(.*)</LookForPathPattern>
+				<ValueBOP>$1</ValueBOP>
+			</ActionDefVar>
+		</ActionGroup>
+		<ActionGroup Summary="Customize Make Files">
+			<ActionPatchFile Summary="Write ASR Version into in make file" RelatedPackage="1">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules\.mak</PathRel>
+				<Pattern>(ASR_VERSION.*=)(.*)</Pattern>
+				<ReplaceBOP>$1 ?VAR.Mcal_ASR_Version?</ReplaceBOP>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Set path to MCAL package (variable 'MCAL_PATH') in make file" RelatedPackage="1">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules\.mak</PathRel>
+				<Pattern>(MCAL_PATH.*=)(.*)</Pattern>
+				<ReplaceBOP>$1 ..\\?CONST.Package_PathRel_Id1?</ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Set Tresos plugin version (variable 'MCAL_MOD_V') in make file" RelatedPackage="1">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules\.mak</PathRel>
+				<Pattern>(MCAL_MOD_V.*=)(.*)</Pattern>
+				<ReplaceBOP>$1 ?VAR.Mcal_Mod_V?</ReplaceBOP>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Set Base Package Name (variable 'BASE_PACKAGE_NAME') in make file" RelatedPackage="1">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules\.mak</PathRel>
+				<Pattern>(BASE_PACKAGE_NAME.*=)(.*)</Pattern>
+				<ReplaceBOP>$1 ?VAR.Mcal_Base_Name?</ReplaceBOP>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Set path to HSE package (variable 'HSE_PATH') in make file" RelatedPackage="3">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules.mak</PathRel>
+				<Pattern>(HSE_PATH\s*=)(.*)</Pattern>
+				<ReplaceBOP>$1 ..\\?CONST.Package_PathRel_Id3?</ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Set HSE base path (variable 'HSE_BASE_PATH') in make file" RelatedPackage="3">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules.mak</PathRel>
+				<Pattern>(HSE_BASE_PATH\s*=)(.*)</Pattern>
+				<ReplaceBOP>$1 ?VAR.HSE_BASE_PATH?</ReplaceBOP>
+				<Condition Pattern="?CONST.Package_PathRel_Id3?(\\hse_full_mem)?\\interface" Exist="true"/>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Set path to SPD package (variable 'SPD_PATH') in make file" RelatedPackage="4">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules\.mak</PathRel>
+				<Pattern>(SPD_PATH.*=)(.*)</Pattern>
+				<ReplaceBOP>$1 ..\\?CONST.Package_PathRel_Id4?</ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Set SPD plugin version (variable 'SPD_MOD_V') in make file" RelatedPackage="4">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules\.mak</PathRel>
+				<Pattern>(SPD_MOD_V.*=)(.*)</Pattern>
+				<ReplaceBOP>$1 ?VAR.Spd_Mod_V?</ReplaceBOP>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Set path to Sbc package (variable 'SBC_PATH') in make file" RelatedPackage="5">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules\.mak</PathRel>
+				<Pattern>(SBC_PATH.*=)(.*)</Pattern>
+				<ReplaceBOP>$1 ..\\?CONST.Package_PathRel_Id5?</ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Set Sbc plugin version (variable 'SBC_MOD_V') in make file" RelatedPackage="5">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules\.mak</PathRel>
+				<Pattern>(SBC_MOD_V.*=)(.*)</Pattern>
+				<ReplaceBOP>$1 ?VAR.Sbc_Mod_V?</ReplaceBOP>
+			</ActionPatchFile>
+		</ActionGroup>
+		
+		<ActionGroup Summary="Customize DaVinci Configurator 5 Configuration Files">
+			<ActionPatchFile Summary="Set path to 3rd party tool in DaVinciConfigurator configuration file" RelatedPackage="2">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_Tresos\.xml</PathRel>
+				<Pattern><![CDATA[(.*<Setting Name="TresosFolder" Value=")(.*)(".*/>)]]></Pattern>
+				<ReplaceBOP><![CDATA[$1$(SipRootPath)\\?CONST.Package_PathRel_Id2?$3]]></ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Set ASR version of MCAL in DaVinciConfigurator configuration file" RelatedPackage="2">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_Tresos\.xml</PathRel>
+				<Pattern><![CDATA[(.*<Setting Name="RequiredAsVersion" Value=)(.*)(".*/>)]]></Pattern>
+				<ReplaceBOP><![CDATA[$1"?VAR.Mcal_ASR_Version?$3]]></ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Patch settings xml files and xsl transformation file" RelatedPackage="2" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\(Settings_|prepare_output_|InitFunctions_|GeneratorPackageInformation).*\.x.l</PathRel>
+				<Pattern><![CDATA[(?<start>.*?(_|/|')TS_)(.*?)(?<rest>/|"|'.*?>)]]></Pattern>
+				<ReplaceBOP><![CDATA[${start}?VAR.Mcal_Mod_V?${rest}]]></ReplaceBOP>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Patch 'module'_bsmwd_rec.xml files" RelatedPackage="2" MultiFile="true">
+				<PathRel>?CONST.Bswmd_PathRel?\\.*_bswmd_rec\.arxml</PathRel>
+				<Pattern><![CDATA[(?<start>.*?(_|/|'|>)TS_)(.*?)(?<rest>/|"|'|<.*?>)]]></Pattern>
+				<ReplaceBOP><![CDATA[${start}?VAR.Mcal_Mod_V?${rest}]]></ReplaceBOP>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Patch module Rec config files. Define the required AUTOSAR version" RelatedPackage="1" MultiFile="true">
+				<PathRel>?CONST.Bswmd_PathRel?\\.*_bswmd_rec\.arxml</PathRel>
+				<Pattern><![CDATA[<AUTOSAR.*]]></Pattern>
+				<ReplaceBOP>?VAR.Mcal_ASR_Schema_Version?</ReplaceBOP>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Remove Comment from InitFunctionCall in InitFunctions_Settings.xml" RelatedPackage="1">
+				<PathRel>?CONST.Generator_PathRel?\\InitFunctions_Settings\.xml</PathRel>
+				<Pattern><![CDATA[(.*)<!--(<InitFunctionCall>)(.*)(</InitFunctionCall>)-->(.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[$1$2$3$4$5]]></ReplaceBOP>
+			</ActionPatchFile>		
+			<ActionPatchFile Summary="Comment Tag InitFunctionCall in InitFunctions_Settings.xml for the Case that CFG5_Version is lower or equal 16" RelatedPackage="1">
+				<PathRel>?CONST.Generator_PathRel?\\InitFunctions_Settings\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<InitFunctionCall>)(.*)(</InitFunctionCall>)(.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[$1<!--$2$3$4-->$5]]></ReplaceBOP>
+				<Condition Pattern="?VAR.CFG5_Version?" LowerEqual="16"/>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Patch Settings-Files according to SIP Structure" RelatedPackage="1" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(?<start>.*)\\DaVinciConfigurator\\Generators\\Mcal_S32k(?<rest>.*?>)]]></Pattern>
+				<ReplaceBOP><![CDATA[${start}\\?CONST.Generator_PathRel?${rest}]]></ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Patch Settings-Files according to SIP Structure" RelatedPackage="1" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(?<start>.*)\\Components\\Mcal_S32k\\GeneratorMsr(?<rest>.*?>)]]></Pattern>
+				<ReplaceBOP><![CDATA[${start}\\?CONST.Generator_PathRel?${rest}]]></ReplaceBOP>
+			</ActionPatchFile>
+		</ActionGroup>
+		
+		<ActionGroup Summary="Patch DaVinci input files to Spd version">
+			<ActionPatchFile Summary="Patch Spd settings xml files and xsl transformation file" RelatedPackage="4" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\(Settings_|prepare_output_|InitFunctions_|GeneratorPackageInformation).*\.x.l</PathRel>
+				<Pattern><![CDATA[(?<start>.*?(_|/|')TS_)(.*?)(?<rest>/(SafetyBase|Bist|eMcem)(/|"|'|<|_).*?>?)]]></Pattern>
+				<ReplaceBOP><![CDATA[${start}?VAR.Spd_Mod_V?${rest}]]></ReplaceBOP>
+			</ActionPatchFile>
+			<!-- Merge actions -->
+			<ActionPatchFile Summary="Patch Spd settings xml files and xsl transformation file" RelatedPackage="4" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\(Settings_|prepare_output_|InitFunctions_|GeneratorPackageInformation).*\.x.l</PathRel>
+				<Pattern><![CDATA[(?<start>.*?(/|'|"| )(SafetyBase|Bist|eMcem)_TS_)(.*?)(?<rest>(/|"|'|<).*?>)]]></Pattern>
+				<ReplaceBOP><![CDATA[${start}?VAR.Spd_Mod_V?${rest}]]></ReplaceBOP>
+			</ActionPatchFile>
+
+			<ActionPatchFile Summary="Patch SPD 'module'_bsmwd_rec.xml files" RelatedPackage="4" MultiFile="true">
+				<PathRel>?CONST.Bswmd_PathRel?\\(SafetyBase|Bist|eMcem)_bswmd_rec\.arxml</PathRel>
+				<Pattern><![CDATA[(?<start>.*?(_|/|'|>)TS_)(.*?)(?<rest>(/|"|'|<).*?>)]]></Pattern>
+				<ReplaceBOP><![CDATA[${start}?VAR.Spd_Mod_V?${rest}]]></ReplaceBOP>
+			</ActionPatchFile>
+		</ActionGroup>
+		
+		<ActionGroup Summary="Patch DaVinci input files to Sbc version">
+			<ActionPatchFile Summary="Patch Sbc settings xml files and xsl transformation file" RelatedPackage="5" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\(Settings_|prepare_output_|InitFunctions_|GeneratorPackageInformation).*\.x.l</PathRel>
+				<Pattern><![CDATA[(?<start>.*?(_|/|')TS_)(.*?)(?<rest>/(Sbc_fs26|Wdg_43_fs26)(/|"|'|<|_).*?>?)]]></Pattern>
+				<ReplaceBOP><![CDATA[${start}?VAR.Sbc_Mod_V?${rest}]]></ReplaceBOP>
+			</ActionPatchFile>
+			<!-- Merge actions -->
+			<ActionPatchFile Summary="Patch Sbc settings xml files and xsl transformation file" RelatedPackage="5" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\(Settings_|prepare_output_|InitFunctions_|GeneratorPackageInformation).*\.x.l</PathRel>
+				<Pattern><![CDATA[(?<start>.*?(/|'|"| )(Sbc_fs26|Wdg_43_fs26)_TS_)(.*?)(?<rest>(/|"|'|<).*?>?)]]></Pattern>
+				<ReplaceBOP><![CDATA[${start}?VAR.Sbc_Mod_V?${rest}]]></ReplaceBOP>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Patch SPD 'module'_bsmwd_rec.xml files" RelatedPackage="5" MultiFile="true">
+				<PathRel>?CONST.Bswmd_PathRel?\\(Sbc|Wdg_43_fs26)_bswmd_rec\.arxml</PathRel>
+				<Pattern><![CDATA[(?<start>.*?(_|/|'|>)TS_)(.*?)(?<rest>(/|"|'|<).*?>)]]></Pattern>
+				<ReplaceBOP><![CDATA[${start}?VAR.Sbc_Mod_V?${rest}]]></ReplaceBOP>
+			</ActionPatchFile>
+		</ActionGroup>
+		
+		<ActionGroup Summary="Customize InitFunctions_Settings to MCAL version">
+			<ActionPatchFile Summary="Deactivate No_Base_Init/OsIf_Init from InitFunctions_Settings.xml" RelatedPackage="1">
+				<PathRel>?CONST.Generator_PathRel?\\InitFunctions_Settings\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<!--(No_Base|OsIf)_Init-->)(.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[$2 <!--]]></ReplaceBOP>
+			</ActionPatchFile>			
+			<ActionPatchFile Summary="Deactivate No_Base_Init/OsIf_Init from InitFunctions_Settings.xml" RelatedPackage="1">
+				<PathRel>?CONST.Generator_PathRel?\\InitFunctions_Settings\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<!--End of (No_Base|OsIf)_Init-->)(.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[--> $2]]></ReplaceBOP>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Activate No_Base_Init in InitFunctions_Settings.xml for AUTOSAR version ASR4.0/ASR4.2/ASR4.3" RelatedPackage="1">
+				<PathRel>?CONST.Generator_PathRel?\\InitFunctions_Settings\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<!--.*No_Base_Init-->)(.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[$2]]></ReplaceBOP>
+				<Condition Pattern="?VAR.Mcal_ASR_Version?" Match="4\.0\.\d|4\.2\.\d|4\.3\.\d"/>
+			</ActionPatchFile>
+					
+			<ActionPatchFile Summary="Activate OsIf_Init in InitFunctions_Settings.xml for AUTOSAR version ASR4.4/ASR4.5/ASR4.6/ASR4.7" RelatedPackage="1">
+				<PathRel>?CONST.Generator_PathRel?\\InitFunctions_Settings\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<!--.*OsIf_Init-->)(.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[$2]]></ReplaceBOP>
+				<Condition Pattern="?VAR.Mcal_ASR_Version?" Match="4\.4\.\d|4\.5\.\d|4\.6\.\d|4\.7\.\d"/>
+			</ActionPatchFile>
+		</ActionGroup>
+		
+		<ActionGroup Summary="Copy/Install MCAL Plugins to Tresos">
+			<ActionCopyPattern Summary="Copy/Install MCAL plugins to Tresos" RelatedPackage="1" ActionId="10">
+				<SourceRootRel>?CONST.Package_PathRel_Id1?\\eclipse\\plugins</SourceRootRel>
+				<TargetRootRel>?CONST.Package_PathRel_Id2?\\plugins</TargetRootRel>
+				<SourcePattern>(.*_TS_.*)</SourcePattern>
+				<TargetBOP>$1</TargetBOP>
+				<ExcludePattern>(Can|Crc|CryIf|Csm|Det|Eep|Eth|Fee|Fr|I2(?i)c(?-i)|I2s|I3c|Lin|MemIf|Platform|Rte|Rm|Sai|Sent|WdgIf|Zipwire).*</ExcludePattern>
+			</ActionCopyPattern>
+			<ActionCopyPattern Summary="Copy/Install Fee to Tresos" RelatedPackage="1" ActionId="11">
+				<SourceRootRel>?CONST.Package_PathRel_Id1?\\eclipse\\plugins</SourceRootRel>
+				<TargetRootRel>?CONST.Package_PathRel_Id2?\\plugins</TargetRootRel>
+				<SourcePattern>(.*Fee_TS_.*)</SourcePattern>
+				<TargetBOP>$1</TargetBOP>
+				<Condition Pattern="?CONST.Bswmd_PathRel?\\Fee_bswmd_rec\.arxml" Exist="True"/>
+			</ActionCopyPattern>
+			<ActionCopyPattern Summary="Copy/Install I2c to Tresos" RelatedPackage="1" ActionId="12">
+				<SourceRootRel>?CONST.Package_PathRel_Id1?\\eclipse\\plugins</SourceRootRel>
+				<TargetRootRel>?CONST.Package_PathRel_Id2?\\plugins</TargetRootRel>
+				<SourcePattern>(.*I2(?i)c(?-i)_TS_.*)</SourcePattern>
+				<TargetBOP>$1</TargetBOP>
+				<Condition Pattern="?CONST.Bswmd_PathRel?\\I2c_bswmd_rec\.arxml" Exist="True"/>
+			</ActionCopyPattern>
+			<ActionCopyPattern Summary="Copy/Install Eth to Tresos" RelatedPackage="1" ActionId="13">
+				<SourceRootRel>?CONST.Package_PathRel_Id1?\\eclipse\\plugins</SourceRootRel>
+				<TargetRootRel>?CONST.Package_PathRel_Id2?\\plugins</TargetRootRel>
+				<SourcePattern>(.*Eth(_43_GMAC)?_TS_.*)</SourcePattern>
+				<TargetBOP>$1</TargetBOP>
+				<Condition Pattern="?CONST.Bswmd_PathRel?\\Eth_bswmd_rec\.arxml" Exist="True"/>
+			</ActionCopyPattern>
+			<ActionCopyPattern Summary="Copy necessary jar-file to Tresos" RelatedPackage="1" ActionId="14">
+				<SourceRootRel>?CONST.Package_PathRel_Id1?\\eclipse\\plugins</SourceRootRel>
+				<TargetRootRel>?CONST.Package_PathRel_Id2?\\plugins</TargetRootRel>
+				<SourcePattern>(.*.jar)</SourcePattern>
+				<TargetBOP>$1</TargetBOP>
+			</ActionCopyPattern>
+			<ActionCopyPattern Summary="Copy/Install SPD plugins to Tresos" RelatedPackage="4" ActionId="15">
+				<SourceRootRel>?CONST.Package_PathRel_Id4?\\eclipse\\plugins</SourceRootRel>
+				<TargetRootRel>?CONST.Package_PathRel_Id2?\\plugins</TargetRootRel>
+				<SourcePattern>(.*_TS_.*)</SourcePattern>
+				<TargetBOP>$1</TargetBOP>
+				<ExcludePattern>^Base.*</ExcludePattern>
+			</ActionCopyPattern>
+			<ActionCopyPattern Summary="Copy/Install Sbc plugins to Tresos" RelatedPackage="5" ActionId="16">
+				<SourceRootRel>?CONST.Package_PathRel_Id5?\\eclipse\\plugins</SourceRootRel>
+				<TargetRootRel>?CONST.Package_PathRel_Id2?\\plugins</TargetRootRel>
+				<SourcePattern>(.*_TS_.*)</SourcePattern>
+				<TargetBOP>$1</TargetBOP>
+				<ExcludePattern>^Base.*</ExcludePattern>
+			</ActionCopyPattern>
+		</ActionGroup>
+		
+		<ActionRenameFile Summary="Rename Files in Folder 'include' of Base Component to avoid redefinitions" RelatedPackage="1" MultiFile="true">
+			<PathRel><![CDATA[?CONST.Package_PathRel_Id1?\\eclipse\\plugins\\Base(NXP)?_TS_\w*\\include\\(?'name'[^_]\w*)(?'extension'\.\w*)]]></PathRel>
+			<NewName>_${name}${extension}</NewName>
+			<ExcludePattern>^(_.*|BasicTypes|CompilerDefinition|Devassert|IpVersionMacros|Mcal|OsIf.*|Reg_eSys|RegLockMacros|SilRegMacros|Soc_Ips|StdRegMacros)\.h</ExcludePattern>
+		</ActionRenameFile>
+		<ActionRenameFile Summary="Rename Files in Folder 'include' of Component SafetyBase" RelatedPackage="4" MultiFile="true">
+			<PathRel><![CDATA[?CONST.Package_PathRel_Id4?\\eclipse\\plugins\\SafetyBase_TS_\w*\\include\\(?'name'[^_]\w*)(?'extension'\.\w*)]]></PathRel>
+			<NewName>_${name}${extension}</NewName>
+			<ExcludePattern>^(_.*|SafetyBase.*|S32_SAF_Version)\.h</ExcludePattern>
+		</ActionRenameFile>
+		
+		<ActionGroup Summary="Patch DaVinci input files to Base Name">
+			<ActionPatchFile Summary="Patch Base settings xml files and xsl transformation file" RelatedPackage="1" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\(Settings_|prepare_output_|InitFunctions_|GeneratorPackageInformation).*\.x.l</PathRel>
+				<Pattern><![CDATA[(?<start>.*?(_|/|')TS_.*?/)(Base(NXP)?)(?<rest>(<|'|").*?>?)]]></Pattern>
+				<ReplaceBOP><![CDATA[${start}?VAR.Mcal_Base_Name?${rest}]]></ReplaceBOP>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Patch Base settings xml files and xsl transformation file" RelatedPackage="1" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\(Settings_|prepare_output_|InitFunctions_|GeneratorPackageInformation).*\.x.l</PathRel>
+				<Pattern><![CDATA[(?<start>.*?("| ))(Base(NXP)?)(?<rest>("|_).*?>?)]]></Pattern>
+				<ReplaceBOP><![CDATA[${start}?VAR.Mcal_Base_Name?${rest}]]></ReplaceBOP>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Patch Base_bsmwd_rec.xml files" RelatedPackage="1" MultiFile="false">
+				<PathRel>?CONST.Bswmd_PathRel?\\Base_bswmd_rec.arxml</PathRel>
+				<Pattern><![CDATA[(?<start>.*?(/|>))(Base(NXP)?)(?<rest>(/|B|<|_).*?>)]]></Pattern>
+				<ReplaceBOP><![CDATA[${start}?VAR.Mcal_Base_Name?${rest}]]></ReplaceBOP>
+			</ActionPatchFile>
+		</ActionGroup>
+		
+		<ActionGroup Summary="Depending on plugin existence add/remove Crypto/Eth/Mcl/Fee/I2c/Uart/mSel/sCheck to/from Generation Process">
+			
+			<ActionPatchFile Summary="Comment out Mcl in DaVinciConfigurator configuration file" RelatedPackage="1" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<Setting Name="Mcl")(.*)(/>)(.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[<!--$2$3$4-->]]></ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Comment in Mcl in DaVinciConfigurator configuration file if Mcl plugin is part of Tresos" RelatedPackage="1" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<Setting Name="Mcl")(.*)(-->.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[$2$3]]></ReplaceBOP>
+				<Condition Pattern="?CONST.Package_PathRel_Id2?\\plugins\\Mcl_TS_(.*)" Exist="TRUE"/>
+			</ActionPatchFile>
+
+			<ActionPatchFile Summary="Comment out Crypto in DaVinciConfigurator" RelatedPackage="1" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<Setting Name="Crypto")(.*)(/>)(.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[<!--$2$3$4-->]]></ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Comment in Crypto in DaVinciConfigurator configuration file if Crypto plugin is part of Tresos" RelatedPackage="1" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<Setting Name="Crypto")(.*)(-->.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[$2$3]]></ReplaceBOP>
+				<Condition Pattern="?CONST.Package_PathRel_Id2?\\plugins\\Crypto_TS_(.*)" Exist="TRUE"/>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Comment out Eth in DaVinciConfigurator" RelatedPackage="1" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<Setting Name="Eth")(.*)(/>)(.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[<!--$2$3$4-->]]></ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Comment in Eth in DaVinciConfigurator configuration file if Eth plugin is part of Tresos" RelatedPackage="1" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<Setting Name="Eth")(.*)(-->.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[$2$3]]></ReplaceBOP>
+				<Condition Pattern="?CONST.Package_PathRel_Id2?\\plugins\\Eth(_43_GMAC)?_TS_(.*)" Exist="TRUE"/>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Comment out Fee in DaVinciConfigurator" RelatedPackage="1" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<Setting Name="Fee")(.*)(/>)(.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[<!--$2$3$4-->]]></ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Comment in Fee in DaVinciConfigurator configuration file if Fee plugin is part of Tresos" RelatedPackage="1" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<Setting Name="Fee")(.*)(-->.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[$2$3]]></ReplaceBOP>
+				<Condition Pattern="?CONST.Package_PathRel_Id2?\\plugins\\Fee_TS_(.*)" Exist="TRUE"/>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Comment out I2c in DaVinciConfigurator configuration file" RelatedPackage="1" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<Setting Name="I2c")(.*)(/>)(.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[<!--$2$3$4-->]]></ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Comment in I2c in DaVinciConfigurator configuration file if I2c plugin is part of Tresos" RelatedPackage="1" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<Setting Name="I2c")(.*)(-->.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[$2$3]]></ReplaceBOP>
+				<Condition Pattern="?CONST.Package_PathRel_Id2?\\plugins\\I2c_TS_(.*)" Exist="TRUE"/>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Comment out Uart in DaVinciConfigurator configuration file" RelatedPackage="1" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<Setting Name="Uart")(.*)(/>)(.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[<!--$2$3$4-->]]></ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Comment in Uart in DaVinciConfigurator configuration file if Uart plugin is part of Tresos" RelatedPackage="1" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<Setting Name="Uart")(.*)(-->.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[$2$3]]></ReplaceBOP>
+				<Condition Pattern="?CONST.Package_PathRel_Id2?\\plugins\\Uart_TS_(.*)" Exist="TRUE"/>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Comment out mSel in DaVinciConfigurator configuration file" RelatedPackage="4" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<Setting Name="mSel")(.*)(/>)(.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[<!--$2$3$4-->]]></ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Comment in mSel in DaVinciConfigurator configuration file if mSel plugin is part of Tresos" RelatedPackage="4" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<Setting Name="mSel")(.*)(-->.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[$2$3]]></ReplaceBOP>
+				<Condition Pattern="?CONST.Package_PathRel_Id2?\\plugins\\mSel_TS_(.*)" Exist="TRUE"/>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Comment out sCheck in DaVinciConfigurator configuration file" RelatedPackage="4" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<Setting Name="sCheck")(.*)(/>)(.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[<!--$2$3$4-->]]></ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Comment in sCheck in DaVinciConfigurator configuration file if sCheck plugin is part of Tresos" RelatedPackage="4" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(.*)(<Setting Name="sCheck")(.*)(-->.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[$2$3]]></ReplaceBOP>
+				<Condition Pattern="?CONST.Package_PathRel_Id2?\\plugins\\sCheck_TS_(.*)" Exist="TRUE"/>
+			</ActionPatchFile>
+		</ActionGroup>
+		
+		<ActionGroup Summary="Depending on plugin existence add/remove Crypto/Eth/Fee/I2c/Mcl/Uart to/from Make Process">
+			
+			<ActionPatchFile Summary="Add all modules to make process" RelatedPackage="1">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules\.mak$</PathRel>
+				<Pattern>\A\s*(MCAL_EXCLUDE_.*\s*=)(.*)</Pattern>
+				<ReplaceBOP>$1 0</ReplaceBOP>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Remove Crypto from make process" RelatedPackage="1">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules\.mak$</PathRel>
+				<Pattern>\A\s*(MCAL_EXCLUDE_CRY\s*=)(.*)</Pattern>
+				<ReplaceBOP>$1 1</ReplaceBOP>
+				<Condition Pattern="?CONST.Package_PathRel_Id2?\\plugins\\Crypto_TS_(.*)" Exist="FALSE"/>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Remove Eth from make process" RelatedPackage="1">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules\.mak$</PathRel>
+				<Pattern>\A\s*(MCAL_EXCLUDE_ETH\s*=)(.*)</Pattern>
+				<ReplaceBOP>$1 1</ReplaceBOP>
+				<Condition Pattern="?CONST.Package_PathRel_Id2?\\plugins\\Eth(_43_GMAC)?_TS_(.*)" Exist="FALSE"/>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Remove Fee from make process" RelatedPackage="1">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules\.mak$</PathRel>
+				<Pattern>\A\s*(MCAL_EXCLUDE_FEE\s*=)(.*)</Pattern>
+				<ReplaceBOP>$1 1</ReplaceBOP>
+				<Condition Pattern="?CONST.Package_PathRel_Id2?\\plugins\\Fee_TS_(.*)" Exist="FALSE"/>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Remove I2c from make process" RelatedPackage="1">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules\.mak$</PathRel>
+				<Pattern>\A\s*(MCAL_EXCLUDE_I2C\s*=)(.*)</Pattern>
+				<ReplaceBOP>$1 1</ReplaceBOP>
+				<Condition Pattern="?CONST.Package_PathRel_Id2?\\plugins\\I2c_TS_(.*)" Exist="FALSE"/>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Remove Mcl from make process" RelatedPackage="1">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules\.mak$</PathRel>
+				<Pattern>\A\s*(MCAL_EXCLUDE_MCL\s*=)(.*)</Pattern>
+				<ReplaceBOP>$1 1</ReplaceBOP>
+				<Condition Pattern="?CONST.Package_PathRel_Id2?\\plugins\\Mcl_TS_(.*)" Exist="FALSE"/>
+			</ActionPatchFile>
+	
+			<ActionPatchFile Summary="Remove Uart from make process" RelatedPackage="1">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules\.mak$</PathRel>
+				<Pattern>\A\s*(MCAL_EXCLUDE_UART\s*=)(.*)</Pattern>
+				<ReplaceBOP>$1 1</ReplaceBOP>
+				<Condition Pattern="?CONST.Package_PathRel_Id2?\\plugins\\Uart_TS_(.*)" Exist="FALSE"/>
+			</ActionPatchFile>
+		</ActionGroup>
+		
+		<ActionGroup Summary="Depending on plugin existence add/remove HSE to/from Make Process">
+			<ActionPatchFile Summary="Remove HSE package from make process" RelatedPackage="1">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules\.mak$</PathRel>
+				<Pattern>\A\s*(EXCLUDE_HSE_PACKAGE\s*=)(.*)</Pattern>
+				<ReplaceBOP>$1 1</ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Add HSE package from make process" RelatedPackage="3">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules\.mak$</PathRel>
+				<Pattern>\A\s*(EXCLUDE_HSE_PACKAGE\s*=)(.*)</Pattern>
+				<ReplaceBOP>$1 0</ReplaceBOP>
+			</ActionPatchFile>
+		</ActionGroup>
+		
+	</Prepare>
+
+	<UndoPrepare>
+		<Undo ActionId="10" Summary="Remove MCAL plugins from Tresos"/>
+		<Undo ActionId="11" Summary="Remove Fee plugins from Tresos"/>
+		<Undo ActionId="12" Summary="Remove I2c plugins from Tresos"/>
+		<Undo ActionId="13" Summary="Remove Eth plugins from Tresos"/>
+		<Undo ActionId="14" Summary="Remove jar-files from Tresos"/>
+		<Undo ActionId="15" Summary="Remove SPD plugins from Tresos"/>
+		<Undo ActionId="16" Summary="Remove SBC plugins from Tresos"/>
+		
+		<ActionRenameFile Summary="Undo the renaming actions in Base plugin" RelatedPackage="1" MultiFile="true">
+			<PathRel><![CDATA[?CONST.Package_PathRel_Id1?\\eclipse\\plugins\\Base(NXP)?_TS_\w*\\include\\_(?'name'[^_]\w*)(?'extension'\.\w*)]]></PathRel>
+			<NewName>${name}${extension}</NewName>
+		</ActionRenameFile>
+		<ActionRenameFile Summary="Rename Files in Folder 'include' of Component SafetyBase" RelatedPackage="4" MultiFile="true">
+			<PathRel><![CDATA[?CONST.Package_PathRel_Id4?\\eclipse\\plugins\\SafetyBase_TS_\w*\\include\\_(?'name'[^_]\w*)(?'extension'\.\w*)]]></PathRel>
+			<NewName>${name}${extension}</NewName>
+		</ActionRenameFile>
+		
+		<ActionPatchFile Summary="Remove path to HSE package in make file" RelatedPackage="1">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules\.mak$</PathRel>
+				<Pattern>(HSE_PATH.*=)(.*)</Pattern>
+				<ReplaceBOP>$1</ReplaceBOP>
+		</ActionPatchFile>
+	</UndoPrepare>
+
+	<!--
+  =====================================================================================================
+  As the last step the BSWMD files have to be copied from the MCAL packages to a SIP internal location.
+  Therefore the supported derivatives must be determined and a derivative must be choosen by customer.
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  In order to specify the supported derivates there are two possibilties:
+  1. Specify them explicitly
+     <Derivatives>
+       <Derivative DisplayName="R7F701002" IdentifyingFileFragment="02" />
+       <Derivative DisplayName="R7F701003" IdentifyingFileFragment="03" />
+       ...
+     </Derivatives>
+     The Attribute DisplayName specifies the name of the derivative which shall be shown within the tool.
+     The Attribute IdentifyingFileFragment defines the fragment of the filename which signalizes the 
+     compatibility to the derivative.
+  
+  2. Using a pattern to look for supported derivatives within the MCAL packages
+     <Derivatives>
+       <Pattern><![CDATA[?CONST.Package_PathRel_Id1?\\TC2.*\\Aurix_.*\\tools\\tresosECU\\bmd\\(?<derivative>TC.*)]]></Pattern>
+       <DisplayNameBOP>Aurix ${derivative}</DisplayNameBOP>
+       <IdentifyingFileFragmentBOP>${derivative}</IdentifyingFileFragmentBOP>
+     </Derivatives>
+     
+     The <Pattern> element is used to scan for derivatives. 
+     The <DisplayNameBOP> defines the name of the derivative to be displayed.
+     The <IdentifyingFileFragmentBOP> defines the fragment of the filename which signalizes the 
+     compatibility to the derivative.
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  After defining the derivatives as a second step the copy actions for each MCAL package have to be 
+  defined.
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  The action ActionDefVar may be defined in advance in order to set variables which may be used within 
+  the copy actions.
+  =====================================================================================================
+  -->
+	<Bswmd>
+		<DerivativeScan>
+			<Pattern><![CDATA[?CONST.Package_PathRel_Id2?\\plugins\\Adc_TS_\w*\\autosar\\Adc_(?<derivative>s32k.*)_(?<layout>.*)\.\w*]]></Pattern>
+			<DisplayNameBOP>${derivative} - ${layout}</DisplayNameBOP>
+			<!--results in e.g.: mpc58xc80_etqfp100 ...-->
+			<IdentifyingFileFragmentBOP>${derivative}_${layout}</IdentifyingFileFragmentBOP>
+			<!--results in e.g.: mpc58xc80_etqfp100, ...-->
+		</DerivativeScan>
+		<Copy RelatedPackage="2">
+			<Pattern><![CDATA[?CONST.Package_PathRel_Id2?\\plugins\\(?<module>.*)_TS_.*\\autosar\\(?<name>\w*_?USR.IdentifyingFileFragment?)\.\w*]]></Pattern>
+			<TargetBOP>?CONST.Bswmd_PathRel?\\Copy_${name}.arxml</TargetBOP>
+			<ExcludePattern>Eep.*|Fee.*|SafetyBase.*</ExcludePattern>
+			<RemovePattern>?CONST.Bswmd_PathRel?\\Copy_</RemovePattern>
+		</Copy>
+		<Copy RelatedPackage="2">
+			<Pattern><![CDATA[?CONST.Package_PathRel_Id2?\\plugins\\(?<module>Base(NXP)?|Resource|Fee|Sbc_fs26|Wdg_43_fs26)_TS_.*\\autosar\\(?<name>\w*)\.\w*]]></Pattern>
+			<TargetBOP>?CONST.Bswmd_PathRel?\\Copy_${name}.arxml</TargetBOP>
+			<RemovePattern>?CONST.Bswmd_PathRel?\\Copy_</RemovePattern>
+		</Copy>
+		<Copy RelatedPackage="2">
+			<Pattern><![CDATA[?CONST.Package_PathRel_Id2?\\plugins\\SafetyBase_TS_\w+\\autosar\\(?<name>(SafetyBase_?USR.IdentifyingFileFragment?)|(SafetyBase))\.\w+]]></Pattern>
+			<TargetBOP>?CONST.Bswmd_PathRel?\\Copy_${name}.arxml</TargetBOP>
+			<RemovePattern>?CONST.Bswmd_PathRel?\\Copy_</RemovePattern>
+		</Copy>
+
+	</Bswmd>
+	
+	<Finalize>
+	
+		<ActionGroup Summary="Customize DaVinci CFG5 Configuration Files">
+			
+			<ActionDefVar Summary="Define temporary variable 'Derivative Name'" RelatedPackage="1" ExecuteHidden="true">
+				<Name>Mcal_Derivative_Name</Name>
+				<LookForPatternInFile><![CDATA[(.*<ecuType target=".*" derivate=")(.*)("/>)]]></LookForPatternInFile>
+				<PathRel>?CONST.Package_PathRel_Id1?\\eclipse\\plugins\\Mcu_TS_?VAR.Mcal_Mod_V?\\plugin\.xml</PathRel>
+				<ValueBOP>$2</ValueBOP>
+			</ActionDefVar>
+			<ActionDefVar Summary="Read in 'Target Name' from plugin.xml" RelatedPackage="1" ExecuteHidden="true">
+				<Name>Mcal_Target_Name</Name>
+				<LookForPatternInFile><![CDATA[(.*<ecuType target="(.*)" derivate=")(.*)("/>)]]></LookForPatternInFile>
+				<PathRel>?CONST.Package_PathRel_Id1?\\eclipse\\plugins\\Mcu_TS_?VAR.Mcal_Mod_V?\\plugin\.xml</PathRel>
+				<ValueBOP>$2</ValueBOP>
+			</ActionDefVar>			
+			
+			<ActionPatchFile Summary="Write Target into Settings files" RelatedPackage="2" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(.*<Setting Name="Target" Value=")(.*)(".*/>)]]></Pattern>
+				<ReplaceBOP><![CDATA[$1?VAR.Mcal_Target_Name?$3]]></ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Write Derivative into Settings files" RelatedPackage="2" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_.*\.xml</PathRel>
+				<Pattern><![CDATA[(.*<Setting Name="Derivate" Value=")(.*)(".*/>)]]></Pattern>
+				<ReplaceBOP><![CDATA[$1?VAR.Mcal_Derivative_Name?$3]]></ReplaceBOP>
+			</ActionPatchFile>
+			
+		</ActionGroup>
+		
+		<ActionGroup Summary="Patch DaVinci input files to Eth defintion">
+			<ActionDefVar Summary="Define temporary variable 'Eth_Defintion'" RelatedPackage="1" ExecuteHidden="true">
+				<Name>Eth_Definition</Name>
+				<LookForPatternInFile><![CDATA[(.*<SHORT-NAME>)(Eth_.*)?(TS_[A-Za-z0-9]*)(</SHORT-NAME>.*)]]></LookForPatternInFile>
+				<PathRel>?CONST.Package_PathRel_Id1?\\eclipse\\plugins\\Eth_(43_GMAC_)?TS_?VAR.Mcal_Mod_V?\\autosar\\Eth_(43_GMAC_)?USR.IdentifyingFileFragment?\.epd</PathRel>
+				<ValueBOP>$2$3</ValueBOP>
+			</ActionDefVar>
+			<ActionDefVar Summary="Define temporary variable 'Eth_Naming'" RelatedPackage="1" ExecuteHidden="true">
+				<Name>Eth_Naming</Name>
+				<BaseValue>?VAR.Eth_Definition?</BaseValue>
+				<BasePattern>(Eth.*)_TS_[A-Za-z0-9]*</BasePattern>
+				<ValueBOP>$1</ValueBOP>
+			</ActionDefVar>
+			<ActionDefVar Summary="Define temporary variable 'Eth_ApiInfix'" RelatedPackage="1" ExecuteHidden="true">
+				<Name>Eth_ApiInfix</Name>
+				<BaseValue>?VAR.Eth_Naming?</BaseValue>
+				<BasePattern>Eth(_.*)</BasePattern>
+				<ValueBOP>$1</ValueBOP>
+			</ActionDefVar>
+			
+			<ActionPatchFile Summary="Patch Eth_bsmwd_rec.xml files to Eth definition" RelatedPackage="2">
+				<PathRel>?CONST.Bswmd_PathRel?\\Eth_bswmd_rec\.arxml</PathRel>
+				<Pattern><![CDATA[(?<start>.*?(>|>/))(Eth_.*)?TS_[A-Za-z0-9]*(?<rest>(/Eth|</).*)]]></Pattern>
+				<ReplaceBOP><![CDATA[${start}?VAR.Eth_Definition?${rest}]]></ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Patch Settings files to Eth definition" RelatedPackage="2" MultiFile="true">
+				<PathRel>?CONST.Generator_PathRel?\\(Settings_S32K3xx|Settings_Eth|InitFunctions_Settings|prepare_output_S32K3xx)\.x.l</PathRel>
+				<Pattern><![CDATA[(?<start>.*?('/|>/|"/|\s|="))(Eth_.*)?TS_[A-Za-z0-9]*(?<rest>(/Eth|"/?>).*)]]></Pattern>
+				<ReplaceBOP><![CDATA[${start}?VAR.Eth_Definition?${rest}]]></ReplaceBOP>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Comment out Api Infix and Vendor ID of Eth" RelatedPackage="1">
+				<PathRel>?CONST.Bswmd_PathRel?\\Eth_bswmd_rec\.arxml</PathRel>	
+				<Pattern><![CDATA[.*((<VENDOR-ID>|<VENDOR-API-INFIX>).*(</VENDOR-ID>|</VENDOR-API-INFIX>)).*]]></Pattern>
+				<ReplaceBOP><![CDATA[<!--$1-->]]></ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Comment in Api Infix and Vendor ID of Eth" RelatedPackage="1">
+				<PathRel>?CONST.Bswmd_PathRel?\\Eth_bswmd_rec\.arxml</PathRel>	
+				<Pattern><![CDATA[.*((<VENDOR-ID>|<VENDOR-API-INFIX>).*(</VENDOR-ID>|</VENDOR-API-INFIX>)).*]]></Pattern>
+				<ReplaceBOP><![CDATA[$1]]></ReplaceBOP>
+				<Condition Pattern="?CONST.Package_PathRel_Id2?\\plugins\\Eth_43_GMAC_TS_(.*)" Exist="true"/>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Patch Settings_Eth to Eth version" RelatedPackage="1">
+				<PathRel>?CONST.Generator_PathRel?\\Settings_Eth\.xml</PathRel>
+				<Pattern><![CDATA[(?<start>.*?<Event entityName=")(Eth.*)(?<rest>_MainFunction" value="0.01"/>.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[${start}?VAR.Eth_Naming?${rest}]]></ReplaceBOP>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Patch InitFunctions_Settings to Eth version" RelatedPackage="1">
+				<PathRel>?CONST.Generator_PathRel?\\InitFunctions_Settings\.xml</PathRel>
+				<Pattern><![CDATA[(?<start>.*>)Eth(_43_GMAC)?(?<rest>\..+</.+>.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[${start}?VAR.Eth_Naming?${rest}]]></ReplaceBOP>
+			</ActionPatchFile>
+			<ActionPatchFile Summary="Patch InitFunctions_Settings to Eth version" RelatedPackage="1">
+				<PathRel>?CONST.Generator_PathRel?\\InitFunctions_Settings\.xml</PathRel>
+				<Pattern><![CDATA[(?<start>.*(>|;)(?i)Eth(?-i))(_43_GMAC)?(?<rest>_.+</.+>.*)]]></Pattern>
+				<ReplaceBOP><![CDATA[${start}?VAR.Eth_ApiInfix?${rest}]]></ReplaceBOP>
+				<SkipPattern>.+Eth(_43_GMAC)?\.h.+</SkipPattern>
+			</ActionPatchFile>
+			
+			<ActionPatchFile Summary="Adapt ETH_PACKAGE_NAME to Eth version" RelatedPackage="1">
+				<PathRel>?CONST.Make_PathRel?\\Mcal_.*_rules\.mak$</PathRel>
+				<Pattern>\A\s*(ETH_PACKAGE_NAME\s*=)(.*)</Pattern>
+				<ReplaceBOP>$1 ?VAR.Eth_Naming?</ReplaceBOP>
+			</ActionPatchFile>
+			
+			<GroupCondition>
+				<Condition Pattern="?CONST.Package_PathRel_Id2?\\plugins\\Eth_(43_GMAC_)?TS_(.*)" Exist="true"/>
+			</GroupCondition>
+		</ActionGroup>
+	</Finalize>
+</MipConfig>
