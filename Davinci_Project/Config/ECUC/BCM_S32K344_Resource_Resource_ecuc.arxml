@@ -60,7 +60,7 @@
               <PARAMETER-VALUES>
                 <ECUC-TEXTUAL-PARAM-VALUE>
                   <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M20I1R0/Resource/ResourceGeneral/ResourceSubderivative</DEFINITION-REF>
-                  <VALUE>s32k344_mapbga257</VALUE>
+                  <VALUE>s32k344_mqfp172</VALUE>
                 </ECUC-TEXTUAL-PARAM-VALUE>
               </PARAMETER-VALUES>
             </ECUC-CONTAINER-VALUE>

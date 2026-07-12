@@ -2897,6 +2897,9 @@
                     <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\src\Clock_Ip_PBcfg.c</name>
                 </file>
                 <file>
+                    <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\src\Dio_Cfg.c</name>
+                </file>
+                <file>
                     <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\src\Mcu_Cfg.c</name>
                 </file>
                 <file>
@@ -2904,6 +2907,12 @@
                 </file>
                 <file>
                     <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\src\OsIf_Cfg.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\src\Port_Cfg.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\src\Port_PBcfg.c</name>
                 </file>
                 <file>
                     <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\src\Power_Ip_Cfg.c</name>
@@ -2916,6 +2925,12 @@
                 </file>
                 <file>
                     <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\src\Ram_Ip_PBcfg.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\src\Siul2_Port_Ip_PBcfg.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\src\Tspc_Port_Ip_PBcfg.c</name>
                 </file>
             </group>
             <file>
@@ -3283,21 +3298,6 @@
             </file>
         </group>
         <group>
-            <name>Port</name>
-            <file>
-                <name>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Port_TS_T40D34M20I1R0\src\Port.c</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Port_TS_T40D34M20I1R0\src\Port_Ipw.c</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Port_TS_T40D34M20I1R0\src\Siul2_Port_Ip.c</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Port_TS_T40D34M20I1R0\src\Tspc_Port_Ip.c</name>
-            </file>
-        </group>
-        <group>
             <name>MCU</name>
             <file>
                 <name>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Mcu_TS_T40D34M20I1R0\src\Clock_Ip.c</name>
@@ -3385,6 +3385,21 @@
             </file>
             <file>
                 <name>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Mcu_TS_T40D34M20I1R0\src\Ram_Ip.c</name>
+            </file>
+        </group>
+        <group>
+            <name>Port</name>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Port_TS_T40D34M20I1R0\src\Port.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Port_TS_T40D34M20I1R0\src\Port_Ipw.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Port_TS_T40D34M20I1R0\src\Siul2_Port_Ip.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Port_TS_T40D34M20I1R0\src\Tspc_Port_Ip.c</name>
             </file>
         </group>
     </group>

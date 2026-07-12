@@ -123,7 +123,7 @@ extern "C" {
 /** 
 * @brief This constant used for other modules to check if DIO is present in the project.   
 */
-#define USE_DIO_MODULE              (STD_OFF)
+#define USE_DIO_MODULE              (STD_ON)
 
 /** 
 * @brief This constant used for other modules to check if EEP is present in the project. 
@@ -203,7 +203,7 @@ extern "C" {
 /**
 * @brief This constant used for other modules to check if PORT is present in the project.   
 */
-#define USE_PORT_MODULE             (STD_OFF)
+#define USE_PORT_MODULE             (STD_ON)
 
 /** 
 * @brief This constant used for other modules to check if PWM is present in the project.   
