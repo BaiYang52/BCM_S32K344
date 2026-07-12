@@ -1,0 +1,4095 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+***********************************************************************************************************************
+COPYRIGHT
+===============================================================================
+Copyright (c) 2021 by Vector Informatik GmbH.                                         All rights reserved.
+
+    This software is copyright protected and proprietary to Vector Informatik GmbH.
+    Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+    All other rights remain with Vector Informatik GmbH.
+===============================================================================
+FILE DESCRIPTION
+===============================================================================
+File:           vBaseEnv_bswmd.arxml
+Component:      vBaseEnv
+Module:         vBaseEnv
+Generator:      $GENERATOR$
+Description:    $DESCRIPTION$
+*********************************************************************************************************************** 
+-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0">
+	<AR-PACKAGES>
+		<AR-PACKAGE UUID="ff55d029-386d-43a2-b3c2-dfef4c7a5e36">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ADMIN-DATA>
+				<DOC-REVISIONS>
+					<DOC-REVISION>
+						<REVISION-LABEL>0.06.00</REVISION-LABEL>
+						<ISSUED-BY>visbwa</ISSUED-BY>
+						<DATE>2018-07-03</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">DerivativeInformation and TestedDerivative moved from BRS into vBaseEnv</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">First Release of vBaseEnv 0.06.0</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.00.00</REVISION-LABEL>
+						<ISSUED-BY>visbwa</ISSUED-BY>
+						<DATE>2018-08-14</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Added MemLayoutHwRegion for vLinkGen and added AdditionalParameter PowerDownModes</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">First Release of final version vBaseEnv 1.0.0</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.00.01</REVISION-LABEL>
+						<ISSUED-BY>visbwa</ISSUED-BY>
+						<DATE>2018-08-15</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Added CpuCore value Cortex-M7</L-2>
+								</CHANGE>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.00.02</REVISION-LABEL>
+						<ISSUED-BY>visbwa</ISSUED-BY>
+						<DATE>2018-08-16</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Removed out-dated HwRegionZeroInitType and HwRegionZeroInitCore from MemLayoutHwRegion</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">Structure for vLinkGen 1.0.0 was finally changed</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.00.03</REVISION-LABEL>
+						<ISSUED-BY>visbwa</ISSUED-BY>
+						<DATE>2018-09-13</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Changed default display settings of memory sections to HEX</L-2>
+								</CHANGE>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.00.04</REVISION-LABEL>
+						<ISSUED-BY>visbwa</ISSUED-BY>
+						<DATE>2019-01-16</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Added several CpuCore defines (including OTHER)</L-2>
+								</CHANGE>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.00.05</REVISION-LABEL>
+						<ISSUED-BY>visbwa</ISSUED-BY>
+						<DATE>2019-01-22</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Added several CpuCore defines</L-2>
+								</CHANGE>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.01.00</REVISION-LABEL>
+						<ISSUED-BY>visbwa</ISSUED-BY>
+						<DATE>2019-03-15</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Added InterruptHandling, increased several AdditionalParameters lists</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">vBaseEnv 1.4.0</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.02.00</REVISION-LABEL>
+						<ISSUED-BY>visbwa</ISSUED-BY>
+						<DATE>2019-05-09</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Added peripheral clock settings, added several CpuCore defines, added Watchdog Group, added OpMode Group, added UserModeAccess Group</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">vBaseEnv 1.5.0</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.02.01</REVISION-LABEL>
+						<ISSUED-BY>visbwa</ISSUED-BY>
+						<DATE>2019-05-14</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Fixed typo in vBaseEnvLin_ClockRef</L-2>
+								</CHANGE>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.03.00</REVISION-LABEL>
+						<ISSUED-BY>visbwa</ISSUED-BY>
+						<DATE>2019-05-29</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Added several CpuCore defines for PowerPC cores</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">vBaseEnv 1.7.0</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.03.01</REVISION-LABEL>
+						<ISSUED-BY>visbwa</ISSUED-BY>
+						<DATE>2019-08-16</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Added additional parameter PowerDownModes</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">needed for RH850</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.03.02</REVISION-LABEL>
+						<ISSUED-BY>visjhr</ISSUED-BY>
+						<DATE>2019-09-02</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Added new CpuCore values: CORTEX_R5F and E200Z759</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">PSC-3381 und PSC-3383</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.04.00</REVISION-LABEL>
+						<ISSUED-BY>visbwa</ISSUED-BY>
+						<DATE>2019-09-19</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Added new parameter vBaseEnvCpuInitCore, reworked several descriptions of DerivativeInformation parameters</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">PSC-3549</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>1.05.00</REVISION-LABEL>
+						<ISSUED-BY>visbwa</ISSUED-BY>
+						<DATE>2020-02-17</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Added new parameter vBaseEnvHwRegionType</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">HALBE-1135</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>2.00.08</REVISION-LABEL>
+						<ISSUED-BY>vismaa</ISSUED-BY>
+						<DATE>2020-09-09</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Added new CpuCore TC18</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">HALBE-2332</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>2.00.09</REVISION-LABEL>
+						<ISSUED-BY>visbwa</ISSUED-BY>
+						<DATE>2020-09-18</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Added new DerivativeInformation optional parameter vBaseEnvUsedManual</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">HALBE-2773</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>2.02.00</REVISION-LABEL>
+						<ISSUED-BY>visjhr</ISSUED-BY>
+						<DATE>2021-02-01</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Added I2C and Hyperbus</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">HALBE-3436</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>2.03.00</REVISION-LABEL>
+						<ISSUED-BY>visjhr</ISSUED-BY>
+						<DATE>2021-03-12</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Added Spi</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">HALBE-3779</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>2.03.01</REVISION-LABEL>
+						<ISSUED-BY>virrlu</ISSUED-BY>
+						<DATE>2021-04-19</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Added module description (requested for DV Package Manager)</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">HALBE-4173</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>2.04.00</REVISION-LABEL>
+						<ISSUED-BY>visjhr</ISSUED-BY>
+						<DATE>2021-08-05</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Added vBaseEnvStartupStackSize and vBaseEnvStartupStackAlignment</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">HALBE-5067</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+					<DOC-REVISION>
+						<REVISION-LABEL>2.06.00</REVISION-LABEL>
+						<ISSUED-BY>visbwa</ISSUED-BY>
+						<DATE>2021-11-22</DATE>
+						<MODIFICATIONS>
+							<MODIFICATION>
+								<CHANGE>
+									<L-2 L="EN">Added vBaseEnvDerivativeInformation/vBaseEnvClockSettings container</L-2>
+								</CHANGE>
+								<REASON>
+									<L-2 L="EN">HALBE-3920</L-2>
+								</REASON>
+							</MODIFICATION>
+						</MODIFICATIONS>
+					</DOC-REVISION>
+				</DOC-REVISIONS>
+			</ADMIN-DATA>
+			<ELEMENTS>
+				<BSW-IMPLEMENTATION UUID="01566413-2fa2-4b8d-96ab-d43849a358e2">
+					<SHORT-NAME>vBaseEnv_Impl</SHORT-NAME>
+					<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+					<SW-VERSION>1.00.00</SW-VERSION>
+					<USED-CODE-GENERATOR>DaVinci Configurator</USED-CODE-GENERATOR>
+					<VENDOR-ID>30</VENDOR-ID>
+					<AR-RELEASE-VERSION>4.03.00</AR-RELEASE-VERSION>
+					<PRECONFIGURED-CONFIGURATION-REFS>
+						<PRECONFIGURED-CONFIGURATION-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/MICROSAR/vBaseEnv_Pre</PRECONFIGURED-CONFIGURATION-REF>
+					</PRECONFIGURED-CONFIGURATION-REFS>
+					<RECOMMENDED-CONFIGURATION-REFS>
+						<RECOMMENDED-CONFIGURATION-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/MICROSAR/vBaseEnv_Rec</RECOMMENDED-CONFIGURATION-REF>
+					</RECOMMENDED-CONFIGURATION-REFS>
+					<VENDOR-SPECIFIC-MODULE-DEF-REFS>
+						<VENDOR-SPECIFIC-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/MICROSAR/vBaseEnv</VENDOR-SPECIFIC-MODULE-DEF-REF>
+					</VENDOR-SPECIFIC-MODULE-DEF-REFS>
+				</BSW-IMPLEMENTATION>
+				<ECUC-MODULE-DEF UUID="cd5d2b77-7c41-4c5b-86d7-ec8d25b5b55e">
+					<SHORT-NAME>vBaseEnv</SHORT-NAME>
+					<LONG-NAME>
+						<L-4 L="EN">Vector Base Environment</L-4>
+					</LONG-NAME>
+					<DESC>
+						<L-2 L="EN">The Vector Base Environment (vBaseEnv) provides everything necessary to get a microcontroller project compiled/linked and performs a basic hardware setup (inlcuding memory init, PLL init, Port init and Watchdog init) in order to get a cyclic runtime behavior.
+#vBRS #OS #vLinkGen #Startup
+#Vector</L-2>
+					</DESC>
+					<CATEGORY>VENDOR_SPECIFIC_MODULE_DEFINITION</CATEGORY>
+					<ADMIN-DATA>
+						<DOC-REVISIONS>
+							<DOC-REVISION>
+								<REVISION-LABEL>0.01.00</REVISION-LABEL>
+								<STATE>prototype</STATE>
+								<ISSUED-BY>vibwa</ISSUED-BY>
+								<DATE>2018-06-11</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">initial vBaseEnv version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">new Preconfig and HW-selection concept</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+						</DOC-REVISIONS>
+					</ADMIN-DATA>
+					<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+					<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+					<SUPPORTED-CONFIG-VARIANTS>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+					</SUPPORTED-CONFIG-VARIANTS>
+					<CONTAINERS>
+						<ECUC-PARAM-CONF-CONTAINER-DEF UUID="5084d491-1d5d-48e2-8e41-4ab6029f32ee">
+							<SHORT-NAME>vBaseEnvGeneral</SHORT-NAME>
+							<ADMIN-DATA>
+								<SDGS>
+									<SDG GID="DV:CfgPostBuild">
+										<SD GID="DV:postBuildSelectableChangeable">false</SD>
+										<SD GID="DV:postBuildNotDeletable">false</SD>
+									</SDG>
+								</SDGS>
+							</ADMIN-DATA>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+							<REFERENCES>
+								<ECUC-REFERENCE-DEF UUID="5c069ae2-ce60-49d1-8494-6679883a4e43">
+									<SHORT-NAME>vBaseEnvTestedDerivativeRef</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Tested Derivative</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Select a Tested Derivative from the list of supported ones.</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:variantMultiplicityPBL">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<REQUIRES-INDEX>false</REQUIRES-INDEX>
+									<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vBaseEnv/vBaseEnvGeneral/vBaseEnvDerivativeInformation</DESTINATION-REF>
+								</ECUC-REFERENCE-DEF>
+							</REFERENCES>
+							<SUB-CONTAINERS>
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="2c77318d-738c-43db-b2cd-99d2d85156c9">
+									<SHORT-NAME>vBaseEnvDerivativeInformation</SHORT-NAME>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<PARAMETERS>
+										<ECUC-INTEGER-PARAM-DEF UUID="ba23d239-2143-4656-bb01-bd72aa3f610f">
+											<SHORT-NAME>vBaseEnvCpuMaxFrequency</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Configure the maximum frequency of this derivative.
+This value is used to validate the vBRS PLL configuration.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:variantMultiplicityPBL">false</SD>
+													</SDG>
+													<SDG GID="DV:Display">
+														<SD GID="DV:BaseUnit">HZ</SD>
+														<SD GID="DV:Unit">MHZ</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>100000000</DEFAULT-VALUE>
+											<MIN>0</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<ECUC-INTEGER-PARAM-DEF UUID="2c58ac76-8424-4f2b-8458-fc2d5826f0e1">
+											<SHORT-NAME>vBaseEnvAvailableChannels_Flexray</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Configure the amount of Flexray channels, available on this derivative.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:variantMultiplicityPBL">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MAX>256</MAX>
+											<MIN>0</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<ECUC-INTEGER-PARAM-DEF UUID="a17836b8-f071-4666-9ee0-ba303f5a3534">
+											<SHORT-NAME>vBaseEnvAvailableChannels_Can</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Configure the amount of CAN channels, available on this derivative.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:variantMultiplicityPBL">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MAX>256</MAX>
+											<MIN>0</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<ECUC-INTEGER-PARAM-DEF UUID="46ed0478-2cf8-4ca0-8d59-96a3adc09901">
+											<SHORT-NAME>vBaseEnvAvailableChannels_Lin</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Configure the amount of LIN channels, available on this derivative.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:variantMultiplicityPBL">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MAX>256</MAX>
+											<MIN>0</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<ECUC-INTEGER-PARAM-DEF UUID="3542c1f3-c9fb-4ea1-890c-cabe858701ba">
+											<SHORT-NAME>vBaseEnvAvailableChannels_Ethernet</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Configure the amount of Ethernet channels, available on this derivative.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:variantMultiplicityPBL">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MAX>256</MAX>
+											<MIN>0</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<ECUC-INTEGER-PARAM-DEF UUID="d770a952-9a90-4534-9c63-9fedc2166b04">
+											<SHORT-NAME>vBaseEnvCpuCoreAmount</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Configure the amount of cores, available on this derivative.
+This value will be generated into vBrsCfg.h as
+BRS_CPU_CORE_AMOUNT</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:variantMultiplicityPBL">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>1</DEFAULT-VALUE>
+											<MAX>256</MAX>
+											<MIN>1</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<ECUC-STRING-PARAM-DEF UUID="a00a3575-fcc4-4f42-b149-4fa6d00ea1b6">
+											<SHORT-NAME>vBaseEnvTestedDerivative</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Configure the correct Mcu_Derivative value of this derivative.
+This value will be generated into vBrsCfg.h as
+BRS_DERIVATIVE_x</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</ECUC-STRING-PARAM-DEF>
+										<ECUC-STRING-PARAM-DEF UUID="62d154b0-f82a-4891-a6c0-0816e988f0f7">
+											<SHORT-NAME>vBaseEnvTestedDerivativeDescription</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Describe here more precisely this derivative.
+This description is only textual information for the user.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</ECUC-STRING-PARAM-DEF>
+										<ECUC-ENUMERATION-PARAM-DEF UUID="f0d41453-7510-49bd-b117-a3e6bd397e54">
+											<SHORT-NAME>vBaseEnvCpuCore</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Configure the core architecture of this derivative.
+This value will be generated into vBrsCfg.h as
+BRS_CPU_CORE_x</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:variantMultiplicityPBL">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<LITERALS>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="42ac4658-d126-46a1-8e07-69fd6168b0b0">
+													<SHORT-NAME>OTHER</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Generic value for cores with no specific value</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="de5d02a0-6e53-444e-8fec-165192dbfcc6">
+													<SHORT-NAME>ARC_EM6</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">DesignWare ARC EM6</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="2caf6ca1-f06c-4186-b70d-fd667b7f9773">
+													<SHORT-NAME>CORTEX_M0</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Arm Cortex M0</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="d6b5ba58-9c41-45bd-bcfd-14a536b97ef8">
+													<SHORT-NAME>CORTEX_M0PLUS</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Arm Cortex M0+</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="7742a473-e0c0-4c05-a843-80b4d76c5c8a">
+													<SHORT-NAME>CORTEX_M3</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Arm Cortex M3</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="97fd930c-9353-4ef9-a7d1-ec1217ba8ab8">
+													<SHORT-NAME>CORTEX_M4</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Arm Cortex M4</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="df99eb0c-1f58-42c3-96ba-4c72f5bfea73">
+													<SHORT-NAME>CORTEX_M4F</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Arm Cortex M4F</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="f5e25921-4820-4df7-b58f-2610bc770611">
+													<SHORT-NAME>CORTEX_M7</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Arm Cortex M7</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="a4f4e7c0-3dec-4824-a1f6-07252e4fe805">
+													<SHORT-NAME>CORTEX_M33</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Arm Cortex M33</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="d1b1faf1-478e-41f2-9e08-2c81c5d9fc5e">
+													<SHORT-NAME>CORTEX_R4</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Arm Cortex R4</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="7ba8b02b-7c28-4851-bd1a-c1aa86a7b556">
+													<SHORT-NAME>CORTEX_R4F</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Arm Cortex R4F</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="91c856ca-0658-4962-93fc-f8a8d6749716">
+													<SHORT-NAME>CORTEX_R5</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">ARM Cortex R5</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="421abb2e-9c24-429e-8f61-2e2c35b3f901">
+													<SHORT-NAME>CORTEX_R5F</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Arm Cortex R5F</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="28ae374a-06f9-4c06-9d99-468e5ab242a7">
+													<SHORT-NAME>CORTEX_R7</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">ARM Cortex R7</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="dd6ad956-a2ad-4e83-9968-6c866fd02a13">
+													<SHORT-NAME>CORTEX_R52</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Arm Cortex R52</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="a4478daa-9082-4f29-be50-9ad65af95756">
+													<SHORT-NAME>E200Z0</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">NXP/ST PowerPC RISC Core e200z0</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="1b446206-4d6e-4475-89c3-0d1cdd705ec1">
+													<SHORT-NAME>E200Z210</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">NXP/ST PowerPC RISC Core e200z210</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="1fccf610-b3e5-4909-8593-a959fd7401ad">
+													<SHORT-NAME>E200Z215</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">NXP/ST PowerPC RISC Core e200z215</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="d1b001d2-a9f7-4602-8cd2-0816c3b00493">
+													<SHORT-NAME>E200Z225</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">NXP/ST PowerPC RISC Core e200z225</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="4949d206-c450-48a1-ab9b-a667eb7935fb">
+													<SHORT-NAME>E200Z410</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">NXP/ST PowerPC RISC Core e200z410</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="9fb9a5e8-90fe-402d-8b43-07ef7ef4bb10">
+													<SHORT-NAME>E200Z420</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">NXP/ST PowerPC RISC Core e200z420</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="1e7d1586-eff8-4039-9013-c83b7b1fc8e5">
+													<SHORT-NAME>E200Z425</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">NXP/ST PowerPC RISC Core e200z425</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="001836c5-e196-43f5-8272-47e3a828aa34">
+													<SHORT-NAME>E200Z710</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">NXP/ST PowerPC RISC Core e200z710</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="9a121a75-d998-415c-8f21-9bdbc1a45e1c">
+													<SHORT-NAME>E200Z720</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">NXP/ST PowerPC RISC Core e200z720</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="73ebaf3c-8101-4340-a00d-d39379d3354a">
+													<SHORT-NAME>E200Z726</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">NXP/ST PowerPC RISC Core e200z726</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="bd84323c-779c-41cb-a9ef-74b431a561f7">
+													<SHORT-NAME>E200Z759</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">NXP/ST PowerPC RISC Core e200z759</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="dbda8299-ffca-4baf-b08c-68f461750047">
+													<SHORT-NAME>G3K</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Renesas G3K</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="1a31e4ce-e767-430c-a8bd-52fe5ff3997f">
+													<SHORT-NAME>G3KH</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Renesas G3KH</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="73c3f8ee-b3d4-49ee-a24d-abee7830f530">
+													<SHORT-NAME>G3M</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Renesas G3M</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="bfacb27c-48ef-47b5-80a9-c5fb3c3908bb">
+													<SHORT-NAME>G4MH</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Renesas G4MH</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="141a1801-27e8-4fe3-a92e-1e1105738d0a">
+													<SHORT-NAME>TC161</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Infineon TriCore Aurix Core</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="873be89f-a2c3-456a-be6e-40409130a46a">
+													<SHORT-NAME>TC162</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Infineon TriCore AurixPlus Core</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+												<ECUC-ENUMERATION-LITERAL-DEF UUID="d3f914fa-e76a-414b-a0ed-ad1181d40778">
+													<SHORT-NAME>TC18</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Infineon TriCore Aurix 3G (TC4xx)</L-4>
+													</LONG-NAME>
+													<ORIGIN>Vector Informatik</ORIGIN>
+												</ECUC-ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ECUC-ENUMERATION-PARAM-DEF>
+										<ECUC-INTEGER-PARAM-DEF UUID="3251fcec-50ee-4a60-acd4-a8562fe47a30">
+											<SHORT-NAME>vBaseEnvCpuInitCore</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Configure the core ID of the core, which should be used for general initialization.
+For normal, this is the boot core.
+This value will be generated into vBrsCfg.h as
+BRS_CPU_INIT_CORE</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:variantMultiplicityPBL">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>255</MAX>
+											<MIN>0</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<ECUC-STRING-PARAM-DEF UUID="93f47fc4-890e-493c-a209-2dc0166c8039">
+											<SHORT-NAME>vBaseEnvUsedManual</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Manual and version, used for the development of the vBaseEnv preconfig</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:variantMultiplicityPBL">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</ECUC-STRING-PARAM-DEF>
+										<ECUC-INTEGER-PARAM-DEF UUID="3e60240a-d3a2-4de4-b246-b6a8bd2d0c78">
+											<SHORT-NAME>vBaseEnvAvailableChannels_Hyperbus</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Configure the amount of Hyperbus channels, available on this derivative.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:variantMultiplicityPBL">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MAX>256</MAX>
+											<MIN>0</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<ECUC-INTEGER-PARAM-DEF UUID="c04ed28f-ace3-4748-80e8-0716941da4f9">
+											<SHORT-NAME>vBaseEnvAvailableChannels_I2c</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Configure the amount of I2C channels, available on this derivative.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:variantMultiplicityPBL">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MAX>256</MAX>
+											<MIN>0</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<ECUC-INTEGER-PARAM-DEF UUID="6678f63b-3328-436f-b3b7-65b4a4020c68">
+											<SHORT-NAME>vBaseEnvAvailableChannels_Spi</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Configure the amount of Spi channels, available on this derivative.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:variantMultiplicityPBL">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MAX>256</MAX>
+											<MIN>0</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+									</PARAMETERS>
+									<SUB-CONTAINERS>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="b8e6419f-522a-4258-8358-22c51c77e4a4">
+											<SHORT-NAME>vBaseEnvAdditionalParameters</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Additional parameters for generation of additional defines, if necessary for the depending platform.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<PARAMETERS>
+												<ECUC-STRING-PARAM-DEF UUID="2baac809-cdc2-447d-9f20-a18beb8d886d">
+													<SHORT-NAME>vBaseEnvDerivativeGroup</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Define the Derivative Group of this derivative</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</ECUC-STRING-PARAM-DEF>
+												<ECUC-ENUMERATION-PARAM-DEF UUID="67f97e88-2817-4d79-9876-bbc3026774c0">
+													<SHORT-NAME>vBaseEnvPllGroup</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Configure the PLL Group of your derivative</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<LITERALS>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="33f68617-29b7-4ad3-a985-b9f09ca49925">
+															<SHORT-NAME>A</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">PLL Group A</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="4bd1873a-4688-4fb5-a2e6-802b9fa24a83">
+															<SHORT-NAME>A1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">PLL Group A1</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="52068b09-692f-4c1b-b69a-3337658034b3">
+															<SHORT-NAME>A2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">PLL Group A2</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="e045eb0a-397b-46a8-b382-abe2d13c4b8b">
+															<SHORT-NAME>A3</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">PLL Group A3</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="5310bc41-dbc4-4fbe-865a-067c41aa91e5">
+															<SHORT-NAME>A4</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">PLL Group A4</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="88d5ed6c-699b-4f0c-9406-03234d473fb7">
+															<SHORT-NAME>B</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">PLL Group B</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="71e7aa6c-ea63-4ea3-8343-5fd963a625f3">
+															<SHORT-NAME>C</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">PLL Group C</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="a1b64d96-ce00-4c20-a3b8-949336b634aa">
+															<SHORT-NAME>D</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">PLL Group D</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="db0a97cd-e20f-4df0-b8c5-5d008c9b8862">
+															<SHORT-NAME>E</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">PLL Group E</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="10958e8a-b062-4d42-86b7-a6b0ac333eac">
+															<SHORT-NAME>F</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">PLL Group F</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="42f3a8da-38c8-4365-a79d-8383ed6eb58e">
+															<SHORT-NAME>G</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">PLL Group G</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="15872297-ebf5-4608-9963-edb1b5539c7e">
+															<SHORT-NAME>H</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">PLL Group H</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="37d92a52-2306-47d5-b65e-30bce59e58fc">
+															<SHORT-NAME>I</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">PLL Group I</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="7dc5bf7d-6b9c-48dc-b955-124423feeaf3">
+															<SHORT-NAME>J</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">PLL Group J</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="6293f061-0901-4645-b9a4-ab5f9688271c">
+															<SHORT-NAME>K</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">PLL Group K</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="51b4d2ef-fcd1-4bdd-99eb-424c8a834564">
+															<SHORT-NAME>L</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">PLL Group L</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="f14e2471-1d54-4e9c-ab78-94218f7cca7a">
+															<SHORT-NAME>A5</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">PLL Group A5</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="6a438a4b-b9ee-43d2-87fd-3fb81e5d3dcb">
+															<SHORT-NAME>E1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">PLL Group E1</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ECUC-ENUMERATION-PARAM-DEF>
+												<ECUC-ENUMERATION-PARAM-DEF UUID="64e82637-3452-4005-833e-ec2c010b3866">
+													<SHORT-NAME>vBaseEnvClockGroup</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Configure the Clock Group of your derivative</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<LITERALS>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="5f73ca11-9d01-4b85-be6c-04dd16e14a8b">
+															<SHORT-NAME>A</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Clock Group A</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="568b113b-5c29-4b9e-9be4-9ddff6ba9c89">
+															<SHORT-NAME>A1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Clock Group A1</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="7df0942c-e2a0-4bfe-a493-1ef50d9d1b75">
+															<SHORT-NAME>A2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Clock Group A2</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="8727eb45-2cc7-48ff-baad-9a6ff9d3b578">
+															<SHORT-NAME>A3</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Clock Group A3</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="9407935c-89b8-42bc-8fba-20f54367fc4d">
+															<SHORT-NAME>A4</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Clock Group A4</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="2719d6ab-5110-4cdd-a775-d21b713f3776">
+															<SHORT-NAME>B</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Clock Group B</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="320ec317-dfce-47d8-bd5a-49607587d07c">
+															<SHORT-NAME>C</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Clock Group C</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="ab473c86-d911-4d38-97e1-001d8d3cfd68">
+															<SHORT-NAME>D</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Clock Group D</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="e76202f8-cb39-40c8-9927-182e90a73611">
+															<SHORT-NAME>E</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Clock Group E</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="d1d3abf5-8765-4622-a6ee-48b7e41d8b8c">
+															<SHORT-NAME>F</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Clock Group F</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="333dc6e1-d8b6-4e70-9679-d46e0db6b341">
+															<SHORT-NAME>G</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Clock Group G</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="0993e093-8d21-430c-8fb6-405c1acf13b6">
+															<SHORT-NAME>H</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Clock Group H</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="f9c1891a-0e9e-4c10-a57b-d996b08ff419">
+															<SHORT-NAME>I</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Clock Group I</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="d8f14f68-fa51-4e3d-ba0c-2948b64a8e34">
+															<SHORT-NAME>J</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Clock Group J</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="91bd161b-fdc7-4d92-8941-d10d173a888d">
+															<SHORT-NAME>K</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Clock Group K</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="58f579cb-886a-431f-9d07-a51b5b5085ef">
+															<SHORT-NAME>L</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Clock Group L</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ECUC-ENUMERATION-PARAM-DEF>
+												<ECUC-ENUMERATION-PARAM-DEF UUID="e9fa5662-e278-4ce0-a764-9145857ecddb">
+													<SHORT-NAME>vBaseEnvPortGroup</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Configure the Port Group of your derivative</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<LITERALS>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="9e6c5d65-d1ec-4a60-a173-0d420f1e210e">
+															<SHORT-NAME>A</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Port Group A</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="40f2dd6d-30b3-4456-85fe-562c4c4b3113">
+															<SHORT-NAME>A1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Port Group A1</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="805d5cb2-1a36-44c5-b7a3-9e8dcbfbd3a9">
+															<SHORT-NAME>A2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Port Group A2</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="8bf1d885-ae9c-4d7e-b603-026c5faf8e2f">
+															<SHORT-NAME>A3</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Port Group A3</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="a6687d7c-e351-4bda-ac2b-005e97e800a6">
+															<SHORT-NAME>A4</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Port Group A4</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="f2d08c71-0435-40c9-99b9-ec614c8b883d">
+															<SHORT-NAME>B</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Port Group B</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="f00af55e-e803-422b-9668-b89ba17e875e">
+															<SHORT-NAME>B1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Port Group B1</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="25047a05-c24d-4769-9941-1a8c7f67beb8">
+															<SHORT-NAME>B2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Port Group B2</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="6d2b82f4-7645-4baf-86c3-3daa29507a95">
+															<SHORT-NAME>C</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Port Group C</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="224af8b4-4dc2-4a1c-9041-9b4c6d3a07f0">
+															<SHORT-NAME>D</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Port Group D</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="bdf4b1c3-097d-42fd-bd38-fca60b33ac6f">
+															<SHORT-NAME>E</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Port Group E</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="3a5e6b86-0584-48b3-b9d1-cfa7be428846">
+															<SHORT-NAME>F</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Port Group F</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="dfb13bcf-6418-44f0-ab30-a208c2e9b472">
+															<SHORT-NAME>G</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Port Group G</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="10c04707-90b9-4aea-9f00-6cb4042fbd51">
+															<SHORT-NAME>H</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Port Group H</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="ba1c3375-4505-460f-a8d7-cb790c36e980">
+															<SHORT-NAME>I</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Port Group I</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="2cfaaf77-cb75-4635-bc3c-db000d81588c">
+															<SHORT-NAME>J</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Port Group J</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="367c0190-386f-4238-9eaa-24ee977ffe02">
+															<SHORT-NAME>K</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Port Group K</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="b74f0009-cefd-4112-b48c-02199c11cc14">
+															<SHORT-NAME>L</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Port Group L</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ECUC-ENUMERATION-PARAM-DEF>
+												<ECUC-ENUMERATION-PARAM-DEF UUID="ee45913a-dd7e-46ba-a6e6-2cdc2aa9d5ea">
+													<SHORT-NAME>vBaseEnvProtectionGroup</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Configure the Protection Group of your derivative</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<LITERALS>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="dd50178d-15cd-4954-95fa-59f4bf3b1532">
+															<SHORT-NAME>A</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Protection Group A</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="8c533729-2352-44dc-a0d4-45e932d51869">
+															<SHORT-NAME>B</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Protection Group B</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="c86f2220-c235-4925-9e48-bedc6bdf4fe5">
+															<SHORT-NAME>C</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Protection Group C</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="a4fe4d08-b4d9-4952-9774-3af556befbcf">
+															<SHORT-NAME>D</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Protection Group D</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="c81a64d6-eed0-4b82-9992-823a42df3f96">
+															<SHORT-NAME>E</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Protection Group E</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="79e16611-9248-47fe-9275-40687b7ebc87">
+															<SHORT-NAME>F</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Protection Group F</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="1e75cf72-6126-4d62-abf3-d0dd12edab66">
+															<SHORT-NAME>G</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Protection Group G</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="62bf93cf-4f7c-485c-8ec3-aca40d658a2d">
+															<SHORT-NAME>H</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Protection Group H</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="c94cd3f4-1f6b-4df4-b6e3-0eff1d6254e2">
+															<SHORT-NAME>I</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Protection Group I</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="aaf51e9c-ee10-46ad-aea0-9a336dbb98b0">
+															<SHORT-NAME>J</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Protection Group J</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="676dcd7b-c309-411f-bd2f-fe6e9115420e">
+															<SHORT-NAME>K</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Protection Group K</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="e06f1271-d7a8-41b2-81d8-f5428481f9d9">
+															<SHORT-NAME>L</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Protection Group L</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="7dd1d0c6-d1f2-44c5-8f93-a3af9cb3c389">
+															<SHORT-NAME>NONE</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">No Protection Group</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ECUC-ENUMERATION-PARAM-DEF>
+												<ECUC-ENUMERATION-PARAM-DEF UUID="4e273998-de1f-4220-b71a-3434a80b031a">
+													<SHORT-NAME>vBaseEnvResetGroup</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Configure the Reset Group of your derivative</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<LITERALS>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="aa8a09da-3767-410a-9ecb-e5781fc187d8">
+															<SHORT-NAME>A</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Reset Group A</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="70e777b2-384d-4dbe-8dab-cc7ddba00350">
+															<SHORT-NAME>B</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Reset Group B</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="c04c30ba-16a6-4898-9110-522a912af1e9">
+															<SHORT-NAME>C</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Reset Group C</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="bee1b7b8-a3f1-4d26-ad8e-b6ea6f845cbb">
+															<SHORT-NAME>D</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Reset Group D</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="876801e7-a5e8-41f8-893a-4c68598130b9">
+															<SHORT-NAME>E</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Reset Group E</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="54790de4-4041-4a9e-b3dd-9c21c9c157c6">
+															<SHORT-NAME>F</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Reset Group F</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="b90f5e38-16aa-41e8-8890-31365cb4be16">
+															<SHORT-NAME>G</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Reset Group G</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="de4031aa-156d-410c-a11c-323ad52c831e">
+															<SHORT-NAME>H</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Reset Group H</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="caa276ae-41d6-488c-9d03-15bb12a0dc3a">
+															<SHORT-NAME>I</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Reset Group I</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="69866ed8-e789-45f0-ba46-08c21b3173ae">
+															<SHORT-NAME>J</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Reset Group J</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="96a8140b-91cd-45d1-8dc2-041a84313e6e">
+															<SHORT-NAME>K</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Reset Group K</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="02b74b55-8a02-4d38-b433-81a503c0f75c">
+															<SHORT-NAME>L</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Reset Group L</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ECUC-ENUMERATION-PARAM-DEF>
+												<ECUC-ENUMERATION-PARAM-DEF UUID="b8ee0017-d3f4-4f99-b7f5-9125c02ac2ee">
+													<SHORT-NAME>vBaseEnvWatchdogGroup</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Configure the Watchdog Group of your derivative</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<LITERALS>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="f41116ca-067c-4e56-b086-84b9634feaad">
+															<SHORT-NAME>NONE</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Watchdog Group NONE</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="ae0a2d3d-69f8-416c-8955-9cd11af5a8b9">
+															<SHORT-NAME>A</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Watchdog Group A</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="fffef368-b0e6-468d-8a07-51effd337571">
+															<SHORT-NAME>A1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Watchdog Group A1</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="eb0e7444-5b09-4e4e-8921-5a6696b0fb45">
+															<SHORT-NAME>A2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Watchdog Group A2</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="2955fbe7-1c73-4153-963b-c9504b246319">
+															<SHORT-NAME>A3</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Watchdog Group A3</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="f24e3f6f-fd10-4646-879d-ca9fdf1afc19">
+															<SHORT-NAME>A4</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Watchdog Group A4</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="cd8a100e-49cd-4053-ae22-17e39138f91b">
+															<SHORT-NAME>A5</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Watchdog Group A5</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="df688c42-b469-404e-bf0e-3973b4562109">
+															<SHORT-NAME>A6</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Watchdog Group A6</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="577d4d2a-5770-4c7c-bf85-46fc4ecb9c71">
+															<SHORT-NAME>A7</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Watchdog Group A7</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="de5c2edf-c18d-480d-b025-a12dbc01ad84">
+															<SHORT-NAME>B</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Watchdog Group B</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="e3bef60b-e951-41cf-b772-9585b35541d7">
+															<SHORT-NAME>C</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Watchdog Group C</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="80caefc7-bbec-4975-b2b6-9f2534c9864d">
+															<SHORT-NAME>D</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Watchdog Group D</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="c2dbe513-ab4f-4fbe-8bcb-d0954461a981">
+															<SHORT-NAME>E</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Watchdog Group E</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ECUC-ENUMERATION-PARAM-DEF>
+												<ECUC-ENUMERATION-PARAM-DEF UUID="fe20961e-dd08-42da-852d-984a16b8f502">
+													<SHORT-NAME>vBaseEnvOpModeGroup</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Configure the Operation Mode Group of your derivative</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<LITERALS>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="b7d399f9-5130-406a-8005-36f6fc5f61f8">
+															<SHORT-NAME>NONE</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Operation Mode Group NONE</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="7f2584b1-592f-4978-a8c0-e00e19cce7be">
+															<SHORT-NAME>A</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Operation Mode Group A</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="8d7b74ee-f83c-4056-a998-7419d039ec7d">
+															<SHORT-NAME>A1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Operation Mode Group A1</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="95935d27-39f7-4f90-a9fc-345b2dff9739">
+															<SHORT-NAME>A2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Operation Mode Group A2</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="ddcf6f85-b4f9-4701-992b-524b4ae3b61f">
+															<SHORT-NAME>B</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Operation Mode Group B</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="c747e25e-1eb1-4c12-935c-8fd7f42820e6">
+															<SHORT-NAME>C</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Operation Mode Group C</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="71922256-b489-40e9-8c03-5c07ae78bc5d">
+															<SHORT-NAME>D</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Operation Mode Group D</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="20e398c8-4801-4cc5-92dd-9ddefc40e929">
+															<SHORT-NAME>E</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Operation Mode Group E</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ECUC-ENUMERATION-PARAM-DEF>
+												<ECUC-ENUMERATION-PARAM-DEF UUID="6b314d2d-7838-4204-a9ed-acdcd694018c">
+													<SHORT-NAME>vBaseEnvUserModeAccessGroup</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Configure the User Mode Access Group of your derivative</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<LITERALS>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="83321b1a-6344-4e14-90fe-7daac219c7b7">
+															<SHORT-NAME>A</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">User Mode Access Group A</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="c5c6a123-8cdc-4a21-af1f-34c3de2ec158">
+															<SHORT-NAME>A1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">User Mode Access Group A1</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="822acd4a-3a9f-4b77-9805-ac4ab29568fd">
+															<SHORT-NAME>A2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">User Mode Access Group A2</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="e15bb02a-efe5-425e-90e0-aec58a447136">
+															<SHORT-NAME>B</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">User Mode Access Group B</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="b93ebdc1-1e12-4834-876a-8b4d067b07eb">
+															<SHORT-NAME>C</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">User Mode Access Group C</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="433a4d47-c99a-4836-afb6-64439b6dfd75">
+															<SHORT-NAME>D</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">User Mode Access Group D</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="55929400-718b-4b15-8076-3772e6148d45">
+															<SHORT-NAME>E</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">User Mode Access Group E</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="069dcb26-5def-4a10-9de6-7341f6a17a84">
+															<SHORT-NAME>F</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">User Mode Access Group F</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ECUC-ENUMERATION-PARAM-DEF>
+												<ECUC-BOOLEAN-PARAM-DEF UUID="898a7dfa-a750-4879-a587-22cabff2b55d">
+													<SHORT-NAME>vBaseEnvPowerDownModes</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Configure, if Power Down Modes to be used for your derivative</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>false</DEFAULT-VALUE>
+												</ECUC-BOOLEAN-PARAM-DEF>
+											</PARAMETERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="67914085-ee03-4fe5-9d01-5ff933738178">
+											<SHORT-NAME>vBaseEnvMemLayoutHwRegion</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Memory Layout Hardware Region</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">Container to structure the configuration parameters of hardware memory regions.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildNotDeletable">true</SD>
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<PARAMETERS>
+												<ECUC-INTEGER-PARAM-DEF UUID="0cc34936-30b0-4113-8e8b-12ce777c4a07">
+													<SHORT-NAME>vBaseEnvHwRegionStartAddress</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Hardware Region Start Address</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Start address of the hardware memory region.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:DefaultFormat">HEX</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>0</DEFAULT-VALUE>
+													<MAX>4294967295</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="d56f3651-1f2a-4460-ad87-a74f34e6c2ae">
+													<SHORT-NAME>vBaseEnvHwRegionSize</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Hardware Region Size</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Size of the hardware memory region.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:DefaultFormat">HEX</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>0</DEFAULT-VALUE>
+													<MAX>4294967295</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="8a3ee4a1-ae6b-4124-a67f-b669ac35fc9d">
+													<SHORT-NAME>vBaseEnvHwRegionEccAlignment</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Hardware Region ECC Alignment</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Required ECC Alignment of the hardware memory region.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:DefaultFormat">HEX</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>0</DEFAULT-VALUE>
+													<MAX>4294967295</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-ENUMERATION-PARAM-DEF UUID="eec4f426-5c61-4f4e-bb84-9b79a5fd74d6">
+													<SHORT-NAME>vBaseEnvHwRegionType</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Hardware Region Type</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Type of the hardware memory region.
+This parameter is necessary for some linkers (e.g. Tasking), to distinguish between RAM/ROM/NVRAM.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<LITERALS>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="616e8c6f-874a-44d4-a521-e7989eab398f">
+															<SHORT-NAME>RAM</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Random-Access Memory</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="7721c54a-4059-4765-bfd4-f8c402f491e8">
+															<SHORT-NAME>ROM</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Read-Only Memory</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+														<ECUC-ENUMERATION-LITERAL-DEF UUID="f842a954-69fe-47f1-9500-4a05a66ae468">
+															<SHORT-NAME>NVRAM</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Non-Volatile Random-Access Memory</L-4>
+															</LONG-NAME>
+															<ORIGIN>Vector Informatik</ORIGIN>
+														</ECUC-ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ECUC-ENUMERATION-PARAM-DEF>
+											</PARAMETERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="95c6c99c-78c7-405a-8641-69e062c29cf6">
+											<SHORT-NAME>vBaseEnvClockSettings</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Container for derivative specific default clock settings (oscillator + peripherals).
+This allows solving actions to update the depending frequncy settings in the vBRSHwConfig container.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<PARAMETERS>
+												<ECUC-INTEGER-PARAM-DEF UUID="bad86329-f64d-46ce-87c0-0beedbb27820">
+													<SHORT-NAME>vBaseEnvOscClock</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Oscillator clock frequency</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Frequency of the board specific external oscillator.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">HZ</SD>
+																<SD GID="DV:Unit">MHZ</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="63919a76-214f-4231-8fbb-d197ccbd76f6">
+													<SHORT-NAME>vBaseEnvTimebaseClock</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Timebase (PLL) clock frequency</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Frequency, used for PLL calculation (normally used as CPU core clock).</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">HZ</SD>
+																<SD GID="DV:Unit">MHZ</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="2211f913-7211-4a2a-ad6f-7b183e303ead">
+													<SHORT-NAME>vBaseEnvPeriphClock</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Peripheral (Timer) clock frequency</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Frequency of the controller peripherals, at least for the default timer, used by the OS.
+If the frequencies for communication peripherals differ from this peripheral clock, they could be configured through the depending communictaion peripheral clock parameter.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">HZ</SD>
+																<SD GID="DV:Unit">MHZ</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="237fe032-59c4-4f1b-9435-13cfcce46ef4">
+													<SHORT-NAME>vBaseEnvCanClock</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of peripheral clock: CAN</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default frequency, used for PLL calculation of CAN driver peripheral clock.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">HZ</SD>
+																<SD GID="DV:Unit">MHZ</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="77a40253-8044-475e-b72b-91f1f103b571">
+													<SHORT-NAME>vBaseEnvLinClock</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of peripheral clock: LIN</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default frequency, used for PLL calculation of LIN driver peripheral clock.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">HZ</SD>
+																<SD GID="DV:Unit">MHZ</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="9c723370-7286-4a2a-af3d-0a22a1c24f82">
+													<SHORT-NAME>vBaseEnvFlexrayClock</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of peripheral clock: FlexRay</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default frequency, used for PLL calculation of FlexRay driver peripheral clock.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">HZ</SD>
+																<SD GID="DV:Unit">MHZ</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="e30ab088-36c9-4df1-a52d-95c0b8cb285d">
+													<SHORT-NAME>vBaseEnvEthernetClock</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of peripheral clock: EtherNet</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default frequency, used for PLL calculation of EtherNet driver peripheral clock.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">HZ</SD>
+																<SD GID="DV:Unit">MHZ</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="43f04887-b69b-4946-b254-c6aa14b43873">
+													<SHORT-NAME>vBaseEnvHyperbusClock</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of peripheral clock: Hyperbus</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default frequency, used for PLL calculation of Hyperbus driver peripheral clock.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">HZ</SD>
+																<SD GID="DV:Unit">MHZ</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="dbe1d32a-047f-4168-9415-f66bad94a402">
+													<SHORT-NAME>vBaseEnvI2cClock</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of peripheral clock: I2C</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default frequency, used for PLL calculation of I2C driver peripheral clock.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">HZ</SD>
+																<SD GID="DV:Unit">MHZ</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+												<ECUC-INTEGER-PARAM-DEF UUID="76a75dd0-f430-4714-92cf-1aa5972e9882">
+													<SHORT-NAME>vBaseEnvSpiClock</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of peripheral clock: SPI</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default frequency, used for PLL calculation of Spi driver peripheral clock.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">HZ</SD>
+																<SD GID="DV:Unit">MHZ</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+											</PARAMETERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="517ff7b1-ca16-4b22-a1b7-b27a2390d92f">
+									<SHORT-NAME>vBaseEnvMemLayoutHwRegion</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Memory Layout Hardware Region</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Container to structure the configuration parameters of hardware memory regions.</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildNotDeletable">true</SD>
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="5a6bc7a8-95e1-4d35-92d8-dad872b4fbb9">
+									<SHORT-NAME>vBaseEnvInterruptHandling</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container for family specific default interrupt settings</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<SUB-CONTAINERS>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="451fe3fa-d259-4663-a518-f2e044f67d6a">
+											<SHORT-NAME>vBaseEnvCan</SHORT-NAME>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<SUB-CONTAINERS>
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="a70aa265-a413-4e33-99fe-35bed058efe2">
+													<SHORT-NAME>vBaseEnvChannel</SHORT-NAME>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:postBuildSelectableChangeable">false</SD>
+																<SD GID="DV:postBuildNotDeletable">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+													<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+													<PARAMETERS>
+														<ECUC-INTEGER-PARAM-DEF UUID="4e5452f7-0e33-4db7-b278-4fb5f1c59342">
+															<SHORT-NAME>vBaseEnvIndex</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Index</L-4>
+															</LONG-NAME>
+															<DESC>
+																<L-2 L="EN">Logical channel</L-2>
+															</DESC>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<ECUC-INTEGER-PARAM-DEF UUID="17a6698c-215e-4022-b971-660f61448c1c">
+															<SHORT-NAME>vBaseEnvIsrInterruptPriority</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Priority</L-4>
+															</LONG-NAME>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<ECUC-INTEGER-PARAM-DEF UUID="ebd4214c-557c-461b-bf67-0820ecd0b5cd">
+															<SHORT-NAME>vBaseEnvIsrInterruptSource</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Source Number</L-4>
+															</LONG-NAME>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+													</PARAMETERS>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="94d8f1fc-3c8a-4ad3-9d92-5471c72d5c94">
+											<SHORT-NAME>vBaseEnvLin</SHORT-NAME>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<SUB-CONTAINERS>
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="4a2f382c-fa69-4fe0-a745-f3a704e24e47">
+													<SHORT-NAME>vBaseEnvChannel</SHORT-NAME>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:postBuildSelectableChangeable">false</SD>
+																<SD GID="DV:postBuildNotDeletable">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+													<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+													<PARAMETERS>
+														<ECUC-INTEGER-PARAM-DEF UUID="9b3119d3-8c12-42e1-bd43-2cf8740ebeb7">
+															<SHORT-NAME>vBaseEnvIndex</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Index</L-4>
+															</LONG-NAME>
+															<DESC>
+																<L-2 L="EN">Logical channel</L-2>
+															</DESC>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<ECUC-INTEGER-PARAM-DEF UUID="429ada8b-93b4-44a2-8ec1-abc82c33232d">
+															<SHORT-NAME>vBaseEnvIsrInterruptPriority</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Priority</L-4>
+															</LONG-NAME>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<ECUC-INTEGER-PARAM-DEF UUID="42c64964-38e2-4691-9d12-85d6e3629020">
+															<SHORT-NAME>vBaseEnvIsrInterruptSource</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Source Number</L-4>
+															</LONG-NAME>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+													</PARAMETERS>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="2cbfd57a-cd96-4313-a0ae-94222b331d0d">
+											<SHORT-NAME>vBaseEnvFlexray</SHORT-NAME>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<SUB-CONTAINERS>
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="131db306-7656-44d5-9b3f-372d16387b0d">
+													<SHORT-NAME>vBaseEnvChannel</SHORT-NAME>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:postBuildSelectableChangeable">false</SD>
+																<SD GID="DV:postBuildNotDeletable">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+													<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+													<PARAMETERS>
+														<ECUC-INTEGER-PARAM-DEF UUID="dd35061c-b1c2-4e96-b859-7df07977b418">
+															<SHORT-NAME>vBaseEnvIndex</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Index</L-4>
+															</LONG-NAME>
+															<DESC>
+																<L-2 L="EN">Logical channel</L-2>
+															</DESC>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<ECUC-INTEGER-PARAM-DEF UUID="04db9a0b-ca5c-4fb4-a60d-594f6216392c">
+															<SHORT-NAME>vBaseEnvIsrInterruptPriority</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Priority</L-4>
+															</LONG-NAME>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<ECUC-INTEGER-PARAM-DEF UUID="aa8c240b-9427-4e23-a9d3-8473baaa965c">
+															<SHORT-NAME>vBaseEnvIsrInterruptSource</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Source Number</L-4>
+															</LONG-NAME>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+													</PARAMETERS>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="2ab3b67f-9e27-4a21-b067-3c567df25b7d">
+											<SHORT-NAME>vBaseEnvEthernet</SHORT-NAME>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<SUB-CONTAINERS>
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="0911853b-f95e-48d9-a91e-a9813877ac7a">
+													<SHORT-NAME>vBaseEnvChannel</SHORT-NAME>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:postBuildSelectableChangeable">false</SD>
+																<SD GID="DV:postBuildNotDeletable">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+													<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+													<PARAMETERS>
+														<ECUC-INTEGER-PARAM-DEF UUID="7286691d-d55b-43bd-ac98-6916e5655101">
+															<SHORT-NAME>vBaseEnvIndex</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Index</L-4>
+															</LONG-NAME>
+															<DESC>
+																<L-2 L="EN">Logical channel</L-2>
+															</DESC>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<ECUC-INTEGER-PARAM-DEF UUID="37357d8f-3ab6-46da-8ac8-b1f8ad8b40ff">
+															<SHORT-NAME>vBaseEnvIsrInterruptPriority</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Priority</L-4>
+															</LONG-NAME>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<ECUC-INTEGER-PARAM-DEF UUID="45ccbe36-749c-49dd-97b2-f5691530bdc0">
+															<SHORT-NAME>vBaseEnvIsrInterruptSource</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Source Number</L-4>
+															</LONG-NAME>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+													</PARAMETERS>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="c5dc0332-1f44-412c-8ed5-d9bc01da42cf">
+											<SHORT-NAME>vBaseEnvHyperbus</SHORT-NAME>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<SUB-CONTAINERS>
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="2fb8456a-0e80-4102-96db-d4d403e7f869">
+													<SHORT-NAME>vBaseEnvChannel</SHORT-NAME>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:postBuildSelectableChangeable">false</SD>
+																<SD GID="DV:postBuildNotDeletable">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+													<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+													<PARAMETERS>
+														<ECUC-INTEGER-PARAM-DEF UUID="7246a15d-007c-409c-9255-b69796f1a9d4">
+															<SHORT-NAME>vBaseEnvIndex</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Index</L-4>
+															</LONG-NAME>
+															<DESC>
+																<L-2 L="EN">Logical channel</L-2>
+															</DESC>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<ECUC-INTEGER-PARAM-DEF UUID="09547154-1498-41e3-ab46-a3803f94600f">
+															<SHORT-NAME>vBaseEnvIsrInterruptPriority</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Priority</L-4>
+															</LONG-NAME>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<ECUC-INTEGER-PARAM-DEF UUID="2ff27a30-a956-4d39-ad39-82d5421195b5">
+															<SHORT-NAME>vBaseEnvIsrInterruptSource</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Source Number</L-4>
+															</LONG-NAME>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+													</PARAMETERS>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="6a580f8d-1de8-4f9f-bfdf-eae2d53f6343">
+											<SHORT-NAME>vBaseEnvI2c</SHORT-NAME>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<SUB-CONTAINERS>
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="ed508309-983a-4e1b-9706-14df8f0bd9cb">
+													<SHORT-NAME>vBaseEnvChannel</SHORT-NAME>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:postBuildSelectableChangeable">false</SD>
+																<SD GID="DV:postBuildNotDeletable">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+													<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+													<PARAMETERS>
+														<ECUC-INTEGER-PARAM-DEF UUID="1c8e1683-f6bd-4da7-ae30-981dd20b5bf9">
+															<SHORT-NAME>vBaseEnvIndex</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Index</L-4>
+															</LONG-NAME>
+															<DESC>
+																<L-2 L="EN">Logical channel</L-2>
+															</DESC>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<ECUC-INTEGER-PARAM-DEF UUID="47ef3894-e0ab-4810-b1ff-761b8fad5bb7">
+															<SHORT-NAME>vBaseEnvIsrInterruptPriority</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Priority</L-4>
+															</LONG-NAME>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<ECUC-INTEGER-PARAM-DEF UUID="bdc812e9-6aa7-44fc-8d70-80eb20290daf">
+															<SHORT-NAME>vBaseEnvIsrInterruptSource</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Source Number</L-4>
+															</LONG-NAME>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+													</PARAMETERS>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="b782e61f-1eb0-4c68-ad36-27fc03273d2f">
+											<SHORT-NAME>vBaseEnvSpi</SHORT-NAME>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<SUB-CONTAINERS>
+												<ECUC-PARAM-CONF-CONTAINER-DEF UUID="59783252-d501-48a3-be38-53b4c22bc41c">
+													<SHORT-NAME>vBaseEnvChannel</SHORT-NAME>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:postBuildSelectableChangeable">false</SD>
+																<SD GID="DV:postBuildNotDeletable">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY-INFINITE>true</UPPER-MULTIPLICITY-INFINITE>
+													<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+													<PARAMETERS>
+														<ECUC-INTEGER-PARAM-DEF UUID="c421c56c-ea53-4550-81e8-f4d554b6fdc6">
+															<SHORT-NAME>vBaseEnvIndex</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Index</L-4>
+															</LONG-NAME>
+															<DESC>
+																<L-2 L="EN">Logical channel</L-2>
+															</DESC>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<ECUC-INTEGER-PARAM-DEF UUID="b984cdf2-7f54-45b6-880a-0d838dd471b9">
+															<SHORT-NAME>vBaseEnvIsrInterruptPriority</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Priority</L-4>
+															</LONG-NAME>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+														<ECUC-INTEGER-PARAM-DEF UUID="cc10d3c0-f508-4d4e-883d-78a71cf59450">
+															<SHORT-NAME>vBaseEnvIsrInterruptSource</SHORT-NAME>
+															<LONG-NAME>
+																<L-4 L="EN">Channel Source Number</L-4>
+															</LONG-NAME>
+															<ADMIN-DATA>
+																<SDGS>
+																	<SDG GID="DV:CfgPostBuild">
+																		<SD GID="DV:variantMultiplicityPBL">false</SD>
+																	</SDG>
+																</SDGS>
+															</ADMIN-DATA>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<REQUIRES-INDEX>false</REQUIRES-INDEX>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<MIN>0</MIN>
+														</ECUC-INTEGER-PARAM-DEF>
+													</PARAMETERS>
+												</ECUC-PARAM-CONF-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="7204be40-e226-4fc8-94b2-99b2d31b0bb1">
+									<SHORT-NAME>vBaseEnvPeripheralClocks</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container for family specific default peripheral clock settings</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<SUB-CONTAINERS>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="16953022-2882-44de-85d9-fbd534995dc3">
+											<SHORT-NAME>vBaseEnvCan</SHORT-NAME>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<PARAMETERS>
+												<ECUC-INTEGER-PARAM-DEF UUID="38bbe5a7-4c50-44b3-800d-38ad05f8a427">
+													<SHORT-NAME>vBaseEnvCan_Clock</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of CAN peripheral clock</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default frequency, used for PLL calculation of CAN driver peripheral clock.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">HZ</SD>
+																<SD GID="DV:Unit">MHZ</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>0</DEFAULT-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<ECUC-REFERENCE-DEF UUID="10005c4d-597e-4c80-9d0c-1846315834b4">
+													<SHORT-NAME>vBaseEnvCan_ClockRef</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of CAN peripheral clock - Mcu Reference</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default McuClockReferencePoint reference for CAN peripheral clock setting.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="1d9b0444-3a94-480f-b1b7-5bab6c833512">
+											<SHORT-NAME>vBaseEnvLin</SHORT-NAME>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<PARAMETERS>
+												<ECUC-INTEGER-PARAM-DEF UUID="d15e8388-e8b0-44d9-ad17-53b089102b7f">
+													<SHORT-NAME>vBaseEnvLin_Clock</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of LIN peripheral clock</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default frequency, used for PLL calculation of LIN driver peripheral clock.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">HZ</SD>
+																<SD GID="DV:Unit">MHZ</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>0</DEFAULT-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<ECUC-REFERENCE-DEF UUID="103738af-fdb0-4141-9970-175cedb0ebfb">
+													<SHORT-NAME>vBaseEnvLin_ClockRef</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of LIN peripheral clock - Mcu Reference</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default McuClockReferencePoint reference for LIN peripheral clock setting.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="12e6ef72-a1c3-4d36-bf1d-9903fd1a64af">
+											<SHORT-NAME>vBaseEnvFlexray</SHORT-NAME>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<PARAMETERS>
+												<ECUC-INTEGER-PARAM-DEF UUID="8b4dd0b8-0945-4e8d-aa9c-b556b848e984">
+													<SHORT-NAME>vBaseEnvFlexray_Clock</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of FlexRay peripheral clock</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default frequency, used for PLL calculation of FlexRay driver peripheral clock.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">HZ</SD>
+																<SD GID="DV:Unit">MHZ</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>0</DEFAULT-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<ECUC-REFERENCE-DEF UUID="fd657ce0-7a1b-4617-8b91-820a466b6bb8">
+													<SHORT-NAME>vBaseEnvFlexray_ClockRef</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of FlexRay peripheral clock - Mcu Reference</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default McuClockReferencePoint reference for FlexRay peripheral clock setting.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="3148881d-91b4-4386-9179-8037d07bb898">
+											<SHORT-NAME>vBaseEnvEthernet</SHORT-NAME>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<PARAMETERS>
+												<ECUC-INTEGER-PARAM-DEF UUID="0cbbf93a-e102-44fd-900d-cdbcd8932216">
+													<SHORT-NAME>vBaseEnvEthernet_Clock</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of EtherNet peripheral clock</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default frequency, used for PLL calculation of EtherNet driver peripheral clock.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">HZ</SD>
+																<SD GID="DV:Unit">MHZ</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>0</DEFAULT-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<ECUC-REFERENCE-DEF UUID="4ef49ae5-a390-4cb9-846e-48d8bb6ca0e4">
+													<SHORT-NAME>vBaseEnvEthernet_ClockRef</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of EtherNet peripheral clock - Mcu Reference</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default McuClockReferencePoint reference for EtherNet peripheral clock setting.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="faea3e8d-9bab-41a6-b927-dfcfabf24027">
+											<SHORT-NAME>vBaseEnvHyperbus</SHORT-NAME>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<PARAMETERS>
+												<ECUC-INTEGER-PARAM-DEF UUID="e06337e0-e742-4bab-9b58-c72593eaab14">
+													<SHORT-NAME>vBaseEnvHyperbus_Clock</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of Hyperbus peripheral clock</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default frequency, used for PLL calculation of Hyperbus driver peripheral clock.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">HZ</SD>
+																<SD GID="DV:Unit">MHZ</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>0</DEFAULT-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<ECUC-REFERENCE-DEF UUID="1d1c4c36-88e7-48cc-818c-f54c09ac2794">
+													<SHORT-NAME>vBaseEnvHyperbus_ClockRef</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of Hyperbus peripheral clock - Mcu Reference</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default McuClockReferencePoint reference for Hyperbus peripheral clock setting.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="0d793117-aebb-4feb-bb64-e2709fd141df">
+											<SHORT-NAME>vBaseEnvI2c</SHORT-NAME>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<PARAMETERS>
+												<ECUC-INTEGER-PARAM-DEF UUID="af7760ab-61bd-4909-803f-925f4f6638fc">
+													<SHORT-NAME>vBaseEnvI2c_Clock</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of I2C peripheral clock</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default frequency, used for PLL calculation of I2C driver peripheral clock.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">HZ</SD>
+																<SD GID="DV:Unit">MHZ</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>0</DEFAULT-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<ECUC-REFERENCE-DEF UUID="8dace219-3411-43eb-8b71-7c3bf113b69c">
+													<SHORT-NAME>vBaseEnvI2c_ClockRef</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of I2C peripheral clock - Mcu Reference</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default McuClockReferencePoint reference for I2C peripheral clock setting.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+										<ECUC-PARAM-CONF-CONTAINER-DEF UUID="65914f10-55c6-4bda-9e8b-65652bee9ad2">
+											<SHORT-NAME>vBaseEnvSpi</SHORT-NAME>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:postBuildSelectableChangeable">false</SD>
+														<SD GID="DV:postBuildNotDeletable">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+											<PARAMETERS>
+												<ECUC-INTEGER-PARAM-DEF UUID="9201db51-51b8-4182-8fee-cc748a160225">
+													<SHORT-NAME>vBaseEnvSpi_Clock</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of Spi peripheral clock</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default frequency, used for PLL calculation of Spi driver peripheral clock.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:Display">
+																<SD GID="DV:BaseUnit">HZ</SD>
+																<SD GID="DV:Unit">MHZ</SD>
+															</SDG>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>0</DEFAULT-VALUE>
+													<MAX>18446744073709551615</MAX>
+													<MIN>0</MIN>
+												</ECUC-INTEGER-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<ECUC-REFERENCE-DEF UUID="f974d0a7-959d-4a28-9ae4-12ed2f1287e8">
+													<SHORT-NAME>vBaseEnvSpi_ClockRef</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Frequency of Spi peripheral clock - Mcu Reference</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Default McuClockReferencePoint reference for Spi peripheral clock setting.</L-2>
+													</DESC>
+													<ADMIN-DATA>
+														<SDGS>
+															<SDG GID="DV:CfgPostBuild">
+																<SD GID="DV:variantMultiplicityPBL">false</SD>
+															</SDG>
+														</SDGS>
+													</ADMIN-DATA>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<REQUIRES-INDEX>false</REQUIRES-INDEX>
+													<DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint</DESTINATION-REF>
+												</ECUC-REFERENCE-DEF>
+											</REFERENCES>
+										</ECUC-PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+								<ECUC-PARAM-CONF-CONTAINER-DEF UUID="cf544d9c-fdb5-43a0-ae4e-038350216485">
+									<SHORT-NAME>vBaseEnvStartupStackSettings</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container for family specific startup stack settings, if they differ to the default settings</L-2>
+									</DESC>
+									<ADMIN-DATA>
+										<SDGS>
+											<SDG GID="DV:CfgPostBuild">
+												<SD GID="DV:postBuildSelectableChangeable">false</SD>
+												<SD GID="DV:postBuildNotDeletable">false</SD>
+											</SDG>
+										</SDGS>
+									</ADMIN-DATA>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+									<PARAMETERS>
+										<ECUC-INTEGER-PARAM-DEF UUID="35ed3050-d006-4f69-be9e-ba979c6043e5">
+											<SHORT-NAME>vBaseEnvStackAlignment</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Configure the startup stack alignment for each core.
+This value will be validated in the vLinkGen stack section.
+This value is only needed, if the default value 4 is not sufficient for this platform.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:Display">
+														<SD GID="DV:BaseUnit">BYTE</SD>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:variantMultiplicityPBL">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>4</DEFAULT-VALUE>
+											<MAX>4294967295</MAX>
+											<MIN>0</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<ECUC-INTEGER-PARAM-DEF UUID="365e6fed-142c-4e72-bd85-63e5df913928">
+											<SHORT-NAME>vBaseEnvStackEndAlignment</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Configure the startup stack end alignment for each core.
+This value will be validated in the vLinkGen stack section.
+This value is only needed, if the default value 4 is not sufficient for this platform.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:Display">
+														<SD GID="DV:BaseUnit">BYTE</SD>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:variantMultiplicityPBL">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>4</DEFAULT-VALUE>
+											<MAX>4294967295</MAX>
+											<MIN>0</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+										<ECUC-INTEGER-PARAM-DEF UUID="56a730b2-0aa5-45c4-8d3d-17f32e4d2ab5">
+											<SHORT-NAME>vBaseEnvStackSize</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Configure the startup stack size for each core.
+This value will be validated in the vLinkGen stack section and generated into vBrs_Lcfg.c as StartupStackSize.
+This value is only needed, if the default value 1024 is not sufficient for this platform.</L-2>
+											</DESC>
+											<ADMIN-DATA>
+												<SDGS>
+													<SDG GID="DV:Display">
+														<SD GID="DV:BaseUnit">BYTE</SD>
+													</SDG>
+													<SDG GID="DV:CfgPostBuild">
+														<SD GID="DV:variantMultiplicityPBL">false</SD>
+													</SDG>
+												</SDGS>
+											</ADMIN-DATA>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</ECUC-IMPLEMENTATION-CONFIGURATION-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<REQUIRES-INDEX>false</REQUIRES-INDEX>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>1024</DEFAULT-VALUE>
+											<MAX>4294967295</MAX>
+											<MIN>0</MIN>
+										</ECUC-INTEGER-PARAM-DEF>
+									</PARAMETERS>
+								</ECUC-PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</ECUC-PARAM-CONF-CONTAINER-DEF>
+					</CONTAINERS>
+				</ECUC-MODULE-DEF>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</AR-PACKAGES>
+</AUTOSAR>

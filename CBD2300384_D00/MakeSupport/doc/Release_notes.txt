@@ -1,0 +1,69 @@
+
+/** @page makesupport_releasenotes_page Release Notes for MakeSupport
+
+@ingroup mod_Makefile
+
+Release Notes for MakeSupport
+=============================
+
+Please have a look at new targets via calling
+  > make help
+
+MakeSupport Version 4:
+----------------------
+- New MakeSupport using cygwin has case sensitive files
+- MakeSupport 4 uses '/' in path names. No '\' allowed anymore
+    Currently, a compatibility phase allows file names including '\' in Makefile.project.part.defines.
+- MakeSupport 4 can be called directly without m.bat (via make).
+    Call startconsole.bat from anywhere to setup MakeSupport 4 environment
+- Automatically generated dependency files
+    'make depend' can still be used to check include paths without using a compiler license
+- Double colon rules are used to use more modularity in Makefile:
+  - clean
+  - distclean
+  - help
+- Variable `MAKE_CLEAN_PATTERN_LIST` is not needed anymore, just add your own 'clean::' rule
+  For documentation please read
+  https://www.gnu.org/software/make/manual/make.html#Double_002dColon .
+- Global.Makefile.target.4.mk includes all necessary Sub-Makefiles.
+  It is still possible to include other Sub-Makefiles in main Makefile
+  Global.Makefile.target.4.mk avoids double includes if included before
+- The functionality of MakeSupport 4 separated into the following Sub-Makefiles:
+  - <b>Makefile_default_values.mk:</b>           Default value is set for variables
+  - <b>Makefile_delivery.mk:</b>                 Targets for delivery
+  - <b>Makefile_doxygen.mk:</b>                  Targets for doxygen
+  - <b>Makefile_functions.mk:</b>                Function library
+  - <b>Makefile_tools.mk:</b>                    All commands used in MakeSupport. Any new command must be added here.
+  - <b>Makefile_AutoSarWrap.mk:</b>              Initialise common variables for MICROSAR delivery
+  - <b>Makefile_NoAutoSarWrap.mk:</b>            Initialise common variables for FBL or CANbedded delivery
+  - <b>Makefile_AutoSarWrap_library.mk:</b>      Provide library creation targets for MICROSAR delivery
+  - <b>Makefile_library.mk:</b>                  Provide library creation targets for FBL and CANbedded delivery
+  - <b>Makefile_resource.mk:</b>                 Generation of resource information for FBL delivery
+  - <b>Makefile_buildinfo.mk:</b>                Generation of build information
+  - <b>Makefile_BSW_vars_ComponentBased.mk:</b>  Initialise variables for delivery with component-based structure (modules are located in folder 'Components')
+  - <b>Makefile_BSW_vars_Legacy.mk:</b>          Initialise variables for delivery with legacy structure (modules are located in folder 'BSW')
+  - <b>Makefile_visual_studio.mk:</b>            Creation of Visual Studio project files
+  - <b>quality/Makefile_ECO.mk:</b>              Targets to execute ECO Embedded Code Coverage Tool 
+  - <b>quality/Makefile_mssv.mk:</b>             Targets to execute MSSV
+  - <b>quality/Makefile_vca.mk:</b>              Targets to execute Vector Code Analyzer 
+- Use @<cmd> instead of shell @echo
+  And do it in verbose optional setting with variable Q, which means quiet
+  `$(Q)$(CC) ...`
+
+- No `COMPILE_RULE`, `LINK_RULE`, ... to overwrite rules. 
+  MakeSupport 4 has more features, so overwrite is not needed for almost all
+  projects. `CFLAGS_` `FILTER_`, ... is now standard.
+  If overwriting rules is necessary for a project then do not overwrite rule
+  for all other files, but use the feature static-pattern-rule from make
+  https://www.gnu.org/software/make/manual/html_node/Static-Usage.html
+
+- All output files like object files are located in directory tree not in single directory.
+  This prevents from having duplicated file names in different directories.
+  Automatic directory creation is supported.
+
+- `CFLAGS_VECTOR_MAKESUPPORT` is now divided into `CPPFLAGS_VECTOR_MAKESUPPORT` and `CFLAGS_VECTOR_MAKESUPPORT`. 
+  This prevents from having redundant information with `DEPEND_FLAGS`. 
+  `EXTRA_DEPENDFLAGS` contains only cross compiler specific defines or includes. 
+	Use `CPPFLAGS_VECTOR_MAKESUPPORT` to add additional build defines.
+
+*/

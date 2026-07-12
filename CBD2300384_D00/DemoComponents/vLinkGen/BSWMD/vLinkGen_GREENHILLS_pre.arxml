@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0">
+	<AR-PACKAGES>
+		<AR-PACKAGE UUID="ff55d029-386d-43a2-b3c2-dfef4c7a5e36">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<ECUC-MODULE-CONFIGURATION-VALUES UUID="4eb8ea54-6b49-40cf-ac8a-ebf15b615049">
+					<SHORT-NAME>vLinkGen_Pre</SHORT-NAME>
+					<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/vLinkGen</DEFINITION-REF>
+					<CONTAINERS>
+						<ECUC-CONTAINER-VALUE UUID="5f312051-04a5-477b-aadc-d61246472f0e">
+							<SHORT-NAME>vLinkGenPublishedInformation</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="34eecaa0-ddac-49ff-8dcf-a9cac1612690">
+									<SHORT-NAME>vLinkGenConstGroupFlags</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenConstGroupFlags</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="fa1c56e9-a6b8-49b9-b5e3-74ea26c6fa81">
+											<SHORT-NAME>ABS</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenConstGroupFlags/vLinkGenConstGroupFlag</DEFINITION-REF>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="58fd5634-3885-411b-b362-18de05bd6d72">
+											<SHORT-NAME>CLEAR</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenConstGroupFlags/vLinkGenConstGroupFlag</DEFINITION-REF>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="f9f31b5d-2dda-46bc-a61e-8ba1aa806e5d">
+											<SHORT-NAME>NOCLEAR</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenConstGroupFlags/vLinkGenConstGroupFlag</DEFINITION-REF>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="81ca958d-2bec-43d5-8dc4-31ea800218f6">
+											<SHORT-NAME>NOLOAD</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenConstGroupFlags/vLinkGenConstGroupFlag</DEFINITION-REF>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="bb539643-8687-4abe-a6a9-df79a6bec9c7">
+											<SHORT-NAME>NOCHECKSUM</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenConstGroupFlags/vLinkGenConstGroupFlag</DEFINITION-REF>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="79215bd0-0559-49ef-81b6-5dfa315d2222">
+									<SHORT-NAME>vLinkGenVarGroupFlags</SHORT-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenVarGroupFlags</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="11e39584-aba8-4d8e-be92-7f92914839cf">
+											<SHORT-NAME>ABS</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenVarGroupFlags/vLinkGenVarGroupFlag</DEFINITION-REF>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="db12fb2f-85f8-4561-96ff-acefc4ef53f4">
+											<SHORT-NAME>CLEAR</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenVarGroupFlags/vLinkGenVarGroupFlag</DEFINITION-REF>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="16edff35-573f-464d-850a-b556948db4e8">
+											<SHORT-NAME>NOCLEAR</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenVarGroupFlags/vLinkGenVarGroupFlag</DEFINITION-REF>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="3e520cb4-dd1a-4e8a-9783-39f504a313e2">
+											<SHORT-NAME>NOLOAD</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenVarGroupFlags/vLinkGenVarGroupFlag</DEFINITION-REF>
+										</ECUC-CONTAINER-VALUE>
+										<ECUC-CONTAINER-VALUE UUID="1e2a4419-b258-49b3-9a87-1e8dabc5518c">
+											<SHORT-NAME>NOCHECKSUM</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenVarGroupFlags/vLinkGenVarGroupFlag</DEFINITION-REF>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+							</SUB-CONTAINERS>
+						</ECUC-CONTAINER-VALUE>
+					</CONTAINERS>
+				</ECUC-MODULE-CONFIGURATION-VALUES>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</AR-PACKAGES>
+</AUTOSAR>

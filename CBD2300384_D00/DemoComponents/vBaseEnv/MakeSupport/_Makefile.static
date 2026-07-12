@@ -1,0 +1,346 @@
+########################################################################################################################
+# File Name  : Makefile.static
+# Description: This makefile contains the platform/compiler specific static settings (will be included by Makefile)
+# Project    : Vector Basic Runtime System
+# Module     : BrsHw for platform ArmCommon
+#              and Compiler GreenHills,
+#              using Vector PES MakeSupport 4.1
+#
+#-----------------------------------------------------------------------------------------------------------------------
+# COPYRIGHT
+#-----------------------------------------------------------------------------------------------------------------------
+# Copyright (c) 2023 by Vector Informatik GmbH.                                                  All rights reserved.
+########################################################################################################################
+
+########################################################################################################################
+# REVISION HISTORY
+#-----------------------------------------------------------------------------------------------------------------------
+# Refer to Makefile.
+########################################################################################################################
+
+########################################################################################################################
+# EXAMPLE CODE ONLY
+#-----------------------------------------------------------------------------------------------------------------------
+# This Example Code is only intended for illustrating an example of a possible BSW integration and BSW configuration.
+# The Example Code has not passed any quality control measures and may be incomplete. The Example Code is neither
+# intended nor qualified for use in series production. The Example Code as well as any of its modifications and/or
+# implementations must be tested with diligent care and must comply with all quality requirements which are necessary
+# according to the state of the art before their use.
+########################################################################################################################
+
+#------------------------------------------------------------------------------
+# Include the project specific settings
+#------------------------------------------------------------------------------
+include Makefile.config.generated
+include Makefile.project.part.defines
+
+#------------------------------------------------------------------------------
+# Name of this project.
+#
+# If BRS_PROJECT_NAME (vBRS/vBRSHwConfig/vBRSProjectName) was generated into
+# Makefile.config.generated (by vBRS Cfg5 generator), use that name.
+#------------------------------------------------------------------------------
+ifeq ($(BRS_PROJECT_NAME),)
+PROJECT_NAME = TestSuit
+else
+PROJECT_NAME = $(BRS_PROJECT_NAME)
+endif
+
+#------------------------------------------------------------------------------
+# Version of MakeSupport used (current version is 4.1)
+#------------------------------------------------------------------------------
+VERSION     = 4
+SUB_VERSION = 1
+
+###############################################################################
+# Platform/compiler/derivative/emulator are relevant for the include of
+# linker and symbol preprocessor command file identified by name.
+# Vector standard names have to be used
+###############################################################################
+#------------------------------------------------------------------------------
+# Compiler Manufacturer used in this project
+# E.g.: ARM5, ARM6, LLVMDIAB, GHS, GNU, GCCHIGHTEC, IAR, RENESAS, TASKING, TI
+#------------------------------------------------------------------------------
+COMPILER_MANUFACTURER = GHS
+
+#------------------------------------------------------------------------------
+# Platform used for this project
+# E.g.: ARM, AURIX, POWERPC, RH850
+#------------------------------------------------------------------------------
+PLATFORM = ARM
+
+#------------------------------------------------------------------------------
+# Emulator used for this project
+# E.g.: GHSPROBE, ISYSTEMS, LAUTERBACH, MULTI
+#   ALL is special for "all derivatives are supported in this file"
+#------------------------------------------------------------------------------
+EMULATOR = ALL
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# Suffix of generated object files. Generated objects are then *.$(OBJ_SUFFIX)
+#------------------------------------------------------------------------------
+OBJ_SUFFIX = o
+
+#------------------------------------------------------------------------------
+# Suffix of assembler files.
+# The suffixes s, asm, 850 and arm are already considered by MakeSupport
+# and do not need to be added.
+#------------------------------------------------------------------------------
+ASM_SUFFIX = 
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# Suffix of generated list files. Generated list files are then *.$(LST_SUFFIX)
+#------------------------------------------------------------------------------
+LST_SUFFIX = lst
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# Suffix linker command file.
+#------------------------------------------------------------------------------
+LNK_SUFFIX = ld
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# Suffix binary output file.
+#------------------------------------------------------------------------------
+BINARY_SUFFIX = elf
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# Suffix of generated library files. Generated objects are then *.$(LIB_SUFFIX)
+#------------------------------------------------------------------------------
+LIB_SUFFIX = a
+
+#------------------------------------------------------------------------------
+# Suffixes of generated error files which are placed in $(ERR_PATH)
+# (necessary for Visual Studio / Codewright project file generation)
+# Default (nothing entered) is err
+# E.g. ERR_SUFFIX_LIST = err
+#------------------------------------------------------------------------------
+ERR_SUFFIX_LIST = err
+ERR_SUFFIX      = err
+
+#------------------------------------------------------------------------------
+# Suffixes of generated asm/list files which are placed in $(LST_PATH)
+# (necessary for Visual Studio / Codewright project file generation)
+# Default (nothing entered) is lst
+# E.g. LST_SUFFIX_LIST = lst asm
+#------------------------------------------------------------------------------
+LST_SUFFIX_LIST = lst
+LST_SUFFIX      = lst
+
+#------------------------------------------------------------------------------
+# Path of MakeSupport folder relative to main Makefile
+#------------------------------------------------------------------------------
+MAKESUPPORT_DIR_MAK=make_support_var.mk
+ifeq ($(MAKESUPPORT_DIR),)
+  -include $(MAKESUPPORT_DIR_MAK)
+endif
+
+ifeq ($(MAKESUPPORT_DIR),)
+  # Find first on Delivery structure and then in enhanced directory structure
+  # Stop after first occurance
+  $(info Looking for MakeSupport in current structure. This could take a while for first invocation.)
+  MAKESUPPORT_DIR:=$(shell find ../.. ../../.. -name MakeSupport -print -quit)
+  ifeq ($(MAKESUPPORT_DIR),)
+    $(error No MakeSupport directory found. Please set 'MAKESUPPORT_DIR' environment variable manually.)
+  endif
+  $(info Found MAKESUPPORT_DIR='$(MAKESUPPORT_DIR)'. Save it to '$(MAKESUPPORT_DIR_MAK)' for next invocation.)
+  $(file >$(MAKESUPPORT_DIR_MAK),MAKESUPPORT_DIR=$(MAKESUPPORT_DIR))
+endif
+
+distclean::
+	@echo "DISTCLEAN  $(MAKESUPPORT_DIR_MAK)"
+	$(Q)$(RM) $(MAKESUPPORT_DIR_MAK)
+
+#------------------------------------------------------------------------------
+# $(ERR_OUTPUT) defines the way how to generate error files
+# It should be one of:
+#     PIPE    - Error will be printed to sterr/stdout and redirected to
+#               $(ERR_PATH)
+#     FLAGS   - Compiler supports error file generation with or without path
+#               definition. Therefore, e.g. $(CFLAGS_VECTOR_MAKESUPPORT)
+#               and $(LDFLAGS_VECTOR_MAKESUPPORT) have to be adjusted.
+#               It depends on compiler flags whether output is written to
+#               console as well.
+#     CONSOLE - No compiler flags handling in MakeSupport (default).
+#------------------------------------------------------------------------------
+ERR_OUTPUT = CONSOLE
+
+#------------------------------------------------------------------------------
+#  Add compiler specific redirection flags here
+#
+#  Uncomment V=1 if compiler has redirection options like @E, @O
+#
+#  Example:
+#    --error-file=$(call obj2err,$@)
+#------------------------------------------------------------------------------
+ifneq ($(V),1)
+  ifeq ($(ERR_OUTPUT),FLAGS)
+    ASFLAGS_VECTOR_MAKESUPPORT += 
+  endif
+endif
+
+#------------------------------------------------------------------------------
+# $(AS_VECTOR_PREPROCESS) enables the preprocessing
+# just before assembler starts.
+#
+# In case of assembler does not support preprocessing by default, preprocessing
+# can be enabled by setting $(ASFLAGS_VECTOR_PREPROCESS) to 1
+#------------------------------------------------------------------------------
+#AS_VECTOR_PREPROCESS = 1
+
+#------------------------------------------------------------------------------
+#  Enable if cross compiler supports depend. Additional options
+#  have to be set.
+#  Attention:
+#  Some cross compilers depend file can have the problem
+#  of incompatible depend file for cygwin. They could contain
+#  "" around filepath or ':' when used absolute file spec.
+#------------------------------------------------------------------------------
+COMPILER_SUPPORTS_DEPEND = 1
+
+#------------------------------------------------------------------------------
+# Used only when USE_RESPONSE_FILE_FOR_LINKAGE is set to 1.
+#
+# LDFLAGS_RESPONSE_FILE defines the command line flag to for response file syntax.
+# E.g. with GCC response files can be provided by "gcc @linker_options". So set it to
+# "@" in that case.
+#------------------------------------------------------------------------------
+LDFLAGS_RESPONSE_FILE=@
+
+#------------------------------------------------------------------------------
+#  Add compiler specific redirection flags here
+#
+#  Uncomment V=1 if compiler has redirection options like @E, @O
+#
+#  Example:
+#    --error-file=$(call obj2err,$@)
+#------------------------------------------------------------------------------
+ifneq ($(V),1)
+  ifeq ($(ERR_OUTPUT),FLAGS)
+    CFLAGS_VECTOR_MAKESUPPORT +=
+  endif
+endif
+
+#------------------------------------------------------------------------------
+#  Add linker specific redirection flags here
+#
+#  Uncomment V=1 if compiler has redirection options like @E, @O
+#
+#  Example:
+#    --error-file=$(call obj2err,$@)
+#------------------------------------------------------------------------------
+ifneq ($(V),1)
+  ifeq ($(ERR_OUTPUT),FLAGS)
+    LDFLAGS_VECTOR_MAKESUPPORT +=
+  endif
+endif
+
+#------------------------------------------------------------------------------
+# hex target might be added like the following template.
+# Variable TARGET can not be used here, because TARGET is set in
+# Global.Makefile.target.$(VERSION).mk. VERSION is set in Makefile.static.
+# Add hex target to default:
+#------------------------------------------------------------------------------
+#.PHONY: hex
+#hex: $(PROJECT_NAME).hex
+#
+#$(PROJECT_NAME).hex: $(PROJECT_NAME).$(BINARY_SUFFIX)
+#	@$(ECHO) "HEX        $@"
+#	$(Q)$(HEX_ENV) $(HEX) $(HEXFLAGS)
+#
+#clean::
+#	@$(ECHO) "CLEAN      hex"
+#	$(Q)$(RM) $(PROJECT_NAME).hex
+
+#------------------------------------------------------------------------------
+# ASSEMBLE_RULE/COMPILE_RULE/LINK_RULE are obsolete now
+#
+# In previous deliveries *_RULES were overwritten to add or delete
+# options to compile/link.
+#
+# MakeSupport 4 has the general enhancement to add or delete options for a
+# specific file. Please add the following variables to your Makefile to control,
+# filter out or add specific:
+#
+# FILTER_<file_without_extension>=-any -option -to -filter -out
+# CFLAGS_<file_without_extension>=-any -option -to -add
+#
+# For another option to add a post compile command, please have a look
+# at MAKESUPPORT_POST_COMPILE_CMD in Global.Makefile.target.$(VERSION).mk.
+#
+# If all of these MakeSupport 4 enhancements do not work, please add
+# static pattern rule which is a make feature.
+#
+# Makefile documentation:
+#  https://www.gnu.org/software/make/manual/html_node/Static-Usage.html#Static-Usage
+#
+# Example:
+#  copy & paste from MakeSupport 4 and add your specific file in front with the second ':' :
+#  my_c_file.c: $(OBJ_PATH)/%.$(OBJ_SUFFIX): $(PRJROOT_U)/%.c
+#    ... here are your specific rules...
+#------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+# make builds the whole project by default
+# To make another target, you have to add it to the prerequisites of default.
+# E.g.: default: all $(PROJECT_NAME).opt
+# Here hex target might be added.
+#------------------------------------------------------------------------------
+.PHONY: default
+default: all
+
+#------------------------------------------------------------------------------
+# If platform specific rules exist, they can be described here to be shown
+# in the usage output of the help target
+#help::
+#	$(ECHO) "m mytarget ................ -- build mytarget"
+#	$(ECHO) "                               nextline"
+#------------------------------------------------------------------------------
+#help::
+
+#------------------------------------------------------------------------------
+# target to start GHS Multi debugger
+#------------------------------------------------------------------------------
+multi:
+	@export GHS_LMHOST=$(LICENSE_SERVER); \
+  export GHS_LMPORT=$(LICENSE_SERVER_PORT); \
+  $(ECHO) "$(COMPILER_BASE)" > "$(MULTI_BASE)\.redirect_tools"; \
+  $(ECHO) "File '$(MULTI_BASE)\.redirect_tools' updated with compiler path '$(COMPILER_BASE)'"; \
+  $(subst \,/,$(MULTI_BASE)\multi.exe $(PROJECT_NAME).$(BINARY_SUFFIX) -rc _GHS_Probe\standalone_tcflash.rc) &
+
+#------------------------------------------------------------------------------
+# Check if all necessary variables are set
+#------------------------------------------------------------------------------
+ifeq ($(MAKESUPPORT_DIR),)
+  $(error Variable MAKESUPPORT_DIR is not defined.)
+endif
+
+ifeq ($(PLATFORM),)
+  $(error Variable PLATFORM is not defined.)
+endif
+
+ifeq ($(COMPILER_MANUFACTURER),)
+  $(error Variable COMPILER_MANUFACTURER is not defined.)
+endif
+
+ifeq ($(EMULATOR),)
+  $(error Variable EMULATOR is not defined.)
+endif
+
+ifeq ($(VERSION),)
+  $(error Variable VERSION is not defined.)
+endif
+
+#------------------------------------------------------------------------------
+# List of variables which are required and must be set within
+# Makefile.config.generated. Check is performed by global makefile
+#------------------------------------------------------------------------------
+REQUIRED_MK_CONF_VARS = DERIVATIVE     \
+                        CPU_CORE       \
+                        INSTRUCTION_SET
+
+# End of Makefile.static

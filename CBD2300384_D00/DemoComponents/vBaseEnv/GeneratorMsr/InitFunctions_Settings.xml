@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtModuleInitialization xmlns="InitService" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="InitService .\InitService.xsd">
+	<InitModule>
+		<ModuleRef>/MICROSAR/vBaseEnv</ModuleRef>
+		<ModuleInitFunction>
+			<InitFunctionName>vBaseEnv_Init</InitFunctionName>
+			<InitFunctionHeader></InitFunctionHeader>
+				<InitPhase>NO_INIT</InitPhase>
+		</ModuleInitFunction>
+	</InitModule>
+</ExtModuleInitialization>

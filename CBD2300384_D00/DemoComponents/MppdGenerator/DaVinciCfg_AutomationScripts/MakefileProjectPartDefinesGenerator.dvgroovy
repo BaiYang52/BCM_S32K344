@@ -1,0 +1,886 @@
+/**********************************************************************************************************************
+ *  COPYRIGHT
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  \verbatim
+ *  Copyright (c) 2022 by Vector Informatik GmbH.                                              All rights reserved.
+ *
+ *                This software is copyright protected and proprietary to Vector Informatik GmbH.
+ *                Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+ *                All other rights remain with Vector Informatik GmbH.
+ *  \endverbatim
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  FILE DESCRIPTION
+ *  -----------------------------------------------------------------------------------------------------------------*/
+/**        \file  MakefileProjectPartDefinesGenerator.groovy
+ *        \brief  In-project generator for the file Makefile.project.part.defines
+ *
+ *      \details  Makefile.project.part.defines is a file which is required by the Vector buid environment 
+ *                "MakeSupport".
+ *
+ *  \attention    Please note:
+ *                The demo and example programs only show special aspects of the software. With regard to the fact
+ *                that these programs are meant for demonstration purposes only, Vector Informatik liability shall be
+ *                expressly excluded in cases of ordinary negligence, to the extent admissible by law or statute.
+ *********************************************************************************************************************/
+
+/**********************************************************************************************************************
+ *  AUTHOR IDENTITY
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  Name                          Initials      Company
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  Roland Reinl                  virrro        Vector Informatik GmbH
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  REVISION HISTORY
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  Version   Date        Author  Change Id     Description
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  01.00.00  2022-09-12  virrro  n/a           Initial version
+ *********************************************************************************************************************/
+
+import static com.vector.cfg.automation.api.ScriptApi.*
+
+import com.vector.cfg.model.access.DefRef
+import com.vector.cfg.util.IProjectContext
+
+import java.awt.Component
+import java.nio.file.Path
+import java.util.ArrayList
+import java.util.List
+
+import javax.xml.parsers.DocumentBuilder
+import javax.xml.parsers.DocumentBuilderFactory
+import javax.xml.xpath.XPath
+import javax.xml.xpath.XPathConstants
+import javax.xml.xpath.XPathExpression
+import javax.xml.xpath.XPathExpressionException
+import javax.xml.xpath.XPathFactory
+
+import org.w3c.dom.Document
+import org.w3c.dom.NodeList
+
+
+class Component implements Comparable<Component>
+{
+    public String shortName
+    public String componentName
+    public String path
+
+    Component(String shortName, String componentName, String path)
+    {
+        this.shortName = shortName
+        this.componentName = componentName
+        this.path = path
+    }
+    int compareTo(Component otherInstance)
+    {
+        return this.componentName.compareTo(otherInstance.componentName)
+    }
+}
+
+class Template
+{
+    private static Document xmlDoc // XML Document to perform XQuerys on
+
+    private static boolean ComponentBasedDelivery // true if SipFolderStructure == "ComponentBased"
+    private static boolean MakeSupport4Used
+    private static String MakeSupportType  // AUTOSAR or Vector
+    private static String SipFolderStructure // ComponentBased or Legacy
+    private static String StaticShared_RootPath
+    private static String Controller
+    private static Component[] packagesAsrMake
+    private static Component[] ApplComponents
+
+    Template(String xmlDocPath, Path MakefilePath, Path SipRootPath)
+    {
+        xmlDoc = getDocument(xmlDocPath)
+        File componentsFolder = new File(SipRootPath.resolve("Components").toString())
+        File demoComponentsFolder = new File(SipRootPath.resolve("DemoComponents").toString())
+
+        ComponentBasedDelivery = componentsFolder.exists() // Assumption: always true
+        SipFolderStructure = (ComponentBasedDelivery ? "ComponentBased" : "Legacy")
+        MakeSupport4Used = true // Assumption: always true
+        MakeSupportType = "AUTOSAR" // Assumption: always AUTOSAR
+
+        try {
+            // builds a relative Path from Appl/Makefile to the Sip Folder
+            StaticShared_RootPath = MakefilePath.relativize(SipRootPath).toString()
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace()
+            StaticShared_RootPath = "/../external"
+        }
+        Controller = evaluateXPath("/CANbeddedVersionInfo/Properties/Controller/text()")[0]
+
+        packagesAsrMake = ApplComponents = []
+        File[] componentsDirs = componentsFolder.listFiles()
+        componentsDirs += demoComponentsFolder.listFiles()
+
+        /* construct a LookUpTable to replace the folder names with their known equivalent "old" names */
+        List<String> componentShortName = evaluateXPath("/CANbeddedVersionInfo/ComponentCheck/Component[count(RelativeFileSpec) > 0 and @Component=\"Implementation\"]/@ShortName")
+        List<String> componentLongName = evaluateXPath("/CANbeddedVersionInfo/ComponentCheck/Component[count(RelativeFileSpec) > 0 and @Component=\"Implementation\"]/@Project")
+        for(int idx = 0; idx < componentLongName.size();)
+        {
+            if(componentLongName[idx].toUpperCase().contains("VTT")){
+                componentLongName.remove(idx)
+                componentShortName.remove(idx)
+            }
+            else
+            {
+                idx++
+            }
+        }
+        def componentLUT = [componentShortName,componentLongName].transpose().collectEntries()
+
+        for(shortNameDir in componentsDirs)
+        {
+            if(!shortNameDir.isFile() && !shortNameDir.name.toUpperCase().startsWith("VTT")) // if it is a directory and no VTT component
+            {
+                for(folder in shortNameDir.listFiles()) // check subfolders
+                {
+                    /* check for a Make folder and add it to the packagesAsrMake list */
+                    if(folder.name == "Make")
+                    {
+                        String componentPath = shortNameDir.path.replace(SipRootPath.toString() + "\\", "")
+                        String componentName = (componentLUT[shortNameDir.name] != null ? componentLUT[shortNameDir.name] : shortNameDir.name)
+                        packagesAsrMake += new Component(shortNameDir.name, componentName, componentPath)
+                    }
+                    /* check for a Implementation folder and add it to the applComponents list */
+                    else if(folder.name == "Implementation")
+                    {
+                        for(sourceFile in folder.listFiles(new FilenameFilter() {
+                            @Override
+                            boolean accept(File dir, String name) { return name.matches("_.*\\.c") }
+                        })) // check if a file with the regex "_.*Appl.*\.c" exists, indicating a Application for this component exists
+                        {
+                            String ApplName = sourceFile.name.substring(1) // delete the leading underscore
+                            ApplComponents += new Component(ApplName, ApplName, "Source\\" + ApplName)
+                        }
+                    }
+                }
+            }
+        }
+        packagesAsrMake = packagesAsrMake.sort()
+        ApplComponents = ApplComponents.sort()
+
+        scriptLogger.info("ComponentBasedDelivery: " + ComponentBasedDelivery)
+        scriptLogger.info("MakeSupport4Used: " + MakeSupport4Used)
+        scriptLogger.info("MakeSupportType: " + MakeSupportType)
+        scriptLogger.info("ROOT: " + StaticShared_RootPath)
+        scriptLogger.info("Controller: " + Controller)
+        scriptLogger.info("packagesAsrMake: " + packagesAsrMake.length)
+
+        for(i in packagesAsrMake){
+            scriptLogger.info(i.componentName.toUpperCase() + " <- " + i.shortName.toUpperCase())
+        }
+
+        if(!ComponentBasedDelivery)
+        {
+            throw new Exception("Only ComponentBased Deliveries are supported!")
+        }
+    }
+
+    /**********************/
+    /* TEMPLATE FUNCTIONS */
+    /**********************/
+
+
+    /********************/
+    /* STATIC TEMPLATES */
+    /********************/
+    static String staticShared()
+    {
+        return """
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# Root of the project (dir where the additionally used components reside) from
+# the scope of the makefile location.
+# E.g. makefile is located under
+#    d:\\usr\\develop\\can\\PAG\\HC08\\COSMIC\\testsuit\\appl
+# and the components like drv, il reside under
+#    d:\\usr\\develop\\can\\PAG\\HC08\\COSMIC
+# The root is given (relative to the Makefile)
+#    ROOT = ..\\..
+#------------------------------------------------------------------------------
+ROOT ?= """ + StaticShared_RootPath + """
+
+#------------------------------------------------------------------------------
+#------------------------- OPTIONAL -------------------------------------------
+# \$(PRJROOT) specifies the path to the root directory of your project
+# Set the variable if source or header files outside of \$(ROOT)/.. are used
+#------------------------------------------------------------------------------
+# PRJROOT =
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# \$(GENTOOL_DIR) contains the path to your version.info file
+# E.g.:    GENTOOL_DIR = \$(ROOT)\\Generators\\Components
+#------------------------------------------------------------------------------
+GENTOOL_DIR = \$(ROOT)\\Doc\\DeliveryInformation
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# Version of Makefile.project.part.defines
+#------------------------------------------------------------------------------
+MPPD_VERSION = 32
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# Path to which *.obj, *.err, *.lst will be moved/generated
+#------------------------------------------------------------------------------
+OBJ_PATH = obj
+ERR_PATH = err
+LST_PATH = lst
+LOG_PATH = log
+LIB_PATH = lib
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# Redirect error output to stdout (and not only to *.err files)
+#------------------------------------------------------------------------------
+ERR_TO_STDOUT = 1
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# \$(GENDATA_DIR) contains the directory into which the ecu specific data is
+# generated
+# E.g.: GENDATA_DIR = GenData
+#------------------------------------------------------------------------------
+GENDATA_DIR = GenData
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# \$(GENDATA_OS_DIR) contains the directory into which the ecu osspecific data is
+# generated
+# E.g.: GENDATA_OS_DIR = GenDataOs
+#------------------------------------------------------------------------------
+GENDATA_OS_DIR = \$(GENDATA_DIR)"""
+    }
+
+    static String staticAutosar()
+    {
+        return """
+#------------------------------------------------------------------------------
+# Use Autosar Makefiles
+#------------------------------------------------------------------------------
+USE_AUTOSAR_MAKE = 1
+
+#------------------------------------------------------------------------------
+# Subfolder of BSW components (mandatory BSW with konStruct 1.7.xx or newer)
+#------------------------------------------------------------------------------
+GLOBAL_COMP_DIR = Components
+
+#------------------------------------------------------------------------------
+# Subfolder of ASR software components
+# Relative to \$(ROOT)\\\$(GLOBAL_COMP_DIR)
+#------------------------------------------------------------------------------
+GLOBAL_SWC_DIR = ..\\Components
+
+#------------------------------------------------------------------------------
+# Subfolder of Third Party components (e.g. Third Party MCAL)
+# Relative to \$(ROOT)\\\$(GLOBAL_COMP_DIR)
+#------------------------------------------------------------------------------
+GLOBAL_THIRDPARTY_DIR = ..\\ThirdParty
+""" + CompMakeConfiguration()
+    }
+
+    private static String CompMakeConfiguration()
+    {
+        DefRef defRefAsrVita = DefRef.create(DefRef.MICROSAR_PACKAGE, "Vita")
+        DefRef defRefAsrvTestVita = DefRef.create(DefRef.MICROSAR_PACKAGE, "vItaSip")
+        DefRef defRefAsrSomeIpXf = DefRef.create(DefRef.MICROSAR_PACKAGE, "SomeIpXf")
+        DefRef defRefAsrE2EXf = DefRef.create(DefRef.MICROSAR_PACKAGE, "E2EXf")
+
+        String templ =  // Rte_Asr4 ------------------------------------------------------------------------------------
+                        (evaluateXPath("CANbeddedVersionInfo/ComponentCheck/Component[@Project='Rte_Asr4']") ?
+                            "#------------------------------------------------------------------------------\n" +
+                            "#------------------------- MUST be filled out ---------------------------------\n" +
+                            "# Define usage of the generated RTE makefile\n" +
+                            "# \$(RTE_MAKEFILE_DIR) contains the directory into which RTE makefile is generated\n" +
+                            "# Please note: If you are using RTE 4.11 or lower (MSR4 R15 and lower), the\n" +
+                            "# generated RTE makefile will not work with the Vector MakeSupport. Add the \n" +
+                            "# RTE source files manually in this case and comment out RTE_MAKEFILE_DIR\n" +
+                            "#------------------------------------------------------------------------------\n" +
+                            "RTE_MAKEFILE_DIR = \$(GENDATA_DIR)/mak\n" +
+                            "\n" +
+                            "ifneq (\$(RTE_MAKEFILE_DIR),)\n" +
+                            "include \$(RTE_MAKEFILE_DIR)/Rte_rules.mak\n" +
+                            "include \$(RTE_MAKEFILE_DIR)/Rte_defs.mak\n" +
+                            "include \$(RTE_MAKEFILE_DIR)/Rte_check.mak\n" +
+                            "endif\n" +
+                            "\n"
+                        :
+                            ""
+                        ) +
+                        // Xf_ComXf ------------------------------------------------------------------------------------
+                        (evaluateXPath("CANbeddedVersionInfo/ComponentCheck/Component[@Project='Xf_ComXf']") ?
+                            "#------------------------------------------------------------------------------\n" +
+                            "#------------------------- MUST be filled out ---------------------------------\n" +
+                            "# Define usage of the generated ComXf Transformer makefile\n" +
+                            "# \$(COMXF_MAKEFILE_DIR) contains the directory into which ComXf Transformer makefile is generated\n" +
+                            "#------------------------------------------------------------------------------\n" +
+                            "#COMXF_MAKEFILE_DIR = \$(GENDATA_DIR)/mak\n" +
+                            "\n" +
+                            "ifneq (\$(COMXF_MAKEFILE_DIR),)\n" +
+                            "include \$(COMXF_MAKEFILE_DIR)/ComXf_rules.mak\n" +
+                            "include \$(COMXF_MAKEFILE_DIR)/ComXf_defs.mak\n" +
+                            "include \$(COMXF_MAKEFILE_DIR)/ComXf_check.mak\n" +
+                            "endif\n" +
+                            "\n"
+                        :
+                            ""
+                        )  +
+                        // Xf_SomeIpXf ---------------------------------------------------------------------------------
+                        (evaluateXPath("CANbeddedVersionInfo/ComponentCheck/Component[@Project='Xf_SomeIpXf']") ?
+                            "#------------------------------------------------------------------------------\n" +
+                            "#------------------------- MUST be filled out ---------------------------------\n" +
+                            "# Define usage of the generated SomeIpXf Transformer makefile\n" +
+                            "# \$(SOMEIPXF_MAKEFILE_DIR) contains the directory into which SomeIpXf Transformer makefile is generated\n" +
+                            "#------------------------------------------------------------------------------\n" +
+                            (activeProject{defRefAsrSomeIpXf.hasValidDefinition(getInstance(IProjectContext))} ? "" : "#") + "SOMEIPXF_MAKEFILE_DIR = \$(GENDATA_DIR)/mak\n" +
+                            "\n" +
+                            "ifneq (\$(SOMEIPXF_MAKEFILE_DIR),)\n" +
+                            "include \$(SOMEIPXF_MAKEFILE_DIR)/SomeIpXf_rules.mak\n" +
+                            "include \$(SOMEIPXF_MAKEFILE_DIR)/SomeIpXf_defs.mak\n" +
+                            "include \$(SOMEIPXF_MAKEFILE_DIR)/SomeIpXf_check.mak\n" +
+                            "endif\n" +
+                            "\n"
+                        :
+                            ""
+                        ) +
+                        // Xf_E2EXf ------------------------------------------------------------------------------------
+                        (evaluateXPath("CANbeddedVersionInfo/ComponentCheck/Component[@Project='Transformers_E2eXfTttechSub' or @Project='Xf_E2eXf']") ?
+                            "#------------------------------------------------------------------------------\n" +
+                            "#------------------------- MUST be filled out ---------------------------------\n" +
+                            "# Define usage of the generated E2EXf Transformer makefile\n" +
+                            "# \$(E2EXF_MAKEFILE_DIR) contains the directory into which E2EXf Transformer makefile is generated\n" +
+                            "#------------------------------------------------------------------------------\n" +
+                            (activeProject{defRefAsrE2EXf.hasValidDefinition(getInstance(IProjectContext))} ? "" : "#") + "E2EXF_MAKEFILE_DIR = \$(GENDATA_DIR)/mak\n" +
+                            "\n" +
+                            "ifneq (\$(E2EXF_MAKEFILE_DIR),)\n" +
+                            "include \$(E2EXF_MAKEFILE_DIR)/E2EXf_rules.mak\n" +
+                            "include \$(E2EXF_MAKEFILE_DIR)/E2EXf_defs.mak\n" +
+                            "include \$(E2EXF_MAKEFILE_DIR)/E2EXf_check.mak\n" +
+                            "endif\n" +
+                            "\n"
+                        :
+                            ""
+                        ) +
+                        // Xf_DiagXf -----------------------------------------------------------------------------------
+                        (evaluateXPath("CANbeddedVersionInfo/ComponentCheck/Component[@Project='Xf_DiagXf']") ?
+                            "#------------------------------------------------------------------------------\n" +
+                            "#------------------------- MUST be filled out ---------------------------------\n" +
+                            "# Define usage of the generated DiagXf Transformer makefile\n" +
+                            "# \$(DIAGXF_MAKEFILE_DIR) contains the directory into which DiagXf Transformer makefile is generated\n" +
+                            "#------------------------------------------------------------------------------\n" +
+                            "#DIAGXF_MAKEFILE_DIR = \$(GENDATA_DIR)/mak\n" +
+                            "\n" +
+                            "ifneq (\$(DIAGXF_MAKEFILE_DIR),)\n" +
+                            "include \$(DIAGXF_MAKEFILE_DIR)/DiagXf_rules.mak\n" +
+                            "include \$(DIAGXF_MAKEFILE_DIR)/DiagXf_defs.mak\n" +
+                            "include \$(DIAGXF_MAKEFILE_DIR)/DiagXf_check.mak\n" +
+                            "endif\n" +
+                            "\n"
+                        :
+                            ""
+                        ) +
+                        // Vita ----------------------------------------------------------------------------------------
+                        (activeProject{defRefAsrVita.hasValidDefinition(getInstance(IProjectContext)) || defRefAsrvTestVita.hasValidDefinition(getInstance(IProjectContext))} ?
+                            "#------------------------------------------------------------------------------\n" +
+                            "#------------------------- MUST be filled out ---------------------------------\n" +
+                            "# \$(STARTAPPL_MAKE_USED) defines if the the StartApplication makefile shall be used\n" +
+                            "# \$(STARTAPPLGENDATA_DIR) contains the folder of the makefile for the start application\n" +
+                            "# E.g.: STARTAPPLGENDATA_DIR = \$(GENDATA_DIR)/mak\n" +
+                            "#------------------------------------------------------------------------------\n" +
+                            "STARTAPPL_MAKE_USED = 1\n" +
+                            "STARTAPPLGENDATA_DIR = .\n" +
+                            "\n" +
+                            "ifeq (\$(STARTAPPL_MAKE_USED),1)\n" +
+                            "include \$(STARTAPPLGENDATA_DIR)/Makefile.StartApplication\n" +
+                            "endif\n" +
+                            "\n"
+                        :
+                            ""
+                        ) +
+                        // HLPTest -------------------------------------------------------------------------------------
+                        (evaluateXPath("CANbeddedVersionInfo/ComponentCheck/Component[@Project='zTsi_HLP']") ?
+                            "#------------------------------------------------------------------------------\n" +
+                            "#------------------------- MUST be filled out ---------------------------------\n" +
+                            "# \$(HLPTESTDATA_DIR) contains the directory of the HlpTest Application\n" +
+                            "# E.g.: HLPTESTDATA_DIR = ../../shared/zTsi_HLP/HlpTest/\n" +
+                            "#------------------------------------------------------------------------------\n" +
+                            "#HLPTESTDATA_DIR =../../shared/zTsi_HLP/HlpTest\n" +
+                            "\n" +
+                            "ifneq (\$(HLPTESTDATA_DIR),)\n" +
+                            "include \$(HLPTESTDATA_DIR)/Makefile.HlpTest\n" +
+                            "endif\n" +
+                            "\n"
+                        :
+                            ""
+                        ) +
+                        // MIPv2 (Only MIPv2 MCAL Packages have Make Subpackage) ---------------------------------------
+                        (packagesAsrMake.find {it.componentName.toLowerCase().startsWith("mcal_")} ?
+                                mcalExcludeList() : "") +
+                        // E2E Library Makefiles need an additional setting for the Profile ----------------------------
+                        (evaluateXPath("CANbeddedVersionInfo/ComponentCheck/Component[@Project='SysService_E2eLib' or @Project='SysService_E2eLibTttechSub']") ?
+                                e2eLibSwitches() : "") +
+                        // LinIf needs a defintion if LinTp shall be used ----------------------------------------------
+                        (evaluateXPath("CANbeddedVersionInfo/ComponentCheck/Component[@Project='If_Asr4IfLin']") ?
+                                linTpSwitch() : "") +
+                        // BAC4.3 Switches -----------------------------------------------------------------------------
+                        //"    <xsl:if test=\"count(swcp:swcp/attributes:attributeassignments/attributes:attributeassignment[@attributes:attribute='Program_Variant' and @attributes:value='MSR_Bmw_SLP4_BAC4_3']) != 0\">\n" +
+                        (evaluateXPath("CANbeddedVersionInfo/ComponentCheck/Component[@attributes:attribute='Program_Variant' and @attributes:value='MSR_Bmw_SLP4_BAC4_3']") ? // TODO: No such information (ignored for the time)
+                            "#------------------------------------------------------------------------------\n" +
+                            "#------------------------- MUST be filled out ---------------------------------\n" +
+                            "# Define BAC4.3 modules that shall be included in build\n" +
+                            "#------------------------------------------------------------------------------\n" +
+                            "BAC4_3_INCLUDE_BLU              = 0\n" +
+                            "#BLU SAMPLE: source files are expected to be found in source folder\n" +
+                            "BAC4_3_INCLUDE_BLU_SAMPLE       = 0\n" +
+                            "BAC4_3_INCLUDE_BM               = 0\n" +
+                            "BAC4_3_INCLUDE_BM_SAMPLE        = 0\n" +
+                            "BAC4_3_INCLUDE_BS               = 1\n" +
+                            "BAC4_3_INCLUDE_BUTIL            = 1\n" +
+                            "BAC4_3_INCLUDE_CODING           = 1\n" +
+                            "BAC4_3_INCLUDE_CODING_SAMPLE    = 1\n" +
+                            "BAC4_3_INCLUDE_CRYPTO           = 0\n" +
+                            "BAC4_3_INCLUDE_DARH             = 1\n" +
+                            "BAC4_3_INCLUDE_DLOG             = 1\n" +
+                            "BAC4_3_INCLUDE_DLOGSHARED       = 1\n" +
+                            "BAC4_3_INCLUDE_ETHDIAGMM        = 0\n" +
+                            "BAC4_3_INCLUDE_INTEGRATION      = 1\n" +
+                            "BAC4_3_INCLUDE_NRV              = 0\n" +
+                            "BAC4_3_INCLUDE_OMC              = 1\n" +
+                            "BAC4_3_INCLUDE_PIACLIENT        = 1\n" +
+                            "BAC4_3_INCLUDE_PIACLIENT_SAMPLE = 1\n" +
+                            "BAC4_3_INCLUDE_PROG             = 0\n" +
+                            "BAC4_3_INCLUDE_PROG_SAMPLE      = 0\n" +
+                            "BAC4_3_INCLUDE_RMH              = 0\n" +
+                            "BAC4_3_INCLUDE_STDDIAG          = 1\n" +
+                            "BAC4_3_INCLUDE_STM              = 1\n" +
+                            "BAC4_3_INCLUDE_SYSTIME          = 1\n" +
+                            "BAC4_3_INCLUDE_VIN              = 0\n" +
+                            "\n"
+                        :
+                            ""
+                        ) +
+                        // BAC25 Switches ------------------------------------------------------------------------------
+                        //"    <xsl:if test=\"count(swcp:swcp/attributes:attributeassignments/attributes:attributeassignment[@attributes:attribute='Program_Variant' and @attributes:value='MSR_Bmw_SLP4_BAC25']) != 0\">\n" +
+                        (evaluateXPath("CANbeddedVersionInfo/ComponentCheck/Component[@attributes:attribute='Program_Variant' and @attributes:value='MSR_Bmw_SLP4_BAC25']") ? // TODO: No such information (ignored for the time)
+                            "#------------------------------------------------------------------------------\n" +
+                            "#------------------------- MUST be filled out ---------------------------------\n" +
+                            "# Define BAC25 modules that shall be included in build\n" +
+                            "#------------------------------------------------------------------------------\n" +
+                            "BAC25_INCLUDE_BLU              = 0\n" +
+                            "#BLU SAMPLE: source files are expected to be found in source folder\n" +
+                            "BAC25_INCLUDE_BLU_SAMPLE       = 0\n" +
+                            "BAC25_INCLUDE_BM               = 0\n" +
+                            "BAC25_INCLUDE_BM_SAMPLE        = 0\n" +
+                            "BAC25_INCLUDE_BS               = 1\n" +
+                            "BAC25_INCLUDE_BUTIL            = 1\n" +
+                            "BAC25_INCLUDE_CODING           = 1\n" +
+                            "BAC25_INCLUDE_CODING_SAMPLE    = 1\n" +
+                            "BAC25_INCLUDE_CRYPTO           = 1\n" +
+                            "BAC25_INCLUDE_DARH             = 1\n" +
+                            "BAC25_INCLUDE_DLOGAPPL         = 1\n" +
+                            "BAC25_INCLUDE_DLOG             = 0\n" +
+                            "BAC25_INCLUDE_DLOGSHARED       = 1\n" +
+                            "BAC25_INCLUDE_ETHDIAGMM        = 0\n" +
+                            "BAC25_INCLUDE_INTEGRATION      = 1\n" +
+                            "BAC25_INCLUDE_NRV              = 0\n" +
+                            "BAC25_INCLUDE_OMC              = 1\n" +
+                            "BAC25_INCLUDE_PIACLIENT        = 1\n" +
+                            "BAC25_INCLUDE_PIACLIENT_SAMPLE = 1\n" +
+                            "BAC25_INCLUDE_PROG             = 0\n" +
+                            "BAC25_INCLUDE_PROG_SAMPLE      = 0\n" +
+                            "BAC25_INCLUDE_RMH              = 1\n" +
+                            "BAC25_INCLUDE_STDDIAG          = 1\n" +
+                            "BAC25_INCLUDE_STM              = 1\n" +
+                            "BAC25_INCLUDE_SCS              = 1\n" +
+                            "BAC25_INCLUDE_SYSTIME          = 1\n" +
+                            "BAC25_INCLUDE_VIN              = 1\n" +
+                            "BAC25_INCLUDE_ADT              = 1\n" +
+                            "\n"
+                        :
+                            ""
+                        )
+        return templ
+    }
+
+    private static String mcalExcludeList()
+    {
+        String templ =  "#------------------------------------------------------------------------------\n" +
+                        "#------------------------- MUST be filled out ---------------------------------\n" +
+                        "# Define MCAL modules that shall be excluded from build\n" +
+                        "#------------------------------------------------------------------------------\n" +
+                        "MCAL_EXCLUDE_ADC    = 0\n" +
+                        "MCAL_EXCLUDE_CRC    = 0\n" +
+                        "MCAL_EXCLUDE_DIO    = 0\n" +
+                        "MCAL_EXCLUDE_EEP    = 0\n" +
+                        "MCAL_EXCLUDE_FLS    = 0\n" +
+                        "MCAL_EXCLUDE_GPT    = 0\n" +
+                        "MCAL_EXCLUDE_ICU    = 0\n" +
+                        "MCAL_EXCLUDE_MCU    = 0\n" +
+                        "MCAL_EXCLUDE_OCU    = 0\n" +
+                        "MCAL_EXCLUDE_PORT   = 0\n" +
+                        "MCAL_EXCLUDE_PWM    = 0\n" +
+                        "MCAL_EXCLUDE_SPI    = 0\n" +
+                        "MCAL_EXCLUDE_WDG    = 0\n" +
+                        "MCAL_EXCLUDE_FEE    = 0\n" +
+                        "MCAL_EXCLUDE_CRY    = 1\n" +
+                        "MCAL_EXCLUDE_FLSTST = 1\n" +
+                        "MCAL_EXCLUDE_RAMTST = 1\n" +
+                        "MCAL_EXCLUDE_CORTST = 1\n" +
+                        // Mcu_Platform Rh850 -----------------------------------------------------------------------------
+                        (Controller == "Rh850" ?
+                            "MCAL_EXCLUDE_WDG_DRIVER_A  = 0\n" +
+                            "MCAL_EXCLUDE_WDG_DRIVER_B  = 1\n" +
+                            "MCAL_EXCLUDE_WDG_DRIVER_C  = 1\n"
+                        :
+                            ""
+                        ) +
+                        "\n"
+
+        return templ
+    }
+
+    private static String e2eLibSwitches()
+    {
+        return """
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# Define the E2E Library Profiles that shall be used
+# E2E configuration for SysService_E2eLib@Make after version 1.03.00
+# ATTENTION: All profiles are deactivated, those have to be manually configured
+#------------------------------------------------------------------------------
+E2E_USE_PROFILE_01   = 0
+E2E_USE_PROFILE_02   = 0
+E2E_USE_PROFILE_04   = 0
+E2E_USE_PROFILE_05   = 0
+E2E_USE_PROFILE_06   = 0
+E2E_USE_PROFILE_07   = 0
+E2E_USE_PROFILE_08   = 0
+E2E_USE_PROFILE_11   = 0
+E2E_USE_PROFILE_22   = 0
+E2E_USE_PROFILE_44   = 0
+E2E_USE_PROFILE_JLR  = 0
+
+"""
+    }
+
+    private static String linTpSwitch()
+    {
+        DefRef defRefAsrLinTp = DefRef.create(DefRef.MICROSAR_PACKAGE, "LinTp")
+        return """
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# Define if the LinTp functionality shall be supported by the LinIf
+#------------------------------------------------------------------------------
+LINIF_USE_LINTP    = """ + (activeProject {defRefAsrLinTp.hasValidDefinition(getInstance(IProjectContext))} ? "1" : "0") + "\n"
+    }
+
+    /********************/
+    /* MODULE TEMPLATES */
+    /********************/
+    static String moduleAutosar()
+    {
+        String moduleList = "", usedList = "", pathList = "", templ
+
+        for(component in packagesAsrMake)
+        {
+            moduleList += moduleListData(component.componentName)
+            usedList += moduleUsed(component.componentName)
+            pathList += modulePath(component)
+        }
+
+        templ = moduleList +
+                "\n" +
+                usedList +
+                "\n" +
+                pathList
+
+        // GenTool Geny and "external\BSW\Mcal_" outdated
+        return templ
+    }
+
+    private static String moduleListData(String packageName)
+    {
+        return writeVar("MODULE_LIST_PROJECT", "+=", packageName.toUpperCase())
+    }
+
+    private static String moduleUsed(String componentName)
+    {
+        String templ
+        if(!componentName.startsWith("FblDrvFlash_"))
+        {
+            templ = writeVar(componentName.toUpperCase() + "_USED", "=", "1")
+        }
+        else
+        {
+            templ = writeVar(componentName.toUpperCase() + "_USED", "=", "0")
+        }
+
+        return templ
+    }
+
+    private static String modulePath(Component component)
+    {
+        return writeVar(component.componentName.toUpperCase() + "_PATH", "=", component.path)
+    }
+
+    /*************************/
+    /* APPLICATION TEMPLATES */
+    /*************************/
+
+    static String application()
+    {
+        String templ = ""
+
+        templ += applicationIncludeList()
+
+        return templ
+    }
+
+    private static String applicationIncludeList()
+    {
+        String templ =  "# additional application include directories\n" +
+                        writeVar("ADDITIONAL_INCLUDES", "+=", "Include", 0) +
+                        (packagesAsrMake.find({it.componentName.startsWith("Vtt")}) ?
+                            writeVar("ADDITIONAL_INCLUDES", "+=", "IncludeHw", 0)
+                        :
+                            ""
+                        ) +
+                        "\n" +
+                        "# application source files\n" +
+                        applicationSourceFilesStatic() +
+                        applicationSourceFiles()
+        return templ
+    }
+
+    /* *IMPORTANT* the application generation differs drastically from the xslt template, because it can be heavily simplified with the new information */
+
+    private static String applicationSourceFilesStatic()
+    {
+        String templ =  (evaluateXPath("CANbeddedVersionInfo/ComponentCheck/Component[@Project=\"SysService_Asr4EcuM\" or @Project=\"SysService_AsrEcuM\"]") ?
+                            writeVar("APP_SOURCE_LST", "+=", "Source\\EcuM_Callout_Stubs.c", 0)
+                        :
+                            ""
+                        ) +
+                        (evaluateXPath("CANbeddedVersionInfo/ComponentCheck/Component[@Project=\"SysService_Asr4BswMCfg5\"]") ?
+                            writeVar("APP_SOURCE_LST", "+=", "Source\\BswM_Callout_Stubs.c", 0)
+                        :
+                            ""
+                        ) +
+                        (evaluateXPath("CANbeddedVersionInfo/ComponentCheck/Component[@Project=\"Os_CoreGen7\"]") ?
+                            writeVar("APP_SOURCE_LST", "+=", "Source\\Os_Callout_Stubs.c", 0)
+                        :
+                            ""
+                        )
+        return templ
+    }
+
+    private static String applicationSourceFiles()
+    {
+        String templ = ""
+        for(component in ApplComponents)
+        {
+            templ += writeVar("APP_SOURCE_LST", "+=", component.path, 0)
+        }
+        return templ
+    }
+
+
+    /*********************************/
+    /* STRING MANIPULATION FUNCTIONS */
+    /*********************************/
+    private static String writeVar(String varName, String operator, String varContent, int varPad=64)
+    {
+        return (pad(varName, varPad) + " " + operator + " " + varContent + "\n")
+    }
+
+    // extends a given string to a specified length with ' '
+    private static String pad(String string, int length)
+    {
+        while(string.length() < length)
+        {
+            string += " "
+        }
+        return string
+    }
+
+//    private static String computeModuleName(String packagename, String subpackagename)
+//    {
+//        String moduleName
+//        if(subpackagename.startsWith("Impl_Main") ||subpackagename.startsWith("Impl_XD"))
+//        {
+//            moduleName = packagename + "_" + subpackagename
+//        }
+//        else
+//        {
+//            moduleName = packagename
+//        }
+//        return moduleName
+//    }
+
+    static String sectionComment(String sectionName)
+    {
+        String templ =  "###############################################################################\n" +
+                        "#  "+ sectionName + "\n" +
+                        "###############################################################################\n"
+        return templ
+    }
+
+    /********************/
+    /* GETTER FUNCTIONS */
+    /********************/
+    static String getMakeSupportType(){
+        return MakeSupportType
+    }
+
+    static String getSipFolderStructure(){
+        return SipFolderStructure
+    }
+
+    /**************************/
+    /* XQuery/XPath FUNCTIONS */
+    /**************************/
+    /**
+     * @brief Evaluates a XPath and returns the results
+     * @param document Document on which the XPath should be evaluated
+     * @param xpathExpression The expression to evaluate
+     * @return List of results as strings
+     * @throws Exception
+     */
+    private static List<String> evaluateXPath(String xpathExpression) throws Exception
+    {
+        // Create XPathFactory object
+        XPathFactory xpathFactory = XPathFactory.newInstance()
+
+        // Create XPath object
+        XPath xpath = xpathFactory.newXPath()
+
+        List<String> values = new ArrayList<>()
+        try
+        {
+            // Create XPathExpression object
+            XPathExpression expr = xpath.compile(xpathExpression)
+
+            // Evaluate expression result on XML document
+            NodeList nodes = (NodeList) expr.evaluate(xmlDoc, XPathConstants.NODESET)
+
+            for (int i = 0; i < nodes.getLength(); i++) {
+                values.add(nodes.item(i).getNodeValue())
+            }
+        } catch (XPathExpressionException e) {
+            e.printStackTrace()
+        }
+        return values
+    }
+
+    private static boolean evaluateXPathBool(String xpathExpression) throws Exception
+    {
+        boolean retVal
+        // Create XPathFactory object
+        XPathFactory xpathFactory = XPathFactory.newInstance()
+
+        // Create XPath object
+        XPath xpath = xpathFactory.newXPath()
+
+        try
+        {
+            // Create XPathExpression object
+            XPathExpression expr = xpath.compile(xpathExpression)
+
+            // Evaluate expression result on XML document
+            retVal = expr.evaluate(xmlDoc, XPathConstants.BOOLEAN)
+
+        } catch (XPathExpressionException e) {
+            e.printStackTrace()
+            retVal = false
+        }
+        return retVal
+    }
+
+    /**
+     * @brief Loads the Document
+     * @param fileName Filename/Path to load
+     * @return The file as a Document
+     * @throws Exception
+     */
+    private static Document getDocument(String fileName) throws Exception
+    {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance()
+        factory.setNamespaceAware(true)
+        DocumentBuilder builder = factory.newDocumentBuilder()
+        Document doc = builder.parse(fileName)
+        return doc
+    }
+}
+
+//daVinci enables the IDE code completion support
+daVinci {
+    /*
+     * Task: CreateMakefileProjectPartDefines
+     * Type: DV_APPLICATION
+     */
+    scriptTask("CreateMakefileProjectPartDefines", DV_APPLICATION) {
+        taskDescription 'Creates the file Makefile.project.part.defines based on the current project'
+
+        code{
+            /****************/
+            /* Prerequisite */
+            /****************/
+            final String versionInfoPath = paths.resolveSipPath("Doc/DeliveryInformation/version.info")
+            scriptLogger.debug(versionInfoPath)
+
+            Template templ = new Template(versionInfoPath, paths.getDpaProjectFolder().resolve("Appl"), paths.getSipRootFolder())
+
+            // Create new file/truncate existing to zero
+            PrintWriter writer = new PrintWriter(paths.getDpaProjectFolder().resolve("Appl").resolve("_Makefile.project.part.defines").toString(), "UTF-8")
+
+            /**************/
+            /* Parameters */
+            /**************/
+            String selectedApplication = "StartAppl" // assumption: always 'StartAppl'
+
+            /**********************************************************************************************************/
+            /*****************************************     Templates     **********************************************/
+            /**********************************************************************************************************/
+
+            /*****************/
+            /* Main Template */
+            /*****************/
+
+            String MakeSupportType = templ.getMakeSupportType()
+            String SipFolderStructure = templ.getSipFolderStructure()
+
+            String MainTempl =
+                    templ.sectionComment("Makefile.project.part.defines") +
+                            "\n" +
+                            "# MakeSupport type: " + MakeSupportType + "\n" +
+                            "# Derived product: Microsar4\n" +
+                            "# Folder structure: " + SipFolderStructure + "\n" +
+                            templ.staticShared() +
+                            "\n" +
+                            templ.staticAutosar() +
+                            "\n" +
+                            templ.sectionComment( "Modules") +
+                            "\n" +
+                            templ.moduleAutosar() +
+                            "\n" +
+                            (selectedApplication ?
+                                    templ.sectionComment("Application (" + selectedApplication + ")") +
+                                            templ.application()
+                                    :
+                                    templ.sectionComment("Application (no application selected)")
+                            )
+            // TODO: count(swcp:swcp/attributes:attributeassignments/attributes:attributeassignment[@attributes:attribute='Program' and @attributes:value='MSR_Ford_SLP1']) != 0
+
+            writer.println(MainTempl)
+
+            writer.close()
+        }
+    }
+
+
+}

@@ -1,0 +1,271 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+	<head>
+		<title>LegacyDb2SystemDescr Release Notes</title>
+		<meta name="vs_showGrid" content="False"/>
+		<style type="text/css">
+			<!-- body { font-size:12pt;font-family:arial,sans-serif; color:#000000; background-color: #E5E5E5;}
+      h1 {font-size:18pt; font-family:arial,sans-serif}
+      h2 {font-size:16pt; font-family:arial,sans-serif}
+      h3 {font-size:12pt; font-family:arial,sans-serif}
+      h4 {font-size:10pt; font-family:arial,sans-serif}
+      p,td,th,address,ul,ol,li {font-size:10pt; font-family:arial,sans-serif}
+      th {background-color: #D0D0E0;}
+      pre {font-size:10pt;}
+      p.small {font-size:8pt; font-family:arial,sans-serif}
+      a {font-family:arial,sans-serif}
+      /* from W3-REC.css: */ @media screen { /* hide from IE3 */ a:hover { background: #FE0 }}
+      //-->
+		</style>
+	</head>
+	<body>
+		<h1>
+			<a name="_top">LegacyDb2SystemDescr Release Notes</a>
+		</h1>
+		<h2>Table of contents</h2>
+		<table border="0">
+			<tr>
+				<td>
+					<a href="#1.8.70">LegacyDb2SystemDescr 1.8.70</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#1.8.69">LegacyDb2SystemDescr 1.8.69</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#1.8.68">LegacyDb2SystemDescr 1.8.68</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#1.8.67">LegacyDb2SystemDescr 1.8.67</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#info">Additional Information</a>
+				</td>
+			</tr>
+		</table>
+		<p>
+			<a href="#_top">(top)</a>
+		</p>
+		<!-- #################### -->
+		<h2>
+			<a name="1.8.70">LegacyDb2SystemDescr 1.8.70</a>
+		</h2>
+		<h3>Extension of J1939-22</h3>
+		<ul>
+			<li>Container mapping of requestable J1939-22 messages is improved reflecting the possibility, to receive and transmit requestable PDU1 PGs with FEFF (standard Id), as well as with FBFF (extended Id; if globally addressed).
+			<li>Admin Data is derived for proprietary J1939TpConnection and J1939TpPG parameters which aren`t yet supported by AUTOSAR</li>
+			<li>Support of CAN FD Basic Frames (FBFF)</li>
+			<li>Set Priority of MultiPg to highest C-PG Priority</li>
+			<li>Remove legacy parameter J1939PgAppearanceOnBus which was used for determination of J1939-22 PDU</li>
+			<li>Exclude J1939-22 PGs from container which shall appear on the bus as dedicated FEFFs, not as C-PGs</li>
+			<li>Improve send behaviour for cyclic non-requestable J1939-22 DBC message removing the timeout and setting the trigger to ALWAYS</li>
+		</ul>		
+		<h3>Miscellaneous Features</h3>
+		<ul>		
+			<li>Check for inconsistent NID / CBV position of NM messages and warn the user if an inconsistent signal layout is detected</li>
+		</ul>
+		<h3>Fixed Issues</h3>
+		<ul>
+			<li>Attribute for usage of MultiPg is not derived correctly from DBC and therefore not detected by the DaVinci Tooling during import</li>
+			<li>J1939-22 requestable messages are incorrectly derived in case GenMsgSendType is set to cyclic and in  destination address of the DBC message is not equal to 0xFE (Null Address)</li>
+		</ul>
+		<p>
+			<a href="#_top">(top)</a>
+		</p>
+		<!-- #################### -->
+		<h2>
+			<a name="1.8.69">LegacyDb2SystemDescr 1.8.69</a>
+		</h2>
+		<h3>Miscellaneous Features</h3>
+		<ul>
+			<li>Derive E2E Offset for Assurance Data, also covering Signal Groups</li>
+		</ul>
+		<h3>Fixed Issues</h3>
+		<ul>
+			<li>IpduMContainerTxFirstContainedPduTrigger shall not be set to true for J1939-22 related containers</li>
+			<li>CanNm Control Bit Vector and Source Node Identifier detection does not work as expected and is not described in the Technical Reference</li>
+			<li>Missing DataTransformationSet in case of a dedicated TransformationTechnology for each E2E protected ISignal is necessary</li>
+		</ul>
+		<p>
+			<a href="#_top">(top)</a>
+		</p>
+		<!-- #################### -->
+		<h2>
+			<a name="1.8.68">LegacyDb2SystemDescr 1.8.68</a>
+		</h2>
+		<h3>Miscellaneous Features</h3>
+		<ul>
+			<li>Derive E2E Offset for Assurance Data</li>
+			<li>Derive correct container short headers (TOS, TF) instead of TOS and TF being derived each as constant 000b</li>
+			<li>Remove creation of IpduMContainedTxPduSendTimeout at J1939-22 CANFD</li>
+			<li>Don't create containers for J1939-22 on CAN FD if J1939-21 is specified via SAE_J1939_21_SpecVersion</li>
+			<li>Introduce attribute 'ReRoutJ1939ToCom'</li>
+		</ul>
+		<h3>Fixed Issues</h3>
+		<ul>
+			<li>E2E protection related SignalGroups with TX/RX Signals are mixed together</li>
+			<li>Wrong TOS are derived in Contained PDU Headers being constantly derived to 000b</li>
+			<li>Several ContainedIPdu within one ContainerIPdu lead to unsuccessful conversion</li>
+		</ul>
+		<p>
+			<a href="#_top">(top)</a>
+		</p>
+		<!-- #################### -->
+		<h2>
+			<a name="1.8.67">LegacyDb2SystemDescr 1.8.67</a>
+		</h2>
+		<h3>Miscellaneous Features</h3>
+		<ul>
+			<li>Support of user data in NM message</li>
+			<li>Support of SecuredIPdu for J1939-22</li>
+		</ul>
+		<h3>Fixed Issues</h3>
+		<ul>
+			<li>Value of IpduMContainedTxPduSendTimeout out of range</li>
+			<li>Partially incorrect derivation of J1939-22 pdu with IpduMContainedTxPduCollectionSemantics derived as IPDUM_COLLECT_QUEUED instead of IPDUM_COLLECT_LAST_IS_BEST and IpduMContainedTxPduTrigger derived as  IPDUM_TRIGGER_NEVER instead of IPDUM_TRIGGER_ALWAYS</li>
+		</ul>
+		<p>
+			<a href="#_top">(top)</a>
+		</p>
+		<!-- #################### -->
+		
+			<h2>
+				<a name="info">Additional Information</a>
+			</h2>
+			<h3>Copyright</h3>
+			<dl>
+				<dd>
+					<p>&copy; Vector Informatik GmbH</p>
+				</dd>
+			</dl>
+			<h3>Certified Quality Management System</h3>
+			<dl>
+				<dd>
+					<p>The Quality/Process Management of Vector Informatik GmbH is being certified
+           according to DIN EN ISO 9001:2000-12 (formerly DIN EN ISO 9001:1994-08)
+           throughout since 1998-08-19.</p>
+				</dd>
+			</dl>
+			<h3>Vector Informatik GmbH - Addresses</h3>
+			<dl>
+				<dd>
+					<p>
+						<b>Vector Informatik GmbH</b>
+						<br/>
+						Ingersheimer Str. 24<br/>
+						D-70499 Stuttgart, Germany<br/>
+						Tel.: +49 (711) 80670-0<br/>
+						Fax: +49 (711) 80670-100<br/>
+						<a href="mailto:info@vector-informatik.de">info@vector-informatik.de</a>
+						<br/>
+						<a href="http://www.vector-informatik.com">http://www.vector-informatik.com</a>
+					</p>
+				</dd>
+			</dl>
+			<h3>Subsidiaries</h3>
+			<dl>
+				<dd>
+					<p>
+						<b>Vector France SAS</b>
+						<br/>
+						168, Boulevard Cam&eacute;linat<br/>
+						92240 Malakoff<br/>
+						France<br/>
+						Tel.: +33 1 4231 4000<br/>
+						Fax: +33 1 4231 4009<br/>
+						<a href="mailto:information@vector-france.com">information@vector-france.com</a>
+						<br/>
+						<a href="http://www.vector-france.com">http://www.vector-france.com</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<b>Vector Japan Co., Ltd.</b>
+						<br/>
+						Seafort Square Center Bld.<br/>
+						18F, 2-3-12,<br/>
+						Higashi-shinagawa, Shinagawa-ku<br/>
+						Tokyo 140-0002<br/>
+						Japan<br/>
+						Tel.: +81 3 5769 6970<br/>
+						Fax: +81 3 5769 6975<br/>
+						<a href="mailto:info@vector-japan.co.jp">info@vector-japan.co.jp</a>
+						<br/>
+						<a href="http://www.vector-japan.co.jp">http://www.vector-japan.co.jp</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<b>VecScan AB</b>
+						<br/>
+						Theres Svenssons Gata 9<br/>
+						417 55 Gothenburg<br/>
+						Sweden<br/>
+						Tel.: +46 (31) 76476 00<br/>
+						Fax: +46 (31) 76476 19<br/>
+						<a href="mailto:info@vecscan.com">info@vecscan.com</a>
+						<br/>
+						<a href="http://www.vecscan.com">http://www.vecscan.com</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<b>Vector CANtech, Inc.</b>
+						<br/>
+						39500 Orchard Hill Place<br/>
+						Suite 550<br/>
+						Novi, Michigan 48375<br/>
+						USA<br/>
+						Tel.: +1 (248) 449-9290<br/>
+						Fax: +1 (248) 449-9704<br/>
+						<a href="mailto:info@vector-cantech.com">info@vector-cantech.com</a>
+						<br/>
+						<a href="http://www.vector-cantech.com">http://www.vector-cantech.com</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<b>Vector Korea IT Inc.</b>
+						<br/>
+						Daerung Post Tower III, 508<br/>
+						182-4 Guro-dong, Guro-gu<br/>
+						Seoul 152-790<br/>
+						Republic of Korea<br/>
+						Tel.: +82(0)2 2028 0600<br/>
+						Fax: +82(0)2 2028 0604<br/>
+						<a href="mailto:info@vector-korea.com">info@vector-korea.com</a>
+						<br/>
+						<a href="http://www.vector-korea.com">http://www.vector-korea.com</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<b>Vector GB Ltd.</b>
+						<br/>
+						Rhodium<br/>
+						Central Boulevard<br/>
+						Blythe Valley Park<br/>
+						Solihull, Birmingham<br/>
+						West Midlands B90 8AS<br/>
+						United Kingdom<br/>
+						Tel.: +44 (0) 7530 264701<br/>
+						<a href="mailto:info@vector-gb.co.uk">info@vector-gb.co.uk</a>
+						<br/>
+						<a href="http://www.vector-gb.co.uk">http://www.vector-gb.co.uk</a>
+					</p>
+				</dd>
+			</dl>
+			<p>
+				<a href="#_top">(top)</a>
+			</p>
+		</p>
+		<!-- ##################### -->
+	</body>
+</html>

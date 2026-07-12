@@ -1,0 +1,45 @@
+
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Vector.VTT.VsProjectGenerator
+{
+  class ModuleCddOsoh : IModule
+  {
+    public string Name
+    {
+      get { return "CddOsoh"; }
+    }
+
+    public string DefinitionPath
+    {
+      get { return "/MICROSAR/CddOsoh/Cdd"; }
+    }
+
+    public void Configure(IEcucProvider ecuc, IGeneratorModel model)
+    {
+      if (ecuc.IsConfigured)
+      {
+        string implDir = Helper.GetModuleBSWDir(model.Directory.BSW, "CddOsoh");
+        string genDataDir = model.Directory.GenData;
+
+        model.Project.AddIncludeDirectory(implDir);
+
+        model.Project.AddBswFile(System.IO.Path.Combine(implDir, "CddOsoh.c"), Name);
+        model.Project.AddBswFile(System.IO.Path.Combine(implDir, "CddOsoh.h"), Name);
+        model.Project.AddBswFile(System.IO.Path.Combine(implDir, "CddOsoh_Cbk.h"), Name);
+        model.Project.AddBswFile(System.IO.Path.Combine(implDir, "CddOsoh_Priv.h"), Name);
+        model.Project.AddBswFile(System.IO.Path.Combine(implDir, "CddOsoh_Types.h"), Name);
+
+        
+        model.Project.AddBswFile(System.IO.Path.Combine(genDataDir, "CddOsoh_Cfg.h"), Name);
+
+        if (System.IO.File.Exists(System.IO.Path.Combine(genDataDir, "CddOsoh_Cfg.c")))
+        {
+          model.Project.AddBswFile(System.IO.Path.Combine(genDataDir, "CddOsoh_Cfg.c"), Name);
+        }
+      }
+    }
+  }
+}
+

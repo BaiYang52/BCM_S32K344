@@ -1,0 +1,47 @@
+
+How to tips to use and debug MakeSupport 4.0 and GNU make in generel:
+=====================================================================
+
+1. For an easier output do single tasking like
+   > make -j1
+
+   or order the output by
+   > make -Otarget
+
+   If intrinsic rules and variables might be a problem
+   in MakeSupport 4, disable them by
+   > make -rR
+
+2. call MakeSupport in verbose mode with
+   > make help       # see all supported targets
+   > make V=1        # output commands
+   > make VV=1       # output MakeSupport 4 information like included Makefiles or variables
+   > make print-VAR  # print specified Variable.
+                       Attention: Out depends on the position of rule print-%:
+   > place a $(info VAR=$(VAR)) at any position in Makefile
+
+3. If the error is maybe in path length and
+   > make V=1
+   would success because of reduce command length
+   when ERR_OUTPUT=FLAGS is set.
+   If the error occurs only if V=1 is not set then
+   overwrite make silence flag Q=@ and call
+   > make Q=
+   to see commandline in not verbose mode.
+
+4. gmake has some other options to debug:
+   > make --debug=a    # would debug included Makefile
+   > make --debug=b    # would debug dependency
+   > make -p           # print like a preprocessed Makefile
+                         rules and Variables are shown here.
+                         Use within conjunction of -rR to reduce
+                         the output without intrinsic variables
+                         and rules.
+
+5. Path length limit problem
+   In some circumstances some compiler have a limit which is too small
+   that all include paths can be added in command line.
+   One trick could be that the depend preprocessor can be used
+   to include the header files. Use
+   REUSE_CPP_DEPEND=1
+   in command line.
