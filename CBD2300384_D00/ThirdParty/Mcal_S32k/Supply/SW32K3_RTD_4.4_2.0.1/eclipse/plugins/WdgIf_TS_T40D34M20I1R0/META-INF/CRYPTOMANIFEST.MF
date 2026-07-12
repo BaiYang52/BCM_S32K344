@@ -1,0 +1,29 @@
+
+Name: include/WdgIf_Types.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425178535445055632660532474085486232040223678370229
+ 4752487741645507137812224839055952071978943336628060
+
+Name: include/WdgIf_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420309554397595955945863033484799927502121427888206
+ 2435916407207522994133503887457222339833323478498782
+
+Name: include/WdgIf.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425364072005282588408046637589399754142015528205929
+ 4158567867647085901296295678512652975937321517350482
+
+Name: src/WdgIf.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424102064583094948642640850079996569048504467528460
+ 2055906226627173550057871324240389409337022713476607
+

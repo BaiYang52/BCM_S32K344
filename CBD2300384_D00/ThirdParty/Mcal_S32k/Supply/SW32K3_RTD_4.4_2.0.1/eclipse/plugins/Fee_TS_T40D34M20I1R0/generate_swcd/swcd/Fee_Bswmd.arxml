@@ -1,0 +1,820 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00046.xsd">
+
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>AUTOSAR_Fee</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>BswModuleDescriptions</SHORT-NAME>
+          <ELEMENTS>
+            <BSW-MODULE-DESCRIPTION>
+              <SHORT-NAME>Fee</SHORT-NAME>
+              <MODULE-ID>21</MODULE-ID>
+              <PROVIDED-ENTRYS>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Fee/BswModuleEntrys/Fee_Cancel</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Fee/BswModuleEntrys/Fee_EraseImmediateBlock</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Fee/BswModuleEntrys/Fee_ForceSwapOnNextWrite</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Fee/BswModuleEntrys/Fee_GetJobResult</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Fee/BswModuleEntrys/Fee_GetRunTimeInfo</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Fee/BswModuleEntrys/Fee_GetStatus</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Fee/BswModuleEntrys/Fee_GetVersionInfo</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Fee/BswModuleEntrys/Fee_Init</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Fee/BswModuleEntrys/Fee_InvalidateBlock</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Fee/BswModuleEntrys/Fee_JobEndNotification</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Fee/BswModuleEntrys/Fee_JobErrorNotification</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Fee/BswModuleEntrys/Fee_MainFunction</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Fee/BswModuleEntrys/Fee_Read</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Fee/BswModuleEntrys/Fee_SetMode</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Fee/BswModuleEntrys/Fee_Write</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+              </PROVIDED-ENTRYS>
+
+              <INTERNAL-BEHAVIORS>
+                <BSW-INTERNAL-BEHAVIOR>
+                  <SHORT-NAME>InternalBehavior_0</SHORT-NAME>
+                  <EXCLUSIVE-AREAS>
+                    <EXCLUSIVE-AREA>
+                      <SHORT-NAME>FEE_EXCLUSIVE_AREA_00</SHORT-NAME>
+                    </EXCLUSIVE-AREA>
+                    <EXCLUSIVE-AREA>
+                      <SHORT-NAME>FEE_EXCLUSIVE_AREA_01</SHORT-NAME>
+                    </EXCLUSIVE-AREA>
+                    <EXCLUSIVE-AREA>
+                      <SHORT-NAME>FEE_EXCLUSIVE_AREA_02</SHORT-NAME>
+                    </EXCLUSIVE-AREA>
+                    <EXCLUSIVE-AREA>
+                      <SHORT-NAME>FEE_EXCLUSIVE_AREA_03</SHORT-NAME>
+                    </EXCLUSIVE-AREA>
+                  </EXCLUSIVE-AREAS>
+                  <ENTITYS>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Fee_Cancel</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Fee/BswModuleEntrys/Fee_Cancel</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Fee_EraseImmediateBlock</SHORT-NAME>
+                      <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                        <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AUTOSAR_Fee/BswModuleDescriptions/Fee/InternalBehavior_0/FEE_EXCLUSIVE_AREA_03</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                      </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Fee/BswModuleEntrys/Fee_EraseImmediateBlock</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Fee_ForceSwapOnNextWrite</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Fee/BswModuleEntrys/Fee_ForceSwapOnNextWrite</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Fee_GetJobResult</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Fee/BswModuleEntrys/Fee_GetJobResult</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Fee_GetRunTimeInfo</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Fee/BswModuleEntrys/Fee_GetRunTimeInfo</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Fee_GetStatus</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Fee/BswModuleEntrys/Fee_GetStatus</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Fee_GetVersionInfo</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Fee/BswModuleEntrys/Fee_GetVersionInfo</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Fee_Init</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Fee/BswModuleEntrys/Fee_Init</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Fee_InvalidateBlock</SHORT-NAME>
+                      <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                        <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AUTOSAR_Fee/BswModuleDescriptions/Fee/InternalBehavior_0/FEE_EXCLUSIVE_AREA_02</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                      </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Fee/BswModuleEntrys/Fee_InvalidateBlock</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Fee_JobEndNotification</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Fee/BswModuleEntrys/Fee_JobEndNotification</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Fee_JobErrorNotification</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Fee/BswModuleEntrys/Fee_JobErrorNotification</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-SCHEDULABLE-ENTITY>
+                      <SHORT-NAME>Fee_MainFunction</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Fee/BswModuleEntrys/Fee_MainFunction</IMPLEMENTED-ENTRY-REF>
+                    </BSW-SCHEDULABLE-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Fee_Read</SHORT-NAME>
+                      <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                        <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AUTOSAR_Fee/BswModuleDescriptions/Fee/InternalBehavior_0/FEE_EXCLUSIVE_AREA_00</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                      </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Fee/BswModuleEntrys/Fee_Read</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Fee_SetMode</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Fee/BswModuleEntrys/Fee_SetMode</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Fee_Write</SHORT-NAME>
+                      <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                        <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AUTOSAR_Fee/BswModuleDescriptions/Fee/InternalBehavior_0/FEE_EXCLUSIVE_AREA_01</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                      </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Fee/BswModuleEntrys/Fee_Write</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                  </ENTITYS>
+
+                  <EVENTS>
+                    <BSW-TIMING-EVENT>
+                      <SHORT-NAME>Fee_TimingEvent_MainFunction</SHORT-NAME>
+                      <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/AUTOSAR_Fee/BswModuleDescriptions/Fee/InternalBehavior_0/Fee_MainFunction</STARTS-ON-EVENT-REF>
+                      <PERIOD>[!IF "node:exists(FeeGeneral/FeeMainFunctionPeriod)"!][!"FeeGeneral/FeeMainFunctionPeriod"!][!ELSE!]0[!ENDIF!]</PERIOD>
+                    </BSW-TIMING-EVENT>
+                  </EVENTS>
+
+                </BSW-INTERNAL-BEHAVIOR>
+              </INTERNAL-BEHAVIORS>
+            </BSW-MODULE-DESCRIPTION>
+          </ELEMENTS>
+        </AR-PACKAGE>
+
+        <AR-PACKAGE>
+          <SHORT-NAME>BswModuleEntrys</SHORT-NAME>
+          <ELEMENTS>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Fee_Cancel</SHORT-NAME>
+              <SERVICE-ID>0x04</SERVICE-ID>
+              <IS-REENTRANT>false</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Fee_EraseImmediateBlock</SHORT-NAME>
+              <SERVICE-ID>0x09</SERVICE-ID>
+              <IS-REENTRANT>false</IS-REENTRANT>
+              <IS-SYNCHRONOUS>false</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Fee_ForceSwapOnNextWrite</SHORT-NAME>
+              <SERVICE-ID>0x14</SERVICE-ID>
+              <IS-REENTRANT>true</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Fee_GetJobResult</SHORT-NAME>
+              <SERVICE-ID>0x06</SERVICE-ID>
+              <IS-REENTRANT>false</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Fee_GetRunTimeInfo</SHORT-NAME>
+              <SERVICE-ID>0x13</SERVICE-ID>
+              <IS-REENTRANT>true</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Fee_GetStatus</SHORT-NAME>
+              <SERVICE-ID>0x05</SERVICE-ID>
+              <IS-REENTRANT>false</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Fee_GetVersionInfo</SHORT-NAME>
+              <SERVICE-ID>0x08</SERVICE-ID>
+              <IS-REENTRANT>true</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Fee_Init</SHORT-NAME>
+              <SERVICE-ID>0x00</SERVICE-ID>
+              <IS-REENTRANT>false</IS-REENTRANT>
+              <IS-SYNCHRONOUS>false</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Fee_InvalidateBlock</SHORT-NAME>
+              <SERVICE-ID>0x07</SERVICE-ID>
+              <IS-REENTRANT>false</IS-REENTRANT>
+              <IS-SYNCHRONOUS>false</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Fee_JobEndNotification</SHORT-NAME>
+              <SERVICE-ID>0x10</SERVICE-ID>
+              <IS-REENTRANT>false</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Fee_JobErrorNotification</SHORT-NAME>
+              <SERVICE-ID>0x11</SERVICE-ID>
+              <IS-REENTRANT>false</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Fee_MainFunction</SHORT-NAME>
+              <SERVICE-ID>0x12</SERVICE-ID>
+              <IS-REENTRANT>false</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>SCHEDULED</CALL-TYPE>
+              <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Fee_Read</SHORT-NAME>
+              <SERVICE-ID>0x02</SERVICE-ID>
+              <IS-REENTRANT>false</IS-REENTRANT>
+              <IS-SYNCHRONOUS>false</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Fee_SetMode</SHORT-NAME>
+              <SERVICE-ID>0x01</SERVICE-ID>
+              <IS-REENTRANT>false</IS-REENTRANT>
+              <IS-SYNCHRONOUS>false</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Fee_Write</SHORT-NAME>
+              <SERVICE-ID>0x03</SERVICE-ID>
+              <IS-REENTRANT>false</IS-REENTRANT>
+              <IS-SYNCHRONOUS>false</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>Fee_TS_T40D34M20I1R0</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+        <SHORT-NAME>Implementations</SHORT-NAME>
+          <ELEMENTS>
+            <BSW-IMPLEMENTATION>
+              <SHORT-NAME>BswImplementation_0</SHORT-NAME>
+
+              <CODE-DESCRIPTORS>
+                <CODE>
+                <SHORT-NAME>Files</SHORT-NAME>
+                <ARTIFACT-DESCRIPTORS>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>config::Fee.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>doc::RTD_FEE_IM.pdf</SHORT-LABEL>
+                    <CATEGORY>SWDOC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>doc::RTD_FEE_UM.pdf</SHORT-LABEL>
+                    <CATEGORY>SWDOC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K312::generate::epc::Base.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K312::generate::epc::EcuC.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K312::generate::epc::Fee.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K312::generate::epc::Fls.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K312::generate::epc::Mcl.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K312::generate::epc::Os.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K312::generate::epc::Resource.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K312::include::check_example.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K312::src::main.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K312::TresosProject::Fee_Example_S32K312::.prefs::preferences.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K312::TresosProject::Fee_Example_S32K312::config::Base.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K312::TresosProject::Fee_Example_S32K312::config::EcuC.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K312::TresosProject::Fee_Example_S32K312::config::Fee.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K312::TresosProject::Fee_Example_S32K312::config::Fls.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K312::TresosProject::Fee_Example_S32K312::config::Mcl.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K312::TresosProject::Fee_Example_S32K312::config::Os.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K312::TresosProject::Fee_Example_S32K312::config::Resource.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K342::generate::epc::Base.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K342::generate::epc::EcuC.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K342::generate::epc::Fee.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K342::generate::epc::Fls.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K342::generate::epc::Mcl.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K342::generate::epc::Os.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K342::generate::epc::Resource.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K342::include::check_example.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K342::src::main.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K342::TresosProject::Fee_Example_S32K342::.prefs::preferences.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K342::TresosProject::Fee_Example_S32K342::config::Base.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K342::TresosProject::Fee_Example_S32K342::config::EcuC.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K342::TresosProject::Fee_Example_S32K342::config::Fee.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K342::TresosProject::Fee_Example_S32K342::config::Fls.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K342::TresosProject::Fee_Example_S32K342::config::Mcl.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K342::TresosProject::Fee_Example_S32K342::config::Os.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K342::TresosProject::Fee_Example_S32K342::config::Resource.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K344::generate::epc::Base.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K344::generate::epc::EcuC.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K344::generate::epc::Fee.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K344::generate::epc::Fls.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K344::generate::epc::Mcl.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K344::generate::epc::Os.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K344::generate::epc::Resource.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K344::include::check_example.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K344::src::main.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K344::TresosProject::Fee_Example_S32K344::.prefs::preferences.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K344::TresosProject::Fee_Example_S32K344::config::Base.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K344::TresosProject::Fee_Example_S32K344::config::EcuC.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K344::TresosProject::Fee_Example_S32K344::config::Fee.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K344::TresosProject::Fee_Example_S32K344::config::Fls.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K344::TresosProject::Fee_Example_S32K344::config::Mcl.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K344::TresosProject::Fee_Example_S32K344::config::Os.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::EBT::Fee_Example_S32K344::TresosProject::Fee_Example_S32K344::config::Resource.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Fee_Example_S32K312::include::check_example.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Fee_Example_S32K312::Project_Settings::Startup_Code::exceptions.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Fee_Example_S32K312::Project_Settings::Startup_Code::nvic.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Fee_Example_S32K312::Project_Settings::Startup_Code::startup.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Fee_Example_S32K312::Project_Settings::Startup_Code::system.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Fee_Example_S32K312::src::main.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Fee_Example_S32K342::include::check_example.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Fee_Example_S32K342::Project_Settings::Startup_Code::exceptions.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Fee_Example_S32K342::Project_Settings::Startup_Code::nvic.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Fee_Example_S32K342::Project_Settings::Startup_Code::startup.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Fee_Example_S32K342::Project_Settings::Startup_Code::system.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Fee_Example_S32K342::src::main.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Fee_Example_S32K344::include::check_example.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Fee_Example_S32K344::Project_Settings::Startup_Code::exceptions.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Fee_Example_S32K344::Project_Settings::Startup_Code::nvic.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Fee_Example_S32K344::Project_Settings::Startup_Code::startup.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Fee_Example_S32K344::Project_Settings::Startup_Code::system.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Fee_Example_S32K344::src::main.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Fee.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Fee_Cbk.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Fee_InternalTypes.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Fee_Types.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>src::Fee.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                </ARTIFACT-DESCRIPTORS>
+                </CODE>
+              </CODE-DESCRIPTORS>
+
+              <COMPILERS>
+                <COMPILER>
+                  <SHORT-NAME>GCC_Compiler</SHORT-NAME>
+                  <NAME>GCC Compiler</NAME>
+                  <OPTIONS>-mcpu=cortex-m7 -mthumb -mlittle-endian -mfpu=fpv5-sp-d16 -mfloat-abi=hard -std=c99 -Os -ggdb3 -Wall -Wextra -pedantic -Wstrict-prototypes -Wundef -Wunused -Werror=implicit-function-declaration -Wsign-compare -Wdouble-promotion -fno-short-enums -funsigned-char -funsigned-bitfields -fomit-frame-pointer -fno-common -fstack-usage -fdump-ipa-all -c -DS32K3XX -DS32K344 -DGCC -DUSE_SW_VECTOR_MODE -DD_CACHE_ENABLE -DI_CACHE_ENABLE -DENABLE_FPU -DMCAL_ENABLE_USER_MODE_SUPPORT</OPTIONS>
+                  <VENDOR>GCC Systems</VENDOR>
+                  <VERSION>NXP GCC 10.2.0 20200723 (Build 1728 Revision g5963bc8)</VERSION>
+                </COMPILER>
+                <COMPILER>
+                  <SHORT-NAME>GHS_Compiler</SHORT-NAME>
+                  <NAME>Green Hills</NAME>
+                  <OPTIONS>-cpu=cortexm7 -thumb -fpu=vfpv5_d16 -fsingle -C99 --ghstd=last -Osize --gnu_asm -dual_debug -G -keeptempfiles -Wimplicit-int -Wshadow -Wtrigraphs -Wundef --unsigned_chars --unsigned_fields --no_commons --no_exceptions --no_slash_comment --prototype_errors --incorrect_pragma_warnings -c -DS32K3XX -DS32K344 -DGHS -DUSE_SW_VECTOR_MODE -DD_CACHE_ENABLE -DI_CACHE_ENABLE -DENABLE_FPU -DMCAL_ENABLE_USER_MODE_SUPPORT</OPTIONS>
+                  <VENDOR>Green Hills</VENDOR>
+                  <VERSION>Green Hills Multi 7.1.6d / Compiler 2021.1.4</VERSION>
+                </COMPILER>
+                <COMPILER>
+                  <SHORT-NAME>IAR_Compiler</SHORT-NAME>
+                  <NAME>IAR Compiler</NAME>
+                  <OPTIONS>--cpu=Cortex-M7 --cpu_mode=thumb --endian=little --fpu=FPv5-SP -e -Ohz --debug --no_clustering --no_mem_idioms --do_explicit_zero_opt_in_named_sections --require_prototypes --no_wrap_diagnostics --diag_suppress=Pa050 -DS32K3XX -DS32K344 -DIAR -DUSE_SW_VECTOR_MODE -DD_CACHE_ENABLE -DI_CACHE_ENABLE -DENABLE_FPU -DMCAL_ENABLE_USER_MODE_SUPPORT</OPTIONS>
+                  <VENDOR>IAR Systems</VENDOR>
+                  <VERSION>IAR ANSI C/C++ Compiler v.8.50.10 (safety version)</VERSION>
+                </COMPILER>
+              </COMPILERS>
+              <GENERATED-ARTIFACTS>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>Fee_Cfg_h</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate_PC::include::Fee_Cfg.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>Fee_Features_h</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate_PC::include::Fee_Features.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>Fee_Cfg_c</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate_PC::src::Fee_Cfg.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+              </GENERATED-ARTIFACTS>
+
+              <LINKERS>
+                <LINKER>
+                  <SHORT-NAME>GCC_Linker</SHORT-NAME>
+                  <NAME>GCC Compiler</NAME>
+                  <OPTIONS>-Wl,-Map,filename -T linkerfile --entry=Reset_Handler -nostartfiles -mcpu=cortexm7 -mthumb -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mlittle-endian -ggdb3 -lc -lm -lgcc</OPTIONS>
+                  <VENDOR>GCC Systems</VENDOR>
+                  <VERSION>NXP GCC 10.2.0 20200723 (Build 1728 Revision g5963bc8)</VERSION>
+                </LINKER>
+                <LINKER>
+                  <SHORT-NAME>GHS_Linker</SHORT-NAME>
+                  <NAME>Green Hills</NAME>
+                  <OPTIONS>-e Reset_Handler -T linker_script_file.ld -map -keepmap -Mn -delete -ignore_debug_references -Llibrary_path -larch -lstartup -lind_sd -v -keep=C40_Ip_AccessCode -nostartfiles</OPTIONS>
+                  <VENDOR>Green Hills</VENDOR>
+                  <VERSION>Green Hills Multi 7.1.6d / Compiler 2021.1.4</VERSION>
+                </LINKER>
+                <LINKER>
+                  <SHORT-NAME>IAR_Linker</SHORT-NAME>
+                  <NAME>IAR Compiler</NAME>
+                  <OPTIONS>--map filename --config linkerfile --cpu=Cortex-M7 --fpu=FPv5-SP --entry _start --enable_stack_usage --skip_dynamic_initialization --no_wrap_diagnostics</OPTIONS>
+                  <VENDOR>IAR Systems</VENDOR>
+                  <VERSION>IAR ANSI C/C++ Compiler v.8.50.10 (safety version)</VERSION>
+                </LINKER>
+              </LINKERS> 
+              <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+              <RESOURCE-CONSUMPTION>
+                <SHORT-NAME>ResourceConsumption</SHORT-NAME>
+                <MEMORY-SECTIONS>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>FEE_CODE</SHORT-NAME>
+                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CODE</SW-ADDRMETHOD-REF>
+                    <SYMBOL>CODE</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>FEE_CONFIG_DATA_UNSPECIFIED</SHORT-NAME>
+                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CONFIG_DATA</SW-ADDRMETHOD-REF>
+                    <SYMBOL>CONFIG_DATA_UNSPECIFIED</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>FEE_CONST_32</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CONST</SW-ADDRMETHOD-REF>
+                    <SYMBOL>CONST_32</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>FEE_VAR_CLEARED_16</SHORT-NAME>
+                    <ALIGNMENT>16</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_CLEARED</SW-ADDRMETHOD-REF>
+                    <SYMBOL>VAR_CLEARED_16</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>FEE_VAR_CLEARED_32</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_CLEARED</SW-ADDRMETHOD-REF>
+                    <SYMBOL>VAR_CLEARED_32</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>FEE_VAR_CLEARED_8</SHORT-NAME>
+                    <ALIGNMENT>8</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_CLEARED</SW-ADDRMETHOD-REF>
+                    <SYMBOL>VAR_CLEARED_8</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>FEE_VAR_CLEARED_BOOLEAN</SHORT-NAME>
+                    <ALIGNMENT>BOOLEAN</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_CLEARED</SW-ADDRMETHOD-REF>
+                    <SYMBOL>VAR_CLEARED_BOOLEAN</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>FEE_VAR_CLEARED_UNSPECIFIED</SHORT-NAME>
+                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_CLEARED</SW-ADDRMETHOD-REF>
+                    <SYMBOL>VAR_CLEARED_UNSPECIFIED</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>FEE_VAR_INIT_UNSPECIFIED</SHORT-NAME>
+                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_INIT</SW-ADDRMETHOD-REF>
+                    <SYMBOL>VAR_INIT_UNSPECIFIED</SYMBOL>
+                  </MEMORY-SECTION>
+                </MEMORY-SECTIONS>
+              </RESOURCE-CONSUMPTION>
+              <SW-VERSION>2.0.1</SW-VERSION>
+              <VENDOR-ID>43</VENDOR-ID>
+              <AR-RELEASE-VERSION>4.4.0</AR-RELEASE-VERSION>
+
+              <BEHAVIOR-REF DEST="BSW-INTERNAL-BEHAVIOR">/AUTOSAR_Fee/BswModuleDescriptions/Fee/InternalBehavior_0</BEHAVIOR-REF>
+              <VENDOR-SPECIFIC-MODULE-DEF-REFS>
+                <VENDOR-SPECIFIC-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/TS_T40D34M20I1R0/Fee</VENDOR-SPECIFIC-MODULE-DEF-REF>
+              </VENDOR-SPECIFIC-MODULE-DEF-REFS>
+            </BSW-IMPLEMENTATION>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

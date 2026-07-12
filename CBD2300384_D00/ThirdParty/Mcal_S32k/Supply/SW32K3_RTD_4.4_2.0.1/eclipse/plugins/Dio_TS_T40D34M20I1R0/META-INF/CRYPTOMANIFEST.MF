@@ -1,0 +1,50 @@
+
+Name: generate_PC/Dio_VersionCheck_Src.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423090268982516264869923596110468129527583304293243
+ 4406423356485991803793551551578421056787287712068783
+
+Name: generate_swcd/swcd/Dio_Bswmd.arxml
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773971759294501087513568611505637397696883253423413
+ 301483977026015825551571148781703306996711872536597174
+
+Name: generate_PC/include/Dio_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422466927150912067448045467702647265955363521490160
+ 0055582402588843677565249177158243361647986428619365
+
+Name: generate_PC/src/Dio_Cfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594748800271005162967680135904485459808645509040796964
+ 137536119341718540346064992412290473120075326299334538
+
+Name: generate_PC/Dio_VersionCheck_Inc.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424453620667279111770050454093799679628074403876880
+ 1041525725622016231880450026744384098094691472943208
+
+Name: generate_PC/include/Siul2_Dio_Ip_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773966761825462492944118199003658884453320592402441
+ 127475418921823427400670062665008204158954530078951396
+
+Name: config/Dio.xdm
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377426254069901103994093542641125994726561232969819381
+ 8108015317397285780895628459060789654085080927574547
+

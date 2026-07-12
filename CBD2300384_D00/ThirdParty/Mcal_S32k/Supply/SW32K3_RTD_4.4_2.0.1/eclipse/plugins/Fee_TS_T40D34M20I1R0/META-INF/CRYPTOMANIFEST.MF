@@ -1,0 +1,43 @@
+
+Name: config/Fee.xdm
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423027995967899551259868033841952523310423357165319
+ 7198999317930790455190897980698230491240121925172430
+
+Name: generate_PC/src/Fee_Cfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422294236344366000684746185855570651765331766577862
+ 1926873786229166361865977392420568062463488144671336
+
+Name: generate_PC/include/Fee_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424259454307877615496218783680208347364239234464224
+ 3075613563299977222613432724429985576445515502775381
+
+Name: generate_PC/include/Fee_Features.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420171178186833509525193896199774454289764809862173
+ 7200055762814335384709141394876243678412048860633275
+
+Name: generate_swcd/swcd/Fee_Bswmd.arxml
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420814812536647697381165336033947863028640434825398
+ 2624986810291446472312020170403881507736617766443057
+
+Name: generate_PC/Fee_VersionCheck.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425078170945545795985754911582701904949064171416114
+ 7011323868610384937872522673008002627463832211929195
+
