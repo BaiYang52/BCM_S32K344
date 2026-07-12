@@ -1,0 +1,1421 @@
+<?xml version='1.0'?>
+<datamodel version="7.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="Rm" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="Rm" type="AR-ELEMENT" value="MODULE-CONFIGURATION">
+            <d:ctr type="MODULE-CONFIGURATION">
+              <a:a name="DEF" value="ASPath:/TS_T40D34M20I0R0/Rm"/>
+              <d:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN" value="false">
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:var>
+              <d:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION" 
+                     value="VariantPreCompile"/>
+              <d:ctr name="RmGeneral" type="IDENTIFIABLE">
+                <d:var name="Rm_VersionInfoApi" type="BOOLEAN" value="true">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="RmDevErrorDetect" type="BOOLEAN" value="false"/>
+                <d:var name="RmEnableUserModeSupport" type="BOOLEAN" 
+                       value="false"/>
+                <d:var name="RmEnableMultiCore" type="BOOLEAN" value="false"/>
+                <d:var name="RmEnableXRDCSupport" type="BOOLEAN" value="true"/>
+                <d:var name="RmEnableSema42Support" type="BOOLEAN" value="true"/>
+                <d:var name="RmMpuM7Configurable" type="BOOLEAN" value="false"/>
+                <d:var name="RmPflashConfigurable" type="BOOLEAN" value="false"/>
+                <d:var name="RmCrossbarConfigurable" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="RmXbicConfigurable" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="RmVirtWrapperConfigurable" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+              <d:ctr name="RmConfigSet" type="IDENTIFIABLE">
+                <d:ctr name="Xrdc_Configuration" type="IDENTIFIABLE">
+                  <d:var name="XrdcDevErrorDetect" type="BOOLEAN" value="false"/>
+                  <d:var name="XrdcRegistersLock" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="XrdcPIDRegisterLock" type="ENUMERATION" 
+                         value="XRDC_PID_UNLOCKED">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                </d:ctr>
+                <d:lst name="Rm_XRDC_Domain_Assignment" type="MAP">
+                  <d:ctr name="Rm_XRDC_Domain_Assignment_0" type="IDENTIFIABLE">
+                    <d:var name="DomainID" type="ENUMERATION" 
+                           value="XRDC_DOMAIN0"/>
+                    <d:lst name="Domain_Master_Assignment" type="MAP">
+                      <d:ctr name="Domain_Master_Assignment_0" 
+                             type="IDENTIFIABLE">
+                        <d:var name="XrdcMasterInstance" type="ENUMERATION" 
+                               value="Xrdc_0_CM7_0"/>
+                        <d:var name="XrdcPIDEnable" type="ENUMERATION" 
+                               value="XRDC_MDA_PID_DISABLE"/>
+                        <d:var name="XrdcMasterPID" type="INTEGER" value="0">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="XrdcMasterPIDMask" type="INTEGER" value="0">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="XrdcDIDBDisable" type="BOOLEAN" 
+                               value="false"/>
+                        <d:var name="XrdcMasterMode" type="ENUMERATION" 
+                               value="XRDC_SECURE">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="XrdcMasterPriviledgeMode" 
+                               type="ENUMERATION" 
+                               value="XRDC_INPUT_PRIVILEDGE_FROM_BUS_MASTER">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:ctr name="Domain_Master_Assignment_1" 
+                             type="IDENTIFIABLE">
+                        <d:var name="XrdcMasterInstance" type="ENUMERATION" 
+                               value="Xrdc_0_TestPort_AHB"/>
+                        <d:var name="XrdcPIDEnable" type="ENUMERATION" 
+                               value="XRDC_MDA_PID_DISABLE">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="XrdcMasterPID" type="INTEGER" value="0">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="XrdcMasterPIDMask" type="INTEGER" value="0">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="XrdcDIDBDisable" type="BOOLEAN" 
+                               value="false">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="XrdcMasterMode" type="ENUMERATION" 
+                               value="XRDC_SECURE">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="XrdcMasterPriviledgeMode" 
+                               type="ENUMERATION" 
+                               value="XRDC_INPUT_PRIVILEDGE_FROM_BUS_MASTER">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:ctr name="Domain_Master_Assignment_2" 
+                             type="IDENTIFIABLE">
+                        <d:var name="XrdcMasterInstance" type="ENUMERATION" 
+                               value="Xrdc_0_HSE_B"/>
+                        <d:var name="XrdcPIDEnable" type="ENUMERATION" 
+                               value="XRDC_MDA_PID_DISABLE">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="XrdcMasterPID" type="INTEGER" value="0">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="XrdcMasterPIDMask" type="INTEGER" value="0">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="XrdcDIDBDisable" type="BOOLEAN" 
+                               value="false">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="XrdcMasterMode" type="ENUMERATION" 
+                               value="XRDC_SECURE">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="XrdcMasterPriviledgeMode" 
+                               type="ENUMERATION" 
+                               value="XRDC_INPUT_PRIVILEDGE_FROM_BUS_MASTER">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                    </d:lst>
+                    <d:lst name="Domain_Peripheral_Assignment" type="MAP">
+                      <d:ctr name="Domain_Peripheral_Assignment_0" 
+                             type="IDENTIFIABLE">
+                        <d:ref name="Domain_Peripheral_Assignment" 
+                               type="REFERENCE" 
+                               value="ASPath:/Rm/Rm/RmConfigSet/Xrdc_0_XRDC"/>
+                        <d:var name="Secure_Access_Policy" type="ENUMERATION" 
+                               value="XRDC_FULL_ACCESS">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="Non_Secure_Access_Policy" 
+                               type="ENUMERATION" value="XRDC_FULL_ACCESS">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:ctr name="Domain_Peripheral_Assignment_1" 
+                             type="IDENTIFIABLE">
+                        <d:ref name="Domain_Peripheral_Assignment" 
+                               type="REFERENCE" 
+                               value="ASPath:/Rm/Rm/RmConfigSet/Xrdc_0_SEMA_42"/>
+                        <d:var name="Secure_Access_Policy" type="ENUMERATION" 
+                               value="XRDC_FULL_ACCESS"/>
+                        <d:var name="Non_Secure_Access_Policy" 
+                               type="ENUMERATION" value="XRDC_FULL_ACCESS"/>
+                      </d:ctr>
+                      <d:ctr name="Domain_Peripheral_Assignment_2" 
+                             type="IDENTIFIABLE">
+                        <d:ref name="Domain_Peripheral_Assignment" 
+                               type="REFERENCE" 
+                               value="ASPath:/Rm/Rm/RmConfigSet/Xrdc_0_EDMA"/>
+                        <d:var name="Secure_Access_Policy" type="ENUMERATION" 
+                               value="XRDC_FULL_ACCESS">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="Non_Secure_Access_Policy" 
+                               type="ENUMERATION" value="XRDC_FULL_ACCESS">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                    </d:lst>
+                    <d:lst name="Domain_Memory_Assignment" type="MAP">
+                      <d:ctr name="Domain_Memory_Assignment_0" 
+                             type="IDENTIFIABLE">
+                        <d:ref name="Domain_Memory_Assignment" type="REFERENCE" 
+                               value="ASPath:/Rm/Rm/RmConfigSet/Xrdc_0_PFLASH_0"/>
+                        <d:var name="Secure_Access_Policy" type="ENUMERATION" 
+                               value="XRDC_FULL_ACCESS">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="Non_Secure_Access_Policy" 
+                               type="ENUMERATION" value="XRDC_FULL_ACCESS">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:ctr name="Domain_Memory_Assignment_1" 
+                             type="IDENTIFIABLE">
+                        <d:ref name="Domain_Memory_Assignment" type="REFERENCE" 
+                               value="ASPath:/Rm/Rm/RmConfigSet/Xrdc_0_PRAM0_0"/>
+                        <d:var name="Secure_Access_Policy" type="ENUMERATION" 
+                               value="XRDC_FULL_ACCESS">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="Non_Secure_Access_Policy" 
+                               type="ENUMERATION" value="XRDC_FULL_ACCESS">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:ctr name="Domain_Memory_Assignment_2" 
+                             type="IDENTIFIABLE">
+                        <d:ref name="Domain_Memory_Assignment" type="REFERENCE" 
+                               value="ASPath:/Rm/Rm/RmConfigSet/Xrdc_0_PRAM1_0"/>
+                        <d:var name="Secure_Access_Policy" type="ENUMERATION" 
+                               value="XRDC_FULL_ACCESS"/>
+                        <d:var name="Non_Secure_Access_Policy" 
+                               type="ENUMERATION" value="XRDC_FULL_ACCESS">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                    </d:lst>
+                  </d:ctr>
+                  <d:ctr name="Rm_XRDC_Domain_Assignment_1" type="IDENTIFIABLE">
+                    <d:var name="DomainID" type="ENUMERATION" 
+                           value="XRDC_DOMAIN1">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:lst name="Domain_Master_Assignment" type="MAP">
+                      <d:ctr name="Domain_Master_Assignment_0" 
+                             type="IDENTIFIABLE">
+                        <d:var name="XrdcMasterInstance" type="ENUMERATION" 
+                               value="Xrdc_0_eDMA_AHB"/>
+                        <d:var name="XrdcPIDEnable" type="ENUMERATION" 
+                               value="XRDC_MDA_PID_DISABLE"/>
+                        <d:var name="XrdcMasterPID" type="INTEGER" value="0"/>
+                        <d:var name="XrdcMasterPIDMask" type="INTEGER" value="0">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="XrdcDIDBDisable" type="BOOLEAN" 
+                               value="false"/>
+                        <d:var name="XrdcMasterMode" type="ENUMERATION" 
+                               value="XRDC_SECURE">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="XrdcMasterPriviledgeMode" 
+                               type="ENUMERATION" 
+                               value="XRDC_INPUT_PRIVILEDGE_FROM_BUS_MASTER">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                    </d:lst>
+                    <d:lst name="Domain_Peripheral_Assignment" type="MAP">
+                      <d:ctr name="Domain_Peripheral_Assignment_0" 
+                             type="IDENTIFIABLE">
+                        <d:ref name="Domain_Peripheral_Assignment" 
+                               type="REFERENCE" 
+                               value="ASPath:/Rm/Rm/RmConfigSet/Xrdc_0_DMAMUX_0"/>
+                        <d:var name="Secure_Access_Policy" type="ENUMERATION" 
+                               value="XRDC_FULL_ACCESS">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="Non_Secure_Access_Policy" 
+                               type="ENUMERATION" value="XRDC_FULL_ACCESS">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                    </d:lst>
+                    <d:lst name="Domain_Memory_Assignment" type="MAP">
+                      <d:ctr name="Domain_Memory_Assignment_0" 
+                             type="IDENTIFIABLE">
+                        <d:ref name="Domain_Memory_Assignment" type="REFERENCE" 
+                               value="ASPath:/Rm/Rm/RmConfigSet/Xrdc_0_PFLASH_0"/>
+                        <d:var name="Secure_Access_Policy" type="ENUMERATION" 
+                               value="XRDC_FULL_ACCESS">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="Non_Secure_Access_Policy" 
+                               type="ENUMERATION" value="XRDC_FULL_ACCESS">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:ctr name="Domain_Memory_Assignment_1" 
+                             type="IDENTIFIABLE">
+                        <d:ref name="Domain_Memory_Assignment" type="REFERENCE" 
+                               value="ASPath:/Rm/Rm/RmConfigSet/Xrdc_0_PRAM0_0"/>
+                        <d:var name="Secure_Access_Policy" type="ENUMERATION" 
+                               value="XRDC_FULL_ACCESS">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="Non_Secure_Access_Policy" 
+                               type="ENUMERATION" value="XRDC_FULL_ACCESS">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:ctr name="Domain_Memory_Assignment_2" 
+                             type="IDENTIFIABLE">
+                        <d:ref name="Domain_Memory_Assignment" type="REFERENCE" 
+                               value="ASPath:/Rm/Rm/RmConfigSet/Xrdc_0_PRAM1_0"/>
+                        <d:var name="Secure_Access_Policy" type="ENUMERATION" 
+                               value="XRDC_FULL_ACCESS">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="Non_Secure_Access_Policy" 
+                               type="ENUMERATION" value="XRDC_FULL_ACCESS">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                    </d:lst>
+                  </d:ctr>
+                </d:lst>
+                <d:lst name="Rm_XRDC_Memory_Config" type="MAP">
+                  <d:ctr name="Xrdc_0_PFLASH_0" type="IDENTIFIABLE">
+                    <d:var name="XrdcMrcInstance" type="ENUMERATION" 
+                           value="Xrdc_0_PFLASH_0"/>
+                    <d:var name="XrdcStartAddress" type="INTEGER" value="65536"/>
+                    <d:var name="XrdcEndAddress" type="INTEGER" 
+                           value="285212671"/>
+                    <d:var name="XrdcSema4Enable" type="BOOLEAN" value="false"/>
+                    <d:ref name="XrdcSema42LogicChannel" type="REFERENCE" 
+                           value="ASPath:/Rm/Rm/RmConfigSet/Sema42_ModuleConfig/Sema42LogicChannelConfiguration_0"/>
+                  </d:ctr>
+                  <d:ctr name="Xrdc_0_PRAM0_0" type="IDENTIFIABLE">
+                    <d:var name="XrdcMrcInstance" type="ENUMERATION" 
+                           value="Xrdc_0_PRAM0_0"/>
+                    <d:var name="XrdcStartAddress" type="INTEGER" 
+                           value="541065216"/>
+                    <d:var name="XrdcEndAddress" type="INTEGER" 
+                           value="541229055"/>
+                    <d:var name="XrdcSema4Enable" type="BOOLEAN" value="true"/>
+                    <d:ref name="XrdcSema42LogicChannel" type="REFERENCE" 
+                           value="ASPath:/Rm/Rm/RmConfigSet/Sema42_ModuleConfig/Sema42LogicChannelConfiguration_1"/>
+                  </d:ctr>
+                  <d:ctr name="Xrdc_0_PRAM1_0" type="IDENTIFIABLE">
+                    <d:var name="XrdcMrcInstance" type="ENUMERATION" 
+                           value="Xrdc_0_PRAM1_0"/>
+                    <d:var name="XrdcStartAddress" type="INTEGER" 
+                           value="541229056"/>
+                    <d:var name="XrdcEndAddress" type="INTEGER" 
+                           value="541392895"/>
+                    <d:var name="XrdcSema4Enable" type="BOOLEAN" value="true"/>
+                    <d:ref name="XrdcSema42LogicChannel" type="REFERENCE" 
+                           value="ASPath:/Rm/Rm/RmConfigSet/Sema42_ModuleConfig/Sema42LogicChannelConfiguration_1"/>
+                  </d:ctr>
+                </d:lst>
+                <d:lst name="Rm_XRDC_Peripheral_Config" type="MAP">
+                  <d:ctr name="Xrdc_0_XRDC" type="IDENTIFIABLE">
+                    <d:var name="XrdcPeripheralSlot" type="ENUMERATION" 
+                           value="Xrdc_0_XRDC"/>
+                    <d:var name="XrdcSema4Enable" type="BOOLEAN" value="false"/>
+                    <d:ref name="XrdcSema42LogicChannel" type="REFERENCE" 
+                           value="ASPath:/Rm/Rm/RmConfigSet/Sema42_ModuleConfig/Sema42LogicChannelConfiguration_0"/>
+                  </d:ctr>
+                  <d:ctr name="Xrdc_0_SEMA_42" type="IDENTIFIABLE">
+                    <d:var name="XrdcPeripheralSlot" type="ENUMERATION" 
+                           value="Xrdc_0_SEMA_42"/>
+                    <d:var name="XrdcSema4Enable" type="BOOLEAN" value="false"/>
+                    <d:ref name="XrdcSema42LogicChannel" type="REFERENCE" 
+                           value="ASPath:/Rm/Rm/RmConfigSet/Sema42_ModuleConfig/Sema42LogicChannelConfiguration_0"/>
+                  </d:ctr>
+                  <d:ctr name="Xrdc_0_EDMA" type="IDENTIFIABLE">
+                    <d:var name="XrdcPeripheralSlot" type="ENUMERATION" 
+                           value="Xrdc_0_EDMA"/>
+                    <d:var name="XrdcSema4Enable" type="BOOLEAN" value="false"/>
+                    <d:ref name="XrdcSema42LogicChannel" type="REFERENCE" 
+                           value="ASPath:/Rm/Rm/RmConfigSet/Sema42_ModuleConfig/Sema42LogicChannelConfiguration_0"/>
+                  </d:ctr>
+                  <d:ctr name="Xrdc_0_DMAMUX_0" type="IDENTIFIABLE">
+                    <d:var name="XrdcPeripheralSlot" type="ENUMERATION" 
+                           value="Xrdc_0_DMAMUX_0"/>
+                    <d:var name="XrdcSema4Enable" type="BOOLEAN" value="true"/>
+                    <d:ref name="XrdcSema42LogicChannel" type="REFERENCE" 
+                           value="ASPath:/Rm/Rm/RmConfigSet/Sema42_ModuleConfig/Sema42LogicChannelConfiguration_0"/>
+                  </d:ctr>
+                </d:lst>
+                <d:ctr name="MPU_M7_Configuration" type="IDENTIFIABLE">
+                  <d:var name="MpuDevErrorDetect" type="BOOLEAN" value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="ClearCacheEnable" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:lst name="MPU_M7_ModuleConfig" type="MAP">
+                    <d:ctr name="MPU_M7_ModuleConfig_0" type="IDENTIFIABLE">
+                      <d:var name="DefaultMapEnable" type="BOOLEAN" value="true"/>
+                      <d:var name="RunInHFNMIEnable" type="BOOLEAN" value="true"/>
+                      <d:var name="MemManageInterruptEnable" type="BOOLEAN" 
+                             value="true"/>
+                      <d:lst name="RegionConfig" type="MAP">
+                        <d:ctr name="RegionConfig_0" type="IDENTIFIABLE">
+                          <d:var name="RegionNumber" type="INTEGER" value="0">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="StartAddress" type="INTEGER" value="0">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="EndAddress" type="INTEGER" 
+                                 value="4294967295">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="RegionSize" type="INTEGER" 
+                                 value="4294967296">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="MemoryType" type="ENUMERATION" 
+                                 value="MPU_M7_MEM_STRONG_ORDER">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="AccessRights" type="ENUMERATION" 
+                                 value="MPU_M7_PRIV_UNPRIV_NONE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="OuterCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="InnerCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="SubregionMask" type="INTEGER" value="0">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="Shareable" type="BOOLEAN" value="false">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="RegionConfig_1" type="IDENTIFIABLE">
+                          <d:var name="RegionNumber" type="INTEGER" value="1">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="StartAddress" type="INTEGER" value="0">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="EndAddress" type="INTEGER" value="65535">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="RegionSize" type="INTEGER" value="65536">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="MemoryType" type="ENUMERATION" 
+                                 value="MPU_M7_MEM_STRONG_ORDER">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="AccessRights" type="ENUMERATION" 
+                                 value="MPU_M7_PRIV_RWX_UNPRIV_RWX">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="OuterCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="InnerCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="SubregionMask" type="INTEGER" value="0">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="Shareable" type="BOOLEAN" value="false">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="RegionConfig_2" type="IDENTIFIABLE">
+                          <d:var name="RegionNumber" type="INTEGER" value="2">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="StartAddress" type="INTEGER" 
+                                 value="4194304">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="EndAddress" type="INTEGER" 
+                                 value="8388607">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="RegionSize" type="INTEGER" 
+                                 value="4194304">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="MemoryType" type="ENUMERATION" 
+                                 value="MPU_M7_MEM_NORMAL_CACHEABLE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="AccessRights" type="ENUMERATION" 
+                                 value="MPU_M7_PRIV_RWX_UNPRIV_RWX">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="OuterCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_W_BACK_NO_W_ALLOCATE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="InnerCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_W_BACK_WR_ALLOCATE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="SubregionMask" type="INTEGER" value="0">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="Shareable" type="BOOLEAN" value="false">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="RegionConfig_3" type="IDENTIFIABLE">
+                          <d:var name="RegionNumber" type="INTEGER" value="3">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="StartAddress" type="INTEGER" 
+                                 value="268435456">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="EndAddress" type="INTEGER" 
+                                 value="268566527">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="RegionSize" type="INTEGER" value="131072">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="MemoryType" type="ENUMERATION" 
+                                 value="MPU_M7_MEM_DEVICE_SHARED">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="AccessRights" type="ENUMERATION" 
+                                 value="MPU_M7_PRIV_RWX_UNPRIV_RWX">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="OuterCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="InnerCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="SubregionMask" type="INTEGER" value="0">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="Shareable" type="BOOLEAN" value="true">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="RegionConfig_4" type="IDENTIFIABLE">
+                          <d:var name="RegionNumber" type="INTEGER" value="4">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="StartAddress" type="INTEGER" 
+                                 value="536870912">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="EndAddress" type="INTEGER" 
+                                 value="537001983">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="RegionSize" type="INTEGER" value="131072">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="MemoryType" type="ENUMERATION" 
+                                 value="MPU_M7_MEM_STRONG_ORDER">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="AccessRights" type="ENUMERATION" 
+                                 value="MPU_M7_PRIV_RWX_UNPRIV_RWX">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="OuterCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="InnerCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="SubregionMask" type="INTEGER" value="0">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="Shareable" type="BOOLEAN" value="false">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="RegionConfig_5" type="IDENTIFIABLE">
+                          <d:var name="RegionNumber" type="INTEGER" value="5">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="StartAddress" type="INTEGER" 
+                                 value="541065216">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="EndAddress" type="INTEGER" 
+                                 value="541261823">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="RegionSize" type="INTEGER" value="196608">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="MemoryType" type="ENUMERATION" 
+                                 value="MPU_M7_MEM_NORMAL_CACHEABLE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="AccessRights" type="ENUMERATION" 
+                                 value="MPU_M7_PRIV_RWX_UNPRIV_RWX">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="OuterCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_W_BACK_WR_ALLOCATE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="InnerCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_W_THROUGH_NO_W_ALLOCATE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="SubregionMask" type="INTEGER" value="0">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="Shareable" type="BOOLEAN" value="false">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="RegionConfig_6" type="IDENTIFIABLE">
+                          <d:var name="RegionNumber" type="INTEGER" value="6">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="StartAddress" type="INTEGER" 
+                                 value="541261824">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="EndAddress" type="INTEGER" 
+                                 value="541327359">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="RegionSize" type="INTEGER" value="65536">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="MemoryType" type="ENUMERATION" 
+                                 value="MPU_M7_MEM_NORMAL_IO_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="AccessRights" type="ENUMERATION" 
+                                 value="MPU_M7_PRIV_RWX_UNPRIV_RWX">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="OuterCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="InnerCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="SubregionMask" type="INTEGER" value="0">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="Shareable" type="BOOLEAN" value="false">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="RegionConfig_7" type="IDENTIFIABLE">
+                          <d:var name="RegionNumber" type="INTEGER" value="7">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="StartAddress" type="INTEGER" 
+                                 value="541327360">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="EndAddress" type="INTEGER" 
+                                 value="541343743">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="RegionSize" type="INTEGER" value="16384">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="MemoryType" type="ENUMERATION" 
+                                 value="MPU_M7_MEM_DEVICE_SHARED">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="AccessRights" type="ENUMERATION" 
+                                 value="MPU_M7_PRIV_RWX_UNPRIV_RWX">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="OuterCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="InnerCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="SubregionMask" type="INTEGER" value="0">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="Shareable" type="BOOLEAN" value="false">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="RegionConfig_8" type="IDENTIFIABLE">
+                          <d:var name="RegionNumber" type="INTEGER" value="8">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="StartAddress" type="INTEGER" 
+                                 value="1073741824">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="EndAddress" type="INTEGER" 
+                                 value="1075838975">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="RegionSize" type="INTEGER" 
+                                 value="2097152">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="MemoryType" type="ENUMERATION" 
+                                 value="MPU_M7_MEM_DEVICE_SHARED">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="AccessRights" type="ENUMERATION" 
+                                 value="MPU_M7_PRIV_RWX_UNPRIV_RWX">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="OuterCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="InnerCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="SubregionMask" type="INTEGER" value="0">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="Shareable" type="BOOLEAN" value="false">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="RegionConfig_9" type="IDENTIFIABLE">
+                          <d:var name="RegionNumber" type="INTEGER" value="9">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="StartAddress" type="INTEGER" 
+                                 value="1075838976">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="EndAddress" type="INTEGER" 
+                                 value="1077936127">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="RegionSize" type="INTEGER" 
+                                 value="2097152">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="MemoryType" type="ENUMERATION" 
+                                 value="MPU_M7_MEM_DEVICE_SHARED">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="AccessRights" type="ENUMERATION" 
+                                 value="MPU_M7_PRIV_RWX_UNPRIV_RWX">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="OuterCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="InnerCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="SubregionMask" type="INTEGER" value="0">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="Shareable" type="BOOLEAN" value="false">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="RegionConfig_10" type="IDENTIFIABLE">
+                          <d:var name="RegionNumber" type="INTEGER" value="10">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="StartAddress" type="INTEGER" 
+                                 value="1077936128">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="EndAddress" type="INTEGER" 
+                                 value="1080033279">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="RegionSize" type="INTEGER" 
+                                 value="2097152">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="MemoryType" type="ENUMERATION" 
+                                 value="MPU_M7_MEM_DEVICE_SHARED">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="AccessRights" type="ENUMERATION" 
+                                 value="MPU_M7_PRIV_RWX_UNPRIV_RWX">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="OuterCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="InnerCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="SubregionMask" type="INTEGER" value="0">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="Shareable" type="BOOLEAN" value="false">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="RegionConfig_11" type="IDENTIFIABLE">
+                          <d:var name="RegionNumber" type="INTEGER" value="11">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="StartAddress" type="INTEGER" 
+                                 value="1728053248">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="EndAddress" type="INTEGER" 
+                                 value="1728054271">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="RegionSize" type="INTEGER" value="1024">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="MemoryType" type="ENUMERATION" 
+                                 value="MPU_M7_MEM_DEVICE_NOSHARE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="AccessRights" type="ENUMERATION" 
+                                 value="MPU_M7_PRIV_RWX_UNPRIV_RWX">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="OuterCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="InnerCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="SubregionMask" type="INTEGER" value="0">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="Shareable" type="BOOLEAN" value="false">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="RegionConfig_12" type="IDENTIFIABLE">
+                          <d:var name="RegionNumber" type="INTEGER" value="12">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="StartAddress" type="INTEGER" 
+                                 value="3758096384">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="EndAddress" type="INTEGER" 
+                                 value="3759144959">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="RegionSize" type="INTEGER" 
+                                 value="1048576">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="MemoryType" type="ENUMERATION" 
+                                 value="MPU_M7_MEM_DEVICE_NOSHARE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="AccessRights" type="ENUMERATION" 
+                                 value="MPU_M7_PRIV_RWX_UNPRIV_RWX">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="OuterCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="InnerCachePolicy" type="ENUMERATION" 
+                                 value="MPU_M7_CACHE_POLICY_NO_CACHE">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="SubregionMask" type="INTEGER" value="0">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="Shareable" type="BOOLEAN" value="false">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                        </d:ctr>
+                      </d:lst>
+                      <d:var name="PhysicalCoreID" type="ENUMERATION" 
+                             value="Cortex_M7_Core0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                  </d:lst>
+                </d:ctr>
+                <d:ctr name="Sema42_ModuleConfig" type="IDENTIFIABLE">
+                  <d:var name="Sema42DevErrorDetect" type="BOOLEAN" value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:lst name="Sema42LogicChannelConfiguration" type="MAP">
+                    <d:ctr name="Sema42LogicChannelConfiguration_0" 
+                           type="IDENTIFIABLE">
+                      <d:var name="Sema42LogicChannel_LogicName" type="STRING" 
+                             value="SEMA42_LOGIC_CH_0">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="Sema42HardwareInstance" type="ENUMERATION" 
+                             value="SEMA42_INSTANCE0">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="Sema42HardwareChannel" type="INTEGER" 
+                             value="0">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="Sema42LogicChannelConfiguration_1" 
+                           type="IDENTIFIABLE">
+                      <d:var name="Sema42LogicChannel_LogicName" type="STRING" 
+                             value="SEMA42_LOGIC_CH_1">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="Sema42HardwareInstance" type="ENUMERATION" 
+                             value="SEMA42_INSTANCE0">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="Sema42HardwareChannel" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                    </d:ctr>
+                  </d:lst>
+                </d:ctr>
+                <d:ctr name="Pflash_Configuration" type="IDENTIFIABLE">
+                  <d:var name="PflashDevErrorDetect" type="BOOLEAN" value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:lst name="PflashMasterProtection" type="MAP">
+                    <d:ctr name="PflashMasterProtection_0" type="IDENTIFIABLE">
+                      <d:var name="PflashControler" type="ENUMERATION" 
+                             value="PFLASH_CTRL">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="PflashMAP" type="ENUMERATION" 
+                             value="PFLASH_M0AP">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="PflashMasterAccess" type="ENUMERATION" 
+                             value="PFLASH_READ_ALLOWED">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                  </d:lst>
+                </d:ctr>
+                <d:ctr name="Crossbar_Configuration" type="IDENTIFIABLE">
+                  <d:var name="CrossbarDevErrorDetect" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:lst name="RmCrossbarInstance" type="MAP"/>
+                </d:ctr>
+                <d:ctr name="Xbic_Configuration" type="IDENTIFIABLE">
+                  <d:var name="XbicDevErrorDetect" type="BOOLEAN" value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:lst name="XbicCheckingControl" type="MAP"/>
+                </d:ctr>
+                <d:ctr name="Virt_Wrapper_Configuration" type="IDENTIFIABLE">
+                  <d:var name="VirtWrapperDevErrorDetect" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:lst name="Mscr_Config_List" type="MAP"/>
+                  <d:lst name="Imcr_Config_List" type="MAP"/>
+                  <d:lst name="Other_Config_List" type="MAP"/>
+                </d:ctr>
+              </d:ctr>
+              <d:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <d:var name="ArReleaseMajorVersion" type="INTEGER" value="4">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ArReleaseMinorVersion" type="INTEGER" value="4">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ArReleaseRevisionVersion" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ModuleId" type="INTEGER" value="255">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="SwMajorVersion" type="INTEGER" value="2"/>
+                <d:var name="SwMinorVersion" type="INTEGER" value="0"/>
+                <d:var name="SwPatchVersion" type="INTEGER" value="0"/>
+                <d:var name="VendorApiInfix" type="STRING" value="">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorId" type="INTEGER" value="43">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

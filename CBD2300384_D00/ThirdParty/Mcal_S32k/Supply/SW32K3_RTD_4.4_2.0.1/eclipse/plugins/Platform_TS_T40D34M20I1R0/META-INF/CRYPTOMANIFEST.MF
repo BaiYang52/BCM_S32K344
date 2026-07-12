@@ -1,0 +1,99 @@
+
+Name: generate/include/System_Ip_CfgDefines.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420675016593782726281526776934816336874212594999351
+ 4198052640961021872575675533822436110538089760713889
+
+Name: generate/include/Intm_Ip_CfgDefines.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424946564656916799903441860906594667074223605709826
+ 0436850473125819766482547976210948779021331565197691
+
+Name: generate/include/Platform_CfgDefines.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594738991131165383130778978281602993276655200204144020
+ 151670426547515990962884475010020077665789305382435490
+
+Name: generate/include/Platform_Ipw_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423564978783352097800515137556234769690306984518343
+ 6586931437846025703232170734249479858608638585979058
+
+Name: generate_swcd/swcd/Platform_Bswmd.arxml
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423362588668483129169260030650798568036939337990175
+ 7168144179170469289538732461843530565432378336891352
+
+Name: generate/include/System_Ip_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773963209738198769111258093154444614711537381205526
+ 898552702851399313613699785562241870453999688709807072
+
+Name: generate/include/IntCtrl_Ip_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594753818145921377939622659955068209985009772296631845
+ 208634344524632719450535371519285657197059932323185104
+
+Name: generate/include/Platform_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423053902484509246036600383558589366570630680500636
+ 8143859055543758842865873174301573026218808485976999
+
+Name: generate/src/Platform_Ipw_Cfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377426156182777696262041172657663630676649317060458497
+ 9797612146203049870773488386723023748978215992704711
+
+Name: generate/src/Platform_Cfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425866359369656396016196114074216281690327626840191
+ 0113514898687146571510301722281899299969202439061367
+
+Name: config/Platform.xdm
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420512724175038766364128026469425696356286433396171
+ 6356892284681244307180277162807138970194490275514421
+
+Name: generate/include/IntCtrl_Ip_CfgDefines.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377426744992241243629778387901884917045764211062957466
+ 7832461518164420693962413592277738259387834894441289
+
+Name: generate/src/IntCtrl_Ip_Cfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422049610432391251665601274109587134944852466528659
+ 3868700863635631275592124987563549595163355909237592
+
+Name: generate/include/Intm_Ip_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423119942160596735505401042826598253009967225228653
+ 0476576522996721355580173900570569231380497466642668
+

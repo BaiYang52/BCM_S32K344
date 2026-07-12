@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00046.xsd">
+
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>AUTOSAR_Platform</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>BswModuleDescriptions</SHORT-NAME>
+          <ELEMENTS>
+            <BSW-MODULE-DESCRIPTION>
+              <SHORT-NAME>Platform</SHORT-NAME>
+              <MODULE-ID>255</MODULE-ID>
+              <PROVIDED-ENTRYS>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Platform/BswModuleEntrys/Platform_AckIrq</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Platform/BswModuleEntrys/Platform_GetIrqMonitorStatus</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Platform/BswModuleEntrys/Platform_GetIrqPriority</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Platform/BswModuleEntrys/Platform_Init</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Platform/BswModuleEntrys/Platform_InstallIrqHandler</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Platform/BswModuleEntrys/Platform_ResetIrqMonitorTimer</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Platform/BswModuleEntrys/Platform_SelectMonitoredIrq</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Platform/BswModuleEntrys/Platform_SetIrq</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Platform/BswModuleEntrys/Platform_SetIrqMonitor</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Platform/BswModuleEntrys/Platform_SetIrqPriority</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Platform/BswModuleEntrys/Platform_SetMonitoredIrqLatency</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+              </PROVIDED-ENTRYS>
+
+              <INTERNAL-BEHAVIORS>
+                <BSW-INTERNAL-BEHAVIOR>
+                  <SHORT-NAME>InternalBehavior_0</SHORT-NAME>
+                  <ENTITYS>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Platform_AckIrq</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Platform/BswModuleEntrys/Platform_AckIrq</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Platform_GetIrqMonitorStatus</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Platform/BswModuleEntrys/Platform_GetIrqMonitorStatus</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Platform_GetIrqPriority</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Platform/BswModuleEntrys/Platform_GetIrqPriority</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Platform_Init</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Platform/BswModuleEntrys/Platform_Init</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Platform_InstallIrqHandler</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Platform/BswModuleEntrys/Platform_InstallIrqHandler</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Platform_ResetIrqMonitorTimer</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Platform/BswModuleEntrys/Platform_ResetIrqMonitorTimer</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Platform_SelectMonitoredIrq</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Platform/BswModuleEntrys/Platform_SelectMonitoredIrq</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Platform_SetIrq</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Platform/BswModuleEntrys/Platform_SetIrq</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Platform_SetIrqMonitor</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Platform/BswModuleEntrys/Platform_SetIrqMonitor</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Platform_SetIrqPriority</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Platform/BswModuleEntrys/Platform_SetIrqPriority</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Platform_SetMonitoredIrqLatency</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY"
+                        >/AUTOSAR_Platform/BswModuleEntrys/Platform_SetMonitoredIrqLatency</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                  </ENTITYS>
+
+                  <EVENTS>
+                  </EVENTS>
+
+                </BSW-INTERNAL-BEHAVIOR>
+              </INTERNAL-BEHAVIORS>
+            </BSW-MODULE-DESCRIPTION>
+          </ELEMENTS>
+        </AR-PACKAGE>
+
+        <AR-PACKAGE>
+          <SHORT-NAME>BswModuleEntrys</SHORT-NAME>
+          <ELEMENTS>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Platform_AckIrq</SHORT-NAME>
+              <SERVICE-ID>0x26</SERVICE-ID>
+              <IS-REENTRANT>true</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Platform_GetIrqMonitorStatus</SHORT-NAME>
+              <SERVICE-ID>0x2a</SERVICE-ID>
+              <IS-REENTRANT>true</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Platform_GetIrqPriority</SHORT-NAME>
+              <SERVICE-ID>0x23</SERVICE-ID>
+              <IS-REENTRANT>false</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Platform_Init</SHORT-NAME>
+              <SERVICE-ID>0x20</SERVICE-ID>
+              <IS-REENTRANT>false</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Platform_InstallIrqHandler</SHORT-NAME>
+              <SERVICE-ID>0x24</SERVICE-ID>
+              <IS-REENTRANT>false</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Platform_ResetIrqMonitorTimer</SHORT-NAME>
+              <SERVICE-ID>0x29</SERVICE-ID>
+              <IS-REENTRANT>true</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Platform_SelectMonitoredIrq</SHORT-NAME>
+              <SERVICE-ID>0x27</SERVICE-ID>
+              <IS-REENTRANT>true</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Platform_SetIrq</SHORT-NAME>
+              <SERVICE-ID>0x21</SERVICE-ID>
+              <IS-REENTRANT>false</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Platform_SetIrqMonitor</SHORT-NAME>
+              <SERVICE-ID>0x25</SERVICE-ID>
+              <IS-REENTRANT>true</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Platform_SetIrqPriority</SHORT-NAME>
+              <SERVICE-ID>0x22</SERVICE-ID>
+              <IS-REENTRANT>false</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>Platform_SetMonitoredIrqLatency</SHORT-NAME>
+              <SERVICE-ID>0x28</SERVICE-ID>
+              <IS-REENTRANT>true</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>REGULAR</CALL-TYPE>
+              <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>Platform_TS_T40D34M20I1R0</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+        <SHORT-NAME>Implementations</SHORT-NAME>
+          <ELEMENTS>
+            <BSW-IMPLEMENTATION>
+              <SHORT-NAME>BswImplementation_0</SHORT-NAME>
+
+              <CODE-DESCRIPTORS>
+                <CODE>
+                <SHORT-NAME>Files</SHORT-NAME>
+                <ARTIFACT-DESCRIPTORS>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>config::Platform.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>doc::RTD_PLATFORM_IM.pdf</SHORT-LABEL>
+                    <CATEGORY>SWDOC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>doc::RTD_PLATFORM_UM.pdf</SHORT-LABEL>
+                    <CATEGORY>SWDOC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Platform_Multicore_SingleElf_S32K324::Project_Settings::Startup_Code::exceptions.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Platform_Multicore_SingleElf_S32K324::Project_Settings::Startup_Code::nvic.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Platform_Multicore_SingleElf_S32K324::Project_Settings::Startup_Code::startup.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Platform_Multicore_SingleElf_S32K324::Project_Settings::Startup_Code::system.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>examples::S32DS::Platform_Multicore_SingleElf_S32K324::src::main.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::IntCtrl_Ip.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::IntCtrl_Ip_TrustedFunctions.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::IntCtrl_Ip_TypesDef.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Intm_Ip.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Platform.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Platform_Ipw.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Platform_Ipw_TypesDef.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Platform_TypesDef.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::System_Ip.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::System_Ip_DeviceRegisters.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>src::IntCtrl_Ip.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>src::Platform.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>src::Platform_Ipw.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>src::System_Ip.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>startup::include::core_specific.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>startup::include::nvic.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>startup::include::system.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>startup::include::sys_init.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>startup::src::m7::exceptions.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>startup::src::m7::startup.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>startup::src::nvic.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>startup::src::system.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>startup::src::sys_init.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                </ARTIFACT-DESCRIPTORS>
+                </CODE>
+              </CODE-DESCRIPTORS>
+
+              <COMPILERS>
+                <COMPILER>
+                  <SHORT-NAME>GCC_Compiler</SHORT-NAME>
+                  <NAME>GCC Compiler</NAME>
+                  <OPTIONS>-mcpu=cortex-m7 -mthumb -mlittle-endian -mfpu=fpv5-sp-d16 -mfloat-abi=hard -std=c99 -Os -ggdb3 -Wall -Wextra -pedantic -Wstrict-prototypes -Wundef -Wunused -Werror=implicit-function-declaration -Wsign-compare -Wdouble-promotion -fno-short-enums -funsigned-char -funsigned-bitfields -fomit-frame-pointer -fno-common -fstack-usage -fdump-ipa-all -c -DS32K3XX -DS32K344 -DGCC -DUSE_SW_VECTOR_MODE -DD_CACHE_ENABLE -DI_CACHE_ENABLE -DENABLE_FPU -DMCAL_ENABLE_USER_MODE_SUPPORT</OPTIONS>
+                  <VENDOR>GCC Systems</VENDOR>
+                  <VERSION>NXP GCC 10.2.0 20200723 (Build 1728 Revision g5963bc8)</VERSION>
+                </COMPILER>
+                <COMPILER>
+                  <SHORT-NAME>GHS_Compiler</SHORT-NAME>
+                  <NAME>Green Hills</NAME>
+                  <OPTIONS>-cpu=cortexm7 -thumb -fpu=vfpv5_d16 -fsingle -C99 --ghstd=last -Osize --gnu_asm -dual_debug -G -keeptempfiles -Wimplicit-int -Wshadow -Wtrigraphs -Wundef --unsigned_chars --unsigned_fields --no_commons --no_exceptions --no_slash_comment --prototype_errors --incorrect_pragma_warnings -c -DS32K3XX -DS32K344 -DGHS -DUSE_SW_VECTOR_MODE -DD_CACHE_ENABLE -DI_CACHE_ENABLE -DENABLE_FPU -DMCAL_ENABLE_USER_MODE_SUPPORT</OPTIONS>
+                  <VENDOR>Green Hills</VENDOR>
+                  <VERSION>Green Hills Multi 7.1.6d / Compiler 2021.1.4</VERSION>
+                </COMPILER>
+                <COMPILER>
+                  <SHORT-NAME>IAR_Compiler</SHORT-NAME>
+                  <NAME>IAR Compiler</NAME>
+                  <OPTIONS>--cpu=Cortex-M7 --cpu_mode=thumb --endian=little --fpu=FPv5-SP -e -Ohz --debug --no_clustering --no_mem_idioms --do_explicit_zero_opt_in_named_sections --require_prototypes --no_wrap_diagnostics --diag_suppress=Pa050 -DS32K3XX -DS32K344 -DIAR -DUSE_SW_VECTOR_MODE -DD_CACHE_ENABLE -DI_CACHE_ENABLE -DENABLE_FPU -DMCAL_ENABLE_USER_MODE_SUPPORT</OPTIONS>
+                  <VENDOR>IAR Systems</VENDOR>
+                  <VERSION>IAR ANSI C/C++ Compiler v.8.50.10 (safety version)</VERSION>
+                </COMPILER>
+              </COMPILERS>
+              <GENERATED-ARTIFACTS>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>IntCtrl_Ip_Cfg_h</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate::include::IntCtrl_Ip_Cfg.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>IntCtrl_Ip_CfgDefines_h</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate::include::IntCtrl_Ip_CfgDefines.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>Intm_Ip_Cfg_h</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate::include::Intm_Ip_Cfg.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>Intm_Ip_CfgDefines_h</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate::include::Intm_Ip_CfgDefines.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>Platform_Cfg_h</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate::include::Platform_Cfg.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>Platform_CfgDefines_h</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate::include::Platform_CfgDefines.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>Platform_Ipw_Cfg_h</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate::include::Platform_Ipw_Cfg.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>System_Ip_Cfg_h</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate::include::System_Ip_Cfg.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>System_Ip_CfgDefines_h</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate::include::System_Ip_CfgDefines.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>IntCtrl_Ip_Cfg_c</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate::src::IntCtrl_Ip_Cfg.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>Platform_Cfg_c</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate::src::Platform_Cfg.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>Platform_Ipw_Cfg_c</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate::src::Platform_Ipw_Cfg.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+              </GENERATED-ARTIFACTS>
+
+              <LINKERS>
+                <LINKER>
+                  <SHORT-NAME>GCC_Linker</SHORT-NAME>
+                  <NAME>GCC Compiler</NAME>
+                  <OPTIONS>-Wl,-Map,filename -T linkerfile --entry=Reset_Handler -nostartfiles -mcpu=cortexm7 -mthumb -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mlittle-endian -ggdb3 -lc -lm -lgcc</OPTIONS>
+                  <VENDOR>GCC Systems</VENDOR>
+                  <VERSION>NXP GCC 10.2.0 20200723 (Build 1728 Revision g5963bc8)</VERSION>
+                </LINKER>
+                <LINKER>
+                  <SHORT-NAME>GHS_Linker</SHORT-NAME>
+                  <NAME>Green Hills</NAME>
+                  <OPTIONS>-e Reset_Handler -T linker_script_file.ld -map -keepmap -Mn -delete -ignore_debug_references -Llibrary_path -larch -lstartup -lind_sd -v -keep=C40_Ip_AccessCode -nostartfiles</OPTIONS>
+                  <VENDOR>Green Hills</VENDOR>
+                  <VERSION>Green Hills Multi 7.1.6d / Compiler 2021.1.4</VERSION>
+                </LINKER>
+                <LINKER>
+                  <SHORT-NAME>IAR_Linker</SHORT-NAME>
+                  <NAME>IAR Compiler</NAME>
+                  <OPTIONS>--map filename --config linkerfile --cpu=Cortex-M7 --fpu=FPv5-SP --entry _start --enable_stack_usage --skip_dynamic_initialization --no_wrap_diagnostics</OPTIONS>
+                  <VENDOR>IAR Systems</VENDOR>
+                  <VERSION>IAR ANSI C/C++ Compiler v.8.50.10 (safety version)</VERSION>
+                </LINKER>
+              </LINKERS> 
+              <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+              <RESOURCE-CONSUMPTION>
+                <SHORT-NAME>ResourceConsumption</SHORT-NAME>
+                <MEMORY-SECTIONS>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>PLATFORM_CODE</SHORT-NAME>
+                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CODE</SW-ADDRMETHOD-REF>
+                    <SYMBOL>CODE</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>PLATFORM_CONFIG_DATA_UNSPECIFIED</SHORT-NAME>
+                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CONFIG_DATA</SW-ADDRMETHOD-REF>
+                    <SYMBOL>CONFIG_DATA_UNSPECIFIED</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>PLATFORM_VAR_CLEARED_32</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR_CLEARED</SW-ADDRMETHOD-REF>
+                    <SYMBOL>VAR_CLEARED_32</SYMBOL>
+                  </MEMORY-SECTION>
+                </MEMORY-SECTIONS>
+              </RESOURCE-CONSUMPTION>
+              <SW-VERSION>2.0.1</SW-VERSION>
+              <VENDOR-ID>43</VENDOR-ID>
+              <AR-RELEASE-VERSION>4.4.0</AR-RELEASE-VERSION>
+
+              <BEHAVIOR-REF DEST="BSW-INTERNAL-BEHAVIOR">/AUTOSAR_Platform/BswModuleDescriptions/Platform/InternalBehavior_0</BEHAVIOR-REF>
+              <VENDOR-SPECIFIC-MODULE-DEF-REFS>
+                <VENDOR-SPECIFIC-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/TS_T40D34M20I1R0/Platform</VENDOR-SPECIFIC-MODULE-DEF-REF>
+              </VENDOR-SPECIFIC-MODULE-DEF-REFS>
+            </BSW-IMPLEMENTATION>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

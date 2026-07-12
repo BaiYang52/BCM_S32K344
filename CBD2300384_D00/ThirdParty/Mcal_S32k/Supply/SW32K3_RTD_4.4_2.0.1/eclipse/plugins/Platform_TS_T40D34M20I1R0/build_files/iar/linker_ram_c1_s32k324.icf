@@ -1,0 +1,146 @@
+/*==================================================================================================
+*   Project              : RTD AUTOSAR 4.4
+*   Platform             : CORTEXM
+*   Peripheral           : 
+*   Dependencies         : none
+*
+*   Autosar Version      : 4.4.0
+*   Autosar Revision     : ASR_REL_4_4_REV_0000
+*   Autosar Conf.Variant :
+*   SW Version           : 2.0.1
+*   Build Version        : S32K3_RTD_2_0_1_D2207_ASR_REL_4_4_REV_0000_20220707
+*
+*   (c) Copyright 2020 - 2022 NXP Semiconductors
+*   All Rights Reserved.
+*
+*   NXP Confidential. This software is owned or controlled by NXP and may only be
+*   used strictly in accordance with the applicable license terms. By expressly
+*   accepting such terms or by downloading, installing, activating and/or otherwise
+*   using the software, you are agreeing that you have read, and that you agree to
+*   comply with and are bound by, such license terms. If you do not agree to be
+*   bound by the applicable license terms, then you may not retain, install,
+*   activate or otherwise use the software.
+==================================================================================================*/
+/*
+* IAR Linker Command File:
+* 0x20400000    0x20408000  32768   Standby RAM_0 (32K)
+* 0x20400000    0x20427FFF  163840  SRAM_0
+* 0x20428000    0x2044FFFF  163840  SRAM_1
+* Last 48 KB of SRAM_1 reserved by HSE Firmware
+*/
+
+									     
+define symbol int_itcm_start                  = 0x00000000;
+define symbol int_itcm_size                   = 0x00007FFF;    /* 32K */
+       
+define symbol int_dtcm_start                  = 0x20000000;
+define symbol int_dtcm_size                   = 0x0000FFFF;    /* 64K */
+
+define symbol int_sram_c0_start               = 0x20400000;
+define symbol int_sram_c0_size                = 0x00017000;    /* 92K */
+
+define symbol int_sram_stack_c0_start         = 0x20417000;
+define symbol int_sram_stack_c0_size          = 0x00001000;    /* 4KB  */
+
+define symbol int_sram_no_cacheable_c0_start  = 0x20418000;
+define symbol int_sram_no_cacheable_c0_size   = 0x00008000;    /* 32KB, needs to include int_results  */
+
+define symbol int_sram_shareable_start        = 0x20420000;
+define symbol int_sram_shareable_size         = 0x00008000;    /* 32KB */
+
+define symbol ram_end_c0                      = 0x20428000;
+
+define symbol int_sram_c1_start               = 0x20430000;
+define symbol int_sram_c1_size                = 0x0000B000;    /* 45K */
+
+define symbol int_sram_stack_c1_start         = 0x2043B000;
+define symbol int_sram_stack_c1_size          = 0x00001000;    /* 4KB  */
+
+define symbol int_sram_no_cacheable_c1_start  = 0x2043C000;
+define symbol int_sram_no_cacheable_c1_size   = 0x00004000;    /* 16KB, needs to include int_results  */
+
+define symbol ram_end_c1                      = 0x20440000;
+										      
+define symbol ram_rsvd2                       = 0x20444000; 
+
+define exported symbol __Stack_end_c0      = int_sram_stack_c0_start;
+define exported symbol __Stack_start_c0    = int_sram_stack_c0_start + int_sram_stack_c0_size;  
+
+define exported symbol __Stack_end_c1      = int_sram_stack_c1_start;
+define exported symbol __Stack_start_c1    = int_sram_stack_c1_start + int_sram_stack_c1_size;  
+
+define exported symbol __RAM_INIT          = 0;
+define exported symbol __INT_SRAM_START    = int_sram_c1_start;
+define exported symbol __INT_SRAM_END      = ram_end_c1;
+define exported symbol __ITCM_INIT         = 1;
+define exported symbol __INT_ITCM_START    = int_itcm_start;
+define exported symbol __INT_ITCM_END      = int_itcm_start + int_itcm_size;
+define exported symbol __DTCM_INIT         = 1;
+define exported symbol __INT_DTCM_START    = int_dtcm_start;
+define exported symbol __INT_DTCM_END      = int_dtcm_start + int_dtcm_size;
+define exported symbol __RAM_NO_CACHEABLE_START      = int_sram_no_cacheable_c1_start;
+
+define memory mem with size = 4G;
+
+define region int_sram_region         = mem:[from int_sram_c1_start size int_sram_c1_size];
+define region int_sram_no_cacheable   = mem:[from int_sram_no_cacheable_c1_start size int_sram_no_cacheable_c1_size];
+define region int_sram_shareable      = mem:[from int_sram_shareable_start size int_sram_shareable_size];
+define region int_itcm_region         = mem:[from int_itcm_start size int_itcm_size];
+define region int_dtcm_region         = mem:[from int_dtcm_start size int_dtcm_size];
+
+do not initialize {section .data, section .mcal_data, section .mcal_data_no_cacheable, section .mcal_shared_data, section .bss, section .mcal_bss, section .mcal_bss_no_cacheable, section .mcal_const_no_cacheable, section .mcal_shared_bss};
+
+/* Internal SRAM */
+define block startupBlock with fixed order                  { section .core_loop, section .startup };
+define block codeBlock with fixed order                     { section .text, section .mcal_text };
+define block roBlock with fixed order                       { section .rodata, section .mcal_const_cfg, section .mcal_const };
+define block rwBlock with fixed order                       { section .data, section .mcal_data};
+define block initBlock with fixed order                     { section .init_table, section .zero_table, section .iar.* };
+define block ramCodeBlock with fixed order                  { section .acfls_code_rom, section .acmcu_code_rom, section .ramcode};
+define block bssBlock with fixed order, alignment = 64      { section .bss, section .mcal_bss };
+
+/* Non cacheable */
+define block intResultsBlock with fixed order, alignment = 4, size = 0x100 { section .intresult };
+define block intcVectorBlock with fixed order, alignment = 4096            { section .intvec };
+define block bssNcBlock with fixed order                                   { section .mcal_bss_no_cacheable };
+define block dataNcBlock with fixed order                                  { section .mcal_data_no_cacheable };
+define block constNcBlock with fixed order                                 { section .mcal_const_no_cacheable };
+
+/* Shareable */
+define block bssShBlock with fixed order, alignment = 16                   { section .mcal_shared_bss };
+define block dataShBlock with fixed order, alignment = 16                  { section .mcal_shared_data };
+
+/* Initialized data copy (dummies) */
+define block interrupt_vector_init with fixed order, alignment = 64    { };
+define block cacheable_data_init with fixed order, alignment = 4       { };
+define block cacheable_code_init with fixed order, alignment = 4       { };
+define block non_cacheable_data_init with fixed order, alignment = 4   { };
+define block non_cacheable_const_init with fixed order, alignment = 4  { };
+define block shareable_data_init with fixed order, alignment = 4       { };
+
+define block boot_header with fixed order, alignment = 4 { section .boot_header };
+
+keep { block intResultsBlock, block intcVectorBlock };
+
+place in int_sram_region       { block startupBlock, block codeBlock, block roBlock, block initBlock};
+place in int_sram_region       { block ramCodeBlock, block bssBlock, block rwBlock};
+place in int_sram_region       { block cacheable_data_init, block cacheable_code_init, block non_cacheable_data_init, block non_cacheable_const_init, block shareable_data_init, block interrupt_vector_init, block boot_header };
+place in int_sram_no_cacheable { first block intResultsBlock };
+place in int_sram_no_cacheable { first block intcVectorBlock };
+place in int_sram_no_cacheable { block bssNcBlock};
+place in int_sram_no_cacheable { block dataNcBlock, block constNcBlock};
+place in int_sram_shareable    { block bssShBlock};
+place in int_sram_shareable    { block dataShBlock};
+
+define exported symbol __ENTRY_VTABLE = start(int_sram_no_cacheable) + 4096;
+/* This values are set, but used only when the core boots from flash */
+define exported symbol __CORE0_VTOR = int_sram_no_cacheable_c0_start + 4096;
+define exported symbol __CORE1_VTOR = int_sram_no_cacheable_c1_start + 4096;
+
+define exported symbol __ROM_DATA_START = 0;
+define exported symbol __ROM_CODE_START = 0;
+define exported symbol __RAM_SHAREABLE_START = int_sram_shareable_start;
+define exported symbol __RAM_SHAREABLE_SIZE = 0xF;/*32 kbyte*/
+
+define exported symbol __RAM_NO_CACHEABLE_SIZE = 0xE;  /* 16kbyte in power of 2 */
+define exported symbol __RAM_CACHEABLE_SIZE = 0x10;  /* 64kbyte in power of 2 */
