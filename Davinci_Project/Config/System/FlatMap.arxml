@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="741c3032-1501-4385-be05-4177539bb78f">
+      <SHORT-NAME>COM</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="6f606199-4a11-464c-8228-c13c5c7689da">
+          <SHORT-NAME>VECTOR</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="2cd6a543-e013-4420-bb52-1af05c862e0a">
+              <SHORT-NAME>CFG</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="8eb4d98d-0b8e-4e32-8b46-e9e6b8c04f10">
+                  <SHORT-NAME>WORKFLOW</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="3a086eba-78b1-4225-8902-d96884edf070">
+                      <SHORT-NAME>SYSDESC</SHORT-NAME>
+                      <AR-PACKAGES>
+                        <AR-PACKAGE UUID="7af40163-49bb-4a1d-aa6a-e0698c20a6cc">
+                          <SHORT-NAME>SYNC</SHORT-NAME>
+                          <ELEMENTS>
+                            <FLAT-MAP UUID="77db67e4-3433-4557-862f-c74f385af7f6">
+                              <SHORT-NAME>FLATMAP</SHORT-NAME>
+                              <ADMIN-DATA>
+                                <SDGS>
+                                  <SDG GID="DV:CfgNamedRefs">
+                                    <SDG GID="DV:CfgFlattener">
+                                      <SD GID="DV:CfgFlattenerVersion">1</SD>
+                                    </SDG>
+                                  </SDG>
+                                </SDGS>
+                              </ADMIN-DATA>
+                            </FLAT-MAP>
+                          </ELEMENTS>
+                        </AR-PACKAGE>
+                      </AR-PACKAGES>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

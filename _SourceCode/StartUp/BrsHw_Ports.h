@@ -1,0 +1,626 @@
+/**********************************************************************************************************************
+ *  COPYRIGHT
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  \verbatim
+ *  Copyright (c) 2022 by Vector Informatik GmbH.                                                  All rights reserved.
+ *
+ *                This software is copyright protected and proprietary to Vector Informatik GmbH.
+ *                Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+ *                All other rights remain with Vector Informatik GmbH.
+ *  \endverbatim
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  FILE DESCRIPTION
+ *  -----------------------------------------------------------------------------------------------------------------*/
+/** \file  File:  BrsHw_Ports.h
+ *      Project:  Vector Basic Runtime System
+ *       Module:  BrsHw for platform NXP S32K3xx
+ *
+ *  \brief Description:  This header file contains the information for the evalboard specific port settings,
+ *                       supported by this Brs implementation.
+ *
+ *  \attention Please note:
+ *    The demo and example programs only show special aspects of the software. With regard to the fact
+ *    that these programs are meant for demonstration purposes only, Vector Informatik liability shall be
+ *    expressly excluded in cases of ordinary negligence, to the extent admissible by law or statute.
+ *********************************************************************************************************************/
+
+/**********************************************************************************************************************
+ *  REVISION HISTORY
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  Refer to BrsHw.h.
+ *********************************************************************************************************************/
+
+#ifndef _BRSHW_PORTS_H_
+#define _BRSHW_PORTS_H_
+
+/*******************************************************************************
+ *  Generic PORT definition types
+ *******************************************************************************/
+typedef enum
+{
+  BRSHW_PORT_PORTGROUP_A,
+  BRSHW_PORT_PORTGROUP_B,
+  BRSHW_PORT_PORTGROUP_C,
+  BRSHW_PORT_PORTGROUP_D,
+  BRSHW_PORT_PORTGROUP_E,
+  BRSHW_PORT_PORTGROUP_F,
+  BRSHW_PORT_PORTGROUP_G,
+  BRSHW_PORT_PORTGROUP_H
+}brsHw_Port_PortGroupType;
+
+typedef enum
+{
+  BRSHW_PORT_PORTNUMBER_0,
+  BRSHW_PORT_PORTNUMBER_1,
+  BRSHW_PORT_PORTNUMBER_2,
+  BRSHW_PORT_PORTNUMBER_3,
+  BRSHW_PORT_PORTNUMBER_4,
+  BRSHW_PORT_PORTNUMBER_5,
+  BRSHW_PORT_PORTNUMBER_6,
+  BRSHW_PORT_PORTNUMBER_7,
+  BRSHW_PORT_PORTNUMBER_8,
+  BRSHW_PORT_PORTNUMBER_9,
+  BRSHW_PORT_PORTNUMBER_10,
+  BRSHW_PORT_PORTNUMBER_11,
+  BRSHW_PORT_PORTNUMBER_12,
+  BRSHW_PORT_PORTNUMBER_13,
+  BRSHW_PORT_PORTNUMBER_14,
+  BRSHW_PORT_PORTNUMBER_15,
+  BRSHW_PORT_PORTNUMBER_16,
+  BRSHW_PORT_PORTNUMBER_17,
+  BRSHW_PORT_PORTNUMBER_18,
+  BRSHW_PORT_PORTNUMBER_19,
+  BRSHW_PORT_PORTNUMBER_20,
+  BRSHW_PORT_PORTNUMBER_21,
+  BRSHW_PORT_PORTNUMBER_22,
+  BRSHW_PORT_PORTNUMBER_23,
+  BRSHW_PORT_PORTNUMBER_24,
+  BRSHW_PORT_PORTNUMBER_25,
+  BRSHW_PORT_PORTNUMBER_26,
+  BRSHW_PORT_PORTNUMBER_27,
+  BRSHW_PORT_PORTNUMBER_28,
+  BRSHW_PORT_PORTNUMBER_29,
+  BRSHW_PORT_PORTNUMBER_30,
+  BRSHW_PORT_PORTNUMBER_31
+}brsHw_Port_PortNumberType;
+
+typedef enum
+{
+  BRSHW_PORT_ALT_0,
+  BRSHW_PORT_ALT_1,
+  BRSHW_PORT_ALT_2,
+  BRSHW_PORT_ALT_3,
+  BRSHW_PORT_ALT_4,
+  BRSHW_PORT_ALT_5,
+  BRSHW_PORT_ALT_6,
+  BRSHW_PORT_ALT_7,
+  BRSHW_PORT_ALT_8
+}brsHw_Port_AlternativeType;
+
+typedef struct
+{
+  brsHw_Port_PortGroupType   portGroup;
+  brsHw_Port_PortNumberType  portNumber;
+  brsHw_Port_AlternativeType portAlternative;
+}brsHw_Port_PortType;
+
+typedef enum
+{
+  PORT_PULL_DISABLED,
+  PORT_PULL_ENABLED
+}brsHw_Port_PullEnableOption;
+
+typedef enum
+{
+  PORT_OUTPUT_DRIVER_DISABLED,
+  PORT_OUTPUT_DRIVER_ENABLED
+}brsHw_Port_OutputDriverOption;
+
+typedef enum
+{
+  PORT_SAFEMODETYPE_DISABLED,
+  PORT_SAFEMODETYPE_ENABLED
+}brsHw_Port_SafemodeType_Config;
+
+typedef enum
+{
+  PORT_PULL_UP,
+  PORT_PULL_DOWN
+}brsHw_Port_PullSelectOption;
+
+typedef enum
+{
+  PORT_CONF_DEFAULT,
+  PORT_CONF_SLOW
+}brsHw_Port_PadType_Config;
+
+typedef struct
+{
+  brsHw_Port_OutputDriverOption   PortOutputControl;
+  brsHw_Port_PullEnableOption     PortPullEnable;  /* enable only with a chip pin */
+  brsHw_Port_PullSelectOption     PortPullSelect;
+  brsHw_Port_SafemodeType_Config  SafeModeControl;
+  brsHw_Port_PadType_Config       SlewRateControl;
+}brsHw_Port_ConfType;
+
+#if defined (_BRSHW_C_)
+  #define BRSHW_PORT_PIN(name, group, number, alternative) const brsHw_Port_PortType name = {group, number, alternative}
+#else
+  #define BRSHW_PORT_PIN(name, group, number, alternative) extern const brsHw_Port_PortType name
+#endif
+
+typedef struct
+{
+  uint32                     muxMSCRValue;
+  brsHw_Port_AlternativeType muxMultiplexedAlternative;
+}brsHw_Port_MultiplexedType;
+
+/*Note: The Value of the IMCR register indexes has an offset of 512 between the RM and the IO-Signal_Multiplexing.xlsx sheet!*/
+/*Use the index value of the excel sheet for the BRSHW_PORT_MUX entries. The offset of 512 is subtracted within BrsHwInitPortInput().*/
+#if defined (_BRSHW_C_)
+  #define BRSHW_PORT_MUX(name, mcsrVal, alternative) const brsHw_Port_MultiplexedType name = {mcsrVal, alternative}
+#else
+  #define BRSHW_PORT_MUX(name, mcsrVal, alternative) extern const brsHw_Port_MultiplexedType name
+#endif
+
+#define BRSHW_PORT_LOGIC_HIGH (uint8)1
+#define BRSHW_PORT_LOGIC_LOW  (uint8)0
+
+/*******************************************************************************
+ *  PIN configuration for alive LED support
+ *******************************************************************************/
+#if defined (BRS_ENABLE_SUPPORT_LEDS)
+# if defined (BRS_EVA_BOARD_S32K3XXEVB)
+BRSHW_PORT_PIN(BRSHW_PORT_LED, BRSHW_PORT_PORTGROUP_A, BRSHW_PORT_PORTNUMBER_31, BRSHW_PORT_ALT_0);
+
+# elif defined (BRS_EVA_BOARD_S32K3XXCVB)
+/*No user LED on daughter board available. Therefor the same GPIO port of BRS_EVA_BOARD_S32K3XXEVB is used for testing*/
+BRSHW_PORT_PIN(BRSHW_PORT_LED, BRSHW_PORT_PORTGROUP_A, BRSHW_PORT_PORTNUMBER_31, BRSHW_PORT_ALT_0);
+
+# elif defined (BRS_EVA_BOARD_S32K396BGA)
+BRSHW_PORT_PIN(BRSHW_PORT_LED, BRSHW_PORT_PORTGROUP_H, BRSHW_PORT_PORTNUMBER_7, BRSHW_PORT_ALT_0);
+
+# else
+  #error "Your chosen EvaBoard is not yet supported for LED support. Feel free to add your EvaBoard on top, or disable BRS LED support."
+# endif /*BRS_EVA_BOARD_x*/
+#endif /*BRS_ENABLE_SUPPORT_LEDS*/
+
+/*******************************************************************************
+ *  PIN configuration for toggle WD pin support
+ *******************************************************************************/
+#if defined (BRS_ENABLE_SUPPORT_TOGGLE_WD_PIN)
+# if defined (BRS_ENABLE_FBL_SUPPORT)
+  #define BRS_START_SEC_RAM_CONST
+  #include "Brs_MemMap.h"
+# endif
+
+  #error "Please configure here the needed WD-toggle pin and uncomment this error, or disable BRS_ENABLE_SUPPORT_TOGGLE_WD_PIN"*/
+
+BRSHW_PORT_PIN(BRSHW_PORT_TOGGLE_WD, BRSHW_PORT_PORTGROUP_x, BRSHW_PORT_PORTNUMBER_x, BRSHW_PORT_ALT_x);
+
+# if defined (BRS_ENABLE_FBL_SUPPORT)
+  #define BRS_STOP_SEC_RAM_CONST
+  #include "Brs_MemMap.h"
+# endif
+#endif /*BRS_ENABLE_SUPPORT_WD_PIN*/
+
+/*******************************************************************************
+ *  PIN configuration for toggle CUSTOM pin support
+ *******************************************************************************/
+#if defined (BRS_ENABLE_SUPPORT_TOGGLE_CUSTOM_PIN)
+# if defined (BRS_ENABLE_FBL_SUPPORT)
+  #define BRS_START_SEC_RAM_CONST
+  #include "Brs_MemMap.h"
+# endif
+
+  #error "Please configure here the needed custom toggle pin and uncomment this error, or disable BRS_ENABLE_SUPPORT_TOGGLE_CUSTOM_PIN"*/
+
+BRSHW_PORT_PIN(BRSHW_PORT_TOGGLE_CUSTOM, BRSHW_PORT_PORTGROUP_x, BRSHW_PORT_PORTNUMBER_x, BRSHW_PORT_ALT_x);
+
+# if defined (BRS_ENABLE_FBL_SUPPORT)
+  #define BRS_STOP_SEC_RAM_CONST
+  #include "Brs_MemMap.h"
+# endif
+#endif /*BRS_ENABLE_SUPPORT_CUSTOM_PIN*/
+
+/*******************************************************************************
+ *  ------------------------------------------------------------
+ *  COMMUNICATION DRIVER SPECIFIC PORT SETTINGS
+ *  ------------------------------------------------------------
+ *******************************************************************************/
+/*******************************************************************************
+ *  GENERAL COMMUNICATION DRIVER SPECIFIC SETTINGS
+ *******************************************************************************/
+#if defined (_BRSHW_C_)
+const brsHw_Port_ConfType BRSHW_PORT_CONF_DIO = {
+  PORT_OUTPUT_DRIVER_ENABLED,
+  PORT_PULL_ENABLED,
+  PORT_PULL_DOWN,
+  PORT_SAFEMODETYPE_DISABLED,
+  PORT_CONF_DEFAULT};
+
+const brsHw_Port_ConfType BRSHW_PORT_CONF_CAN_TX = {
+  PORT_OUTPUT_DRIVER_ENABLED,
+  PORT_PULL_DISABLED,
+  PORT_PULL_DOWN,
+  PORT_SAFEMODETYPE_DISABLED,
+  PORT_CONF_DEFAULT};
+
+const brsHw_Port_ConfType BRSHW_PORT_CONF_LIN_TX = {
+  PORT_OUTPUT_DRIVER_DISABLED,
+  PORT_PULL_DISABLED,
+  PORT_PULL_UP,
+  PORT_SAFEMODETYPE_DISABLED,
+  PORT_CONF_DEFAULT};
+
+const brsHw_Port_ConfType BRSHW_PORT_CONF_FLEXRAY_TX = {
+  PORT_OUTPUT_DRIVER_DISABLED,
+  PORT_PULL_DISABLED,
+  PORT_PULL_UP,
+  PORT_SAFEMODETYPE_DISABLED,
+  PORT_CONF_DEFAULT};
+
+const brsHw_Port_ConfType BRSHW_PORT_CONF_ETHERNET_TX = {
+  PORT_OUTPUT_DRIVER_DISABLED,
+  PORT_PULL_DISABLED,
+  PORT_PULL_DOWN,
+  PORT_SAFEMODETYPE_DISABLED,
+  PORT_CONF_DEFAULT};
+#endif /*_BRSHW_C_*/
+
+/*******************************************************************************
+ *  CAN driver
+ *******************************************************************************/
+#if defined (BRS_ENABLE_CAN_SUPPORT)
+# if defined (BRS_ENABLE_CAN_CHANNEL_0)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_CAN0_TX, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_1, BRSHW_PORT_ALT_5); /*PTB1 (mscr33) */
+BRSHW_PORT_PIN(BRSHW_PORT_CAN0_RX, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_0, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_CAN0_RX, 512u, BRSHW_PORT_ALT_3); /*PTB0 (imcr512) */
+#  elif defined (BRS_EVA_BOARD_S32K396BGA)
+BRSHW_PORT_PIN(BRSHW_PORT_CAN0_TX, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_21, BRSHW_PORT_ALT_8);
+BRSHW_PORT_PIN(BRSHW_PORT_CAN0_RX, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_23, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_CAN0_RX, 512u, BRSHW_PORT_ALT_6);
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with CAN channel 0"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif
+
+# if defined (BRS_ENABLE_CAN_CHANNEL_1)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_CAN1_TX, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_14, BRSHW_PORT_ALT_1); /*PTF14 (mscr174) */
+BRSHW_PORT_PIN(BRSHW_PORT_CAN1_RX, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_15, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_CAN1_RX, 513u, BRSHW_PORT_ALT_5); /*PTF15 (imcr513) */
+#  elif defined (BRS_EVA_BOARD_S32K396BGA)
+BRSHW_PORT_PIN(BRSHW_PORT_CAN1_TX, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_30, BRSHW_PORT_ALT_8);
+BRSHW_PORT_PIN(BRSHW_PORT_CAN1_RX, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_31, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_CAN1_RX, 513u, BRSHW_PORT_ALT_7);
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with CAN channel 1"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif
+
+# if defined (BRS_ENABLE_CAN_CHANNEL_2)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_CAN2_TX, BRSHW_PORT_PORTGROUP_F, BRSHW_PORT_PORTNUMBER_25, BRSHW_PORT_ALT_1);
+BRSHW_PORT_PIN(BRSHW_PORT_CAN2_RX, BRSHW_PORT_PORTGROUP_F, BRSHW_PORT_PORTNUMBER_26, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_CAN2_RX, 514u, BRSHW_PORT_ALT_5); /*PTF26 (imcr514) */
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with CAN channel 2"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif /*BRS_ENABLE_CAN_CHANNEL_2*/
+
+# if defined (BRS_ENABLE_CAN_CHANNEL_3)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_CAN3_TX, BRSHW_PORT_PORTGROUP_E, BRSHW_PORT_PORTNUMBER_28, BRSHW_PORT_ALT_1);
+BRSHW_PORT_PIN(BRSHW_PORT_CAN3_RX, BRSHW_PORT_PORTGROUP_E, BRSHW_PORT_PORTNUMBER_29, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_CAN3_RX, 515u, BRSHW_PORT_ALT_4); /*PTE29 (imcr515) */
+#  elif defined (BRS_EVA_BOARD_S32K396BGA)
+BRSHW_PORT_PIN(BRSHW_PORT_CAN3_TX, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_28, BRSHW_PORT_ALT_1);
+BRSHW_PORT_PIN(BRSHW_PORT_CAN3_RX, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_29, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_CAN3_RX, 515u, BRSHW_PORT_ALT_3);
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with CAN channel 3"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif
+
+# if defined (BRS_ENABLE_CAN_CHANNEL_4)
+#  if defined (BRS_EVA_BOARD_S32K3XXEVB) /*Eval-Board transceiver CAN1*/
+BRSHW_PORT_PIN(BRSHW_PORT_CAN4_TX, BRSHW_PORT_PORTGROUP_E, BRSHW_PORT_PORTNUMBER_3, BRSHW_PORT_ALT_1);
+BRSHW_PORT_PIN(BRSHW_PORT_CAN4_RX, BRSHW_PORT_PORTGROUP_E, BRSHW_PORT_PORTNUMBER_14, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_CAN4_RX, 516u, BRSHW_PORT_ALT_1); /*PTE14 (imcr516) */
+BRSHW_PORT_PIN(BRSHW_PORT_CAN4_ERRN, BRSHW_PORT_PORTGROUP_E, BRSHW_PORT_PORTNUMBER_8, BRSHW_PORT_ALT_0);
+BRSHW_PORT_PIN(BRSHW_PORT_CAN4_EN, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_15, BRSHW_PORT_ALT_0);
+BRSHW_PORT_PIN(BRSHW_PORT_CAN4_STB, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_13, BRSHW_PORT_ALT_0);
+#  elif defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_CAN4_TX, BRSHW_PORT_PORTGROUP_E, BRSHW_PORT_PORTNUMBER_3, BRSHW_PORT_ALT_1);
+BRSHW_PORT_PIN(BRSHW_PORT_CAN4_RX, BRSHW_PORT_PORTGROUP_E, BRSHW_PORT_PORTNUMBER_14, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_CAN4_RX, 516u, BRSHW_PORT_ALT_1); /*PTE14 (imcr516) */
+#  elif defined (BRS_EVA_BOARD_S32K396BGA)
+BRSHW_PORT_PIN(BRSHW_PORT_CAN4_TX, BRSHW_PORT_PORTGROUP_E, BRSHW_PORT_PORTNUMBER_30, BRSHW_PORT_ALT_1);
+BRSHW_PORT_PIN(BRSHW_PORT_CAN4_RX, BRSHW_PORT_PORTGROUP_E, BRSHW_PORT_PORTNUMBER_31, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_CAN4_RX, 516u, BRSHW_PORT_ALT_4);
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with CAN channel 4"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif /*BRS_ENABLE_CAN_CHANNEL_4*/
+
+# if defined (BRS_ENABLE_CAN_CHANNEL_5)
+#  if defined (BRS_EVA_BOARD_S32K3XXEVB) /*Eval-Board transceiver channel CAN0*/
+BRSHW_PORT_PIN(BRSHW_PORT_CAN5_TX, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_27, BRSHW_PORT_ALT_1);
+BRSHW_PORT_PIN(BRSHW_PORT_CAN5_RX, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_26, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_CAN5_RX, 517u, BRSHW_PORT_ALT_5); /*PTC26 (imcr517) */
+BRSHW_PORT_PIN(BRSHW_PORT_CAN5_ERRN, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_23, BRSHW_PORT_ALT_0);
+BRSHW_PORT_PIN(BRSHW_PORT_CAN5_EN, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_21, BRSHW_PORT_ALT_0);
+BRSHW_PORT_PIN(BRSHW_PORT_CAN5_STB, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_20, BRSHW_PORT_ALT_0);
+#  elif defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_CAN5_TX, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_27, BRSHW_PORT_ALT_1);
+BRSHW_PORT_PIN(BRSHW_PORT_CAN5_RX, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_26, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_CAN5_RX, 517u, BRSHW_PORT_ALT_5); /*PTC26 (imcr517) */
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with CAN channel 5"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif /*BRS_ENABLE_CAN_CHANNEL_5*/
+
+# if defined (BRS_ENABLE_CAN_CHANNEL_6) || defined (BRS_ENABLE_CAN_CHANNEL_7) || defined (BRS_ENABLE_CAN_CHANNEL_8)
+  #error "Port config for these CAN channels not yet implemented!"
+# endif
+#endif /*BRS_ENABLE_CAN_SUPPORT*/
+
+/*******************************************************************************
+ *  LIN driver
+ *******************************************************************************/
+#if defined (BRS_ENABLE_LIN_SUPPORT)
+# if defined (BRS_ENABLE_LIN_CHANNEL_0)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_LIN0_TX, BRSHW_PORT_PORTGROUP_A, BRSHW_PORT_PORTNUMBER_3, BRSHW_PORT_ALT_6);
+BRSHW_PORT_PIN(BRSHW_PORT_LIN0_RX, BRSHW_PORT_PORTGROUP_A, BRSHW_PORT_PORTNUMBER_2, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_LIN0_RX, 699u, BRSHW_PORT_ALT_1); /*PTA2 (imcr699) */
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with LIN channel 0"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif
+
+# if defined (BRS_ENABLE_LIN_CHANNEL_1)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_LIN1_TX, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_9, BRSHW_PORT_ALT_2);
+BRSHW_PORT_PIN(BRSHW_PORT_LIN1_RX, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_8, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_LIN1_RX, 700u, BRSHW_PORT_ALT_2); /*PTC8 (imcr700) */
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with LIN channel 1"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif /*BRS_ENABLE_LIN_CHANNEL_1*/
+
+# if defined (BRS_ENABLE_LIN_CHANNEL_2)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_LIN2_TX, BRSHW_PORT_PORTGROUP_A, BRSHW_PORT_PORTNUMBER_9, BRSHW_PORT_ALT_1);
+BRSHW_PORT_PIN(BRSHW_PORT_LIN2_RX, BRSHW_PORT_PORTGROUP_A, BRSHW_PORT_PORTNUMBER_8, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_LIN2_RX, 877u, BRSHW_PORT_ALT_1); /*PTA8 (imcr877) */
+#  elif defined (BRS_EVA_BOARD_S32K396BGA)
+BRSHW_PORT_PIN(BRSHW_PORT_LIN2_TX, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_13, BRSHW_PORT_ALT_8);
+BRSHW_PORT_PIN(BRSHW_PORT_LIN2_RX, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_12, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_LIN2_RX, 701u, BRSHW_PORT_ALT_7);
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with LIN channel 2"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif
+
+# if defined (BRS_ENABLE_LIN_CHANNEL_3)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_LIN3_TX, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_2, BRSHW_PORT_ALT_6);
+BRSHW_PORT_PIN(BRSHW_PORT_LIN3_RX, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_3, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_LIN3_RX, 702u, BRSHW_PORT_ALT_3); /*PTD3 (imcr702) */
+#  elif defined (BRS_EVA_BOARD_S32K396BGA)
+BRSHW_PORT_PIN(BRSHW_PORT_LIN3_TX, BRSHW_PORT_PORTGROUP_E, BRSHW_PORT_PORTNUMBER_1, BRSHW_PORT_ALT_8);
+BRSHW_PORT_PIN(BRSHW_PORT_LIN3_RX, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_20, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_LIN3_RX, 702u, BRSHW_PORT_ALT_7);
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with LIN channel 3"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif /*BRS_ENABLE_LIN_CHANNEL_3*/
+
+# if defined (BRS_ENABLE_LIN_CHANNEL_4)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_LIN4_TX, BRSHW_PORT_PORTGROUP_A, BRSHW_PORT_PORTNUMBER_17, BRSHW_PORT_ALT_4);
+BRSHW_PORT_PIN(BRSHW_PORT_LIN4_RX, BRSHW_PORT_PORTGROUP_E, BRSHW_PORT_PORTNUMBER_7, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_LIN4_RX, 703u, BRSHW_PORT_ALT_4); /*PTE7 (imcr703) */
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with LIN channel 4"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif /*BRS_ENABLE_LIN_CHANNEL_4*/
+
+# if defined (BRS_ENABLE_LIN_CHANNEL_5)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_LIN5_TX, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_1, BRSHW_PORT_ALT_1);
+BRSHW_PORT_PIN(BRSHW_PORT_LIN5_RX, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_0, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_LIN5_RX, 704u, BRSHW_PORT_ALT_2); /*PTD0 (imcr704) */
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with LIN channel 5"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif /*BRS_ENABLE_LIN_CHANNEL_5*/
+
+# if defined (BRS_ENABLE_LIN_CHANNEL_6)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_LIN6_TX, BRSHW_PORT_PORTGROUP_A, BRSHW_PORT_PORTNUMBER_16, BRSHW_PORT_ALT_5);
+BRSHW_PORT_PIN(BRSHW_PORT_LIN6_RX, BRSHW_PORT_PORTGROUP_A, BRSHW_PORT_PORTNUMBER_15, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_LIN6_RX, 705u, BRSHW_PORT_ALT_2); /*PTA15 (imcr705) */
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with LIN channel 6"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif
+
+# if defined (BRS_ENABLE_LIN_CHANNEL_7)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_LIN7_TX, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_15, BRSHW_PORT_ALT_5);
+BRSHW_PORT_PIN(BRSHW_PORT_LIN7_RX, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_14, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_LIN7_RX, 706u, BRSHW_PORT_ALT_1); /*PTB14 (imcr706) */
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with LIN channel 7"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif
+
+# if defined (BRS_ENABLE_LIN_CHANNEL_8)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_LIN8_TX, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_13, BRSHW_PORT_ALT_5);
+BRSHW_PORT_PIN(BRSHW_PORT_LIN8_RX, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_12, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_LIN8_RX, 707u, BRSHW_PORT_ALT_1); /*PTB12 (imcr707) */
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with LIN channel 8"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif
+
+# if defined (BRS_ENABLE_LIN_CHANNEL_9)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_LIN9_TX, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_10, BRSHW_PORT_ALT_5);
+BRSHW_PORT_PIN(BRSHW_PORT_LIN9_RX, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_9, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_LIN9_RX, 708u, BRSHW_PORT_ALT_1); /*PTB9 (imcr708) */
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with LIN channel 9"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif
+
+# if defined (BRS_ENABLE_LIN_CHANNEL_10)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_LIN10_TX, BRSHW_PORT_PORTGROUP_F, BRSHW_PORT_PORTNUMBER_12, BRSHW_PORT_ALT_1);
+BRSHW_PORT_PIN(BRSHW_PORT_LIN10_RX, BRSHW_PORT_PORTGROUP_F, BRSHW_PORT_PORTNUMBER_13, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_LIN10_RX, 709u, BRSHW_PORT_ALT_3); /*PTF13 (imcr709) */
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with LIN channel 10"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif
+
+# if defined (BRS_ENABLE_LIN_CHANNEL_11)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_LIN11_TX, BRSHW_PORT_PORTGROUP_A, BRSHW_PORT_PORTNUMBER_13, BRSHW_PORT_ALT_7);
+BRSHW_PORT_PIN(BRSHW_PORT_LIN11_RX, BRSHW_PORT_PORTGROUP_A, BRSHW_PORT_PORTNUMBER_12, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_LIN11_RX, 710u, BRSHW_PORT_ALT_2); /*PTA12 (imcr710) */
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with LIN channel 11"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif
+
+# if defined (BRS_ENABLE_LIN_CHANNEL_12)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_LIN12_TX, BRSHW_PORT_PORTGROUP_F, BRSHW_PORT_PORTNUMBER_16, BRSHW_PORT_ALT_1);
+BRSHW_PORT_PIN(BRSHW_PORT_LIN12_RX, BRSHW_PORT_PORTGROUP_F, BRSHW_PORT_PORTNUMBER_17, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_LIN12_RX, 711u, BRSHW_PORT_ALT_3); /*PTF17 (imcr711) */
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with LIN channel 12"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif
+
+# if defined (BRS_ENABLE_LIN_CHANNEL_13)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_LIN13_TX, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_26, BRSHW_PORT_ALT_1);
+BRSHW_PORT_PIN(BRSHW_PORT_LIN13_RX, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_27, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_LIN13_RX, 712u, BRSHW_PORT_ALT_2); /*PTC27 (imcr712) */
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with LIN channel 13"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif
+
+# if defined (BRS_ENABLE_LIN_CHANNEL_14)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_LIN14_TX, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_20, BRSHW_PORT_ALT_1);
+BRSHW_PORT_PIN(BRSHW_PORT_LIN14_RX, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_21, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_LIN14_RX, 889u, BRSHW_PORT_ALT_1); /*PTB21 (imcr889) */
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with LIN channel 14"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif
+
+# if defined (BRS_ENABLE_LIN_CHANNEL_15)
+#  if defined (BRS_EVA_BOARD_S32K3XXCVB)
+BRSHW_PORT_PIN(BRSHW_PORT_LIN15_TX, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_25, BRSHW_PORT_ALT_1);
+BRSHW_PORT_PIN(BRSHW_PORT_LIN15_RX, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_26, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_LIN15_RX, 714u, BRSHW_PORT_ALT_1); /*PTB26 (imcr714) */
+#  else
+  #error "PortPins for your EvalBoard are not yet supported with LIN channel 15"
+#  endif /*BRS_EVA_BOARD_x*/
+# endif
+
+# if defined (BRS_ENABLE_LIN_CHANNEL_16) || defined (BRS_ENABLE_LIN_CHANNEL_17) || \
+     defined (BRS_ENABLE_LIN_CHANNEL_18) || defined (BRS_ENABLE_LIN_CHANNEL_19)
+  #error "Port config for these LIN channels not yet implemented!"
+  #error "Not all clock gates for all configurable LINflex Channels are enabled. If needed, enable them in BrsHwModeEntryConfig()!"
+# endif
+#endif /*BRS_ENABLE_LIN_SUPPORT*/
+
+/*******************************************************************************
+ *  FLEXRAY driver
+ *******************************************************************************/
+#if defined (BRS_ENABLE_FLEXRAY_SUPPORT)
+  #error "S32K3xx does not support Flexray"
+#endif /*BRS_ENABLE_FLEXRAY_SUPPORT*/
+
+/*******************************************************************************
+ *  ETHERNET driver
+ *******************************************************************************/
+#if defined (BRS_ENABLE_ETHERNET_SUPPORT)
+# if defined (BRS_EVA_BOARD_S32K3XXCVB) || \
+     defined (BRS_EVA_BOARD_S32K3XXEVB)
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_REFCLK, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_11, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_ETH0_REFCLK, 808u, BRSHW_PORT_ALT_1); /*PTD11 (imcr808) */
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_TXD0, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_2, BRSHW_PORT_ALT_5);
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_TXD1, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_7, BRSHW_PORT_ALT_5);
+#define _BRSHW_PORT_ETH0_TXD2
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_TXD2, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_6, BRSHW_PORT_ALT_5);
+#define _BRSHW_PORT_ETH0_TXD3
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_TXD3, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_5, BRSHW_PORT_ALT_5);
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_TXEN, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_12, BRSHW_PORT_ALT_5);
+#define _BRSHW_PORT_ETH0_RXCLK
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_RXCLK, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_10, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_ETH0_RXCLK, 812u, BRSHW_PORT_ALT_1); /*PTD10 (imcr812) */
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_RXD0, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_0, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_ETH0_RXD0, 806u, BRSHW_PORT_ALT_2); /*PTC0 (imcr806) */
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_RXD1, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_1, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_ETH0_RXD1, 807u, BRSHW_PORT_ALT_2); /*PTC1 (imcr807) */
+#define _BRSHW_PORT_ETH0_RXD2
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_RXD2, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_9, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_ETH0_RXD2, 813u, BRSHW_PORT_ALT_1); /*PTD9 (imcr813) */
+#define _BRSHW_PORT_ETH0_RXD3
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_RXD3, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_8, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_ETH0_RXD3, 814u, BRSHW_PORT_ALT_1); /*PTD8 (imcr814) */
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_CRSDV, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_22, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_ETH0_CRSDV, 802u, BRSHW_PORT_ALT_1); /*PTB22 (imcr802) */
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_MDIO, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_4, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_ETH0_MDIO, 803u, BRSHW_PORT_ALT_1); /*PTB4 (imcr803) */
+#define _BRSHW_PORT_ETH0_MDC
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_MDC, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_5, BRSHW_PORT_ALT_7);
+
+# elif defined (BRS_EVA_BOARD_S32K396BGA)
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_REFCLK, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_19, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_ETH0_REFCLK, 808u, BRSHW_PORT_ALT_6);
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_TXD0, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_18, BRSHW_PORT_ALT_1);
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_TXD1, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_29, BRSHW_PORT_ALT_8);
+#define _BRSHW_PORT_ETH0_TXD2
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_TXD2, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_28, BRSHW_PORT_ALT_2);
+#define _BRSHW_PORT_ETH0_TXD3
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_TXD3, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_3, BRSHW_PORT_ALT_8);
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_TXEN, BRSHW_PORT_PORTGROUP_E, BRSHW_PORT_PORTNUMBER_9, BRSHW_PORT_ALT_6);
+#define _BRSHW_PORT_ETH0_RXCLK
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_RXCLK, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_26, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_ETH0_RXCLK, 812u, BRSHW_PORT_ALT_5);
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_RXD0, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_23, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_ETH0_RXD0, 806u, BRSHW_PORT_ALT_5);
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_RXD1, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_24, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_ETH0_RXD1, 807u, BRSHW_PORT_ALT_4);
+#define _BRSHW_PORT_ETH0_RXD2
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_RXD2, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_14, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_ETH0_RXD2, 813u, BRSHW_PORT_ALT_3);
+#define _BRSHW_PORT_ETH0_RXD3
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_RXD3, BRSHW_PORT_PORTGROUP_C, BRSHW_PORT_PORTNUMBER_15, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_ETH0_RXD3, 814u, BRSHW_PORT_ALT_4);
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_CRSDV, BRSHW_PORT_PORTGROUP_B, BRSHW_PORT_PORTNUMBER_22, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_ETH0_CRSDV, 802u, BRSHW_PORT_ALT_1);
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_MDIO, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_16, BRSHW_PORT_ALT_0);
+BRSHW_PORT_MUX(BRSHW_PORT_MUX_ETH0_MDIO, 803u, BRSHW_PORT_ALT_2);
+#define _BRSHW_PORT_ETH0_MDC
+BRSHW_PORT_PIN(BRSHW_PORT_ETH0_MDC, BRSHW_PORT_PORTGROUP_D, BRSHW_PORT_PORTNUMBER_17, BRSHW_PORT_ALT_3);
+
+# else
+  #error "PortPins for your EvalBoard are not yet supported with ETH"
+# endif /*BRS_EVA_BOARD_x*/
+#endif /*BRS_ENABLE_ETHERNET_SUPPORT*/
+
+#endif /*_BRSHW_PORTS_H_*/

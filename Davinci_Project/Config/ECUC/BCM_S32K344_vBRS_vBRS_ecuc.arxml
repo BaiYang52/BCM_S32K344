@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ActiveEcuC</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-MODULE-CONFIGURATION-VALUES UUID="524a78b1-9cd3-4d4e-aef2-9fd44d783609">
+          <SHORT-NAME>vBRS</SHORT-NAME>
+          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/vBRS</DEFINITION-REF>
+          <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+          <MODULE-DESCRIPTION-REF DEST="BSW-IMPLEMENTATION">/MICROSAR/vBRS_Impl</MODULE-DESCRIPTION-REF>
+          <CONTAINERS>
+            <ECUC-CONTAINER-VALUE UUID="bab24d75-52e0-4f4d-8654-750c4de8a099">
+              <SHORT-NAME>vBRSGeneral</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vBRS/vBRSGeneral</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vBRS/vBRSGeneral/vBRSEnableCoreSpecificVLinkGenConfig</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vBRS/vBRSGeneral/vBRSEnableSupportLEDs</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vBRS/vBRSGeneral/vBRSEnableSafeContextSupport</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vBRS/vBRSGeneral/vBRSEnableMultiCoreSupport</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vBRS/vBRSGeneral/vBRSEnableSupportToggleWdPin</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vBRS/vBRSGeneral/vBRSEnableSupportToggleCustomPin</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vBRS/vBRSGeneral/vBRSEnableEcuMStubGeneration</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vBRS/vBRSGeneral/vBRSDisableSetupSupport</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vBRS/vBRSGeneral/vBRSEnableSchmStubGeneration</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vBRS/vBRSGeneral/vBRSEnableSchmStubSupportDrvCanAN</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vBRS/vBRSGeneral/vBRSEnableSchmStubEmptyExclusiveAreaHandling</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vBRS/vBRSGeneral/vBRSExecutionInstance</DEFINITION-REF>
+                  <VALUE>Application</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vBRS/vBRSGeneral/vBRSFirstInstance</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vBRS/vBRSGeneral/vBRSFblSupportEcuMInit</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vBRS/vBRSGeneral/vBRSFblSupportExceptionTableInRam</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="0542c2bb-90ed-4734-b10f-bc0253ec4b71">
+              <SHORT-NAME>vBRSHwConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vBRS/vBRSHwConfig</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSCompilerInstructionSet</DEFINITION-REF>
+                  <VALUE>THUMB</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSPeriphClockDescription</DEFINITION-REF>
+                  <VALUE>Initial value for Peripheral Clock: 120MHz</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSOscClock</DEFINITION-REF>
+                  <VALUE>16000000</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSTimebaseClock</DEFINITION-REF>
+                  <VALUE>160000000</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSPeriphClock</DEFINITION-REF>
+                  <VALUE>160000000</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSEnablePortHandling</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSEnableWatchdogHandling</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSEnablePLLClocksHandling</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSPreferPLLWatchdogInit</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="1cd4c185-1461-46f9-8b2f-3937dcb04f89">
+                  <SHORT-NAME>S32K3XXEVB</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSEvalBoardInfo</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSEvalBoardInfo/vBRSEvalBoard</DEFINITION-REF>
+                      <VALUE>S32K3XXEVB</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSEvalBoardInfo/vBRSEvalBoardDescription</DEFINITION-REF>
+                      <VALUE>Toggle PTA31 for LED support</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSEvalBoardInfo/vBRSEvalBoardOscClock</DEFINITION-REF>
+                      <VALUE>16000000</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="a56b9c1b-2a19-42a8-a3d5-f73b5ee2880f">
+                  <SHORT-NAME>S32K3XXCVB</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSEvalBoardInfo</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSEvalBoardInfo/vBRSEvalBoard</DEFINITION-REF>
+                      <VALUE>S32K3XXCVB</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSEvalBoardInfo/vBRSEvalBoardDescription</DEFINITION-REF>
+                      <VALUE>No User LED available</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSEvalBoardInfo/vBRSEvalBoardOscClock</DEFINITION-REF>
+                      <VALUE>16000000</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="a459fead-5e23-485b-9eac-1162648f5dc2">
+                  <SHORT-NAME>S32K396BGA</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSEvalBoardInfo</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSEvalBoardInfo/vBRSEvalBoard</DEFINITION-REF>
+                      <VALUE>S32K396BGA</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSEvalBoardInfo/vBRSEvalBoardDescription</DEFINITION-REF>
+                      <VALUE>Toggle PTH7 for LED support</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vBRS/vBRSHwConfig/vBRSEvalBoardInfo/vBRSEvalBoardOscClock</DEFINITION-REF>
+                      <VALUE>40000000</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="f225ee1f-57e1-4137-baf5-b4db246065fc">
+              <SHORT-NAME>vBRSMemoryInit</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vBRS/vBRSMemoryInit</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vBRS/vBRSMemoryInit/vBRSInitPatternBlocks</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vBRS/vBRSMemoryInit/vBRSInitPatternHardResetBlocks</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vBRS/vBRSMemoryInit/vBRSInitPatternAreas</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vBRS/vBRSMemoryInit/vBRSInitPatternHardResetAreas</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+          </CONTAINERS>
+        </ECUC-MODULE-CONFIGURATION-VALUES>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

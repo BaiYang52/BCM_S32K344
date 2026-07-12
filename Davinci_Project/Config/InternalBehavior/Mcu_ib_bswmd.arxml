@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00046.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="05214e7a-ff95-4a21-b3a6-f53e64c26fea">
+      <SHORT-NAME>TS_T40D34M20I1R0</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="581c52d5-c25d-4bb4-bd2d-5e942bd25255">
+          <SHORT-NAME>Mcu_ib_bswmd</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="473082fd-ce88-4baa-86b4-30a1e727d1c9">
+              <SHORT-NAME>BswModuleDescriptions</SHORT-NAME>
+              <ELEMENTS>
+                <BSW-MODULE-DESCRIPTION UUID="954b8606-8a01-44e3-803a-4cc6b08c5640">
+                  <SHORT-NAME>Mcu</SHORT-NAME>
+                  <PROVIDED-ENTRYS>
+                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                      <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu_Virtual</BSW-MODULE-ENTRY-REF>
+                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  </PROVIDED-ENTRYS>
+                  <INTERNAL-BEHAVIORS>
+                    <BSW-INTERNAL-BEHAVIOR UUID="1a58b032-38b3-4105-a1a9-79fc5b38d04c">
+                      <SHORT-NAME>McuBehavior</SHORT-NAME>
+                      <EXCLUSIVE-AREAS>
+                        <EXCLUSIVE-AREA UUID="4b236ff9-8f95-4e4e-bb9a-3635219d5171">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_00</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="b3592cb9-1fd7-44f2-aedf-7969bcfb3368">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_01</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="9e5fa7a3-b277-4a79-93ca-c1becabc74c9">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_02</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="6ba746ad-4aa7-4832-b96b-0759e0021725">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_03</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="b4751b0b-7f0a-4f3b-a3ec-bc28d13890ab">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_04</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="f9240a84-cee4-4c9e-a98d-9f0c88a27bd5">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_05</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="d115ee0a-997b-467f-b816-46c14c413f78">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_06</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="2cdcdf68-d9d9-45da-9c47-03419c66c386">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_07</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="54cc7218-fbef-4575-909d-8b34f1b24feb">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_08</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="bfc75d29-5129-4134-8134-023c1686c47c">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_09</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="619b6f85-fd97-4aeb-be7c-8bbf6b51b0b5">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_10</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="af2d513d-4ec5-46f5-bd63-57b0d2946c35">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_11</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="55d4c067-adda-426c-aab5-b5c3765f2db9">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_12</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="2e4b14f3-91d0-44f7-8d81-b02605d4e097">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_13</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="81e1a6eb-ecdd-4110-9e47-2e191f8c9384">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_14</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="7a3a682f-0533-479e-b858-21cf7b436d38">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_15</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="151652e5-3455-42e3-bf69-975e8011eedd">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_16</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="5e118b39-6186-453d-9da8-f4cfad2691fa">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_17</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="5deed8e8-bc27-49b8-85dc-344a790d01a9">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_18</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="39aa1b62-32a2-429b-8a5d-43078a54e8bf">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_19</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="753ddf90-4e5f-4f40-ac1e-2bb381108f44">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_20</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="8eda4501-575e-45ad-9b2c-91229c5c6484">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_21</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="f1621727-d785-42e9-8f38-e8c583dd3bf9">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_22</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="89e24661-7a16-41c3-a642-d4b794d77530">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_23</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="b7f81ccc-b950-4cfe-8865-367f95b1a301">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_24</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="f0cf8ad2-1274-4d1f-b678-b4353c38287c">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_25</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="c2d901d7-7246-43aa-9c8d-ec5d95a8b86e">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_26</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="69cc3d35-1a71-4682-a141-8bc9f9d06885">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_27</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="d9d929f8-f561-455e-b281-576c0bbb2b6c">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_28</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="7f09b7dd-5c7e-42fc-88e9-df288af90a8b">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_29</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="d9eb29ff-6a21-4379-9303-f9563f7ae536">
+                          <SHORT-NAME>MCU_EXCLUSIVE_AREA_30</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                      </EXCLUSIVE-AREAS>
+                      <ENTITYS>
+                        <BSW-CALLED-ENTITY UUID="383f4430-5435-431f-9fa6-ddd538f4305b">
+                          <SHORT-NAME>Mcu_Virtual</SHORT-NAME>
+                          <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_00</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_01</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_02</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_03</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_04</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_05</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_06</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_07</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_08</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_09</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_10</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_11</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_12</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_13</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_14</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_15</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_16</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_17</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_18</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_19</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_20</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_21</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_22</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_23</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_24</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_25</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_26</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_27</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_28</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_29</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu/McuBehavior/MCU_EXCLUSIVE_AREA_30</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                          </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/TS_T40D34M20I1R0/Mcu_ib_bswmd/BswModuleDescriptions/Mcu_Virtual</IMPLEMENTED-ENTRY-REF>
+                        </BSW-CALLED-ENTITY>
+                      </ENTITYS>
+                    </BSW-INTERNAL-BEHAVIOR>
+                  </INTERNAL-BEHAVIORS>
+                </BSW-MODULE-DESCRIPTION>
+                <BSW-MODULE-ENTRY UUID="f66be036-5279-4e70-beea-65c95d6de8e2">
+                  <SHORT-NAME>Mcu_Virtual</SHORT-NAME>
+                  <CALL-TYPE>REGULAR</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

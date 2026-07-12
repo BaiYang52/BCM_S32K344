@@ -223,7 +223,10 @@
                 <option>
                     <name>CCDefines</name>
                     <state>ARMCM7_DP</state>
-                    <state>START_FROM_FLASH</state>
+                    <state>BRS_COMP_IAR</state>
+                    <state>BRS_PLATFORM_AMR</state>
+                    <state>DISABLE_MCAL_INTERMODULE_ASR_CHECK</state>
+                    <state>BRS_ENABLE_CAN_SUPPORT</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -344,7 +347,25 @@
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
-                    <state></state>
+                    <state>$PROJ_DIR$\_SourceCode\Base</state>
+                    <state>$PROJ_DIR$\Davinci_Project\Appl\</state>
+                    <state>$PROJ_DIR$\Davinci_Project\Appl\GenData\</state>
+                    <state>$PROJ_DIR$\Davinci_Project\Appl\GenData\Components</state>
+                    <state>$PROJ_DIR$\Davinci_Project\Appl\GenData\include</state>
+                    <state>$PROJ_DIR$\Davinci_Project\Appl\Source</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Mcu_TS_T40D34M20I1R0\include</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Base_TS_T40D34M20I1R0\header</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Base_TS_T40D34M20I1R0\include</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Base_TS_T40D34M20I1R0\wizard_data\S32K344</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Port_TS_T40D34M20I1R0\include</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Dio_TS_T40D34M20I1R0\include</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\Components\_Common\Implementation</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\Components\VStdLib\Implementation</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\Components\BswM\Implementation</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\Components\Det\Implementation</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\Components\EcuM\Implementation</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\Components\Mcal_S32k\Implementation</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -517,7 +538,10 @@
                 <option>
                     <name>ADefines</name>
                     <state>ARMCM7_DP</state>
-                    <state>START_FROM_FLASH</state>
+                    <state>BRS_COMP_IAR</state>
+                    <state>BRS_PLATFORM_AMR</state>
+                    <state>DISABLE_MCAL_INTERMODULE_ASR_CHECK</state>
+                    <state>BRS_ENABLE_CAN_SUPPORT</state>
                 </option>
                 <option>
                     <name>AList</name>
@@ -609,7 +633,25 @@
                 </option>
                 <option>
                     <name>AUserIncludes</name>
-                    <state></state>
+                    <state>$PROJ_DIR$\_SourceCode\Base</state>
+                    <state>$PROJ_DIR$\Davinci_Project\Appl\</state>
+                    <state>$PROJ_DIR$\Davinci_Project\Appl\GenData\</state>
+                    <state>$PROJ_DIR$\Davinci_Project\Appl\GenData\Components</state>
+                    <state>$PROJ_DIR$\Davinci_Project\Appl\GenData\include</state>
+                    <state>$PROJ_DIR$\Davinci_Project\Appl\Source</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Mcu_TS_T40D34M20I1R0\include</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Base_TS_T40D34M20I1R0\header</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Base_TS_T40D34M20I1R0\include</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Base_TS_T40D34M20I1R0\wizard_data\S32K344</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Port_TS_T40D34M20I1R0\include</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\ThirdParty\Mcal_S32k\Supply\SW32K3_RTD_4.4_2.0.1\eclipse\plugins\Dio_TS_T40D34M20I1R0\include</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\Components\_Common\Implementation</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\Components\VStdLib\Implementation</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\Components\BswM\Implementation</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\Components\Det\Implementation</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\Components\EcuM\Implementation</state>
+                    <state>$PROJ_DIR$\CBD2300384_D00\Components\Mcal_S32k\Implementation</state>
                 </option>
                 <option>
                     <name>AExtraOptionsCheckV2</name>
@@ -647,7 +689,7 @@
                 </option>
                 <option>
                     <name>OOCOutputFile</name>
-                    <state></state>
+                    <state>BCM_APP.srec</state>
                 </option>
                 <option>
                     <name>OOCCommandLineProducer</name>
@@ -2146,51 +2188,381 @@
         </settings>
     </configuration>
     <group>
+        <name>Appl</name>
+        <group>
+            <name>Base</name>
+        </group>
+        <group>
+            <name>GenData</name>
+            <group>
+                <name>src</name>
+                <file>
+                    <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\src\Clock_Ip_Cfg.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\src\Clock_Ip_PBcfg.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\src\Mcu_Cfg.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\src\Mcu_PBcfg.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\src\OsIf_Cfg.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\src\Power_Ip_Cfg.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\src\Power_Ip_PBcfg.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\src\Ram_Ip_Cfg.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\src\Ram_Ip_PBcfg.c</name>
+                </file>
+            </group>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\BswM_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Det_Cfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\EcuM_Cfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\EcuM_Init_Cfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\EcuM_Init_PBcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\EcuM_PBcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_AccessCheck_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Alarm_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Application_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Barrier_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Core_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Counter_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Error_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Hal_Context_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Hal_Core_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Hal_Entry_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Hal_EntryAsm_Lcfg.asm</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Hal_Interrupt_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Hal_Kernel_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Hal_MemoryProtection_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Hal_Timer_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Hook_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Ioc_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Isr_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_MemoryProtection_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Peripheral_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Resource_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Scheduler_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_ScheduleTable_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_ServiceFunction_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Spinlock_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Stack_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Task_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_TimingProtection_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_Trace_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Os_XSignal_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\Rte.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\vBrs_Lcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\GenData\vLinkGen_Lcfg.c</name>
+            </file>
+        </group>
+        <group>
+            <name>Source</name>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\Source\BswM_Callout_Stubs.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\Source\EcuM_Callout_Stubs.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Davinci_Project\Appl\Source\Os_Callout_Stubs.c</name>
+            </file>
+        </group>
+    </group>
+    <group>
+        <name>BSW</name>
+        <group>
+            <name>BswM</name>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\BswM\Implementation\BswM.c</name>
+            </file>
+        </group>
+        <group>
+            <name>Det</name>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Det\Implementation\Det.c</name>
+            </file>
+        </group>
+        <group>
+            <name>EcuM</name>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\EcuM\Implementation\EcuM.c</name>
+            </file>
+        </group>
+        <group>
+            <name>Os</name>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_AccessCheck.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Alarm.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Application.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_ArrayList.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Barrier.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Bit.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_BitArray.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Core.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Counter.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Deque.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Error.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Event.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Fifo.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Fifo08.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Fifo16.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Fifo32.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_FifoRef.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Hal_Compiler_Arm.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Hal_Compiler_Iar.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Hal_Compiler_TiInt.asm</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Hal_Context.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Hal_ContextAsm.asm</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Hal_Core.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Hal_Entry.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Hook.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Interrupt.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Ioc.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Isr.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Job.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Lock.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_MemoryProtection.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Peripheral.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_PriorityQueue.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Resource.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Scheduler.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_ScheduleTable.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_ServiceFunction.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Spinlock.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Stack.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Task.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Thread.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Timer.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_TimingProtection.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Trace.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_Trap.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\Os\Implementation\Os_XSignal.c</name>
+            </file>
+        </group>
+        <group>
+            <name>VStdlib</name>
+            <file>
+                <name>$PROJ_DIR$\CBD2300384_D00\Components\VStdLib\Implementation\vstdlib.c</name>
+            </file>
+        </group>
+    </group>
+    <group>
         <name>Device</name>
         <file>
-            <name>$PROJ_DIR$\_SourceCode\StartUp\ARMCM7.h</name>
+            <name>$PROJ_DIR$\_SourceCode\StartUp\ARMBrsHw_CortexM.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\_SourceCode\StartUp\boot_header.c</name>
+            <name>$PROJ_DIR$\_SourceCode\StartUp\ARMBrsHwIntTb_CortexM.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\_SourceCode\StartUp\cmsis_compiler.h</name>
+            <name>$PROJ_DIR$\_SourceCode\StartUp\ARMStartup_CortexM.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\_SourceCode\StartUp\cmsis_iccarm.h</name>
+            <name>$PROJ_DIR$\_SourceCode\StartUp\BrsHw.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\_SourceCode\StartUp\cmsis_version.h</name>
+            <name>$PROJ_DIR$\_SourceCode\StartUp\BrsMain.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\_SourceCode\StartUp\core_cm7.h</name>
+            <name>$PROJ_DIR$\_SourceCode\StartUp\BrsMain_Appl.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\_SourceCode\StartUp\init_tables.s</name>
+            <name>$PROJ_DIR$\_SourceCode\StartUp\BrsMain_Callout_Stubs.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\_SourceCode\StartUp\main.c</name>
+            <name>$PROJ_DIR$\_SourceCode\StartUp\BrsMainStartup.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\_SourceCode\StartUp\mpu_armv7.h</name>
+            <name>$PROJ_DIR$\_SourceCode\StartUp\exceptions.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\_SourceCode\StartUp\S32K344.h</name>
+            <name>$PROJ_DIR$\_SourceCode\StartUp\startup_cm7.asm</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\_SourceCode\Link\S32K344_flash.icf</name>
+            <name>$PROJ_DIR$\_SourceCode\StartUp\Vector_Table.asm</name>
         </file>
-        <file>
-            <name>$PROJ_DIR$\_SourceCode\StartUp\startup_ARMCM7.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\_SourceCode\StartUp\system_ARMCM7.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\_SourceCode\StartUp\system_ARMCM7.h</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\_SourceCode\StartUp\typedefs.h</name>
-        </file>
+    </group>
+    <group>
+        <name>MCAL</name>
+        <group>
+            <name>MCU</name>
+        </group>
     </group>
 </project>

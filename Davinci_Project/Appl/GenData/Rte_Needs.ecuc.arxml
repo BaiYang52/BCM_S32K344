@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_4-0-3.xsd">
+    <AR-PACKAGES>
+        <AR-PACKAGE>
+            <SHORT-NAME>DaVinci_Project</SHORT-NAME>
+            <ELEMENTS>
+                <ECUC-MODULE-CONFIGURATION-VALUES>
+                    <SHORT-NAME>Rte</SHORT-NAME>
+                    <DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/Rte</DEFINITION-REF>
+                    <CONTAINERS>
+                        <ECUC-CONTAINER-VALUE>
+                            <SHORT-NAME>BswM</SHORT-NAME>
+                            <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteBswModuleInstance</DEFINITION-REF>
+                            <SUB-CONTAINERS>
+                                <ECUC-CONTAINER-VALUE>
+                                    <SHORT-NAME>BswM_MainFunctionTimingEvent0</SHORT-NAME>
+                                    <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteBswModuleInstance/RteBswEventToTaskMapping</DEFINITION-REF>
+                                    <REFERENCE-VALUES>
+                                        <ECUC-REFERENCE-VALUE>
+                                            <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Rte/RteBswModuleInstance/RteBswEventToTaskMapping/RteBswUsedOsAlarmRef</DEFINITION-REF>
+                                            <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/DaVinci_Project/Os/Rte_Al_TE2_AppRunTask_0_10ms</VALUE-REF>
+                                        </ECUC-REFERENCE-VALUE>
+                                    </REFERENCE-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                            </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
+                            <SHORT-NAME>Det</SHORT-NAME>
+                            <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteBswModuleInstance</DEFINITION-REF>
+                            <SUB-CONTAINERS>
+                            </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
+                            <SHORT-NAME>EcuM</SHORT-NAME>
+                            <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteBswModuleInstance</DEFINITION-REF>
+                            <SUB-CONTAINERS>
+                                <ECUC-CONTAINER-VALUE>
+                                    <SHORT-NAME>EcuM_MainFunctionTimingEvent0</SHORT-NAME>
+                                    <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteBswModuleInstance/RteBswEventToTaskMapping</DEFINITION-REF>
+                                    <REFERENCE-VALUES>
+                                        <ECUC-REFERENCE-VALUE>
+                                            <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Rte/RteBswModuleInstance/RteBswEventToTaskMapping/RteBswUsedOsAlarmRef</DEFINITION-REF>
+                                            <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/DaVinci_Project/Os/Rte_Al_TE2_AppRunTask_0_10ms</VALUE-REF>
+                                        </ECUC-REFERENCE-VALUE>
+                                    </REFERENCE-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                            </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
+                            <SHORT-NAME>Mcu</SHORT-NAME>
+                            <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteBswModuleInstance</DEFINITION-REF>
+                            <SUB-CONTAINERS>
+                            </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
+                            <SHORT-NAME>BswM_EcuSwComposition</SHORT-NAME>
+                            <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteSwComponentInstance</DEFINITION-REF>
+                            <SUB-CONTAINERS>
+                                <ECUC-CONTAINER-VALUE>
+                                    <SHORT-NAME>Timer_BswM_MainFunction</SHORT-NAME>
+                                    <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteSwComponentInstance/RteEventToTaskMapping</DEFINITION-REF>
+                                    <REFERENCE-VALUES>
+                                        <ECUC-REFERENCE-VALUE>
+                                            <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteUsedOsAlarmRef</DEFINITION-REF>
+                                            <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/DaVinci_Project/Os/Rte_Al_TE2_AppRunTask_0_10ms</VALUE-REF>
+                                        </ECUC-REFERENCE-VALUE>
+                                    </REFERENCE-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                            </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
+                            <SHORT-NAME>Det_EcuSwComposition</SHORT-NAME>
+                            <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteSwComponentInstance</DEFINITION-REF>
+                            <SUB-CONTAINERS>
+                            </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
+                            <SHORT-NAME>EcuM_EcuSwComposition</SHORT-NAME>
+                            <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteSwComponentInstance</DEFINITION-REF>
+                            <SUB-CONTAINERS>
+                                <ECUC-CONTAINER-VALUE>
+                                    <SHORT-NAME>Timer_EcuM_MainFunction</SHORT-NAME>
+                                    <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteSwComponentInstance/RteEventToTaskMapping</DEFINITION-REF>
+                                    <REFERENCE-VALUES>
+                                        <ECUC-REFERENCE-VALUE>
+                                            <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteUsedOsAlarmRef</DEFINITION-REF>
+                                            <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/DaVinci_Project/Os/Rte_Al_TE2_AppRunTask_0_10ms</VALUE-REF>
+                                        </ECUC-REFERENCE-VALUE>
+                                    </REFERENCE-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                            </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
+                            <SHORT-NAME>Os_OsCore0_swc_EcuSwComposition</SHORT-NAME>
+                            <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteSwComponentInstance</DEFINITION-REF>
+                            <SUB-CONTAINERS>
+                            </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
+                            <SHORT-NAME>RteOsInteraction</SHORT-NAME>
+                            <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteOsInteraction</DEFINITION-REF>
+                            <SUB-CONTAINERS>
+                                <ECUC-CONTAINER-VALUE>
+                                    <SHORT-NAME>Rte_Al_TE2_AppRunTask_0_10ms</SHORT-NAME>
+                                    <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteOsInteraction/RteUsedOsActivation</DEFINITION-REF>
+                                       <PARAMETER-VALUES>
+                                           <ECUC-NUMERICAL-PARAM-VALUE>
+                                               <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/Rte/RteOsInteraction/RteUsedOsActivation/RteExpectedActivationOffset</DEFINITION-REF>
+                                               <VALUE>0</VALUE>
+                                           </ECUC-NUMERICAL-PARAM-VALUE>
+                                       </PARAMETER-VALUES>
+                                    <REFERENCE-VALUES>
+                                        <ECUC-REFERENCE-VALUE>
+                                            <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Rte/RteOsInteraction/RteUsedOsActivation/RteActivationOsAlarmRef</DEFINITION-REF>
+                                            <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/DaVinci_Project/Os/Rte_Al_TE2_AppRunTask_0_10ms</VALUE-REF>
+                                        </ECUC-REFERENCE-VALUE>
+                                           <ECUC-REFERENCE-VALUE>
+                                               <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Rte/RteOsInteraction/RteUsedOsActivation/RteActivationOsTaskRef</DEFINITION-REF>
+                                               <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/DaVinci_Project/Os/AppRunTask</VALUE-REF>
+                                           </ECUC-REFERENCE-VALUE>
+                                    </REFERENCE-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                            </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                    </CONTAINERS>
+                </ECUC-MODULE-CONFIGURATION-VALUES>
+                <ECUC-MODULE-CONFIGURATION-VALUES>
+                    <SHORT-NAME>NvM</SHORT-NAME>
+                    <DEFINITION-REF DEST="ECUC-MODULE-DEF">/AUTOSAR/NvM</DEFINITION-REF>
+                    <CONTAINERS>
+                    </CONTAINERS>
+                </ECUC-MODULE-CONFIGURATION-VALUES>
+                <ECUC-MODULE-CONFIGURATION-VALUES>
+                    <SHORT-NAME>Os</SHORT-NAME>
+                    <DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/Os</DEFINITION-REF>
+                    <CONTAINERS>
+                        <ECUC-CONTAINER-VALUE>
+                            <SHORT-NAME>AppRunTask</SHORT-NAME>
+                            <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsTask</DEFINITION-REF>
+                            <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                    <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsTask/OsTaskActivation</DEFINITION-REF>
+                                    <VALUE>1</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                    <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsTask/OsTaskPriority</DEFINITION-REF>
+                                    <VALUE>15</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                    <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Os/OsTask/OsTaskSchedule</DEFINITION-REF>
+                                    <VALUE>FULL</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                            </PARAMETER-VALUES>
+                            <REFERENCE-VALUES>
+                            </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
+                            <SHORT-NAME>Rte_Al_TE2_AppRunTask_0_10ms</SHORT-NAME>
+                            <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsAlarm</DEFINITION-REF>
+                            <REFERENCE-VALUES>
+                                <ECUC-REFERENCE-VALUE>
+                                    <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsAlarm/OsAlarmCounterRef</DEFINITION-REF>
+                                    <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/DaVinci_Project/Os/SystemTimer</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                            </REFERENCE-VALUES>
+                            <SUB-CONTAINERS>
+                                <ECUC-CONTAINER-VALUE>
+                                    <SHORT-NAME>OsAlarmAction</SHORT-NAME>
+                                    <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/MICROSAR/Os/OsAlarm/OsAlarmAction</DEFINITION-REF>
+                                    <SUB-CONTAINERS>
+                                        <ECUC-CONTAINER-VALUE>
+                                            <SHORT-NAME>OsAlarmActivateTask</SHORT-NAME>
+                                            <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsAlarm/OsAlarmAction/OsAlarmActivateTask</DEFINITION-REF>
+                                            <REFERENCE-VALUES>
+                                                <ECUC-REFERENCE-VALUE>
+                                                    <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsAlarm/OsAlarmAction/OsAlarmActivateTask/OsAlarmActivateTaskRef</DEFINITION-REF>
+                                                    <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/DaVinci_Project/Os/AppRunTask</VALUE-REF>
+                                                </ECUC-REFERENCE-VALUE>
+                                            </REFERENCE-VALUES>
+                                        </ECUC-CONTAINER-VALUE>
+                                    </SUB-CONTAINERS>
+                                </ECUC-CONTAINER-VALUE>
+                            </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                    </CONTAINERS>
+                </ECUC-MODULE-CONFIGURATION-VALUES>
+                <ECUC-MODULE-CONFIGURATION-VALUES>
+                    <SHORT-NAME>EcuC</SHORT-NAME>
+                    <DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/EcuC</DEFINITION-REF>
+                </ECUC-MODULE-CONFIGURATION-VALUES>
+                <ECUC-VALUE-COLLECTION>
+                    <SHORT-NAME>DaVinci_Project</SHORT-NAME>
+                    <ECUC-VALUES>
+                        <ECUC-MODULE-CONFIGURATION-VALUES-REF-CONDITIONAL>
+                            <ECUC-MODULE-CONFIGURATION-VALUES-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/DaVinci_Project/Com</ECUC-MODULE-CONFIGURATION-VALUES-REF>
+                        </ECUC-MODULE-CONFIGURATION-VALUES-REF-CONDITIONAL>
+                        <ECUC-MODULE-CONFIGURATION-VALUES-REF-CONDITIONAL>
+                            <ECUC-MODULE-CONFIGURATION-VALUES-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/DaVinci_Project/Rte</ECUC-MODULE-CONFIGURATION-VALUES-REF>
+                        </ECUC-MODULE-CONFIGURATION-VALUES-REF-CONDITIONAL>
+                        <ECUC-MODULE-CONFIGURATION-VALUES-REF-CONDITIONAL>
+                            <ECUC-MODULE-CONFIGURATION-VALUES-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/DaVinci_Project/Os</ECUC-MODULE-CONFIGURATION-VALUES-REF>
+                        </ECUC-MODULE-CONFIGURATION-VALUES-REF-CONDITIONAL>
+                        <ECUC-MODULE-CONFIGURATION-VALUES-REF-CONDITIONAL>
+                            <ECUC-MODULE-CONFIGURATION-VALUES-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/DaVinci_Project/EcuC</ECUC-MODULE-CONFIGURATION-VALUES-REF>
+                        </ECUC-MODULE-CONFIGURATION-VALUES-REF-CONDITIONAL>
+                        <ECUC-MODULE-CONFIGURATION-VALUES-REF-CONDITIONAL>
+                            <ECUC-MODULE-CONFIGURATION-VALUES-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/DaVinci_Project/NvM</ECUC-MODULE-CONFIGURATION-VALUES-REF>
+                        </ECUC-MODULE-CONFIGURATION-VALUES-REF-CONDITIONAL>
+                    </ECUC-VALUES>
+                </ECUC-VALUE-COLLECTION>
+            </ELEMENTS>
+        </AR-PACKAGE>
+    </AR-PACKAGES>
+</AUTOSAR>

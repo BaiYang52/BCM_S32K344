@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="ff55d029-386d-43a2-b3c2-dfef4c7a5e36">
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="bf5a58d5-3194-4e3a-b42d-ae7aec2f66d9">
+          <SHORT-NAME>Os_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="ae3c61ed-c634-4829-9522-b3e9893ae3f8">
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <ELEMENTS>
+                <IMPLEMENTATION-DATA-TYPE UUID="7b72645d-e788-47d1-9dce-d20a105ff7de">
+                  <SHORT-NAME>TimeInMicrosecondsType</SHORT-NAME>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/MICROSAR/Os_swc/DataTypes/DataConstrs/TimeInMicrosecondsType_Constr</DATA-CONSTR-REF>
+                        <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</IMPLEMENTATION-DATA-TYPE-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE UUID="c280e958-f7ea-415e-a5f1-c740c63c216e">
+                  <SHORT-NAME>CounterType</SHORT-NAME>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/MICROSAR/Os_swc/DataTypes/DataConstrs/CounterType_Constr</DATA-CONSTR-REF>
+                        <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                  <TYPE-EMITTER>Os</TYPE-EMITTER>
+                </IMPLEMENTATION-DATA-TYPE>
+              </ELEMENTS>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="7976c3f6-d40a-41e0-8273-66fbaf2f10ba">
+                  <SHORT-NAME>DataConstrs</SHORT-NAME>
+                  <ELEMENTS>
+                    <DATA-CONSTR UUID="f18df51e-2659-4df7-a8df-5f239ac99633">
+                      <SHORT-NAME>TimeInMicrosecondsType_Constr</SHORT-NAME>
+                      <DATA-CONSTR-RULES>
+                        <DATA-CONSTR-RULE>
+                          <INTERNAL-CONSTRS>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">4294967295</UPPER-LIMIT>
+                          </INTERNAL-CONSTRS>
+                        </DATA-CONSTR-RULE>
+                      </DATA-CONSTR-RULES>
+                    </DATA-CONSTR>
+                    <DATA-CONSTR UUID="39bc42fd-b9d8-49bf-9e8c-c9153d93ee5e">
+                      <SHORT-NAME>CounterType_Constr</SHORT-NAME>
+                      <DATA-CONSTR-RULES>
+                        <DATA-CONSTR-RULE>
+                          <INTERNAL-CONSTRS>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">255</UPPER-LIMIT>
+                          </INTERNAL-CONSTRS>
+                        </DATA-CONSTR-RULE>
+                      </DATA-CONSTR-RULES>
+                    </DATA-CONSTR>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="ca6f9a15-c2d5-4dd7-ae71-fc2f9fa09416">
+              <SHORT-NAME>Interfaces</SHORT-NAME>
+              <ELEMENTS>
+                <CLIENT-SERVER-INTERFACE UUID="db022702-9d2b-4312-baf2-4fdd1a780ed9">
+                  <SHORT-NAME>Os_Service</SHORT-NAME>
+                  <IS-SERVICE>true</IS-SERVICE>
+                  <SERVICE-KIND>OPERATING-SYSTEM</SERVICE-KIND>
+                  <OPERATIONS>
+                    <CLIENT-SERVER-OPERATION UUID="82492936-ae1f-48a1-a182-fa3b46c6cfe1">
+                      <SHORT-NAME>GetCounterValue</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">This service reads the current count value of a counter (returning either the hardware timer ticks if counter is driven by hardware or the software ticks when user drives counter).</L-2>
+                      </DESC>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="042e7872-9806-4e4f-8927-9a744321b6af">
+                          <SHORT-NAME>Value</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL"/>
+                          </DESC>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/Os_swc/DataTypes/TimeInMicrosecondsType</TYPE-TREF>
+                          <DIRECTION>OUT</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                      <POSSIBLE-ERROR-REFS>
+                        <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/MICROSAR/Os_swc/Interfaces/Os_Service/E_OK</POSSIBLE-ERROR-REF>
+                        <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/MICROSAR/Os_swc/Interfaces/Os_Service/E_OS_ID</POSSIBLE-ERROR-REF>
+                      </POSSIBLE-ERROR-REFS>
+                    </CLIENT-SERVER-OPERATION>
+                    <CLIENT-SERVER-OPERATION UUID="4d2f268a-8266-41d6-94f2-1f945d989267">
+                      <SHORT-NAME>GetElapsedValue</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">This service gets the number of ticks between the current tick value and a previously read tick value.</L-2>
+                      </DESC>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="69d65cb8-2837-4eea-8e9f-acfcb30dbdc7">
+                          <SHORT-NAME>Value</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL"/>
+                          </DESC>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/Os_swc/DataTypes/TimeInMicrosecondsType</TYPE-TREF>
+                          <DIRECTION>INOUT</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="a2f7cdd8-a792-4b6d-97d6-af0c0690736c">
+                          <SHORT-NAME>ElapsedValue</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL"/>
+                          </DESC>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/Os_swc/DataTypes/TimeInMicrosecondsType</TYPE-TREF>
+                          <DIRECTION>OUT</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                      <POSSIBLE-ERROR-REFS>
+                        <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/MICROSAR/Os_swc/Interfaces/Os_Service/E_OK</POSSIBLE-ERROR-REF>
+                        <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/MICROSAR/Os_swc/Interfaces/Os_Service/E_OS_ID</POSSIBLE-ERROR-REF>
+                        <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/MICROSAR/Os_swc/Interfaces/Os_Service/E_OS_VALUE</POSSIBLE-ERROR-REF>
+                      </POSSIBLE-ERROR-REFS>
+                    </CLIENT-SERVER-OPERATION>
+                  </OPERATIONS>
+                  <POSSIBLE-ERRORS>
+                    <APPLICATION-ERROR UUID="11af7ca8-595b-4edc-ba94-69c9776977f6">
+                      <SHORT-NAME>E_OK</SHORT-NAME>
+                      <ERROR-CODE>0</ERROR-CODE>
+                    </APPLICATION-ERROR>
+                    <APPLICATION-ERROR UUID="f436f266-10dc-4f45-ae5f-2f30be75bf33">
+                      <SHORT-NAME>E_OS_ACCESS</SHORT-NAME>
+                      <ERROR-CODE>1</ERROR-CODE>
+                    </APPLICATION-ERROR>
+                    <APPLICATION-ERROR UUID="df5b1ffa-f837-4ee9-b3ba-96c14ed2470f">
+                      <SHORT-NAME>E_OS_ID</SHORT-NAME>
+                      <ERROR-CODE>3</ERROR-CODE>
+                    </APPLICATION-ERROR>
+                    <APPLICATION-ERROR UUID="81dc752e-93d1-42b2-9969-8ce937cded40">
+                      <SHORT-NAME>E_OS_STATE</SHORT-NAME>
+                      <ERROR-CODE>7</ERROR-CODE>
+                    </APPLICATION-ERROR>
+                    <APPLICATION-ERROR UUID="f893c100-1af0-4977-823a-6bc6d5ad85be">
+                      <SHORT-NAME>E_OS_VALUE</SHORT-NAME>
+                      <ERROR-CODE>8</ERROR-CODE>
+                    </APPLICATION-ERROR>
+                  </POSSIBLE-ERRORS>
+                </CLIENT-SERVER-INTERFACE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="b1625e07-cb3c-4197-a260-d2051703ed87">
+              <SHORT-NAME>ComponentTypes</SHORT-NAME>
+              <ELEMENTS>
+                <SERVICE-SW-COMPONENT-TYPE UUID="a02934a5-78fb-4295-906b-a8c1388719a0">
+                  <SHORT-NAME>Os_OsCore0_swc</SHORT-NAME>
+                  <CATEGORY>SERVICE_COMPONENT</CATEGORY>
+                  <PORTS>
+                    <P-PORT-PROTOTYPE UUID="8a260652-1a17-4d4a-be6c-9355a3f955af">
+                      <SHORT-NAME>OsService_SystemTimer</SHORT-NAME>
+                      <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/MICROSAR/Os_swc/Interfaces/Os_Service</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                  </PORTS>
+                  <INTERNAL-BEHAVIORS>
+                    <SWC-INTERNAL-BEHAVIOR UUID="102ee805-c398-4174-9b2c-503f4e54d893">
+                      <SHORT-NAME>Os_OsCore0_swcInternalBehavior</SHORT-NAME>
+                      <EVENTS>
+                        <OPERATION-INVOKED-EVENT UUID="957356a1-4f9c-4e3b-9125-8b0470a537aa">
+                          <SHORT-NAME>OpEventGetCounterValue_GetCounterValue_OsService_SystemTimer</SHORT-NAME>
+                          <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/MICROSAR/Os_swc/ComponentTypes/Os_OsCore0_swc/Os_OsCore0_swcInternalBehavior/GetCounterValue</START-ON-EVENT-REF>
+                          <OPERATION-IREF>
+                            <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/MICROSAR/Os_swc/ComponentTypes/Os_OsCore0_swc/OsService_SystemTimer</CONTEXT-P-PORT-REF>
+                            <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR/Os_swc/Interfaces/Os_Service/GetCounterValue</TARGET-PROVIDED-OPERATION-REF>
+                          </OPERATION-IREF>
+                        </OPERATION-INVOKED-EVENT>
+                        <OPERATION-INVOKED-EVENT UUID="569eb5ea-3ab5-4ec7-b369-971e91ac1d81">
+                          <SHORT-NAME>OpEventGetElapsedValue_GetElapsedValue_OsService_SystemTimer</SHORT-NAME>
+                          <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/MICROSAR/Os_swc/ComponentTypes/Os_OsCore0_swc/Os_OsCore0_swcInternalBehavior/GetElapsedValue</START-ON-EVENT-REF>
+                          <OPERATION-IREF>
+                            <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/MICROSAR/Os_swc/ComponentTypes/Os_OsCore0_swc/OsService_SystemTimer</CONTEXT-P-PORT-REF>
+                            <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR/Os_swc/Interfaces/Os_Service/GetElapsedValue</TARGET-PROVIDED-OPERATION-REF>
+                          </OPERATION-IREF>
+                        </OPERATION-INVOKED-EVENT>
+                      </EVENTS>
+                      <HANDLE-TERMINATION-AND-RESTART>NO-SUPPORT</HANDLE-TERMINATION-AND-RESTART>
+                      <PORT-API-OPTIONS>
+                        <PORT-API-OPTION>
+                          <ENABLE-TAKE-ADDRESS>true</ENABLE-TAKE-ADDRESS>
+                          <INDIRECT-API>false</INDIRECT-API>
+                          <PORT-ARG-VALUES>
+                            <PORT-DEFINED-ARGUMENT-VALUE>
+                              <VALUE>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>SystemTimer</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                              </VALUE>
+                              <VALUE-TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/Os_swc/DataTypes/CounterType</VALUE-TYPE-TREF>
+                            </PORT-DEFINED-ARGUMENT-VALUE>
+                          </PORT-ARG-VALUES>
+                          <PORT-REF DEST="P-PORT-PROTOTYPE">/MICROSAR/Os_swc/ComponentTypes/Os_OsCore0_swc/OsService_SystemTimer</PORT-REF>
+                        </PORT-API-OPTION>
+                      </PORT-API-OPTIONS>
+                      <RUNNABLES>
+                        <RUNNABLE-ENTITY UUID="c4db1456-5221-43ff-b3f0-923358968b1f">
+                          <SHORT-NAME>GetCounterValue</SHORT-NAME>
+                          <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                          <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                          <SYMBOL>GetCounterValue</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                        <RUNNABLE-ENTITY UUID="169050df-1c0c-4a94-9732-adec46e12d01">
+                          <SHORT-NAME>GetElapsedValue</SHORT-NAME>
+                          <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                          <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                          <SYMBOL>GetElapsedValue</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                      </RUNNABLES>
+                      <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                    </SWC-INTERNAL-BEHAVIOR>
+                  </INTERNAL-BEHAVIORS>
+                </SERVICE-SW-COMPONENT-TYPE>
+                <SWC-IMPLEMENTATION UUID="efaf24d5-759e-4e6e-b565-397fc4ceaba3">
+                  <SHORT-NAME>Os_OsCore0_swcImplementation</SHORT-NAME>
+                  <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+                  <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/MICROSAR/Os_swc/ComponentTypes/Os_OsCore0_swc/Os_OsCore0_swcInternalBehavior</BEHAVIOR-REF>
+                </SWC-IMPLEMENTATION>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

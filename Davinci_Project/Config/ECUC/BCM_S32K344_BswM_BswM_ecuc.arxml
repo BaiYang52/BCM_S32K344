@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ActiveEcuC</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-MODULE-CONFIGURATION-VALUES UUID="de335666-71d6-47c8-ac87-383856812f25">
+          <SHORT-NAME>BswM</SHORT-NAME>
+          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/BswM</DEFINITION-REF>
+          <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+          <MODULE-DESCRIPTION-REF DEST="BSW-IMPLEMENTATION">/MICROSAR/BswM_Impl</MODULE-DESCRIPTION-REF>
+          <CONTAINERS>
+            <ECUC-CONTAINER-VALUE UUID="f69feb10-d3f1-4983-ac1f-500cf703c858">
+              <SHORT-NAME>BswMGeneral</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMGeneral</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMMainFunctionPeriod</DEFINITION-REF>
+                  <VALUE>0.01</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMVersionInfoApi</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMCanSMEnabled</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMComMEnabled</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMDcmEnabled</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMDevErrorDetect</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMEcuMEnabled</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMEthIfEnabled</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMEthSMEnabled</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMFrSMEnabled</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMGenericRequestEnabled</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMJ1939DcmEnabled</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMJ1939NmEnabled</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMLinSMEnabled</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMLinTPEnabled</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMNmEnabled</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMNvMEnabled</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMPduREnabled</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMRuleControlEnabled</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMSdEnabled</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMWdgMEnabled</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMModeCheck</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMActionListQueueSearchAlgorithm</DEFINITION-REF>
+                  <VALUE>LINEAR_SEARCH</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMSafeBswChecks</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="83112935-b1e9-447b-95fa-608394893e62">
+                  <SHORT-NAME>BswMCommonData</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMGeneral/BswMCommonData</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="1aa9608f-277a-48b3-9cff-57f0ec146f2a">
+                  <SHORT-NAME>BswMGeneration</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMGeneral/BswMGeneration</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMGeneration/BswMOutOfBoundsWriteSanitizer</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMGeneration/BswMOutOfBoundsReadSanitizer</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMGeneration/BswMReduceConstantData2Define</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/BswM/BswMGeneral/BswMGeneration/BswMBoolDataInArrayOfStructStrategy</DEFINITION-REF>
+                      <VALUE>BITMASKING</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="ec496cb3-990c-4b34-b420-3a251a5499de">
+              <SHORT-NAME>BswMConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="5e7d5122-ca4b-4a58-a4b9-165c398173d5">
+                  <SHORT-NAME>BswMArbitration</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMArbitration</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="1890e469-d9b3-42ff-84cd-81dcee5ebc51">
+                  <SHORT-NAME>BswMModeControl</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl</DEFINITION-REF>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+          </CONTAINERS>
+        </ECUC-MODULE-CONFIGURATION-VALUES>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

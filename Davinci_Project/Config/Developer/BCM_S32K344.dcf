@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DCF ARSCHEMA="470_DEV">
+	<Version>1.0</Version>
+	<PROFILESETTINGS>ProfileSettings.xml</PROFILESETTINGS>
+	<ADMINDATATEMPLATES>AdminDataTemplates.xml</ADMINDATATEMPLATES>
+	<PROJECTASSISTANT>../../BCM_S32K344.dpa</PROJECTASSISTANT>
+	<FILEREF>
+		<ARXML>Packages.arxml</ARXML>
+	</FILEREF>
+	<FILEREF>
+		<ARXML>DataTypes.arxml</ARXML>
+	</FILEREF>
+	<FILEREF>
+		<ARXML>PortInterfaces.arxml</ARXML>
+	</FILEREF>
+	<FILEREF>
+		<ARXML>ECUProjects/BCM_S32K344.arxml</ARXML>
+	</FILEREF>
+</DCF>

@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ActiveEcuC</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-MODULE-CONFIGURATION-VALUES UUID="223a3929-3cea-4cf1-9259-9fd29e58b8f6">
+          <SHORT-NAME>EcuM</SHORT-NAME>
+          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/EcuM</DEFINITION-REF>
+          <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+          <MODULE-DESCRIPTION-REF DEST="BSW-IMPLEMENTATION">/MICROSAR/EcuM_Impl</MODULE-DESCRIPTION-REF>
+          <CONTAINERS>
+            <ECUC-CONTAINER-VALUE UUID="d472aa48-c578-47bc-9fe4-dede7bf41894">
+              <SHORT-NAME>EcuMFlexGeneral</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMFlexGeneral</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMFlexGeneral/EcuMAlarmClockPresent</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMFlexGeneral/EcuMResetLoopDetection</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMFlexGeneral/EcuMEnableDefBehaviour</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="318115dd-8dd9-4a8a-9314-58985271e48a">
+              <SHORT-NAME>EcuMConfiguration</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="4a8737ba-b88a-417c-bf2d-2c8c55c27b17">
+                  <SHORT-NAME>EcuMCommonConfiguration</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMConfigConsistencyHash</DEFINITION-REF>
+                      <VALUE>15523458953910270407</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDefaultAppMode</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/Os/OSDEFAULTAPPMODE</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMOSResource</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/Os/OsResource</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="eeb16d27-0bab-4be1-bf02-a3261cd23b04">
+                      <SHORT-NAME>ECUM_WKSOURCE_POWER</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMWakeupSourceId</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMValidationTimeout</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMCheckWakeupTimeout</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMWakeupSourcePolling</DEFINITION-REF>
+                          <VALUE>false</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="402420c1-1172-40b2-be6e-6ca0962db621">
+                      <SHORT-NAME>ECUM_WKSOURCE_RESET</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMWakeupSourceId</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMValidationTimeout</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMCheckWakeupTimeout</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMWakeupSourcePolling</DEFINITION-REF>
+                          <VALUE>false</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="da9df3d4-5c3b-49c3-9359-e4815e2ae764">
+                      <SHORT-NAME>ECUM_WKSOURCE_INTERNAL_RESET</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMWakeupSourceId</DEFINITION-REF>
+                          <VALUE>2</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMValidationTimeout</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMCheckWakeupTimeout</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMWakeupSourcePolling</DEFINITION-REF>
+                          <VALUE>false</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="816ebb28-ddb5-4f6f-b199-be2df5352be4">
+                      <SHORT-NAME>ECUM_WKSOURCE_INTERNAL_WDG</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMWakeupSourceId</DEFINITION-REF>
+                          <VALUE>3</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMValidationTimeout</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMCheckWakeupTimeout</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMWakeupSourcePolling</DEFINITION-REF>
+                          <VALUE>false</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="d85344a8-5f14-411e-9d70-f609f5024007">
+                      <SHORT-NAME>ECUM_WKSOURCE_EXTERNAL_WDG</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMWakeupSourceId</DEFINITION-REF>
+                          <VALUE>4</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMValidationTimeout</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMCheckWakeupTimeout</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource/EcuMWakeupSourcePolling</DEFINITION-REF>
+                          <VALUE>false</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="0d863160-67c5-4e29-a915-1d642db4ac12">
+                      <SHORT-NAME>EcuMDefaultShutdownTarget</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDefaultShutdownTarget</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDefaultShutdownTarget/EcuMDefaultState</DEFINITION-REF>
+                          <VALUE>EcuMStateOff</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="8087b95b-703a-4b56-b0f3-a8f4bc50829a">
+                      <SHORT-NAME>EcuMDriverInitListOne</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListOne</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="de79b8e5-5194-4f8f-8875-ca99aa7aeced">
+                          <SHORT-NAME>OsIf_Init</SHORT-NAME>
+                          <INDEX>0</INDEX>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListOne/EcuMDriverInitItem</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListOne/EcuMDriverInitItem/EcuMModuleID</DEFINITION-REF>
+                              <VALUE>Base</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListOne/EcuMDriverInitItem/EcuMModuleService</DEFINITION-REF>
+                              <VALUE>OsIf_Init</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListOne/EcuMDriverInitItem/EcuMModuleHeader</DEFINITION-REF>
+                              <VALUE>OsIf.h</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="39087deb-1d3a-4560-84fd-c81f11408e13">
+                          <SHORT-NAME>BswM_PreInit</SHORT-NAME>
+                          <INDEX>1</INDEX>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListOne/EcuMDriverInitItem</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListOne/EcuMDriverInitItem/EcuMModuleID</DEFINITION-REF>
+                              <VALUE>BswM</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListOne/EcuMDriverInitItem/EcuMModuleService</DEFINITION-REF>
+                              <VALUE>BswM_PreInit</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListOne/EcuMDriverInitItem/EcuMModuleHeader</DEFINITION-REF>
+                              <VALUE>BswM.h</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="74f12dec-a42e-4bc4-8502-347d6011ef13">
+                          <SHORT-NAME>Mcu_Init</SHORT-NAME>
+                          <INDEX>2</INDEX>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListOne/EcuMDriverInitItem</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListOne/EcuMDriverInitItem/EcuMModuleID</DEFINITION-REF>
+                              <VALUE>Mcu</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListOne/EcuMDriverInitItem/EcuMModuleService</DEFINITION-REF>
+                              <VALUE>Mcu_Init</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListOne/EcuMDriverInitItem/EcuMModuleHeader</DEFINITION-REF>
+                              <VALUE>Mcu.h</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="7aae067d-60db-4991-8281-8d61b9f63820">
+                          <SHORT-NAME>Mcu_Init_AdditionalCode</SHORT-NAME>
+                          <INDEX>3</INDEX>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListOne/EcuMDriverInitItem</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListOne/EcuMDriverInitItem/EcuMModuleID</DEFINITION-REF>
+                              <VALUE>Code</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListOne/EcuMDriverInitItem/EcuMAdditionalInitCode</DEFINITION-REF>
+                              <VALUE>Mcu_InitClock(McuConf_McuClockSettingConfig_McuClockSettingConfig_0);while (MCU_PLL_LOCKED != Mcu_GetPllStatus());Mcu_DistributePllClock();Mcu_SetMode(McuConf_McuModeSettingConf_McuModeSettingConf_0);</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListOne/EcuMDriverInitItem/EcuMModuleHeader</DEFINITION-REF>
+                              <VALUE>Mcu.h</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="5c2149c0-4bb6-4834-a769-42984917b811">
+                      <SHORT-NAME>EcuMDriverInitListZero</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListZero</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="0ecbf699-863c-472f-91ac-e3cde46f2e70">
+                          <SHORT-NAME>BswM_InitMemory</SHORT-NAME>
+                          <INDEX>0</INDEX>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListZero/EcuMDriverInitItem</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListZero/EcuMDriverInitItem/EcuMModuleID</DEFINITION-REF>
+                              <VALUE>BswM</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListZero/EcuMDriverInitItem/EcuMModuleService</DEFINITION-REF>
+                              <VALUE>BswM_InitMemory</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListZero/EcuMDriverInitItem/EcuMModuleHeader</DEFINITION-REF>
+                              <VALUE>BswM.h</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="74520bbc-9128-437c-9c6d-0915cd5b8a6a">
+                          <SHORT-NAME>Det_Init</SHORT-NAME>
+                          <INDEX>1</INDEX>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListZero/EcuMDriverInitItem</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListZero/EcuMDriverInitItem/EcuMModuleID</DEFINITION-REF>
+                              <VALUE>Det</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListZero/EcuMDriverInitItem/EcuMModuleService</DEFINITION-REF>
+                              <VALUE>Det_Init</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListZero/EcuMDriverInitItem/EcuMModuleHeader</DEFINITION-REF>
+                              <VALUE>Det.h</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="56294ff0-aa68-4762-af92-84173f9b88be">
+                          <SHORT-NAME>Det_InitMemory</SHORT-NAME>
+                          <INDEX>2</INDEX>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListZero/EcuMDriverInitItem</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListZero/EcuMDriverInitItem/EcuMModuleID</DEFINITION-REF>
+                              <VALUE>Det</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListZero/EcuMDriverInitItem/EcuMModuleService</DEFINITION-REF>
+                              <VALUE>Det_InitMemory</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListZero/EcuMDriverInitItem/EcuMModuleHeader</DEFINITION-REF>
+                              <VALUE>Det.h</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="994e06dd-2868-4443-bc03-282352f3db8a">
+                          <SHORT-NAME>Rte_InitMemory</SHORT-NAME>
+                          <INDEX>3</INDEX>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListZero/EcuMDriverInitItem</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListZero/EcuMDriverInitItem/EcuMModuleID</DEFINITION-REF>
+                              <VALUE>Rte</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListZero/EcuMDriverInitItem/EcuMModuleService</DEFINITION-REF>
+                              <VALUE>Rte_InitMemory</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMDriverInitListZero/EcuMDriverInitItem/EcuMModuleHeader</DEFINITION-REF>
+                              <VALUE>Rte_Main.h</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="01824c1d-d564-435a-ac9c-10619aed1eee">
+                  <SHORT-NAME>EcuMFlexConfiguration</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMFlexConfiguration</DEFINITION-REF>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-SYMBOLIC-NAME-REFERENCE-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMNormalMcuModeRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/Mcu/McuModuleConfiguration/McuModeSettingConf_0</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="01ac1e9f-36c6-4f57-a3cc-fe6423c24064">
+                      <SHORT-NAME>ECUM_RESET_MCU</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMResetMode</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMResetMode/EcuMResetModeId</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="d2f9ae56-df26-4f6d-a37c-5260cb15466b">
+                      <SHORT-NAME>ECUM_RESET_WDG</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMResetMode</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMResetMode/EcuMResetModeId</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="65d105fc-cd5d-4e26-9f25-a8f397ac5459">
+                      <SHORT-NAME>ECUM_RESET_IO</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMResetMode</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMResetMode/EcuMResetModeId</DEFINITION-REF>
+                          <VALUE>2</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="71e4d563-3a0f-4d26-885a-1c09eebdd396">
+                      <SHORT-NAME>ECUM_CAUSE_UNKNOWN</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMShutdownCause</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMShutdownCause/EcuMShutdownCauseId</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="33c5ea39-1340-4379-8589-50b5e4d54c51">
+                      <SHORT-NAME>ECUM_CAUSE_ECU_STATE</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMShutdownCause</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMShutdownCause/EcuMShutdownCauseId</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="07055ead-2d84-44aa-a4e6-9a9e9c38211d">
+                      <SHORT-NAME>ECUM_CAUSE_WDGM</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMShutdownCause</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMShutdownCause/EcuMShutdownCauseId</DEFINITION-REF>
+                          <VALUE>2</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="32b679c5-a7ec-4274-a111-9f38387fcbee">
+                      <SHORT-NAME>ECUM_CAUSE_DCM</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMShutdownCause</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMShutdownCause/EcuMShutdownCauseId</DEFINITION-REF>
+                          <VALUE>3</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="8bdca037-d287-4d51-8325-9532c2de76cc">
+                      <SHORT-NAME>ECUM_RESET_WAKEUP</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMResetMode</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMResetMode/EcuMResetModeId</DEFINITION-REF>
+                          <VALUE>3</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="3441fafe-afef-4c19-bea8-689427990a00">
+              <SHORT-NAME>EcuMGeneral</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMGeneral</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMGeneral/EcuMVersionInfoApi</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMGeneral/EcuMDevErrorDetect</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMGeneral/EcuMIncludeDem</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMGeneral/EcuMIncludeDet</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/EcuM/EcuMGeneral/EcuMMainFunctionPeriod</DEFINITION-REF>
+                  <VALUE>0.01</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMGeneral/EcuMDeferredBswMNotification</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMGeneral/EcuMSlaveCoreHandling</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMGeneral/EcuMEnableFixBehavior</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMGeneral/EcuMNonChannelWakeupInRun</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMGeneral/EcuMSchMStartInitialization</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMGeneral/EcuMSafeBswChecks</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="6be8e1f0-ed27-46d9-b870-e4f1127a3549">
+                  <SHORT-NAME>EcuMGeneration</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMGeneral/EcuMGeneration</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMGeneral/EcuMGeneration/EcuMOutOfBoundsWriteSanitizer</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMGeneral/EcuMGeneration/EcuMOutOfBoundsReadSanitizer</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuM/EcuMGeneral/EcuMGeneration/EcuMInterfacesForDeactivatedData</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+          </CONTAINERS>
+        </ECUC-MODULE-CONFIGURATION-VALUES>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

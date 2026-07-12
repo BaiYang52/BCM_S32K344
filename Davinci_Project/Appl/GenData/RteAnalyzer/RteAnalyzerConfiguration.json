@@ -1,0 +1,601 @@
+{
+   "description" : "RTE Analyzer configuration file",
+   "version" : "4.32.0",
+   "BswOsApplication" : "",
+   "COMDirectory" : "E:/Project/GitHub/BCM_S32K344/CBD2300384_D00/Components/Com/Implementation",
+   "DataConsistencyAPIGroupList" : [
+      {
+         "CanBeNested" : "0",
+         "HandleIndex" : "-1",
+         "LockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "DisableAllInterrupts",
+               "RequiresTrustedContext" : "0"
+            }
+         ],
+         "LocksOtherCores" : "0",
+         "LocksSameCore" : "1",
+         "ProhibitedAPIFunctions" : [
+            "^(Wait|Set)Event",
+            "^(Activate|Chain|Terminate)Task",
+            "^Suspend(All|OS)Interrupts",
+            "^GetResource",
+            "^osDisable.",
+            "^Schedule"
+         ],
+         "Type" : "INTERRUPT",
+         "UnlockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "EnableAllInterrupts",
+               "RequiresTrustedContext" : "0"
+            }
+         ]
+      },
+      {
+         "CanBeNested" : "0",
+         "HandleIndex" : "-1",
+         "LockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osDisableGlobalAM",
+               "RequiresTrustedContext" : "0"
+            },
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osDisableGlobalKM",
+               "RequiresTrustedContext" : "1"
+            },
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osDisableGlobalUM",
+               "RequiresTrustedContext" : "0"
+            }
+         ],
+         "LocksOtherCores" : "0",
+         "LocksSameCore" : "1",
+         "ProhibitedAPIFunctions" : [
+            "^(Wait|Set)Event",
+            "^(Activate|Chain|Terminate)Task",
+            "^DisableAllInterrupts",
+            "^GetResource",
+            "^osDisable.",
+            "^Schedule"
+         ],
+         "Type" : "INTERRUPT",
+         "UnlockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osEnableGlobalAM",
+               "RequiresTrustedContext" : "0"
+            },
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osEnableGlobalKM",
+               "RequiresTrustedContext" : "1"
+            },
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osEnableGlobalUM",
+               "RequiresTrustedContext" : "0"
+            }
+         ]
+      },
+      {
+         "CanBeNested" : "0",
+         "HandleIndex" : "-1",
+         "LockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osDisableLevelAM",
+               "RequiresTrustedContext" : "0"
+            },
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osDisableLevelKM",
+               "RequiresTrustedContext" : "1"
+            },
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osDisableLevelUM",
+               "RequiresTrustedContext" : "0"
+            }
+         ],
+         "LocksOtherCores" : "0",
+         "LocksSameCore" : "1",
+         "ProhibitedAPIFunctions" : [
+            "^(Wait|Set)Event",
+            "^(Activate|Chain|Terminate)Task",
+            "^DisableAllInterrupts",
+            "^GetResource",
+            "^osDisable.",
+            "^Schedule"
+         ],
+         "Type" : "INTERRUPT",
+         "UnlockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osEnableLevelAM",
+               "RequiresTrustedContext" : "0"
+            },
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osEnableLevelKM",
+               "RequiresTrustedContext" : "1"
+            },
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osEnableLevelUM",
+               "RequiresTrustedContext" : "0"
+            }
+         ]
+      },
+      {
+         "CanBeNested" : "1",
+         "HandleIndex" : "-1",
+         "LockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "SuspendAllInterrupts",
+               "RequiresTrustedContext" : "0"
+            }
+         ],
+         "LocksOtherCores" : "0",
+         "LocksSameCore" : "1",
+         "ProhibitedAPIFunctions" : [
+            "^(Wait|Set)Event",
+            "^(Activate|Chain|Terminate)Task",
+            "^DisableAllInterrupts",
+            "^GetResource",
+            "^osDisable.",
+            "^Schedule"
+         ],
+         "Type" : "INTERRUPT",
+         "UnlockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "ResumeAllInterrupts",
+               "RequiresTrustedContext" : "0"
+            }
+         ]
+      },
+      {
+         "CanBeNested" : "1",
+         "HandleIndex" : "-1",
+         "LockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "SuspendOSInterrupts",
+               "RequiresTrustedContext" : "0"
+            }
+         ],
+         "LocksOtherCores" : "0",
+         "LocksSameCore" : "1",
+         "ProhibitedAPIFunctions" : [
+            "^(Wait|Set)Event",
+            "^(Activate|Chain|Terminate)Task",
+            "^DisableAllInterrupts",
+            "^GetResource",
+            "^osDisable.",
+            "^Schedule"
+         ],
+         "Type" : "INTERRUPT",
+         "UnlockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "ResumeOSInterrupts",
+               "RequiresTrustedContext" : "0"
+            }
+         ]
+      },
+      {
+         "CanBeNested" : "0",
+         "HandleIndex" : "0",
+         "LockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "GetResource",
+               "RequiresTrustedContext" : "0"
+            }
+         ],
+         "LocksOtherCores" : "0",
+         "LocksSameCore" : "1",
+         "ProhibitedAPIFunctions" : [
+            "^WaitEvent",
+            "^(Chain|Terminate)Task",
+            "^Schedule"
+         ],
+         "Type" : "RESOURCE",
+         "UnlockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "ReleaseResource",
+               "RequiresTrustedContext" : "0"
+            }
+         ]
+      },
+      {
+         "CanBeNested" : "0",
+         "HandleIndex" : "0",
+         "LockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "GetSpinlock",
+               "RequiresTrustedContext" : "0"
+            }
+         ],
+         "LocksOtherCores" : "1",
+         "LocksSameCore" : "0",
+         "ProhibitedAPIFunctions" : [
+            "^(Wait|Set)Event",
+            "^(Activate|Chain|Terminate)Task",
+            "^Schedule"
+         ],
+         "Type" : "SPINLOCK",
+         "UnlockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "ReleaseSpinlock",
+               "RequiresTrustedContext" : "0"
+            }
+         ]
+      }
+   ],
+   "ISRList" : [
+      {
+         "ExecutedOnTaskLevel" : "1",
+         "NamePattern" : "Rte_GetMirror.*",
+         "OsApplication" : ""
+      },
+      {
+         "ExecutedOnTaskLevel" : "1",
+         "NamePattern" : "Rte_SetMirror.*",
+         "OsApplication" : ""
+      },
+      {
+         "ExecutedOnTaskLevel" : "1",
+         "NamePattern" : "Rte_NvMNotifyJobFinished.*",
+         "OsApplication" : ""
+      },
+      {
+         "ExecutedOnTaskLevel" : "1",
+         "NamePattern" : "Rte_NvMNotifyInitBlock.*",
+         "OsApplication" : ""
+      }
+   ],
+   "InitFunctionNamePatternList" : [
+      "Rte_InitMemory",
+      "SchM_Init",
+      "Rte_Start",
+      "Rte_StartTiming",
+      "E2EXf_Init",
+      "Rte_SetMirror_",
+      "SomeIpXf_InitMemory",
+      "SchM_Start",
+      "SchM_StartTiming"
+   ],
+   "InlineFunctionNamePatternList" : [
+      "Rte_QAddElement.*",
+      "Rte_QUnqueueElement.*",
+      "Rte_MemCmp.*",
+      "Rte_DecDisableFlags.*",
+      "Rte_IncDisableFlags.*",
+      "^E2EXf_.*",
+      "TSC_Inline.*",
+      "Rte_IocReceive_Rte_M.*",
+      "Rte_IocPeek_Rte_M.*",
+      "Rte_IocSend_Rte_M.*",
+      "^Rte_IWrite_.*$",
+      "^Rte_IRead_.*$",
+      "^ComXf_Copy.*$",
+      "^DiagXf_Copy.*$",
+      "^SomeIpXf_Copy.*$",
+      "^SomeIpXf_GetIndex.*$",
+      "^SomeIpXf_ReadLength.*$",
+      "^Rte_LET_ReportErrorInternal$"
+   ],
+   "MemCpyFunctionNamePatternList" : [
+      "^llvm.memcpy",
+      "^memcpy",
+      "^Rte_MemCpy.*",
+      "^Rte_PartialMemCpy",
+      "^SomeIpXf_MemCpy.*",
+      "^VStdMemCpy_Func",
+      "^CanTSyn_MemCpy",
+      "^CanTp_Util_MemCpy",
+      "^IpBase_Copy"
+   ],
+   "MemSetFunctionNamePatternList" : [
+      "^.*memset",
+      "^.*MemSet",
+      "^Rte_MemClr"
+   ],
+   "MemmapSectionNamePatternList" : [
+      "(RTE)_(START|STOP)_SEC_(.*)",
+      "(E2EXF|COMXF|DIAGXF|SOMEIPXF)_(START|STOP)_SEC_(.*)"
+   ],
+   "NonReentrantFunctionList" : [
+      {
+         "HandleIndex" : "0",
+         "NamePatternList" : [
+            "Com_SendSignal",
+            "Com_InvalidateSignal",
+            "Com_UpdateShadowSignal",
+            "Com_InvalidateSignalGroup"
+         ],
+         "NoConcurrentCallsOnDifferentCores" : "0",
+         "NoConcurrentCallsOnSameCore" : "1"
+      },
+      {
+         "HandleIndex" : "0",
+         "NamePatternList" : [
+            "Com_ReceiveShadowSignal",
+            "^Com_ReceiveSignalGroup"
+         ],
+         "NoConcurrentCallsOnDifferentCores" : "0",
+         "NoConcurrentCallsOnSameCore" : "1"
+      },
+      {
+         "HandleIndex" : "0",
+         "NamePatternList" : [
+            "LdCom_TriggerTransmit"
+         ],
+         "NoConcurrentCallsOnDifferentCores" : "0",
+         "NoConcurrentCallsOnSameCore" : "1"
+      },
+      {
+         "HandleIndex" : "-1",
+         "NamePatternList" : [
+            "^IocSend_(.+)(_[:digit:]+)?",
+            "^IocWrite_(.+)(_[:digit:]+)?",
+            "^IocReceive_(.+)",
+            "^IocRead_(.+)"
+         ],
+         "NoConcurrentCallsOnDifferentCores" : "1",
+         "NoConcurrentCallsOnSameCore" : "1"
+      }
+   ],
+   "NotReportedConcurrentAccessList" : [
+      {
+         "Justification" : "Accesses to the server queue are synchronized with SetEvent and WaitEvent",
+         "NamePattern" : "Rte_CS_ServerQueue_.*",
+         "Type" : "VARIABLE"
+      },
+      {
+         "Justification" : "Accesses to the client queue are synchronized with SetEvent and WaitEvent",
+         "NamePattern" : "Rte_CS_ClientQueue_.*",
+         "Type" : "VARIABLE"
+      },
+      {
+         "Justification" : "Accesses to the client queue are synchronized with SetEvent and WaitEvent",
+         "NamePattern" : "Rte_CS_ClientQueue2_.*",
+         "Type" : "VARIABLE"
+      },
+      {
+         "Justification" : "Only error in runnable stubs. Will be fixed with ESCAN00085617",
+         "NamePattern" : ".*_FctPtr",
+         "Type" : "VARIABLE"
+      },
+      {
+         "Justification" : "LDCOM TP API Buffers are protected with a separate busy flag",
+         "NamePattern" : "^Rte_LdComTp_.*",
+         "Type" : "VARIABLE"
+      },
+      {
+         "Justification" : "Indices are only modified in the TP Callbacks",
+         "NamePattern" : "^Rte_.*LdComTpIndices.*",
+         "Type" : "VARIABLE"
+      },
+      {
+         "Justification" : "Accesses to the waiting task list are synchronized with SetEvent and WaitEvent",
+         "NamePattern" : "Rte_CS_WaitingTaskList_.*",
+         "Type" : "VARIABLE"
+      },
+      {
+         "Justification" : "Concurrent access is prevented by idle flags and sequence",
+         "NamePattern" : "^Ioc(Read|Write)_Rte_CS_OutParams_",
+         "Type" : "FUNCTION"
+      }
+   ],
+   "NvMBswOsApplication" : "",
+   "OsAPIFunctions" : [
+      "^os.",
+      "^Com_.",
+      "^LdCom_.",
+      "^(Get|Wait|Clear|Set)Event$",
+      "^(Disable|Enable|Suspend|Resume)AllInterrupts$",
+      "^(Suspend|Resume)OSInterrupts$",
+      "^(Activate|Terminate|Chain)Task$",
+      "^(SetRel|Cancel)Alarm$",
+      "^Get(Core|Task)ID$",
+      "^(Get|Release)(Resource|Spinlock)$",
+      "^Schedule$"
+   ],
+   "OsApplicationList" : [],
+   "PlatformSettings" : {
+      "MaxAtomicMemoryAccess" : "4"
+   },
+   "SIPDirectories" : [
+      "E:/Project/GitHub/BCM_S32K344/CBD2300384_D00/"
+   ],
+   "SourceFileList" : [
+      {
+         "IncludeDirectoryList" : [
+            "E:/Project/GitHub/BCM_S32K344/CBD2300384_D00/Components/RteAnalyzer/Generator/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TestControl"
+         ],
+         "SourceFile" : "Source/TestControl.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "E:/Project/GitHub/BCM_S32K344/CBD2300384_D00/Components/RteAnalyzer/Generator/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Rte"
+         ],
+         "SourceFile" : "../Rte.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "E:/Project/GitHub/BCM_S32K344/CBD2300384_D00/Components/RteAnalyzer/Generator/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/BswM"
+         ],
+         "SourceFile" : "Source/BswM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "E:/Project/GitHub/BCM_S32K344/CBD2300384_D00/Components/RteAnalyzer/Generator/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_BswM"
+         ],
+         "SourceFile" : "Source/TSC_SchM_BswM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "E:/Project/GitHub/BCM_S32K344/CBD2300384_D00/Components/RteAnalyzer/Generator/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Det"
+         ],
+         "SourceFile" : "Source/Det.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "E:/Project/GitHub/BCM_S32K344/CBD2300384_D00/Components/RteAnalyzer/Generator/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_Det"
+         ],
+         "SourceFile" : "Source/TSC_SchM_Det.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "E:/Project/GitHub/BCM_S32K344/CBD2300384_D00/Components/RteAnalyzer/Generator/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/EcuM"
+         ],
+         "SourceFile" : "Source/EcuM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "E:/Project/GitHub/BCM_S32K344/CBD2300384_D00/Components/RteAnalyzer/Generator/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_EcuM"
+         ],
+         "SourceFile" : "Source/TSC_SchM_EcuM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "E:/Project/GitHub/BCM_S32K344/CBD2300384_D00/Components/RteAnalyzer/Generator/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Mcu"
+         ],
+         "SourceFile" : "Source/Mcu.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "E:/Project/GitHub/BCM_S32K344/CBD2300384_D00/Components/RteAnalyzer/Generator/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_Mcu"
+         ],
+         "SourceFile" : "Source/TSC_SchM_Mcu.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "E:/Project/GitHub/BCM_S32K344/CBD2300384_D00/Components/RteAnalyzer/Generator/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_BswM"
+         ],
+         "SourceFile" : "Source/TSC_BswM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "E:/Project/GitHub/BCM_S32K344/CBD2300384_D00/Components/RteAnalyzer/Generator/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Os_OsCore0_swc"
+         ],
+         "SourceFile" : "Source/Os_OsCore0_swc.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "E:/Project/GitHub/BCM_S32K344/CBD2300384_D00/Components/RteAnalyzer/Generator/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_Os_OsCore0_swc"
+         ],
+         "SourceFile" : "Source/TSC_Os_OsCore0_swc.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "E:/Project/GitHub/BCM_S32K344/CBD2300384_D00/Components/RteAnalyzer/Generator/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_EcuM"
+         ],
+         "SourceFile" : "Source/TSC_EcuM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "E:/Project/GitHub/BCM_S32K344/CBD2300384_D00/Components/RteAnalyzer/Generator/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_Det"
+         ],
+         "SourceFile" : "Source/TSC_Det.c"
+      }
+   ],
+   "TaskList" : [
+      {
+         "OsApplication" : "",
+         "Preemptive" : "1",
+         "Priority" : "15",
+         "TaskName" : "AppRunTask"
+      },
+      {
+         "OsApplication" : "",
+         "Preemptive" : "1",
+         "Priority" : "50",
+         "TaskName" : "Default_Init_Task"
+      },
+      {
+         "OsApplication" : "",
+         "Preemptive" : "1",
+         "Priority" : "49",
+         "TaskName" : "Default_Init_Task_Trusted"
+      },
+      {
+         "OsApplication" : "",
+         "Preemptive" : "1",
+         "Priority" : "4294967295",
+         "TaskName" : "IdleTask_OsCore0"
+      }
+   ],
+   "TemplateDataBaseDirectory" : "E:\\Project\\GitHub\\BCM_S32K344\\CBD2300384_D00\\Components\\Rte\\Generator"
+}

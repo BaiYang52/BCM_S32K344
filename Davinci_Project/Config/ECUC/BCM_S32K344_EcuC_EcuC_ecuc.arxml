@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ActiveEcuC</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-MODULE-CONFIGURATION-VALUES UUID="74f98c97-1345-4992-9cba-fbbbcf9466a6">
+          <SHORT-NAME>EcuC</SHORT-NAME>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG GID="DV:CfgNamedRefs">
+                <SDG GID=".ActiveEcuC.Base">
+                  <SDG GID="OsIf_Init">
+                    <SDX-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucGeneral/BswInitialization/OsIf_Init</SDX-REF>
+                  </SDG>
+                </SDG>
+                <SDG GID=".ActiveEcuC.BswM">
+                  <SDG GID="BswM_InitMemory">
+                    <SDX-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucGeneral/BswInitialization/BswM_InitMemory</SDX-REF>
+                  </SDG>
+                  <SDG GID="BswM_PreInit">
+                    <SDX-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucGeneral/BswInitialization/BswM_PreInit</SDX-REF>
+                  </SDG>
+                  <SDG GID="BswM_Init">
+                    <SDX-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucGeneral/BswInitialization/BswM_Init</SDX-REF>
+                  </SDG>
+                </SDG>
+                <SDG GID=".ActiveEcuC.Det">
+                  <SDG GID="Det_InitMemory">
+                    <SDX-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucGeneral/BswInitialization/Det_InitMemory</SDX-REF>
+                  </SDG>
+                  <SDG GID="Det_Init">
+                    <SDX-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucGeneral/BswInitialization/Det_Init</SDX-REF>
+                  </SDG>
+                </SDG>
+                <SDG GID=".ActiveEcuC.EcuM">
+                  <SDG GID="EcuM_Init">
+                    <SDX-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucGeneral/BswInitialization/EcuM_Init</SDX-REF>
+                  </SDG>
+                </SDG>
+                <SDG GID=".ActiveEcuC.Mcu">
+                  <SDG GID="Mcu_Init">
+                    <SDX-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucGeneral/BswInitialization/Mcu_Init</SDX-REF>
+                  </SDG>
+                </SDG>
+                <SDG GID=".ActiveEcuC.Resource">
+                  <SDG GID="Resource_Init">
+                    <SDX-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucGeneral/BswInitialization/Resource_Init</SDX-REF>
+                  </SDG>
+                </SDG>
+                <SDG GID=".ActiveEcuC.Rte">
+                  <SDG GID="SchM_Init">
+                    <SDX-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucGeneral/BswInitialization/SchM_Init</SDX-REF>
+                  </SDG>
+                  <SDG GID="SchM_StartTiming">
+                    <SDX-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucGeneral/BswInitialization/SchM_StartTiming</SDX-REF>
+                  </SDG>
+                  <SDG GID="Rte_StartTiming">
+                    <SDX-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucGeneral/BswInitialization/Rte_StartTiming</SDX-REF>
+                  </SDG>
+                  <SDG GID="Rte_InitMemory">
+                    <SDX-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucGeneral/BswInitialization/Rte_InitMemory</SDX-REF>
+                  </SDG>
+                  <SDG GID="SchM_Start">
+                    <SDX-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucGeneral/BswInitialization/SchM_Start</SDX-REF>
+                  </SDG>
+                  <SDG GID="Rte_Start">
+                    <SDX-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucGeneral/BswInitialization/Rte_Start</SDX-REF>
+                  </SDG>
+                </SDG>
+                <SDG GID=".ActiveEcuC.vBRS">
+                  <SDG GID="Brs_Init">
+                    <SDX-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucGeneral/BswInitialization/Brs_Init</SDX-REF>
+                  </SDG>
+                </SDG>
+                <SDG GID=".ActiveEcuC.vBaseEnv">
+                  <SDG GID="vBaseEnv_Init">
+                    <SDX-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucGeneral/BswInitialization/vBaseEnv_Init</SDX-REF>
+                  </SDG>
+                </SDG>
+                <SDG GID=".ActiveEcuC.vLinkGen">
+                  <SDG GID="vLinkGen_Init">
+                    <SDX-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucGeneral/BswInitialization/vLinkGen_Init</SDX-REF>
+                  </SDG>
+                </SDG>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/EcuC</DEFINITION-REF>
+          <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+          <MODULE-DESCRIPTION-REF DEST="BSW-IMPLEMENTATION">/MICROSAR/EcuC_Impl</MODULE-DESCRIPTION-REF>
+          <CONTAINERS>
+            <ECUC-CONTAINER-VALUE UUID="c171d8be-f88c-428c-ae47-8209f9a3b758">
+              <SHORT-NAME>EcucGeneral</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/DummyFunction</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/DummyStatement</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/StructAlignment</DEFINITION-REF>
+                  <VALUE>Auto</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/ArrayAlignment</DEFINITION-REF>
+                  <VALUE>Auto</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/StructInArrayAlignment</DEFINITION-REF>
+                  <VALUE>Auto</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/SizeOfEnum</DEFINITION-REF>
+                  <VALUE>Size32Bit</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/SizeOfROMPointer</DEFINITION-REF>
+                  <VALUE>Size32Bit</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/SizeOfRAMPointer</DEFINITION-REF>
+                  <VALUE>Size32Bit</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/DummyStatementKind</DEFINITION-REF>
+                  <VALUE>SelfAssignment</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/AtomicBitAccessInBitfield</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/AtomicVariableAccess</DEFINITION-REF>
+                  <VALUE>Atomic32BitAccess</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/CPUType</DEFINITION-REF>
+                  <VALUE>CPU32Bit</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/SizeOfInt</DEFINITION-REF>
+                  <VALUE>Size32Bit</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/ByteOrder</DEFINITION-REF>
+                  <VALUE>LITTLE_ENDIAN</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BitOrder</DEFINITION-REF>
+                  <VALUE>LSB_to_MSB</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BitFieldDataType</DEFINITION-REF>
+                  <VALUE>INT</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/ConditionalGenerating</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/EcucBswImplementationCodeType</DEFINITION-REF>
+                  <VALUE>EcuCSourceCode</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/EcuCUseStdReturnTypeForRte</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="28254eb1-2882-48bc-a628-d11f749ce1e6">
+                  <SHORT-NAME>BswInitialization</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="534bf8fe-4a73-480f-b530-c5b58d73519d">
+                      <SHORT-NAME>OsIf_Init</SHORT-NAME>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <LABEL>
+                            <L-4 L="FOR-ALL">/ActiveEcuC/Base</L-4>
+                          </LABEL>
+                          <ANNOTATION-ORIGIN>DV:EcucBswInitFunction</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT>
+                            <P>
+                              <L-1 L="FOR-ALL">PLAIN_TEXT</L-1>
+                            </P>
+                            <P>
+                              <L-1 L="FOR-ALL">Created OsIf_Init by Extended Init XML Service</L-1>
+                            </P>
+                          </ANNOTATION-TEXT>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/Header</DEFINITION-REF>
+                          <VALUE>OsIf.h</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/InitPhase</DEFINITION-REF>
+                          <VALUE>INIT_ONE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ConfigType</DEFINITION-REF>
+                          <VALUE>Base_ConfigType</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ConfigPtrClass</DEFINITION-REF>
+                          <VALUE>BASE_APPL_CONST</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ConfigPtrName</DEFINITION-REF>
+                          <VALUE>NULL_PTR</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ModuleRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/Base</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="06bff913-7f34-45f2-b2d3-63f0da6b96ad">
+                      <SHORT-NAME>BswM_InitMemory</SHORT-NAME>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <LABEL>
+                            <L-4 L="FOR-ALL">/ActiveEcuC/BswM</L-4>
+                          </LABEL>
+                          <ANNOTATION-ORIGIN>DV:EcucBswInitFunction</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT>
+                            <P>
+                              <L-1 L="FOR-ALL">PLAIN_TEXT</L-1>
+                            </P>
+                            <P>
+                              <L-1 L="FOR-ALL">InitMemory function description of BswM in UnfilteredViewInInvariantProject (UnfilteredInvariantProjectModelView) .</L-1>
+                            </P>
+                          </ANNOTATION-TEXT>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/Header</DEFINITION-REF>
+                          <VALUE>BswM.h</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/InitPhase</DEFINITION-REF>
+                          <VALUE>INIT_MEMORY</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ModuleRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/BswM</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="f4af8bfa-99a3-4c7b-93d6-b766b8bbe8a6">
+                      <SHORT-NAME>BswM_PreInit</SHORT-NAME>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <LABEL>
+                            <L-4 L="FOR-ALL">/ActiveEcuC/BswM</L-4>
+                          </LABEL>
+                          <ANNOTATION-ORIGIN>DV:EcucBswInitFunction</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT>
+                            <P>
+                              <L-1 L="FOR-ALL">PLAIN_TEXT</L-1>
+                            </P>
+                            <P>
+                              <L-1 L="FOR-ALL">PreInit function description of BswM in UnfilteredViewInInvariantProject (UnfilteredInvariantProjectModelView) .</L-1>
+                            </P>
+                          </ANNOTATION-TEXT>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/Header</DEFINITION-REF>
+                          <VALUE>BswM.h</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/InitPhase</DEFINITION-REF>
+                          <VALUE>INIT_ONE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ConfigType</DEFINITION-REF>
+                          <VALUE>BswM_ConfigType</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ConfigPtrClass</DEFINITION-REF>
+                          <VALUE>BSWM_INIT_DATA</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ConfigPtrName</DEFINITION-REF>
+                          <VALUE>BswM_Config_Ptr</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ModuleRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/BswM</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="deed30a5-edd1-48a6-9373-73e74ff9d3a1">
+                      <SHORT-NAME>BswM_Init</SHORT-NAME>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <LABEL>
+                            <L-4 L="FOR-ALL">/ActiveEcuC/BswM</L-4>
+                          </LABEL>
+                          <ANNOTATION-ORIGIN>DV:EcucBswInitFunction</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT>
+                            <P>
+                              <L-1 L="FOR-ALL">PLAIN_TEXT</L-1>
+                            </P>
+                            <P>
+                              <L-1 L="FOR-ALL">Init function description of BswM in UnfilteredViewInInvariantProject (UnfilteredInvariantProjectModelView) .</L-1>
+                            </P>
+                          </ANNOTATION-TEXT>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/Header</DEFINITION-REF>
+                          <VALUE>BswM.h</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/InitPhase</DEFINITION-REF>
+                          <VALUE>NO_INIT</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ConfigType</DEFINITION-REF>
+                          <VALUE>BswM_ConfigType</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ConfigPtrClass</DEFINITION-REF>
+                          <VALUE>BSWM_INIT_DATA</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ConfigPtrName</DEFINITION-REF>
+                          <VALUE>BswM_Config_Ptr</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ModuleRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/BswM</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="49bd6ad4-53ae-4576-90bd-dd93639de52b">
+                      <SHORT-NAME>Det_InitMemory</SHORT-NAME>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <LABEL>
+                            <L-4 L="FOR-ALL">/ActiveEcuC/Det</L-4>
+                          </LABEL>
+                          <ANNOTATION-ORIGIN>DV:EcucBswInitFunction</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT>
+                            <P>
+                              <L-1 L="FOR-ALL">PLAIN_TEXT</L-1>
+                            </P>
+                            <P>
+                              <L-1 L="FOR-ALL">InitMemory function description of Det in UnfilteredViewInInvariantProject (UnfilteredInvariantProjectModelView) .</L-1>
+                            </P>
+                          </ANNOTATION-TEXT>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/Header</DEFINITION-REF>
+                          <VALUE>Det.h</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/InitPhase</DEFINITION-REF>
+                          <VALUE>INIT_MEMORY</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ModuleRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/Det</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="0d517a05-988d-4824-bbba-5b045cf691b9">
+                      <SHORT-NAME>Det_Init</SHORT-NAME>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <LABEL>
+                            <L-4 L="FOR-ALL">/ActiveEcuC/Det</L-4>
+                          </LABEL>
+                          <ANNOTATION-ORIGIN>DV:EcucBswInitFunction</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT>
+                            <P>
+                              <L-1 L="FOR-ALL">PLAIN_TEXT</L-1>
+                            </P>
+                            <P>
+                              <L-1 L="FOR-ALL">Init function description of Det in UnfilteredViewInInvariantProject (UnfilteredInvariantProjectModelView) .</L-1>
+                            </P>
+                          </ANNOTATION-TEXT>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/Header</DEFINITION-REF>
+                          <VALUE>Det.h</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/InitPhase</DEFINITION-REF>
+                          <VALUE>INIT_ZERO</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ConfigType</DEFINITION-REF>
+                          <VALUE>Det_ConfigType</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ConfigPtrClass</DEFINITION-REF>
+                          <VALUE>DET_INIT_DATA</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ConfigPtrName</DEFINITION-REF>
+                          <VALUE>Det_Config_Ptr</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ModuleRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/Det</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="146172bf-2b08-4ebf-8101-14b9ff214404">
+                      <SHORT-NAME>EcuM_Init</SHORT-NAME>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <LABEL>
+                            <L-4 L="FOR-ALL">/ActiveEcuC/EcuM</L-4>
+                          </LABEL>
+                          <ANNOTATION-ORIGIN>DV:EcucBswInitFunction</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT>
+                            <P>
+                              <L-1 L="FOR-ALL">PLAIN_TEXT</L-1>
+                            </P>
+                            <P>
+                              <L-1 L="FOR-ALL">Init function description of EcuM in UnfilteredViewInInvariantProject (UnfilteredInvariantProjectModelView) .</L-1>
+                            </P>
+                          </ANNOTATION-TEXT>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/Header</DEFINITION-REF>
+                          <VALUE>EcuM.h</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/InitPhase</DEFINITION-REF>
+                          <VALUE>NO_INIT</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ConfigType</DEFINITION-REF>
+                          <VALUE>EcuM_PbConfigType</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ConfigPtrClass</DEFINITION-REF>
+                          <VALUE>ECUM_INIT_DATA</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ConfigPtrName</DEFINITION-REF>
+                          <VALUE>EcuM_Config_Ptr</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ModuleRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/EcuM</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="17192c73-0e3d-4793-8212-b02e5c7616e2">
+                      <SHORT-NAME>Mcu_Init</SHORT-NAME>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <LABEL>
+                            <L-4 L="FOR-ALL">/ActiveEcuC/Mcu</L-4>
+                          </LABEL>
+                          <ANNOTATION-ORIGIN>DV:EcucBswInitFunction</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT>
+                            <P>
+                              <L-1 L="FOR-ALL">PLAIN_TEXT</L-1>
+                            </P>
+                            <P>
+                              <L-1 L="FOR-ALL">Created Mcu_Init by Extended Init XML Service</L-1>
+                            </P>
+                          </ANNOTATION-TEXT>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/Header</DEFINITION-REF>
+                          <VALUE>Mcu.h</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/InitPhase</DEFINITION-REF>
+                          <VALUE>INIT_ONE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ConfigType</DEFINITION-REF>
+                          <VALUE>Mcu_ConfigType</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ConfigPtrClass</DEFINITION-REF>
+                          <VALUE>MCU_APPL_CONST</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ConfigPtrName</DEFINITION-REF>
+                          <VALUE>&amp;Mcu_Config</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/AdditionalInitCode</DEFINITION-REF>
+                          <VALUE>Mcu_InitClock(McuConf_McuClockSettingConfig_McuClockSettingConfig_0);while (MCU_PLL_LOCKED != Mcu_GetPllStatus());Mcu_DistributePllClock();Mcu_SetMode(McuConf_McuModeSettingConf_McuModeSettingConf_0);</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ModuleRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/Mcu</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="cc21e4c6-6c02-4668-ad1a-6712fe6d271b">
+                      <SHORT-NAME>Resource_Init</SHORT-NAME>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <LABEL>
+                            <L-4 L="FOR-ALL">/ActiveEcuC/Resource</L-4>
+                          </LABEL>
+                          <ANNOTATION-ORIGIN>DV:EcucBswInitFunction</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT>
+                            <P>
+                              <L-1 L="FOR-ALL">PLAIN_TEXT</L-1>
+                            </P>
+                            <P>
+                              <L-1 L="FOR-ALL">Created Resource_Init by Extended Init XML Service</L-1>
+                            </P>
+                          </ANNOTATION-TEXT>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/Header</DEFINITION-REF>
+                          <VALUE>Resource.h</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/InitPhase</DEFINITION-REF>
+                          <VALUE>NO_INIT</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ModuleRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/Resource</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="21605635-ac2d-4090-b637-a8a7630455cc">
+                      <SHORT-NAME>SchM_Init</SHORT-NAME>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <LABEL>
+                            <L-4 L="FOR-ALL">/ActiveEcuC/Rte</L-4>
+                          </LABEL>
+                          <ANNOTATION-ORIGIN>DV:EcucBswInitFunction</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT>
+                            <P>
+                              <L-1 L="FOR-ALL">PLAIN_TEXT</L-1>
+                            </P>
+                            <P>
+                              <L-1 L="FOR-ALL">Automatically generated by BswInitFctConfigurationService.</L-1>
+                            </P>
+                          </ANNOTATION-TEXT>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/Header</DEFINITION-REF>
+                          <VALUE>Rte_Main.h</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/InitPhase</DEFINITION-REF>
+                          <VALUE>NO_INIT</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ModuleRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/Rte</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="7bf5232d-97fe-47a3-abdd-e619a2e75e10">
+                      <SHORT-NAME>SchM_StartTiming</SHORT-NAME>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <LABEL>
+                            <L-4 L="FOR-ALL">/ActiveEcuC/Rte</L-4>
+                          </LABEL>
+                          <ANNOTATION-ORIGIN>DV:EcucBswInitFunction</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT>
+                            <P>
+                              <L-1 L="FOR-ALL">PLAIN_TEXT</L-1>
+                            </P>
+                            <P>
+                              <L-1 L="FOR-ALL">Automatically generated by BswInitFctConfigurationService.</L-1>
+                            </P>
+                          </ANNOTATION-TEXT>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/Header</DEFINITION-REF>
+                          <VALUE>Rte_Main.h</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/InitPhase</DEFINITION-REF>
+                          <VALUE>NO_INIT</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ModuleRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/Rte</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="d7304b12-11b4-4bd9-8af1-936ac436720f">
+                      <SHORT-NAME>Rte_StartTiming</SHORT-NAME>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <LABEL>
+                            <L-4 L="FOR-ALL">/ActiveEcuC/Rte</L-4>
+                          </LABEL>
+                          <ANNOTATION-ORIGIN>DV:EcucBswInitFunction</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT>
+                            <P>
+                              <L-1 L="FOR-ALL">PLAIN_TEXT</L-1>
+                            </P>
+                            <P>
+                              <L-1 L="FOR-ALL">Automatically generated by BswInitFctConfigurationService.</L-1>
+                            </P>
+                          </ANNOTATION-TEXT>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/Header</DEFINITION-REF>
+                          <VALUE>Rte_Main.h</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/InitPhase</DEFINITION-REF>
+                          <VALUE>NO_INIT</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ModuleRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/Rte</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="bfb33dce-f2f1-4938-add5-029dcc8218f7">
+                      <SHORT-NAME>Rte_InitMemory</SHORT-NAME>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <LABEL>
+                            <L-4 L="FOR-ALL">/ActiveEcuC/Rte</L-4>
+                          </LABEL>
+                          <ANNOTATION-ORIGIN>DV:EcucBswInitFunction</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT>
+                            <P>
+                              <L-1 L="FOR-ALL">PLAIN_TEXT</L-1>
+                            </P>
+                            <P>
+                              <L-1 L="FOR-ALL">Automatically generated by BswInitFctConfigurationService.</L-1>
+                            </P>
+                          </ANNOTATION-TEXT>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/Header</DEFINITION-REF>
+                          <VALUE>Rte_Main.h</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/InitPhase</DEFINITION-REF>
+                          <VALUE>INIT_MEMORY</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ModuleRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/Rte</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="89818c8b-140b-4a7d-9920-c08f486b70c9">
+                      <SHORT-NAME>SchM_Start</SHORT-NAME>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <LABEL>
+                            <L-4 L="FOR-ALL">/ActiveEcuC/Rte</L-4>
+                          </LABEL>
+                          <ANNOTATION-ORIGIN>DV:EcucBswInitFunction</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT>
+                            <P>
+                              <L-1 L="FOR-ALL">PLAIN_TEXT</L-1>
+                            </P>
+                            <P>
+                              <L-1 L="FOR-ALL">Automatically generated by BswInitFctConfigurationService.</L-1>
+                            </P>
+                          </ANNOTATION-TEXT>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/Header</DEFINITION-REF>
+                          <VALUE>Rte_Main.h</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/InitPhase</DEFINITION-REF>
+                          <VALUE>NO_INIT</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ModuleRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/Rte</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="fb7c0f10-d034-4862-992d-27f6049f76e5">
+                      <SHORT-NAME>Rte_Start</SHORT-NAME>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <LABEL>
+                            <L-4 L="FOR-ALL">/ActiveEcuC/Rte</L-4>
+                          </LABEL>
+                          <ANNOTATION-ORIGIN>DV:EcucBswInitFunction</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT>
+                            <P>
+                              <L-1 L="FOR-ALL">PLAIN_TEXT</L-1>
+                            </P>
+                            <P>
+                              <L-1 L="FOR-ALL">Automatically generated by BswInitFctConfigurationService.</L-1>
+                            </P>
+                          </ANNOTATION-TEXT>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/Header</DEFINITION-REF>
+                          <VALUE>Rte_Main.h</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/InitPhase</DEFINITION-REF>
+                          <VALUE>INIT_THREE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ModuleRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/Rte</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="7792513a-c494-4ebb-a517-ddaa92734866">
+                      <SHORT-NAME>Brs_Init</SHORT-NAME>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <LABEL>
+                            <L-4 L="FOR-ALL">/ActiveEcuC/vBRS</L-4>
+                          </LABEL>
+                          <ANNOTATION-ORIGIN>DV:EcucBswInitFunction</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT>
+                            <P>
+                              <L-1 L="FOR-ALL">PLAIN_TEXT</L-1>
+                            </P>
+                            <P>
+                              <L-1 L="FOR-ALL">Automatically generated by BswInitFctConfigurationService.</L-1>
+                            </P>
+                          </ANNOTATION-TEXT>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/Header</DEFINITION-REF>
+                          <VALUE/>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/InitPhase</DEFINITION-REF>
+                          <VALUE>NO_INIT</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ModuleRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/vBRS</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="aa72d6da-06f5-4391-a51f-2894715c324b">
+                      <SHORT-NAME>vBaseEnv_Init</SHORT-NAME>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <LABEL>
+                            <L-4 L="FOR-ALL">/ActiveEcuC/vBaseEnv</L-4>
+                          </LABEL>
+                          <ANNOTATION-ORIGIN>DV:EcucBswInitFunction</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT>
+                            <P>
+                              <L-1 L="FOR-ALL">PLAIN_TEXT</L-1>
+                            </P>
+                            <P>
+                              <L-1 L="FOR-ALL">Created vBaseEnv_Init by Extended Init XML Service</L-1>
+                            </P>
+                          </ANNOTATION-TEXT>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/Header</DEFINITION-REF>
+                          <VALUE/>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/InitPhase</DEFINITION-REF>
+                          <VALUE>NO_INIT</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ModuleRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/vBaseEnv</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="b5b35b75-ab58-498a-a25e-5ad7454e435b">
+                      <SHORT-NAME>vLinkGen_Init</SHORT-NAME>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <LABEL>
+                            <L-4 L="FOR-ALL">/ActiveEcuC/vLinkGen</L-4>
+                          </LABEL>
+                          <ANNOTATION-ORIGIN>DV:EcucBswInitFunction</ANNOTATION-ORIGIN>
+                          <ANNOTATION-TEXT>
+                            <P>
+                              <L-1 L="FOR-ALL">PLAIN_TEXT</L-1>
+                            </P>
+                            <P>
+                              <L-1 L="FOR-ALL">Dummy initialization of the vLinkGen</L-1>
+                            </P>
+                          </ANNOTATION-TEXT>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/Header</DEFINITION-REF>
+                          <VALUE>vLinkGen_Lcfg.h</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/InitPhase</DEFINITION-REF>
+                          <VALUE>NO_INIT</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction/ModuleRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/vLinkGen</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="9d4137b1-cb59-4fbd-a02e-155b193a1d61">
+              <SHORT-NAME>EcucHardware</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucHardware</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="e664e32e-0c4e-4b38-b625-3ad6f7d4cdf2">
+                  <SHORT-NAME>EcucCoreDefinition</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuC/EcucHardware/EcucCoreDefinition</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/EcuC/EcucHardware/EcucCoreDefinition/EcucCoreId</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+          </CONTAINERS>
+        </ECUC-MODULE-CONFIGURATION-VALUES>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

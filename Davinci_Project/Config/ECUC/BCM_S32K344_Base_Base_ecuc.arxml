@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ActiveEcuC</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-MODULE-CONFIGURATION-VALUES UUID="53afc4e0-297d-4ba0-a0fc-2923c091e705">
+          <SHORT-NAME>Base</SHORT-NAME>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG GID="DV:CfgPostBuild">
+                <SD GID="DV:postBuildVariantSupport">false</SD>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/TS_T40D34M20I1R0/Base</DEFINITION-REF>
+          <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+          <MODULE-DESCRIPTION-REF DEST="BSW-IMPLEMENTATION">/TS_T40D34M20I1R0/Base_Impl</MODULE-DESCRIPTION-REF>
+          <CONTAINERS>
+            <ECUC-CONTAINER-VALUE UUID="10f4f2d6-ef7e-4410-9763-20306afdf3c4">
+              <SHORT-NAME>OsIfGeneral</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D34M20I1R0/Base/OsIfGeneral</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M20I1R0/Base/OsIfGeneral/OsIfMulticoreSupport</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M20I1R0/Base/OsIfGeneral/OsIfEnableUserModeSupport</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M20I1R0/Base/OsIfGeneral/OsIfDevErrorDetect</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M20I1R0/Base/OsIfGeneral/OsIfUseSystemTimer</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M20I1R0/Base/OsIfGeneral/OsIfUseCustomTimer</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D34M20I1R0/Base/OsIfGeneral/OsIfInstanceId</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="424b3f5e-d2cc-4371-a33c-1e4140beec49">
+                  <SHORT-NAME>OsIfOperatingSystemType</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/TS_T40D34M20I1R0/Base/OsIfGeneral/OsIfOperatingSystemType</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="e39a2b5b-f3f9-43a2-aa3c-266505e7b28b">
+                      <SHORT-NAME>OsIfAutosarOsType</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D34M20I1R0/Base/OsIfGeneral/OsIfOperatingSystemType/OsIfAutosarOsType</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="5fdbd84c-3995-4f35-b15b-27c498b1ff2a">
+              <SHORT-NAME>CommonPublishedInformation</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D34M20I1R0/Base/CommonPublishedInformation</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D34M20I1R0/Base/CommonPublishedInformation/ArReleaseMajorVersion</DEFINITION-REF>
+                  <VALUE>4</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D34M20I1R0/Base/CommonPublishedInformation/ArReleaseMinorVersion</DEFINITION-REF>
+                  <VALUE>4</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D34M20I1R0/Base/CommonPublishedInformation/ArReleaseRevisionVersion</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D34M20I1R0/Base/CommonPublishedInformation/ModuleId</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D34M20I1R0/Base/CommonPublishedInformation/SwMajorVersion</DEFINITION-REF>
+                  <VALUE>2</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D34M20I1R0/Base/CommonPublishedInformation/SwMinorVersion</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D34M20I1R0/Base/CommonPublishedInformation/SwPatchVersion</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D34M20I1R0/Base/CommonPublishedInformation/VendorId</DEFINITION-REF>
+                  <VALUE>43</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+          </CONTAINERS>
+        </ECUC-MODULE-CONFIGURATION-VALUES>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

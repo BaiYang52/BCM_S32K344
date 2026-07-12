@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="ff55d029-386d-43a2-b3c2-dfef4c7a5e36">
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="8aa4a9c1-0d69-48bf-85f9-6a0e003f6e27">
+          <SHORT-NAME>EcuM_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="fd0aecb2-4456-4453-9e68-ffd7182eb13e">
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <ELEMENTS>
+                <IMPLEMENTATION-DATA-TYPE UUID="6af878eb-1673-43d9-9b46-a19b616bd314">
+                  <SHORT-NAME>EcuM_StateType</SHORT-NAME>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/MICROSAR/EcuM_swc/DataTypes/CompuMethods/EcuM_StateType</COMPU-METHOD-REF>
+                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/MICROSAR/EcuM_swc/DataTypes/DataConstrs/EcuM_StateType_Constr</DATA-CONSTR-REF>
+                        <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE UUID="56e9b662-52ed-4c62-ad75-3d19b523485b">
+                  <SHORT-NAME>EcuM_ModeType</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="FOR-ALL">ECU State Manager states.</L-2>
+                  </DESC>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/MICROSAR/EcuM_swc/DataTypes/CompuMethods/EcuM_ModeType</COMPU-METHOD-REF>
+                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/MICROSAR/EcuM_swc/DataTypes/DataConstrs/EcuM_ModeType_Constr</DATA-CONSTR-REF>
+                        <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE UUID="f804a711-c1d5-43ad-9236-484818d921da">
+                  <SHORT-NAME>EcuM_TimeType</SHORT-NAME>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/MICROSAR/EcuM_swc/DataTypes/DataConstrs/EcuM_TimeType_Constr</DATA-CONSTR-REF>
+                        <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</IMPLEMENTATION-DATA-TYPE-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE UUID="8da80060-516c-4e14-9255-add25108f5f1">
+                  <SHORT-NAME>EcuM_UserType</SHORT-NAME>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/MICROSAR/EcuM_swc/DataTypes/DataConstrs/EcuM_UserType_Constr</DATA-CONSTR-REF>
+                        <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE UUID="c5f19a72-b4a8-4959-a188-c229a6e35327">
+                  <SHORT-NAME>EcuM_ShutdownCauseType</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="FOR-ALL">This type describes the cause for a shutdown by the ECU State Manager. It can be extended by configuration.</L-2>
+                  </DESC>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/MICROSAR/EcuM_swc/DataTypes/CompuMethods/EcuM_ShutdownCauseType</COMPU-METHOD-REF>
+                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/MICROSAR/EcuM_swc/DataTypes/DataConstrs/EcuM_ShutdownCauseType_Constr</DATA-CONSTR-REF>
+                        <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE UUID="8df7d781-82bb-466d-8e65-614e4b7be595">
+                  <SHORT-NAME>EcuM_BootTargetType</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="FOR-ALL">This type represents the boot targets the ECU Manager module can be configured with. The default boot target is ECUM_BOOT_TARGET_OEM_BOOTLOADER.</L-2>
+                  </DESC>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/MICROSAR/EcuM_swc/DataTypes/CompuMethods/EcuM_BootTargetType</COMPU-METHOD-REF>
+                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/MICROSAR/EcuM_swc/DataTypes/DataConstrs/EcuM_BootTargetType_Constr</DATA-CONSTR-REF>
+                        <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+              </ELEMENTS>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="ad511cf7-976b-4875-b186-b4ce09d57ac6">
+                  <SHORT-NAME>DataConstrs</SHORT-NAME>
+                  <ELEMENTS>
+                    <DATA-CONSTR UUID="c3f3a362-021c-466f-a406-7846093cd0b1">
+                      <SHORT-NAME>EcuM_StateType_Constr</SHORT-NAME>
+                      <DATA-CONSTR-RULES>
+                        <DATA-CONSTR-RULE>
+                          <INTERNAL-CONSTRS>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">144</UPPER-LIMIT>
+                          </INTERNAL-CONSTRS>
+                        </DATA-CONSTR-RULE>
+                      </DATA-CONSTR-RULES>
+                    </DATA-CONSTR>
+                    <DATA-CONSTR UUID="33f05567-0714-4461-8578-1fc96b5d6273">
+                      <SHORT-NAME>EcuM_ModeType_Constr</SHORT-NAME>
+                      <DATA-CONSTR-RULES>
+                        <DATA-CONSTR-RULE>
+                          <INTERNAL-CONSTRS>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">3</UPPER-LIMIT>
+                          </INTERNAL-CONSTRS>
+                        </DATA-CONSTR-RULE>
+                      </DATA-CONSTR-RULES>
+                    </DATA-CONSTR>
+                    <DATA-CONSTR UUID="a929c66d-be75-409e-94e6-a791122fe7e3">
+                      <SHORT-NAME>EcuM_TimeType_Constr</SHORT-NAME>
+                      <DATA-CONSTR-RULES>
+                        <DATA-CONSTR-RULE>
+                          <INTERNAL-CONSTRS>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">4294967295</UPPER-LIMIT>
+                          </INTERNAL-CONSTRS>
+                        </DATA-CONSTR-RULE>
+                      </DATA-CONSTR-RULES>
+                    </DATA-CONSTR>
+                    <DATA-CONSTR UUID="fac78ef0-1bec-4788-ba4f-1fe5230f7f0f">
+                      <SHORT-NAME>EcuM_UserType_Constr</SHORT-NAME>
+                      <DATA-CONSTR-RULES>
+                        <DATA-CONSTR-RULE>
+                          <INTERNAL-CONSTRS>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">255</UPPER-LIMIT>
+                          </INTERNAL-CONSTRS>
+                        </DATA-CONSTR-RULE>
+                      </DATA-CONSTR-RULES>
+                    </DATA-CONSTR>
+                    <DATA-CONSTR UUID="0f2692c5-b3f6-497f-969a-3093b67c8c89">
+                      <SHORT-NAME>EcuM_ShutdownCauseType_Constr</SHORT-NAME>
+                      <DATA-CONSTR-RULES>
+                        <DATA-CONSTR-RULE>
+                          <INTERNAL-CONSTRS>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">3</UPPER-LIMIT>
+                          </INTERNAL-CONSTRS>
+                        </DATA-CONSTR-RULE>
+                      </DATA-CONSTR-RULES>
+                    </DATA-CONSTR>
+                    <DATA-CONSTR UUID="bd856473-71af-4435-9aa6-630c4238b283">
+                      <SHORT-NAME>EcuM_BootTargetType_Constr</SHORT-NAME>
+                      <DATA-CONSTR-RULES>
+                        <DATA-CONSTR-RULE>
+                          <INTERNAL-CONSTRS>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+                          </INTERNAL-CONSTRS>
+                        </DATA-CONSTR-RULE>
+                      </DATA-CONSTR-RULES>
+                    </DATA-CONSTR>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="e48bf576-17c4-456a-ba83-19b126ac4394">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                  <ELEMENTS>
+                    <COMPU-METHOD UUID="78c25f42-1854-47d7-85a0-6dc59def7b04">
+                      <SHORT-NAME>EcuM_StateType</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>ECUM_STATE_SLEEP</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">80</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">80</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>ECUM_STATE_SLEEP</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>ECUM_STATE_OFF</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">128</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">128</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>ECUM_STATE_OFF</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>ECUM_STATE_RESET</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">144</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">144</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>ECUM_STATE_RESET</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                    <COMPU-METHOD UUID="e01623b2-538c-464d-9298-55f908bc6a4f">
+                      <SHORT-NAME>EcuM_ModeType</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>EcuMConf_EcuMResetMode_ECUM_RESET_MCU</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>EcuMConf_EcuMResetMode_ECUM_RESET_MCU</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>EcuMConf_EcuMResetMode_ECUM_RESET_WDG</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>EcuMConf_EcuMResetMode_ECUM_RESET_WDG</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>EcuMConf_EcuMResetMode_ECUM_RESET_IO</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">2</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>EcuMConf_EcuMResetMode_ECUM_RESET_IO</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>EcuMConf_EcuMResetMode_ECUM_RESET_WAKEUP</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">3</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">3</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>EcuMConf_EcuMResetMode_ECUM_RESET_WAKEUP</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                    <COMPU-METHOD UUID="55c6fc0f-6097-4e9a-a6de-7d4a72c47098">
+                      <SHORT-NAME>EcuM_ShutdownCauseType</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>EcuMConf_EcuMShutdownCause_ECUM_CAUSE_UNKNOWN</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>EcuMConf_EcuMShutdownCause_ECUM_CAUSE_UNKNOWN</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>EcuMConf_EcuMShutdownCause_ECUM_CAUSE_ECU_STATE</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>EcuMConf_EcuMShutdownCause_ECUM_CAUSE_ECU_STATE</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>EcuMConf_EcuMShutdownCause_ECUM_CAUSE_WDGM</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">2</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>EcuMConf_EcuMShutdownCause_ECUM_CAUSE_WDGM</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>EcuMConf_EcuMShutdownCause_ECUM_CAUSE_DCM</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">3</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">3</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>EcuMConf_EcuMShutdownCause_ECUM_CAUSE_DCM</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                    <COMPU-METHOD UUID="ef41d1f4-a96f-4150-b5b4-37c344d10168">
+                      <SHORT-NAME>EcuM_BootTargetType</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>ECUM_BOOT_TARGET_APP</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>ECUM_BOOT_TARGET_APP</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>ECUM_BOOT_TARGET_OEM_BOOTLOADER</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>ECUM_BOOT_TARGET_OEM_BOOTLOADER</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>ECUM_BOOT_TARGET_SYS_BOOTLOADER</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">2</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>ECUM_BOOT_TARGET_SYS_BOOTLOADER</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="c40c6d59-8d90-4314-95b3-312ee5a0115c">
+              <SHORT-NAME>Interfaces</SHORT-NAME>
+              <ELEMENTS>
+                <CLIENT-SERVER-INTERFACE UUID="6b405f53-b608-4f02-9edc-178844ad4836">
+                  <SHORT-NAME>EcuM_ShutdownTarget</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="FOR-ALL">A SW-C can select a shutdown target using this interface.</L-2>
+                  </DESC>
+                  <IS-SERVICE>true</IS-SERVICE>
+                  <SERVICE-KIND>ECU-MANAGER</SERVICE-KIND>
+                  <OPERATIONS>
+                    <CLIENT-SERVER-OPERATION UUID="61550863-519d-4d36-a98b-905bc0d5ea9d">
+                      <SHORT-NAME>SelectShutdownTarget</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">The SW-C selects the cause corresponding to the next shutdown target.</L-2>
+                      </DESC>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="6bd176a1-132a-4881-87b5-fd6f60661ee4">
+                          <SHORT-NAME>targetState</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL">The selected shutdown cause.</L-2>
+                          </DESC>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/EcuM_swc/DataTypes/EcuM_StateType</TYPE-TREF>
+                          <DIRECTION>IN</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="a816d37c-ebe0-4db4-aefe-fa719afa739b">
+                          <SHORT-NAME>resetSleepMode</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL">The sleep mode (if target is ECUM_STATE_SLEEP) or the reset mechanism (if target is ECUM_STATE_RESET) of the shutdown.</L-2>
+                          </DESC>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/EcuM_swc/DataTypes/EcuM_ModeType</TYPE-TREF>
+                          <DIRECTION>IN</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                      <POSSIBLE-ERROR-REFS>
+                        <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/MICROSAR/EcuM_swc/Interfaces/EcuM_ShutdownTarget/E_NOT_OK</POSSIBLE-ERROR-REF>
+                      </POSSIBLE-ERROR-REFS>
+                    </CLIENT-SERVER-OPERATION>
+                    <CLIENT-SERVER-OPERATION UUID="7341623f-71c9-4b52-93e5-058558cbe02f">
+                      <SHORT-NAME>GetShutdownTarget</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">Returns the currently selected shutdown target for the next shutdown as set by the operation SelectShutdownTarget.</L-2>
+                      </DESC>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="cd009c02-2829-448d-87ff-625b9f79edbd">
+                          <SHORT-NAME>target</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL">The shutdown target of the next shutdown.</L-2>
+                          </DESC>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/EcuM_swc/DataTypes/EcuM_StateType</TYPE-TREF>
+                          <DIRECTION>OUT</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="5ee88226-447f-406b-a98d-9c8882006816">
+                          <SHORT-NAME>resetSleepMode</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL">The sleep mode (if target is ECUM_STATE_SLEEP) or the reset mechanism (if target is ECUM_STATE_RESET) of the shutdown.</L-2>
+                          </DESC>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/EcuM_swc/DataTypes/EcuM_ModeType</TYPE-TREF>
+                          <DIRECTION>OUT</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                      <POSSIBLE-ERROR-REFS>
+                        <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/MICROSAR/EcuM_swc/Interfaces/EcuM_ShutdownTarget/E_NOT_OK</POSSIBLE-ERROR-REF>
+                      </POSSIBLE-ERROR-REFS>
+                    </CLIENT-SERVER-OPERATION>
+                    <CLIENT-SERVER-OPERATION UUID="56212dc6-8d1f-4321-8b9b-f6df6ffa7408">
+                      <SHORT-NAME>GetLastShutdownTarget</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">Returns the shutdown target of the previous shutdown.</L-2>
+                      </DESC>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="678a8310-ada9-4874-a7d3-19a34fe52fb6">
+                          <SHORT-NAME>target</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL">The shutdown target of the previous shutdown.</L-2>
+                          </DESC>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/EcuM_swc/DataTypes/EcuM_StateType</TYPE-TREF>
+                          <DIRECTION>OUT</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="bce37374-94ac-4b30-a9ce-d6037a19816f">
+                          <SHORT-NAME>resetSleepMode</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL">The sleep mode (if target is ECUM_STATE_SLEEP) or the reset mechanism (if target is ECUM_STATE_RESET) of the shutdown.</L-2>
+                          </DESC>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/EcuM_swc/DataTypes/EcuM_ModeType</TYPE-TREF>
+                          <DIRECTION>OUT</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                      <POSSIBLE-ERROR-REFS>
+                        <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/MICROSAR/EcuM_swc/Interfaces/EcuM_ShutdownTarget/E_NOT_OK</POSSIBLE-ERROR-REF>
+                      </POSSIBLE-ERROR-REFS>
+                    </CLIENT-SERVER-OPERATION>
+                    <CLIENT-SERVER-OPERATION UUID="51e64f90-0d73-4003-853f-5a10a9fedf56">
+                      <SHORT-NAME>SelectShutdownCause</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">The SW-C selects the cause corresponding to the next shutdown target.</L-2>
+                      </DESC>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="d6221b48-3e30-4b67-a73b-999937387e7d">
+                          <SHORT-NAME>shutdownCause</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL">The selected shutdown cause.</L-2>
+                          </DESC>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/EcuM_swc/DataTypes/EcuM_ShutdownCauseType</TYPE-TREF>
+                          <DIRECTION>IN</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                      <POSSIBLE-ERROR-REFS>
+                        <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/MICROSAR/EcuM_swc/Interfaces/EcuM_ShutdownTarget/E_NOT_OK</POSSIBLE-ERROR-REF>
+                      </POSSIBLE-ERROR-REFS>
+                    </CLIENT-SERVER-OPERATION>
+                    <CLIENT-SERVER-OPERATION UUID="09b4f8e0-efc7-4f8f-905f-ad0f77831df3">
+                      <SHORT-NAME>GetShutdownCause</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">Returns the selected shutdown cause as set by the operation SelectShutdownCause.</L-2>
+                      </DESC>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="fc8a29b6-df0d-43df-b1da-a1a656458d41">
+                          <SHORT-NAME>shutdownCause</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL">The selected cause of the next shutdown.</L-2>
+                          </DESC>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/EcuM_swc/DataTypes/EcuM_ShutdownCauseType</TYPE-TREF>
+                          <DIRECTION>OUT</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                      <POSSIBLE-ERROR-REFS>
+                        <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/MICROSAR/EcuM_swc/Interfaces/EcuM_ShutdownTarget/E_NOT_OK</POSSIBLE-ERROR-REF>
+                      </POSSIBLE-ERROR-REFS>
+                    </CLIENT-SERVER-OPERATION>
+                  </OPERATIONS>
+                  <POSSIBLE-ERRORS>
+                    <APPLICATION-ERROR UUID="830e5556-df1e-46f9-9b7b-6dc590e6e1ee">
+                      <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">The new shutdown target was not set</L-2>
+                      </DESC>
+                      <ERROR-CODE>1</ERROR-CODE>
+                    </APPLICATION-ERROR>
+                  </POSSIBLE-ERRORS>
+                </CLIENT-SERVER-INTERFACE>
+                <CLIENT-SERVER-INTERFACE UUID="cdcea234-9f05-4b4b-aabe-bf9e9ef17051">
+                  <SHORT-NAME>EcuM_BootTarget</SHORT-NAME>
+                  <IS-SERVICE>true</IS-SERVICE>
+                  <SERVICE-KIND>ECU-MANAGER</SERVICE-KIND>
+                  <OPERATIONS>
+                    <CLIENT-SERVER-OPERATION UUID="0e06e7b1-db6e-43d4-819c-3e8fa22cb6f7">
+                      <SHORT-NAME>SelectBootTarget</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">The SW-C selects a boot target.</L-2>
+                      </DESC>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="2cc013af-a703-4fd5-b01b-353ea6d9052a">
+                          <SHORT-NAME>BootTarget</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL">The selected boot target.</L-2>
+                          </DESC>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/EcuM_swc/DataTypes/EcuM_BootTargetType</TYPE-TREF>
+                          <DIRECTION>IN</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                      <POSSIBLE-ERROR-REFS>
+                        <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/MICROSAR/EcuM_swc/Interfaces/EcuM_BootTarget/E_NOT_OK</POSSIBLE-ERROR-REF>
+                      </POSSIBLE-ERROR-REFS>
+                    </CLIENT-SERVER-OPERATION>
+                    <CLIENT-SERVER-OPERATION UUID="216b5b12-05c3-4c7e-979b-031de2953a15">
+                      <SHORT-NAME>GetBootTarget</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">Returns the current boot target.</L-2>
+                      </DESC>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="f06cf6a9-1027-4260-b952-e93fbacc0a49">
+                          <SHORT-NAME>BootTarget</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL">The currently selected boot target.</L-2>
+                          </DESC>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/EcuM_swc/DataTypes/EcuM_BootTargetType</TYPE-TREF>
+                          <DIRECTION>OUT</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                      <POSSIBLE-ERROR-REFS>
+                        <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/MICROSAR/EcuM_swc/Interfaces/EcuM_BootTarget/E_NOT_OK</POSSIBLE-ERROR-REF>
+                      </POSSIBLE-ERROR-REFS>
+                    </CLIENT-SERVER-OPERATION>
+                  </OPERATIONS>
+                  <POSSIBLE-ERRORS>
+                    <APPLICATION-ERROR UUID="5b03cde9-f86b-4b6c-9671-053bec6d8e57">
+                      <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">The new boot target was not accepted by EcuM</L-2>
+                      </DESC>
+                      <ERROR-CODE>1</ERROR-CODE>
+                    </APPLICATION-ERROR>
+                  </POSSIBLE-ERRORS>
+                </CLIENT-SERVER-INTERFACE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="cbf51a74-ffec-410f-9b95-064e44151c22">
+              <SHORT-NAME>ComponentTypes</SHORT-NAME>
+              <ELEMENTS>
+                <SERVICE-SW-COMPONENT-TYPE UUID="cdd10b2b-c26a-4a29-834e-e9f7ae924f3a">
+                  <SHORT-NAME>EcuM</SHORT-NAME>
+                  <CATEGORY>SERVICE_COMPONENT</CATEGORY>
+                  <PORTS>
+                    <P-PORT-PROTOTYPE UUID="08262b68-eac7-43f7-96aa-fad51bb0d422">
+                      <SHORT-NAME>EcuM_ShutdownTarget</SHORT-NAME>
+                      <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/MICROSAR/EcuM_swc/Interfaces/EcuM_ShutdownTarget</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                    <P-PORT-PROTOTYPE UUID="4d77da3f-6b6d-41f5-948b-4d94f81b993b">
+                      <SHORT-NAME>EcuM_BootTarget</SHORT-NAME>
+                      <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/MICROSAR/EcuM_swc/Interfaces/EcuM_BootTarget</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                  </PORTS>
+                  <INTERNAL-BEHAVIORS>
+                    <SWC-INTERNAL-BEHAVIOR UUID="50fce789-ac0e-4434-8863-86e0dedd4c14">
+                      <SHORT-NAME>EcuMInternalBehavior</SHORT-NAME>
+                      <EVENTS>
+                        <TIMING-EVENT UUID="2251f424-816a-4a8d-b0e4-62f777b01ec1">
+                          <SHORT-NAME>Timer_EcuM_MainFunction</SHORT-NAME>
+                          <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/MICROSAR/EcuM_swc/ComponentTypes/EcuM/EcuMInternalBehavior/EcuM_MainFunction</START-ON-EVENT-REF>
+                          <PERIOD>0.01</PERIOD>
+                        </TIMING-EVENT>
+                        <OPERATION-INVOKED-EVENT UUID="5c6ea13e-5142-4f9f-880d-1669c6f1adeb">
+                          <SHORT-NAME>OpEventSelectShutdownTarget_SelectShutdownTarget_EcuM_ShutdownTarget</SHORT-NAME>
+                          <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/MICROSAR/EcuM_swc/ComponentTypes/EcuM/EcuMInternalBehavior/SelectShutdownTarget</START-ON-EVENT-REF>
+                          <OPERATION-IREF>
+                            <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/MICROSAR/EcuM_swc/ComponentTypes/EcuM/EcuM_ShutdownTarget</CONTEXT-P-PORT-REF>
+                            <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR/EcuM_swc/Interfaces/EcuM_ShutdownTarget/SelectShutdownTarget</TARGET-PROVIDED-OPERATION-REF>
+                          </OPERATION-IREF>
+                        </OPERATION-INVOKED-EVENT>
+                        <OPERATION-INVOKED-EVENT UUID="1e4cd4ae-a5b0-4245-8f9a-c40c0d3245fa">
+                          <SHORT-NAME>OpEventGetShutdownTarget_GetShutdownTarget_EcuM_ShutdownTarget</SHORT-NAME>
+                          <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/MICROSAR/EcuM_swc/ComponentTypes/EcuM/EcuMInternalBehavior/GetShutdownTarget</START-ON-EVENT-REF>
+                          <OPERATION-IREF>
+                            <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/MICROSAR/EcuM_swc/ComponentTypes/EcuM/EcuM_ShutdownTarget</CONTEXT-P-PORT-REF>
+                            <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR/EcuM_swc/Interfaces/EcuM_ShutdownTarget/GetShutdownTarget</TARGET-PROVIDED-OPERATION-REF>
+                          </OPERATION-IREF>
+                        </OPERATION-INVOKED-EVENT>
+                        <OPERATION-INVOKED-EVENT UUID="06603ba3-1420-4dda-8a40-5938349ba770">
+                          <SHORT-NAME>OpEventGetLastShutdownTarget_GetLastShutdownTarget_EcuM_ShutdownTarget</SHORT-NAME>
+                          <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/MICROSAR/EcuM_swc/ComponentTypes/EcuM/EcuMInternalBehavior/GetLastShutdownTarget</START-ON-EVENT-REF>
+                          <OPERATION-IREF>
+                            <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/MICROSAR/EcuM_swc/ComponentTypes/EcuM/EcuM_ShutdownTarget</CONTEXT-P-PORT-REF>
+                            <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR/EcuM_swc/Interfaces/EcuM_ShutdownTarget/GetLastShutdownTarget</TARGET-PROVIDED-OPERATION-REF>
+                          </OPERATION-IREF>
+                        </OPERATION-INVOKED-EVENT>
+                        <OPERATION-INVOKED-EVENT UUID="e22008d3-a790-41eb-8498-b7fb5138bea8">
+                          <SHORT-NAME>OpEventSelectShutdownCause_SelectShutdownCause_EcuM_ShutdownTarget</SHORT-NAME>
+                          <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/MICROSAR/EcuM_swc/ComponentTypes/EcuM/EcuMInternalBehavior/SelectShutdownCause</START-ON-EVENT-REF>
+                          <OPERATION-IREF>
+                            <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/MICROSAR/EcuM_swc/ComponentTypes/EcuM/EcuM_ShutdownTarget</CONTEXT-P-PORT-REF>
+                            <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR/EcuM_swc/Interfaces/EcuM_ShutdownTarget/SelectShutdownCause</TARGET-PROVIDED-OPERATION-REF>
+                          </OPERATION-IREF>
+                        </OPERATION-INVOKED-EVENT>
+                        <OPERATION-INVOKED-EVENT UUID="dc38b5ed-74bc-4386-8d09-edd7be81877b">
+                          <SHORT-NAME>OpEventGetShutdownCause_GetShutdownCause_EcuM_ShutdownTarget</SHORT-NAME>
+                          <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/MICROSAR/EcuM_swc/ComponentTypes/EcuM/EcuMInternalBehavior/GetShutdownCause</START-ON-EVENT-REF>
+                          <OPERATION-IREF>
+                            <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/MICROSAR/EcuM_swc/ComponentTypes/EcuM/EcuM_ShutdownTarget</CONTEXT-P-PORT-REF>
+                            <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR/EcuM_swc/Interfaces/EcuM_ShutdownTarget/GetShutdownCause</TARGET-PROVIDED-OPERATION-REF>
+                          </OPERATION-IREF>
+                        </OPERATION-INVOKED-EVENT>
+                        <OPERATION-INVOKED-EVENT UUID="c344594c-18c2-4aa6-9e89-8e2b764616de">
+                          <SHORT-NAME>OpEventSelectBootTarget_SelectBootTarget_EcuM_BootTarget</SHORT-NAME>
+                          <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/MICROSAR/EcuM_swc/ComponentTypes/EcuM/EcuMInternalBehavior/SelectBootTarget</START-ON-EVENT-REF>
+                          <OPERATION-IREF>
+                            <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/MICROSAR/EcuM_swc/ComponentTypes/EcuM/EcuM_BootTarget</CONTEXT-P-PORT-REF>
+                            <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR/EcuM_swc/Interfaces/EcuM_BootTarget/SelectBootTarget</TARGET-PROVIDED-OPERATION-REF>
+                          </OPERATION-IREF>
+                        </OPERATION-INVOKED-EVENT>
+                        <OPERATION-INVOKED-EVENT UUID="9a25fa76-5b7b-4868-ab40-8da50bd6d280">
+                          <SHORT-NAME>OpEventGetBootTarget_GetBootTarget_EcuM_BootTarget</SHORT-NAME>
+                          <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/MICROSAR/EcuM_swc/ComponentTypes/EcuM/EcuMInternalBehavior/GetBootTarget</START-ON-EVENT-REF>
+                          <OPERATION-IREF>
+                            <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/MICROSAR/EcuM_swc/ComponentTypes/EcuM/EcuM_BootTarget</CONTEXT-P-PORT-REF>
+                            <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR/EcuM_swc/Interfaces/EcuM_BootTarget/GetBootTarget</TARGET-PROVIDED-OPERATION-REF>
+                          </OPERATION-IREF>
+                        </OPERATION-INVOKED-EVENT>
+                      </EVENTS>
+                      <HANDLE-TERMINATION-AND-RESTART>NO-SUPPORT</HANDLE-TERMINATION-AND-RESTART>
+                      <INCLUDED-DATA-TYPE-SETS>
+                        <INCLUDED-DATA-TYPE-SET>
+                          <DATA-TYPE-REFS>
+                            <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/EcuM_swc/DataTypes/EcuM_StateType</DATA-TYPE-REF>
+                            <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/EcuM_swc/DataTypes/EcuM_ModeType</DATA-TYPE-REF>
+                            <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/EcuM_swc/DataTypes/EcuM_TimeType</DATA-TYPE-REF>
+                            <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/EcuM_swc/DataTypes/EcuM_UserType</DATA-TYPE-REF>
+                            <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/EcuM_swc/DataTypes/EcuM_ShutdownCauseType</DATA-TYPE-REF>
+                            <DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/EcuM_swc/DataTypes/EcuM_BootTargetType</DATA-TYPE-REF>
+                          </DATA-TYPE-REFS>
+                        </INCLUDED-DATA-TYPE-SET>
+                      </INCLUDED-DATA-TYPE-SETS>
+                      <PORT-API-OPTIONS>
+                        <PORT-API-OPTION>
+                          <ENABLE-TAKE-ADDRESS>true</ENABLE-TAKE-ADDRESS>
+                          <INDIRECT-API>false</INDIRECT-API>
+                          <PORT-REF DEST="P-PORT-PROTOTYPE">/MICROSAR/EcuM_swc/ComponentTypes/EcuM/EcuM_ShutdownTarget</PORT-REF>
+                        </PORT-API-OPTION>
+                        <PORT-API-OPTION>
+                          <ENABLE-TAKE-ADDRESS>true</ENABLE-TAKE-ADDRESS>
+                          <INDIRECT-API>false</INDIRECT-API>
+                          <PORT-REF DEST="P-PORT-PROTOTYPE">/MICROSAR/EcuM_swc/ComponentTypes/EcuM/EcuM_BootTarget</PORT-REF>
+                        </PORT-API-OPTION>
+                      </PORT-API-OPTIONS>
+                      <RUNNABLES>
+                        <RUNNABLE-ENTITY UUID="c1b079b4-65e8-4a4a-a477-b408141a775d">
+                          <SHORT-NAME>EcuM_MainFunction</SHORT-NAME>
+                          <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                          <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                          <SYMBOL>EcuM_MainFunction</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                        <RUNNABLE-ENTITY UUID="880c880c-d28f-4b66-8f6d-0ff8125771d3">
+                          <SHORT-NAME>SelectShutdownTarget</SHORT-NAME>
+                          <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                          <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                          <SYMBOL>EcuM_SelectShutdownTarget</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                        <RUNNABLE-ENTITY UUID="5db530ad-b298-4aa4-a17b-0995a4a0c53c">
+                          <SHORT-NAME>GetShutdownTarget</SHORT-NAME>
+                          <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                          <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                          <SYMBOL>EcuM_GetShutdownTarget</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                        <RUNNABLE-ENTITY UUID="0bed1de0-9c9b-4d2a-906c-093a9a0098fe">
+                          <SHORT-NAME>GetLastShutdownTarget</SHORT-NAME>
+                          <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                          <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                          <SYMBOL>EcuM_GetLastShutdownTarget</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                        <RUNNABLE-ENTITY UUID="b65e507a-ceca-44c2-9ae1-9cc0606eec29">
+                          <SHORT-NAME>SelectShutdownCause</SHORT-NAME>
+                          <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                          <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                          <SYMBOL>EcuM_SelectShutdownCause</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                        <RUNNABLE-ENTITY UUID="366023d0-0ddc-4119-a50f-7190f951f24f">
+                          <SHORT-NAME>GetShutdownCause</SHORT-NAME>
+                          <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                          <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                          <SYMBOL>EcuM_GetShutdownCause</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                        <RUNNABLE-ENTITY UUID="4648caa3-888e-41ba-99e2-7b428a9f7e8f">
+                          <SHORT-NAME>SelectBootTarget</SHORT-NAME>
+                          <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                          <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                          <SYMBOL>EcuM_SelectBootTarget</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                        <RUNNABLE-ENTITY UUID="dd3263c8-87cd-4d59-b1d5-a7950ac7bbbd">
+                          <SHORT-NAME>GetBootTarget</SHORT-NAME>
+                          <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                          <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                          <SYMBOL>EcuM_GetBootTarget</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                      </RUNNABLES>
+                      <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                    </SWC-INTERNAL-BEHAVIOR>
+                  </INTERNAL-BEHAVIORS>
+                </SERVICE-SW-COMPONENT-TYPE>
+                <SWC-IMPLEMENTATION UUID="42f13285-bcb3-4276-86ce-f14d3ea0588a">
+                  <SHORT-NAME>EcuMImplementation</SHORT-NAME>
+                  <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+                  <RESOURCE-CONSUMPTION UUID="a9fe8d3c-eead-4913-921f-fb730bcce6ea">
+                    <SHORT-NAME>EcuMResourceConsumption</SHORT-NAME>
+                    <MEMORY-SECTIONS>
+                      <MEMORY-SECTION UUID="64032927-5184-4ac7-a9fe-98dce536d83c">
+                        <SHORT-NAME>EcuM_START_SEC_CODE</SHORT-NAME>
+                        <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/CODE</SW-ADDRMETHOD-REF>
+                        <SYMBOL>CODE</SYMBOL>
+                      </MEMORY-SECTION>
+                      <MEMORY-SECTION UUID="b987bfe7-32f6-402d-a18b-c95546204938">
+                        <SHORT-NAME>EcuM_START_SEC_CONST_UNSPECIFIED</SHORT-NAME>
+                        <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                        <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/CONST</SW-ADDRMETHOD-REF>
+                        <SYMBOL>CONST_UNSPECIFIED</SYMBOL>
+                      </MEMORY-SECTION>
+                      <MEMORY-SECTION UUID="5a90cc8f-96a3-4c52-9e57-9edc895a1b44">
+                        <SHORT-NAME>EcuM_START_SEC_VAR_NOINIT_UNSPECIFIED</SHORT-NAME>
+                        <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                        <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+                        <SYMBOL>VAR_NOINIT_UNSPECIFIED</SYMBOL>
+                      </MEMORY-SECTION>
+                      <MEMORY-SECTION UUID="26eb5628-1256-4209-b6e4-585f7eab886d">
+                        <SHORT-NAME>EcuM_START_SEC_VAR_INIT_UNSPECIFIED</SHORT-NAME>
+                        <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                        <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_INIT</SW-ADDRMETHOD-REF>
+                        <SYMBOL>VAR_INIT_UNSPECIFIED</SYMBOL>
+                      </MEMORY-SECTION>
+                      <MEMORY-SECTION UUID="58623e12-9015-4428-be5f-088dba6912a3">
+                        <SHORT-NAME>EcuM_START_SEC_VAR_ZERO_INIT_UNSPECIFIED</SHORT-NAME>
+                        <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                        <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_CLEARED</SW-ADDRMETHOD-REF>
+                        <SYMBOL>VAR_ZERO_INIT_UNSPECIFIED</SYMBOL>
+                      </MEMORY-SECTION>
+                    </MEMORY-SECTIONS>
+                  </RESOURCE-CONSUMPTION>
+                  <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/MICROSAR/EcuM_swc/ComponentTypes/EcuM/EcuMInternalBehavior</BEHAVIOR-REF>
+                </SWC-IMPLEMENTATION>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
