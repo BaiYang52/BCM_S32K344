@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This file was saved with a tool from Vector Informatik GmbH-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0.xsd" xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="06221069-A52F-42D3-BA2B-DE70BD59A695">
+      <SHORT-NAME>ComponentTypes</SHORT-NAME>
+      <ELEMENTS>
+        <APPLICATION-SW-COMPONENT-TYPE UUID="6B5F7D51-C70C-432C-BFFE-84BEFADFB3BC">
+          <SHORT-NAME>CtAppSwc</SHORT-NAME>
+          <INTERNAL-BEHAVIORS>
+            <SWC-INTERNAL-BEHAVIOR UUID="1ABCB15D-8AF5-4518-B566-0A2644F4EBF3">
+              <SHORT-NAME>CtAppSwc_InternalBehavior</SHORT-NAME>
+              <EVENTS>
+                <INIT-EVENT UUID="C0AEAC4B-8596-4C12-A647-B5ED88B7A6BB">
+                  <SHORT-NAME>CtAppSwc_InitEvent</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/CtAppSwc/CtAppSwc_InternalBehavior/RCtAppSwc_Init</START-ON-EVENT-REF>
+                </INIT-EVENT>
+                <TIMING-EVENT UUID="A91DB759-28E4-4466-872C-D6811A40BAB6">
+                  <SHORT-NAME>TMT_RCtAppSwc_10ms</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/CtAppSwc/CtAppSwc_InternalBehavior/RCtAppSwc_10ms</START-ON-EVENT-REF>
+                  <PERIOD>0.01</PERIOD>
+                </TIMING-EVENT>
+                <TIMING-EVENT UUID="2C00DC4C-0F94-46AF-8787-5EF74FCE3B90">
+                  <SHORT-NAME>TMT_RCtAppSwc_1000ms</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/CtAppSwc/CtAppSwc_InternalBehavior/RCtAppSwc_1000ms</START-ON-EVENT-REF>
+                  <PERIOD>1</PERIOD>
+                </TIMING-EVENT>
+              </EVENTS>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY UUID="B893A8F7-CB29-4345-970D-05533CDE3FEF">
+                  <SHORT-NAME>RCtAppSwc_Init</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="edve:RunnableKind">
+                        <SD>InitRunnable</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                </RUNNABLE-ENTITY>
+                <RUNNABLE-ENTITY UUID="F09FF33C-A72A-4C92-8D99-8E1945E302F3">
+                  <SHORT-NAME>RCtAppSwc_10ms</SHORT-NAME>
+                </RUNNABLE-ENTITY>
+                <RUNNABLE-ENTITY UUID="BA3CE859-4480-4C43-AE0E-2B026E13D7B8">
+                  <SHORT-NAME>RCtAppSwc_1000ms</SHORT-NAME>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+              <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+            </SWC-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </APPLICATION-SW-COMPONENT-TYPE>
+        <SWC-IMPLEMENTATION UUID="96B38CA6-8B8E-4790-9107-A9D20ED9D0FE">
+          <SHORT-NAME>CtAppSwc_Implementation</SHORT-NAME>
+          <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/ComponentTypes/CtAppSwc/CtAppSwc_InternalBehavior</BEHAVIOR-REF>
+        </SWC-IMPLEMENTATION>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
