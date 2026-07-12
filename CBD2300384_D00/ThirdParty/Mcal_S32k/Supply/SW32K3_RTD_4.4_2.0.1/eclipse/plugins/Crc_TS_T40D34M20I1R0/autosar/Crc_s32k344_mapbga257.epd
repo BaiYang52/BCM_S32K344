@@ -1,0 +1,1233 @@
+<?xml version="1.0"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00046.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="ECUC:719ebd7d-c2c0-b0b1-91fd-d21987f688d4">
+      <SHORT-NAME>TS_T40D34M20I1R0</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-DEFINITION-COLLECTION UUID="ECUC:b77f4747-c2c0-b0b1-bd39-78c48d906d74">
+          <SHORT-NAME>Crc_EcuParameterDefinition</SHORT-NAME>
+          <MODULE-REFS>
+            <MODULE-REF DEST="ECUC-MODULE-DEF">/TS_T40D34M20I1R0/Crc</MODULE-REF>
+          </MODULE-REFS>
+        </ECUC-DEFINITION-COLLECTION>
+        <ECUC-MODULE-DEF UUID="ECUC:042303c9-c2c0-b0b1-8d74-beec6832f90e">
+          <SHORT-NAME>Crc</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">Vendor specific: Configuration of the Crc (Cyclic Redundancy Check) module.</L-2>
+          </DESC>
+          <ADMIN-DATA>
+            <DOC-REVISIONS>
+              <DOC-REVISION>
+                <REVISION-LABEL>4.4.0</REVISION-LABEL>
+                <ISSUED-BY>AUTOSAR</ISSUED-BY>
+                <DATE>2018-10-31</DATE>
+              </DOC-REVISION>
+            </DOC-REVISIONS>
+          </ADMIN-DATA>
+          <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+          <POST-BUILD-VARIANT-SUPPORT>false</POST-BUILD-VARIANT-SUPPORT>
+          <REFINED-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/AUTOSAR/EcucDefs/Crc</REFINED-MODULE-DEF-REF>
+          <SUPPORTED-CONFIG-VARIANTS>
+            <SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+          </SUPPORTED-CONFIG-VARIANTS>
+          <CONTAINERS>
+            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:7e403fbf-c2c0-b0b1-a276-1b6948c6a3d4">
+              <SHORT-NAME>CrcGeneral</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">
+                                        Crc General
+                                        All general parameters of the Crc driver are collected here.
+                                        </L-2>
+              </DESC>
+              <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+              <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+              <PARAMETERS>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:e2c7cbaa-c2c0-b0b1-a76b-7ef40fe85b15">
+                  <SHORT-NAME>CrcDetectError</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                CRC Development Error Detect
+                                                Compile switch to enable/disable development error detection for this module.
+                                                    
+                                                        Unchecked: Crc Development error detection disabled
+                                                        Checked  : Crc Development error detection enabled 
+                                                    
+                                                
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>NXP</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <DEFAULT-VALUE>true</DEFAULT-VALUE>
+                </ECUC-BOOLEAN-PARAM-DEF>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:f69bc190-c2c0-b0b1-9421-cfd958ed71e7">
+                  <SHORT-NAME>CrcEnableUserModeSupport</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                Crc User Mode Support
+                                                When this parameter is enabled, the Crc module will adapt to run from User Mode, with the following measures: Configuring REG_PROT for Crc IPs so that the registers under protection can be accessed from user mode by setting UAA bit in REG_PROT_GCR to 1
+                                                For more information and availability on this platform, please see chapter User Mode Support in IM
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>NXP</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                </ECUC-BOOLEAN-PARAM-DEF>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:067d7849-c2c0-b0b1-a64a-0b755ad3cc1c">
+                  <SHORT-NAME>CrcDmaSupportEnable</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                Dma Support Calculate
+                                                Check this in order to be able to use DMA in the Crc driver. Leaving this unchecked will allow the Crc driver to compile with no dependencies from the Mcl driver.
+                                                Note: Implementation Specific Parameter.
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>NXP</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                </ECUC-BOOLEAN-PARAM-DEF>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:1550dda0-c2c0-b0b1-8f1e-48c44a5dc2e9">
+                  <SHORT-NAME>CrcMultiCoreEnable</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                Crc Multicore Enable
+                                                This parameter globally enables the possibility to support multicore. If this parmeter is enabled, at least one EcucPartition needs to be defined (in all variants).
+                                                Note: This is an Implementation Specific Parameter.
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>NXP</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                </ECUC-BOOLEAN-PARAM-DEF>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:0ba6fc03-c2c0-b0b1-8e2b-1aa5b1b2e85b">
+                  <SHORT-NAME>CrcVersionInfoApi</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                CRC VersionInfo Api
+                                                Compile switch to enable/disable the version information API.
+                                                    
+                                                        Checked  : API enabled 
+                                                        Unchecked: API disabled 
+                                                    
+                                                
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>NXP</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                </ECUC-BOOLEAN-PARAM-DEF>
+                <ECUC-ENUMERATION-PARAM-DEF UUID="ECUC:f3ff0747-c2c0-b0b1-89b9-12a7d3cb4495">
+                  <SHORT-NAME>Crc8Mode</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                Switch to select one of the available Crc 8-bit (SAE J1850) calculation methods
+                                                Note: If large data blocks have to be calculated (&gt;32 bytes, depending on performance of processor platform), the table based calculation or hardware method should be configured for the function Crc_CalculateCRC8 in order to decrease the calculation time.
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <SCOPE>LOCAL</SCOPE>
+                  <MULTIPLICITY-CONFIG-CLASSES>
+                    <ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                  </MULTIPLICITY-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <DEFAULT-VALUE>CRC_8_TABLE</DEFAULT-VALUE>
+                  <LITERALS>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_8_TABLE</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_8_HARDWARE</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_8_RUNTIME</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ECUC-ENUMERATION-PARAM-DEF>
+                <ECUC-ENUMERATION-PARAM-DEF UUID="ECUC:d146c43c-c2c0-b0b1-92ee-5d6bf9914fc8">
+                  <SHORT-NAME>Crc8H2FMode</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                Switch to select one of the available Crc 8-bit (2Fh polynomial) calculation methods
+                                                Note: If large data blocks have to be calculated (&gt;32 bytes, depending on performance of processor platform), the table based calculation or hardware method should be configured for the function Crc_CalculateCRC8H2F in order to decrease the calculation time.
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <SCOPE>LOCAL</SCOPE>
+                  <MULTIPLICITY-CONFIG-CLASSES>
+                    <ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                  </MULTIPLICITY-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <DEFAULT-VALUE>CRC_8H2F_TABLE</DEFAULT-VALUE>
+                  <LITERALS>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_8H2F_TABLE</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_8H2F_HARDWARE</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_8H2F_RUNTIME</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ECUC-ENUMERATION-PARAM-DEF>
+                <ECUC-ENUMERATION-PARAM-DEF UUID="ECUC:ac9cccf0-c2c0-b0b1-a22e-bd0c0dcb4964">
+                  <SHORT-NAME>Crc16Mode</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                Switch to select one of the available Crc 16-bit (CCITT-FALSE) calculation methods
+                                                Note: If large data blocks have to be calculated (&gt;32 bytes, depending on performance of processor platform), the table based calculation or hardware method should be configured for the function Crc_CalculateCRC16 in order to decrease the calculation time.
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <SCOPE>LOCAL</SCOPE>
+                  <MULTIPLICITY-CONFIG-CLASSES>
+                    <ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                  </MULTIPLICITY-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <DEFAULT-VALUE>CRC_16_TABLE</DEFAULT-VALUE>
+                  <LITERALS>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_16_TABLE</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_16_HARDWARE</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_16_RUNTIME</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ECUC-ENUMERATION-PARAM-DEF>
+                <ECUC-ENUMERATION-PARAM-DEF UUID="ECUC:e7973331-c2c0-b0b1-a0dc-18f75dd66271">
+                  <SHORT-NAME>Crc16ARCMode</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                Switch to select one of the available CRC-16/ARC (polynomial 8005) calculation methods
+                                                Note: If large data blocks have to be calculated (&gt;32 bytes, depending on performance of processor platform), the table based calculation method should be configured for the function Crc_CalculateCRC16ARC in order to decrease the calculation time.
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <SCOPE>LOCAL</SCOPE>
+                  <MULTIPLICITY-CONFIG-CLASSES>
+                    <ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                  </MULTIPLICITY-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <DEFAULT-VALUE>CRC_16ARC_TABLE</DEFAULT-VALUE>
+                  <LITERALS>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_16ARC_TABLE</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_16ARC_HARDWARE</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_16ARC_RUNTIME</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ECUC-ENUMERATION-PARAM-DEF>
+                <ECUC-ENUMERATION-PARAM-DEF UUID="ECUC:70af1a5d-c2c0-b0b1-be44-9d57c2dde1f3">
+                  <SHORT-NAME>Crc32Mode</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                Switch to select one of the available Crc 32-bit (IEEE-802.3 CRC32 Ethernet Standard) calculation methods
+                                                Note: If large data blocks have to be calculated (&gt;32 bytes, depending on performance of processor platform), the table based calculation or hardware method should be configured for the function Crc_CalculateCRC32 in order to decrease the calculation time.
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <SCOPE>LOCAL</SCOPE>
+                  <MULTIPLICITY-CONFIG-CLASSES>
+                    <ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                  </MULTIPLICITY-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <DEFAULT-VALUE>CRC_32_TABLE</DEFAULT-VALUE>
+                  <LITERALS>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_32_TABLE</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_32_HARDWARE</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_32_RUNTIME</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ECUC-ENUMERATION-PARAM-DEF>
+                <ECUC-ENUMERATION-PARAM-DEF UUID="ECUC:d2f3f463-c2c0-b0b1-8741-a2be3c4da993">
+                  <SHORT-NAME>Crc32P4Mode</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                Switch to select one of the available Crc 32-bit E2E Profile 4 calculation methods.
+                                                Note: If large data blocks have to be calculated (&gt;32 bytes, depending on performance of processor platform), the table based calculation method should be configured for the function Crc_CalculateCRC32P4 in order to decrease the calculation time.
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <SCOPE>LOCAL</SCOPE>
+                  <MULTIPLICITY-CONFIG-CLASSES>
+                    <ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                  </MULTIPLICITY-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <DEFAULT-VALUE>CRC_32P4_TABLE</DEFAULT-VALUE>
+                  <LITERALS>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_32P4_TABLE</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_32P4_HARDWARE</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_32P4_RUNTIME</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ECUC-ENUMERATION-PARAM-DEF>
+                <ECUC-ENUMERATION-PARAM-DEF UUID="ECUC:4c70b2ec-c2c0-b0b1-8ba1-fbe1a0b35848">
+                  <SHORT-NAME>Crc64Mode</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                Switch to select one of the available Crc 64-bit calculation methods
+                                                Note: If large data blocks have to be calculated (&gt;64 bytes, depending on performance of processor platform), the table based calculation method should be configured for the function Crc_CalculateCRC64 in order to decrease the calculation time.
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <SCOPE>LOCAL</SCOPE>
+                  <MULTIPLICITY-CONFIG-CLASSES>
+                    <ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                  </MULTIPLICITY-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <DEFAULT-VALUE>CRC_64_TABLE</DEFAULT-VALUE>
+                  <LITERALS>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_64_TABLE</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_64_HARDWARE</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_64_RUNTIME</SHORT-NAME>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ECUC-ENUMERATION-PARAM-DEF>
+              </PARAMETERS>
+            </ECUC-PARAM-CONF-CONTAINER-DEF>
+            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:0f042783-c2c0-b0b1-a8d8-96d5efd5d43a">
+              <SHORT-NAME>CrcChannelConfig</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">
+                                                Crc Channels Configuration
+                                                Configuration of an individual Crc channel. Symbolic names will be generated for each channel.
+                                            </L-2>
+              </DESC>
+              <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+              <UPPER-MULTIPLICITY-INFINITE>1</UPPER-MULTIPLICITY-INFINITE>
+              <MULTIPLICITY-CONFIG-CLASSES>
+                <ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                  <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                  <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                </ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+              </MULTIPLICITY-CONFIG-CLASSES>
+              <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+              <REQUIRES-INDEX>true</REQUIRES-INDEX>
+              <PARAMETERS>
+                <ECUC-STRING-PARAM-DEF UUID="ECUC:e0e7c7b5-c2c0-b0b1-846f-385d846edf59">
+                  <SHORT-NAME>CrcLogicChannelName</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                    Logic Channel Name
+                                                    Channel used for Crc calculation
+                                                </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>NXP</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <ECUC-STRING-PARAM-DEF-VARIANTS>
+                    <ECUC-STRING-PARAM-DEF-CONDITIONAL>
+                      <DEFAULT-VALUE>CRC_LOGIC_CHANNEL_0</DEFAULT-VALUE>
+                    </ECUC-STRING-PARAM-DEF-CONDITIONAL>
+                  </ECUC-STRING-PARAM-DEF-VARIANTS>
+                </ECUC-STRING-PARAM-DEF>
+                <ECUC-ENUMERATION-PARAM-DEF UUID="ECUC:e0e7c7b5-c2c0-b0b1-846f-385d846ec87a">
+                  <SHORT-NAME>CrcAutosarSelect</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                    Autosar Selection
+                                                    Select the Autosar Mode to run.
+                                                </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <ORIGIN>NXP</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <DEFAULT-VALUE>NON_AUTOSAR</DEFAULT-VALUE>
+                  <LITERALS>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>NON_AUTOSAR</SHORT-NAME>
+                      <ORIGIN>NXP</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>AUTOSAR_CRC_8</SHORT-NAME>
+                      <ORIGIN>NXP</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>AUTOSAR_CRC_8H2F</SHORT-NAME>
+                      <ORIGIN>NXP</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>AUTOSAR_CRC_16</SHORT-NAME>
+                      <ORIGIN>NXP</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>AUTOSAR_CRC_16ARC</SHORT-NAME>
+                      <ORIGIN>NXP</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>AUTOSAR_CRC_32</SHORT-NAME>
+                      <ORIGIN>NXP</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>AUTOSAR_CRC_32P4</SHORT-NAME>
+                      <ORIGIN>NXP</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>AUTOSAR_CRC_64</SHORT-NAME>
+                      <ORIGIN>NXP</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ECUC-ENUMERATION-PARAM-DEF>
+                <ECUC-ENUMERATION-PARAM-DEF UUID="ECUC:bd75fb0a-c2c0-b0b1-9b16-3793d1934174">
+                  <SHORT-NAME>CrcCalculationType</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                    Calculation Type
+                                                    Select Crc Calculation Type.
+                                                    Note: Implementation Specific Parameter.
+                                                </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <ORIGIN>NXP</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <DEFAULT-VALUE>CRC_IP_TABLE_CALCULATION</DEFAULT-VALUE>
+                  <LITERALS>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_IP_TABLE_CALCULATION</SHORT-NAME>
+                      <ORIGIN>NXP</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_IP_HARDWARE_CALCULATION</SHORT-NAME>
+                      <ORIGIN>NXP</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>CRC_IP_RUNTIME_CALCULATION</SHORT-NAME>
+                      <ORIGIN>NXP</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ECUC-ENUMERATION-PARAM-DEF>
+              </PARAMETERS>
+              <REFERENCES>
+                <ECUC-REFERENCE-DEF UUID="ECUC:879c613f-c2c0-b0b1-931c-146f3a70b733">
+                  <SHORT-NAME>CrcPartitionRefOfChannel</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                    Partition Ref Of Channel
+                                                    Maps a Crc hardware unit to zero or one ECUC partition to limit the access to this hardware unit. The ECUC partitions referenced are a subset of the ECUC partitions where the Crc driver is mapped to.
+                                                    Tags: atp.Status=draft
+                                                </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <SCOPE>LOCAL</SCOPE>
+                  <MULTIPLICITY-CONFIG-CLASSES>
+                    <ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                  </MULTIPLICITY-CONFIG-CLASSES>
+                  <ORIGIN>NXP</ORIGIN>
+                  <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition</DESTINATION-REF>
+                </ECUC-REFERENCE-DEF>
+              </REFERENCES>
+              <SUB-CONTAINERS>
+                <ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:ed312734-c2c0-b0b1-aca2-39c68baf9f13">
+                  <SHORT-NAME>CrcHardwareConfig</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This container contains the hardware configuration parameters of the Crc module.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <PARAMETERS>
+                    <ECUC-ENUMERATION-PARAM-DEF UUID="ECUC:927563f1-c2c0-b0b1-8357-e52e2033cdc8">
+                      <SHORT-NAME>CrcHwInstance</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                                                        Hardware Instance
+                                                        Identifies the Crc Hardware Instance.
+                                                        Note: Implementation Specific Parameter.
+                                                    </L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <SCOPE>LOCAL</SCOPE>
+                      <ORIGIN>NXP</ORIGIN>
+                      <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                      <VALUE-CONFIG-CLASSES>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                      </VALUE-CONFIG-CLASSES>
+                      <DEFAULT-VALUE>CRC_HW_INSTANCE_0</DEFAULT-VALUE>
+                      <LITERALS>
+                        <ECUC-ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>CRC_HW_INSTANCE_0</SHORT-NAME>
+                          <ORIGIN>NXP</ORIGIN>
+                        </ECUC-ENUMERATION-LITERAL-DEF>
+                      </LITERALS>
+                    </ECUC-ENUMERATION-PARAM-DEF>
+                    <ECUC-ENUMERATION-PARAM-DEF UUID="ECUC:c206be87-c2c0-b0b1-9b24-3688e729ce26">
+                      <SHORT-NAME>CrcHwChannel</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                                                        Hardware Channel
+                                                        Selects one of the Crc hardware channels available on the device.
+                                                    </L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <ORIGIN>NXP</ORIGIN>
+                      <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                      <VALUE-CONFIG-CLASSES>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                      </VALUE-CONFIG-CLASSES>
+                      <DEFAULT-VALUE>CRC_HW_CHANNEL_0</DEFAULT-VALUE>
+                      <LITERALS>
+                        <ECUC-ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>CRC_HW_CHANNEL_0</SHORT-NAME>
+                          <ORIGIN>NXP</ORIGIN>
+                        </ECUC-ENUMERATION-LITERAL-DEF>
+                      </LITERALS>
+                    </ECUC-ENUMERATION-PARAM-DEF>
+                    <ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:48076f5e-c2c0-b0b1-8cd6-793d835724f9">
+                      <SHORT-NAME>CrcDmaChannelEnable</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                                                        Dma Channel Enable
+                                                        
+                                                            
+                                                                Checked  : Enabled 
+                                                                Unchecked: Disabled 
+                                                            
+                                                        
+                                                        Note: DMA mode does not support for CRC Autosar Library
+                                                    </L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <SCOPE>LOCAL</SCOPE>
+                      <ORIGIN>NXP</ORIGIN>
+                      <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                      <VALUE-CONFIG-CLASSES>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                      </VALUE-CONFIG-CLASSES>
+                      <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                    </ECUC-BOOLEAN-PARAM-DEF>
+                  </PARAMETERS>
+                  <REFERENCES>
+                    <ECUC-REFERENCE-DEF UUID="ECUC:626e66eb-c2c0-b0b1-bf5c-1d32ea051b6b">
+                      <SHORT-NAME>CrcDmaLogicChannelName</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                                                        DMA Logic Channel Name
+                                                        DMA Logic Channel is used for this Crc logic channel.
+                                                    </L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <SCOPE>LOCAL</SCOPE>
+                      <MULTIPLICITY-CONFIG-CLASSES>
+                        <ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                      </MULTIPLICITY-CONFIG-CLASSES>
+                      <ORIGIN>NXP</ORIGIN>
+                      <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                      <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                      <VALUE-CONFIG-CLASSES>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                      </VALUE-CONFIG-CLASSES>
+                      <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Mcl/MclConfig/dmaLogicChannel_Type</DESTINATION-REF>
+                    </ECUC-REFERENCE-DEF>
+                  </REFERENCES>
+                </ECUC-PARAM-CONF-CONTAINER-DEF>
+                <ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:a5698720-c2c0-b0b1-806d-0029676af1e6">
+                  <SHORT-NAME>CrcProtocolInfo</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This container configuration parameters of protocol type</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <PARAMETERS>
+                    <ECUC-ENUMERATION-PARAM-DEF UUID="ECUC:99b8fe57-c2c0-b0b1-9f25-e2c071e1f793">
+                      <SHORT-NAME>CrcProtocolType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                                                        Protocol Type
+                                                        Identifies the Crc Protocol Type.
+                                                        Note: Implementation Specific Parameter.
+                                                    </L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <SCOPE>LOCAL</SCOPE>
+                      <ORIGIN>NXP</ORIGIN>
+                      <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                      <VALUE-CONFIG-CLASSES>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                      </VALUE-CONFIG-CLASSES>
+                      <DEFAULT-VALUE>CRC_PROTOCOL_8BIT_SAE_J1850</DEFAULT-VALUE>
+                      <LITERALS>
+                        <ECUC-ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>CRC_PROTOCOL_8BIT_SAE_J1850</SHORT-NAME>
+                          <ORIGIN>NXP</ORIGIN>
+                        </ECUC-ENUMERATION-LITERAL-DEF>
+                        <ECUC-ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>CRC_PROTOCOL_8BIT_H2F</SHORT-NAME>
+                          <ORIGIN>NXP</ORIGIN>
+                        </ECUC-ENUMERATION-LITERAL-DEF>
+                        <ECUC-ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>CRC_PROTOCOL_16BIT_CCITT_FALSE</SHORT-NAME>
+                          <ORIGIN>NXP</ORIGIN>
+                        </ECUC-ENUMERATION-LITERAL-DEF>
+                        <ECUC-ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>CRC_PROTOCOL_16BIT_ARC</SHORT-NAME>
+                          <ORIGIN>NXP</ORIGIN>
+                        </ECUC-ENUMERATION-LITERAL-DEF>
+                        <ECUC-ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>CRC_PROTOCOL_32BIT_ETHERNET</SHORT-NAME>
+                          <ORIGIN>NXP</ORIGIN>
+                        </ECUC-ENUMERATION-LITERAL-DEF>
+                        <ECUC-ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>CRC_PROTOCOL_32BIT_E2E_P4</SHORT-NAME>
+                          <ORIGIN>NXP</ORIGIN>
+                        </ECUC-ENUMERATION-LITERAL-DEF>
+                        <ECUC-ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>CRC_PROTOCOL_64BIT_ECMA</SHORT-NAME>
+                          <ORIGIN>NXP</ORIGIN>
+                        </ECUC-ENUMERATION-LITERAL-DEF>
+                        <ECUC-ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>CRC_PROTOCOL_8BIT_CUSTOM</SHORT-NAME>
+                          <ORIGIN>NXP</ORIGIN>
+                        </ECUC-ENUMERATION-LITERAL-DEF>
+                        <ECUC-ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>CRC_PROTOCOL_16BIT_CUSTOM</SHORT-NAME>
+                          <ORIGIN>NXP</ORIGIN>
+                        </ECUC-ENUMERATION-LITERAL-DEF>
+                        <ECUC-ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>CRC_PROTOCOL_32BIT_CUSTOM</SHORT-NAME>
+                          <ORIGIN>NXP</ORIGIN>
+                        </ECUC-ENUMERATION-LITERAL-DEF>
+                        <ECUC-ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>CRC_PROTOCOL_64BIT_CUSTOM</SHORT-NAME>
+                          <ORIGIN>NXP</ORIGIN>
+                        </ECUC-ENUMERATION-LITERAL-DEF>
+                      </LITERALS>
+                    </ECUC-ENUMERATION-PARAM-DEF>
+                    <ECUC-STRING-PARAM-DEF UUID="ECUC:c4697aeb-c2c0-b0b1-91a0-164de4fcc821">
+                      <SHORT-NAME>CrcPolynomialValue</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                                                        Polynomial Value
+                                                        Start value when the algorithm starts in process Calculate CRC
+                                                    </L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <SCOPE>LOCAL</SCOPE>
+                      <ORIGIN>NXP</ORIGIN>
+                      <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                      <VALUE-CONFIG-CLASSES>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                      </VALUE-CONFIG-CLASSES>
+                      <ECUC-STRING-PARAM-DEF-VARIANTS>
+                        <ECUC-STRING-PARAM-DEF-CONDITIONAL>
+                          <DEFAULT-VALUE>0x</DEFAULT-VALUE>
+                        </ECUC-STRING-PARAM-DEF-CONDITIONAL>
+                      </ECUC-STRING-PARAM-DEF-VARIANTS>
+                    </ECUC-STRING-PARAM-DEF>
+                    <ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:bca03025-c2c0-b0b1-a3f1-be32434c5a0d">
+                      <SHORT-NAME>CrcWriteBitSwap</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                                                        Write Bit Swap
+                                                        Enumerator that defines Crc Write data bitwise functionality.
+                                                    </L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <SCOPE>LOCAL</SCOPE>
+                      <ORIGIN>NXP</ORIGIN>
+                      <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                      <VALUE-CONFIG-CLASSES>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                      </VALUE-CONFIG-CLASSES>
+                      <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                    </ECUC-BOOLEAN-PARAM-DEF>
+                    <ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:0ffab74b-c2c0-b0b1-be4b-8d47feb82be6">
+                      <SHORT-NAME>CrcWriteByteSwap</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                                                        Write Bit Swap
+                                                        Enumerator that defines Crc Write data bytewise functionality.
+                                                    </L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <SCOPE>LOCAL</SCOPE>
+                      <ORIGIN>NXP</ORIGIN>
+                      <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                      <VALUE-CONFIG-CLASSES>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                      </VALUE-CONFIG-CLASSES>
+                      <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                    </ECUC-BOOLEAN-PARAM-DEF>
+                    <ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:6f1cb885-c2c0-b0b1-a15d-c1b4fdf5bfa1">
+                      <SHORT-NAME>CrcReadBitSwap</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                                                        Read Bit Swap
+                                                        Enumerator that defines Crc Read data bitwise functionality.
+                                                    </L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <SCOPE>LOCAL</SCOPE>
+                      <ORIGIN>NXP</ORIGIN>
+                      <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                      <VALUE-CONFIG-CLASSES>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                      </VALUE-CONFIG-CLASSES>
+                      <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                    </ECUC-BOOLEAN-PARAM-DEF>
+                    <ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:8d87c1ba-c2c0-b0b1-9ae2-54c0c8def817">
+                      <SHORT-NAME>CrcReadByteSwap</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                                                        Read Byte Swap
+                                                        Enumerator that defines Crc Read data bytewise functionality.
+                                                    </L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <SCOPE>LOCAL</SCOPE>
+                      <ORIGIN>NXP</ORIGIN>
+                      <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                      <VALUE-CONFIG-CLASSES>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                      </VALUE-CONFIG-CLASSES>
+                      <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                    </ECUC-BOOLEAN-PARAM-DEF>
+                    <ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:7097df8b-c2c0-b0b1-9420-f8282e076500">
+                      <SHORT-NAME>CrcInversionEnable</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                                                        Inverse Enable (XOR)
+                                                        The result shall be complement(inversion) of the actual checksum.
+                                                    </L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <SCOPE>LOCAL</SCOPE>
+                      <ORIGIN>NXP</ORIGIN>
+                      <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                      <VALUE-CONFIG-CLASSES>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                      </VALUE-CONFIG-CLASSES>
+                      <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                    </ECUC-BOOLEAN-PARAM-DEF>
+                  </PARAMETERS>
+                </ECUC-PARAM-CONF-CONTAINER-DEF>
+              </SUB-CONTAINERS>
+            </ECUC-PARAM-CONF-CONTAINER-DEF>
+            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:c4445428-6905-4784-812c-a528336d2cc1">
+              <SHORT-NAME>CrcEcucPartitionRefArray</SHORT-NAME>
+              <DESC>
+                <L-2 L="FOR-ALL">Crc Ecuc Partition Ref Array.</L-2>
+              </DESC>
+              <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+              <UPPER-MULTIPLICITY-INFINITE>1</UPPER-MULTIPLICITY-INFINITE>
+              <MULTIPLICITY-CONFIG-CLASSES>
+                <ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                  <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                  <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                </ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+              </MULTIPLICITY-CONFIG-CLASSES>
+              <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+              <REFERENCES>
+                <ECUC-REFERENCE-DEF UUID="ECUC:10cec56a-c2c0-b0b1-85b5-6aed8d2cb09b">
+                  <SHORT-NAME>CrcEcucPartitionRef</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Maps the Crc driver to zero or multiple ECUC partitions to make the driver API available in the according partition.</L-2>
+                    <L-2 L="EN">Tags: atp.Status=draft</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <SCOPE>ECU</SCOPE>
+                  <ORIGIN>NXP</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition</DESTINATION-REF>
+                </ECUC-REFERENCE-DEF>
+              </REFERENCES>
+            </ECUC-PARAM-CONF-CONTAINER-DEF>
+            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:17eea3c1-c2c0-b0b1-95dd-51e168df6970">
+              <SHORT-NAME>CommonPublishedInformation</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">
+                                            Common Published Information
+                                            Common container, aggregated by all modules. It contains published information about vendor and versions.
+                                        </L-2>
+              </DESC>
+              <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+              <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+              <PARAMETERS>
+                <ECUC-INTEGER-PARAM-DEF UUID="ECUC:3e219d2e-c2c0-b0b1-8de4-8348f8f300a5">
+                  <SHORT-NAME>ArReleaseMajorVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                AUTOSAR Release Major Version
+                                                Major version number of AUTOSAR specification on which the appropriate implementation is based on.
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <ORIGIN>NXP</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>4</DEFAULT-VALUE>
+                  <MAX>4</MAX>
+                  <MIN>4</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="ECUC:88f4ce78-c2c0-b0b1-88a5-fe89581e177a">
+                  <SHORT-NAME>ArReleaseMinorVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                AUTOSAR Release Minor Version
+                                                Minor version number of AUTOSAR specification on which the appropriate implementation is based on.
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <ORIGIN>NXP</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>4</DEFAULT-VALUE>
+                  <MAX>4</MAX>
+                  <MIN>4</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="ECUC:b50065c3-c2c0-b0b1-b9b9-3791d43013e5">
+                  <SHORT-NAME>ArReleaseRevisionVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                AUTOSAR Release Revision Version
+                                                Revision version number of AUTOSAR specification on which the appropriate implementation is based on.
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <ORIGIN>NXP</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                  <MAX>0</MAX>
+                  <MIN>0</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="ECUC:c759cc1f-c2c0-b0b1-b68e-fa91a0cf94ae">
+                  <SHORT-NAME>ModuleId</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                Module ID
+                                                Module ID of this module from Module List.
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <ORIGIN>NXP</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>201</DEFAULT-VALUE>
+                  <MAX>201</MAX>
+                  <MIN>201</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="ECUC:e0580793-c2c0-b0b1-95cc-e9e26a4b22ce">
+                  <SHORT-NAME>SwMajorVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                Software Major Version
+                                                Major version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <ORIGIN>NXP</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>2</DEFAULT-VALUE>
+                  <MAX>2</MAX>
+                  <MIN>2</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="ECUC:5c551561-c2c0-b0b1-940b-ff55c03a6719">
+                  <SHORT-NAME>SwMinorVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                Software Minor Version
+                                                Minor version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <ORIGIN>NXP</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                  <MAX>0</MAX>
+                  <MIN>0</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="ECUC:a1df502e-c2c0-b0b1-94ec-8cb8cce7a55e">
+                  <SHORT-NAME>SwPatchVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                Software Patch Version
+                                                Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <ORIGIN>NXP</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>1</DEFAULT-VALUE>
+                  <MAX>1</MAX>
+                  <MIN>1</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-STRING-PARAM-DEF UUID="ECUC:527f7122-c2c0-b0b1-a3c6-9b764b647eed">
+                  <SHORT-NAME>VendorApiInfix</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                Vendor Api Infix
+                                                In driver modules which can be instantiated several times on a single ECU, BSW00347 requires that the name of APIs is extended by the VendorId and a vendor specific name.
+                                                This parameter is used to specify the vendor specific name. In total, the implementation specific name is generated as follows:
+                                                &lt;ModuleName&gt;_&gt;VendorId&gt;_&lt;VendorApiInfix&gt;.
+                                                E.g.  assuming that the VendorId of the implementor is 123 and the implementer chose a VendorApiInfix of &quot;v11r456&quot; a api name Can_Write defined in the SWS will translate to Can_123_v11r456Write.
+                                                This parameter is mandatory for all modules with upper multiplicity &gt; 1. It shall not be used for modules with upper multiplicity =1.
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <MULTIPLICITY-CONFIG-CLASSES>
+                    <ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                  </MULTIPLICITY-CONFIG-CLASSES>
+                  <ORIGIN>NXP</ORIGIN>
+                  <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <ECUC-STRING-PARAM-DEF-VARIANTS>
+                    <ECUC-STRING-PARAM-DEF-CONDITIONAL>
+                      <DEFAULT-VALUE>
+                      </DEFAULT-VALUE>
+                    </ECUC-STRING-PARAM-DEF-CONDITIONAL>
+                  </ECUC-STRING-PARAM-DEF-VARIANTS>
+                </ECUC-STRING-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="ECUC:e1324da7-c2c0-b0b1-ae1e-4a0e10ef6357">
+                  <SHORT-NAME>VendorId</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                                                Vendor Id
+                                                Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list.
+                                            </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>NXP</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>43</DEFAULT-VALUE>
+                  <MAX>43</MAX>
+                  <MIN>43</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+              </PARAMETERS>
+            </ECUC-PARAM-CONF-CONTAINER-DEF>
+          </CONTAINERS>
+        </ECUC-MODULE-DEF>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

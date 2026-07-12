@@ -348,6 +348,7 @@
                 <option>
                     <name>CCIncludePath2</name>
                     <state>$PROJ_DIR$\_SourceCode\Base</state>
+                    <state>$PROJ_DIR$\_SourceCode\StartUp</state>
                     <state>$PROJ_DIR$\Davinci_Project\Appl\</state>
                     <state>$PROJ_DIR$\Davinci_Project\Appl\GenData\</state>
                     <state>$PROJ_DIR$\Davinci_Project\Appl\GenData\Components</state>
@@ -634,6 +635,7 @@
                 <option>
                     <name>AUserIncludes</name>
                     <state>$PROJ_DIR$\_SourceCode\Base</state>
+                    <state>$PROJ_DIR$\_SourceCode\StartUp</state>
                     <state>$PROJ_DIR$\Davinci_Project\Appl\</state>
                     <state>$PROJ_DIR$\Davinci_Project\Appl\GenData\</state>
                     <state>$PROJ_DIR$\Davinci_Project\Appl\GenData\Components</state>

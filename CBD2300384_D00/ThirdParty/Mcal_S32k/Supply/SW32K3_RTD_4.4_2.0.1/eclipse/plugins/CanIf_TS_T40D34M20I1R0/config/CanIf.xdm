@@ -1,0 +1,159 @@
+<?xml version='1.0'?>
+<datamodel version="4.0"
+           xmlns="http://www.tresos.de/_projects/DataModel2/10/root.xsd"
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/10/attribute.xsd"
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd"
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+<!--
+*   @file    EcuC.xdm
+*   @version 2.0.1
+*
+*   @brief   AUTOSAR CanIf - Tresos Studio plugin schema file
+*   @details This file contains the schema configuration for and CanIf Tresos Studio plugin.
+*            This file contains sample code only. It is not part of the production code deliverables
+-->
+<!--
+====================================================================================================
+*   Project              : RTD AUTOSAR 4.4
+*   Platform             : CORTEXM
+*   Peripheral           : generic
+*   Dependencies         : 
+*
+*   Autosar Version      : 4.4.0
+*   Autosar Revision     : ASR_REL_4_4_REV_0000
+*   Autosar Conf.Variant :
+*   SW Version           : 2.0.1
+*   Build Version        : S32K3_RTD_2_0_1_D2207_ASR_REL_4_4_REV_0000_20220707
+
+*   (c) Copyright 2020 - 2022 NXP Semiconductors
+*   All Rights Reserved.
+====================================================================================================
+====================================================================================================
+====================================================================================================
+--> 
+    <d:ctr type="AUTOSAR" factory="autosar"
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd"
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd"
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+        <d:lst type="TOP-LEVEL-PACKAGES">
+            <d:ctr name="TS_T40D34M20I1R0" type="AR-PACKAGE">
+                <d:lst type="ELEMENTS">
+                    <d:chc name="CanIf" type="AR-ELEMENT" value="MODULE-DEF">
+                        <v:ctr type="MODULE-DEF">
+                            <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                                <ad:ADMIN-DATA>
+                                    <ad:DOC-REVISIONS>
+                                        <ad:DOC-REVISION>
+                                            <ad:REVISION-LABEL>4.4.0</ad:REVISION-LABEL>
+                                            <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                                        </ad:DOC-REVISION>
+                                    </ad:DOC-REVISIONS>
+                                </ad:ADMIN-DATA>
+                            </a:a>
+                            <a:a name="DESC"
+                                value="EN: Virtual module to collect ECU Configuration specific / global configuration information."/>
+                            <a:a name="LOWER-MULTIPLICITY" value="1"/>
+                            <a:a name="RELEASE" value="asc:4.4"/>
+                            <a:a name="UPPER-MULTIPLICITY" value="1"/>
+                            <a:a name="UUID" value="ECUC:9859330d-7e56-4b3d-bba9-37ed6aaa2bad"/>
+                            <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                </a:a>
+                                <a:a name="LABEL" value="Config Variant"/>
+                                <a:da name="DEFAULT" value="VariantLinkTime"/>
+                                <a:da name="RANGE">
+                                    <a:v>VariantLinkTime</a:v>
+                                    <a:v>VariantPostBuild</a:v>
+                                    <a:v>VariantPreCompile</a:v>
+                                </a:da>
+                            </v:var>
+                            
+                            <v:lst name="CanIfCtrlDrvCfg" type="MAP">
+                                <a:da name="MIN" value="1"/>
+                                <v:ctr name="CanIfCtrlDrvCfg" type="IDENTIFIABLE">
+                                    <a:a name="DESC" 
+                                        value="EN: Configuration parameters for all the underlying CAN Driver modules are aggregated under this container. For each CAN Driver module a seperate instance of this container has to be provided."/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v mclass="PreCompile">VariantLinkTime</icc:v>
+                                        <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="UUID" 
+                                        value="ECUC:4ff0a387-1540-4a20-b4fd-7e4db255693c"/>
+                                    <v:ref name="CanIfCtrlDrvNameRef" type="REFERENCE">
+                                        <a:a name="DESC" 
+                                            value="EN: CAN Interface Driver Reference."/>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+                                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                        <a:a name="SCOPE" value="LOCAL"/>
+                                        <a:a name="UUID" 
+                                         value="ECUC:43775a13-040e-4111-8726-37ed6aaa2bad"/>
+                                        <a:da name="REF" 
+                                            value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Can/CanGeneral"/>
+                                    </v:ref>
+                                    <v:lst name="CanIfCtrlCfg" type="MAP">
+                                        <a:da name="MIN" value="1"/>
+                                        <v:ctr name="CanIfCtrlCfg" type="IDENTIFIABLE">
+                                            <a:a name="DESC" 
+                                                value="EN: This container contains the configuration (parameters) of an adressed CAN controller by an underlying CAN Driver module. This container is configurable per CAN controller."/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v mclass="PreCompile">VariantLinkTime</icc:v>
+                                                <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                                                <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="UUID" 
+                                                value="ECUC:246d0d0a-4754-4319-bd38-a8b3c421e928"/>
+                                            <v:var name="CanIfCtrlId" type="INTEGER">
+                                                <a:a name="DESC" 
+                                                    value="EN: This parameter abstracts from the CAN Driver specific parameter Controller. Each controller of all connected CAN Driver modules shall be assigned to one specific ControllerId of the CanIf."/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                </a:a>
+                                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                                <a:a name="SCOPE" value="ECU"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                                                <a:a name="UUID" 
+                                                    value="ECUC:a8a153f3-d90b-4927-99eb-a14bf9c518e2"/>
+                                                <a:da name="INVALID" type="Range">
+                                                    <a:tst expr="&lt;=255"/>
+                                                    <a:tst expr="&gt;=0"/>
+                                                </a:da>
+                                            </v:var>
+                                            <v:ref name="CanIfCtrlCanCtrlRef" type="REFERENCE">
+                                                <a:a name="DESC" 
+                                                    value="EN: This parameter references to the logical handle of the underlying CAN controller from the CAN Driver module to be served by the CAN Interface module. The following parameters of CanController config container shall be referenced by this link: CanControllerId, CanWakeupSourceRef"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="Link">VariantLinkTime</icc:v>
+                                                    <icc:v vclass="Link">VariantPostBuild</icc:v>
+                                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                </a:a>
+                                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                                <a:a name="REQUIRES-SYMBOLIC-NAME-VALUE" value="true"/>
+                                                <a:a name="SCOPE" value="ECU"/>
+                                                <a:a name="UUID" 
+                                                    value="ECUC:04062985-d3bb-4998-9129-485e796c0950"/>
+                                                <a:da name="REF" 
+                                                    value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Can/CanConfigSet/CanController"/>
+                                            </v:ref>
+                                        </v:ctr>
+                                    </v:lst>
+                                </v:ctr>
+                            </v:lst>
+                            <d:ref type="REFINED_MODULE_DEF" value="ASPath:/AUTOSAR/CanIf"/>
+                        </v:ctr>
+                    </d:chc>
+                </d:lst>
+            </d:ctr>
+        </d:lst>
+    </d:ctr>
+</datamodel>

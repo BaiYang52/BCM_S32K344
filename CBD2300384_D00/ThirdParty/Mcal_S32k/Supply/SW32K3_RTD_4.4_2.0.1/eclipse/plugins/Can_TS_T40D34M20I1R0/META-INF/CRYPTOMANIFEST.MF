@@ -1,0 +1,127 @@
+
+Name: config/Can.xdm
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425624613317448247517391220665606447408034080398261
+ 7680642161329868235852990781147593501952803927473796
+
+Name: generate_PC/include/FlexCAN_Ip_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421640440189318091985416189700052453708204625128011
+ 0641735315283265247803277770677135281993825830370138
+
+Name: generate_PB/include/Can_Ipw_PBcfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422133072988075412608455291501196285064866954193012
+ 5585235509436697310803216764413652187851013420694595
+
+Name: generate_PC/Can_VersionCheck_Inc.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594748101281385242489524426363274993665286147250750407
+ 717276846840481461971874746459491341731339610707287832
+
+Name: generate_PB/Can_VersionCheck_Src_PB.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422740470979145471242122494177127344688313442418383
+ 3317586592485068470521346165839629161468036018377148
+
+Name: generate_PB/include/FlexCAN_Ip_PBcfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425055529578818075707575891367878916667788243803182
+ 4201832038383985552229308822443924702790125321085680
+
+Name: generate_PB/Can_PluginMacro.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425752894251401116454176266144256421716453521457657
+ 6295620462544244999252300835387877934892944469572076
+
+Name: generate_PC/Can_VersionCheck_Src.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423159230717356947602694329608985896210184345734290
+ 3947513081602169011359408312076503683231259884436700
+
+Name: generate_PC/include/Can_Externals.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422555782823036608104258014146801576139597108576538
+ 1979296144934220576819622486962053031185635261345603
+
+Name: generate_PC/include/FlexCAN_Ip_CfgDefines.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773969706545444114290021260676609172723934541171608
+ 203574834853603160788823296940134841760169975298376541
+
+Name: generate_PC/include/Can_Ipw_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423191381569624112423586069285030152724716728872277
+ 9015655867549843497395056861144540926835410029381142
+
+Name: generate_PC/Can_PluginMacro.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421610688585677401644093613806689440638978818550649
+ 2806266042825298748864984217688236919711580587080373
+
+Name: generate_PC/include/Can_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422896241998111128545788623333135755363793816979098
+ 3027780692732521511779917221635784483738380483593557
+
+Name: generate_PB/src/FlexCAN_Ip_PBcfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423389384110255434719274787741745723404489117758482
+ 2174539068639967242816555127104800384413517859853753
+
+Name: generate_PB/src/Can_PBcfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422021444746698785526206053894953141702428435604116
+ 5664898883261643504719452076550028710046895317439082
+
+Name: generate_swcd/swcd/Can_Bswmd.arxml
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773974866689412344828267916512189591932046547095529
+ 142911499571618389149938323553872886884239596457054458
+
+Name: generate_PB/include/Can_PBcfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594741316510581814716214419703608051228346530597418982
+ 808412152674575133443522115389193871090474693219850659
+
+Name: generate_PB/src/Can_Ipw_PBcfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423404296163209832684872165627377233321096037972675
+ 8490344866552570439694774992302405827289592419718890
+

@@ -1,0 +1,57 @@
+1. Example Description
+    The purpose of this demo application is to present basic usage of the ADC_SAR and BCTU IP Driver for the S32K3xx MCU.
+    1.1 The application software functionality
+    The example uses the software trigger to trigger ADC normal and injected conversions, also software trigger from BCTU.
+    The used ADC channel is bandgap (~1.2V corresponding to 7864 with 15 bits resolution at 5v reference). The raw read ADC data will be compared
+    with provided value.
+    The example is divided in 2 parts:
+    - Part 1: The sequences of conversions are triggered using SW triggering from ADC with 2 modes: normal and injected modes
+    - Part 2: The sequences of conversion is triggered using SW triggering from BCTU, the ADC results are stored in FIFO index 1
+    Both parts of the example make use of ADC and BCTU interrupts.
+    - Initialize the ADC/BCTU modules
+    - Enable ADC/BCTU IRQs in interrupt controller
+    - Calibrate ADC module
+    - Start the ADC conversions by normal and injected software trigger from ADC
+    - Read raw ADC data conversion and compare with provided value
+    - Configure BCTU with single conversion and result stored in FIFO.
+    - Start the ADC conversion by software trigger from BCTU
+    - Read raw ADC data conversion
+
+    1.2 How the example works
+    - If all conditions are correct, the program reaches and remains in the infinite for loop.
+
+2. Installation steps
+    2.1 Hardware installation
+        2.1.1 Supported boards
+            - S32K3X4EVB-Q257 47827 PCB RevX1 SCH RevA (EVB)
+            - S32K3XXEVB-Q172 47811 PCB RevX1 SCH RevB (EVB)
+        2.1.2 Connections
+            - Connect J410.1 to J410.2 and J23.1 to J23.2 for 5V VREF on S32K3X4EVB-Q257 board
+            - Connect J18.1 to J18.2 for 5V VREF on S32K3XXEVB-Q172 board
+            - By default S32K344 boards will have 5V voltage reference selected, please uncomment '#define ADC_3V3_VREF_SELECTED' in main.c if 3.3v is manually selected
+        2.1.3 Debugger
+            - The debugger must be connected to J52 10-pin JTAG Cortex Debug connector on S32K3X4EVB-Q257 board.
+            - The debugger must be connected to J41 10-pin JTAG Cortex Debug connector on S32K3XXEVB-Q172 board.
+    2.2 Software installation
+        2.2.1 Importing the S32 Design Studio project
+            After opening S32 Design Studio, go to "File -> New -> S32DS Project From Example" and select this example. Then click on "Finish".
+            The project should now be copied into you current workspace.
+
+3. Generating, building and running the example application
+    3.1 Generating the S32 configuration
+        Before running the example a configuration needs to be generated.  First go to Project Explorer View in S32 DS and select the current project. Select the "S32 Configuration Tool" menu then click on the desired configuration tool (Pins, Cocks, Peripherals etc...). Clicking on any one of those will generate all the components. Make the desired changes(if any) then click on the "S32 Configuration Tool->Update Code" button.
+    3.2 Compiling the application
+        Select the configuration to be built: RAM/FLASH (Debug_RAM/Debug_FLASH) by left clicking on the downward arrow corresponding to the build button in eclipse.
+        Use Project > Build to build the project.
+        Wait for the build action to be completed before continuing to the next step. Check the compiler console for error messages; upon completion, the *.elf binary file
+        should be created.
+    3.3 Running the application on the board
+        Go to Run and select Debug Configurations. There will be a debug configuration for this project:
+
+        Configuration Name                  Description
+        -------------------------------     -----------------------
+        $(example)_Debug_RAM_PNE | Debug the RAM configuration using PE Micro Debugger
+        $(example)_Debug_FLASH_PNE | Debug the FLASH configuration using PE Micro Debugger
+
+        Select the desired debug configuration and click on Launch. Now the perspective will change to the Debug Perspective.
+        Use the controls to control the program flow.

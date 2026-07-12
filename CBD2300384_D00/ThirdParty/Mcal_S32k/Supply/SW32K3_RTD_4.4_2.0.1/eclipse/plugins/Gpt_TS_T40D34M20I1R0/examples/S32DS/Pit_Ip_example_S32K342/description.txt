@@ -1,0 +1,47 @@
+1. Example Description
+    This application demonstrates the usage of a subset of Real Time Drivers that are included in this code drop. It is not part of the production code deliverables.
+    The application includes a Design Studio project, that uses predefined configurations for the IP layer only (Siul2, IntCtrl and Pit).
+    1.1 The application software functionality
+            - Siul2_Port_Ip_Init
+                    Initializes the pins used by the application using the Siul2_Port API.
+            - IntCtrl_Ip_EnableIrq & IntCtrl_Ip_InstallHandler
+                    Enable the interrupt used by the application and set the correct handler for it.
+            - Pit_Ip_Init, Pit_Ip_InitChannel, Pit_Ip_EnableChannelInterrupt & Pit_Ip_StartChannel
+                    Initialize the Pit IP layer, to start the selected timer and to enable its notification that will be used for periodically blinking an LED
+            - Run the while(1) loop and, based on the Pit notification, use the Siul2_Dio_Ip_TogglePins of the Siul2_Dio IP API to toggle the pin connected to the LED
+            
+2. Installation steps
+    2.1 Hardware installation
+        2.1.1 Supported boards
+            - S32K3X4EVB-Q257 47827 PCB RevX1 SCH RevA
+        2.2.2 Connections
+            A wire connection is required between the following:
+               - pin j352.4  (PTB13 - output).
+               - RGBLED0_RED (PTA29 - gpio LED blink).
+               note: It's possbile that this pin is not connected between motherboard and daughtercard. 
+                     A possible workaround is to swicth to PTB25 pin.               
+        2.2.3 Pemicro
+            The Pemicro must be connected to J52 10-pin JTAG Cortex Debug connector.
+    2.2 Software installation
+        2.2.1 Importing the S32 Design Studio project
+            After opening S32 Design Studio, go to "File -> New -> S32DS Project From Example" and select this example. Then click on "Finish".
+            The project should now be copied into you current workspace.
+
+3. Generating, building and running the example application
+    3.1 Generating the S32 configuration
+        Before running the example a configuration needs to be generated.  First go to Project Explorer View in S32 DS and select the current project. Select the "S32 Configuration Tool" menu then click on the desired configuration tool (Pins, Cocks, Peripherals etc...). Clicking on any one of those will generate all the components. Make the desired changes(if any) then click on the "S32 Configuration Tool->Update Code" button.
+    3.2 Compiling the application
+        Select the configuration to be built: RAM (Debug_RAM), or FLASH (Debug_FLASH) by left clicking on the downward arrow corresponding to the build button in eclipse. 
+        Use Project > Build to build the project.
+        Wait for the build action to be completed before continuing to the next step. Check the compiler console for error messages; upon completion, the *.elf binary file
+        should be created.
+    3.3 Running the application on the board
+        Go to Run and select Debug Configurations. There will be a debug configuration for this project:
+        
+        Configuration Name                  Description
+        -------------------------------     -----------------------
+        $(example)_debug_ram_pemicro        Debug the RAM configuration using PEmicro probe
+        $(example)_debug_flash_pemicro      Debug the FLASH configuration using PEmicro probe
+        
+        Select the desired debug configuration and click on Launch. Now the perspective will change to the Debug Perspective.
+        Use the controls to control the program flow.

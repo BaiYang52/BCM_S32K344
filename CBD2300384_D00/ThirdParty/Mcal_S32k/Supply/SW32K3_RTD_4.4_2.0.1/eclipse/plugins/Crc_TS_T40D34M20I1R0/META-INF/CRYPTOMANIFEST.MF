@@ -1,0 +1,50 @@
+
+Name: generate_swcd/swcd/Crc_Bswmd.arxml
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425791611089013226848842868681263551663841126366461
+ 3269384298746796344501274830769417275220211831870435
+
+Name: generate_PC/include/Crc_Ip_CfgDefines.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420332585823051802684615921553107037365413243129537
+ 5549639579819920585437004549597882525933759181696421
+
+Name: generate_PC/src/Crc_Ip_Cfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773963025299463625533341665888364382745647839055948
+ 928532444983896757765715951435678102763047474286006745
+
+Name: config/Crc.xdm
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423288620333280431306528824108052672655038740123227
+ 2445832519429065944590727653418880768900322209167507
+
+Name: generate_PC/include/Crc_Ip_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422663734537951314107671826461217016320371984172459
+ 4743986151646366422960819460349737020977260082752587
+
+Name: generate_PC/include/Crc_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773968080914533134805516073679956722005991423193339
+ 229884873556020653051431739724084698986894319409313107
+
+Name: generate_PC/src/Crc_Cfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421625285416637455015111339219959462222551851165881
+ 3956485428140038276839059144116761659285842646073474
+
